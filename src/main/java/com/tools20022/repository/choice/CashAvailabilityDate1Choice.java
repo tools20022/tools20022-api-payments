@@ -108,7 +108,7 @@ public class CashAvailabilityDate1Choice {
 	 * "Indicates the number of float days attached to the balance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfDays = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAvailabilityDate1Choice, Max15PlusSignedNumericText> mmNumberOfDays = new MMMessageAttribute<CashAvailabilityDate1Choice, Max15PlusSignedNumericText>() {
 		{
 			businessElementTrace_lazy = () -> CashAvailability.mmNumberOfDays;
 			componentContext_lazy = () -> com.tools20022.repository.choice.CashAvailabilityDate1Choice.mmObject();
@@ -120,6 +120,16 @@ public class CashAvailabilityDate1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max15PlusSignedNumericText.mmObject();
+		}
+
+		@Override
+		public Max15PlusSignedNumericText getValue(CashAvailabilityDate1Choice obj) {
+			return obj.getNumberOfDays();
+		}
+
+		@Override
+		public void setValue(CashAvailabilityDate1Choice obj, Max15PlusSignedNumericText value) {
+			obj.setNumberOfDays(value);
 		}
 	};
 	@XmlElement(name = "ActlDt", required = true)
@@ -156,7 +166,7 @@ public class CashAvailabilityDate1Choice {
 	 * definition} = "Identifies the actual availability date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmActualDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAvailabilityDate1Choice, ISODate> mmActualDate = new MMMessageAttribute<CashAvailabilityDate1Choice, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> CashAvailability.mmDate;
 			componentContext_lazy = () -> com.tools20022.repository.choice.CashAvailabilityDate1Choice.mmObject();
@@ -168,6 +178,16 @@ public class CashAvailabilityDate1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(CashAvailabilityDate1Choice obj) {
+			return obj.getActualDate();
+		}
+
+		@Override
+		public void setValue(CashAvailabilityDate1Choice obj, ISODate value) {
+			obj.setActualDate(value);
 		}
 	};
 

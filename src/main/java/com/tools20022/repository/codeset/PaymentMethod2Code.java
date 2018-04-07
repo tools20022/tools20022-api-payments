@@ -63,7 +63,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "PaymentMethod2Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specifies the transfer method that will be used  to transfer the cash."</li>
+ * "Specifies the transfer method that will be used to transfer the cash."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -106,7 +106,7 @@ public class PaymentMethod2Code extends MMCode {
 				example = Arrays.asList("DD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentMethod2Code";
-				definition = "Specifies the transfer method that will be used  to transfer the cash.";
+				definition = "Specifies the transfer method that will be used to transfer the cash.";
 				trace_lazy = () -> PaymentMethodCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentMethod2Code.DirectDebit);
 			}

@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.PaymentObligation;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -121,7 +122,7 @@ public class PaymentObligationPartyRole extends Role {
 	 * "Identifies the payment obligation for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentObligationPartyRole, List<PaymentObligation>> mmPaymentObligation = new MMBusinessAssociationEnd<PaymentObligationPartyRole, List<PaymentObligation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligationPartyRole.mmObject();
@@ -132,6 +133,16 @@ public class PaymentObligationPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
+		}
+
+		@Override
+		public List<PaymentObligation> getValue(PaymentObligationPartyRole obj) {
+			return obj.getPaymentObligation();
+		}
+
+		@Override
+		public void setValue(PaymentObligationPartyRole obj, List<PaymentObligation> value) {
+			obj.setPaymentObligation(value);
 		}
 	};
 

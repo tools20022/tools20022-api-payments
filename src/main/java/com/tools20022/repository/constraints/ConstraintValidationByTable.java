@@ -20,10 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.codeset.BusinessMessagePriorityCode;
-import com.tools20022.repository.codeset.CurrencyCode;
-import com.tools20022.repository.codeset.LanguageCode;
-import com.tools20022.repository.codeset.UnicodeChartsCode;
+import com.tools20022.repository.codeset.*;
 
 /**
  * Must be a valid currency code which is registered with the ISO 4217
@@ -51,7 +48,7 @@ public class ConstraintValidationByTable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCurrencyCode = new MMConstraint() {
+	public static final MMConstraint<CurrencyCode> forCurrencyCode = new MMConstraint<CurrencyCode>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ValidationByTable";
@@ -60,8 +57,64 @@ public class ConstraintValidationByTable {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCurrencyCode((CurrencyCode) obj);
+		public void executeValidator(CurrencyCode obj) throws Exception {
+			checkCurrencyCode(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BusinessMessagePriorityCode
+	 * BusinessMessagePriorityCode}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ValidationByTable"</li>
+	 * </ul>
+	 */
+	public static final MMConstraint<BusinessMessagePriorityCode> forBusinessMessagePriorityCode = new MMConstraint<BusinessMessagePriorityCode>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ValidationByTable";
+			owner_lazy = () -> BusinessMessagePriorityCode.mmObject();
+		}
+
+		@Override
+		public void executeValidator(BusinessMessagePriorityCode obj) throws Exception {
+			checkBusinessMessagePriorityCode(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.UnicodeChartsCode
+	 * UnicodeChartsCode}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ValidationByTable"</li>
+	 * </ul>
+	 */
+	public static final MMConstraint<UnicodeChartsCode> forUnicodeChartsCode = new MMConstraint<UnicodeChartsCode>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ValidationByTable";
+			owner_lazy = () -> UnicodeChartsCode.mmObject();
+		}
+
+		@Override
+		public void executeValidator(UnicodeChartsCode obj) throws Exception {
+			checkUnicodeChartsCode(obj);
 		}
 	};
 	/**
@@ -82,7 +135,7 @@ public class ConstraintValidationByTable {
 	 * definition} = "Must be a valid terrestrial language."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forLanguageCode = new MMConstraint() {
+	public static final MMConstraint<LanguageCode> forLanguageCode = new MMConstraint<LanguageCode>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ValidationByTable";
@@ -91,8 +144,8 @@ public class ConstraintValidationByTable {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkLanguageCode((LanguageCode) obj);
+		public void executeValidator(LanguageCode obj) throws Exception {
+			checkLanguageCode(obj);
 		}
 	};
 	/**
@@ -101,54 +154,30 @@ public class ConstraintValidationByTable {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.codeset.UnicodeChartsCode
-	 * UnicodeChartsCode}</li>
+	 * {@linkplain com.tools20022.repository.codeset.NationalityCode
+	 * NationalityCode}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "ValidationByTable"</li>
-	 * </ul>
-	 */
-	public static final MMConstraint forUnicodeChartsCode = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "ValidationByTable";
-			owner_lazy = () -> UnicodeChartsCode.mmObject();
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkUnicodeChartsCode((UnicodeChartsCode) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.codeset.BusinessMessagePriorityCode
-	 * BusinessMessagePriorityCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "ValidationByTable"</li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Must be a valid nationality."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forBusinessMessagePriorityCode = new MMConstraint() {
+	public static final MMConstraint<NationalityCode> forNationalityCode = new MMConstraint<NationalityCode>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ValidationByTable";
-			owner_lazy = () -> BusinessMessagePriorityCode.mmObject();
+			definition = "Must be a valid nationality.";
+			owner_lazy = () -> NationalityCode.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkBusinessMessagePriorityCode((BusinessMessagePriorityCode) obj);
+		public void executeValidator(NationalityCode obj) throws Exception {
+			checkNationalityCode(obj);
 		}
 	};
 
@@ -161,9 +190,9 @@ public class ConstraintValidationByTable {
 	}
 
 	/**
-	 * Must be a valid terrestrial language.
+	 * - no definition -
 	 */
-	public static void checkLanguageCode(LanguageCode obj) throws Exception {
+	public static void checkBusinessMessagePriorityCode(BusinessMessagePriorityCode obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
@@ -175,9 +204,16 @@ public class ConstraintValidationByTable {
 	}
 
 	/**
-	 * - no definition -
+	 * Must be a valid terrestrial language.
 	 */
-	public static void checkBusinessMessagePriorityCode(BusinessMessagePriorityCode obj) throws Exception {
+	public static void checkLanguageCode(LanguageCode obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * Must be a valid nationality.
+	 */
+	public static void checkNationalityCode(NationalityCode obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

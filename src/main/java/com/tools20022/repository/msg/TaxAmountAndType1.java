@@ -104,7 +104,7 @@ public class TaxAmountAndType1 {
 	 * definition} = "Specifies the type of the amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxAmountAndType1, Optional<TaxAmountType1Choice>> mmType = new MMMessageAttribute<TaxAmountAndType1, Optional<TaxAmountType1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxAmountAndType1.mmObject();
@@ -116,6 +116,16 @@ public class TaxAmountAndType1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> TaxAmountType1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<TaxAmountType1Choice> getValue(TaxAmountAndType1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(TaxAmountAndType1 obj, Optional<TaxAmountType1Choice> value) {
+			obj.setType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -152,7 +162,7 @@ public class TaxAmountAndType1 {
 	 * definition} = "Amount of money, which has been typed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxAmountAndType1, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<TaxAmountAndType1, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxAmountAndType1.mmObject();
@@ -164,6 +174,16 @@ public class TaxAmountAndType1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(TaxAmountAndType1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(TaxAmountAndType1 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 

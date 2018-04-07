@@ -27,6 +27,9 @@ import com.tools20022.repository.entity.OrganisationIdentification;
 import com.tools20022.repository.entity.PartyName;
 import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ClearingSystemMemberIdentification2;
+import com.tools20022.repository.msg.GenericFinancialIdentification1;
+import com.tools20022.repository.msg.PostalAddress6;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -122,7 +125,7 @@ public class FinancialInstitutionIdentification8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBICFI = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstitutionIdentification8, Optional<BICFIIdentifier>> mmBICFI = new MMMessageAttribute<FinancialInstitutionIdentification8, Optional<BICFIIdentifier>>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmBICFI;
 			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstitutionIdentification8.mmObject();
@@ -134,6 +137,16 @@ public class FinancialInstitutionIdentification8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> BICFIIdentifier.mmObject();
+		}
+
+		@Override
+		public Optional<BICFIIdentifier> getValue(FinancialInstitutionIdentification8 obj) {
+			return obj.getBICFI();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionIdentification8 obj, Optional<BICFIIdentifier> value) {
+			obj.setBICFI(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ClrSysMmbId")
@@ -171,7 +184,7 @@ public class FinancialInstitutionIdentification8 {
 	 * "Information used to identify a member within a clearing system."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmClearingSystemMemberIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FinancialInstitutionIdentification8, Optional<ClearingSystemMemberIdentification2>> mmClearingSystemMemberIdentification = new MMMessageAssociationEnd<FinancialInstitutionIdentification8, Optional<ClearingSystemMemberIdentification2>>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmClearingSystemMemberIdentificationType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstitutionIdentification8.mmObject();
@@ -183,7 +196,17 @@ public class FinancialInstitutionIdentification8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ClearingSystemMemberIdentification2.mmObject();
+			type_lazy = () -> ClearingSystemMemberIdentification2.mmObject();
+		}
+
+		@Override
+		public Optional<ClearingSystemMemberIdentification2> getValue(FinancialInstitutionIdentification8 obj) {
+			return obj.getClearingSystemMemberIdentification();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionIdentification8 obj, Optional<ClearingSystemMemberIdentification2> value) {
+			obj.setClearingSystemMemberIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Nm")
@@ -222,7 +245,7 @@ public class FinancialInstitutionIdentification8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstitutionIdentification8, Optional<Max140Text>> mmName = new MMMessageAttribute<FinancialInstitutionIdentification8, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstitutionIdentification8.mmObject();
@@ -234,6 +257,16 @@ public class FinancialInstitutionIdentification8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(FinancialInstitutionIdentification8 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionIdentification8 obj, Optional<Max140Text> value) {
+			obj.setName(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PstlAdr")
@@ -271,7 +304,7 @@ public class FinancialInstitutionIdentification8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPostalAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FinancialInstitutionIdentification8, Optional<PostalAddress6>> mmPostalAddress = new MMMessageAssociationEnd<FinancialInstitutionIdentification8, Optional<PostalAddress6>>() {
 		{
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstitutionIdentification8.mmObject();
@@ -283,7 +316,17 @@ public class FinancialInstitutionIdentification8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PostalAddress6.mmObject();
+			type_lazy = () -> PostalAddress6.mmObject();
+		}
+
+		@Override
+		public Optional<PostalAddress6> getValue(FinancialInstitutionIdentification8 obj) {
+			return obj.getPostalAddress();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionIdentification8 obj, Optional<PostalAddress6> value) {
+			obj.setPostalAddress(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Othr")
@@ -322,7 +365,7 @@ public class FinancialInstitutionIdentification8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOther = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FinancialInstitutionIdentification8, Optional<GenericFinancialIdentification1>> mmOther = new MMMessageAssociationEnd<FinancialInstitutionIdentification8, Optional<GenericFinancialIdentification1>>() {
 		{
 			businessComponentTrace_lazy = () -> OrganisationIdentification.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstitutionIdentification8.mmObject();
@@ -334,7 +377,17 @@ public class FinancialInstitutionIdentification8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericFinancialIdentification1.mmObject();
+			type_lazy = () -> GenericFinancialIdentification1.mmObject();
+		}
+
+		@Override
+		public Optional<GenericFinancialIdentification1> getValue(FinancialInstitutionIdentification8 obj) {
+			return obj.getOther();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionIdentification8 obj, Optional<GenericFinancialIdentification1> value) {
+			obj.setOther(value.orElse(null));
 		}
 	};
 
@@ -367,7 +420,7 @@ public class FinancialInstitutionIdentification8 {
 		return clearingSystemMemberIdentification == null ? Optional.empty() : Optional.of(clearingSystemMemberIdentification);
 	}
 
-	public FinancialInstitutionIdentification8 setClearingSystemMemberIdentification(com.tools20022.repository.msg.ClearingSystemMemberIdentification2 clearingSystemMemberIdentification) {
+	public FinancialInstitutionIdentification8 setClearingSystemMemberIdentification(ClearingSystemMemberIdentification2 clearingSystemMemberIdentification) {
 		this.clearingSystemMemberIdentification = clearingSystemMemberIdentification;
 		return this;
 	}
@@ -385,7 +438,7 @@ public class FinancialInstitutionIdentification8 {
 		return postalAddress == null ? Optional.empty() : Optional.of(postalAddress);
 	}
 
-	public FinancialInstitutionIdentification8 setPostalAddress(com.tools20022.repository.msg.PostalAddress6 postalAddress) {
+	public FinancialInstitutionIdentification8 setPostalAddress(PostalAddress6 postalAddress) {
 		this.postalAddress = postalAddress;
 		return this;
 	}
@@ -394,7 +447,7 @@ public class FinancialInstitutionIdentification8 {
 		return other == null ? Optional.empty() : Optional.of(other);
 	}
 
-	public FinancialInstitutionIdentification8 setOther(com.tools20022.repository.msg.GenericFinancialIdentification1 other) {
+	public FinancialInstitutionIdentification8 setOther(GenericFinancialIdentification1 other) {
 		this.other = other;
 		return this;
 	}

@@ -20,8 +20,8 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.PriorityCode;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.SystemBusinessInformation;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -114,7 +114,7 @@ public class InformationQualifier {
 	 * definition} = "System for which a qualifier is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystemBusinessInformation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InformationQualifier, SystemBusinessInformation> mmSystemBusinessInformation = new MMBusinessAssociationEnd<InformationQualifier, SystemBusinessInformation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
@@ -123,9 +123,19 @@ public class InformationQualifier {
 			definition = "System for which a qualifier is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmQualifier;
+			opposite_lazy = () -> SystemBusinessInformation.mmQualifier;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
+			type_lazy = () -> SystemBusinessInformation.mmObject();
+		}
+
+		@Override
+		public SystemBusinessInformation getValue(InformationQualifier obj) {
+			return obj.getSystemBusinessInformation();
+		}
+
+		@Override
+		public void setValue(InformationQualifier obj, SystemBusinessInformation value) {
+			obj.setSystemBusinessInformation(value);
 		}
 	};
 	protected YesNoIndicator isFormatted;
@@ -155,7 +165,7 @@ public class InformationQualifier {
 	 * definition} = "Indicates whether the information is formatted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIsFormatted = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InformationQualifier, YesNoIndicator> mmIsFormatted = new MMBusinessAttribute<InformationQualifier, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
@@ -167,12 +177,14 @@ public class InformationQualifier {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationQualifier.class.getMethod("getIsFormatted", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InformationQualifier obj) {
+			return obj.getIsFormatted();
+		}
+
+		@Override
+		public void setValue(InformationQualifier obj, YesNoIndicator value) {
+			obj.setIsFormatted(value);
 		}
 	};
 	protected PriorityCode priority;
@@ -201,7 +213,7 @@ public class InformationQualifier {
 	 * definition} = "Priority of the information."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPriority = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InformationQualifier, PriorityCode> mmPriority = new MMBusinessAttribute<InformationQualifier, PriorityCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
@@ -213,12 +225,14 @@ public class InformationQualifier {
 			simpleType_lazy = () -> PriorityCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationQualifier.class.getMethod("getPriority", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PriorityCode getValue(InformationQualifier obj) {
+			return obj.getPriority();
+		}
+
+		@Override
+		public void setValue(InformationQualifier obj, PriorityCode value) {
+			obj.setPriority(value);
 		}
 	};
 
@@ -229,7 +243,7 @@ public class InformationQualifier {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InformationQualifier";
 				definition = "Further qualifies the information provided in terms of its importance and its format.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemBusinessInformation.mmQualifier);
+				associationDomain_lazy = () -> Arrays.asList(SystemBusinessInformation.mmQualifier);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InformationQualifier.mmSystemBusinessInformation, com.tools20022.repository.entity.InformationQualifier.mmIsFormatted,
 						com.tools20022.repository.entity.InformationQualifier.mmPriority);
 			}
@@ -246,7 +260,7 @@ public class InformationQualifier {
 		return systemBusinessInformation;
 	}
 
-	public InformationQualifier setSystemBusinessInformation(com.tools20022.repository.entity.SystemBusinessInformation systemBusinessInformation) {
+	public InformationQualifier setSystemBusinessInformation(SystemBusinessInformation systemBusinessInformation) {
 		this.systemBusinessInformation = Objects.requireNonNull(systemBusinessInformation);
 		return this;
 	}

@@ -34,7 +34,7 @@ import java.util.Optional;
  * A rule that must be universally satisfied i.e. all conditions required for
  * the Constraint to be applicable, are known.
  */
-public class MMConstraint implements RuntimeValidatorAware, MMRepositoryConcept {
+public class MMConstraint<T> implements RuntimeValidatorAware<T>, MMRepositoryConcept {
 
 	/**
 	 * The description of a Constraint in a specific language, defined in

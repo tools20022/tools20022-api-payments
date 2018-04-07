@@ -24,7 +24,7 @@ import com.tools20022.repository.msg.UnableToApplyMissing1;
 
 /**
  * If Code is equal to NARR (Narrative), then AdditionalMissingInformation must
- * be present
+ * be present.
  */
 public class ConstraintAdditionalMissingInformationRule {
 
@@ -49,28 +49,28 @@ public class ConstraintAdditionalMissingInformationRule {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "If Code is equal to NARR (Narrative), then AdditionalMissingInformation must be present"
+	 * "If Code is equal to NARR (Narrative), then AdditionalMissingInformation must be present."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forUnableToApplyMissing1 = new MMConstraint() {
+	public static final MMConstraint<UnableToApplyMissing1> forUnableToApplyMissing1 = new MMConstraint<UnableToApplyMissing1>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalMissingInformationRule";
-			definition = "If Code is equal to NARR (Narrative), then AdditionalMissingInformation must be present";
+			definition = "If Code is equal to NARR (Narrative), then AdditionalMissingInformation must be present.";
 			owner_lazy = () -> UnableToApplyMissing1.mmObject();
 			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/AdditionalMissingInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"EqualToValue\"><leftOperand>/Code</leftOperand><rightOperand>Narrative</rightOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkUnableToApplyMissing1((UnableToApplyMissing1) obj);
+		public void executeValidator(UnableToApplyMissing1 obj) throws Exception {
+			checkUnableToApplyMissing1(obj);
 		}
 	};
 
 	/**
 	 * If Code is equal to NARR (Narrative), then AdditionalMissingInformation
-	 * must be present
+	 * must be present.
 	 */
 	public static void checkUnableToApplyMissing1(UnableToApplyMissing1 obj) throws Exception {
 		throw new NotImplementedConstraintException();

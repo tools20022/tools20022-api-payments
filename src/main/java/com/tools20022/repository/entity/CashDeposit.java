@@ -20,11 +20,11 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.Max15NumericText;
+import com.tools20022.repository.entity.BankingTransaction;
 import com.tools20022.repository.entity.IndividualPayment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CashDeposit1;
-import com.tools20022.repository.msg.EntryTransaction8;
-import java.lang.reflect.Method;
+import com.tools20022.repository.msg.EntryTransaction9;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -70,8 +70,8 @@ import java.util.Objects;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.EntryTransaction8#mmCashDeposit
- * EntryTransaction8.mmCashDeposit}</li>
+ * {@linkplain com.tools20022.repository.msg.EntryTransaction9#mmCashDeposit
+ * EntryTransaction9.mmCashDeposit}</li>
  * </ul>
  * </li>
  * <li>
@@ -136,7 +136,7 @@ public class CashDeposit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNoteDenomination = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDeposit, CurrencyAndAmount> mmNoteDenomination = new MMBusinessAttribute<CashDeposit, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashDeposit1.mmNoteDenomination);
 			isDerived = false;
@@ -149,12 +149,14 @@ public class CashDeposit extends IndividualPayment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDeposit.class.getMethod("getNoteDenomination", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CashDeposit obj) {
+			return obj.getNoteDenomination();
+		}
+
+		@Override
+		public void setValue(CashDeposit obj, CurrencyAndAmount value) {
+			obj.setNoteDenomination(value);
 		}
 	};
 	protected Max15NumericText numberOfNotes;
@@ -192,7 +194,7 @@ public class CashDeposit extends IndividualPayment {
 	 * "Specifies the number of notes of the same denomination in the deposit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumberOfNotes = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDeposit, Max15NumericText> mmNumberOfNotes = new MMBusinessAttribute<CashDeposit, Max15NumericText>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashDeposit1.mmNumberOfNotes);
 			isDerived = false;
@@ -205,12 +207,14 @@ public class CashDeposit extends IndividualPayment {
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDeposit.class.getMethod("getNumberOfNotes", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max15NumericText getValue(CashDeposit obj) {
+			return obj.getNumberOfNotes();
+		}
+
+		@Override
+		public void setValue(CashDeposit obj, Max15NumericText value) {
+			obj.setNumberOfNotes(value);
 		}
 	};
 	protected CurrencyAndAmount depositAmount;
@@ -248,7 +252,7 @@ public class CashDeposit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDepositAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDeposit, CurrencyAndAmount> mmDepositAmount = new MMBusinessAttribute<CashDeposit, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashDeposit1.mmAmount);
 			isDerived = false;
@@ -261,12 +265,14 @@ public class CashDeposit extends IndividualPayment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDeposit.class.getMethod("getDepositAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CashDeposit obj) {
+			return obj.getDepositAmount();
+		}
+
+		@Override
+		public void setValue(CashDeposit obj, CurrencyAndAmount value) {
+			obj.setDepositAmount(value);
 		}
 	};
 	protected BankingTransaction relatedBankingTransaction;
@@ -303,7 +309,7 @@ public class CashDeposit extends IndividualPayment {
 	 * "Describes the type of transaction associated with a cash deposit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedBankingTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashDeposit, BankingTransaction> mmRelatedBankingTransaction = new MMBusinessAssociationEnd<CashDeposit, BankingTransaction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDeposit.mmObject();
@@ -312,9 +318,19 @@ public class CashDeposit extends IndividualPayment {
 			definition = "Describes the type of transaction associated with a cash deposit.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmCashDeposit;
+			opposite_lazy = () -> BankingTransaction.mmCashDeposit;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
+			type_lazy = () -> BankingTransaction.mmObject();
+		}
+
+		@Override
+		public BankingTransaction getValue(CashDeposit obj) {
+			return obj.getRelatedBankingTransaction();
+		}
+
+		@Override
+		public void setValue(CashDeposit obj, BankingTransaction value) {
+			obj.setRelatedBankingTransaction(value);
 		}
 	};
 
@@ -325,8 +341,8 @@ public class CashDeposit extends IndividualPayment {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashDeposit";
 				definition = "Amount of money representing a value paid by a debtor to an agent bank.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BankingTransaction.mmCashDeposit);
-				derivationElement_lazy = () -> Arrays.asList(EntryTransaction8.mmCashDeposit);
+				associationDomain_lazy = () -> Arrays.asList(BankingTransaction.mmCashDeposit);
+				derivationElement_lazy = () -> Arrays.asList(EntryTransaction9.mmCashDeposit);
 				superType_lazy = () -> IndividualPayment.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashDeposit.mmNoteDenomination, com.tools20022.repository.entity.CashDeposit.mmNumberOfNotes, com.tools20022.repository.entity.CashDeposit.mmDepositAmount,
 						com.tools20022.repository.entity.CashDeposit.mmRelatedBankingTransaction);
@@ -372,7 +388,7 @@ public class CashDeposit extends IndividualPayment {
 		return relatedBankingTransaction;
 	}
 
-	public CashDeposit setRelatedBankingTransaction(com.tools20022.repository.entity.BankingTransaction relatedBankingTransaction) {
+	public CashDeposit setRelatedBankingTransaction(BankingTransaction relatedBankingTransaction) {
 		this.relatedBankingTransaction = Objects.requireNonNull(relatedBankingTransaction);
 		return this;
 	}

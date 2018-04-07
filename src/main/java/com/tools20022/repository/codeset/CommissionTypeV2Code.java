@@ -290,7 +290,7 @@ public class CommissionTypeV2Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Commission for redeeming  an investment, when an investor redeems an investment fund within a certain period of time."
+	 * "Commission for redeeming an investment, when an investor redeems an investment fund within a certain period of time."
 	 * </li>
 	 * </ul>
 	 */
@@ -298,7 +298,7 @@ public class CommissionTypeV2Code extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BackEndLoad";
-			definition = "Commission for redeeming  an investment, when an investor redeems an investment fund within a certain period of time.";
+			definition = "Commission for redeeming an investment, when an investor redeems an investment fund within a certain period of time.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CommissionTypeV2Code.mmObject();
 			codeName = "BEND";
 		}
@@ -596,7 +596,7 @@ public class CommissionTypeV2Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Amount or percentage that is added to an offer price when an investor buys from a broker or market maker.  In this case, the price is adjusted to reflect changing market conditions."
+	 * "Amount or percentage that is added to an offer price when an investor buys from a broker or market maker. In this case, the price is adjusted to reflect changing market conditions."
 	 * </li>
 	 * </ul>
 	 */
@@ -604,7 +604,7 @@ public class CommissionTypeV2Code extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Markup";
-			definition = "Amount or percentage that is added to an offer price when an investor buys from a broker or market maker.  In this case, the price is adjusted to reflect changing market conditions.";
+			definition = "Amount or percentage that is added to an offer price when an investor buys from a broker or market maker. In this case, the price is adjusted to reflect changing market conditions.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CommissionTypeV2Code.mmObject();
 			codeName = "MARK";
 		}
@@ -796,7 +796,7 @@ public class CommissionTypeV2Code extends MMCode {
 		}
 	};
 	/**
-	 * Differential or deferred payment commission rate.  
+	 * Differential or deferred payment commission rate.  .
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -813,14 +813,14 @@ public class CommissionTypeV2Code extends MMCode {
 	 * name} = "DifferentialOrDeferredPayment"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Differential or deferred payment commission rate.  "</li>
+	 * definition} = "Differential or deferred payment commission rate.  ."</li>
 	 * </ul>
 	 */
 	public static final CommissionTypeV2Code DifferentialOrDeferredPayment = new CommissionTypeV2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DifferentialOrDeferredPayment";
-			definition = "Differential or deferred payment commission rate.  ";
+			definition = "Differential or deferred payment commission rate.  .";
 			owner_lazy = () -> com.tools20022.repository.codeset.CommissionTypeV2Code.mmObject();
 			codeName = "DFDP";
 		}

@@ -36,6 +36,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ExternalPaymentTransactionStatusCode
+ * ExternalPaymentTransactionStatusCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -76,6 +79,7 @@ public class ExternalPaymentTransactionStatus1Code extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalPaymentTransactionStatus1Code";
 				definition = "Specifies the status of an individual payment instructions, as published in an external payment transaction status code set.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				trace_lazy = () -> ExternalPaymentTransactionStatusCode.mmObject();
 				minLength = 1;
 				maxLength = 4;
 			}

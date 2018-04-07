@@ -20,7 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.msg.OriginalGroupHeader7;
+import com.tools20022.repository.msg.OriginalGroupHeader13;
 import com.tools20022.repository.msg.OriginalGroupInformation28;
 
 /**
@@ -35,8 +35,8 @@ public class ConstraintStatusReasonInformationRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader7
-	 * OriginalGroupHeader7}</li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader13
+	 * OriginalGroupHeader13}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"EqualToValue\"&gt;&lt;leftOperand&gt;/GroupStatus&lt;/leftOperand&gt;&lt;rightOperand&gt;Pending&lt;/rightOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"EqualToValue\"&gt;&lt;leftOperand&gt;/GroupStatus&lt;/leftOperand&gt;&lt;rightOperand&gt;Rejected&lt;/rightOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/StatusReasonInformation[1]&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/StatusReasonInformation[*]/AdditionalInformation[*]&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/GroupStatus&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
@@ -54,18 +54,18 @@ public class ConstraintStatusReasonInformationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOriginalGroupHeader7 = new MMConstraint() {
+	public static final MMConstraint<OriginalGroupHeader13> forOriginalGroupHeader13 = new MMConstraint<OriginalGroupHeader13>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StatusReasonInformationRule";
 			definition = "If GroupStatus is present and is different from RJCT or PDNG then StatusReasonInformation/AdditionalInformation must be absent.";
-			owner_lazy = () -> OriginalGroupHeader7.mmObject();
+			owner_lazy = () -> OriginalGroupHeader13.mmObject();
 			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>OR</connector><BooleanRule xsi:type=\"EqualToValue\"><leftOperand>/GroupStatus</leftOperand><rightOperand>Pending</rightOperand></BooleanRule><BooleanRule xsi:type=\"EqualToValue\"><leftOperand>/GroupStatus</leftOperand><rightOperand>Rejected</rightOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/StatusReasonInformation[1]</leftOperand></BooleanRule><BooleanRule xsi:type=\"Presence\"><leftOperand>/StatusReasonInformation[*]/AdditionalInformation[*]</leftOperand></BooleanRule><BooleanRule xsi:type=\"Presence\"><leftOperand>/GroupStatus</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalGroupHeader7((OriginalGroupHeader7) obj);
+		public void executeValidator(OriginalGroupHeader13 obj) throws Exception {
+			checkOriginalGroupHeader13(obj);
 		}
 	};
 	/**
@@ -93,7 +93,7 @@ public class ConstraintStatusReasonInformationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOriginalGroupInformation28 = new MMConstraint() {
+	public static final MMConstraint<OriginalGroupInformation28> forOriginalGroupInformation28 = new MMConstraint<OriginalGroupInformation28>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StatusReasonInformationRule";
@@ -103,8 +103,8 @@ public class ConstraintStatusReasonInformationRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalGroupInformation28((OriginalGroupInformation28) obj);
+		public void executeValidator(OriginalGroupInformation28 obj) throws Exception {
+			checkOriginalGroupInformation28(obj);
 		}
 	};
 
@@ -112,7 +112,7 @@ public class ConstraintStatusReasonInformationRule {
 	 * If GroupStatus is present and is different from RJCT or PDNG then
 	 * StatusReasonInformation/AdditionalInformation must be absent.
 	 */
-	public static void checkOriginalGroupHeader7(OriginalGroupHeader7 obj) throws Exception {
+	public static void checkOriginalGroupHeader13(OriginalGroupHeader13 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 

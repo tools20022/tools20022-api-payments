@@ -20,8 +20,9 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CollateralProposalResponseCode;
 import com.tools20022.repository.codeset.ProposalTypeCode;
+import com.tools20022.repository.entity.CollateralManagement;
+import com.tools20022.repository.entity.CollateralMovement;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -80,7 +81,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CollateralProposal {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.CollateralMovement> proposedCollateralMovement;
+	protected List<CollateralMovement> proposedCollateralMovement;
 	/**
 	 * 
 	 <p>
@@ -116,7 +117,7 @@ public class CollateralProposal {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProposedCollateralMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralProposal, List<CollateralMovement>> mmProposedCollateralMovement = new MMBusinessAssociationEnd<CollateralProposal, List<CollateralMovement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralProposal.mmObject();
@@ -124,9 +125,19 @@ public class CollateralProposal {
 			name = "ProposedCollateralMovement";
 			definition = "Details the movement of collateral that is proposed to be delivered or returned by one of the collateral parties.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmRelatedCollateralProposal;
+			opposite_lazy = () -> CollateralMovement.mmRelatedCollateralProposal;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
+			type_lazy = () -> CollateralMovement.mmObject();
+		}
+
+		@Override
+		public List<CollateralMovement> getValue(CollateralProposal obj) {
+			return obj.getProposedCollateralMovement();
+		}
+
+		@Override
+		public void setValue(CollateralProposal obj, List<CollateralMovement> value) {
+			obj.setProposedCollateralMovement(value);
 		}
 	};
 	protected CollateralProposalResponseCode responseType;
@@ -158,7 +169,7 @@ public class CollateralProposal {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmResponseType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralProposal, CollateralProposalResponseCode> mmResponseType = new MMBusinessAttribute<CollateralProposal, CollateralProposalResponseCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralProposal.mmObject();
@@ -170,12 +181,14 @@ public class CollateralProposal {
 			simpleType_lazy = () -> CollateralProposalResponseCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralProposal.class.getMethod("getResponseType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CollateralProposalResponseCode getValue(CollateralProposal obj) {
+			return obj.getResponseType();
+		}
+
+		@Override
+		public void setValue(CollateralProposal obj, CollateralProposalResponseCode value) {
+			obj.setResponseType(value);
 		}
 	};
 	protected ProposalTypeCode type;
@@ -206,7 +219,7 @@ public class CollateralProposal {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralProposal, ProposalTypeCode> mmType = new MMBusinessAttribute<CollateralProposal, ProposalTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralProposal.mmObject();
@@ -218,12 +231,14 @@ public class CollateralProposal {
 			simpleType_lazy = () -> ProposalTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralProposal.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ProposalTypeCode getValue(CollateralProposal obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(CollateralProposal obj, ProposalTypeCode value) {
+			obj.setType(value);
 		}
 	};
 	protected CollateralManagement relatedManagementProcess;
@@ -262,7 +277,7 @@ public class CollateralProposal {
 	 * "Process which groups the activities related to collateral."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedManagementProcess = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralProposal, Optional<CollateralManagement>> mmRelatedManagementProcess = new MMBusinessAssociationEnd<CollateralProposal, Optional<CollateralManagement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralProposal.mmObject();
@@ -271,9 +286,19 @@ public class CollateralProposal {
 			definition = "Process which groups the activities related to collateral.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmCollateralProposal;
+			opposite_lazy = () -> CollateralManagement.mmCollateralProposal;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
+			type_lazy = () -> CollateralManagement.mmObject();
+		}
+
+		@Override
+		public Optional<CollateralManagement> getValue(CollateralProposal obj) {
+			return obj.getRelatedManagementProcess();
+		}
+
+		@Override
+		public void setValue(CollateralProposal obj, Optional<CollateralManagement> value) {
+			obj.setRelatedManagementProcess(value.orElse(null));
 		}
 	};
 
@@ -284,7 +309,7 @@ public class CollateralProposal {
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "CollateralProposal";
 				definition = "Specifies collateral proposed to the counterparty.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralMovement.mmRelatedCollateralProposal, com.tools20022.repository.entity.CollateralManagement.mmCollateralProposal);
+				associationDomain_lazy = () -> Arrays.asList(CollateralMovement.mmRelatedCollateralProposal, CollateralManagement.mmCollateralProposal);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralProposal.mmProposedCollateralMovement, com.tools20022.repository.entity.CollateralProposal.mmResponseType,
 						com.tools20022.repository.entity.CollateralProposal.mmType, com.tools20022.repository.entity.CollateralProposal.mmRelatedManagementProcess);
 			}
@@ -301,7 +326,7 @@ public class CollateralProposal {
 		return proposedCollateralMovement == null ? proposedCollateralMovement = new ArrayList<>() : proposedCollateralMovement;
 	}
 
-	public CollateralProposal setProposedCollateralMovement(List<com.tools20022.repository.entity.CollateralMovement> proposedCollateralMovement) {
+	public CollateralProposal setProposedCollateralMovement(List<CollateralMovement> proposedCollateralMovement) {
 		this.proposedCollateralMovement = Objects.requireNonNull(proposedCollateralMovement);
 		return this;
 	}
@@ -328,7 +353,7 @@ public class CollateralProposal {
 		return relatedManagementProcess == null ? Optional.empty() : Optional.of(relatedManagementProcess);
 	}
 
-	public CollateralProposal setRelatedManagementProcess(com.tools20022.repository.entity.CollateralManagement relatedManagementProcess) {
+	public CollateralProposal setRelatedManagementProcess(CollateralManagement relatedManagementProcess) {
 		this.relatedManagementProcess = relatedManagementProcess;
 		return this;
 	}

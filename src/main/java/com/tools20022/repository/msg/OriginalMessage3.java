@@ -117,7 +117,7 @@ public class OriginalMessage3 {
 	 * name} = "OriginalSender"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Original message sender used to identify the message. "</li>
+	 * definition} = "Original message sender used to identify the message."</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -125,7 +125,7 @@ public class OriginalMessage3 {
 	 * OriginalMessage2.mmOriginalSender}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalSender = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<OriginalMessage3, Optional<Party28Choice>> mmOriginalSender = new MMMessageAssociationEnd<OriginalMessage3, Optional<Party28Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> InitiatingPartyRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessage3.mmObject();
@@ -133,12 +133,22 @@ public class OriginalMessage3 {
 			xmlTag = "OrgnlSndr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalSender";
-			definition = "Original message sender used to identify the message. ";
+			definition = "Original message sender used to identify the message.";
 			previousVersion_lazy = () -> OriginalMessage2.mmOriginalSender;
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> Party28Choice.mmObject();
+		}
+
+		@Override
+		public Optional<Party28Choice> getValue(OriginalMessage3 obj) {
+			return obj.getOriginalSender();
+		}
+
+		@Override
+		public void setValue(OriginalMessage3 obj, Optional<Party28Choice> value) {
+			obj.setOriginalSender(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlMsgId", required = true)
@@ -182,7 +192,7 @@ public class OriginalMessage3 {
 	 * OriginalMessage2.mmOriginalMessageIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalMessage3, Max35Text> mmOriginalMessageIdentification = new MMMessageAttribute<OriginalMessage3, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmExecutionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessage3.mmObject();
@@ -195,6 +205,16 @@ public class OriginalMessage3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(OriginalMessage3 obj) {
+			return obj.getOriginalMessageIdentification();
+		}
+
+		@Override
+		public void setValue(OriginalMessage3 obj, Max35Text value) {
+			obj.setOriginalMessageIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgnlMsgNmId", required = true)
@@ -233,7 +253,7 @@ public class OriginalMessage3 {
 	 * OriginalMessage2.mmOriginalMessageNameIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalMessageNameIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalMessage3, Max35Text> mmOriginalMessageNameIdentification = new MMMessageAttribute<OriginalMessage3, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessage3.mmObject();
 			isDerived = false;
@@ -245,6 +265,16 @@ public class OriginalMessage3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(OriginalMessage3 obj) {
+			return obj.getOriginalMessageNameIdentification();
+		}
+
+		@Override
+		public void setValue(OriginalMessage3 obj, Max35Text value) {
+			obj.setOriginalMessageNameIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgnlCreDtTm")
@@ -286,7 +316,7 @@ public class OriginalMessage3 {
 	 * OriginalMessage2.mmOriginalCreationDateTime}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalMessage3, Optional<ISODateTime>> mmOriginalCreationDateTime = new MMMessageAttribute<OriginalMessage3, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentExecution.mmCreationDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessage3.mmObject();
@@ -299,6 +329,16 @@ public class OriginalMessage3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public Optional<ISODateTime> getValue(OriginalMessage3 obj) {
+			return obj.getOriginalCreationDateTime();
+		}
+
+		@Override
+		public void setValue(OriginalMessage3 obj, Optional<ISODateTime> value) {
+			obj.setOriginalCreationDateTime(value.orElse(null));
 		}
 	};
 

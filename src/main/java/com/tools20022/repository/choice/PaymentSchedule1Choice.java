@@ -111,7 +111,7 @@ public class PaymentSchedule1Choice {
 	 * ShipmentSchedule2Choice.mmShipmentDateRange}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDateRange = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PaymentSchedule1Choice, PaymentDateRange1> mmDateRange = new MMMessageAssociationEnd<PaymentSchedule1Choice, PaymentDateRange1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.PaymentSchedule1Choice.mmObject();
 			isDerived = false;
@@ -124,6 +124,16 @@ public class PaymentSchedule1Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> PaymentDateRange1.mmObject();
+		}
+
+		@Override
+		public PaymentDateRange1 getValue(PaymentSchedule1Choice obj) {
+			return obj.getDateRange();
+		}
+
+		@Override
+		public void setValue(PaymentSchedule1Choice obj, PaymentDateRange1 value) {
+			obj.setDateRange(value);
 		}
 	};
 	@XmlElement(name = "SubSchdl", required = true)
@@ -161,7 +171,7 @@ public class PaymentSchedule1Choice {
 	 * ShipmentSchedule2Choice.mmShipmentSubSchedule}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSubSchedule = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PaymentSchedule1Choice, List<PaymentDateRange2>> mmSubSchedule = new MMMessageAssociationEnd<PaymentSchedule1Choice, List<PaymentDateRange2>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.PaymentSchedule1Choice.mmObject();
 			isDerived = false;
@@ -173,6 +183,16 @@ public class PaymentSchedule1Choice {
 			minOccurs = 2;
 			isComposite = true;
 			type_lazy = () -> PaymentDateRange2.mmObject();
+		}
+
+		@Override
+		public List<PaymentDateRange2> getValue(PaymentSchedule1Choice obj) {
+			return obj.getSubSchedule();
+		}
+
+		@Override
+		public void setValue(PaymentSchedule1Choice obj, List<PaymentDateRange2> value) {
+			obj.setSubSchedule(value);
 		}
 	};
 

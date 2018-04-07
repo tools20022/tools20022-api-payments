@@ -24,10 +24,9 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
-import com.tools20022.repository.entity.Party;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -227,10 +226,10 @@ public class Organisation extends Party {
 	 * definition} = "Purpose of the organisation, eg, charity."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Organisation, Max35Text> mmPurpose = new MMBusinessAttribute<Organisation, Max35Text>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			semanticMarkup_lazy = () -> Arrays
 					.asList(new OtherSemanticMarkup(
 							this,
@@ -246,12 +245,14 @@ public class Organisation extends Party {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Organisation.class.getMethod("getPurpose", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Organisation obj) {
+			return obj.getPurpose();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Max35Text value) {
+			obj.setPurpose(value);
 		}
 	};
 	protected ISODateTime registrationDate;
@@ -305,11 +306,11 @@ public class Organisation extends Party {
 	 * "Date and time at which a given organisation was officially registered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRegistrationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Organisation, ISODateTime> mmRegistrationDate = new MMBusinessAttribute<Organisation, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Organisation12.mmRegistrationDate, OrganisationModification1.mmRegistrationDate, LegalOrganisation2.mmRegistrationDate);
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			semanticMarkup_lazy = () -> Arrays
 					.asList(new OtherSemanticMarkup(
 							this,
@@ -325,12 +326,14 @@ public class Organisation extends Party {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Organisation.class.getMethod("getRegistrationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Organisation obj) {
+			return obj.getRegistrationDate();
+		}
+
+		@Override
+		public void setValue(Organisation obj, ISODateTime value) {
+			obj.setRegistrationDate(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.OrganisationIdentification> organisationIdentification;
@@ -378,36 +381,6 @@ public class Organisation extends Party {
 	 * AccountReport15.mmTransferAccountServicerIdentification}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.ChargesRecord1#mmAgent
 	 * ChargesRecord1.mmAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionAgents3#mmDebtorAgent
-	 * TransactionAgents3.mmDebtorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionAgents3#mmCreditorAgent
-	 * TransactionAgents3.mmCreditorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionAgents3#mmIntermediaryAgent1
-	 * TransactionAgents3.mmIntermediaryAgent1}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionAgents3#mmIntermediaryAgent2
-	 * TransactionAgents3.mmIntermediaryAgent2}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionAgents3#mmIntermediaryAgent3
-	 * TransactionAgents3.mmIntermediaryAgent3}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionAgents3#mmReceivingAgent
-	 * TransactionAgents3.mmReceivingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionAgents3#mmDeliveringAgent
-	 * TransactionAgents3.mmDeliveringAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionAgents3#mmIssuingAgent
-	 * TransactionAgents3.mmIssuingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionAgents3#mmSettlementPlace
-	 * TransactionAgents3.mmSettlementPlace}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionAgents3#mmProprietary
-	 * TransactionAgents3.mmProprietary}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.ChargesRecord2#mmAgent
 	 * ChargesRecord2.mmAgent}</li>
 	 * <li>
@@ -419,24 +392,6 @@ public class Organisation extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction4#mmInstructingReimbursementAgent
 	 * SettlementInstruction4.mmInstructingReimbursementAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader56#mmForwardingAgent
-	 * GroupHeader56.mmForwardingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader56#mmDebtorAgent
-	 * GroupHeader56.mmDebtorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader56#mmCreditorAgent
-	 * GroupHeader56.mmCreditorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader52#mmForwardingAgent
-	 * GroupHeader52.mmForwardingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader52#mmDebtorAgent
-	 * GroupHeader52.mmDebtorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader52#mmCreditorAgent
-	 * GroupHeader52.mmCreditorAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader50#mmInstructingAgent
 	 * GroupHeader50.mmInstructingAgent}</li>
@@ -467,9 +422,6 @@ public class Organisation extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.IdentificationInformation2#mmAgent
 	 * IdentificationInformation2.mmAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReportingRequest3#mmAccountServicer
-	 * ReportingRequest3.mmAccountServicer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction3#mmInstructingReimbursementAgent
 	 * SettlementInstruction3.mmInstructingReimbursementAgent}</li>
@@ -510,27 +462,6 @@ public class Organisation extends Party {
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader62#mmForwardingAgent
 	 * GroupHeader62.mmForwardingAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmPreviousInstructingAgent
-	 * CreditTransferTransaction23.mmPreviousInstructingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmInstructingAgent
-	 * CreditTransferTransaction23.mmInstructingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmInstructedAgent
-	 * CreditTransferTransaction23.mmInstructedAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmIntermediaryAgent1
-	 * CreditTransferTransaction23.mmIntermediaryAgent1}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmIntermediaryAgent2
-	 * CreditTransferTransaction23.mmIntermediaryAgent2}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmIntermediaryAgent3
-	 * CreditTransferTransaction23.mmIntermediaryAgent3}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmCreditorAgent
-	 * CreditTransferTransaction23.mmCreditorAgent}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader70#mmInstructingAgent
 	 * GroupHeader70.mmInstructingAgent}</li>
 	 * <li>
@@ -542,27 +473,6 @@ public class Organisation extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AccountNotification13#mmIntermediaryAgent
 	 * AccountNotification13.mmIntermediaryAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmPreviousInstructingAgent
-	 * CreditTransferTransaction25.mmPreviousInstructingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmInstructingAgent
-	 * CreditTransferTransaction25.mmInstructingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmInstructedAgent
-	 * CreditTransferTransaction25.mmInstructedAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmIntermediaryAgent1
-	 * CreditTransferTransaction25.mmIntermediaryAgent1}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmIntermediaryAgent2
-	 * CreditTransferTransaction25.mmIntermediaryAgent2}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmIntermediaryAgent3
-	 * CreditTransferTransaction25.mmIntermediaryAgent3}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmCreditorAgent
-	 * CreditTransferTransaction25.mmCreditorAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader72#mmInstructingAgent
 	 * GroupHeader72.mmInstructingAgent}</li>
@@ -584,21 +494,6 @@ public class Organisation extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalNotificationReference8#mmIntermediaryAgent
 	 * OriginalNotificationReference8.mmIntermediaryAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmPreviousInstructingAgent
-	 * CreditTransferTransaction24.mmPreviousInstructingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmIntermediaryAgent1
-	 * CreditTransferTransaction24.mmIntermediaryAgent1}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmIntermediaryAgent2
-	 * CreditTransferTransaction24.mmIntermediaryAgent2}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmIntermediaryAgent3
-	 * CreditTransferTransaction24.mmIntermediaryAgent3}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmCreditorAgent
-	 * CreditTransferTransaction24.mmCreditorAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction26#mmIntermediaryAgent1
 	 * CreditTransferTransaction26.mmIntermediaryAgent1}</li>
@@ -645,12 +540,6 @@ public class Organisation extends Party {
 	 * {@linkplain com.tools20022.repository.msg.NotificationItem6#mmIntermediaryAgent
 	 * NotificationItem6.mmIntermediaryAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction73#mmInstructingAgent
-	 * PaymentTransaction73.mmInstructingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction73#mmInstructedAgent
-	 * PaymentTransaction73.mmInstructedAgent}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction21#mmChargesAccountAgent
 	 * PaymentInstruction21.mmChargesAccountAgent}</li>
 	 * <li>
@@ -674,18 +563,6 @@ public class Organisation extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation21#mmDebtorAgent
 	 * DirectDebitTransactionInformation21.mmDebtorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction80#mmInstructingAgent
-	 * PaymentTransaction80.mmInstructingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction80#mmInstructedAgent
-	 * PaymentTransaction80.mmInstructedAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction81#mmInstructingAgent
-	 * PaymentTransaction81.mmInstructingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction81#mmInstructedAgent
-	 * PaymentTransaction81.mmInstructedAgent}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Mandate10#mmCreditorAgent
 	 * Mandate10.mmCreditorAgent}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Mandate10#mmDebtorAgent
@@ -693,12 +570,6 @@ public class Organisation extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction23#mmDebtorAgent
 	 * PaymentInstruction23.mmDebtorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction76#mmInstructingAgent
-	 * PaymentTransaction76.mmInstructingAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction76#mmInstructedAgent
-	 * PaymentTransaction76.mmInstructedAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction22#mmDebtorAgent
 	 * PaymentInstruction22.mmDebtorAgent}</li>
@@ -724,32 +595,241 @@ public class Organisation extends Party {
 	 * <li>{@linkplain com.tools20022.repository.msg.Mandate8#mmDebtorAgent
 	 * Mandate8.mmDebtorAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction75#mmAssigner
-	 * PaymentTransaction75.mmAssigner}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction75#mmAssignee
-	 * PaymentTransaction75.mmAssignee}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails11#mmOriginalCreditorAgent
 	 * AmendmentInformationDetails11.mmOriginalCreditorAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails11#mmOriginalDebtorAgent
 	 * AmendmentInformationDetails11.mmOriginalDebtorAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmDebtorAgent
-	 * PaymentComplementaryInformation6.mmDebtorAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24#mmDebtorAgent
+	 * PaymentInstruction24.mmDebtorAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmIntermediaryAgent1
-	 * PaymentComplementaryInformation6.mmIntermediaryAgent1}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24#mmChargesAccountAgent
+	 * PaymentInstruction24.mmChargesAccountAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmIntermediaryAgent2
-	 * PaymentComplementaryInformation6.mmIntermediaryAgent2}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction27#mmIntermediaryAgent1
+	 * CreditTransferTransaction27.mmIntermediaryAgent1}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmIntermediaryAgent3
-	 * PaymentComplementaryInformation6.mmIntermediaryAgent3}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction27#mmIntermediaryAgent2
+	 * CreditTransferTransaction27.mmIntermediaryAgent2}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmPreviousInstructingAgent
-	 * PaymentComplementaryInformation6.mmPreviousInstructingAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction27#mmIntermediaryAgent3
+	 * CreditTransferTransaction27.mmIntermediaryAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction27#mmCreditorAgent
+	 * CreditTransferTransaction27.mmCreditorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmDebtorAgent
+	 * PaymentComplementaryInformation7.mmDebtorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmIntermediaryAgent1
+	 * PaymentComplementaryInformation7.mmIntermediaryAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmIntermediaryAgent2
+	 * PaymentComplementaryInformation7.mmIntermediaryAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmIntermediaryAgent3
+	 * PaymentComplementaryInformation7.mmIntermediaryAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmPreviousInstructingAgent1
+	 * PaymentComplementaryInformation7.mmPreviousInstructingAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmPreviousInstructingAgent2
+	 * PaymentComplementaryInformation7.mmPreviousInstructingAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmPreviousInstructingAgent3
+	 * PaymentComplementaryInformation7.mmPreviousInstructingAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction87#mmInstructingAgent
+	 * PaymentTransaction87.mmInstructingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction87#mmInstructedAgent
+	 * PaymentTransaction87.mmInstructedAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmPreviousInstructingAgent1
+	 * CreditTransferTransaction31.mmPreviousInstructingAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmPreviousInstructingAgent2
+	 * CreditTransferTransaction31.mmPreviousInstructingAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmPreviousInstructingAgent3
+	 * CreditTransferTransaction31.mmPreviousInstructingAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmInstructingAgent
+	 * CreditTransferTransaction31.mmInstructingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmInstructedAgent
+	 * CreditTransferTransaction31.mmInstructedAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmIntermediaryAgent1
+	 * CreditTransferTransaction31.mmIntermediaryAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmIntermediaryAgent2
+	 * CreditTransferTransaction31.mmIntermediaryAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmIntermediaryAgent3
+	 * CreditTransferTransaction31.mmIntermediaryAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmCreditorAgent
+	 * CreditTransferTransaction31.mmCreditorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction88#mmInstructingAgent
+	 * PaymentTransaction88.mmInstructingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction88#mmInstructedAgent
+	 * PaymentTransaction88.mmInstructedAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReportingRequest4#mmAccountServicer
+	 * ReportingRequest4.mmAccountServicer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction91#mmInstructingAgent
+	 * PaymentTransaction91.mmInstructingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction91#mmInstructedAgent
+	 * PaymentTransaction91.mmInstructedAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmInstructingAgent
+	 * TransactionAgents4.mmInstructingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmInstructedAgent
+	 * TransactionAgents4.mmInstructedAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmDebtorAgent
+	 * TransactionAgents4.mmDebtorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmCreditorAgent
+	 * TransactionAgents4.mmCreditorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmIntermediaryAgent1
+	 * TransactionAgents4.mmIntermediaryAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmIntermediaryAgent2
+	 * TransactionAgents4.mmIntermediaryAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmIntermediaryAgent3
+	 * TransactionAgents4.mmIntermediaryAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmReceivingAgent
+	 * TransactionAgents4.mmReceivingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmDeliveringAgent
+	 * TransactionAgents4.mmDeliveringAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmIssuingAgent
+	 * TransactionAgents4.mmIssuingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmSettlementPlace
+	 * TransactionAgents4.mmSettlementPlace}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionAgents4#mmProprietary
+	 * TransactionAgents4.mmProprietary}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction89#mmAssigner
+	 * PaymentTransaction89.mmAssigner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction89#mmAssignee
+	 * PaymentTransaction89.mmAssignee}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmPreviousInstructingAgent1
+	 * TransactionParties5.mmPreviousInstructingAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmPreviousInstructingAgent2
+	 * TransactionParties5.mmPreviousInstructingAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmPreviousInstructingAgent3
+	 * TransactionParties5.mmPreviousInstructingAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmIntermediaryAgent1
+	 * TransactionParties5.mmIntermediaryAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmIntermediaryAgent2
+	 * TransactionParties5.mmIntermediaryAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmIntermediaryAgent3
+	 * TransactionParties5.mmIntermediaryAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmCreditorAgent
+	 * TransactionParties5.mmCreditorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmPreviousInstructingAgent1
+	 * CreditTransferTransaction32.mmPreviousInstructingAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmPreviousInstructingAgent2
+	 * CreditTransferTransaction32.mmPreviousInstructingAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmPreviousInstructingAgent3
+	 * CreditTransferTransaction32.mmPreviousInstructingAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmIntermediaryAgent1
+	 * CreditTransferTransaction32.mmIntermediaryAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmIntermediaryAgent2
+	 * CreditTransferTransaction32.mmIntermediaryAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmIntermediaryAgent3
+	 * CreditTransferTransaction32.mmIntermediaryAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmCreditorAgent
+	 * CreditTransferTransaction32.mmCreditorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmPreviousInstructingAgent1
+	 * CreditTransferTransaction30.mmPreviousInstructingAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmPreviousInstructingAgent2
+	 * CreditTransferTransaction30.mmPreviousInstructingAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmPreviousInstructingAgent3
+	 * CreditTransferTransaction30.mmPreviousInstructingAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmInstructingAgent
+	 * CreditTransferTransaction30.mmInstructingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmInstructedAgent
+	 * CreditTransferTransaction30.mmInstructedAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmIntermediaryAgent1
+	 * CreditTransferTransaction30.mmIntermediaryAgent1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmIntermediaryAgent2
+	 * CreditTransferTransaction30.mmIntermediaryAgent2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmIntermediaryAgent3
+	 * CreditTransferTransaction30.mmIntermediaryAgent3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmCreditorAgent
+	 * CreditTransferTransaction30.mmCreditorAgent}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CashAccount36#mmServicer
+	 * CashAccount36.mmServicer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction94#mmInstructingAgent
+	 * PaymentTransaction94.mmInstructingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction94#mmInstructedAgent
+	 * PaymentTransaction94.mmInstructedAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader74#mmForwardingAgent
+	 * GroupHeader74.mmForwardingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader74#mmDebtorAgent
+	 * GroupHeader74.mmDebtorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader74#mmCreditorAgent
+	 * GroupHeader74.mmCreditorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader75#mmForwardingAgent
+	 * GroupHeader75.mmForwardingAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader75#mmDebtorAgent
+	 * GroupHeader75.mmDebtorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader75#mmCreditorAgent
+	 * GroupHeader75.mmCreditorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalCreditorAgent
+	 * AmendmentInformationDetails12.mmOriginalCreditorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalDebtorAgent
+	 * AmendmentInformationDetails12.mmOriginalDebtorAgent}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -769,39 +849,47 @@ public class Organisation extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrganisationIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, List<OrganisationIdentification>> mmOrganisationIdentification = new MMBusinessAssociationEnd<Organisation, List<OrganisationIdentification>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BranchAndFinancialInstitutionIdentification5.mmFinancialInstitutionIdentification, BranchAndFinancialInstitutionIdentification5.mmBranchIdentification, CashAccount25.mmServicer,
 					Organisation12.mmOrganisationIdentification, Organisation14.mmOrganisationIdentification, OrganisationModification1.mmOrganisationIdentification, AccountReport15.mmTransferAccountServicerIdentification,
-					ChargesRecord1.mmAgent, TransactionAgents3.mmDebtorAgent, TransactionAgents3.mmCreditorAgent, TransactionAgents3.mmIntermediaryAgent1, TransactionAgents3.mmIntermediaryAgent2, TransactionAgents3.mmIntermediaryAgent3,
-					TransactionAgents3.mmReceivingAgent, TransactionAgents3.mmDeliveringAgent, TransactionAgents3.mmIssuingAgent, TransactionAgents3.mmSettlementPlace, TransactionAgents3.mmProprietary, ChargesRecord2.mmAgent,
-					GroupHeader48.mmForwardingAgent, GroupHeader55.mmForwardingAgent, SettlementInstruction4.mmInstructingReimbursementAgent, GroupHeader56.mmForwardingAgent, GroupHeader56.mmDebtorAgent, GroupHeader56.mmCreditorAgent,
-					GroupHeader52.mmForwardingAgent, GroupHeader52.mmDebtorAgent, GroupHeader52.mmCreditorAgent, GroupHeader50.mmInstructingAgent, GroupHeader50.mmInstructedAgent, GroupHeader53.mmInstructingAgent,
-					GroupHeader53.mmInstructedAgent, GroupHeader47.mmInstructingAgent, GroupHeader47.mmInstructedAgent, GroupHeader46.mmDebtorAgent, GroupHeader46.mmCreditorAgent, PaymentIdentification4.mmFirstAgent,
-					IdentificationInformation2.mmAgent, ReportingRequest3.mmAccountServicer, SettlementInstruction3.mmInstructingReimbursementAgent, GroupHeader63.mmInstructingAgent, GroupHeader63.mmInstructedAgent,
-					DirectDebitTransactionInformation15.mmDebtorAgent, CreditTransferTransaction9.mmInstructingAgent, CreditTransferTransaction9.mmInstructedAgent, CreditTransferTransaction9.mmIntermediaryAgent1,
-					CreditTransferTransaction9.mmIntermediaryAgent2, CreditTransferTransaction9.mmIntermediaryAgent3, CreditTransferTransaction9.mmCreditorAgent, CreditTransferTransaction9.mmCreditor,
-					CreditTransferTransaction9.mmUltimateCreditor, GroupHeader62.mmForwardingAgent, CreditTransferTransaction23.mmPreviousInstructingAgent, CreditTransferTransaction23.mmInstructingAgent,
-					CreditTransferTransaction23.mmInstructedAgent, CreditTransferTransaction23.mmIntermediaryAgent1, CreditTransferTransaction23.mmIntermediaryAgent2, CreditTransferTransaction23.mmIntermediaryAgent3,
-					CreditTransferTransaction23.mmCreditorAgent, GroupHeader70.mmInstructingAgent, GroupHeader70.mmInstructedAgent, AccountNotification13.mmDebtorAgent, AccountNotification13.mmIntermediaryAgent,
-					CreditTransferTransaction25.mmPreviousInstructingAgent, CreditTransferTransaction25.mmInstructingAgent, CreditTransferTransaction25.mmInstructedAgent, CreditTransferTransaction25.mmIntermediaryAgent1,
-					CreditTransferTransaction25.mmIntermediaryAgent2, CreditTransferTransaction25.mmIntermediaryAgent3, CreditTransferTransaction25.mmCreditorAgent, GroupHeader72.mmInstructingAgent, GroupHeader72.mmInstructedAgent,
-					GroupHeader71.mmInstructingAgent, GroupHeader71.mmInstructedAgent, OriginalNotificationReference8.mmAccountServicer, OriginalNotificationReference8.mmDebtorAgent, OriginalNotificationReference8.mmIntermediaryAgent,
-					CreditTransferTransaction24.mmPreviousInstructingAgent, CreditTransferTransaction24.mmIntermediaryAgent1, CreditTransferTransaction24.mmIntermediaryAgent2, CreditTransferTransaction24.mmIntermediaryAgent3,
-					CreditTransferTransaction24.mmCreditorAgent, CreditTransferTransaction26.mmIntermediaryAgent1, CreditTransferTransaction26.mmIntermediaryAgent2, CreditTransferTransaction26.mmIntermediaryAgent3,
-					CreditTransferTransaction26.mmCreditorAgent, OriginalItemReference4.mmAccountServicer, CreditTransferTransaction22.mmIntermediaryAgent1, CreditTransferTransaction22.mmIntermediaryAgent2,
-					CreditTransferTransaction22.mmIntermediaryAgent3, CreditTransferTransaction22.mmCreditorAgent, OriginalNotificationReference7.mmAccountServicer, OriginalNotificationReference7.mmDebtorAgent,
-					OriginalNotificationReference7.mmIntermediaryAgent, NotificationItem6.mmAccountServicer, NotificationItem6.mmDebtorAgent, NotificationItem6.mmIntermediaryAgent, PaymentTransaction73.mmInstructingAgent,
-					PaymentTransaction73.mmInstructedAgent, PaymentInstruction21.mmChargesAccountAgent, DirectDebitTransactionInformation21.mmCreditorAgent, DirectDebitTransactionInformation21.mmInstructingAgent,
+					ChargesRecord1.mmAgent, ChargesRecord2.mmAgent, GroupHeader48.mmForwardingAgent, GroupHeader55.mmForwardingAgent, SettlementInstruction4.mmInstructingReimbursementAgent, GroupHeader50.mmInstructingAgent,
+					GroupHeader50.mmInstructedAgent, GroupHeader53.mmInstructingAgent, GroupHeader53.mmInstructedAgent, GroupHeader47.mmInstructingAgent, GroupHeader47.mmInstructedAgent, GroupHeader46.mmDebtorAgent,
+					GroupHeader46.mmCreditorAgent, PaymentIdentification4.mmFirstAgent, IdentificationInformation2.mmAgent, SettlementInstruction3.mmInstructingReimbursementAgent, GroupHeader63.mmInstructingAgent,
+					GroupHeader63.mmInstructedAgent, DirectDebitTransactionInformation15.mmDebtorAgent, CreditTransferTransaction9.mmInstructingAgent, CreditTransferTransaction9.mmInstructedAgent,
+					CreditTransferTransaction9.mmIntermediaryAgent1, CreditTransferTransaction9.mmIntermediaryAgent2, CreditTransferTransaction9.mmIntermediaryAgent3, CreditTransferTransaction9.mmCreditorAgent,
+					CreditTransferTransaction9.mmCreditor, CreditTransferTransaction9.mmUltimateCreditor, GroupHeader62.mmForwardingAgent, GroupHeader70.mmInstructingAgent, GroupHeader70.mmInstructedAgent,
+					AccountNotification13.mmDebtorAgent, AccountNotification13.mmIntermediaryAgent, GroupHeader72.mmInstructingAgent, GroupHeader72.mmInstructedAgent, GroupHeader71.mmInstructingAgent, GroupHeader71.mmInstructedAgent,
+					OriginalNotificationReference8.mmAccountServicer, OriginalNotificationReference8.mmDebtorAgent, OriginalNotificationReference8.mmIntermediaryAgent, CreditTransferTransaction26.mmIntermediaryAgent1,
+					CreditTransferTransaction26.mmIntermediaryAgent2, CreditTransferTransaction26.mmIntermediaryAgent3, CreditTransferTransaction26.mmCreditorAgent, OriginalItemReference4.mmAccountServicer,
+					CreditTransferTransaction22.mmIntermediaryAgent1, CreditTransferTransaction22.mmIntermediaryAgent2, CreditTransferTransaction22.mmIntermediaryAgent3, CreditTransferTransaction22.mmCreditorAgent,
+					OriginalNotificationReference7.mmAccountServicer, OriginalNotificationReference7.mmDebtorAgent, OriginalNotificationReference7.mmIntermediaryAgent, NotificationItem6.mmAccountServicer, NotificationItem6.mmDebtorAgent,
+					NotificationItem6.mmIntermediaryAgent, PaymentInstruction21.mmChargesAccountAgent, DirectDebitTransactionInformation21.mmCreditorAgent, DirectDebitTransactionInformation21.mmInstructingAgent,
 					DirectDebitTransactionInformation21.mmInstructedAgent, DirectDebitTransactionInformation21.mmIntermediaryAgent1, DirectDebitTransactionInformation21.mmIntermediaryAgent2,
-					DirectDebitTransactionInformation21.mmIntermediaryAgent3, DirectDebitTransactionInformation21.mmDebtorAgent, PaymentTransaction80.mmInstructingAgent, PaymentTransaction80.mmInstructedAgent,
-					PaymentTransaction81.mmInstructingAgent, PaymentTransaction81.mmInstructedAgent, Mandate10.mmCreditorAgent, Mandate10.mmDebtorAgent, PaymentInstruction23.mmDebtorAgent, PaymentTransaction76.mmInstructingAgent,
-					PaymentTransaction76.mmInstructedAgent, PaymentInstruction22.mmDebtorAgent, PaymentInstruction22.mmChargesAccountAgent, Mandate9.mmCreditorAgent, Mandate9.mmDebtorAgent, OriginalTransactionReference26.mmDebtorAgent,
-					Mandate11.mmCreditorAgent, Mandate11.mmDebtorAgent, DirectDebitTransactionInformation22.mmDebtorAgent, Mandate8.mmCreditorAgent, Mandate8.mmDebtorAgent, PaymentTransaction75.mmAssigner, PaymentTransaction75.mmAssignee,
-					AmendmentInformationDetails11.mmOriginalCreditorAgent, AmendmentInformationDetails11.mmOriginalDebtorAgent, PaymentComplementaryInformation6.mmDebtorAgent, PaymentComplementaryInformation6.mmIntermediaryAgent1,
-					PaymentComplementaryInformation6.mmIntermediaryAgent2, PaymentComplementaryInformation6.mmIntermediaryAgent3, PaymentComplementaryInformation6.mmPreviousInstructingAgent);
+					DirectDebitTransactionInformation21.mmIntermediaryAgent3, DirectDebitTransactionInformation21.mmDebtorAgent, Mandate10.mmCreditorAgent, Mandate10.mmDebtorAgent, PaymentInstruction23.mmDebtorAgent,
+					PaymentInstruction22.mmDebtorAgent, PaymentInstruction22.mmChargesAccountAgent, Mandate9.mmCreditorAgent, Mandate9.mmDebtorAgent, OriginalTransactionReference26.mmDebtorAgent, Mandate11.mmCreditorAgent,
+					Mandate11.mmDebtorAgent, DirectDebitTransactionInformation22.mmDebtorAgent, Mandate8.mmCreditorAgent, Mandate8.mmDebtorAgent, AmendmentInformationDetails11.mmOriginalCreditorAgent,
+					AmendmentInformationDetails11.mmOriginalDebtorAgent, PaymentInstruction24.mmDebtorAgent, PaymentInstruction24.mmChargesAccountAgent, CreditTransferTransaction27.mmIntermediaryAgent1,
+					CreditTransferTransaction27.mmIntermediaryAgent2, CreditTransferTransaction27.mmIntermediaryAgent3, CreditTransferTransaction27.mmCreditorAgent, PaymentComplementaryInformation7.mmDebtorAgent,
+					PaymentComplementaryInformation7.mmIntermediaryAgent1, PaymentComplementaryInformation7.mmIntermediaryAgent2, PaymentComplementaryInformation7.mmIntermediaryAgent3,
+					PaymentComplementaryInformation7.mmPreviousInstructingAgent1, PaymentComplementaryInformation7.mmPreviousInstructingAgent2, PaymentComplementaryInformation7.mmPreviousInstructingAgent3,
+					PaymentTransaction87.mmInstructingAgent, PaymentTransaction87.mmInstructedAgent, CreditTransferTransaction31.mmPreviousInstructingAgent1, CreditTransferTransaction31.mmPreviousInstructingAgent2,
+					CreditTransferTransaction31.mmPreviousInstructingAgent3, CreditTransferTransaction31.mmInstructingAgent, CreditTransferTransaction31.mmInstructedAgent, CreditTransferTransaction31.mmIntermediaryAgent1,
+					CreditTransferTransaction31.mmIntermediaryAgent2, CreditTransferTransaction31.mmIntermediaryAgent3, CreditTransferTransaction31.mmCreditorAgent, PaymentTransaction88.mmInstructingAgent,
+					PaymentTransaction88.mmInstructedAgent, ReportingRequest4.mmAccountServicer, PaymentTransaction91.mmInstructingAgent, PaymentTransaction91.mmInstructedAgent, TransactionAgents4.mmInstructingAgent,
+					TransactionAgents4.mmInstructedAgent, TransactionAgents4.mmDebtorAgent, TransactionAgents4.mmCreditorAgent, TransactionAgents4.mmIntermediaryAgent1, TransactionAgents4.mmIntermediaryAgent2,
+					TransactionAgents4.mmIntermediaryAgent3, TransactionAgents4.mmReceivingAgent, TransactionAgents4.mmDeliveringAgent, TransactionAgents4.mmIssuingAgent, TransactionAgents4.mmSettlementPlace,
+					TransactionAgents4.mmProprietary, PaymentTransaction89.mmAssigner, PaymentTransaction89.mmAssignee, TransactionParties5.mmPreviousInstructingAgent1, TransactionParties5.mmPreviousInstructingAgent2,
+					TransactionParties5.mmPreviousInstructingAgent3, TransactionParties5.mmIntermediaryAgent1, TransactionParties5.mmIntermediaryAgent2, TransactionParties5.mmIntermediaryAgent3, TransactionParties5.mmCreditorAgent,
+					CreditTransferTransaction32.mmPreviousInstructingAgent1, CreditTransferTransaction32.mmPreviousInstructingAgent2, CreditTransferTransaction32.mmPreviousInstructingAgent3,
+					CreditTransferTransaction32.mmIntermediaryAgent1, CreditTransferTransaction32.mmIntermediaryAgent2, CreditTransferTransaction32.mmIntermediaryAgent3, CreditTransferTransaction32.mmCreditorAgent,
+					CreditTransferTransaction30.mmPreviousInstructingAgent1, CreditTransferTransaction30.mmPreviousInstructingAgent2, CreditTransferTransaction30.mmPreviousInstructingAgent3, CreditTransferTransaction30.mmInstructingAgent,
+					CreditTransferTransaction30.mmInstructedAgent, CreditTransferTransaction30.mmIntermediaryAgent1, CreditTransferTransaction30.mmIntermediaryAgent2, CreditTransferTransaction30.mmIntermediaryAgent3,
+					CreditTransferTransaction30.mmCreditorAgent, CashAccount36.mmServicer, PaymentTransaction94.mmInstructingAgent, PaymentTransaction94.mmInstructedAgent, GroupHeader74.mmForwardingAgent, GroupHeader74.mmDebtorAgent,
+					GroupHeader74.mmCreditorAgent, GroupHeader75.mmForwardingAgent, GroupHeader75.mmDebtorAgent, GroupHeader75.mmCreditorAgent, AmendmentInformationDetails12.mmOriginalCreditorAgent,
+					AmendmentInformationDetails12.mmOriginalDebtorAgent);
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationIdentification";
 			definition = "Specific identification assigned to an organisation. It is derived from the association between Party and PartyIdentification.";
@@ -809,6 +897,16 @@ public class Organisation extends Party {
 			opposite_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmOrganisation;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
+		}
+
+		@Override
+		public List<OrganisationIdentification> getValue(Organisation obj) {
+			return obj.getOrganisationIdentification();
+		}
+
+		@Override
+		public void setValue(Organisation obj, List<OrganisationIdentification> value) {
+			obj.setOrganisationIdentification(value);
 		}
 	};
 	protected Organisation parentOrganisation;
@@ -844,21 +942,31 @@ public class Organisation extends Party {
 	 * definition} = "Organisation which is divided in branches."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmParentOrganisation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, Organisation> mmParentOrganisation = new MMBusinessAssociationEnd<Organisation, Organisation>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ParentOrganisation";
 			definition = "Organisation which is divided in branches.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmBranch;
+			opposite_lazy = () -> Organisation.mmBranch;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			type_lazy = () -> Organisation.mmObject();
+		}
+
+		@Override
+		public Organisation getValue(Organisation obj) {
+			return obj.getParentOrganisation();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Organisation value) {
+			obj.setParentOrganisation(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Organisation> branch;
+	protected List<Organisation> branch;
 	/**
 	 * 
 	 <p>
@@ -891,17 +999,27 @@ public class Organisation extends Party {
 	 * definition} = "Specifies an organisation which is not a head office."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBranch = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, List<Organisation>> mmBranch = new MMBusinessAssociationEnd<Organisation, List<Organisation>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Branch";
 			definition = "Specifies an organisation which is not a head office.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmParentOrganisation;
+			opposite_lazy = () -> Organisation.mmParentOrganisation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			type_lazy = () -> Organisation.mmObject();
+		}
+
+		@Override
+		public List<Organisation> getValue(Organisation obj) {
+			return obj.getBranch();
+		}
+
+		@Override
+		public void setValue(Organisation obj, List<Organisation> value) {
+			obj.setBranch(value);
 		}
 	};
 	protected SecuritiesModification securitiesModification;
@@ -939,10 +1057,10 @@ public class Organisation extends Party {
 	 * "Specifies the process which originates the changes to an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesModification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.SecuritiesModification> mmSecuritiesModification = new MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.SecuritiesModification>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesModification";
 			definition = "Specifies the process which originates the changes to an organisation.";
@@ -951,6 +1069,16 @@ public class Organisation extends Party {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmNewOrganisationInformation;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesModification getValue(Organisation obj) {
+			return obj.getSecuritiesModification();
+		}
+
+		@Override
+		public void setValue(Organisation obj, com.tools20022.repository.entity.SecuritiesModification value) {
+			obj.setSecuritiesModification(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Location> placeOfOperation;
@@ -987,10 +1115,10 @@ public class Organisation extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPlaceOfOperation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, List<Location>> mmPlaceOfOperation = new MMBusinessAssociationEnd<Organisation, List<Location>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfOperation";
 			definition = "Place (including country) in which the organisation has its business activity.";
@@ -998,6 +1126,16 @@ public class Organisation extends Party {
 			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmOperatingOrganisation;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+		}
+
+		@Override
+		public List<Location> getValue(Organisation obj) {
+			return obj.getPlaceOfOperation();
+		}
+
+		@Override
+		public void setValue(Organisation obj, List<Location> value) {
+			obj.setPlaceOfOperation(value);
 		}
 	};
 	protected Location placeOfRegistration;
@@ -1033,10 +1171,10 @@ public class Organisation extends Party {
 	 * "Place (including country) in which the organisation is registered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPlaceOfRegistration = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, Optional<Location>> mmPlaceOfRegistration = new MMBusinessAssociationEnd<Organisation, Optional<Location>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfRegistration";
 			definition = "Place (including country) in which the organisation is registered.";
@@ -1045,6 +1183,16 @@ public class Organisation extends Party {
 			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmRegisteredOrganisation;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+		}
+
+		@Override
+		public Optional<Location> getValue(Organisation obj) {
+			return obj.getPlaceOfRegistration();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Optional<Location> value) {
+			obj.setPlaceOfRegistration(value.orElse(null));
 		}
 	};
 	protected Max350Text description;
@@ -1083,10 +1231,10 @@ public class Organisation extends Party {
 	 * definition} = "Description of an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Organisation, Max350Text> mmDescription = new MMBusinessAttribute<Organisation, Max350Text>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			semanticMarkup_lazy = () -> Arrays
 					.asList(new OtherSemanticMarkup(
 							this,
@@ -1102,12 +1250,14 @@ public class Organisation extends Party {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Organisation.class.getMethod("getDescription", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(Organisation obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Max350Text value) {
+			obj.setDescription(value);
 		}
 	};
 	protected LegalStructureCode legalStructure;
@@ -1121,6 +1271,14 @@ public class Organisation extends Party {
 	 * simpleType} =
 	 * {@linkplain com.tools20022.repository.codeset.LegalStructureCode
 	 * LegalStructureCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
+	 * derivation} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Organisation20#mmOrganisationLegalStatus
+	 * Organisation20.mmOrganisationLegalStatus}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -1136,10 +1294,11 @@ public class Organisation extends Party {
 	 * definition} = "Legal standing of the organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLegalStructure = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Organisation, LegalStructureCode> mmLegalStructure = new MMBusinessAttribute<Organisation, LegalStructureCode>() {
 		{
+			derivation_lazy = () -> Arrays.asList(Organisation20.mmOrganisationLegalStatus);
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegalStructure";
 			definition = "Legal standing of the organisation.";
@@ -1148,12 +1307,14 @@ public class Organisation extends Party {
 			simpleType_lazy = () -> LegalStructureCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Organisation.class.getMethod("getLegalStructure", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LegalStructureCode getValue(Organisation obj) {
+			return obj.getLegalStructure();
+		}
+
+		@Override
+		public void setValue(Organisation obj, LegalStructureCode value) {
+			obj.setLegalStructure(value);
 		}
 	};
 	protected Sector sector;
@@ -1189,10 +1350,10 @@ public class Organisation extends Party {
 	 * "Sector of business of the organisation, for example, pharmaceutical."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSector = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.Sector> mmSector = new MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.Sector>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sector";
 			definition = "Sector of business of the organisation, for example, pharmaceutical.";
@@ -1201,6 +1362,16 @@ public class Organisation extends Party {
 			opposite_lazy = () -> com.tools20022.repository.entity.Sector.mmOrganisation;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Sector.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Sector getValue(Organisation obj) {
+			return obj.getSector();
+		}
+
+		@Override
+		public void setValue(Organisation obj, com.tools20022.repository.entity.Sector value) {
+			obj.setSector(value);
 		}
 	};
 	protected BuyOrSellIndicationOfInterest relatedIndicationOfInterest;
@@ -1239,18 +1410,28 @@ public class Organisation extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, Optional<BuyOrSellIndicationOfInterest>> mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd<Organisation, Optional<BuyOrSellIndicationOfInterest>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedIndicationOfInterest";
 			definition = "Indication of interest process for which a list of organisations is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmOrganisations;
+			opposite_lazy = () -> BuyOrSellIndicationOfInterest.mmOrganisations;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
+			type_lazy = () -> BuyOrSellIndicationOfInterest.mmObject();
+		}
+
+		@Override
+		public Optional<BuyOrSellIndicationOfInterest> getValue(Organisation obj) {
+			return obj.getRelatedIndicationOfInterest();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Optional<BuyOrSellIndicationOfInterest> value) {
+			obj.setRelatedIndicationOfInterest(value.orElse(null));
 		}
 	};
 	protected OrganisationStrategy strategy;
@@ -1287,18 +1468,28 @@ public class Organisation extends Party {
 	 * definition} = "Strategy related to an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStrategy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, Optional<OrganisationStrategy>> mmStrategy = new MMBusinessAssociationEnd<Organisation, Optional<OrganisationStrategy>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Strategy";
 			definition = "Strategy related to an organisation.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.OrganisationStrategy.mmOrganisation;
+			opposite_lazy = () -> OrganisationStrategy.mmOrganisation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.OrganisationStrategy.mmObject();
+			type_lazy = () -> OrganisationStrategy.mmObject();
+		}
+
+		@Override
+		public Optional<OrganisationStrategy> getValue(Organisation obj) {
+			return obj.getStrategy();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Optional<OrganisationStrategy> value) {
+			obj.setStrategy(value.orElse(null));
 		}
 	};
 	protected OrganisationHierarchy organisationHierarchy;
@@ -1335,10 +1526,10 @@ public class Organisation extends Party {
 	 * definition} = "Description of the structure of a company."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrganisationHierarchy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.OrganisationHierarchy> mmOrganisationHierarchy = new MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.OrganisationHierarchy>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationHierarchy";
 			definition = "Description of the structure of a company.";
@@ -1347,6 +1538,16 @@ public class Organisation extends Party {
 			opposite_lazy = () -> com.tools20022.repository.entity.OrganisationHierarchy.mmOrganisation;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.OrganisationHierarchy.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.OrganisationHierarchy getValue(Organisation obj) {
+			return obj.getOrganisationHierarchy();
+		}
+
+		@Override
+		public void setValue(Organisation obj, com.tools20022.repository.entity.OrganisationHierarchy value) {
+			obj.setOrganisationHierarchy(value);
 		}
 	};
 	protected RepresentativeOfficer representativeOfficer;
@@ -1385,10 +1586,10 @@ public class Organisation extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRepresentativeOfficer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.RepresentativeOfficer> mmRepresentativeOfficer = new MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.RepresentativeOfficer>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepresentativeOfficer";
 			definition = "Officer who has some rights to represent a given organisation. In account management, it is the person to be contacted by the account servicer.";
@@ -1397,6 +1598,16 @@ public class Organisation extends Party {
 			opposite_lazy = () -> com.tools20022.repository.entity.RepresentativeOfficer.mmOrganisation;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.RepresentativeOfficer.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.RepresentativeOfficer getValue(Organisation obj) {
+			return obj.getRepresentativeOfficer();
+		}
+
+		@Override
+		public void setValue(Organisation obj, com.tools20022.repository.entity.RepresentativeOfficer value) {
+			obj.setRepresentativeOfficer(value);
 		}
 	};
 	protected ISODate establishmentDate;
@@ -1432,11 +1643,11 @@ public class Organisation extends Party {
 	 * definition} = "Date when the organisation was established."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEstablishmentDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Organisation, ISODate> mmEstablishmentDate = new MMBusinessAttribute<Organisation, ISODate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LegalOrganisation2.mmEstablishmentDate);
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstablishmentDate";
 			definition = "Date when the organisation was established.";
@@ -1445,12 +1656,14 @@ public class Organisation extends Party {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Organisation.class.getMethod("getEstablishmentDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(Organisation obj) {
+			return obj.getEstablishmentDate();
+		}
+
+		@Override
+		public void setValue(Organisation obj, ISODate value) {
+			obj.setEstablishmentDate(value);
 		}
 	};
 
@@ -1461,21 +1674,17 @@ public class Organisation extends Party {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Organisation";
 				definition = "Organised structure that is set up for a particular purpose. For example, a business, government body, department, charity, or financial institution.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Organisation.mmParentOrganisation, com.tools20022.repository.entity.Organisation.mmBranch,
-						com.tools20022.repository.entity.OrganisationIdentification.mmOrganisation, com.tools20022.repository.entity.Location.mmOperatingOrganisation, com.tools20022.repository.entity.Location.mmRegisteredOrganisation,
+				associationDomain_lazy = () -> Arrays.asList(Organisation.mmParentOrganisation, Organisation.mmBranch, com.tools20022.repository.entity.OrganisationIdentification.mmOrganisation,
+						com.tools20022.repository.entity.Location.mmOperatingOrganisation, com.tools20022.repository.entity.Location.mmRegisteredOrganisation,
 						com.tools20022.repository.entity.SecuritiesModification.mmNewOrganisationInformation, com.tools20022.repository.entity.Sector.mmOrganisation, com.tools20022.repository.entity.RepresentativeOfficer.mmOrganisation,
-						com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmOrganisations, com.tools20022.repository.entity.OrganisationStrategy.mmOrganisation,
-						com.tools20022.repository.entity.OrganisationHierarchy.mmOrganisation);
+						BuyOrSellIndicationOfInterest.mmOrganisations, OrganisationStrategy.mmOrganisation, com.tools20022.repository.entity.OrganisationHierarchy.mmOrganisation);
 				derivationElement_lazy = () -> Arrays.asList(TradeParty2.mmLegalOrganisation, OriginalItemReference4.mmDebtorAgent, OriginalItemReference4.mmIntermediaryAgent, OriginalPaymentInformation7.mmDebtorAgent,
 						OriginalPaymentInformation7.mmCreditorAgent);
 				subType_lazy = () -> Arrays.asList(FinancialInstitution.mmObject());
 				superType_lazy = () -> Party.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Organisation.mmPurpose, com.tools20022.repository.entity.Organisation.mmRegistrationDate,
-						com.tools20022.repository.entity.Organisation.mmOrganisationIdentification, com.tools20022.repository.entity.Organisation.mmParentOrganisation, com.tools20022.repository.entity.Organisation.mmBranch,
-						com.tools20022.repository.entity.Organisation.mmSecuritiesModification, com.tools20022.repository.entity.Organisation.mmPlaceOfOperation, com.tools20022.repository.entity.Organisation.mmPlaceOfRegistration,
-						com.tools20022.repository.entity.Organisation.mmDescription, com.tools20022.repository.entity.Organisation.mmLegalStructure, com.tools20022.repository.entity.Organisation.mmSector,
-						com.tools20022.repository.entity.Organisation.mmRelatedIndicationOfInterest, com.tools20022.repository.entity.Organisation.mmStrategy, com.tools20022.repository.entity.Organisation.mmOrganisationHierarchy,
-						com.tools20022.repository.entity.Organisation.mmRepresentativeOfficer, com.tools20022.repository.entity.Organisation.mmEstablishmentDate);
+				element_lazy = () -> Arrays.asList(Organisation.mmPurpose, Organisation.mmRegistrationDate, Organisation.mmOrganisationIdentification, Organisation.mmParentOrganisation, Organisation.mmBranch,
+						Organisation.mmSecuritiesModification, Organisation.mmPlaceOfOperation, Organisation.mmPlaceOfRegistration, Organisation.mmDescription, Organisation.mmLegalStructure, Organisation.mmSector,
+						Organisation.mmRelatedIndicationOfInterest, Organisation.mmStrategy, Organisation.mmOrganisationHierarchy, Organisation.mmRepresentativeOfficer, Organisation.mmEstablishmentDate);
 				derivationComponent_lazy = () -> Arrays.asList(BranchAndFinancialInstitutionIdentification5.mmObject(), Organisation12.mmObject(), Organisation14.mmObject(), OrganisationModification1.mmObject(),
 						LegalOrganisation2.mmObject());
 			}
@@ -1519,7 +1728,7 @@ public class Organisation extends Party {
 		return parentOrganisation;
 	}
 
-	public Organisation setParentOrganisation(com.tools20022.repository.entity.Organisation parentOrganisation) {
+	public Organisation setParentOrganisation(Organisation parentOrganisation) {
 		this.parentOrganisation = Objects.requireNonNull(parentOrganisation);
 		return this;
 	}
@@ -1528,7 +1737,7 @@ public class Organisation extends Party {
 		return branch == null ? branch = new ArrayList<>() : branch;
 	}
 
-	public Organisation setBranch(List<com.tools20022.repository.entity.Organisation> branch) {
+	public Organisation setBranch(List<Organisation> branch) {
 		this.branch = Objects.requireNonNull(branch);
 		return this;
 	}
@@ -1591,7 +1800,7 @@ public class Organisation extends Party {
 		return relatedIndicationOfInterest == null ? Optional.empty() : Optional.of(relatedIndicationOfInterest);
 	}
 
-	public Organisation setRelatedIndicationOfInterest(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest relatedIndicationOfInterest) {
+	public Organisation setRelatedIndicationOfInterest(BuyOrSellIndicationOfInterest relatedIndicationOfInterest) {
 		this.relatedIndicationOfInterest = relatedIndicationOfInterest;
 		return this;
 	}
@@ -1600,7 +1809,7 @@ public class Organisation extends Party {
 		return strategy == null ? Optional.empty() : Optional.of(strategy);
 	}
 
-	public Organisation setStrategy(com.tools20022.repository.entity.OrganisationStrategy strategy) {
+	public Organisation setStrategy(OrganisationStrategy strategy) {
 		this.strategy = strategy;
 		return this;
 	}

@@ -132,7 +132,7 @@ public class SystemStatusCode extends MMCode {
 		}
 	};
 	/**
-	 * System is closed (eg. normal closure of an RTGS)
+	 * System is closed (eg. normal closure of an RTGS).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -149,14 +149,14 @@ public class SystemStatusCode extends MMCode {
 	 * name} = "Closed"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "System is closed (eg. normal closure of an RTGS)"</li>
+	 * definition} = "System is closed (eg. normal closure of an RTGS)."</li>
 	 * </ul>
 	 */
 	public static final SystemStatusCode Closed = new SystemStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Closed";
-			definition = "System is closed (eg. normal closure of an RTGS)";
+			definition = "System is closed (eg. normal closure of an RTGS).";
 			owner_lazy = () -> com.tools20022.repository.codeset.SystemStatusCode.mmObject();
 			codeName = "CLSD";
 		}

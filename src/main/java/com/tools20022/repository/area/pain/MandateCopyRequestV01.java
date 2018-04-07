@@ -25,7 +25,6 @@ import com.tools20022.repository.area.PaymentsInitiationLatestVersion;
 import com.tools20022.repository.msg.GroupHeader47;
 import com.tools20022.repository.msg.MandateCopy1;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -83,8 +82,8 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forMandateCopyRequestV01
- * ConstraintSupplementaryDataRule.forMandateCopyRequestV01}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#for_pain_MandateCopyRequestV01
+ * ConstraintSupplementaryDataRule.for_pain_MandateCopyRequestV01}</li>
  * </ul>
  * </li>
  * <li>
@@ -130,7 +129,7 @@ public class MandateCopyRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateCopyRequestV01, GroupHeader47> mmGroupHeader = new MMMessageBuildingBlock<MandateCopyRequestV01, GroupHeader47>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -141,12 +140,14 @@ public class MandateCopyRequestV01 {
 			complexType_lazy = () -> GroupHeader47.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateCopyRequestV01.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader47 getValue(MandateCopyRequestV01 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(MandateCopyRequestV01 obj, GroupHeader47 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "UndrlygCpyReqDtls", required = true)
@@ -175,7 +176,7 @@ public class MandateCopyRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmUnderlyingCopyRequestDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateCopyRequestV01, List<MandateCopy1>> mmUnderlyingCopyRequestDetails = new MMMessageBuildingBlock<MandateCopyRequestV01, List<MandateCopy1>>() {
 		{
 			xmlTag = "UndrlygCpyReqDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,12 +186,14 @@ public class MandateCopyRequestV01 {
 			complexType_lazy = () -> MandateCopy1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateCopyRequestV01.class.getMethod("getUnderlyingCopyRequestDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<MandateCopy1> getValue(MandateCopyRequestV01 obj) {
+			return obj.getUnderlyingCopyRequestDetails();
+		}
+
+		@Override
+		public void setValue(MandateCopyRequestV01 obj, List<MandateCopy1> value) {
+			obj.setUnderlyingCopyRequestDetails(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -220,7 +223,7 @@ public class MandateCopyRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateCopyRequestV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MandateCopyRequestV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -230,19 +233,21 @@ public class MandateCopyRequestV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateCopyRequestV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MandateCopyRequestV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MandateCopyRequestV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forMandateCopyRequestV01);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.for_pain_MandateCopyRequestV01);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateCopyRequestV01";
 				definition = "Scope\r\nThe MandateCopyRequest message is sent by the initiator of the request to his agent. The initiator can either be the debtor or the creditor.\r\nThe MandateCopyRequest message is forwarded by the agent of the initiator to the agent of the counterparty.\r\nA MandateCopyRequest message is used to request a copy of an existing mandate. If accepted, the mandate copy can be sent using the MandateAcceptanceReport message.\r\nUsage\r\nThe MandateCopyRequest message can contain one or more copy requests.\r\nThe messages can be exchanged between creditor and creditor agent or debtor and debtor agent and between creditor agent and debtor agent.\r\nThe message can also be used by an initiating party that has authority to send the message on behalf of the creditor or debtor.\r\nThe MandateCopyRequest message can be used in domestic and cross-border scenarios.\r\n";

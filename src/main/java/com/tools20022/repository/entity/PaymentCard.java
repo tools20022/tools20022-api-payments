@@ -23,9 +23,9 @@ import com.tools20022.repository.codeset.CardTypeCode;
 import com.tools20022.repository.codeset.CSCManagementCode;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.*;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -187,7 +187,7 @@ public class PaymentCard {
 	 * definition} = "Payment for which a payment card is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentCard, Optional<CardPayment>> mmPayment = new MMBusinessAssociationEnd<PaymentCard, Optional<CardPayment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
@@ -196,9 +196,19 @@ public class PaymentCard {
 			definition = "Payment for which a payment card is used.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPayment.mmPaymentCard;
+			opposite_lazy = () -> CardPayment.mmPaymentCard;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
+			type_lazy = () -> CardPayment.mmObject();
+		}
+
+		@Override
+		public Optional<CardPayment> getValue(PaymentCard obj) {
+			return obj.getPayment();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Optional<CardPayment> value) {
+			obj.setPayment(value.orElse(null));
 		}
 	};
 	protected CardTypeCode type;
@@ -226,7 +236,7 @@ public class PaymentCard {
 	 * definition} = "Type of card, eg, credit card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, CardTypeCode> mmType = new MMBusinessAttribute<PaymentCard, CardTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
@@ -238,12 +248,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> CardTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CardTypeCode getValue(PaymentCard obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, CardTypeCode value) {
+			obj.setType(value);
 		}
 	};
 	protected Max35Text number;
@@ -280,7 +292,7 @@ public class PaymentCard {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, Max35Text> mmNumber = new MMBusinessAttribute<PaymentCard, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PlainCardData1.mmPAN);
 			isDerived = false;
@@ -293,12 +305,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentCard obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Max35Text value) {
+			obj.setNumber(value);
 		}
 	};
 	protected ISOYearMonth startDate;
@@ -335,7 +349,7 @@ public class PaymentCard {
 	 * definition} = "Year and month the card is available for use."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStartDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, ISOYearMonth> mmStartDate = new MMBusinessAttribute<PaymentCard, ISOYearMonth>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PlainCardData1.mmEffectiveDate);
 			isDerived = false;
@@ -348,12 +362,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> ISOYearMonth.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getStartDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISOYearMonth getValue(PaymentCard obj) {
+			return obj.getStartDate();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, ISOYearMonth value) {
+			obj.setStartDate(value);
 		}
 	};
 	protected ISOYearMonth expiryDate;
@@ -390,7 +406,7 @@ public class PaymentCard {
 	 * definition} = "Year and month the card expires."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExpiryDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, ISOYearMonth> mmExpiryDate = new MMBusinessAttribute<PaymentCard, ISOYearMonth>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PlainCardData1.mmExpiryDate);
 			isDerived = false;
@@ -403,12 +419,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> ISOYearMonth.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getExpiryDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISOYearMonth getValue(PaymentCard obj) {
+			return obj.getExpiryDate();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, ISOYearMonth value) {
+			obj.setExpiryDate(value);
 		}
 	};
 	protected Max35Text securityCode;
@@ -446,7 +464,7 @@ public class PaymentCard {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSecurityCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, Max35Text> mmSecurityCode = new MMBusinessAttribute<PaymentCard, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardSecurityInformation1.mmCSCValue);
 			isDerived = false;
@@ -459,12 +477,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getSecurityCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentCard obj) {
+			return obj.getSecurityCode();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Max35Text value) {
+			obj.setSecurityCode(value);
 		}
 	};
 	protected Max35Text sequenceNumber;
@@ -501,7 +521,7 @@ public class PaymentCard {
 	 * "Identifies a card inside a set of cards with the same number (or PAN)."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSequenceNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, Max35Text> mmSequenceNumber = new MMBusinessAttribute<PaymentCard, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PlainCardData1.mmCardSequenceNumber);
 			isDerived = false;
@@ -514,12 +534,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getSequenceNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentCard obj) {
+			return obj.getSequenceNumber();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Max35Text value) {
+			obj.setSequenceNumber(value);
 		}
 	};
 	protected Exact3NumericText serviceCode;
@@ -556,7 +578,7 @@ public class PaymentCard {
 	 * definition} = "Services attached to the card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmServiceCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, Exact3NumericText> mmServiceCode = new MMBusinessAttribute<PaymentCard, Exact3NumericText>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PlainCardData1.mmServiceCode);
 			isDerived = false;
@@ -569,12 +591,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getServiceCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Exact3NumericText getValue(PaymentCard obj) {
+			return obj.getServiceCode();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Exact3NumericText value) {
+			obj.setServiceCode(value);
 		}
 	};
 	protected Max140Text trackValue;
@@ -609,7 +633,7 @@ public class PaymentCard {
 	 * definition} = "Card track content or equivalent."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTrackValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, Max140Text> mmTrackValue = new MMBusinessAttribute<PaymentCard, Max140Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TrackData1.mmTrackValue);
 			isDerived = false;
@@ -622,12 +646,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getTrackValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max140Text getValue(PaymentCard obj) {
+			return obj.getTrackValue();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Max140Text value) {
+			obj.setTrackValue(value);
 		}
 	};
 	protected CSCManagementCode securityCodeManagement;
@@ -665,7 +691,7 @@ public class PaymentCard {
 	 * "Card Security Code management associated with the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSecurityCodeManagement = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, CSCManagementCode> mmSecurityCodeManagement = new MMBusinessAttribute<PaymentCard, CSCManagementCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardSecurityInformation1.mmCSCManagement);
 			isDerived = false;
@@ -678,12 +704,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> CSCManagementCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getSecurityCodeManagement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CSCManagementCode getValue(PaymentCard obj) {
+			return obj.getSecurityCodeManagement();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, CSCManagementCode value) {
+			obj.setSecurityCodeManagement(value);
 		}
 	};
 	protected Max35Text cardBrand;
@@ -718,7 +746,7 @@ public class PaymentCard {
 	 * definition} = "Brand name of the card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCardBrand = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, Max35Text> mmCardBrand = new MMBusinessAttribute<PaymentCard, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentCard4.mmCardBrand);
 			isDerived = false;
@@ -731,15 +759,17 @@ public class PaymentCard {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getCardBrand", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentCard obj) {
+			return obj.getCardBrand();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Max35Text value) {
+			obj.setCardBrand(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CashAccount> relatedAccount;
+	protected List<CashAccount> relatedAccount;
 	/**
 	 * 
 	 <p>
@@ -761,11 +791,11 @@ public class PaymentCard {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardTransaction2#mmPrePaidAccount
-	 * CardTransaction2.mmPrePaidAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardTransaction16#mmPrePaidAccount
+	 * CardTransaction16.mmPrePaidAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardEntry2#mmPrePaidAccount
-	 * CardEntry2.mmPrePaidAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardEntry3#mmPrePaidAccount
+	 * CardEntry3.mmPrePaidAccount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -783,18 +813,28 @@ public class PaymentCard {
 	 * definition} = "Account linked to the card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentCard, List<CashAccount>> mmRelatedAccount = new MMBusinessAssociationEnd<PaymentCard, List<CashAccount>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardTransaction2.mmPrePaidAccount, CardEntry2.mmPrePaidAccount);
+			derivation_lazy = () -> Arrays.asList(CardTransaction16.mmPrePaidAccount, CardEntry3.mmPrePaidAccount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAccount";
 			definition = "Account linked to the card.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmRelatedPaymentCard;
+			opposite_lazy = () -> CashAccount.mmRelatedPaymentCard;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
+			type_lazy = () -> CashAccount.mmObject();
+		}
+
+		@Override
+		public List<CashAccount> getValue(PaymentCard obj) {
+			return obj.getRelatedAccount();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, List<CashAccount> value) {
+			obj.setRelatedAccount(value);
 		}
 	};
 	protected Max5NumericText profileNumber;
@@ -825,7 +865,7 @@ public class PaymentCard {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProfileNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, Max5NumericText> mmProfileNumber = new MMBusinessAttribute<PaymentCard, Max5NumericText>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
@@ -837,12 +877,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> Max5NumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getProfileNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max5NumericText getValue(PaymentCard obj) {
+			return obj.getProfileNumber();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Max5NumericText value) {
+			obj.setProfileNumber(value);
 		}
 	};
 	protected CardAccountTypeCode relatedAccountType;
@@ -871,7 +913,7 @@ public class PaymentCard {
 	 * definition} = "Type of cardholder account used for the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRelatedAccountType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, CardAccountTypeCode> mmRelatedAccountType = new MMBusinessAttribute<PaymentCard, CardAccountTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
@@ -883,12 +925,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> CardAccountTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getRelatedAccountType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CardAccountTypeCode getValue(PaymentCard obj) {
+			return obj.getRelatedAccountType();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, CardAccountTypeCode value) {
+			obj.setRelatedAccountType(value);
 		}
 	};
 	protected CurrencyAndAmount creditAvailableAmount;
@@ -918,7 +962,7 @@ public class PaymentCard {
 	 * "Monetary value of the credit available for this financial card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreditAvailableAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, CurrencyAndAmount> mmCreditAvailableAmount = new MMBusinessAttribute<PaymentCard, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
@@ -930,15 +974,17 @@ public class PaymentCard {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getCreditAvailableAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PaymentCard obj) {
+			return obj.getCreditAvailableAmount();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, CurrencyAndAmount value) {
+			obj.setCreditAvailableAmount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Limit> limit;
+	protected List<Limit> limit;
 	/**
 	 * 
 	 <p>
@@ -970,7 +1016,7 @@ public class PaymentCard {
 	 * definition} = "Limit specified on a payment card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLimit = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentCard, List<Limit>> mmLimit = new MMBusinessAssociationEnd<PaymentCard, List<Limit>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
@@ -978,9 +1024,19 @@ public class PaymentCard {
 			name = "Limit";
 			definition = "Limit specified on a payment card.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Limit.mmRelatedPaymentCard;
+			opposite_lazy = () -> Limit.mmRelatedPaymentCard;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
+			type_lazy = () -> Limit.mmObject();
+		}
+
+		@Override
+		public List<Limit> getValue(PaymentCard obj) {
+			return obj.getLimit();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, List<Limit> value) {
+			obj.setLimit(value);
 		}
 	};
 	protected CurrencyCode cardCurrencyCode;
@@ -1008,7 +1064,7 @@ public class PaymentCard {
 	 * definition} = "Currency code of the card issuer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCardCurrencyCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, CurrencyCode> mmCardCurrencyCode = new MMBusinessAttribute<PaymentCard, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
@@ -1020,12 +1076,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getCardCurrencyCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(PaymentCard obj) {
+			return obj.getCardCurrencyCode();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, CurrencyCode value) {
+			obj.setCardCurrencyCode(value);
 		}
 	};
 	protected Interest interest;
@@ -1061,7 +1119,7 @@ public class PaymentCard {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentCard, Interest> mmInterest = new MMBusinessAssociationEnd<PaymentCard, Interest>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
@@ -1070,9 +1128,19 @@ public class PaymentCard {
 			definition = "Interest applied on amounts due for credit card payments.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmRelatedPaymentCard;
+			opposite_lazy = () -> Interest.mmRelatedPaymentCard;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
+			type_lazy = () -> Interest.mmObject();
+		}
+
+		@Override
+		public Interest getValue(PaymentCard obj) {
+			return obj.getInterest();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Interest value) {
+			obj.setInterest(value);
 		}
 	};
 	protected Country cardCountryCode;
@@ -1115,7 +1183,7 @@ public class PaymentCard {
 	 * definition} = "Country code attached to the card by the card issuer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCardCountryCode = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentCard, Country> mmCardCountryCode = new MMBusinessAssociationEnd<PaymentCard, Country>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentCard4.mmCardCountryCode);
 			isDerived = false;
@@ -1125,9 +1193,19 @@ public class PaymentCard {
 			definition = "Country code attached to the card by the card issuer.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Country.mmRelatedPaymentCard;
+			opposite_lazy = () -> Country.mmRelatedPaymentCard;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
+			type_lazy = () -> Country.mmObject();
+		}
+
+		@Override
+		public Country getValue(PaymentCard obj) {
+			return obj.getCardCountryCode();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Country value) {
+			obj.setCardCountryCode(value);
 		}
 	};
 	protected Max35Text cardProgramme;
@@ -1157,7 +1235,7 @@ public class PaymentCard {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCardProgramme = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentCard, Max35Text> mmCardProgramme = new MMBusinessAttribute<PaymentCard, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
@@ -1169,12 +1247,14 @@ public class PaymentCard {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentCard.class.getMethod("getCardProgramme", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentCard obj) {
+			return obj.getCardProgramme();
+		}
+
+		@Override
+		public void setValue(PaymentCard obj, Max35Text value) {
+			obj.setCardProgramme(value);
 		}
 	};
 
@@ -1185,8 +1265,7 @@ public class PaymentCard {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCard";
 				definition = "Electronic money product that provides the cardholder with a portable and specialised computer device that typically contains a microprocessor.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.mmRelatedPaymentCard, com.tools20022.repository.entity.CashAccount.mmRelatedPaymentCard,
-						com.tools20022.repository.entity.CardPayment.mmPaymentCard, com.tools20022.repository.entity.Limit.mmRelatedPaymentCard, com.tools20022.repository.entity.Interest.mmRelatedPaymentCard);
+				associationDomain_lazy = () -> Arrays.asList(Country.mmRelatedPaymentCard, CashAccount.mmRelatedPaymentCard, CardPayment.mmPaymentCard, Limit.mmRelatedPaymentCard, Interest.mmRelatedPaymentCard);
 				derivationElement_lazy = () -> Arrays.asList(PlainCardData1.mmTrackData, PlainCardData1.mmCardSecurityCode, PaymentCard4.mmPlainCardData);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentCard.mmPayment, com.tools20022.repository.entity.PaymentCard.mmType, com.tools20022.repository.entity.PaymentCard.mmNumber,
 						com.tools20022.repository.entity.PaymentCard.mmStartDate, com.tools20022.repository.entity.PaymentCard.mmExpiryDate, com.tools20022.repository.entity.PaymentCard.mmSecurityCode,
@@ -1210,7 +1289,7 @@ public class PaymentCard {
 		return payment == null ? Optional.empty() : Optional.of(payment);
 	}
 
-	public PaymentCard setPayment(com.tools20022.repository.entity.CardPayment payment) {
+	public PaymentCard setPayment(CardPayment payment) {
 		this.payment = payment;
 		return this;
 	}
@@ -1309,7 +1388,7 @@ public class PaymentCard {
 		return relatedAccount == null ? relatedAccount = new ArrayList<>() : relatedAccount;
 	}
 
-	public PaymentCard setRelatedAccount(List<com.tools20022.repository.entity.CashAccount> relatedAccount) {
+	public PaymentCard setRelatedAccount(List<CashAccount> relatedAccount) {
 		this.relatedAccount = Objects.requireNonNull(relatedAccount);
 		return this;
 	}
@@ -1345,7 +1424,7 @@ public class PaymentCard {
 		return limit == null ? limit = new ArrayList<>() : limit;
 	}
 
-	public PaymentCard setLimit(List<com.tools20022.repository.entity.Limit> limit) {
+	public PaymentCard setLimit(List<Limit> limit) {
 		this.limit = Objects.requireNonNull(limit);
 		return this;
 	}
@@ -1363,7 +1442,7 @@ public class PaymentCard {
 		return interest;
 	}
 
-	public PaymentCard setInterest(com.tools20022.repository.entity.Interest interest) {
+	public PaymentCard setInterest(Interest interest) {
 		this.interest = Objects.requireNonNull(interest);
 		return this;
 	}
@@ -1372,7 +1451,7 @@ public class PaymentCard {
 		return cardCountryCode;
 	}
 
-	public PaymentCard setCardCountryCode(com.tools20022.repository.entity.Country cardCountryCode) {
+	public PaymentCard setCardCountryCode(Country cardCountryCode) {
 		this.cardCountryCode = Objects.requireNonNull(cardCountryCode);
 		return this;
 	}

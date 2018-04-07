@@ -1567,8 +1567,8 @@ public class PendingFailingReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * Financial instruments are blocked due to a corporate action event,
-	 * realignment, etc.
+	 * Financial instruments are blocked due to, for example, a corporate action
+	 * event, realignment.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1586,7 +1586,7 @@ public class PendingFailingReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Financial instruments are blocked due to a corporate action event, realignment, etc."
+	 * "Financial instruments are blocked due to, for example, a corporate action event, realignment."
 	 * </li>
 	 * </ul>
 	 */
@@ -1594,7 +1594,7 @@ public class PendingFailingReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesBlocked";
-			definition = "Financial instruments are blocked due to a corporate action event, realignment, etc.";
+			definition = "Financial instruments are blocked due to, for example, a corporate action event, realignment.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PendingFailingReasonCode.mmObject();
 			codeName = "SBLO";
 		}
@@ -3272,7 +3272,8 @@ public class PendingFailingReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * Financial instruments are stolen, in dispute, under objection etc.
+	 * Financial instruments are, for example, stolen, in dispute, under
+	 * objection.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -3290,14 +3291,15 @@ public class PendingFailingReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Financial instruments are stolen, in dispute, under objection etc."</li>
+	 * "Financial instruments are, for example, stolen, in dispute, under objection."
+	 * </li>
 	 * </ul>
 	 */
 	public static final PendingFailingReasonCode UnderObjection = new PendingFailingReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnderObjection";
-			definition = "Financial instruments are stolen, in dispute, under objection etc.";
+			definition = "Financial instruments are, for example, stolen, in dispute, under objection.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PendingFailingReasonCode.mmObject();
 			codeName = "OBJT";
 		}
@@ -3638,7 +3640,7 @@ public class PendingFailingReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Central securities depository sets the  instruction in a hold/frozen/preadvice mode."
+	 * "Central securities depository sets the instruction in a hold/frozen/preadvice mode."
 	 * </li>
 	 * </ul>
 	 */
@@ -3646,7 +3648,7 @@ public class PendingFailingReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CSDHold";
-			definition = "Central securities depository sets the  instruction in a hold/frozen/preadvice mode.";
+			definition = "Central securities depository sets the instruction in a hold/frozen/preadvice mode.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PendingFailingReasonCode.mmObject();
 			codeName = "CSDH";
 		}

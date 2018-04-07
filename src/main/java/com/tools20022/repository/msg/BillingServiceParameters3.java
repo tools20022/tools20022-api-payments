@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.entity.ProductQuantity;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BillingServiceIdentification3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -109,7 +110,7 @@ public class BillingServiceParameters3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBankService = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceParameters3, BillingServiceIdentification3> mmBankService = new MMMessageAttribute<BillingServiceParameters3, BillingServiceIdentification3>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceParameters3.mmObject();
@@ -120,7 +121,17 @@ public class BillingServiceParameters3 {
 			definition = "Specifies the details to fully identify the bank service.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.BillingServiceIdentification3.mmObject();
+			complexType_lazy = () -> BillingServiceIdentification3.mmObject();
+		}
+
+		@Override
+		public BillingServiceIdentification3 getValue(BillingServiceParameters3 obj) {
+			return obj.getBankService();
+		}
+
+		@Override
+		public void setValue(BillingServiceParameters3 obj, BillingServiceIdentification3 value) {
+			obj.setBankService(value);
 		}
 	};
 	@XmlElement(name = "Vol")
@@ -159,7 +170,7 @@ public class BillingServiceParameters3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVolume = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceParameters3, Optional<DecimalNumber>> mmVolume = new MMMessageAttribute<BillingServiceParameters3, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceParameters3.mmObject();
@@ -171,6 +182,16 @@ public class BillingServiceParameters3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(BillingServiceParameters3 obj) {
+			return obj.getVolume();
+		}
+
+		@Override
+		public void setValue(BillingServiceParameters3 obj, Optional<DecimalNumber> value) {
+			obj.setVolume(value.orElse(null));
 		}
 	};
 
@@ -192,7 +213,7 @@ public class BillingServiceParameters3 {
 		return bankService;
 	}
 
-	public BillingServiceParameters3 setBankService(com.tools20022.repository.msg.BillingServiceIdentification3 bankService) {
+	public BillingServiceParameters3 setBankService(BillingServiceIdentification3 bankService) {
 		this.bankService = Objects.requireNonNull(bankService);
 		return this;
 	}

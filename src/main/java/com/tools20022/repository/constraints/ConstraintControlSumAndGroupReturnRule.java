@@ -49,7 +49,7 @@ public class ConstraintControlSumAndGroupReturnRule {
 	 * definition} = "If GroupReturn is true, then ControlSum is not allowed."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forGroupHeader72 = new MMConstraint() {
+	public static final MMConstraint<GroupHeader72> forGroupHeader72 = new MMConstraint<GroupHeader72>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ControlSumAndGroupReturnRule";
@@ -59,8 +59,8 @@ public class ConstraintControlSumAndGroupReturnRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkGroupHeader72((GroupHeader72) obj);
+		public void executeValidator(GroupHeader72 obj) throws Exception {
+			checkGroupHeader72(obj);
 		}
 	};
 

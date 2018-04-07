@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.entity.Charges;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ChargesRecord1;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -112,7 +113,7 @@ public class Charges3 {
 	 * definition} = "Total of all charges and taxes applied to the entry."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalChargesAndTaxAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Charges3, Optional<ActiveOrHistoricCurrencyAndAmount>> mmTotalChargesAndTaxAmount = new MMMessageAttribute<Charges3, Optional<ActiveOrHistoricCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Charges3.mmObject();
@@ -125,9 +126,19 @@ public class Charges3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyAndAmount> getValue(Charges3 obj) {
+			return obj.getTotalChargesAndTaxAmount();
+		}
+
+		@Override
+		public void setValue(Charges3 obj, Optional<ActiveOrHistoricCurrencyAndAmount> value) {
+			obj.setTotalChargesAndTaxAmount(value.orElse(null));
+		}
 	};
 	@XmlElement(name = "Rcrd")
-	protected List<com.tools20022.repository.msg.ChargesRecord1> record;
+	protected List<ChargesRecord1> record;
 	/**
 	 * 
 	 <p>
@@ -157,7 +168,7 @@ public class Charges3 {
 	 * definition} = "Provides details of the individual charges record."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRecord = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Charges3, List<ChargesRecord1>> mmRecord = new MMMessageAssociationEnd<Charges3, List<ChargesRecord1>>() {
 		{
 			businessComponentTrace_lazy = () -> Charges.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.Charges3.mmObject();
@@ -168,7 +179,17 @@ public class Charges3 {
 			definition = "Provides details of the individual charges record.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ChargesRecord1.mmObject();
+			type_lazy = () -> ChargesRecord1.mmObject();
+		}
+
+		@Override
+		public List<ChargesRecord1> getValue(Charges3 obj) {
+			return obj.getRecord();
+		}
+
+		@Override
+		public void setValue(Charges3 obj, List<ChargesRecord1> value) {
+			obj.setRecord(value);
 		}
 	};
 
@@ -200,7 +221,7 @@ public class Charges3 {
 		return record == null ? record = new ArrayList<>() : record;
 	}
 
-	public Charges3 setRecord(List<com.tools20022.repository.msg.ChargesRecord1> record) {
+	public Charges3 setRecord(List<ChargesRecord1> record) {
 		this.record = Objects.requireNonNull(record);
 		return this;
 	}

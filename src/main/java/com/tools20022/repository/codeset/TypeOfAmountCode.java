@@ -967,14 +967,14 @@ public class TypeOfAmountCode extends MMCode {
 	 * name} = "InternationalServiceAssessmentFees"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "International  service assessment fees."</li>
+	 * definition} = "International service assessment fees."</li>
 	 * </ul>
 	 */
 	public static final TypeOfAmountCode InternationalServiceAssessmentFees = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InternationalServiceAssessmentFees";
-			definition = "International  service assessment fees.";
+			definition = "International service assessment fees.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "FEEA";
 		}

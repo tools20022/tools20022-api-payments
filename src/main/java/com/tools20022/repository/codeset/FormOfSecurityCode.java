@@ -121,7 +121,7 @@ public class FormOfSecurityCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "The financial instrument does not specify any registration of ownership, and  is payable to whomever possesses the certificate."
+	 * "The financial instrument does not specify any registration of ownership, and is payable to whomever possesses the certificate."
 	 * </li>
 	 * </ul>
 	 */
@@ -129,7 +129,7 @@ public class FormOfSecurityCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bearer";
-			definition = "The financial instrument does not specify any registration of ownership, and  is payable to whomever possesses the certificate.";
+			definition = "The financial instrument does not specify any registration of ownership, and is payable to whomever possesses the certificate.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FormOfSecurityCode.mmObject();
 			codeName = "BEAR";
 		}

@@ -107,7 +107,7 @@ public class BillingMethod1Choice {
 	 * definition} = "Tax values are based on tax calculation method A."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMethodA = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingMethod1Choice, BillingMethod1> mmMethodA = new MMMessageAssociationEnd<BillingMethod1Choice, BillingMethod1>() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.BillingMethod1Choice.mmObject();
@@ -120,6 +120,16 @@ public class BillingMethod1Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> BillingMethod1.mmObject();
+		}
+
+		@Override
+		public BillingMethod1 getValue(BillingMethod1Choice obj) {
+			return obj.getMethodA();
+		}
+
+		@Override
+		public void setValue(BillingMethod1Choice obj, BillingMethod1 value) {
+			obj.setMethodA(value);
 		}
 	};
 	@XmlElement(name = "MtdB", required = true)
@@ -154,7 +164,7 @@ public class BillingMethod1Choice {
 	 * definition} = "Tax values are based on tax calculation method B."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMethodB = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingMethod1Choice, BillingMethod2> mmMethodB = new MMMessageAssociationEnd<BillingMethod1Choice, BillingMethod2>() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.BillingMethod1Choice.mmObject();
@@ -167,6 +177,16 @@ public class BillingMethod1Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> BillingMethod2.mmObject();
+		}
+
+		@Override
+		public BillingMethod2 getValue(BillingMethod1Choice obj) {
+			return obj.getMethodB();
+		}
+
+		@Override
+		public void setValue(BillingMethod1Choice obj, BillingMethod2 value) {
+			obj.setMethodB(value);
 		}
 	};
 	@XmlElement(name = "MtdD", required = true)
@@ -201,7 +221,7 @@ public class BillingMethod1Choice {
 	 * definition} = "Tax values are based on tax calculation method D."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMethodD = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingMethod1Choice, BillingMethod3> mmMethodD = new MMMessageAssociationEnd<BillingMethod1Choice, BillingMethod3>() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.BillingMethod1Choice.mmObject();
@@ -214,6 +234,16 @@ public class BillingMethod1Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> BillingMethod3.mmObject();
+		}
+
+		@Override
+		public BillingMethod3 getValue(BillingMethod1Choice obj) {
+			return obj.getMethodD();
+		}
+
+		@Override
+		public void setValue(BillingMethod1Choice obj, BillingMethod3 value) {
+			obj.setMethodD(value);
 		}
 	};
 

@@ -49,7 +49,7 @@ public class ConstraintIBAN {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forIBAN2007Identifier = new MMConstraint() {
+	public static final MMConstraint<IBAN2007Identifier> forIBAN2007Identifier = new MMConstraint<IBAN2007Identifier>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IBAN";
@@ -58,8 +58,8 @@ public class ConstraintIBAN {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkIBAN2007Identifier((IBAN2007Identifier) obj);
+		public void executeValidator(IBAN2007Identifier obj) throws Exception {
+			checkIBAN2007Identifier(obj);
 		}
 	};
 

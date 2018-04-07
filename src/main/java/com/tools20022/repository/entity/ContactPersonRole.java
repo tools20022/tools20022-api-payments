@@ -21,8 +21,12 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Meeting;
+import com.tools20022.repository.entity.Person;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.NewAccount1;
+import com.tools20022.repository.msg.Organisation20;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -63,6 +67,13 @@ import java.util.Objects;
  * Person.mmContactPersonRole}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Meeting#mmPerson
  * Meeting.mmPerson}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.Organisation20 Organisation20}</li>
  * </ul>
  * </li>
  * <li>
@@ -118,7 +129,7 @@ public class ContactPersonRole extends Role {
 	 * definition} = "Role for which a contact person is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPersonRole, List<Role>> mmRole = new MMBusinessAssociationEnd<ContactPersonRole, List<Role>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPersonRole.mmObject();
@@ -129,6 +140,16 @@ public class ContactPersonRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Role.mmContactPersonRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
+		}
+
+		@Override
+		public List<Role> getValue(ContactPersonRole obj) {
+			return obj.getRole();
+		}
+
+		@Override
+		public void setValue(ContactPersonRole obj, List<Role> value) {
+			obj.setRole(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Meeting> meeting;
@@ -164,7 +185,7 @@ public class ContactPersonRole extends Role {
 	 * definition} = "Meeting for which a person is the contact."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPersonRole, List<Meeting>> mmMeeting = new MMBusinessAssociationEnd<ContactPersonRole, List<Meeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPersonRole.mmObject();
@@ -175,6 +196,16 @@ public class ContactPersonRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmPerson;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
+		}
+
+		@Override
+		public List<Meeting> getValue(ContactPersonRole obj) {
+			return obj.getMeeting();
+		}
+
+		@Override
+		public void setValue(ContactPersonRole obj, List<Meeting> value) {
+			obj.setMeeting(value);
 		}
 	};
 	protected Person person;
@@ -194,6 +225,13 @@ public class ContactPersonRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getType
 	 * type} = {@linkplain com.tools20022.repository.entity.Person Person}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
+	 * derivation} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.NewAccount1#mmAccountParty
+	 * NewAccount1.mmAccountParty}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -210,8 +248,9 @@ public class ContactPersonRole extends Role {
 	 * definition} = "Identifies the person which plays the role of contact."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPerson = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPersonRole, com.tools20022.repository.entity.Person> mmPerson = new MMBusinessAssociationEnd<ContactPersonRole, com.tools20022.repository.entity.Person>() {
 		{
+			derivation_lazy = () -> Arrays.asList(NewAccount1.mmAccountParty);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPersonRole.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,6 +261,16 @@ public class ContactPersonRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Person.mmContactPersonRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Person getValue(ContactPersonRole obj) {
+			return obj.getPerson();
+		}
+
+		@Override
+		public void setValue(ContactPersonRole obj, com.tools20022.repository.entity.Person value) {
+			obj.setPerson(value);
 		}
 	};
 
@@ -235,6 +284,7 @@ public class ContactPersonRole extends Role {
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Role.mmContactPersonRole, com.tools20022.repository.entity.Person.mmContactPersonRole, com.tools20022.repository.entity.Meeting.mmPerson);
 				superType_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ContactPersonRole.mmRole, com.tools20022.repository.entity.ContactPersonRole.mmMeeting, com.tools20022.repository.entity.ContactPersonRole.mmPerson);
+				derivationComponent_lazy = () -> Arrays.asList(Organisation20.mmObject());
 			}
 
 			@Override

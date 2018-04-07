@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.AccountLink;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -115,7 +116,7 @@ public class MarketInfrastructure extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccountLink = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MarketInfrastructure, List<AccountLink>> mmAccountLink = new MMBusinessAssociationEnd<MarketInfrastructure, List<AccountLink>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarketInfrastructure.mmObject();
@@ -126,6 +127,16 @@ public class MarketInfrastructure extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.AccountLink.mmMarketInfrastructure;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AccountLink.mmObject();
+		}
+
+		@Override
+		public List<AccountLink> getValue(MarketInfrastructure obj) {
+			return obj.getAccountLink();
+		}
+
+		@Override
+		public void setValue(MarketInfrastructure obj, List<AccountLink> value) {
+			obj.setAccountLink(value);
 		}
 	};
 

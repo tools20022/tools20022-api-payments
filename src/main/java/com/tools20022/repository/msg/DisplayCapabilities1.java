@@ -102,7 +102,7 @@ public class DisplayCapabilities1 {
 	 * definition} = "Type of display (for example merchant or cardholder)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDisplayType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DisplayCapabilities1, UserInterface2Code> mmDisplayType = new MMMessageAttribute<DisplayCapabilities1, UserInterface2Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.DisplayCapabilities1.mmObject();
 			isDerived = false;
@@ -113,6 +113,16 @@ public class DisplayCapabilities1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> UserInterface2Code.mmObject();
+		}
+
+		@Override
+		public UserInterface2Code getValue(DisplayCapabilities1 obj) {
+			return obj.getDisplayType();
+		}
+
+		@Override
+		public void setValue(DisplayCapabilities1 obj, UserInterface2Code value) {
+			obj.setDisplayType(value);
 		}
 	};
 	@XmlElement(name = "NbOfLines", required = true)
@@ -145,7 +155,7 @@ public class DisplayCapabilities1 {
 	 * definition} = "Number of lines of the display component."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfLines = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DisplayCapabilities1, Max3NumericText> mmNumberOfLines = new MMMessageAttribute<DisplayCapabilities1, Max3NumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.DisplayCapabilities1.mmObject();
 			isDerived = false;
@@ -156,6 +166,16 @@ public class DisplayCapabilities1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
+		}
+
+		@Override
+		public Max3NumericText getValue(DisplayCapabilities1 obj) {
+			return obj.getNumberOfLines();
+		}
+
+		@Override
+		public void setValue(DisplayCapabilities1 obj, Max3NumericText value) {
+			obj.setNumberOfLines(value);
 		}
 	};
 	@XmlElement(name = "LineWidth", required = true)
@@ -188,7 +208,7 @@ public class DisplayCapabilities1 {
 	 * definition} = "Number of columns of the display component."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLineWidth = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DisplayCapabilities1, Max3NumericText> mmLineWidth = new MMMessageAttribute<DisplayCapabilities1, Max3NumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.DisplayCapabilities1.mmObject();
 			isDerived = false;
@@ -199,6 +219,16 @@ public class DisplayCapabilities1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
+		}
+
+		@Override
+		public Max3NumericText getValue(DisplayCapabilities1 obj) {
+			return obj.getLineWidth();
+		}
+
+		@Override
+		public void setValue(DisplayCapabilities1 obj, Max3NumericText value) {
+			obj.setLineWidth(value);
 		}
 	};
 

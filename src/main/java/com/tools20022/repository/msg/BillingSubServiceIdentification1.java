@@ -107,7 +107,7 @@ public class BillingSubServiceIdentification1 {
 	 * definition} = "Specifies the qualifier of the sub service."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingSubServiceIdentification1, BillingSubServiceQualifier1Choice> mmIssuer = new MMMessageAttribute<BillingSubServiceIdentification1, BillingSubServiceQualifier1Choice>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingSubServiceIdentification1.mmObject();
@@ -119,6 +119,16 @@ public class BillingSubServiceIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> BillingSubServiceQualifier1Choice.mmObject();
+		}
+
+		@Override
+		public BillingSubServiceQualifier1Choice getValue(BillingSubServiceIdentification1 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(BillingSubServiceIdentification1 obj, BillingSubServiceQualifier1Choice value) {
+			obj.setIssuer(value);
 		}
 	};
 	@XmlElement(name = "Id", required = true)
@@ -157,7 +167,7 @@ public class BillingSubServiceIdentification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingSubServiceIdentification1, Max35Text> mmIdentification = new MMMessageAttribute<BillingSubServiceIdentification1, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingSubServiceIdentification1.mmObject();
@@ -169,6 +179,16 @@ public class BillingSubServiceIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(BillingSubServiceIdentification1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(BillingSubServiceIdentification1 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 

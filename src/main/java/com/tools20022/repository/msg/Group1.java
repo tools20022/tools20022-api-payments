@@ -24,6 +24,7 @@ import com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02;
 import com.tools20022.repository.area.acmt.AccountOpeningRequestV02;
 import com.tools20022.repository.datatype.Max4AlphaNumericText;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyAndCertificate2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -115,7 +116,7 @@ public class Group1 {
 	 * definition} = "Specifies the identification of the group."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGroupIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Group1, Max4AlphaNumericText> mmGroupIdentification = new MMMessageAttribute<Group1, Max4AlphaNumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.Group1.mmObject();
 			isDerived = false;
@@ -127,9 +128,19 @@ public class Group1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max4AlphaNumericText.mmObject();
 		}
+
+		@Override
+		public Max4AlphaNumericText getValue(Group1 obj) {
+			return obj.getGroupIdentification();
+		}
+
+		@Override
+		public void setValue(Group1 obj, Max4AlphaNumericText value) {
+			obj.setGroupIdentification(value);
+		}
 	};
 	@XmlElement(name = "Pty", required = true)
-	protected List<com.tools20022.repository.msg.PartyAndCertificate2> party;
+	protected List<PartyAndCertificate2> party;
 	/**
 	 * 
 	 <p>
@@ -157,7 +168,7 @@ public class Group1 {
 	 * definition} = "Specifies a party and related certificate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmParty = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Group1, List<PartyAndCertificate2>> mmParty = new MMMessageAttribute<Group1, List<PartyAndCertificate2>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.Group1.mmObject();
 			isDerived = false;
@@ -166,7 +177,17 @@ public class Group1 {
 			name = "Party";
 			definition = "Specifies a party and related certificate.";
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyAndCertificate2.mmObject();
+			complexType_lazy = () -> PartyAndCertificate2.mmObject();
+		}
+
+		@Override
+		public List<PartyAndCertificate2> getValue(Group1 obj) {
+			return obj.getParty();
+		}
+
+		@Override
+		public void setValue(Group1 obj, List<PartyAndCertificate2> value) {
+			obj.setParty(value);
 		}
 	};
 
@@ -198,7 +219,7 @@ public class Group1 {
 		return party == null ? party = new ArrayList<>() : party;
 	}
 
-	public Group1 setParty(List<com.tools20022.repository.msg.PartyAndCertificate2> party) {
+	public Group1 setParty(List<PartyAndCertificate2> party) {
 		this.party = Objects.requireNonNull(party);
 		return this;
 	}

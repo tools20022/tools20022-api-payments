@@ -899,7 +899,7 @@ public class PaymentTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Transaction is a crossed cheque.  A crossed check has two parallel lines across its face, indicating that the cheque must be paid into an account and not cashed over the counter."
+	 * "Transaction is a crossed cheque. A crossed check has two parallel lines across its face, indicating that the cheque must be paid into an account and not cashed over the counter."
 	 * </li>
 	 * </ul>
 	 */
@@ -907,7 +907,7 @@ public class PaymentTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CrossedCheque";
-			definition = "Transaction is a crossed cheque.  A crossed check has two parallel lines across its face, indicating that the cheque must be paid into an account and not cashed over the counter.";
+			definition = "Transaction is a crossed cheque. A crossed check has two parallel lines across its face, indicating that the cheque must be paid into an account and not cashed over the counter.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTypeCode.mmObject();
 			codeName = "CSQ";
 		}
@@ -1101,7 +1101,7 @@ public class PaymentTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Transaction is a cash letter.  A cash letter is a payment instrument in the form of a covering letter, whereby a financial institution, ie, the remitting bank, requests credit for one or more financial documents under usual reserve, ie, subject to final payment."
+	 * "Transaction is a cash letter. A cash letter is a payment instrument in the form of a covering letter, whereby a financial institution, ie, the remitting bank, requests credit for one or more financial documents under usual reserve, ie, subject to final payment."
 	 * </li>
 	 * </ul>
 	 */
@@ -1109,7 +1109,7 @@ public class PaymentTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashLetter";
-			definition = "Transaction is a cash letter.  A cash letter is a payment instrument in the form of a covering letter, whereby a financial institution, ie, the remitting bank, requests credit for one or more financial documents under usual reserve, ie, subject to final payment.";
+			definition = "Transaction is a cash letter. A cash letter is a payment instrument in the form of a covering letter, whereby a financial institution, ie, the remitting bank, requests credit for one or more financial documents under usual reserve, ie, subject to final payment.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTypeCode.mmObject();
 			codeName = "CLR";
 		}
@@ -1204,7 +1204,7 @@ public class PaymentTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Transaction is a collection.  A collection is the act of sending a cheque, bill of exchange or another financial instrument to the prospective financial institution for payment."
+	 * "Transaction is a collection. A collection is the act of sending a cheque, bill of exchange or another financial instrument to the prospective financial institution for payment."
 	 * </li>
 	 * </ul>
 	 */
@@ -1212,7 +1212,7 @@ public class PaymentTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Collection";
-			definition = "Transaction is a collection.  A collection is the act of sending a cheque, bill of exchange or another financial instrument to the prospective financial institution for payment.";
+			definition = "Transaction is a collection. A collection is the act of sending a cheque, bill of exchange or another financial instrument to the prospective financial institution for payment.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTypeCode.mmObject();
 			codeName = "COL";
 		}
@@ -2759,7 +2759,7 @@ public class PaymentTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Transaction is a standing order.  A standing order is an instruction given by a party having explicit authority on the account to debit, ie, either debit account owner or originating party, to a first agent to process cash transfers at specified intervals during an implicit or explicit period of time. It is given once, and is valid for an open or closed period of time."
+	 * "Transaction is a standing order. A standing order is an instruction given by a party having explicit authority on the account to debit, ie, either debit account owner or originating party, to a first agent to process cash transfers at specified intervals during an implicit or explicit period of time. It is given once, and is valid for an open or closed period of time."
 	 * </li>
 	 * </ul>
 	 */
@@ -2767,7 +2767,7 @@ public class PaymentTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingOrder";
-			definition = "Transaction is a standing order.  A standing order is an instruction given by a party having explicit authority on the account to debit, ie, either debit account owner or originating party, to a first agent to process cash transfers at specified intervals during an implicit or explicit period of time. It is given once, and is valid for an open or closed period of time.";
+			definition = "Transaction is a standing order. A standing order is an instruction given by a party having explicit authority on the account to debit, ie, either debit account owner or originating party, to a first agent to process cash transfers at specified intervals during an implicit or explicit period of time. It is given once, and is valid for an open or closed period of time.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTypeCode.mmObject();
 			codeName = "STO";
 		}
@@ -2987,7 +2987,7 @@ public class PaymentTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Transaction is linked to an overnight deposit
+	 * Transaction is linked to an overnight deposit.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -3004,14 +3004,14 @@ public class PaymentTypeCode extends MMCode {
 	 * name} = "OvernightDeposit"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Transaction is linked to an overnight deposit"</li>
+	 * definition} = "Transaction is linked to an overnight deposit."</li>
 	 * </ul>
 	 */
 	public static final PaymentTypeCode OvernightDeposit = new PaymentTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OvernightDeposit";
-			definition = "Transaction is linked to an overnight deposit";
+			definition = "Transaction is linked to an overnight deposit.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTypeCode.mmObject();
 			codeName = "OND";
 		}

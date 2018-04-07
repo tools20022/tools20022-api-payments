@@ -106,7 +106,7 @@ public class UnableToApplyMissing1 {
 	 * definition} = "Specifies the missing information in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnableToApplyMissing1, UnableToApplyMissingInformation3Code> mmCode = new MMMessageAttribute<UnableToApplyMissing1, UnableToApplyMissingInformation3Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.UnableToApplyMissing1.mmObject();
 			isDerived = false;
@@ -117,6 +117,16 @@ public class UnableToApplyMissing1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> UnableToApplyMissingInformation3Code.mmObject();
+		}
+
+		@Override
+		public UnableToApplyMissingInformation3Code getValue(UnableToApplyMissing1 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(UnableToApplyMissing1 obj, UnableToApplyMissingInformation3Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "AddtlMssngInf")
@@ -148,7 +158,7 @@ public class UnableToApplyMissing1 {
 	 * definition} = "Further details about the missing information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalMissingInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnableToApplyMissing1, Optional<Max140Text>> mmAdditionalMissingInformation = new MMMessageAttribute<UnableToApplyMissing1, Optional<Max140Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.UnableToApplyMissing1.mmObject();
 			isDerived = false;
@@ -159,6 +169,16 @@ public class UnableToApplyMissing1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(UnableToApplyMissing1 obj) {
+			return obj.getAdditionalMissingInformation();
+		}
+
+		@Override
+		public void setValue(UnableToApplyMissing1 obj, Optional<Max140Text> value) {
+			obj.setAdditionalMissingInformation(value.orElse(null));
 		}
 	};
 

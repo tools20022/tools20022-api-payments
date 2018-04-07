@@ -20,7 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.msg.CreditTransferTransaction25;
+import com.tools20022.repository.msg.CreditTransferTransaction30;
 
 /**
  * The repetitive ChargesInformation should contain all information on charges
@@ -35,8 +35,8 @@ public class ConstraintChargesInformationGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25
-	 * CreditTransferTransaction25}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30
+	 * CreditTransferTransaction30}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -50,17 +50,17 @@ public class ConstraintChargesInformationGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCreditTransferTransaction25 = new MMConstraint() {
+	public static final MMConstraint<CreditTransferTransaction30> forCreditTransferTransaction30 = new MMConstraint<CreditTransferTransaction30>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChargesInformationGuideline";
 			definition = "The repetitive ChargesInformation should contain all information on charges amount and which party has taken the charges, separately for each agent along the payment chain.";
-			owner_lazy = () -> CreditTransferTransaction25.mmObject();
+			owner_lazy = () -> CreditTransferTransaction30.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction25((CreditTransferTransaction25) obj);
+		public void executeValidator(CreditTransferTransaction30 obj) throws Exception {
+			checkCreditTransferTransaction30(obj);
 		}
 	};
 
@@ -69,7 +69,7 @@ public class ConstraintChargesInformationGuideline {
 	 * charges amount and which party has taken the charges, separately for each
 	 * agent along the payment chain.
 	 */
-	public static void checkCreditTransferTransaction25(CreditTransferTransaction25 obj) throws Exception {
+	public static void checkCreditTransferTransaction30(CreditTransferTransaction30 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

@@ -30,6 +30,9 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Contract;
 import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ContractBalance1;
+import com.tools20022.repository.msg.DocumentGeneralInformation3;
+import com.tools20022.repository.msg.SupplementaryData1;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -140,7 +143,7 @@ public class RegisteredContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegisteredContractAmendmentIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContract3, Max35Text> mmRegisteredContractAmendmentIdentification = new MMMessageAttribute<RegisteredContract3, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContract3.mmObject();
@@ -153,6 +156,16 @@ public class RegisteredContract3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(RegisteredContract3 obj) {
+			return obj.getRegisteredContractAmendmentIdentification();
+		}
+
+		@Override
+		public void setValue(RegisteredContract3 obj, Max35Text value) {
+			obj.setRegisteredContractAmendmentIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgnlRegdCtrctId", required = true)
@@ -195,7 +208,7 @@ public class RegisteredContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalRegisteredContractIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContract3, Max35Text> mmOriginalRegisteredContractIdentification = new MMMessageAttribute<RegisteredContract3, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContract3.mmObject();
@@ -208,6 +221,16 @@ public class RegisteredContract3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(RegisteredContract3 obj) {
+			return obj.getOriginalRegisteredContractIdentification();
+		}
+
+		@Override
+		public void setValue(RegisteredContract3 obj, Max35Text value) {
+			obj.setOriginalRegisteredContractIdentification(value);
 		}
 	};
 	@XmlElement(name = "Prty", required = true)
@@ -246,7 +269,7 @@ public class RegisteredContract3 {
 	 * "Priority requested for the amendment of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPriority = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContract3, Priority2Code> mmPriority = new MMMessageAttribute<RegisteredContract3, Priority2Code>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmPriority;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContract3.mmObject();
@@ -258,6 +281,16 @@ public class RegisteredContract3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Priority2Code.mmObject();
+		}
+
+		@Override
+		public Priority2Code getValue(RegisteredContract3 obj) {
+			return obj.getPriority();
+		}
+
+		@Override
+		public void setValue(RegisteredContract3 obj, Priority2Code value) {
+			obj.setPriority(value);
 		}
 	};
 	@XmlElement(name = "Ctrct", required = true)
@@ -295,7 +328,7 @@ public class RegisteredContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContract = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RegisteredContract3, UnderlyingContract1Choice> mmContract = new MMMessageAssociationEnd<RegisteredContract3, UnderlyingContract1Choice>() {
 		{
 			businessComponentTrace_lazy = () -> Contract.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContract3.mmObject();
@@ -309,9 +342,19 @@ public class RegisteredContract3 {
 			isComposite = true;
 			type_lazy = () -> UnderlyingContract1Choice.mmObject();
 		}
+
+		@Override
+		public UnderlyingContract1Choice getValue(RegisteredContract3 obj) {
+			return obj.getContract();
+		}
+
+		@Override
+		public void setValue(RegisteredContract3 obj, UnderlyingContract1Choice value) {
+			obj.setContract(value);
+		}
 	};
 	@XmlElement(name = "CtrctBal")
-	protected List<com.tools20022.repository.msg.ContractBalance1> contractBalance;
+	protected List<ContractBalance1> contractBalance;
 	/**
 	 * 
 	 <p>
@@ -343,7 +386,7 @@ public class RegisteredContract3 {
 	 * definition} = "Contract balance on date of contract registration."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContractBalance = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RegisteredContract3, List<ContractBalance1>> mmContractBalance = new MMMessageAssociationEnd<RegisteredContract3, List<ContractBalance1>>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmContractBalance;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContract3.mmObject();
@@ -354,7 +397,17 @@ public class RegisteredContract3 {
 			definition = "Contract balance on date of contract registration.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ContractBalance1.mmObject();
+			type_lazy = () -> ContractBalance1.mmObject();
+		}
+
+		@Override
+		public List<ContractBalance1> getValue(RegisteredContract3 obj) {
+			return obj.getContractBalance();
+		}
+
+		@Override
+		public void setValue(RegisteredContract3 obj, List<ContractBalance1> value) {
+			obj.setContractBalance(value);
 		}
 	};
 	@XmlElement(name = "PmtSchdlTp")
@@ -391,7 +444,7 @@ public class RegisteredContract3 {
 	 * definition} = "Type of the payment schedule provided in the contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPaymentScheduleType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RegisteredContract3, Optional<PaymentScheduleType1Choice>> mmPaymentScheduleType = new MMMessageAssociationEnd<RegisteredContract3, Optional<PaymentScheduleType1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmPaymentScheduleType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContract3.mmObject();
@@ -404,6 +457,16 @@ public class RegisteredContract3 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> PaymentScheduleType1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentScheduleType1Choice> getValue(RegisteredContract3 obj) {
+			return obj.getPaymentScheduleType();
+		}
+
+		@Override
+		public void setValue(RegisteredContract3 obj, Optional<PaymentScheduleType1Choice> value) {
+			obj.setPaymentScheduleType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -435,7 +498,7 @@ public class RegisteredContract3 {
 	 * definition} = "Further additional information on the amendment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContract3, Optional<Max1025Text>> mmAdditionalInformation = new MMMessageAttribute<RegisteredContract3, Optional<Max1025Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContract3.mmObject();
 			isDerived = false;
@@ -447,9 +510,19 @@ public class RegisteredContract3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max1025Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max1025Text> getValue(RegisteredContract3 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(RegisteredContract3 obj, Optional<Max1025Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 	@XmlElement(name = "Attchmnt")
-	protected List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment;
+	protected List<DocumentGeneralInformation3> attachment;
 	/**
 	 * 
 	 <p>
@@ -484,7 +557,7 @@ public class RegisteredContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAttachment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RegisteredContract3, List<DocumentGeneralInformation3>> mmAttachment = new MMMessageAssociationEnd<RegisteredContract3, List<DocumentGeneralInformation3>>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmAttachment;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContract3.mmObject();
@@ -495,11 +568,21 @@ public class RegisteredContract3 {
 			definition = "Documents provided as attachments to the contract registration amendment request.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DocumentGeneralInformation3.mmObject();
+			type_lazy = () -> DocumentGeneralInformation3.mmObject();
+		}
+
+		@Override
+		public List<DocumentGeneralInformation3> getValue(RegisteredContract3 obj) {
+			return obj.getAttachment();
+		}
+
+		@Override
+		public void setValue(RegisteredContract3 obj, List<DocumentGeneralInformation3> value) {
+			obj.setAttachment(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
-	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
+	protected List<SupplementaryData1> supplementaryData;
 	/**
 	 * 
 	 <p>
@@ -528,7 +611,7 @@ public class RegisteredContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RegisteredContract3, List<SupplementaryData1>> mmSupplementaryData = new MMMessageAssociationEnd<RegisteredContract3, List<SupplementaryData1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContract3.mmObject();
 			isDerived = false;
@@ -538,7 +621,17 @@ public class RegisteredContract3 {
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
+			type_lazy = () -> SupplementaryData1.mmObject();
+		}
+
+		@Override
+		public List<SupplementaryData1> getValue(RegisteredContract3 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(RegisteredContract3 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -599,7 +692,7 @@ public class RegisteredContract3 {
 		return contractBalance == null ? contractBalance = new ArrayList<>() : contractBalance;
 	}
 
-	public RegisteredContract3 setContractBalance(List<com.tools20022.repository.msg.ContractBalance1> contractBalance) {
+	public RegisteredContract3 setContractBalance(List<ContractBalance1> contractBalance) {
 		this.contractBalance = Objects.requireNonNull(contractBalance);
 		return this;
 	}
@@ -626,7 +719,7 @@ public class RegisteredContract3 {
 		return attachment == null ? attachment = new ArrayList<>() : attachment;
 	}
 
-	public RegisteredContract3 setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
+	public RegisteredContract3 setAttachment(List<DocumentGeneralInformation3> attachment) {
 		this.attachment = Objects.requireNonNull(attachment);
 		return this;
 	}
@@ -635,7 +728,7 @@ public class RegisteredContract3 {
 		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public RegisteredContract3 setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+	public RegisteredContract3 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
 		this.supplementaryData = Objects.requireNonNull(supplementaryData);
 		return this;
 	}

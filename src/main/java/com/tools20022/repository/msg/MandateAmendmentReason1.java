@@ -26,6 +26,7 @@ import com.tools20022.repository.datatype.Max105Text;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyIdentification43;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -110,7 +111,7 @@ public class MandateAmendmentReason1 {
 	 * definition} = "Party that issues the amendment request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginator = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MandateAmendmentReason1, Optional<PartyIdentification43>> mmOriginator = new MMMessageAssociationEnd<MandateAmendmentReason1, Optional<PartyIdentification43>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAmendmentReason1.mmObject();
@@ -122,7 +123,17 @@ public class MandateAmendmentReason1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
+			type_lazy = () -> PartyIdentification43.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification43> getValue(MandateAmendmentReason1 obj) {
+			return obj.getOriginator();
+		}
+
+		@Override
+		public void setValue(MandateAmendmentReason1 obj, Optional<PartyIdentification43> value) {
+			obj.setOriginator(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rsn", required = true)
@@ -159,7 +170,7 @@ public class MandateAmendmentReason1 {
 	 * definition} = "Specifies the reason for the amendment request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MandateAmendmentReason1, MandateReason1Choice> mmReason = new MMMessageAssociationEnd<MandateAmendmentReason1, MandateReason1Choice>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAmendmentReason1.mmObject();
@@ -172,6 +183,16 @@ public class MandateAmendmentReason1 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> MandateReason1Choice.mmObject();
+		}
+
+		@Override
+		public MandateReason1Choice getValue(MandateAmendmentReason1 obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(MandateAmendmentReason1 obj, MandateReason1Choice value) {
+			obj.setReason(value);
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -203,7 +224,7 @@ public class MandateAmendmentReason1 {
 	 * definition} = "Further details on the amendment request reason."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateAmendmentReason1, List<Max105Text>> mmAdditionalInformation = new MMMessageAttribute<MandateAmendmentReason1, List<Max105Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAmendmentReason1.mmObject();
 			isDerived = false;
@@ -213,6 +234,16 @@ public class MandateAmendmentReason1 {
 			definition = "Further details on the amendment request reason.";
 			minOccurs = 0;
 			simpleType_lazy = () -> Max105Text.mmObject();
+		}
+
+		@Override
+		public List<Max105Text> getValue(MandateAmendmentReason1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(MandateAmendmentReason1 obj, List<Max105Text> value) {
+			obj.setAdditionalInformation(value);
 		}
 	};
 
@@ -235,7 +266,7 @@ public class MandateAmendmentReason1 {
 		return originator == null ? Optional.empty() : Optional.of(originator);
 	}
 
-	public MandateAmendmentReason1 setOriginator(com.tools20022.repository.msg.PartyIdentification43 originator) {
+	public MandateAmendmentReason1 setOriginator(PartyIdentification43 originator) {
 		this.originator = originator;
 		return this;
 	}

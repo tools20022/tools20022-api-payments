@@ -21,6 +21,11 @@ import com.tools20022.metamodel.MMDate;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Date;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * A particular point in the progression of time in a calendar year expressed in
@@ -47,9 +52,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class ISODate {
 
 	final static private AtomicReference<MMDate> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
+	protected Date value;
 
 	final static public MMDate mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMDate() {
@@ -61,5 +70,25 @@ public class ISODate {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODate() {
+	}
+
+	public ISODate(Date value) {
+		this.value = value;
+	}
+
+	public Date getValue() {
+		return value;
+	}
+
+	public void setValue(Date value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value == null ? null : value.toString();
 	}
 }

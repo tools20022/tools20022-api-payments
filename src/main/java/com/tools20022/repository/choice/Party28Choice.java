@@ -114,7 +114,7 @@ public class Party28Choice {
 	 * Party12Choice.mmParty}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Party28Choice, PartyIdentification77> mmParty = new MMMessageAssociationEnd<Party28Choice, PartyIdentification77>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.Party28Choice.mmObject();
@@ -128,6 +128,16 @@ public class Party28Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> PartyIdentification77.mmObject();
+		}
+
+		@Override
+		public PartyIdentification77 getValue(Party28Choice obj) {
+			return obj.getParty();
+		}
+
+		@Override
+		public void setValue(Party28Choice obj, PartyIdentification77 value) {
+			obj.setParty(value);
 		}
 	};
 	@XmlElement(name = "Agt", required = true)
@@ -169,7 +179,7 @@ public class Party28Choice {
 	 * Party12Choice.mmAgent}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Party28Choice, BranchAndFinancialInstitutionIdentification5> mmAgent = new MMMessageAssociationEnd<Party28Choice, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			businessComponentTrace_lazy = () -> FinancialInstitution.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.Party28Choice.mmObject();
@@ -183,6 +193,16 @@ public class Party28Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(Party28Choice obj) {
+			return obj.getAgent();
+		}
+
+		@Override
+		public void setValue(Party28Choice obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setAgent(value);
 		}
 	};
 

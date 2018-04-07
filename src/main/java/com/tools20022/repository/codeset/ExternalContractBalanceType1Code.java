@@ -36,6 +36,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ExternalContractBalanceTypeCode
+ * ExternalContractBalanceTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -76,6 +79,7 @@ public class ExternalContractBalanceType1Code extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalContractBalanceType1Code";
 				definition = "Specifies a contract balance type code, as published in the external ISO 20022 external code set.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				trace_lazy = () -> ExternalContractBalanceTypeCode.mmObject();
 				minLength = 1;
 				maxLength = 4;
 			}

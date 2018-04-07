@@ -110,7 +110,7 @@ public class ProprietaryBankTransactionCodeStructure1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProprietaryBankTransactionCodeStructure1, Max35Text> mmCode = new MMMessageAttribute<ProprietaryBankTransactionCodeStructure1, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1.mmObject();
@@ -122,6 +122,16 @@ public class ProprietaryBankTransactionCodeStructure1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ProprietaryBankTransactionCodeStructure1 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ProprietaryBankTransactionCodeStructure1 obj, Max35Text value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Issr")
@@ -159,7 +169,7 @@ public class ProprietaryBankTransactionCodeStructure1 {
 	 * "Identification of the issuer of the proprietary bank transaction code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProprietaryBankTransactionCodeStructure1, Optional<Max35Text>> mmIssuer = new MMMessageAttribute<ProprietaryBankTransactionCodeStructure1, Optional<Max35Text>>() {
 		{
 			businessComponentTrace_lazy = () -> IdentificationIssuerRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1.mmObject();
@@ -171,6 +181,16 @@ public class ProprietaryBankTransactionCodeStructure1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(ProprietaryBankTransactionCodeStructure1 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(ProprietaryBankTransactionCodeStructure1 obj, Optional<Max35Text> value) {
+			obj.setIssuer(value.orElse(null));
 		}
 	};
 

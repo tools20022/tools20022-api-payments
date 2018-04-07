@@ -22,9 +22,9 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.FloatingInterestRate4;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -144,7 +144,7 @@ public class Spread {
 	 * "Security used as a reference to express the value of another security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBenchmarkSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Spread, Security> mmBenchmarkSecurity = new MMBusinessAssociationEnd<Spread, Security>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
@@ -153,9 +153,19 @@ public class Spread {
 			definition = "Security used as a reference to express the value of another security.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmSpread;
+			opposite_lazy = () -> Security.mmSpread;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Security getValue(Spread obj) {
+			return obj.getBenchmarkSecurity();
+		}
+
+		@Override
+		public void setValue(Spread obj, Security value) {
+			obj.setBenchmarkSecurity(value);
 		}
 	};
 	protected SecuritiesFinancing securitiesFinancing;
@@ -193,7 +203,7 @@ public class Spread {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesFinancing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Spread, Optional<SecuritiesFinancing>> mmSecuritiesFinancing = new MMBusinessAssociationEnd<Spread, Optional<SecuritiesFinancing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
@@ -202,9 +212,19 @@ public class Spread {
 			definition = "Securities financing process for which a repurchase spread is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmRepurchaseSpread;
+			opposite_lazy = () -> SecuritiesFinancing.mmRepurchaseSpread;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
+			type_lazy = () -> SecuritiesFinancing.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesFinancing> getValue(Spread obj) {
+			return obj.getSecuritiesFinancing();
+		}
+
+		@Override
+		public void setValue(Spread obj, Optional<SecuritiesFinancing> value) {
+			obj.setSecuritiesFinancing(value.orElse(null));
 		}
 	};
 	protected PercentageRate spreadRate;
@@ -235,7 +255,7 @@ public class Spread {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSpreadRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Spread, PercentageRate> mmSpreadRate = new MMBusinessAttribute<Spread, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
@@ -247,12 +267,14 @@ public class Spread {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Spread.class.getMethod("getSpreadRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Spread obj) {
+			return obj.getSpreadRate();
+		}
+
+		@Override
+		public void setValue(Spread obj, PercentageRate value) {
+			obj.setSpreadRate(value);
 		}
 	};
 	protected Number basisPointSpread;
@@ -289,7 +311,7 @@ public class Spread {
 	 * "Specifies the number of points to be added or substracted to the rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBasisPointSpread = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Spread, Number> mmBasisPointSpread = new MMBusinessAttribute<Spread, Number>() {
 		{
 			derivation_lazy = () -> Arrays.asList(FloatingInterestRate4.mmBasisPointSpread);
 			isDerived = false;
@@ -302,12 +324,14 @@ public class Spread {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Spread.class.getMethod("getBasisPointSpread", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Spread obj) {
+			return obj.getBasisPointSpread();
+		}
+
+		@Override
+		public void setValue(Spread obj, Number value) {
+			obj.setBasisPointSpread(value);
 		}
 	};
 	protected Index index;
@@ -341,7 +365,7 @@ public class Spread {
 	 * definition} = "Index for which a spread is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIndex = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Spread, Optional<Index>> mmIndex = new MMBusinessAssociationEnd<Spread, Optional<Index>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
@@ -350,9 +374,19 @@ public class Spread {
 			definition = "Index for which a spread is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Index.mmSpread;
+			opposite_lazy = () -> Index.mmSpread;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
+			type_lazy = () -> Index.mmObject();
+		}
+
+		@Override
+		public Optional<Index> getValue(Spread obj) {
+			return obj.getIndex();
+		}
+
+		@Override
+		public void setValue(Spread obj, Optional<Index> value) {
+			obj.setIndex(value.orElse(null));
 		}
 	};
 	protected SecuritiesPricing benchmarkPrice;
@@ -388,7 +422,7 @@ public class Spread {
 	 * definition} = "Identifies the price of the benchmark security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBenchmarkPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Spread, SecuritiesPricing> mmBenchmarkPrice = new MMBusinessAssociationEnd<Spread, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
@@ -397,12 +431,22 @@ public class Spread {
 			definition = "Identifies the price of the benchmark security.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmSpread;
+			opposite_lazy = () -> SecuritiesPricing.mmSpread;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(Spread obj) {
+			return obj.getBenchmarkPrice();
+		}
+
+		@Override
+		public void setValue(Spread obj, SecuritiesPricing value) {
+			obj.setBenchmarkPrice(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.BuyOrSellIndicationOfInterest> relatedIndicationOfInterest;
+	protected List<BuyOrSellIndicationOfInterest> relatedIndicationOfInterest;
 	/**
 	 * 
 	 <p>
@@ -438,7 +482,7 @@ public class Spread {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Spread, List<BuyOrSellIndicationOfInterest>> mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd<Spread, List<BuyOrSellIndicationOfInterest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
@@ -446,9 +490,19 @@ public class Spread {
 			name = "RelatedIndicationOfInterest";
 			definition = "Indication of interest process for which a spread to benchmark is specified.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmSpreadToBenchmark;
+			opposite_lazy = () -> BuyOrSellIndicationOfInterest.mmSpreadToBenchmark;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
+			type_lazy = () -> BuyOrSellIndicationOfInterest.mmObject();
+		}
+
+		@Override
+		public List<BuyOrSellIndicationOfInterest> getValue(Spread obj) {
+			return obj.getRelatedIndicationOfInterest();
+		}
+
+		@Override
+		public void setValue(Spread obj, List<BuyOrSellIndicationOfInterest> value) {
+			obj.setRelatedIndicationOfInterest(value);
 		}
 	};
 	protected BuyOrSellIndicationOfInterest indicationOfInterest;
@@ -486,7 +540,7 @@ public class Spread {
 	 * "Indication of interest process for which a spread is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIndicationOfInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Spread, Optional<BuyOrSellIndicationOfInterest>> mmIndicationOfInterest = new MMBusinessAssociationEnd<Spread, Optional<BuyOrSellIndicationOfInterest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
@@ -495,9 +549,19 @@ public class Spread {
 			definition = "Indication of interest process for which a spread is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmSwapSpread;
+			opposite_lazy = () -> BuyOrSellIndicationOfInterest.mmSwapSpread;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
+			type_lazy = () -> BuyOrSellIndicationOfInterest.mmObject();
+		}
+
+		@Override
+		public Optional<BuyOrSellIndicationOfInterest> getValue(Spread obj) {
+			return obj.getIndicationOfInterest();
+		}
+
+		@Override
+		public void setValue(Spread obj, Optional<BuyOrSellIndicationOfInterest> value) {
+			obj.setIndicationOfInterest(value.orElse(null));
 		}
 	};
 	protected InterestCalculation relatedInterest;
@@ -534,7 +598,7 @@ public class Spread {
 	 * "Interest calculation process for which a spread is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Spread, InterestCalculation> mmRelatedInterest = new MMBusinessAssociationEnd<Spread, InterestCalculation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
@@ -543,9 +607,19 @@ public class Spread {
 			definition = "Interest calculation process for which a spread is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmSpread;
+			opposite_lazy = () -> InterestCalculation.mmSpread;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmObject();
+			type_lazy = () -> InterestCalculation.mmObject();
+		}
+
+		@Override
+		public InterestCalculation getValue(Spread obj) {
+			return obj.getRelatedInterest();
+		}
+
+		@Override
+		public void setValue(Spread obj, InterestCalculation value) {
+			obj.setRelatedInterest(value);
 		}
 	};
 	protected Curve benchmarkCurve;
@@ -579,7 +653,7 @@ public class Spread {
 	 * definition} = "Describes a benchmark curve."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBenchmarkCurve = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Spread, Curve> mmBenchmarkCurve = new MMBusinessAssociationEnd<Spread, Curve>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
@@ -588,9 +662,19 @@ public class Spread {
 			definition = "Describes a benchmark curve.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Curve.mmSpread;
+			opposite_lazy = () -> Curve.mmSpread;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
+			type_lazy = () -> Curve.mmObject();
+		}
+
+		@Override
+		public Curve getValue(Spread obj) {
+			return obj.getBenchmarkCurve();
+		}
+
+		@Override
+		public void setValue(Spread obj, Curve value) {
+			obj.setBenchmarkCurve(value);
 		}
 	};
 	protected DecimalNumber priceOffset;
@@ -624,7 +708,7 @@ public class Spread {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPriceOffset = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Spread, DecimalNumber> mmPriceOffset = new MMBusinessAttribute<Spread, DecimalNumber>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
@@ -637,12 +721,14 @@ public class Spread {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Spread.class.getMethod("getPriceOffset", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(Spread obj) {
+			return obj.getPriceOffset();
+		}
+
+		@Override
+		public void setValue(Spread obj, DecimalNumber value) {
+			obj.setPriceOffset(value);
 		}
 	};
 
@@ -653,9 +739,8 @@ public class Spread {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Spread";
 				definition = "Margin over or under an index which determines a rate.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmSpread, com.tools20022.repository.entity.SecuritiesPricing.mmSpread, com.tools20022.repository.entity.InterestCalculation.mmSpread,
-						com.tools20022.repository.entity.Index.mmSpread, com.tools20022.repository.entity.SecuritiesFinancing.mmRepurchaseSpread, com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmSpreadToBenchmark,
-						com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmSwapSpread, com.tools20022.repository.entity.Curve.mmSpread);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmSpread, SecuritiesPricing.mmSpread, InterestCalculation.mmSpread, Index.mmSpread, SecuritiesFinancing.mmRepurchaseSpread,
+						BuyOrSellIndicationOfInterest.mmSpreadToBenchmark, BuyOrSellIndicationOfInterest.mmSwapSpread, Curve.mmSpread);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Spread.mmBenchmarkSecurity, com.tools20022.repository.entity.Spread.mmSecuritiesFinancing, com.tools20022.repository.entity.Spread.mmSpreadRate,
 						com.tools20022.repository.entity.Spread.mmBasisPointSpread, com.tools20022.repository.entity.Spread.mmIndex, com.tools20022.repository.entity.Spread.mmBenchmarkPrice,
 						com.tools20022.repository.entity.Spread.mmRelatedIndicationOfInterest, com.tools20022.repository.entity.Spread.mmIndicationOfInterest, com.tools20022.repository.entity.Spread.mmRelatedInterest,
@@ -674,7 +759,7 @@ public class Spread {
 		return benchmarkSecurity;
 	}
 
-	public Spread setBenchmarkSecurity(com.tools20022.repository.entity.Security benchmarkSecurity) {
+	public Spread setBenchmarkSecurity(Security benchmarkSecurity) {
 		this.benchmarkSecurity = Objects.requireNonNull(benchmarkSecurity);
 		return this;
 	}
@@ -683,7 +768,7 @@ public class Spread {
 		return securitiesFinancing == null ? Optional.empty() : Optional.of(securitiesFinancing);
 	}
 
-	public Spread setSecuritiesFinancing(com.tools20022.repository.entity.SecuritiesFinancing securitiesFinancing) {
+	public Spread setSecuritiesFinancing(SecuritiesFinancing securitiesFinancing) {
 		this.securitiesFinancing = securitiesFinancing;
 		return this;
 	}
@@ -710,7 +795,7 @@ public class Spread {
 		return index == null ? Optional.empty() : Optional.of(index);
 	}
 
-	public Spread setIndex(com.tools20022.repository.entity.Index index) {
+	public Spread setIndex(Index index) {
 		this.index = index;
 		return this;
 	}
@@ -719,7 +804,7 @@ public class Spread {
 		return benchmarkPrice;
 	}
 
-	public Spread setBenchmarkPrice(com.tools20022.repository.entity.SecuritiesPricing benchmarkPrice) {
+	public Spread setBenchmarkPrice(SecuritiesPricing benchmarkPrice) {
 		this.benchmarkPrice = Objects.requireNonNull(benchmarkPrice);
 		return this;
 	}
@@ -728,7 +813,7 @@ public class Spread {
 		return relatedIndicationOfInterest == null ? relatedIndicationOfInterest = new ArrayList<>() : relatedIndicationOfInterest;
 	}
 
-	public Spread setRelatedIndicationOfInterest(List<com.tools20022.repository.entity.BuyOrSellIndicationOfInterest> relatedIndicationOfInterest) {
+	public Spread setRelatedIndicationOfInterest(List<BuyOrSellIndicationOfInterest> relatedIndicationOfInterest) {
 		this.relatedIndicationOfInterest = Objects.requireNonNull(relatedIndicationOfInterest);
 		return this;
 	}
@@ -737,7 +822,7 @@ public class Spread {
 		return indicationOfInterest == null ? Optional.empty() : Optional.of(indicationOfInterest);
 	}
 
-	public Spread setIndicationOfInterest(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest indicationOfInterest) {
+	public Spread setIndicationOfInterest(BuyOrSellIndicationOfInterest indicationOfInterest) {
 		this.indicationOfInterest = indicationOfInterest;
 		return this;
 	}
@@ -746,7 +831,7 @@ public class Spread {
 		return relatedInterest;
 	}
 
-	public Spread setRelatedInterest(com.tools20022.repository.entity.InterestCalculation relatedInterest) {
+	public Spread setRelatedInterest(InterestCalculation relatedInterest) {
 		this.relatedInterest = Objects.requireNonNull(relatedInterest);
 		return this;
 	}
@@ -755,7 +840,7 @@ public class Spread {
 		return benchmarkCurve;
 	}
 
-	public Spread setBenchmarkCurve(com.tools20022.repository.entity.Curve benchmarkCurve) {
+	public Spread setBenchmarkCurve(Curve benchmarkCurve) {
 		this.benchmarkCurve = Objects.requireNonNull(benchmarkCurve);
 		return this;
 	}

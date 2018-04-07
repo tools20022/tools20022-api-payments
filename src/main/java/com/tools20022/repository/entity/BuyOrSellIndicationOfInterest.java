@@ -27,8 +27,8 @@ import com.tools20022.repository.codeset.RoutingTypeCode;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -167,7 +167,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * "Negotiation details associated with an indication of interest."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNegotiationDetails = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BuyOrSellIndicationOfInterest, Negotiation> mmNegotiationDetails = new MMBusinessAssociationEnd<BuyOrSellIndicationOfInterest, Negotiation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -176,12 +176,22 @@ public class BuyOrSellIndicationOfInterest {
 			definition = "Negotiation details associated with an indication of interest.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Negotiation.mmIndicationOfInterest;
+			opposite_lazy = () -> Negotiation.mmIndicationOfInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
+			type_lazy = () -> Negotiation.mmObject();
+		}
+
+		@Override
+		public Negotiation getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getNegotiationDetails();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, Negotiation value) {
+			obj.setNegotiationDetails(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Organisation> organisations;
+	protected List<Organisation> organisations;
 	/**
 	 * 
 	 <p>
@@ -217,7 +227,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrganisations = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BuyOrSellIndicationOfInterest, List<Organisation>> mmOrganisations = new MMBusinessAssociationEnd<BuyOrSellIndicationOfInterest, List<Organisation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -225,9 +235,19 @@ public class BuyOrSellIndicationOfInterest {
 			name = "Organisations";
 			definition = "Organisations to be included from the targeted list of firms, managed by the vendor, receiving indications.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmRelatedIndicationOfInterest;
+			opposite_lazy = () -> Organisation.mmRelatedIndicationOfInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			type_lazy = () -> Organisation.mmObject();
+		}
+
+		@Override
+		public List<Organisation> getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getOrganisations();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, List<Organisation> value) {
+			obj.setOrganisations(value);
 		}
 	};
 	protected RelativeSizeCode relativeSize;
@@ -260,7 +280,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * definition} = "Indicates a quantity in relative size."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRelativeSize = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BuyOrSellIndicationOfInterest, RelativeSizeCode> mmRelativeSize = new MMBusinessAttribute<BuyOrSellIndicationOfInterest, RelativeSizeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -273,12 +293,14 @@ public class BuyOrSellIndicationOfInterest {
 			simpleType_lazy = () -> RelativeSizeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyOrSellIndicationOfInterest.class.getMethod("getRelativeSize", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RelativeSizeCode getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getRelativeSize();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, RelativeSizeCode value) {
+			obj.setRelativeSize(value);
 		}
 	};
 	protected SecuritiesPricing price;
@@ -313,7 +335,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPrice = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BuyOrSellIndicationOfInterest, SecuritiesPricing> mmPrice = new MMBusinessAttribute<BuyOrSellIndicationOfInterest, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -323,15 +345,17 @@ public class BuyOrSellIndicationOfInterest {
 			definition = "Indicates the price of the instrument, applicable to the indication of interest.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			complexType_lazy = () -> SecuritiesPricing.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyOrSellIndicationOfInterest.class.getMethod("getPrice", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesPricing getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getPrice();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, SecuritiesPricing value) {
+			obj.setPrice(value);
 		}
 	};
 	protected QualityIndicationCode qualityIndication;
@@ -365,7 +389,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * "Indicates the relative quality of the indication of interest."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmQualityIndication = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BuyOrSellIndicationOfInterest, QualityIndicationCode> mmQualityIndication = new MMBusinessAttribute<BuyOrSellIndicationOfInterest, QualityIndicationCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -378,12 +402,14 @@ public class BuyOrSellIndicationOfInterest {
 			simpleType_lazy = () -> QualityIndicationCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyOrSellIndicationOfInterest.class.getMethod("getQualityIndication", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public QualityIndicationCode getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getQualityIndication();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, QualityIndicationCode value) {
+			obj.setQualityIndication(value);
 		}
 	};
 	protected TrueFalseIndicator naturalIndicator;
@@ -418,7 +444,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNaturalIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BuyOrSellIndicationOfInterest, TrueFalseIndicator> mmNaturalIndicator = new MMBusinessAttribute<BuyOrSellIndicationOfInterest, TrueFalseIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -431,12 +457,14 @@ public class BuyOrSellIndicationOfInterest {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyOrSellIndicationOfInterest.class.getMethod("getNaturalIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TrueFalseIndicator getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getNaturalIndicator();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, TrueFalseIndicator value) {
+			obj.setNaturalIndicator(value);
 		}
 	};
 	protected QualifierCode qualifier;
@@ -469,7 +497,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * definition} = "Qualifies the use of the indication of interest."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmQualifier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BuyOrSellIndicationOfInterest, QualifierCode> mmQualifier = new MMBusinessAttribute<BuyOrSellIndicationOfInterest, QualifierCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -482,12 +510,14 @@ public class BuyOrSellIndicationOfInterest {
 			simpleType_lazy = () -> QualifierCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyOrSellIndicationOfInterest.class.getMethod("getQualifier", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public QualifierCode getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getQualifier();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, QualifierCode value) {
+			obj.setQualifier(value);
 		}
 	};
 	protected Number numberOfLegs;
@@ -518,7 +548,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumberOfLegs = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BuyOrSellIndicationOfInterest, Number> mmNumberOfLegs = new MMBusinessAttribute<BuyOrSellIndicationOfInterest, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -530,12 +560,14 @@ public class BuyOrSellIndicationOfInterest {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyOrSellIndicationOfInterest.class.getMethod("getNumberOfLegs", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getNumberOfLegs();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, Number value) {
+			obj.setNumberOfLegs(value);
 		}
 	};
 	protected Spread spreadToBenchmark;
@@ -573,7 +605,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSpreadToBenchmark = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BuyOrSellIndicationOfInterest, Spread> mmSpreadToBenchmark = new MMBusinessAssociationEnd<BuyOrSellIndicationOfInterest, Spread>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -582,9 +614,19 @@ public class BuyOrSellIndicationOfInterest {
 			definition = "Indicates the spread to benchmark details of an indication of interest.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Spread.mmRelatedIndicationOfInterest;
+			opposite_lazy = () -> Spread.mmRelatedIndicationOfInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
+			type_lazy = () -> Spread.mmObject();
+		}
+
+		@Override
+		public Spread getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getSpreadToBenchmark();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, Spread value) {
+			obj.setSpreadToBenchmark(value);
 		}
 	};
 	protected Spread swapSpread;
@@ -621,7 +663,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * "Indicates the swap spread details of an indication of interest."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSwapSpread = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BuyOrSellIndicationOfInterest, Spread> mmSwapSpread = new MMBusinessAssociationEnd<BuyOrSellIndicationOfInterest, Spread>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -630,12 +672,22 @@ public class BuyOrSellIndicationOfInterest {
 			definition = "Indicates the swap spread details of an indication of interest.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Spread.mmIndicationOfInterest;
+			opposite_lazy = () -> Spread.mmIndicationOfInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
+			type_lazy = () -> Spread.mmObject();
+		}
+
+		@Override
+		public Spread getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getSwapSpread();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, Spread value) {
+			obj.setSwapSpread(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesFinancing> twoLegTransaction;
+	protected List<SecuritiesFinancing> twoLegTransaction;
 	/**
 	 * 
 	 <p>
@@ -671,7 +723,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTwoLegTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BuyOrSellIndicationOfInterest, List<SecuritiesFinancing>> mmTwoLegTransaction = new MMBusinessAssociationEnd<BuyOrSellIndicationOfInterest, List<SecuritiesFinancing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -679,9 +731,19 @@ public class BuyOrSellIndicationOfInterest {
 			name = "TwoLegTransaction";
 			definition = "Securities Financing is the process of lending or borrowing cash or securities against securities or cash collateral. It aims at optimising liquidity, support a trading strategy, or increase settlement efficiency.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmRelatedIndicationOfInterest;
+			opposite_lazy = () -> SecuritiesFinancing.mmRelatedIndicationOfInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
+			type_lazy = () -> SecuritiesFinancing.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesFinancing> getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getTwoLegTransaction();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, List<SecuritiesFinancing> value) {
+			obj.setTwoLegTransaction(value);
 		}
 	};
 	protected RoutingTypeCode routingType;
@@ -711,7 +773,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * definition} = "Indicates if the type of routing is allowed or blocked."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRoutingType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BuyOrSellIndicationOfInterest, RoutingTypeCode> mmRoutingType = new MMBusinessAttribute<BuyOrSellIndicationOfInterest, RoutingTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -723,12 +785,14 @@ public class BuyOrSellIndicationOfInterest {
 			simpleType_lazy = () -> RoutingTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyOrSellIndicationOfInterest.class.getMethod("getRoutingType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RoutingTypeCode getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getRoutingType();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, RoutingTypeCode value) {
+			obj.setRoutingType(value);
 		}
 	};
 	protected Max35Text organisationListName;
@@ -757,7 +821,7 @@ public class BuyOrSellIndicationOfInterest {
 	 * definition} = "Name of the organisation list."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOrganisationListName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BuyOrSellIndicationOfInterest, Max35Text> mmOrganisationListName = new MMBusinessAttribute<BuyOrSellIndicationOfInterest, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
@@ -769,12 +833,14 @@ public class BuyOrSellIndicationOfInterest {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyOrSellIndicationOfInterest.class.getMethod("getOrganisationListName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(BuyOrSellIndicationOfInterest obj) {
+			return obj.getOrganisationListName();
+		}
+
+		@Override
+		public void setValue(BuyOrSellIndicationOfInterest obj, Max35Text value) {
+			obj.setOrganisationListName(value);
 		}
 	};
 
@@ -786,8 +852,8 @@ public class BuyOrSellIndicationOfInterest {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BuyOrSellIndicationOfInterest";
 				definition = "Intention to buy or sell a financial Instrument.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Organisation.mmRelatedIndicationOfInterest, com.tools20022.repository.entity.SecuritiesFinancing.mmRelatedIndicationOfInterest,
-						com.tools20022.repository.entity.Spread.mmRelatedIndicationOfInterest, com.tools20022.repository.entity.Spread.mmIndicationOfInterest, com.tools20022.repository.entity.Negotiation.mmIndicationOfInterest);
+				associationDomain_lazy = () -> Arrays.asList(Organisation.mmRelatedIndicationOfInterest, SecuritiesFinancing.mmRelatedIndicationOfInterest, Spread.mmRelatedIndicationOfInterest, Spread.mmIndicationOfInterest,
+						Negotiation.mmIndicationOfInterest);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmNegotiationDetails, com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmOrganisations,
 						com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmRelativeSize, com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmPrice,
 						com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmQualityIndication, com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmNaturalIndicator,
@@ -809,7 +875,7 @@ public class BuyOrSellIndicationOfInterest {
 		return negotiationDetails;
 	}
 
-	public BuyOrSellIndicationOfInterest setNegotiationDetails(com.tools20022.repository.entity.Negotiation negotiationDetails) {
+	public BuyOrSellIndicationOfInterest setNegotiationDetails(Negotiation negotiationDetails) {
 		this.negotiationDetails = Objects.requireNonNull(negotiationDetails);
 		return this;
 	}
@@ -818,7 +884,7 @@ public class BuyOrSellIndicationOfInterest {
 		return organisations == null ? organisations = new ArrayList<>() : organisations;
 	}
 
-	public BuyOrSellIndicationOfInterest setOrganisations(List<com.tools20022.repository.entity.Organisation> organisations) {
+	public BuyOrSellIndicationOfInterest setOrganisations(List<Organisation> organisations) {
 		this.organisations = Objects.requireNonNull(organisations);
 		return this;
 	}
@@ -836,7 +902,7 @@ public class BuyOrSellIndicationOfInterest {
 		return price;
 	}
 
-	public BuyOrSellIndicationOfInterest setPrice(com.tools20022.repository.entity.SecuritiesPricing price) {
+	public BuyOrSellIndicationOfInterest setPrice(SecuritiesPricing price) {
 		this.price = Objects.requireNonNull(price);
 		return this;
 	}
@@ -881,7 +947,7 @@ public class BuyOrSellIndicationOfInterest {
 		return spreadToBenchmark;
 	}
 
-	public BuyOrSellIndicationOfInterest setSpreadToBenchmark(com.tools20022.repository.entity.Spread spreadToBenchmark) {
+	public BuyOrSellIndicationOfInterest setSpreadToBenchmark(Spread spreadToBenchmark) {
 		this.spreadToBenchmark = Objects.requireNonNull(spreadToBenchmark);
 		return this;
 	}
@@ -890,7 +956,7 @@ public class BuyOrSellIndicationOfInterest {
 		return swapSpread;
 	}
 
-	public BuyOrSellIndicationOfInterest setSwapSpread(com.tools20022.repository.entity.Spread swapSpread) {
+	public BuyOrSellIndicationOfInterest setSwapSpread(Spread swapSpread) {
 		this.swapSpread = Objects.requireNonNull(swapSpread);
 		return this;
 	}
@@ -899,7 +965,7 @@ public class BuyOrSellIndicationOfInterest {
 		return twoLegTransaction == null ? twoLegTransaction = new ArrayList<>() : twoLegTransaction;
 	}
 
-	public BuyOrSellIndicationOfInterest setTwoLegTransaction(List<com.tools20022.repository.entity.SecuritiesFinancing> twoLegTransaction) {
+	public BuyOrSellIndicationOfInterest setTwoLegTransaction(List<SecuritiesFinancing> twoLegTransaction) {
 		this.twoLegTransaction = Objects.requireNonNull(twoLegTransaction);
 		return this;
 	}

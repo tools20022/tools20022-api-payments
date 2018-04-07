@@ -24,6 +24,7 @@ import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.entity.Product;
 import com.tools20022.repository.entity.Service;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection34;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -108,7 +109,7 @@ public class BillingServicesAmount1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmHostAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServicesAmount1, AmountAndDirection34> mmHostAmount = new MMMessageAssociationEnd<BillingServicesAmount1, AmountAndDirection34>() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount1.mmObject();
@@ -120,7 +121,17 @@ public class BillingServicesAmount1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection34 getValue(BillingServicesAmount1 obj) {
+			return obj.getHostAmount();
+		}
+
+		@Override
+		public void setValue(BillingServicesAmount1 obj, AmountAndDirection34 value) {
+			obj.setHostAmount(value);
 		}
 	};
 	@XmlElement(name = "PricgAmt")
@@ -158,7 +169,7 @@ public class BillingServicesAmount1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPricingAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServicesAmount1, Optional<AmountAndDirection34>> mmPricingAmount = new MMMessageAssociationEnd<BillingServicesAmount1, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount1.mmObject();
@@ -170,7 +181,17 @@ public class BillingServicesAmount1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingServicesAmount1 obj) {
+			return obj.getPricingAmount();
+		}
+
+		@Override
+		public void setValue(BillingServicesAmount1 obj, Optional<AmountAndDirection34> value) {
+			obj.setPricingAmount(value.orElse(null));
 		}
 	};
 
@@ -192,7 +213,7 @@ public class BillingServicesAmount1 {
 		return hostAmount;
 	}
 
-	public BillingServicesAmount1 setHostAmount(com.tools20022.repository.msg.AmountAndDirection34 hostAmount) {
+	public BillingServicesAmount1 setHostAmount(AmountAndDirection34 hostAmount) {
 		this.hostAmount = Objects.requireNonNull(hostAmount);
 		return this;
 	}
@@ -201,7 +222,7 @@ public class BillingServicesAmount1 {
 		return pricingAmount == null ? Optional.empty() : Optional.of(pricingAmount);
 	}
 
-	public BillingServicesAmount1 setPricingAmount(com.tools20022.repository.msg.AmountAndDirection34 pricingAmount) {
+	public BillingServicesAmount1 setPricingAmount(AmountAndDirection34 pricingAmount) {
 		this.pricingAmount = pricingAmount;
 		return this;
 	}

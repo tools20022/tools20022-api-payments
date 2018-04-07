@@ -99,7 +99,7 @@ public class FATCASourceStatusCode extends MMCode {
 	};
 	/**
 	 * Source of the Foreign Account Tax Compliance Act (FATCA) status
-	 * calculated
+	 * calculated.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -117,7 +117,7 @@ public class FATCASourceStatusCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Source of the Foreign Account Tax Compliance Act (FATCA) status calculated"
+	 * "Source of the Foreign Account Tax Compliance Act (FATCA) status calculated."
 	 * </li>
 	 * </ul>
 	 */
@@ -125,7 +125,7 @@ public class FATCASourceStatusCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Calculated";
-			definition = "Source of the Foreign Account Tax Compliance Act (FATCA) status calculated";
+			definition = "Source of the Foreign Account Tax Compliance Act (FATCA) status calculated.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FATCASourceStatusCode.mmObject();
 			codeName = "CALC";
 		}

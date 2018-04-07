@@ -82,6 +82,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode#Narrative
  * InterestComputationMethodCode.Narrative}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode#ActualActualUltimo
+ * InterestComputationMethodCode.ActualActualUltimo}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode#IC30EPlus360
+ * InterestComputationMethodCode.IC30EPlus360}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode#Actual364
+ * InterestComputationMethodCode.Actual364}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode#Business252
+ * InterestComputationMethodCode.Business252}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode#Actual360NL
+ * InterestComputationMethodCode.Actual360NL}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode#OneOne
+ * InterestComputationMethodCode.OneOne}</li>
  * </ul>
  * </li>
  * <li>
@@ -118,7 +136,7 @@ public class InterestComputationMethodCode extends MMCode {
 	 * for February, and provided that the interest period started on a 30th or
 	 * a 31st. This means that a 31st is assumed to be a 30th if the period
 	 * started on a 30th or a 31st and the 28 Feb (or 29 Feb for a leap year) is
-	 * assumed to be a 28th (or 29th). It is the most commonly used 30/360
+	 * assumed to be the 28th (or 29th). This is the most commonly used 30/360
 	 * method for US straight and convertible bonds.
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -137,7 +155,7 @@ public class InterestComputationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February, and provided that the interest period started on a 30th or a 31st. This means that a 31st is assumed to be a 30th if the period started on a 30th or a 31st and the 28\nFeb (or 29 Feb for a leap year) is assumed to be a 28th (or 29th). It is the most commonly used 30/360 method for US straight and convertible bonds."
+	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February, and provided that the interest period started on a 30th or a 31st. This means that a 31st is assumed to be a 30th if the period started on a 30th or a 31st and the 28 Feb (or 29 Feb for a leap year) is assumed to be the 28th (or 29th). This is the most commonly used 30/360 method for US straight and convertible bonds."
 	 * </li>
 	 * </ul>
 	 */
@@ -145,7 +163,7 @@ public class InterestComputationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IC30360ISDAor30360AmericanBasicRule";
-			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February, and provided that the interest period started on a 30th or a 31st. This means that a 31st is assumed to be a 30th if the period started on a 30th or a 31st and the 28\nFeb (or 29 Feb for a leap year) is assumed to be a 28th (or 29th). It is the most commonly used 30/360 method for US straight and convertible bonds.";
+			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February, and provided that the interest period started on a 30th or a 31st. This means that a 31st is assumed to be a 30th if the period started on a 30th or a 31st and the 28 Feb (or 29 Feb for a leap year) is assumed to be the 28th (or 29th). This is the most commonly used 30/360 method for US straight and convertible bonds.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
 			codeName = "A001";
 		}
@@ -155,8 +173,8 @@ public class InterestComputationMethodCode extends MMCode {
 	 * similar to the 30/360 (basic rule) and a 365-day year. Accrued interest
 	 * to a value date on the last day of a month shall be the same as to the
 	 * 30th calendar day of the same month, except for February. This means that
-	 * a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a leap year)
-	 * is assumed to be a 28th (or 29th).
+	 * a 31st is assumed to be the 30th and the 28 Feb (or 29 Feb for a leap
+	 * year) is assumed to be the 28th (or 29th).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -174,7 +192,7 @@ public class InterestComputationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Method whereby interest is calculated based on a 30-day month in a way similar to the 30/360 (basic rule) and a 365-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be a 28th (or 29th)."
+	 * "Method whereby interest is calculated based on a 30-day month in a way similar to the 30/360 (basic rule) and a 365-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that a 31st is assumed to be the 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be the 28th (or 29th)."
 	 * </li>
 	 * </ul>
 	 */
@@ -182,7 +200,7 @@ public class InterestComputationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IC30365";
-			definition = "Method whereby interest is calculated based on a 30-day month in a way similar to the 30/360 (basic rule) and a 365-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be a 28th (or 29th).";
+			definition = "Method whereby interest is calculated based on a 30-day month in a way similar to the 30/360 (basic rule) and a 365-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that a 31st is assumed to be the 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be the 28th (or 29th).";
 			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
 			codeName = "A002";
 		}
@@ -192,11 +210,11 @@ public class InterestComputationMethodCode extends MMCode {
 	 * similar to the 30/360 (basic rule) and the assumed number of days in a
 	 * year in a way similar to the Actual/Actual (ICMA). Accrued interest to a
 	 * value date on the last day of a month shall be the same as to the 30th
-	 * calendar day of the same month, except for February. This means that a
-	 * 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a leap year)
-	 * is assumed to be a 28th (or 29th). The assumed number of days in a year
-	 * is computed as the actual number of days in the coupon period multiplied
-	 * by the number of interest payments in the year.
+	 * calendar day of the same month, except for February. This means that the
+	 * 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a leap year) is
+	 * assumed to be the 28th (or 29th). The assumed number of days in a year is
+	 * computed as the actual number of days in the coupon period multiplied by
+	 * the number of interest payments in the year.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -214,7 +232,7 @@ public class InterestComputationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Method whereby interest is calculated based on a 30-day month in a way similar to the 30/360 (basic rule) and the assumed number of days in a year in a way similar to the Actual/Actual (ICMA). Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be a 28th (or 29th). The assumed number of days in a year is computed as the actual number of days in the coupon period multiplied by the number of interest payments in the year."
+	 * "Method whereby interest is calculated based on a 30-day month in a way similar to the 30/360 (basic rule) and the assumed number of days in a year in a way similar to the Actual/Actual (ICMA). Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that the 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a leap year) is assumed to be the 28th (or 29th). The assumed number of days in a year is computed as the actual number of days in the coupon period multiplied by the number of interest payments in the year."
 	 * </li>
 	 * </ul>
 	 */
@@ -222,7 +240,7 @@ public class InterestComputationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IC30Actual";
-			definition = "Method whereby interest is calculated based on a 30-day month in a way similar to the 30/360 (basic rule) and the assumed number of days in a year in a way similar to the Actual/Actual (ICMA). Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be a 28th (or 29th). The assumed number of days in a year is computed as the actual number of days in the coupon period multiplied by the number of interest payments in the year.";
+			definition = "Method whereby interest is calculated based on a 30-day month in a way similar to the 30/360 (basic rule) and the assumed number of days in a year in a way similar to the Actual/Actual (ICMA). Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that the 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a leap year) is assumed to be the 28th (or 29th). The assumed number of days in a year is computed as the actual number of days in the coupon period multiplied by the number of interest payments in the year.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
 			codeName = "A003";
 		}
@@ -298,9 +316,9 @@ public class InterestComputationMethodCode extends MMCode {
 	 * accrued days and the assumed number of days in a year, ie, the actual
 	 * number of days in the coupon period multiplied by the number of interest
 	 * payments in the year. If the coupon period is irregular (first or last
-	 * coupon), it is extended or split into quasi interest periods that have
+	 * coupon), it is extended or split into quasi-interest periods that have
 	 * the length of a regular coupon period and the computation is operated
-	 * separately on each quasi interest period and the intermediate results are
+	 * separately on each quasi-interest period and the intermediate results are
 	 * summed up.
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -319,7 +337,7 @@ public class InterestComputationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Method whereby interest is calculated based on the actual number of accrued days and the assumed number of days in a year, ie, the actual number of days in the coupon period multiplied by the number of interest payments in the year. If the coupon period is irregular (first or last coupon), it is extended or split into quasi interest periods that have the length of a regular coupon period and the computation is operated separately on each quasi interest period and the intermediate results are summed up."
+	 * "Method whereby interest is calculated based on the actual number of accrued days and the assumed number of days in a year, ie, the actual number of days in the coupon period multiplied by the number of interest payments in the year. If the coupon period is irregular (first or last coupon), it is extended or split into quasi-interest periods that have the length of a regular coupon period and the computation is operated separately on each quasi-interest period and the intermediate results are summed up."
 	 * </li>
 	 * </ul>
 	 */
@@ -327,7 +345,7 @@ public class InterestComputationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActualActualICMA";
-			definition = "Method whereby interest is calculated based on the actual number of accrued days and the assumed number of days in a year, ie, the actual number of days in the coupon period multiplied by the number of interest payments in the year. If the coupon period is irregular (first or last coupon), it is extended or split into quasi interest periods that have the length of a regular coupon period and the computation is operated separately on each quasi interest period and the intermediate results are summed up.";
+			definition = "Method whereby interest is calculated based on the actual number of accrued days and the assumed number of days in a year, ie, the actual number of days in the coupon period multiplied by the number of interest payments in the year. If the coupon period is irregular (first or last coupon), it is extended or split into quasi-interest periods that have the length of a regular coupon period and the computation is operated separately on each quasi-interest period and the intermediate results are summed up.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
 			codeName = "A006";
 		}
@@ -336,13 +354,13 @@ public class InterestComputationMethodCode extends MMCode {
 	 * Method whereby interest is calculated based on a 30-day month and a
 	 * 360-day year. Accrued interest to a value date on the last day of a month
 	 * shall be the same as to the 30th calendar day of the same month. This
-	 * means that a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a
-	 * leap year) is assumed to be equivalent to a 30 Feb. However, if the last
-	 * day of the maturity coupon period is the last day of February, it will
-	 * not be assumed to be a 30th. It is a variation of the 30/360 (ICMA)
-	 * method commonly used for eurobonds. The usage of this variation is only
-	 * relevant when the coupon periods are scheduled to end on the last day of
-	 * the month.
+	 * means that the 31st is assumed to be the 30th and the 28 Feb (or 29 Feb
+	 * for a leap year) is assumed to be equivalent to 30 Feb. However, if the
+	 * last day of the maturity coupon period is the last day of February, it
+	 * will not be assumed to be the 30th. It is a variation of the 30/360
+	 * (ICMA) method commonly used for eurobonds. The usage of this variation is
+	 * only relevant when the coupon periods are scheduled to end on the last
+	 * day of the month.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -360,7 +378,7 @@ public class InterestComputationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month. This means that a 31st is\nassumed to be a 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be equivalent to a 30 Feb. However, if the last day of the maturity coupon period is the last day of February, it will not be assumed to be a 30th. It is a variation of the 30/360 (ICMA) method commonly used for eurobonds. The usage of this variation is only relevant when the coupon periods are scheduled to end on the last day of the month."
+	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month. This means that the 31st is assumed to be the 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be equivalent to 30 Feb. However, if the last day of the maturity coupon period is the last day of February, it will not be assumed to be the 30th. It is a variation of the 30/360 (ICMA) method commonly used for eurobonds. The usage of this variation is only relevant when the coupon periods are scheduled to end on the last day of the month."
 	 * </li>
 	 * </ul>
 	 */
@@ -368,7 +386,7 @@ public class InterestComputationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IC30E360orEuroBondBasismodel1";
-			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month. This means that a 31st is\nassumed to be a 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be equivalent to a 30 Feb. However, if the last day of the maturity coupon period is the last day of February, it will not be assumed to be a 30th. It is a variation of the 30/360 (ICMA) method commonly used for eurobonds. The usage of this variation is only relevant when the coupon periods are scheduled to end on the last day of the month.";
+			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month. This means that the 31st is assumed to be the 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be equivalent to 30 Feb. However, if the last day of the maturity coupon period is the last day of February, it will not be assumed to be the 30th. It is a variation of the 30/360 (ICMA) method commonly used for eurobonds. The usage of this variation is only relevant when the coupon periods are scheduled to end on the last day of the month.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
 			codeName = "A007";
 		}
@@ -448,12 +466,12 @@ public class InterestComputationMethodCode extends MMCode {
 	 * accrued days and a 366-day year (if 29 Feb falls in the coupon period) or
 	 * a 365-day year (if 29 Feb does not fall in the coupon period). If a
 	 * coupon period is longer than one year, it is split by repetitively
-	 * separating full year sub-periods counting backwards from the end of the
-	 * coupon period (a year backwards from a 28 Feb being 29 Feb, if it
-	 * exists). The first of the sub-periods starts on the start date of the
-	 * accrued interest period and thus is possibly shorter than a year. Then
-	 * the interest computation is operated separately on each sub-period and
-	 * the intermediate results are summed up.
+	 * separating full year subperiods counting backwards from the end of the
+	 * coupon period (a year backwards from 28 Feb being 29 Feb, if it exists).
+	 * The first of the subperiods starts on the start date of the accrued
+	 * interest period and thus is possibly shorter than a year. Then the
+	 * interest computation is operated separately on each subperiod and the
+	 * intermediate results are summed up.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -471,7 +489,7 @@ public class InterestComputationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Method whereby interest is calculated based on the actual number of accrued days and a 366-day year (if 29 Feb falls in the coupon period) or a 365-day year (if 29 Feb does not fall in the coupon period). If a coupon period is longer than one year, it is split by repetitively separating full year sub-periods counting backwards from the end of the coupon period (a year backwards from a 28 Feb being 29 Feb, if it exists). The first of the sub-periods starts on the start date of the accrued interest period and thus is possibly shorter than a year. Then the interest computation is operated separately on each sub-period and the intermediate results are summed up."
+	 * "Method whereby interest is calculated based on the actual number of accrued days and a 366-day year (if 29 Feb falls in the coupon period) or a 365-day year (if 29 Feb does not fall in the coupon period). If a coupon period is longer than one year, it is split by repetitively separating full year subperiods counting backwards from the end of the coupon period (a year backwards from 28 Feb being 29 Feb, if it exists). The first of the subperiods starts on the start date of the accrued interest period and thus is possibly shorter than a year. Then the interest computation is operated separately on each subperiod and the intermediate results are summed up."
 	 * </li>
 	 * </ul>
 	 */
@@ -479,7 +497,7 @@ public class InterestComputationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActualActualAFB";
-			definition = "Method whereby interest is calculated based on the actual number of accrued days and a 366-day year (if 29 Feb falls in the coupon period) or a 365-day year (if 29 Feb does not fall in the coupon period). If a coupon period is longer than one year, it is split by repetitively separating full year sub-periods counting backwards from the end of the coupon period (a year backwards from a 28 Feb being 29 Feb, if it exists). The first of the sub-periods starts on the start date of the accrued interest period and thus is possibly shorter than a year. Then the interest computation is operated separately on each sub-period and the intermediate results are summed up.";
+			definition = "Method whereby interest is calculated based on the actual number of accrued days and a 366-day year (if 29 Feb falls in the coupon period) or a 365-day year (if 29 Feb does not fall in the coupon period). If a coupon period is longer than one year, it is split by repetitively separating full year subperiods counting backwards from the end of the coupon period (a year backwards from 28 Feb being 29 Feb, if it exists). The first of the subperiods starts on the start date of the accrued interest period and thus is possibly shorter than a year. Then the interest computation is operated separately on each subperiod and the intermediate results are summed up.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
 			codeName = "A010";
 		}
@@ -488,10 +506,10 @@ public class InterestComputationMethodCode extends MMCode {
 	 * Method whereby interest is calculated based on a 30-day month and a
 	 * 360-day year. Accrued interest to a value date on the last day of a month
 	 * shall be the same as to the 30th calendar day of the same month, except
-	 * for February. This means that a 31st is assumed to be a 30th and the 28
-	 * Feb (or 29 Feb for a leap year) is assumed to be a 28th (or 29th). It is
-	 * the most commonly used 30/360 method for non-US straight and convertible
-	 * bonds issued before 01/01/1999.
+	 * for February. This means that the 31st is assumed to be the 30th and 28
+	 * Feb (or 29 Feb for a leap year) is assumed to be the 28th (or 29th). It
+	 * is the most commonly used 30/360 method for non-US straight and
+	 * convertible bonds issued before 1 January 1999.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -509,7 +527,7 @@ public class InterestComputationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a leap\nyear) is assumed to be a 28th (or 29th). It is the most commonly used 30/360 method for non-US straight and convertible bonds issued before 01/01/1999."
+	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that the 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a leap year) is assumed to be the 28th (or 29th). It is the most commonly used 30/360 method for non-US straight and convertible bonds issued before 1 January 1999."
 	 * </li>
 	 * </ul>
 	 */
@@ -517,7 +535,7 @@ public class InterestComputationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IC30360ICMAor30360basicrule";
-			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a leap\nyear) is assumed to be a 28th (or 29th). It is the most commonly used 30/360 method for non-US straight and convertible bonds issued before 01/01/1999.";
+			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for February. This means that the 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a leap year) is assumed to be the 28th (or 29th). It is the most commonly used 30/360 method for non-US straight and convertible bonds issued before 1 January 1999.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
 			codeName = "A011";
 		}
@@ -529,18 +547,18 @@ public class InterestComputationMethodCode extends MMCode {
 	 * for the last day of February whose day of the month value shall be
 	 * adapted to the value of the first day of the interest period if the
 	 * latter is higher and if the period is one of a regular schedule. This
-	 * means that a 31st is assumed to be a 30th and the 28th Feb of a non-leap
-	 * year is assumed to be equivalent to a 29th Feb when the first day of the
-	 * interest period is a 29th, or to a 30th Feb when the first day of the
-	 * interest period is a 30th or a 31st. The 29th Feb of a leap year is
-	 * assumed to be equivalent to a 30th Feb when the first day of the interest
-	 * period is a 30th or a 31st. Similarly, if the coupon period starts on the
-	 * last day of February, it is assumed to produce only one day of interest
-	 * in February as if it was starting on a 30th Feb when the end of the
-	 * period is a 30th or a 31st, or two days of interest in February when the
-	 * end of the period is a 29th, or 3 days of interest in February when it is
-	 * the 28th Feb of a non-leap year and the end of the period is before the
-	 * 29th.
+	 * means that the 31st is assumed to be the 30th and 28 Feb of a non-leap
+	 * year is assumed to be equivalent to 29 Feb when the first day of the
+	 * interest period is the 29th, or to 30 Feb when the first day of the
+	 * interest period is the 30th or the 31st. The 29th day of February in a
+	 * leap year is assumed to be equivalent to 30 Feb when the first day of the
+	 * interest period is the 30th or the 31st. Similarly, if the coupon period
+	 * starts on the last day of February, it is assumed to produce only one day
+	 * of interest in February as if it was starting on 30 Feb when the end of
+	 * the period is the 30th or the 31st, or two days of interest in February
+	 * when the end of the period is the 29th, or three days of interest in
+	 * February when it is 28 Feb of a non-leap year and the end of the period
+	 * is before the 29th.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -558,7 +576,7 @@ public class InterestComputationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for the last day of February whose day of the month value shall be adapted to the value of the first day of the interest period if the latter is higher and if the period is one of a regular schedule. This means that a 31st is assumed to be a 30th and the 28th Feb of a non-leap year is assumed to be equivalent to a 29th Feb when the first day of the interest period is a 29th, or to a 30th Feb when the first day of the interest period is a 30th or a 31st. The 29th Feb of a leap year is assumed to be equivalent to a 30th Feb when the first day of the interest period is a 30th or a 31st. Similarly, if the coupon period starts on the last day of February, it is assumed to produce only one day of interest in February as if it was starting on a 30th Feb when the end of the period is a 30th or a 31st, or two days of interest in February when the end of the period is a 29th, or 3 days of interest in February when it is the 28th Feb of a non-leap year and the end of the period is before the 29th."
+	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for the last day of February whose day of the month value shall be adapted to the value of the first day of the interest period if the latter is higher and if the period is one of a regular schedule. This means that the 31st is assumed to be the 30th and 28 Feb of a non-leap year is assumed to be equivalent to 29 Feb when the first day of the interest period is the 29th, or to 30 Feb when the first day of the interest period is the 30th or the 31st. The 29th day of February in a leap year is assumed to be equivalent to 30 Feb when the first day of the interest period is the 30th or the 31st. Similarly, if the coupon period starts on the last day of February, it is assumed to produce only one day of interest in February as if it was starting on 30 Feb when the end of the period is the 30th or the 31st, or two days of interest in February when the end of the period is the 29th, or three days of interest in February when it is 28 Feb of a non-leap year and the end of the period is before the 29th."
 	 * </li>
 	 * </ul>
 	 */
@@ -566,7 +584,7 @@ public class InterestComputationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IC30E2360orEurobondbasismodel2";
-			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for the last day of February whose day of the month value shall be adapted to the value of the first day of the interest period if the latter is higher and if the period is one of a regular schedule. This means that a 31st is assumed to be a 30th and the 28th Feb of a non-leap year is assumed to be equivalent to a 29th Feb when the first day of the interest period is a 29th, or to a 30th Feb when the first day of the interest period is a 30th or a 31st. The 29th Feb of a leap year is assumed to be equivalent to a 30th Feb when the first day of the interest period is a 30th or a 31st. Similarly, if the coupon period starts on the last day of February, it is assumed to produce only one day of interest in February as if it was starting on a 30th Feb when the end of the period is a 30th or a 31st, or two days of interest in February when the end of the period is a 29th, or 3 days of interest in February when it is the 28th Feb of a non-leap year and the end of the period is before the 29th.";
+			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month, except for the last day of February whose day of the month value shall be adapted to the value of the first day of the interest period if the latter is higher and if the period is one of a regular schedule. This means that the 31st is assumed to be the 30th and 28 Feb of a non-leap year is assumed to be equivalent to 29 Feb when the first day of the interest period is the 29th, or to 30 Feb when the first day of the interest period is the 30th or the 31st. The 29th day of February in a leap year is assumed to be equivalent to 30 Feb when the first day of the interest period is the 30th or the 31st. Similarly, if the coupon period starts on the last day of February, it is assumed to produce only one day of interest in February as if it was starting on 30 Feb when the end of the period is the 30th or the 31st, or two days of interest in February when the end of the period is the 29th, or three days of interest in February when it is 28 Feb of a non-leap year and the end of the period is before the 29th.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
 			codeName = "A012";
 		}
@@ -575,10 +593,10 @@ public class InterestComputationMethodCode extends MMCode {
 	 * Method whereby interest is calculated based on a 30-day month and a
 	 * 360-day year. Accrued interest to a value date on the last day of a month
 	 * shall be the same as to the 30th calendar day of the same month. This
-	 * means that a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a
-	 * leap year) is assumed to be equivalent to a 30 Feb. It is a variation of
+	 * means that the 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a
+	 * leap year) is assumed to be equivalent to 30 Feb. It is a variation of
 	 * the 30E/360 (or Eurobond basis) method where the last day of February is
-	 * always assumed to be a 30th, even if it is the last day of the maturity
+	 * always assumed to be the 30th, even if it is the last day of the maturity
 	 * coupon period.
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -597,7 +615,7 @@ public class InterestComputationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month. This means that a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be equivalent to a 30 Feb. It is a variation of the 30E/360 (or Eurobond basis) method where the last day of February is always assumed to be a 30th, even if it is the last day of the maturity coupon period."
+	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month. This means that the 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a leap year) is assumed to be equivalent to 30 Feb. It is a variation of the 30E/360 (or Eurobond basis) method where the last day of February is always assumed to be the 30th, even if it is the last day of the maturity coupon period."
 	 * </li>
 	 * </ul>
 	 */
@@ -605,7 +623,7 @@ public class InterestComputationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IC30E3360orEurobondbasismodel3";
-			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month. This means that a 31st is assumed to be a 30th and the 28 Feb (or 29 Feb for a leap year) is assumed to be equivalent to a 30 Feb. It is a variation of the 30E/360 (or Eurobond basis) method where the last day of February is always assumed to be a 30th, even if it is the last day of the maturity coupon period.";
+			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month. This means that the 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a leap year) is assumed to be equivalent to 30 Feb. It is a variation of the 30E/360 (or Eurobond basis) method where the last day of February is always assumed to be the 30th, even if it is the last day of the maturity coupon period.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
 			codeName = "A013";
 		}
@@ -645,7 +663,7 @@ public class InterestComputationMethodCode extends MMCode {
 		}
 	};
 	/**
-	 * Other method than A001-A014. See Narrative.
+	 * Other method than A001-A020. See Narrative.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -662,16 +680,233 @@ public class InterestComputationMethodCode extends MMCode {
 	 * name} = "Narrative"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Other method than A001-A014. See Narrative."</li>
+	 * definition} = "Other method than A001-A020. See Narrative."</li>
 	 * </ul>
 	 */
 	public static final InterestComputationMethodCode Narrative = new InterestComputationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Narrative";
-			definition = "Other method than A001-A014. See Narrative.";
+			definition = "Other method than A001-A020. See Narrative.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
 			codeName = "NARR";
+		}
+	};
+	/**
+	 * Method whereby interest is calculated based on the actual number of days
+	 * in the coupon period divided by the actual number of days in the year.
+	 * This method is a variation of the ActualActualICMA method with the
+	 * exception that it assumes that the coupon always falls on the last day of
+	 * the month. Method equal to ACT/ACT.ISMA in the FpML model and Act/Act
+	 * (ICSMA Ultimo) in the FixML model.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode
+	 * InterestComputationMethodCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "A015"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ActualActualUltimo"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Method whereby interest is calculated based on the actual number of days in the coupon period divided by the actual number of days in the year. This method is a variation of the ActualActualICMA method with the exception that it assumes that the coupon always falls on the last day of the month. Method equal to ACT/ACT.ISMA in the FpML model and Act/Act (ICSMA Ultimo) in the FixML model."
+	 * </li>
+	 * </ul>
+	 */
+	public static final InterestComputationMethodCode ActualActualUltimo = new InterestComputationMethodCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ActualActualUltimo";
+			definition = "Method whereby interest is calculated based on the actual number of days in the coupon period divided by the actual number of days in the year. This method is a variation of the ActualActualICMA method with the exception that it assumes that the coupon always falls on the last day of the month. Method equal to ACT/ACT.ISMA in the FpML model and Act/Act (ICSMA Ultimo) in the FixML model.";
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
+			codeName = "A015";
+		}
+	};
+	/**
+	 * Method whereby interest is calculated based on a 30-day month and a
+	 * 360-day year. Accrued interest to a value date on the last day of a month
+	 * shall be the same as to the 30th calendar day of the same month. This
+	 * means that the 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a
+	 * leap year) is assumed to be equivalent to 30 Feb. This method is a
+	 * variation of the 30E360 method with the exception that if the coupon
+	 * falls on the last day of the month, change it to 1 and increase the month
+	 * by 1 (ie next month). Method equal to ThirtyEPlusThreeSixty in the FixML
+	 * model.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode
+	 * InterestComputationMethodCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "A016"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "IC30EPlus360"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month. This means that the 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a leap year) is assumed to be equivalent to 30 Feb. This method is a variation of the 30E360 method with the exception that if the coupon falls on the last day of the month, change it to 1 and increase the month by 1 (ie next month). Method equal to ThirtyEPlusThreeSixty in the FixML model."
+	 * </li>
+	 * </ul>
+	 */
+	public static final InterestComputationMethodCode IC30EPlus360 = new InterestComputationMethodCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "IC30EPlus360";
+			definition = "Method whereby interest is calculated based on a 30-day month and a 360-day year. Accrued interest to a value date on the last day of a month shall be the same as to the 30th calendar day of the same month. This means that the 31st is assumed to be the 30th and 28 Feb (or 29 Feb for a leap year) is assumed to be equivalent to 30 Feb. This method is a variation of the 30E360 method with the exception that if the coupon falls on the last day of the month, change it to 1 and increase the month by 1 (ie next month). Method equal to ThirtyEPlusThreeSixty in the FixML model.";
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
+			codeName = "A016";
+		}
+	};
+	/**
+	 * Method whereby interest is calculated based on the actual number of
+	 * accrued days in the interest period divided by 364.<br>
+	 * Method equal to Act364 in the FixML model.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode
+	 * InterestComputationMethodCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "A017"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Actual364"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Method whereby interest is calculated based on the actual number of accrued days in the interest period divided by 364.\r\nMethod equal to Act364 in the FixML model."
+	 * </li>
+	 * </ul>
+	 */
+	public static final InterestComputationMethodCode Actual364 = new InterestComputationMethodCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Actual364";
+			definition = "Method whereby interest is calculated based on the actual number of accrued days in the interest period divided by 364.\r\nMethod equal to Act364 in the FixML model.";
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
+			codeName = "A017";
+		}
+	};
+	/**
+	 * Method whereby interest is calculated based on the actual number of
+	 * business days in the interest period divided by 252. <br>
+	 * Usage: Brazilian Currency Swaps. <br>
+	 * Method equal to BUS/252 in the FpML model and BusTwoFiftyTwo in the FixML
+	 * model.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode
+	 * InterestComputationMethodCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "A018"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Business252"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Method whereby interest is calculated based on the actual number of business days in the interest period divided by 252. \r\nUsage: Brazilian Currency Swaps. \r\nMethod equal to BUS/252 in the FpML model and BusTwoFiftyTwo in the FixML model."
+	 * </li>
+	 * </ul>
+	 */
+	public static final InterestComputationMethodCode Business252 = new InterestComputationMethodCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Business252";
+			definition = "Method whereby interest is calculated based on the actual number of business days in the interest period divided by 252. \r\nUsage: Brazilian Currency Swaps. \r\nMethod equal to BUS/252 in the FpML model and BusTwoFiftyTwo in the FixML model.";
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
+			codeName = "A018";
+		}
+	};
+	/**
+	 * Method whereby interest is calculated based on the actual number of
+	 * accrued days in the interest period, excluding any leap day from the
+	 * count, and a 360-day year.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode
+	 * InterestComputationMethodCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "A019"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Actual360NL"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Method whereby interest is calculated based on the actual number of accrued days in the interest period, excluding any leap day from the count, and a 360-day year."
+	 * </li>
+	 * </ul>
+	 */
+	public static final InterestComputationMethodCode Actual360NL = new InterestComputationMethodCode() {
+		{
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "Actual360NL";
+			definition = "Method whereby interest is calculated based on the actual number of accrued days in the interest period, excluding any leap day from the count, and a 360-day year.";
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
+			codeName = "A019";
+		}
+	};
+	/**
+	 * Also named 1/1. <br>
+	 * ELABORATION: If parties specify the Day Count Fraction to be 1/1 then in
+	 * calculating the applicable amount, 1 is simply input into the calculation
+	 * as the relevant Day Count Fraction. See also 2006 ISDA Definitions,
+	 * Section 4.16. Day Count Fraction, paragraph (a).
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.InterestComputationMethodCode
+	 * InterestComputationMethodCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "A020"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "OneOne"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Also named 1/1. \r\r\nELABORATION: If parties specify the Day Count Fraction to be 1/1 then in calculating the applicable amount, 1 is simply input into the calculation as the relevant Day Count Fraction. See also 2006 ISDA Definitions, Section 4.16. Day Count Fraction, paragraph (a)."
+	 * </li>
+	 * </ul>
+	 */
+	public static final InterestComputationMethodCode OneOne = new InterestComputationMethodCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "OneOne";
+			definition = "Also named 1/1. \r\r\nELABORATION: If parties specify the Day Count Fraction to be 1/1 then in calculating the applicable amount, 1 is simply input into the calculation as the relevant Day Count Fraction. See also 2006 ISDA Definitions, Section 4.16. Day Count Fraction, paragraph (a).";
+			owner_lazy = () -> com.tools20022.repository.codeset.InterestComputationMethodCode.mmObject();
+			codeName = "A020";
 		}
 	};
 	final static private LinkedHashMap<String, InterestComputationMethodCode> codesByName = new LinkedHashMap<>();
@@ -694,7 +929,10 @@ public class InterestComputationMethodCode extends MMCode {
 						com.tools20022.repository.codeset.InterestComputationMethodCode.Actual365LorActuActubasisRule, com.tools20022.repository.codeset.InterestComputationMethodCode.ActualActualAFB,
 						com.tools20022.repository.codeset.InterestComputationMethodCode.IC30360ICMAor30360basicrule, com.tools20022.repository.codeset.InterestComputationMethodCode.IC30E2360orEurobondbasismodel2,
 						com.tools20022.repository.codeset.InterestComputationMethodCode.IC30E3360orEurobondbasismodel3, com.tools20022.repository.codeset.InterestComputationMethodCode.Actual365NL,
-						com.tools20022.repository.codeset.InterestComputationMethodCode.Narrative);
+						com.tools20022.repository.codeset.InterestComputationMethodCode.Narrative, com.tools20022.repository.codeset.InterestComputationMethodCode.ActualActualUltimo,
+						com.tools20022.repository.codeset.InterestComputationMethodCode.IC30EPlus360, com.tools20022.repository.codeset.InterestComputationMethodCode.Actual364,
+						com.tools20022.repository.codeset.InterestComputationMethodCode.Business252, com.tools20022.repository.codeset.InterestComputationMethodCode.Actual360NL,
+						com.tools20022.repository.codeset.InterestComputationMethodCode.OneOne);
 			}
 		});
 		return mmObject_lazy.get();
@@ -716,6 +954,12 @@ public class InterestComputationMethodCode extends MMCode {
 		codesByName.put(IC30E3360orEurobondbasismodel3.getCodeName().get(), IC30E3360orEurobondbasismodel3);
 		codesByName.put(Actual365NL.getCodeName().get(), Actual365NL);
 		codesByName.put(Narrative.getCodeName().get(), Narrative);
+		codesByName.put(ActualActualUltimo.getCodeName().get(), ActualActualUltimo);
+		codesByName.put(IC30EPlus360.getCodeName().get(), IC30EPlus360);
+		codesByName.put(Actual364.getCodeName().get(), Actual364);
+		codesByName.put(Business252.getCodeName().get(), Business252);
+		codesByName.put(Actual360NL.getCodeName().get(), Actual360NL);
+		codesByName.put(OneOne.getCodeName().get(), OneOne);
 	}
 
 	public static InterestComputationMethodCode valueOf(String codeName) {

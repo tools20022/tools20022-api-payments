@@ -20,7 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.camt.BankToCustomerStatementV06;
+import com.tools20022.repository.area.camt.BankToCustomerStatementV07;
 
 /**
  * MessagePagination may be present or StatementPagination may be present, but
@@ -34,8 +34,8 @@ public class ConstraintMessageOrStatementPaginationRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.camt.BankToCustomerStatementV06
-	 * BankToCustomerStatementV06}</li>
+	 * {@linkplain com.tools20022.repository.area.camt.BankToCustomerStatementV07
+	 * BankToCustomerStatementV07}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition&gt;&lt;SimpleRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"SimpleRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/GroupHeader/MessagePagination&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/Statement[*]/StatementPagination&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;/SimpleRule&gt;&lt;/RuleDefinition&gt;"
@@ -53,18 +53,18 @@ public class ConstraintMessageOrStatementPaginationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forBankToCustomerStatementV06 = new MMConstraint() {
+	public static final MMConstraint<BankToCustomerStatementV07> for_camt_BankToCustomerStatementV07 = new MMConstraint<BankToCustomerStatementV07>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageOrStatementPaginationRule";
 			definition = "MessagePagination may be present or StatementPagination may be present, but not both.";
-			owner_lazy = () -> BankToCustomerStatementV06.mmObject();
+			owner_lazy = () -> BankToCustomerStatementV07.mmObject();
 			expression = "<RuleDefinition><SimpleRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"SimpleRule\"><mustBe><connector>OR</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/GroupHeader/MessagePagination</leftOperand></BooleanRule><BooleanRule xsi:type=\"Absence\"><leftOperand>/Statement[*]/StatementPagination</leftOperand></BooleanRule></mustBe></SimpleRule></RuleDefinition>";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkBankToCustomerStatementV06((BankToCustomerStatementV06) obj);
+		public void executeValidator(BankToCustomerStatementV07 obj) throws Exception {
+			check_camt_BankToCustomerStatementV07(obj);
 		}
 	};
 
@@ -72,7 +72,7 @@ public class ConstraintMessageOrStatementPaginationRule {
 	 * MessagePagination may be present or StatementPagination may be present,
 	 * but not both.
 	 */
-	public static void checkBankToCustomerStatementV06(BankToCustomerStatementV06 obj) throws Exception {
+	public static void check_camt_BankToCustomerStatementV07(BankToCustomerStatementV07 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

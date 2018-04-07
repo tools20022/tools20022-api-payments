@@ -49,7 +49,7 @@ public class ConstraintFamilyAndSubFamilyRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forBankTransactionCodeStructure4 = new MMConstraint() {
+	public static final MMConstraint<BankTransactionCodeStructure4> forBankTransactionCodeStructure4 = new MMConstraint<BankTransactionCodeStructure4>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FamilyAndSubFamilyRule";
@@ -58,8 +58,8 @@ public class ConstraintFamilyAndSubFamilyRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkBankTransactionCodeStructure4((BankTransactionCodeStructure4) obj);
+		public void executeValidator(BankTransactionCodeStructure4 obj) throws Exception {
+			checkBankTransactionCodeStructure4(obj);
 		}
 	};
 

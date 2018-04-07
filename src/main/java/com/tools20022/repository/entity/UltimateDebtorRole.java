@@ -22,7 +22,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.PaymentObligationPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Garnishment1;
-import com.tools20022.repository.msg.RequestedModification6;
+import com.tools20022.repository.msg.Garnishment2;
+import com.tools20022.repository.msg.RequestedModification7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -46,8 +47,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.repository.msg.Garnishment1#mmGarnishee
  * Garnishment1.mmGarnishee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmUltimateDebtor
- * RequestedModification6.mmUltimateDebtor}</li>
+ * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmUltimateDebtor
+ * RequestedModification7.mmUltimateDebtor}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Garnishment2#mmGarnishee
+ * Garnishment2.mmGarnishee}</li>
  * </ul>
  * </li>
  * <li>
@@ -77,7 +80,7 @@ public class UltimateDebtorRole extends PaymentObligationPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UltimateDebtorRole";
 				definition = "Ultimate party that owes an amount of money to the (ultimate) creditor.";
-				derivationElement_lazy = () -> Arrays.asList(Garnishment1.mmGarnishee, RequestedModification6.mmUltimateDebtor);
+				derivationElement_lazy = () -> Arrays.asList(Garnishment1.mmGarnishee, RequestedModification7.mmUltimateDebtor, Garnishment2.mmGarnishee);
 				superType_lazy = () -> PaymentObligationPartyRole.mmObject();
 			}
 

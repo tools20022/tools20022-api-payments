@@ -107,7 +107,7 @@ public class AmountRangeBoundary1 {
 	 * definition} = "Amount value of the range limit."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBoundaryAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountRangeBoundary1, ImpliedCurrencyAndAmount> mmBoundaryAmount = new MMMessageAttribute<AmountRangeBoundary1, ImpliedCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> AmountRangeBoundary.mmBoundaryAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountRangeBoundary1.mmObject();
@@ -119,6 +119,16 @@ public class AmountRangeBoundary1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ImpliedCurrencyAndAmount getValue(AmountRangeBoundary1 obj) {
+			return obj.getBoundaryAmount();
+		}
+
+		@Override
+		public void setValue(AmountRangeBoundary1 obj, ImpliedCurrencyAndAmount value) {
+			obj.setBoundaryAmount(value);
 		}
 	};
 	@XmlElement(name = "Incl", required = true)
@@ -158,7 +168,7 @@ public class AmountRangeBoundary1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIncluded = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountRangeBoundary1, YesNoIndicator> mmIncluded = new MMMessageAttribute<AmountRangeBoundary1, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> AmountRangeBoundary.mmIncluded;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountRangeBoundary1.mmObject();
@@ -170,6 +180,16 @@ public class AmountRangeBoundary1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		@Override
+		public YesNoIndicator getValue(AmountRangeBoundary1 obj) {
+			return obj.getIncluded();
+		}
+
+		@Override
+		public void setValue(AmountRangeBoundary1 obj, YesNoIndicator value) {
+			obj.setIncluded(value);
 		}
 	};
 

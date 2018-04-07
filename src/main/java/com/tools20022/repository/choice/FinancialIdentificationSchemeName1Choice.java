@@ -111,7 +111,7 @@ public class FinancialIdentificationSchemeName1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialIdentificationSchemeName1Choice, ExternalFinancialInstitutionIdentification1Code> mmCode = new MMMessageAttribute<FinancialIdentificationSchemeName1Choice, ExternalFinancialInstitutionIdentification1Code>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmCode;
 			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice.mmObject();
@@ -123,6 +123,16 @@ public class FinancialIdentificationSchemeName1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalFinancialInstitutionIdentification1Code.mmObject();
+		}
+
+		@Override
+		public ExternalFinancialInstitutionIdentification1Code getValue(FinancialIdentificationSchemeName1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(FinancialIdentificationSchemeName1Choice obj, ExternalFinancialInstitutionIdentification1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -159,7 +169,7 @@ public class FinancialIdentificationSchemeName1Choice {
 	 * definition} = "Name of the identification scheme, in a free text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialIdentificationSchemeName1Choice, Max35Text> mmProprietary = new MMMessageAttribute<FinancialIdentificationSchemeName1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmCode;
 			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice.mmObject();
@@ -171,6 +181,16 @@ public class FinancialIdentificationSchemeName1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(FinancialIdentificationSchemeName1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(FinancialIdentificationSchemeName1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

@@ -24,7 +24,6 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.Asset;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CashCollateral5;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -117,7 +116,7 @@ public class Money extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCashAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Money, CurrencyAndAmount> mmCashAmount = new MMBusinessAttribute<Money, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmDepositAmount);
 			isDerived = false;
@@ -130,12 +129,14 @@ public class Money extends Asset {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Money.class.getMethod("getCashAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Money obj) {
+			return obj.getCashAmount();
+		}
+
+		@Override
+		public void setValue(Money obj, CurrencyAndAmount value) {
+			obj.setCashAmount(value);
 		}
 	};
 

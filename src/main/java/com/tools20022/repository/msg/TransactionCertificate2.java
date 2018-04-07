@@ -29,6 +29,7 @@ import com.tools20022.repository.entity.IndividualPayment;
 import com.tools20022.repository.entity.ObligationFulfilment;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CertificateReference1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -121,7 +122,7 @@ public class TransactionCertificate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReferredDocument = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TransactionCertificate2, CertificateReference1> mmReferredDocument = new MMMessageAssociationEnd<TransactionCertificate2, CertificateReference1>() {
 		{
 			businessComponentTrace_lazy = () -> IndividualPayment.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
@@ -133,7 +134,17 @@ public class TransactionCertificate2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CertificateReference1.mmObject();
+			type_lazy = () -> CertificateReference1.mmObject();
+		}
+
+		@Override
+		public CertificateReference1 getValue(TransactionCertificate2 obj) {
+			return obj.getReferredDocument();
+		}
+
+		@Override
+		public void setValue(TransactionCertificate2 obj, CertificateReference1 value) {
+			obj.setReferredDocument(value);
 		}
 	};
 	@XmlElement(name = "TxDt", required = true)
@@ -170,7 +181,7 @@ public class TransactionCertificate2 {
 	 * definition} = "Date of the underlying transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionCertificate2, ISODate> mmTransactionDate = new MMMessageAttribute<TransactionCertificate2, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> ObligationFulfilment.mmDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
@@ -182,6 +193,16 @@ public class TransactionCertificate2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(TransactionCertificate2 obj) {
+			return obj.getTransactionDate();
+		}
+
+		@Override
+		public void setValue(TransactionCertificate2 obj, ISODate value) {
+			obj.setTransactionDate(value);
 		}
 	};
 	@XmlElement(name = "TxTp", required = true)
@@ -219,7 +240,7 @@ public class TransactionCertificate2 {
 	 * definition} = "Type of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionCertificate2, Exact1NumericText> mmTransactionType = new MMMessageAttribute<TransactionCertificate2, Exact1NumericText>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmPaymentInstrument;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
@@ -231,6 +252,16 @@ public class TransactionCertificate2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact1NumericText.mmObject();
+		}
+
+		@Override
+		public Exact1NumericText getValue(TransactionCertificate2 obj) {
+			return obj.getTransactionType();
+		}
+
+		@Override
+		public void setValue(TransactionCertificate2 obj, Exact1NumericText value) {
+			obj.setTransactionType(value);
 		}
 	};
 	@XmlElement(name = "LclInstrm", required = true)
@@ -270,7 +301,7 @@ public class TransactionCertificate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLocalInstrument = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionCertificate2, Exact5NumericText> mmLocalInstrument = new MMMessageAttribute<TransactionCertificate2, Exact5NumericText>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmPaymentInstrument;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
@@ -282,6 +313,16 @@ public class TransactionCertificate2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact5NumericText.mmObject();
+		}
+
+		@Override
+		public Exact5NumericText getValue(TransactionCertificate2 obj) {
+			return obj.getLocalInstrument();
+		}
+
+		@Override
+		public void setValue(TransactionCertificate2 obj, Exact5NumericText value) {
+			obj.setLocalInstrument(value);
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -321,7 +362,7 @@ public class TransactionCertificate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionCertificate2, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<TransactionCertificate2, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificate2.mmObject();
@@ -333,6 +374,16 @@ public class TransactionCertificate2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(TransactionCertificate2 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(TransactionCertificate2 obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 
@@ -355,7 +406,7 @@ public class TransactionCertificate2 {
 		return referredDocument;
 	}
 
-	public TransactionCertificate2 setReferredDocument(com.tools20022.repository.msg.CertificateReference1 referredDocument) {
+	public TransactionCertificate2 setReferredDocument(CertificateReference1 referredDocument) {
 		this.referredDocument = Objects.requireNonNull(referredDocument);
 		return this;
 	}

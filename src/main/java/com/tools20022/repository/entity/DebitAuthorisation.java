@@ -22,10 +22,11 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Payment;
+import com.tools20022.repository.entity.PaymentInvestigationCaseResolution;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.DebitAuthorisation2;
 import com.tools20022.repository.msg.DebitAuthorisationConfirmation2;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -133,7 +134,7 @@ public class DebitAuthorisation {
 	 * definition} = "Value date for debiting the amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValueDateToDebit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DebitAuthorisation, ISODate> mmValueDateToDebit = new MMBusinessAttribute<DebitAuthorisation, ISODate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DebitAuthorisationConfirmation2.mmValueDateToDebit, DebitAuthorisation2.mmValueDateToDebit);
 			isDerived = false;
@@ -146,12 +147,14 @@ public class DebitAuthorisation {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DebitAuthorisation.class.getMethod("getValueDateToDebit", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(DebitAuthorisation obj) {
+			return obj.getValueDateToDebit();
+		}
+
+		@Override
+		public void setValue(DebitAuthorisation obj, ISODate value) {
+			obj.setValueDateToDebit(value);
 		}
 	};
 	protected YesNoIndicator debitAuthorisationDecision;
@@ -191,7 +194,7 @@ public class DebitAuthorisation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDebitAuthorisationDecision = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DebitAuthorisation, YesNoIndicator> mmDebitAuthorisationDecision = new MMBusinessAttribute<DebitAuthorisation, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DebitAuthorisationConfirmation2.mmDebitAuthorisation);
 			isDerived = false;
@@ -204,12 +207,14 @@ public class DebitAuthorisation {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DebitAuthorisation.class.getMethod("getDebitAuthorisationDecision", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(DebitAuthorisation obj) {
+			return obj.getDebitAuthorisationDecision();
+		}
+
+		@Override
+		public void setValue(DebitAuthorisation obj, YesNoIndicator value) {
+			obj.setDebitAuthorisationDecision(value);
 		}
 	};
 	protected CurrencyAndAmount amountToDebit;
@@ -252,7 +257,7 @@ public class DebitAuthorisation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmountToDebit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DebitAuthorisation, CurrencyAndAmount> mmAmountToDebit = new MMBusinessAttribute<DebitAuthorisation, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DebitAuthorisationConfirmation2.mmAmountToDebit, DebitAuthorisation2.mmAmountToDebit);
 			isDerived = false;
@@ -265,12 +270,14 @@ public class DebitAuthorisation {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DebitAuthorisation.class.getMethod("getAmountToDebit", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(DebitAuthorisation obj) {
+			return obj.getAmountToDebit();
+		}
+
+		@Override
+		public void setValue(DebitAuthorisation obj, CurrencyAndAmount value) {
+			obj.setAmountToDebit(value);
 		}
 	};
 	protected Max140Text reason;
@@ -307,7 +314,7 @@ public class DebitAuthorisation {
 	 * definition} = "Justification of the (partial) debit authorisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DebitAuthorisation, Max140Text> mmReason = new MMBusinessAttribute<DebitAuthorisation, Max140Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DebitAuthorisationConfirmation2.mmReason);
 			isDerived = false;
@@ -320,12 +327,14 @@ public class DebitAuthorisation {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DebitAuthorisation.class.getMethod("getReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max140Text getValue(DebitAuthorisation obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(DebitAuthorisation obj, Max140Text value) {
+			obj.setReason(value);
 		}
 	};
 	protected Payment authorisedReturn;
@@ -363,7 +372,7 @@ public class DebitAuthorisation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAuthorisedReturn = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DebitAuthorisation, Optional<Payment>> mmAuthorisedReturn = new MMBusinessAssociationEnd<DebitAuthorisation, Optional<Payment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
@@ -372,9 +381,19 @@ public class DebitAuthorisation {
 			definition = "Authorisation given by a credited party to return the payment which was the reason for the credit and therefore to debit its account.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Payment.mmRelatedDebitAuthorisation;
+			opposite_lazy = () -> Payment.mmRelatedDebitAuthorisation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Payment.mmObject();
+			type_lazy = () -> Payment.mmObject();
+		}
+
+		@Override
+		public Optional<Payment> getValue(DebitAuthorisation obj) {
+			return obj.getAuthorisedReturn();
+		}
+
+		@Override
+		public void setValue(DebitAuthorisation obj, Optional<Payment> value) {
+			obj.setAuthorisedReturn(value.orElse(null));
 		}
 	};
 	protected PaymentInvestigationCaseResolution relatedInvestigationCaseResolution;
@@ -414,7 +433,7 @@ public class DebitAuthorisation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInvestigationCaseResolution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DebitAuthorisation, Optional<PaymentInvestigationCaseResolution>> mmRelatedInvestigationCaseResolution = new MMBusinessAssociationEnd<DebitAuthorisation, Optional<PaymentInvestigationCaseResolution>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
@@ -423,9 +442,19 @@ public class DebitAuthorisation {
 			definition = "Payment investigation case resolution which is the source of the debit authorisation.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmDebitAuthorisationConfirmation;
+			opposite_lazy = () -> PaymentInvestigationCaseResolution.mmDebitAuthorisationConfirmation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmObject();
+			type_lazy = () -> PaymentInvestigationCaseResolution.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentInvestigationCaseResolution> getValue(DebitAuthorisation obj) {
+			return obj.getRelatedInvestigationCaseResolution();
+		}
+
+		@Override
+		public void setValue(DebitAuthorisation obj, Optional<PaymentInvestigationCaseResolution> value) {
+			obj.setRelatedInvestigationCaseResolution(value.orElse(null));
 		}
 	};
 
@@ -436,7 +465,7 @@ public class DebitAuthorisation {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DebitAuthorisation";
 				definition = "Permission given by an account owner to debit its account as the result of a cancelled payment. The authoriser is the party whose account was credited as the result of a payment instruction.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Payment.mmRelatedDebitAuthorisation, com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmDebitAuthorisationConfirmation);
+				associationDomain_lazy = () -> Arrays.asList(Payment.mmRelatedDebitAuthorisation, PaymentInvestigationCaseResolution.mmDebitAuthorisationConfirmation);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DebitAuthorisation.mmValueDateToDebit, com.tools20022.repository.entity.DebitAuthorisation.mmDebitAuthorisationDecision,
 						com.tools20022.repository.entity.DebitAuthorisation.mmAmountToDebit, com.tools20022.repository.entity.DebitAuthorisation.mmReason, com.tools20022.repository.entity.DebitAuthorisation.mmAuthorisedReturn,
 						com.tools20022.repository.entity.DebitAuthorisation.mmRelatedInvestigationCaseResolution);
@@ -490,7 +519,7 @@ public class DebitAuthorisation {
 		return authorisedReturn == null ? Optional.empty() : Optional.of(authorisedReturn);
 	}
 
-	public DebitAuthorisation setAuthorisedReturn(com.tools20022.repository.entity.Payment authorisedReturn) {
+	public DebitAuthorisation setAuthorisedReturn(Payment authorisedReturn) {
 		this.authorisedReturn = authorisedReturn;
 		return this;
 	}
@@ -499,7 +528,7 @@ public class DebitAuthorisation {
 		return relatedInvestigationCaseResolution == null ? Optional.empty() : Optional.of(relatedInvestigationCaseResolution);
 	}
 
-	public DebitAuthorisation setRelatedInvestigationCaseResolution(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedInvestigationCaseResolution) {
+	public DebitAuthorisation setRelatedInvestigationCaseResolution(PaymentInvestigationCaseResolution relatedInvestigationCaseResolution) {
 		this.relatedInvestigationCaseResolution = relatedInvestigationCaseResolution;
 		return this;
 	}

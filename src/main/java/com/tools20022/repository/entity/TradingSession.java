@@ -23,8 +23,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.TradeExecutionSessionCode;
 import com.tools20022.repository.codeset.TradingSessionCode;
 import com.tools20022.repository.datatype.Max140Text;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -139,7 +139,7 @@ public class TradingSession {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradingSessionName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TradingSession, Max140Text> mmTradingSessionName = new MMBusinessAttribute<TradingSession, Max140Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
@@ -152,12 +152,14 @@ public class TradingSession {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradingSession.class.getMethod("getTradingSessionName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max140Text getValue(TradingSession obj) {
+			return obj.getTradingSessionName();
+		}
+
+		@Override
+		public void setValue(TradingSession obj, Max140Text value) {
+			obj.setTradingSessionName(value);
 		}
 	};
 	protected DateTimePeriod timeBracket;
@@ -196,7 +198,7 @@ public class TradingSession {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTimeBracket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingSession, DateTimePeriod> mmTimeBracket = new MMBusinessAssociationEnd<TradingSession, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
@@ -205,9 +207,19 @@ public class TradingSession {
 			definition = "Specifies the time bracket of a trading session in actual date and time format.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmTradingSession;
+			opposite_lazy = () -> DateTimePeriod.mmTradingSession;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(TradingSession obj) {
+			return obj.getTimeBracket();
+		}
+
+		@Override
+		public void setValue(TradingSession obj, DateTimePeriod value) {
+			obj.setTimeBracket(value);
 		}
 	};
 	protected TradingMarket market;
@@ -245,7 +257,7 @@ public class TradingSession {
 	 * "Market for which trading session information is specified.."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingSession, Optional<TradingMarket>> mmMarket = new MMBusinessAssociationEnd<TradingSession, Optional<TradingMarket>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
@@ -254,9 +266,19 @@ public class TradingSession {
 			definition = "Market for which trading session information is specified..";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmTradingSession;
+			opposite_lazy = () -> TradingMarket.mmTradingSession;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
+			type_lazy = () -> TradingMarket.mmObject();
+		}
+
+		@Override
+		public Optional<TradingMarket> getValue(TradingSession obj) {
+			return obj.getMarket();
+		}
+
+		@Override
+		public void setValue(TradingSession obj, Optional<TradingMarket> value) {
+			obj.setMarket(value.orElse(null));
 		}
 	};
 	protected SecuritiesQuoteVariable quote;
@@ -294,7 +316,7 @@ public class TradingSession {
 	 * definition} = "Quote to which a trading session is associated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmQuote = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingSession, Optional<SecuritiesQuoteVariable>> mmQuote = new MMBusinessAssociationEnd<TradingSession, Optional<SecuritiesQuoteVariable>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
@@ -303,9 +325,19 @@ public class TradingSession {
 			definition = "Quote to which a trading session is associated.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmQuoteTradingSession;
+			opposite_lazy = () -> SecuritiesQuoteVariable.mmQuoteTradingSession;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
+			type_lazy = () -> SecuritiesQuoteVariable.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesQuoteVariable> getValue(TradingSession obj) {
+			return obj.getQuote();
+		}
+
+		@Override
+		public void setValue(TradingSession obj, Optional<SecuritiesQuoteVariable> value) {
+			obj.setQuote(value.orElse(null));
 		}
 	};
 	protected SecuritiesOrder securitiesOrder;
@@ -342,7 +374,7 @@ public class TradingSession {
 	 * definition} = "Securities order associated with a trading session."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingSession, Optional<SecuritiesOrder>> mmSecuritiesOrder = new MMBusinessAssociationEnd<TradingSession, Optional<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
@@ -351,9 +383,19 @@ public class TradingSession {
 			definition = "Securities order associated with a trading session.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmSecuritiesOrderTradingSession;
+			opposite_lazy = () -> SecuritiesOrder.mmSecuritiesOrderTradingSession;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesOrder> getValue(TradingSession obj) {
+			return obj.getSecuritiesOrder();
+		}
+
+		@Override
+		public void setValue(TradingSession obj, Optional<SecuritiesOrder> value) {
+			obj.setSecuritiesOrder(value.orElse(null));
 		}
 	};
 	protected TradingSessionCode tradingSessionIndicator;
@@ -388,7 +430,7 @@ public class TradingSession {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradingSessionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TradingSession, TradingSessionCode> mmTradingSessionIndicator = new MMBusinessAttribute<TradingSession, TradingSessionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
@@ -401,12 +443,14 @@ public class TradingSession {
 			simpleType_lazy = () -> TradingSessionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradingSession.class.getMethod("getTradingSessionIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TradingSessionCode getValue(TradingSession obj) {
+			return obj.getTradingSessionIndicator();
+		}
+
+		@Override
+		public void setValue(TradingSession obj, TradingSessionCode value) {
+			obj.setTradingSessionIndicator(value);
 		}
 	};
 	protected TradeExecutionSessionCode tradingSessionPhase;
@@ -441,7 +485,7 @@ public class TradingSession {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradingSessionPhase = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TradingSession, TradeExecutionSessionCode> mmTradingSessionPhase = new MMBusinessAttribute<TradingSession, TradeExecutionSessionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
@@ -454,12 +498,14 @@ public class TradingSession {
 			simpleType_lazy = () -> TradeExecutionSessionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradingSession.class.getMethod("getTradingSessionPhase", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TradeExecutionSessionCode getValue(TradingSession obj) {
+			return obj.getTradingSessionPhase();
+		}
+
+		@Override
+		public void setValue(TradingSession obj, TradeExecutionSessionCode value) {
+			obj.setTradingSessionPhase(value);
 		}
 	};
 	protected Max140Text uSFuturesTradingSession;
@@ -493,7 +539,7 @@ public class TradingSession {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUSFuturesTradingSession = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TradingSession, Max140Text> mmUSFuturesTradingSession = new MMBusinessAttribute<TradingSession, Max140Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
@@ -506,12 +552,14 @@ public class TradingSession {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradingSession.class.getMethod("getUSFuturesTradingSession", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max140Text getValue(TradingSession obj) {
+			return obj.getUSFuturesTradingSession();
+		}
+
+		@Override
+		public void setValue(TradingSession obj, Max140Text value) {
+			obj.setUSFuturesTradingSession(value);
 		}
 	};
 	protected ListTrading listTrading;
@@ -549,7 +597,7 @@ public class TradingSession {
 	 * "List trading process for which a trading session is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmListTrading = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingSession, Optional<ListTrading>> mmListTrading = new MMBusinessAssociationEnd<TradingSession, Optional<ListTrading>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
@@ -558,9 +606,19 @@ public class TradingSession {
 			definition = "List trading process for which a trading session is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ListTrading.mmListTradingSession;
+			opposite_lazy = () -> ListTrading.mmListTradingSession;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
+			type_lazy = () -> ListTrading.mmObject();
+		}
+
+		@Override
+		public Optional<ListTrading> getValue(TradingSession obj) {
+			return obj.getListTrading();
+		}
+
+		@Override
+		public void setValue(TradingSession obj, Optional<ListTrading> value) {
+			obj.setListTrading(value.orElse(null));
 		}
 	};
 
@@ -571,9 +629,8 @@ public class TradingSession {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingSession";
 				definition = "Established constraints under which a market operates";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradingMarket.mmTradingSession, com.tools20022.repository.entity.DateTimePeriod.mmTradingSession,
-						com.tools20022.repository.entity.SecuritiesOrder.mmSecuritiesOrderTradingSession, com.tools20022.repository.entity.ListTrading.mmListTradingSession,
-						com.tools20022.repository.entity.SecuritiesQuoteVariable.mmQuoteTradingSession);
+				associationDomain_lazy = () -> Arrays.asList(TradingMarket.mmTradingSession, DateTimePeriod.mmTradingSession, SecuritiesOrder.mmSecuritiesOrderTradingSession, ListTrading.mmListTradingSession,
+						SecuritiesQuoteVariable.mmQuoteTradingSession);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradingSession.mmTradingSessionName, com.tools20022.repository.entity.TradingSession.mmTimeBracket,
 						com.tools20022.repository.entity.TradingSession.mmMarket, com.tools20022.repository.entity.TradingSession.mmQuote, com.tools20022.repository.entity.TradingSession.mmSecuritiesOrder,
 						com.tools20022.repository.entity.TradingSession.mmTradingSessionIndicator, com.tools20022.repository.entity.TradingSession.mmTradingSessionPhase,
@@ -601,7 +658,7 @@ public class TradingSession {
 		return timeBracket;
 	}
 
-	public TradingSession setTimeBracket(com.tools20022.repository.entity.DateTimePeriod timeBracket) {
+	public TradingSession setTimeBracket(DateTimePeriod timeBracket) {
 		this.timeBracket = Objects.requireNonNull(timeBracket);
 		return this;
 	}
@@ -610,7 +667,7 @@ public class TradingSession {
 		return market == null ? Optional.empty() : Optional.of(market);
 	}
 
-	public TradingSession setMarket(com.tools20022.repository.entity.TradingMarket market) {
+	public TradingSession setMarket(TradingMarket market) {
 		this.market = market;
 		return this;
 	}
@@ -619,7 +676,7 @@ public class TradingSession {
 		return quote == null ? Optional.empty() : Optional.of(quote);
 	}
 
-	public TradingSession setQuote(com.tools20022.repository.entity.SecuritiesQuoteVariable quote) {
+	public TradingSession setQuote(SecuritiesQuoteVariable quote) {
 		this.quote = quote;
 		return this;
 	}
@@ -628,7 +685,7 @@ public class TradingSession {
 		return securitiesOrder == null ? Optional.empty() : Optional.of(securitiesOrder);
 	}
 
-	public TradingSession setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
+	public TradingSession setSecuritiesOrder(SecuritiesOrder securitiesOrder) {
 		this.securitiesOrder = securitiesOrder;
 		return this;
 	}
@@ -664,7 +721,7 @@ public class TradingSession {
 		return listTrading == null ? Optional.empty() : Optional.of(listTrading);
 	}
 
-	public TradingSession setListTrading(com.tools20022.repository.entity.ListTrading listTrading) {
+	public TradingSession setListTrading(ListTrading listTrading) {
 		this.listTrading = listTrading;
 		return this;
 	}

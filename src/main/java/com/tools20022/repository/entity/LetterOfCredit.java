@@ -20,8 +20,9 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.entity.Asset;
+import com.tools20022.repository.entity.CommercialTradeSettlement;
+import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -113,7 +114,7 @@ public class LetterOfCredit extends Asset {
 	 * definition} = "Amount of the letter/documentary credit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LetterOfCredit, ActiveCurrencyAndAmount> mmAmount = new MMBusinessAttribute<LetterOfCredit, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LetterOfCredit.mmObject();
@@ -125,12 +126,14 @@ public class LetterOfCredit extends Asset {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LetterOfCredit.class.getMethod("getAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(LetterOfCredit obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(LetterOfCredit obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Document> document;
@@ -166,7 +169,7 @@ public class LetterOfCredit extends Asset {
 	 * definition} = "Document which materialises the letter of credit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDocument = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LetterOfCredit, List<Document>> mmDocument = new MMBusinessAssociationEnd<LetterOfCredit, List<Document>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LetterOfCredit.mmObject();
@@ -177,6 +180,16 @@ public class LetterOfCredit extends Asset {
 			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmLetterOfCredit;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
+		}
+
+		@Override
+		public List<Document> getValue(LetterOfCredit obj) {
+			return obj.getDocument();
+		}
+
+		@Override
+		public void setValue(LetterOfCredit obj, List<Document> value) {
+			obj.setDocument(value);
 		}
 	};
 	protected CommercialTradeSettlement commercialTradeSettlement;
@@ -214,7 +227,7 @@ public class LetterOfCredit extends Asset {
 	 * definition} = "Settlement process related to a letter of credit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCommercialTradeSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LetterOfCredit, com.tools20022.repository.entity.CommercialTradeSettlement> mmCommercialTradeSettlement = new MMBusinessAssociationEnd<LetterOfCredit, com.tools20022.repository.entity.CommercialTradeSettlement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LetterOfCredit.mmObject();
@@ -226,6 +239,16 @@ public class LetterOfCredit extends Asset {
 			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmLetterOfCredit;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.CommercialTradeSettlement getValue(LetterOfCredit obj) {
+			return obj.getCommercialTradeSettlement();
+		}
+
+		@Override
+		public void setValue(LetterOfCredit obj, com.tools20022.repository.entity.CommercialTradeSettlement value) {
+			obj.setCommercialTradeSettlement(value);
 		}
 	};
 

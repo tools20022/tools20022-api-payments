@@ -19,8 +19,8 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max350Text;
+import com.tools20022.repository.entity.InvestmentFund;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -105,7 +105,7 @@ public class UmbrellaFund {
 	 * definition} = "Name of the fund."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<UmbrellaFund, Max350Text> mmName = new MMBusinessAttribute<UmbrellaFund, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UmbrellaFund.mmObject();
@@ -117,15 +117,17 @@ public class UmbrellaFund {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return UmbrellaFund.class.getMethod("getName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(UmbrellaFund obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(UmbrellaFund obj, Max350Text value) {
+			obj.setName(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.InvestmentFund> subFund;
+	protected List<InvestmentFund> subFund;
 	/**
 	 * 
 	 <p>
@@ -158,7 +160,7 @@ public class UmbrellaFund {
 	 * definition} = "Compartment of an umbrellla fund."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSubFund = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<UmbrellaFund, List<InvestmentFund>> mmSubFund = new MMBusinessAssociationEnd<UmbrellaFund, List<InvestmentFund>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UmbrellaFund.mmObject();
@@ -166,9 +168,19 @@ public class UmbrellaFund {
 			name = "SubFund";
 			definition = "Compartment of an umbrellla fund.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmUmbrellaFund;
+			opposite_lazy = () -> InvestmentFund.mmUmbrellaFund;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
+			type_lazy = () -> InvestmentFund.mmObject();
+		}
+
+		@Override
+		public List<InvestmentFund> getValue(UmbrellaFund obj) {
+			return obj.getSubFund();
+		}
+
+		@Override
+		public void setValue(UmbrellaFund obj, List<InvestmentFund> value) {
+			obj.setSubFund(value);
 		}
 	};
 
@@ -179,7 +191,7 @@ public class UmbrellaFund {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UmbrellaFund";
 				definition = "In securities, a collective investment scheme that has a contractual or a corporate form. When it has a contractual form, a fund is constituted under either the law of contract or under the trust law and thus it is not a legal entity. In its corporate form, a fund is a legal entity and is structured as a company.\r\nIt has several distinct sub-funds which in effect are traded as individual investment funds.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFund.mmUmbrellaFund);
+				associationDomain_lazy = () -> Arrays.asList(InvestmentFund.mmUmbrellaFund);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.UmbrellaFund.mmName, com.tools20022.repository.entity.UmbrellaFund.mmSubFund);
 			}
 
@@ -204,7 +216,7 @@ public class UmbrellaFund {
 		return subFund == null ? subFund = new ArrayList<>() : subFund;
 	}
 
-	public UmbrellaFund setSubFund(List<com.tools20022.repository.entity.InvestmentFund> subFund) {
+	public UmbrellaFund setSubFund(List<InvestmentFund> subFund) {
 		this.subFund = Objects.requireNonNull(subFund);
 		return this;
 	}

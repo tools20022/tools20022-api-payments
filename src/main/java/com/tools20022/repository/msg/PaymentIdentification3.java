@@ -117,7 +117,7 @@ public class PaymentIdentification3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentIdentification3, Optional<Max35Text>> mmInstructionIdentification = new MMMessageAttribute<PaymentIdentification3, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmInstructionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification3.mmObject();
@@ -129,6 +129,16 @@ public class PaymentIdentification3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(PaymentIdentification3 obj) {
+			return obj.getInstructionIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification3 obj, Optional<Max35Text> value) {
+			obj.setInstructionIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "EndToEndId", required = true)
@@ -167,7 +177,7 @@ public class PaymentIdentification3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEndToEndIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentIdentification3, Max35Text> mmEndToEndIdentification = new MMMessageAttribute<PaymentIdentification3, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmEndToEndIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification3.mmObject();
@@ -179,6 +189,16 @@ public class PaymentIdentification3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(PaymentIdentification3 obj) {
+			return obj.getEndToEndIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification3 obj, Max35Text value) {
+			obj.setEndToEndIdentification(value);
 		}
 	};
 	@XmlElement(name = "TxId", required = true)
@@ -217,7 +237,7 @@ public class PaymentIdentification3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentIdentification3, Max35Text> mmTransactionIdentification = new MMMessageAttribute<PaymentIdentification3, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmTransactionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification3.mmObject();
@@ -229,6 +249,16 @@ public class PaymentIdentification3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(PaymentIdentification3 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification3 obj, Max35Text value) {
+			obj.setTransactionIdentification(value);
 		}
 	};
 	@XmlElement(name = "ClrSysRef")
@@ -267,7 +297,7 @@ public class PaymentIdentification3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClearingSystemReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentIdentification3, Optional<Max35Text>> mmClearingSystemReference = new MMMessageAttribute<PaymentIdentification3, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmClearingSystemReference;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification3.mmObject();
@@ -279,6 +309,16 @@ public class PaymentIdentification3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(PaymentIdentification3 obj) {
+			return obj.getClearingSystemReference();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification3 obj, Optional<Max35Text> value) {
+			obj.setClearingSystemReference(value.orElse(null));
 		}
 	};
 

@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max10KBinary;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.SecurityCertificatePartyRole;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyIdentification43;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -110,7 +111,7 @@ public class PartyAndCertificate2 {
 	 * definition} = "Entity involved in an activity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PartyAndCertificate2, PartyIdentification43> mmParty = new MMMessageAssociationEnd<PartyAndCertificate2, PartyIdentification43>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndCertificate2.mmObject();
@@ -122,7 +123,17 @@ public class PartyAndCertificate2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
+			type_lazy = () -> PartyIdentification43.mmObject();
+		}
+
+		@Override
+		public PartyIdentification43 getValue(PartyAndCertificate2 obj) {
+			return obj.getParty();
+		}
+
+		@Override
+		public void setValue(PartyAndCertificate2 obj, PartyIdentification43 value) {
+			obj.setParty(value);
 		}
 	};
 	@XmlElement(name = "Cert")
@@ -160,7 +171,7 @@ public class PartyAndCertificate2 {
 	 * definition} = "Security certificate used to sign electronically."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCertificate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyAndCertificate2, Optional<Max10KBinary>> mmCertificate = new MMMessageAttribute<PartyAndCertificate2, Optional<Max10KBinary>>() {
 		{
 			businessElementTrace_lazy = () -> SecurityCertificatePartyRole.mmSecurityCertificate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndCertificate2.mmObject();
@@ -172,6 +183,16 @@ public class PartyAndCertificate2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10KBinary.mmObject();
+		}
+
+		@Override
+		public Optional<Max10KBinary> getValue(PartyAndCertificate2 obj) {
+			return obj.getCertificate();
+		}
+
+		@Override
+		public void setValue(PartyAndCertificate2 obj, Optional<Max10KBinary> value) {
+			obj.setCertificate(value.orElse(null));
 		}
 	};
 
@@ -193,7 +214,7 @@ public class PartyAndCertificate2 {
 		return party;
 	}
 
-	public PartyAndCertificate2 setParty(com.tools20022.repository.msg.PartyIdentification43 party) {
+	public PartyAndCertificate2 setParty(PartyIdentification43 party) {
 		this.party = Objects.requireNonNull(party);
 		return this;
 	}

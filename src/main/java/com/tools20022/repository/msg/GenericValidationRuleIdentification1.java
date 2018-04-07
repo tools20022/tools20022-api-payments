@@ -114,7 +114,7 @@ public class GenericValidationRuleIdentification1 {
 	 * "Unique and unambiguous identification of a validation rule."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericValidationRuleIdentification1, Max35Text> mmIdentification = new MMMessageAttribute<GenericValidationRuleIdentification1, Max35Text>() {
 		{
 			businessComponentTrace_lazy = () -> Status.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericValidationRuleIdentification1.mmObject();
@@ -126,6 +126,16 @@ public class GenericValidationRuleIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(GenericValidationRuleIdentification1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(GenericValidationRuleIdentification1 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "Desc")
@@ -164,7 +174,7 @@ public class GenericValidationRuleIdentification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericValidationRuleIdentification1, Optional<Max350Text>> mmDescription = new MMMessageAttribute<GenericValidationRuleIdentification1, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDescription;
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericValidationRuleIdentification1.mmObject();
@@ -176,6 +186,16 @@ public class GenericValidationRuleIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max350Text> getValue(GenericValidationRuleIdentification1 obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(GenericValidationRuleIdentification1 obj, Optional<Max350Text> value) {
+			obj.setDescription(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "SchmeNm")
@@ -207,7 +227,7 @@ public class GenericValidationRuleIdentification1 {
 	 * definition} = "Name of the identification scheme."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSchemeName = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<GenericValidationRuleIdentification1, Optional<ValidationRuleSchemeName1Choice>> mmSchemeName = new MMMessageAssociationEnd<GenericValidationRuleIdentification1, Optional<ValidationRuleSchemeName1Choice>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericValidationRuleIdentification1.mmObject();
 			isDerived = false;
@@ -219,6 +239,16 @@ public class GenericValidationRuleIdentification1 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> ValidationRuleSchemeName1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<ValidationRuleSchemeName1Choice> getValue(GenericValidationRuleIdentification1 obj) {
+			return obj.getSchemeName();
+		}
+
+		@Override
+		public void setValue(GenericValidationRuleIdentification1 obj, Optional<ValidationRuleSchemeName1Choice> value) {
+			obj.setSchemeName(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Issr")
@@ -250,7 +280,7 @@ public class GenericValidationRuleIdentification1 {
 	 * definition} = "Entity that assigns the identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericValidationRuleIdentification1, Optional<Max35Text>> mmIssuer = new MMMessageAttribute<GenericValidationRuleIdentification1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericValidationRuleIdentification1.mmObject();
 			isDerived = false;
@@ -261,6 +291,16 @@ public class GenericValidationRuleIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(GenericValidationRuleIdentification1 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(GenericValidationRuleIdentification1 obj, Optional<Max35Text> value) {
+			obj.setIssuer(value.orElse(null));
 		}
 	};
 

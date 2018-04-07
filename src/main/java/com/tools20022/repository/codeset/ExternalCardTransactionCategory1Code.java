@@ -37,6 +37,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ExternalCardTransactionCategoryCode
+ * ExternalCardTransactionCategoryCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -77,6 +80,7 @@ public class ExternalCardTransactionCategory1Code extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalCardTransactionCategory1Code";
 				definition = "Specifies the category of card transaction in the format of character string with a maximum length of 4 characters.\r\nThe list of valid codes is an external code list published separately.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				trace_lazy = () -> ExternalCardTransactionCategoryCode.mmObject();
 				minLength = 1;
 				maxLength = 4;
 			}

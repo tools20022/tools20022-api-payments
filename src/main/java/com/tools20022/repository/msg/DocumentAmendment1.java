@@ -107,7 +107,7 @@ public class DocumentAmendment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCorrectionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentAmendment1, Number> mmCorrectionIdentification = new MMMessageAttribute<DocumentAmendment1, Number>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentAmendment1.mmObject();
 			isDerived = false;
@@ -118,6 +118,16 @@ public class DocumentAmendment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
+		}
+
+		@Override
+		public Number getValue(DocumentAmendment1 obj) {
+			return obj.getCorrectionIdentification();
+		}
+
+		@Override
+		public void setValue(DocumentAmendment1 obj, Number value) {
+			obj.setCorrectionIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgnlDocId")
@@ -154,7 +164,7 @@ public class DocumentAmendment1 {
 	 * definition} = "Identification of the original document being amended."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalDocumentIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentAmendment1, Optional<Max35Text>> mmOriginalDocumentIdentification = new MMMessageAttribute<DocumentAmendment1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentAmendment1.mmObject();
@@ -166,6 +176,16 @@ public class DocumentAmendment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(DocumentAmendment1 obj) {
+			return obj.getOriginalDocumentIdentification();
+		}
+
+		@Override
+		public void setValue(DocumentAmendment1 obj, Optional<Max35Text> value) {
+			obj.setOriginalDocumentIdentification(value.orElse(null));
 		}
 	};
 

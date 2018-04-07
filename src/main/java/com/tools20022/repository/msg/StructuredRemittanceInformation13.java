@@ -24,6 +24,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -85,6 +86,14 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in a structured form."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15
+ * StructuredRemittanceInformation15}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -94,7 +103,7 @@ public class StructuredRemittanceInformation13 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
 	@XmlElement(name = "RfrdDocInf")
-	protected List<com.tools20022.repository.msg.ReferredDocumentInformation7> referredDocumentInformation;
+	protected List<ReferredDocumentInformation7> referredDocumentInformation;
 	/**
 	 * 
 	 <p>
@@ -125,9 +134,17 @@ public class StructuredRemittanceInformation13 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Provides the identification and the content of the referred document."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmReferredDocumentInformation
+	 * StructuredRemittanceInformation15.mmReferredDocumentInformation}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReferredDocumentInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StructuredRemittanceInformation13, List<ReferredDocumentInformation7>> mmReferredDocumentInformation = new MMMessageAssociationEnd<StructuredRemittanceInformation13, List<ReferredDocumentInformation7>>() {
 		{
 			businessComponentTrace_lazy = () -> Document.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRemittanceInformation13.mmObject();
@@ -136,9 +153,20 @@ public class StructuredRemittanceInformation13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReferredDocumentInformation";
 			definition = "Provides the identification and the content of the referred document.";
+			nextVersions_lazy = () -> Arrays.asList(StructuredRemittanceInformation15.mmReferredDocumentInformation);
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ReferredDocumentInformation7.mmObject();
+			type_lazy = () -> ReferredDocumentInformation7.mmObject();
+		}
+
+		@Override
+		public List<ReferredDocumentInformation7> getValue(StructuredRemittanceInformation13 obj) {
+			return obj.getReferredDocumentInformation();
+		}
+
+		@Override
+		public void setValue(StructuredRemittanceInformation13 obj, List<ReferredDocumentInformation7> value) {
+			obj.setReferredDocumentInformation(value);
 		}
 	};
 	@XmlElement(name = "RfrdDocAmt")
@@ -173,9 +201,17 @@ public class StructuredRemittanceInformation13 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Provides details on the amounts of the referred document."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmReferredDocumentAmount
+	 * StructuredRemittanceInformation15.mmReferredDocumentAmount}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReferredDocumentAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<RemittanceAmount2>> mmReferredDocumentAmount = new MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<RemittanceAmount2>>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRemittanceInformation13.mmObject();
@@ -184,10 +220,21 @@ public class StructuredRemittanceInformation13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReferredDocumentAmount";
 			definition = "Provides details on the amounts of the referred document.";
+			nextVersions_lazy = () -> Arrays.asList(StructuredRemittanceInformation15.mmReferredDocumentAmount);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.RemittanceAmount2.mmObject();
+			type_lazy = () -> RemittanceAmount2.mmObject();
+		}
+
+		@Override
+		public Optional<RemittanceAmount2> getValue(StructuredRemittanceInformation13 obj) {
+			return obj.getReferredDocumentAmount();
+		}
+
+		@Override
+		public void setValue(StructuredRemittanceInformation13 obj, Optional<RemittanceAmount2> value) {
+			obj.setReferredDocumentAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CdtrRefInf")
@@ -224,9 +271,17 @@ public class StructuredRemittanceInformation13 {
 	 * definition} =
 	 * "Reference information provided by the creditor to allow the identification of the underlying documents."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmCreditorReferenceInformation
+	 * StructuredRemittanceInformation15.mmCreditorReferenceInformation}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCreditorReferenceInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<CreditorReferenceInformation2>> mmCreditorReferenceInformation = new MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<CreditorReferenceInformation2>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmCreditorReference;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRemittanceInformation13.mmObject();
@@ -235,10 +290,21 @@ public class StructuredRemittanceInformation13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditorReferenceInformation";
 			definition = "Reference information provided by the creditor to allow the identification of the underlying documents.";
+			nextVersions_lazy = () -> Arrays.asList(StructuredRemittanceInformation15.mmCreditorReferenceInformation);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CreditorReferenceInformation2.mmObject();
+			type_lazy = () -> CreditorReferenceInformation2.mmObject();
+		}
+
+		@Override
+		public Optional<CreditorReferenceInformation2> getValue(StructuredRemittanceInformation13 obj) {
+			return obj.getCreditorReferenceInformation();
+		}
+
+		@Override
+		public void setValue(StructuredRemittanceInformation13 obj, Optional<CreditorReferenceInformation2> value) {
+			obj.setCreditorReferenceInformation(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Invcr")
@@ -274,9 +340,17 @@ public class StructuredRemittanceInformation13 {
 	 * definition} =
 	 * "Identification of the organisation issuing the invoice, when it is different from the creditor or ultimate creditor."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmInvoicer
+	 * StructuredRemittanceInformation15.mmInvoicer}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInvoicer = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<PartyIdentification43>> mmInvoicer = new MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<PartyIdentification43>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRemittanceInformation13.mmObject();
@@ -285,10 +359,21 @@ public class StructuredRemittanceInformation13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Invoicer";
 			definition = "Identification of the organisation issuing the invoice, when it is different from the creditor or ultimate creditor.";
+			nextVersions_lazy = () -> Arrays.asList(StructuredRemittanceInformation15.mmInvoicer);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
+			type_lazy = () -> PartyIdentification43.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification43> getValue(StructuredRemittanceInformation13 obj) {
+			return obj.getInvoicer();
+		}
+
+		@Override
+		public void setValue(StructuredRemittanceInformation13 obj, Optional<PartyIdentification43> value) {
+			obj.setInvoicer(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Invcee")
@@ -323,9 +408,17 @@ public class StructuredRemittanceInformation13 {
 	 * definition} =
 	 * "Identification of the party to whom an invoice is issued, when it is different from the debtor or ultimate debtor."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmInvoicee
+	 * StructuredRemittanceInformation15.mmInvoicee}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInvoicee = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<PartyIdentification43>> mmInvoicee = new MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<PartyIdentification43>>() {
 		{
 			businessComponentTrace_lazy = () -> InvoiceeRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRemittanceInformation13.mmObject();
@@ -334,10 +427,21 @@ public class StructuredRemittanceInformation13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Invoicee";
 			definition = "Identification of the party to whom an invoice is issued, when it is different from the debtor or ultimate debtor.";
+			nextVersions_lazy = () -> Arrays.asList(StructuredRemittanceInformation15.mmInvoicee);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
+			type_lazy = () -> PartyIdentification43.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification43> getValue(StructuredRemittanceInformation13 obj) {
+			return obj.getInvoicee();
+		}
+
+		@Override
+		public void setValue(StructuredRemittanceInformation13 obj, Optional<PartyIdentification43> value) {
+			obj.setInvoicee(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TaxRmt")
@@ -373,9 +477,17 @@ public class StructuredRemittanceInformation13 {
 	 * definition} =
 	 * "Provides remittance information about a payment made for tax-related purposes."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmTaxRemittance
+	 * StructuredRemittanceInformation15.mmTaxRemittance}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTaxRemittance = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<TaxInformation4>> mmTaxRemittance = new MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<TaxInformation4>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmTaxOnPayment;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRemittanceInformation13.mmObject();
@@ -384,10 +496,21 @@ public class StructuredRemittanceInformation13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TaxRemittance";
 			definition = "Provides remittance information about a payment made for tax-related purposes.";
+			nextVersions_lazy = () -> Arrays.asList(StructuredRemittanceInformation15.mmTaxRemittance);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TaxInformation4.mmObject();
+			type_lazy = () -> TaxInformation4.mmObject();
+		}
+
+		@Override
+		public Optional<TaxInformation4> getValue(StructuredRemittanceInformation13 obj) {
+			return obj.getTaxRemittance();
+		}
+
+		@Override
+		public void setValue(StructuredRemittanceInformation13 obj, Optional<TaxInformation4> value) {
+			obj.setTaxRemittance(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "GrnshmtRmt")
@@ -420,11 +543,19 @@ public class StructuredRemittanceInformation13 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Provides remittance information about a payment for garnishment-related purposes. "
+	 * "Provides remittance information about a payment for garnishment-related purposes."
+	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmGarnishmentRemittance
+	 * StructuredRemittanceInformation15.mmGarnishmentRemittance}</li>
+	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmGarnishmentRemittance = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<Garnishment1>> mmGarnishmentRemittance = new MMMessageAssociationEnd<StructuredRemittanceInformation13, Optional<Garnishment1>>() {
 		{
 			businessComponentTrace_lazy = () -> Garnishment.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRemittanceInformation13.mmObject();
@@ -432,11 +563,22 @@ public class StructuredRemittanceInformation13 {
 			xmlTag = "GrnshmtRmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GarnishmentRemittance";
-			definition = "Provides remittance information about a payment for garnishment-related purposes. ";
+			definition = "Provides remittance information about a payment for garnishment-related purposes.";
+			nextVersions_lazy = () -> Arrays.asList(StructuredRemittanceInformation15.mmGarnishmentRemittance);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Garnishment1.mmObject();
+			type_lazy = () -> Garnishment1.mmObject();
+		}
+
+		@Override
+		public Optional<Garnishment1> getValue(StructuredRemittanceInformation13 obj) {
+			return obj.getGarnishmentRemittance();
+		}
+
+		@Override
+		public void setValue(StructuredRemittanceInformation13 obj, Optional<Garnishment1> value) {
+			obj.setGarnishmentRemittance(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlRmtInf")
@@ -472,9 +614,17 @@ public class StructuredRemittanceInformation13 {
 	 * definition} =
 	 * "Additional information, in free text form, to complement the structured remittance information."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmAdditionalRemittanceInformation
+	 * StructuredRemittanceInformation15.mmAdditionalRemittanceInformation}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalRemittanceInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StructuredRemittanceInformation13, List<Max140Text>> mmAdditionalRemittanceInformation = new MMMessageAttribute<StructuredRemittanceInformation13, List<Max140Text>>() {
 		{
 			businessComponentTrace_lazy = () -> Document.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRemittanceInformation13.mmObject();
@@ -483,9 +633,20 @@ public class StructuredRemittanceInformation13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalRemittanceInformation";
 			definition = "Additional information, in free text form, to complement the structured remittance information.";
+			nextVersions_lazy = () -> Arrays.asList(StructuredRemittanceInformation15.mmAdditionalRemittanceInformation);
 			maxOccurs = 3;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public List<Max140Text> getValue(StructuredRemittanceInformation13 obj) {
+			return obj.getAdditionalRemittanceInformation();
+		}
+
+		@Override
+		public void setValue(StructuredRemittanceInformation13 obj, List<Max140Text> value) {
+			obj.setAdditionalRemittanceInformation(value);
 		}
 	};
 
@@ -502,6 +663,7 @@ public class StructuredRemittanceInformation13 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StructuredRemittanceInformation13";
 				definition = "Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in a structured form.";
+				nextVersions_lazy = () -> Arrays.asList(StructuredRemittanceInformation15.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
@@ -511,7 +673,7 @@ public class StructuredRemittanceInformation13 {
 		return referredDocumentInformation == null ? referredDocumentInformation = new ArrayList<>() : referredDocumentInformation;
 	}
 
-	public StructuredRemittanceInformation13 setReferredDocumentInformation(List<com.tools20022.repository.msg.ReferredDocumentInformation7> referredDocumentInformation) {
+	public StructuredRemittanceInformation13 setReferredDocumentInformation(List<ReferredDocumentInformation7> referredDocumentInformation) {
 		this.referredDocumentInformation = Objects.requireNonNull(referredDocumentInformation);
 		return this;
 	}
@@ -520,7 +682,7 @@ public class StructuredRemittanceInformation13 {
 		return referredDocumentAmount == null ? Optional.empty() : Optional.of(referredDocumentAmount);
 	}
 
-	public StructuredRemittanceInformation13 setReferredDocumentAmount(com.tools20022.repository.msg.RemittanceAmount2 referredDocumentAmount) {
+	public StructuredRemittanceInformation13 setReferredDocumentAmount(RemittanceAmount2 referredDocumentAmount) {
 		this.referredDocumentAmount = referredDocumentAmount;
 		return this;
 	}
@@ -529,7 +691,7 @@ public class StructuredRemittanceInformation13 {
 		return creditorReferenceInformation == null ? Optional.empty() : Optional.of(creditorReferenceInformation);
 	}
 
-	public StructuredRemittanceInformation13 setCreditorReferenceInformation(com.tools20022.repository.msg.CreditorReferenceInformation2 creditorReferenceInformation) {
+	public StructuredRemittanceInformation13 setCreditorReferenceInformation(CreditorReferenceInformation2 creditorReferenceInformation) {
 		this.creditorReferenceInformation = creditorReferenceInformation;
 		return this;
 	}
@@ -538,7 +700,7 @@ public class StructuredRemittanceInformation13 {
 		return invoicer == null ? Optional.empty() : Optional.of(invoicer);
 	}
 
-	public StructuredRemittanceInformation13 setInvoicer(com.tools20022.repository.msg.PartyIdentification43 invoicer) {
+	public StructuredRemittanceInformation13 setInvoicer(PartyIdentification43 invoicer) {
 		this.invoicer = invoicer;
 		return this;
 	}
@@ -547,7 +709,7 @@ public class StructuredRemittanceInformation13 {
 		return invoicee == null ? Optional.empty() : Optional.of(invoicee);
 	}
 
-	public StructuredRemittanceInformation13 setInvoicee(com.tools20022.repository.msg.PartyIdentification43 invoicee) {
+	public StructuredRemittanceInformation13 setInvoicee(PartyIdentification43 invoicee) {
 		this.invoicee = invoicee;
 		return this;
 	}
@@ -556,7 +718,7 @@ public class StructuredRemittanceInformation13 {
 		return taxRemittance == null ? Optional.empty() : Optional.of(taxRemittance);
 	}
 
-	public StructuredRemittanceInformation13 setTaxRemittance(com.tools20022.repository.msg.TaxInformation4 taxRemittance) {
+	public StructuredRemittanceInformation13 setTaxRemittance(TaxInformation4 taxRemittance) {
 		this.taxRemittance = taxRemittance;
 		return this;
 	}
@@ -565,7 +727,7 @@ public class StructuredRemittanceInformation13 {
 		return garnishmentRemittance == null ? Optional.empty() : Optional.of(garnishmentRemittance);
 	}
 
-	public StructuredRemittanceInformation13 setGarnishmentRemittance(com.tools20022.repository.msg.Garnishment1 garnishmentRemittance) {
+	public StructuredRemittanceInformation13 setGarnishmentRemittance(Garnishment1 garnishmentRemittance) {
 		this.garnishmentRemittance = garnishmentRemittance;
 		return this;
 	}

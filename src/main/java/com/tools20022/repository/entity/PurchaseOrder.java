@@ -19,9 +19,11 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.CommercialTrade;
+import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.entity.Order;
+import com.tools20022.repository.entity.Product;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -116,7 +118,7 @@ public class PurchaseOrder extends Order {
 	 * definition} = "Line items total amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PurchaseOrder, CurrencyAndAmount> mmTotalAmount = new MMBusinessAttribute<PurchaseOrder, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PurchaseOrder.mmObject();
@@ -128,15 +130,17 @@ public class PurchaseOrder extends Order {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PurchaseOrder.class.getMethod("getTotalAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PurchaseOrder obj) {
+			return obj.getTotalAmount();
+		}
+
+		@Override
+		public void setValue(PurchaseOrder obj, CurrencyAndAmount value) {
+			obj.setTotalAmount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CommercialTrade> resultingCommercialTrade;
+	protected List<CommercialTrade> resultingCommercialTrade;
 	/**
 	 * 
 	 <p>
@@ -170,7 +174,7 @@ public class PurchaseOrder extends Order {
 	 * definition} = "Execution of the purchase order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmResultingCommercialTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PurchaseOrder, List<CommercialTrade>> mmResultingCommercialTrade = new MMBusinessAssociationEnd<PurchaseOrder, List<CommercialTrade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PurchaseOrder.mmObject();
@@ -178,9 +182,19 @@ public class PurchaseOrder extends Order {
 			name = "ResultingCommercialTrade";
 			definition = "Execution of the purchase order.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmPurchaseOrder;
+			opposite_lazy = () -> CommercialTrade.mmPurchaseOrder;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
+			type_lazy = () -> CommercialTrade.mmObject();
+		}
+
+		@Override
+		public List<CommercialTrade> getValue(PurchaseOrder obj) {
+			return obj.getResultingCommercialTrade();
+		}
+
+		@Override
+		public void setValue(PurchaseOrder obj, List<CommercialTrade> value) {
+			obj.setResultingCommercialTrade(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Product> product;
@@ -218,7 +232,7 @@ public class PurchaseOrder extends Order {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PurchaseOrder, List<Product>> mmProduct = new MMBusinessAssociationEnd<PurchaseOrder, List<Product>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PurchaseOrder.mmObject();
@@ -229,6 +243,16 @@ public class PurchaseOrder extends Order {
 			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmPurchaseOrder;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
+		}
+
+		@Override
+		public List<Product> getValue(PurchaseOrder obj) {
+			return obj.getProduct();
+		}
+
+		@Override
+		public void setValue(PurchaseOrder obj, List<Product> value) {
+			obj.setProduct(value);
 		}
 	};
 	protected GenericIdentification identification;
@@ -268,7 +292,7 @@ public class PurchaseOrder extends Order {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PurchaseOrder, GenericIdentification> mmIdentification = new MMBusinessAssociationEnd<PurchaseOrder, GenericIdentification>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PurchaseOrder.mmObject();
@@ -277,9 +301,19 @@ public class PurchaseOrder extends Order {
 			definition = "Identification of the purchase order that can be used for reconciliation or to link tasks relating to the commercial trade.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmRelatedPurchaseOrder;
+			opposite_lazy = () -> GenericIdentification.mmRelatedPurchaseOrder;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
+			type_lazy = () -> GenericIdentification.mmObject();
+		}
+
+		@Override
+		public GenericIdentification getValue(PurchaseOrder obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(PurchaseOrder obj, GenericIdentification value) {
+			obj.setIdentification(value);
 		}
 	};
 
@@ -290,8 +324,7 @@ public class PurchaseOrder extends Order {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PurchaseOrder";
 				definition = "Document issued by a buyer and containing the details of a purchase, including description of goods, transport information, payment terms, etc.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmRelatedPurchaseOrder, com.tools20022.repository.entity.Product.mmPurchaseOrder,
-						com.tools20022.repository.entity.CommercialTrade.mmPurchaseOrder);
+				associationDomain_lazy = () -> Arrays.asList(GenericIdentification.mmRelatedPurchaseOrder, com.tools20022.repository.entity.Product.mmPurchaseOrder, CommercialTrade.mmPurchaseOrder);
 				superType_lazy = () -> Order.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PurchaseOrder.mmTotalAmount, com.tools20022.repository.entity.PurchaseOrder.mmResultingCommercialTrade,
 						com.tools20022.repository.entity.PurchaseOrder.mmProduct, com.tools20022.repository.entity.PurchaseOrder.mmIdentification);
@@ -318,7 +351,7 @@ public class PurchaseOrder extends Order {
 		return resultingCommercialTrade == null ? resultingCommercialTrade = new ArrayList<>() : resultingCommercialTrade;
 	}
 
-	public PurchaseOrder setResultingCommercialTrade(List<com.tools20022.repository.entity.CommercialTrade> resultingCommercialTrade) {
+	public PurchaseOrder setResultingCommercialTrade(List<CommercialTrade> resultingCommercialTrade) {
 		this.resultingCommercialTrade = Objects.requireNonNull(resultingCommercialTrade);
 		return this;
 	}
@@ -336,7 +369,7 @@ public class PurchaseOrder extends Order {
 		return identification;
 	}
 
-	public PurchaseOrder setIdentification(com.tools20022.repository.entity.GenericIdentification identification) {
+	public PurchaseOrder setIdentification(GenericIdentification identification) {
 		this.identification = Objects.requireNonNull(identification);
 		return this;
 	}

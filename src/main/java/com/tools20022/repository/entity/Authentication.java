@@ -25,10 +25,11 @@ import com.tools20022.repository.codeset.PINFormatCode;
 import com.tools20022.repository.datatype.Max140Binary;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
+import com.tools20022.repository.entity.CardholderRole;
+import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CardholderAuthentication2;
 import com.tools20022.repository.msg.MandateAuthentication1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -147,7 +148,7 @@ public class Authentication {
 	 * definition} = "Cardholder for which an authentication is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCardholder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Authentication, Optional<CardholderRole>> mmCardholder = new MMBusinessAssociationEnd<Authentication, Optional<CardholderRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
@@ -156,9 +157,19 @@ public class Authentication {
 			definition = "Cardholder for which an authentication is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CardholderRole.mmAuthentication;
+			opposite_lazy = () -> CardholderRole.mmAuthentication;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CardholderRole.mmObject();
+			type_lazy = () -> CardholderRole.mmObject();
+		}
+
+		@Override
+		public Optional<CardholderRole> getValue(Authentication obj) {
+			return obj.getCardholder();
+		}
+
+		@Override
+		public void setValue(Authentication obj, Optional<CardholderRole> value) {
+			obj.setCardholder(value.orElse(null));
 		}
 	};
 	protected AuthenticationMethodCode authenticationMethod;
@@ -199,7 +210,7 @@ public class Authentication {
 	 * definition} = "Method used to authenticate a person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAuthenticationMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Authentication, AuthenticationMethodCode> mmAuthenticationMethod = new MMBusinessAttribute<Authentication, AuthenticationMethodCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardholderAuthentication2.mmAuthenticationMethod, MandateAuthentication1.mmChannel);
 			isDerived = false;
@@ -212,12 +223,14 @@ public class Authentication {
 			simpleType_lazy = () -> AuthenticationMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Authentication.class.getMethod("getAuthenticationMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AuthenticationMethodCode getValue(Authentication obj) {
+			return obj.getAuthenticationMethod();
+		}
+
+		@Override
+		public void setValue(Authentication obj, AuthenticationMethodCode value) {
+			obj.setAuthenticationMethod(value);
 		}
 	};
 	protected AuthenticationEntityCode authenticationEntity;
@@ -259,7 +272,7 @@ public class Authentication {
 	 * "Entity or object in charge of verifying the person authenticity."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAuthenticationEntity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Authentication, AuthenticationEntityCode> mmAuthenticationEntity = new MMBusinessAttribute<Authentication, AuthenticationEntityCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardholderAuthentication2.mmAuthenticationEntity, MandateAuthentication1.mmMessageAuthenticationCode);
 			isDerived = false;
@@ -272,12 +285,14 @@ public class Authentication {
 			simpleType_lazy = () -> AuthenticationEntityCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Authentication.class.getMethod("getAuthenticationEntity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AuthenticationEntityCode getValue(Authentication obj) {
+			return obj.getAuthenticationEntity();
+		}
+
+		@Override
+		public void setValue(Authentication obj, AuthenticationEntityCode value) {
+			obj.setAuthenticationEntity(value);
 		}
 	};
 	protected Max70Text authenticationValue;
@@ -307,7 +322,7 @@ public class Authentication {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAuthenticationValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Authentication, Max70Text> mmAuthenticationValue = new MMBusinessAttribute<Authentication, Max70Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
@@ -319,12 +334,14 @@ public class Authentication {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Authentication.class.getMethod("getAuthenticationValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max70Text getValue(Authentication obj) {
+			return obj.getAuthenticationValue();
+		}
+
+		@Override
+		public void setValue(Authentication obj, Max70Text value) {
+			obj.setAuthenticationValue(value);
 		}
 	};
 	protected PINFormatCode pINFormat;
@@ -354,7 +371,7 @@ public class Authentication {
 	 * definition} = "Encrypted personal identification number (PIN) format."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPINFormat = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Authentication, PINFormatCode> mmPINFormat = new MMBusinessAttribute<Authentication, PINFormatCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
@@ -366,12 +383,14 @@ public class Authentication {
 			simpleType_lazy = () -> PINFormatCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Authentication.class.getMethod("getPINFormat", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PINFormatCode getValue(Authentication obj) {
+			return obj.getPINFormat();
+		}
+
+		@Override
+		public void setValue(Authentication obj, PINFormatCode value) {
+			obj.setPINFormat(value);
 		}
 	};
 	protected Max140Binary pIN;
@@ -401,7 +420,7 @@ public class Authentication {
 	 * definition} = "Personal Identification Number (PIN) for authentication."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPIN = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Authentication, Max140Binary> mmPIN = new MMBusinessAttribute<Authentication, Max140Binary>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
@@ -413,12 +432,14 @@ public class Authentication {
 			simpleType_lazy = () -> Max140Binary.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Authentication.class.getMethod("getPIN", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max140Binary getValue(Authentication obj) {
+			return obj.getPIN();
+		}
+
+		@Override
+		public void setValue(Authentication obj, Max140Binary value) {
+			obj.setPIN(value);
 		}
 	};
 	protected Max35Text authenticationSupport;
@@ -449,7 +470,7 @@ public class Authentication {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAuthenticationSupport = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Authentication, Max35Text> mmAuthenticationSupport = new MMBusinessAttribute<Authentication, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
@@ -461,12 +482,14 @@ public class Authentication {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Authentication.class.getMethod("getAuthenticationSupport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Authentication obj) {
+			return obj.getAuthenticationSupport();
+		}
+
+		@Override
+		public void setValue(Authentication obj, Max35Text value) {
+			obj.setAuthenticationSupport(value);
 		}
 	};
 	protected Max35Text collectionIndicator;
@@ -497,7 +520,7 @@ public class Authentication {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCollectionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Authentication, Max35Text> mmCollectionIndicator = new MMBusinessAttribute<Authentication, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
@@ -509,12 +532,14 @@ public class Authentication {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Authentication.class.getMethod("getCollectionIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Authentication obj) {
+			return obj.getCollectionIndicator();
+		}
+
+		@Override
+		public void setValue(Authentication obj, Max35Text value) {
+			obj.setCollectionIndicator(value);
 		}
 	};
 	protected Mandate mandate;
@@ -548,22 +573,32 @@ public class Authentication {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies the mandate related to the transport authentication detailsmandate."
+	 * "Specifies the mandate related to the transport authentication details mandate."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMandate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Authentication, Mandate> mmMandate = new MMBusinessAssociationEnd<Authentication, Mandate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Mandate";
-			definition = "Specifies the mandate related to the transport authentication detailsmandate.";
+			definition = "Specifies the mandate related to the transport authentication details mandate.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Mandate.mmAuthentication;
+			opposite_lazy = () -> Mandate.mmAuthentication;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Mandate.mmObject();
+			type_lazy = () -> Mandate.mmObject();
+		}
+
+		@Override
+		public Mandate getValue(Authentication obj) {
+			return obj.getMandate();
+		}
+
+		@Override
+		public void setValue(Authentication obj, Mandate value) {
+			obj.setMandate(value);
 		}
 	};
 	protected AuthenticationResultCode authenticationResult;
@@ -593,7 +628,7 @@ public class Authentication {
 	 * definition} = "Specifies the result of the authentication."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAuthenticationResult = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Authentication, AuthenticationResultCode> mmAuthenticationResult = new MMBusinessAttribute<Authentication, AuthenticationResultCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
@@ -605,12 +640,14 @@ public class Authentication {
 			simpleType_lazy = () -> AuthenticationResultCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Authentication.class.getMethod("getAuthenticationResult", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AuthenticationResultCode getValue(Authentication obj) {
+			return obj.getAuthenticationResult();
+		}
+
+		@Override
+		public void setValue(Authentication obj, AuthenticationResultCode value) {
+			obj.setAuthenticationResult(value);
 		}
 	};
 
@@ -621,7 +658,7 @@ public class Authentication {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Authentication";
 				definition = "Data related to the authentication of the cardholder.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardholderRole.mmAuthentication, com.tools20022.repository.entity.Mandate.mmAuthentication);
+				associationDomain_lazy = () -> Arrays.asList(CardholderRole.mmAuthentication, Mandate.mmAuthentication);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Authentication.mmCardholder, com.tools20022.repository.entity.Authentication.mmAuthenticationMethod,
 						com.tools20022.repository.entity.Authentication.mmAuthenticationEntity, com.tools20022.repository.entity.Authentication.mmAuthenticationValue, com.tools20022.repository.entity.Authentication.mmPINFormat,
 						com.tools20022.repository.entity.Authentication.mmPIN, com.tools20022.repository.entity.Authentication.mmAuthenticationSupport, com.tools20022.repository.entity.Authentication.mmCollectionIndicator,
@@ -641,7 +678,7 @@ public class Authentication {
 		return cardholder == null ? Optional.empty() : Optional.of(cardholder);
 	}
 
-	public Authentication setCardholder(com.tools20022.repository.entity.CardholderRole cardholder) {
+	public Authentication setCardholder(CardholderRole cardholder) {
 		this.cardholder = cardholder;
 		return this;
 	}
@@ -713,7 +750,7 @@ public class Authentication {
 		return mandate;
 	}
 
-	public Authentication setMandate(com.tools20022.repository.entity.Mandate mandate) {
+	public Authentication setMandate(Mandate mandate) {
 		this.mandate = Objects.requireNonNull(mandate);
 		return this;
 	}

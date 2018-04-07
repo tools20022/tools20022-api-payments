@@ -31,6 +31,7 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -152,7 +153,7 @@ public class LoanContract1 {
 	 * definition} = "Contract document referenced from this loan agreement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmContractDocumentIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContract1, DocumentIdentification22> mmContractDocumentIdentification = new MMMessageAttribute<LoanContract1, DocumentIdentification22>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -163,11 +164,21 @@ public class LoanContract1 {
 			definition = "Contract document referenced from this loan agreement.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.DocumentIdentification22.mmObject();
+			complexType_lazy = () -> DocumentIdentification22.mmObject();
+		}
+
+		@Override
+		public DocumentIdentification22 getValue(LoanContract1 obj) {
+			return obj.getContractDocumentIdentification();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, DocumentIdentification22 value) {
+			obj.setContractDocumentIdentification(value);
 		}
 	};
 	@XmlElement(name = "Buyr", required = true)
-	protected List<com.tools20022.repository.msg.TradeParty2> buyer;
+	protected List<TradeParty2> buyer;
 	/**
 	 * 
 	 <p>
@@ -198,7 +209,7 @@ public class LoanContract1 {
 	 * "Party that is specified as the buyer for this loan agreement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBuyer = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LoanContract1, List<TradeParty2>> mmBuyer = new MMMessageAssociationEnd<LoanContract1, List<TradeParty2>>() {
 		{
 			businessComponentTrace_lazy = () -> BuyerRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -209,11 +220,21 @@ public class LoanContract1 {
 			definition = "Party that is specified as the buyer for this loan agreement.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TradeParty2.mmObject();
+			type_lazy = () -> TradeParty2.mmObject();
+		}
+
+		@Override
+		public List<TradeParty2> getValue(LoanContract1 obj) {
+			return obj.getBuyer();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, List<TradeParty2> value) {
+			obj.setBuyer(value);
 		}
 	};
 	@XmlElement(name = "Sellr", required = true)
-	protected List<com.tools20022.repository.msg.TradeParty2> seller;
+	protected List<TradeParty2> seller;
 	/**
 	 * 
 	 <p>
@@ -244,7 +265,7 @@ public class LoanContract1 {
 	 * "Party that is specified as the seller for this loan agreement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSeller = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LoanContract1, List<TradeParty2>> mmSeller = new MMMessageAssociationEnd<LoanContract1, List<TradeParty2>>() {
 		{
 			businessComponentTrace_lazy = () -> SellerRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -255,7 +276,17 @@ public class LoanContract1 {
 			definition = "Party that is specified as the seller for this loan agreement.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TradeParty2.mmObject();
+			type_lazy = () -> TradeParty2.mmObject();
+		}
+
+		@Override
+		public List<TradeParty2> getValue(LoanContract1 obj) {
+			return obj.getSeller();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, List<TradeParty2> value) {
+			obj.setSeller(value);
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -292,7 +323,7 @@ public class LoanContract1 {
 	 * definition} = "Loan amount as defined in the contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContract1, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<LoanContract1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Loan.mmPrincipalAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -304,6 +335,16 @@ public class LoanContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(LoanContract1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "MtrtyDt", required = true)
@@ -339,7 +380,7 @@ public class LoanContract1 {
 	 * definition} = "Planned final repayment date at the time of issuance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaturityDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContract1, ISODate> mmMaturityDate = new MMMessageAttribute<LoanContract1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Asset.mmMaturityDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -351,6 +392,16 @@ public class LoanContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(LoanContract1 obj) {
+			return obj.getMaturityDate();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, ISODate value) {
+			obj.setMaturityDate(value);
 		}
 	};
 	@XmlElement(name = "PrlngtnFlg", required = true)
@@ -383,7 +434,7 @@ public class LoanContract1 {
 	 * "Indicates whether the contract duration is extended or not."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProlongationFlag = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContract1, TrueFalseIndicator> mmProlongationFlag = new MMMessageAttribute<LoanContract1, TrueFalseIndicator>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
 			isDerived = false;
@@ -394,6 +445,16 @@ public class LoanContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public TrueFalseIndicator getValue(LoanContract1 obj) {
+			return obj.getProlongationFlag();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, TrueFalseIndicator value) {
+			obj.setProlongationFlag(value);
 		}
 	};
 	@XmlElement(name = "StartDt", required = true)
@@ -429,7 +490,7 @@ public class LoanContract1 {
 	 * definition} = "Start date of the loan contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStartDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContract1, ISODate> mmStartDate = new MMMessageAttribute<LoanContract1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Issuance.mmIssueDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -441,6 +502,16 @@ public class LoanContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(LoanContract1 obj) {
+			return obj.getStartDate();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, ISODate value) {
+			obj.setStartDate(value);
 		}
 	};
 	@XmlElement(name = "SttlmCcy", required = true)
@@ -477,7 +548,7 @@ public class LoanContract1 {
 	 * definition} = "Currency in which the loan is being settled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContract1, ActiveCurrencyCode> mmSettlementCurrency = new MMMessageAttribute<LoanContract1, ActiveCurrencyCode>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesConversion.mmConversionQuotedCurrency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -489,6 +560,16 @@ public class LoanContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyCode getValue(LoanContract1 obj) {
+			return obj.getSettlementCurrency();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, ActiveCurrencyCode value) {
+			obj.setSettlementCurrency(value);
 		}
 	};
 	@XmlElement(name = "SpclConds")
@@ -520,7 +601,7 @@ public class LoanContract1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSpecialConditions = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LoanContract1, Optional<SpecialCondition1>> mmSpecialConditions = new MMMessageAssociationEnd<LoanContract1, Optional<SpecialCondition1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
 			isDerived = false;
@@ -531,7 +612,17 @@ public class LoanContract1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SpecialCondition1.mmObject();
+			type_lazy = () -> SpecialCondition1.mmObject();
+		}
+
+		@Override
+		public Optional<SpecialCondition1> getValue(LoanContract1 obj) {
+			return obj.getSpecialConditions();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, Optional<SpecialCondition1> value) {
+			obj.setSpecialConditions(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "DrtnCd", required = true)
@@ -563,7 +654,7 @@ public class LoanContract1 {
 	 * definition} = "Loan duration in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDurationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContract1, Exact1NumericText> mmDurationCode = new MMMessageAttribute<LoanContract1, Exact1NumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
 			isDerived = false;
@@ -574,6 +665,16 @@ public class LoanContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact1NumericText.mmObject();
+		}
+
+		@Override
+		public Exact1NumericText getValue(LoanContract1 obj) {
+			return obj.getDurationCode();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, Exact1NumericText value) {
+			obj.setDurationCode(value);
 		}
 	};
 	@XmlElement(name = "IntrstRate", required = true)
@@ -608,7 +709,7 @@ public class LoanContract1 {
 	 * definition} = "Interest rate for the loan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInterestRate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LoanContract1, InterestRate2Choice> mmInterestRate = new MMMessageAssociationEnd<LoanContract1, InterestRate2Choice>() {
 		{
 			businessElementTrace_lazy = () -> PaymentTerms.mmPercentage;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -622,9 +723,19 @@ public class LoanContract1 {
 			isComposite = true;
 			type_lazy = () -> InterestRate2Choice.mmObject();
 		}
+
+		@Override
+		public InterestRate2Choice getValue(LoanContract1 obj) {
+			return obj.getInterestRate();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, InterestRate2Choice value) {
+			obj.setInterestRate(value);
+		}
 	};
 	@XmlElement(name = "Trch")
-	protected List<com.tools20022.repository.msg.LoanContractTranche1> tranche;
+	protected List<LoanContractTranche1> tranche;
 	/**
 	 * 
 	 <p>
@@ -656,7 +767,7 @@ public class LoanContract1 {
 	 * "One part or division of the loan, used to define the repayment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTranche = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LoanContract1, List<LoanContractTranche1>> mmTranche = new MMMessageAssociationEnd<LoanContract1, List<LoanContractTranche1>>() {
 		{
 			businessElementTrace_lazy = () -> Asset.mmTranche;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -667,7 +778,17 @@ public class LoanContract1 {
 			definition = "One part or division of the loan, used to define the repayment.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
+			type_lazy = () -> LoanContractTranche1.mmObject();
+		}
+
+		@Override
+		public List<LoanContractTranche1> getValue(LoanContract1 obj) {
+			return obj.getTranche();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, List<LoanContractTranche1> value) {
+			obj.setTranche(value);
 		}
 	};
 	@XmlElement(name = "PmtSchdl")
@@ -703,7 +824,7 @@ public class LoanContract1 {
 	 * definition} = "Schedule of the payments defined for the loan contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPaymentSchedule = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LoanContract1, Optional<PaymentSchedule1Choice>> mmPaymentSchedule = new MMMessageAssociationEnd<LoanContract1, Optional<PaymentSchedule1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPaymentTerms;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -716,6 +837,16 @@ public class LoanContract1 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> PaymentSchedule1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentSchedule1Choice> getValue(LoanContract1 obj) {
+			return obj.getPaymentSchedule();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, Optional<PaymentSchedule1Choice> value) {
+			obj.setPaymentSchedule(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "IntrstSchdl", required = true)
@@ -752,7 +883,7 @@ public class LoanContract1 {
 	 * "Schedule of the interest payments defined for the loan contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInterestSchedule = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LoanContract1, InterestPaymentSchedule1Choice> mmInterestSchedule = new MMMessageAssociationEnd<LoanContract1, InterestPaymentSchedule1Choice>() {
 		{
 			businessElementTrace_lazy = () -> Loan.mmInterestPaymentsSchedule;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -765,6 +896,16 @@ public class LoanContract1 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> InterestPaymentSchedule1Choice.mmObject();
+		}
+
+		@Override
+		public InterestPaymentSchedule1Choice getValue(LoanContract1 obj) {
+			return obj.getInterestSchedule();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, InterestPaymentSchedule1Choice value) {
+			obj.setInterestSchedule(value);
 		}
 	};
 	@XmlElement(name = "IntraCpnyLn", required = true)
@@ -801,7 +942,7 @@ public class LoanContract1 {
 	 * definition} = "Loan is an intra company loan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIntraCompanyLoan = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContract1, TrueFalseIndicator> mmIntraCompanyLoan = new MMMessageAttribute<LoanContract1, TrueFalseIndicator>() {
 		{
 			businessElementTrace_lazy = () -> Loan.mmIntraCompanyLoanIndicator;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -813,6 +954,16 @@ public class LoanContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public TrueFalseIndicator getValue(LoanContract1 obj) {
+			return obj.getIntraCompanyLoan();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, TrueFalseIndicator value) {
+			obj.setIntraCompanyLoan(value);
 		}
 	};
 	@XmlElement(name = "Coll")
@@ -847,7 +998,7 @@ public class LoanContract1 {
 	 * definition} = "Details of the collateral for the loan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCollateral = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LoanContract1, Optional<ContractCollateral1>> mmCollateral = new MMMessageAssociationEnd<LoanContract1, Optional<ContractCollateral1>>() {
 		{
 			businessElementTrace_lazy = () -> CollateralAgreement.mmCollateral;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -859,11 +1010,21 @@ public class LoanContract1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ContractCollateral1.mmObject();
+			type_lazy = () -> ContractCollateral1.mmObject();
+		}
+
+		@Override
+		public Optional<ContractCollateral1> getValue(LoanContract1 obj) {
+			return obj.getCollateral();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, Optional<ContractCollateral1> value) {
+			obj.setCollateral(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "SndctdLn")
-	protected List<com.tools20022.repository.msg.SyndicatedLoan1> syndicatedLoan;
+	protected List<SyndicatedLoan1> syndicatedLoan;
 	/**
 	 * 
 	 <p>
@@ -891,11 +1052,11 @@ public class LoanContract1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Loan offered by a group of lenders (called a syndicate) who work together to provide funds for a single borrower. "
+	 * "Loan offered by a group of lenders (called a syndicate) who work together to provide funds for a single borrower."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSyndicatedLoan = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LoanContract1, List<SyndicatedLoan1>> mmSyndicatedLoan = new MMMessageAssociationEnd<LoanContract1, List<SyndicatedLoan1>>() {
 		{
 			businessComponentTrace_lazy = () -> Loan.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -903,14 +1064,24 @@ public class LoanContract1 {
 			xmlTag = "SndctdLn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SyndicatedLoan";
-			definition = "Loan offered by a group of lenders (called a syndicate) who work together to provide funds for a single borrower. ";
+			definition = "Loan offered by a group of lenders (called a syndicate) who work together to provide funds for a single borrower.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
+			type_lazy = () -> SyndicatedLoan1.mmObject();
+		}
+
+		@Override
+		public List<SyndicatedLoan1> getValue(LoanContract1 obj) {
+			return obj.getSyndicatedLoan();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, List<SyndicatedLoan1> value) {
+			obj.setSyndicatedLoan(value);
 		}
 	};
 	@XmlElement(name = "Attchmnt")
-	protected List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment;
+	protected List<DocumentGeneralInformation3> attachment;
 	/**
 	 * 
 	 <p>
@@ -942,7 +1113,7 @@ public class LoanContract1 {
 	 * definition} = "Documents provided as attachments to the loan contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAttachment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LoanContract1, List<DocumentGeneralInformation3>> mmAttachment = new MMMessageAssociationEnd<LoanContract1, List<DocumentGeneralInformation3>>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmAttachment;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContract1.mmObject();
@@ -953,7 +1124,17 @@ public class LoanContract1 {
 			definition = "Documents provided as attachments to the loan contract.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DocumentGeneralInformation3.mmObject();
+			type_lazy = () -> DocumentGeneralInformation3.mmObject();
+		}
+
+		@Override
+		public List<DocumentGeneralInformation3> getValue(LoanContract1 obj) {
+			return obj.getAttachment();
+		}
+
+		@Override
+		public void setValue(LoanContract1 obj, List<DocumentGeneralInformation3> value) {
+			obj.setAttachment(value);
 		}
 	};
 
@@ -981,7 +1162,7 @@ public class LoanContract1 {
 		return contractDocumentIdentification;
 	}
 
-	public LoanContract1 setContractDocumentIdentification(com.tools20022.repository.msg.DocumentIdentification22 contractDocumentIdentification) {
+	public LoanContract1 setContractDocumentIdentification(DocumentIdentification22 contractDocumentIdentification) {
 		this.contractDocumentIdentification = Objects.requireNonNull(contractDocumentIdentification);
 		return this;
 	}
@@ -990,7 +1171,7 @@ public class LoanContract1 {
 		return buyer == null ? buyer = new ArrayList<>() : buyer;
 	}
 
-	public LoanContract1 setBuyer(List<com.tools20022.repository.msg.TradeParty2> buyer) {
+	public LoanContract1 setBuyer(List<TradeParty2> buyer) {
 		this.buyer = Objects.requireNonNull(buyer);
 		return this;
 	}
@@ -999,7 +1180,7 @@ public class LoanContract1 {
 		return seller == null ? seller = new ArrayList<>() : seller;
 	}
 
-	public LoanContract1 setSeller(List<com.tools20022.repository.msg.TradeParty2> seller) {
+	public LoanContract1 setSeller(List<TradeParty2> seller) {
 		this.seller = Objects.requireNonNull(seller);
 		return this;
 	}
@@ -1053,7 +1234,7 @@ public class LoanContract1 {
 		return specialConditions == null ? Optional.empty() : Optional.of(specialConditions);
 	}
 
-	public LoanContract1 setSpecialConditions(com.tools20022.repository.msg.SpecialCondition1 specialConditions) {
+	public LoanContract1 setSpecialConditions(SpecialCondition1 specialConditions) {
 		this.specialConditions = specialConditions;
 		return this;
 	}
@@ -1080,7 +1261,7 @@ public class LoanContract1 {
 		return tranche == null ? tranche = new ArrayList<>() : tranche;
 	}
 
-	public LoanContract1 setTranche(List<com.tools20022.repository.msg.LoanContractTranche1> tranche) {
+	public LoanContract1 setTranche(List<LoanContractTranche1> tranche) {
 		this.tranche = Objects.requireNonNull(tranche);
 		return this;
 	}
@@ -1116,7 +1297,7 @@ public class LoanContract1 {
 		return collateral == null ? Optional.empty() : Optional.of(collateral);
 	}
 
-	public LoanContract1 setCollateral(com.tools20022.repository.msg.ContractCollateral1 collateral) {
+	public LoanContract1 setCollateral(ContractCollateral1 collateral) {
 		this.collateral = collateral;
 		return this;
 	}
@@ -1125,7 +1306,7 @@ public class LoanContract1 {
 		return syndicatedLoan == null ? syndicatedLoan = new ArrayList<>() : syndicatedLoan;
 	}
 
-	public LoanContract1 setSyndicatedLoan(List<com.tools20022.repository.msg.SyndicatedLoan1> syndicatedLoan) {
+	public LoanContract1 setSyndicatedLoan(List<SyndicatedLoan1> syndicatedLoan) {
 		this.syndicatedLoan = Objects.requireNonNull(syndicatedLoan);
 		return this;
 	}
@@ -1134,7 +1315,7 @@ public class LoanContract1 {
 		return attachment == null ? attachment = new ArrayList<>() : attachment;
 	}
 
-	public LoanContract1 setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
+	public LoanContract1 setAttachment(List<DocumentGeneralInformation3> attachment) {
 		this.attachment = Objects.requireNonNull(attachment);
 		return this;
 	}

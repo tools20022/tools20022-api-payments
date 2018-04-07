@@ -113,7 +113,7 @@ public class AdditionalInformation5 {
 	 * definition} = "Contains additional information related to the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AdditionalInformation5, List<Max256Text>> mmInformation = new MMMessageAttribute<AdditionalInformation5, List<Max256Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AdditionalInformation5.mmObject();
 			isDerived = false;
@@ -123,6 +123,16 @@ public class AdditionalInformation5 {
 			definition = "Contains additional information related to the message.";
 			minOccurs = 1;
 			simpleType_lazy = () -> Max256Text.mmObject();
+		}
+
+		@Override
+		public List<Max256Text> getValue(AdditionalInformation5 obj) {
+			return obj.getInformation();
+		}
+
+		@Override
+		public void setValue(AdditionalInformation5 obj, List<Max256Text> value) {
+			obj.setInformation(value);
 		}
 	};
 

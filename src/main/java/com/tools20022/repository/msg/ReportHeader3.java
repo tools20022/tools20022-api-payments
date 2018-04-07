@@ -23,6 +23,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.camt.BankServicesBillingStatementV02;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Pagination;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -114,7 +115,7 @@ public class ReportHeader3 {
 	 * definition} = "Identification of a report billing statement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportHeader3, Max35Text> mmReportIdentification = new MMMessageAttribute<ReportHeader3, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReportHeader3.mmObject();
 			isDerived = false;
@@ -125,6 +126,16 @@ public class ReportHeader3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ReportHeader3 obj) {
+			return obj.getReportIdentification();
+		}
+
+		@Override
+		public void setValue(ReportHeader3 obj, Max35Text value) {
+			obj.setReportIdentification(value);
 		}
 	};
 	@XmlElement(name = "MsgPgntn")
@@ -157,7 +168,7 @@ public class ReportHeader3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessagePagination = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportHeader3, Optional<Pagination>> mmMessagePagination = new MMMessageAttribute<ReportHeader3, Optional<Pagination>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReportHeader3.mmObject();
 			isDerived = false;
@@ -167,7 +178,17 @@ public class ReportHeader3 {
 			definition = "Provides details on the page number of the message.\r\n\r\nUsage: The pagination of the message is only allowed when agreed between the parties.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.Pagination.mmObject();
+			complexType_lazy = () -> Pagination.mmObject();
+		}
+
+		@Override
+		public Optional<Pagination> getValue(ReportHeader3 obj) {
+			return obj.getMessagePagination();
+		}
+
+		@Override
+		public void setValue(ReportHeader3 obj, Optional<Pagination> value) {
+			obj.setMessagePagination(value.orElse(null));
 		}
 	};
 
@@ -199,7 +220,7 @@ public class ReportHeader3 {
 		return messagePagination == null ? Optional.empty() : Optional.of(messagePagination);
 	}
 
-	public ReportHeader3 setMessagePagination(com.tools20022.repository.msg.Pagination messagePagination) {
+	public ReportHeader3 setMessagePagination(Pagination messagePagination) {
 		this.messagePagination = messagePagination;
 		return this;
 	}

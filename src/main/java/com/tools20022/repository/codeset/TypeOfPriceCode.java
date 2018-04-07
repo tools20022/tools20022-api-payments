@@ -594,7 +594,7 @@ public class TypeOfPriceCode extends MMCode {
 	 * name} = "RoundedAverage"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Price  is a rounded average price."</li>
+	 * definition} = "Price is a rounded average price."</li>
 	 * </ul>
 	 */
 	public static final TypeOfPriceCode RoundedAverage = new TypeOfPriceCode() {
@@ -602,7 +602,7 @@ public class TypeOfPriceCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//RDAV"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundedAverage";
-			definition = "Price  is a rounded average price.";
+			definition = "Price is a rounded average price.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "RDAV";
 		}
@@ -633,7 +633,7 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Price is a stop price used in an order to buy.  The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted.  In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price."
+	 * "Price is a stop price used in an order to buy. The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted. In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price."
 	 * </li>
 	 * </ul>
 	 */
@@ -642,7 +642,7 @@ public class TypeOfPriceCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//STOP"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Stop";
-			definition = "Price is a stop price used in an order to buy.  The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted.  In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price.";
+			definition = "Price is a stop price used in an order to buy. The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted. In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "STOP";
 		}
@@ -1203,7 +1203,7 @@ public class TypeOfPriceCode extends MMCode {
 		}
 	};
 	/**
-	 * Price is an estimated net asset value per unit
+	 * Price is an estimated net asset value per unit.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1220,14 +1220,14 @@ public class TypeOfPriceCode extends MMCode {
 	 * name} = "EstimatedNAV"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Price is an estimated net asset value per unit"</li>
+	 * definition} = "Price is an estimated net asset value per unit."</li>
 	 * </ul>
 	 */
 	public static final TypeOfPriceCode EstimatedNAV = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstimatedNAV";
-			definition = "Price is an estimated net asset value per unit";
+			definition = "Price is an estimated net asset value per unit.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "ENAV";
 		}
@@ -1349,14 +1349,14 @@ public class TypeOfPriceCode extends MMCode {
 	 * name} = "Ask"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Offer.  Price for which seller is willing to sell item."</li>
+	 * definition} = "Offer. Price for which seller is willing to sell item."</li>
 	 * </ul>
 	 */
 	public static final TypeOfPriceCode Ask = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Ask";
-			definition = "Offer.  Price for which seller is willing to sell item.";
+			definition = "Offer. Price for which seller is willing to sell item.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "ASKK";
 		}

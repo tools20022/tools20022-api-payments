@@ -101,6 +101,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.DocumentType3Code
  * DocumentType3Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DocumentType5Code
+ * DocumentType5Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DocumentType6Code
  * DocumentType6Code}</li>
  * </ul>
@@ -777,7 +779,7 @@ public class DocumentTypeCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentTypeCode";
 				definition = "Specifies a type of financial or commercial document.";
-				derivation_lazy = () -> Arrays.asList(DocumentType3Code.mmObject(), DocumentType6Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(DocumentType3Code.mmObject(), DocumentType5Code.mmObject(), DocumentType6Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DocumentTypeCode.MeteredServiceInvoice, com.tools20022.repository.codeset.DocumentTypeCode.CreditNoteRelatedToFinancialAdjustment,
 						com.tools20022.repository.codeset.DocumentTypeCode.DebitNoteRelatedToFinancialAdjustment, com.tools20022.repository.codeset.DocumentTypeCode.CommercialInvoice,
 						com.tools20022.repository.codeset.DocumentTypeCode.CreditNote, com.tools20022.repository.codeset.DocumentTypeCode.DebitNote, com.tools20022.repository.codeset.DocumentTypeCode.HireInvoice,

@@ -23,10 +23,10 @@ import com.tools20022.repository.codeset.TypeTransactionTotalsCode;
 import com.tools20022.repository.datatype.ImpliedCurrencyAndAmount;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
+import com.tools20022.repository.entity.CardPayment;
 import com.tools20022.repository.entity.Reconciliation;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CardIndividualTransaction2;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -138,7 +138,7 @@ public class ReconciliationTransaction extends Reconciliation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReconciliationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ReconciliationTransaction, Max35Text> mmReconciliationIdentification = new MMBusinessAttribute<ReconciliationTransaction, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardIndividualTransaction2.mmSaleReconciliationIdentification);
 			isDerived = false;
@@ -151,12 +151,14 @@ public class ReconciliationTransaction extends Reconciliation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReconciliationTransaction.class.getMethod("getReconciliationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ReconciliationTransaction obj) {
+			return obj.getReconciliationIdentification();
+		}
+
+		@Override
+		public void setValue(ReconciliationTransaction obj, Max35Text value) {
+			obj.setReconciliationIdentification(value);
 		}
 	};
 	protected CurrencyCode currency;
@@ -185,7 +187,7 @@ public class ReconciliationTransaction extends Reconciliation {
 	 * definition} = "Currency associated with thecumulative amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ReconciliationTransaction, CurrencyCode> mmCurrency = new MMBusinessAttribute<ReconciliationTransaction, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
@@ -197,12 +199,14 @@ public class ReconciliationTransaction extends Reconciliation {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReconciliationTransaction.class.getMethod("getCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(ReconciliationTransaction obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(ReconciliationTransaction obj, CurrencyCode value) {
+			obj.setCurrency(value);
 		}
 	};
 	protected TypeTransactionTotalsCode transactionType;
@@ -232,7 +236,7 @@ public class ReconciliationTransaction extends Reconciliation {
 	 * definition} = "Identification of the type of transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransactionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ReconciliationTransaction, TypeTransactionTotalsCode> mmTransactionType = new MMBusinessAttribute<ReconciliationTransaction, TypeTransactionTotalsCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
@@ -244,12 +248,14 @@ public class ReconciliationTransaction extends Reconciliation {
 			simpleType_lazy = () -> TypeTransactionTotalsCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReconciliationTransaction.class.getMethod("getTransactionType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TypeTransactionTotalsCode getValue(ReconciliationTransaction obj) {
+			return obj.getTransactionType();
+		}
+
+		@Override
+		public void setValue(ReconciliationTransaction obj, TypeTransactionTotalsCode value) {
+			obj.setTransactionType(value);
 		}
 	};
 	protected Max35Text totalNumber;
@@ -279,7 +285,7 @@ public class ReconciliationTransaction extends Reconciliation {
 	 * "Total number of transactions during a reconciliation period."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ReconciliationTransaction, Max35Text> mmTotalNumber = new MMBusinessAttribute<ReconciliationTransaction, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
@@ -291,12 +297,14 @@ public class ReconciliationTransaction extends Reconciliation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReconciliationTransaction.class.getMethod("getTotalNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ReconciliationTransaction obj) {
+			return obj.getTotalNumber();
+		}
+
+		@Override
+		public void setValue(ReconciliationTransaction obj, Max35Text value) {
+			obj.setTotalNumber(value);
 		}
 	};
 	protected ImpliedCurrencyAndAmount cumulativeAmount;
@@ -326,7 +334,7 @@ public class ReconciliationTransaction extends Reconciliation {
 	 * definition} = "Total amount of a collection of transactions."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCumulativeAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ReconciliationTransaction, ImpliedCurrencyAndAmount> mmCumulativeAmount = new MMBusinessAttribute<ReconciliationTransaction, ImpliedCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
@@ -338,12 +346,14 @@ public class ReconciliationTransaction extends Reconciliation {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReconciliationTransaction.class.getMethod("getCumulativeAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ImpliedCurrencyAndAmount getValue(ReconciliationTransaction obj) {
+			return obj.getCumulativeAmount();
+		}
+
+		@Override
+		public void setValue(ReconciliationTransaction obj, ImpliedCurrencyAndAmount value) {
+			obj.setCumulativeAmount(value);
 		}
 	};
 	protected TrueFalseIndicator closePeriod;
@@ -375,7 +385,7 @@ public class ReconciliationTransaction extends Reconciliation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClosePeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ReconciliationTransaction, TrueFalseIndicator> mmClosePeriod = new MMBusinessAttribute<ReconciliationTransaction, TrueFalseIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
@@ -387,15 +397,17 @@ public class ReconciliationTransaction extends Reconciliation {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReconciliationTransaction.class.getMethod("getClosePeriod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TrueFalseIndicator getValue(ReconciliationTransaction obj) {
+			return obj.getClosePeriod();
+		}
+
+		@Override
+		public void setValue(ReconciliationTransaction obj, TrueFalseIndicator value) {
+			obj.setClosePeriod(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CardPayment> cardPaymentTotal;
+	protected List<CardPayment> cardPaymentTotal;
 	/**
 	 * 
 	 <p>
@@ -431,7 +443,7 @@ public class ReconciliationTransaction extends Reconciliation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCardPaymentTotal = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ReconciliationTransaction, List<CardPayment>> mmCardPaymentTotal = new MMBusinessAssociationEnd<ReconciliationTransaction, List<CardPayment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
@@ -439,9 +451,19 @@ public class ReconciliationTransaction extends Reconciliation {
 			name = "CardPaymentTotal";
 			definition = "Specifies the card payments which are part of the transaction reconciliation.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPayment.mmReconciliation;
+			opposite_lazy = () -> CardPayment.mmReconciliation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
+			type_lazy = () -> CardPayment.mmObject();
+		}
+
+		@Override
+		public List<CardPayment> getValue(ReconciliationTransaction obj) {
+			return obj.getCardPaymentTotal();
+		}
+
+		@Override
+		public void setValue(ReconciliationTransaction obj, List<CardPayment> value) {
+			obj.setCardPaymentTotal(value);
 		}
 	};
 
@@ -452,7 +474,7 @@ public class ReconciliationTransaction extends Reconciliation {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReconciliationTransaction";
 				definition = "Totals performed during the reconciliation period, for a certain type of transaction.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPayment.mmReconciliation);
+				associationDomain_lazy = () -> Arrays.asList(CardPayment.mmReconciliation);
 				superType_lazy = () -> Reconciliation.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ReconciliationTransaction.mmReconciliationIdentification, com.tools20022.repository.entity.ReconciliationTransaction.mmCurrency,
 						com.tools20022.repository.entity.ReconciliationTransaction.mmTransactionType, com.tools20022.repository.entity.ReconciliationTransaction.mmTotalNumber,
@@ -526,7 +548,7 @@ public class ReconciliationTransaction extends Reconciliation {
 		return cardPaymentTotal == null ? cardPaymentTotal = new ArrayList<>() : cardPaymentTotal;
 	}
 
-	public ReconciliationTransaction setCardPaymentTotal(List<com.tools20022.repository.entity.CardPayment> cardPaymentTotal) {
+	public ReconciliationTransaction setCardPaymentTotal(List<CardPayment> cardPaymentTotal) {
 		this.cardPaymentTotal = Objects.requireNonNull(cardPaymentTotal);
 		return this;
 	}

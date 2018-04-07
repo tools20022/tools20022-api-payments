@@ -262,7 +262,7 @@ public class InstructionCode extends MMCode {
 		}
 	};
 	/**
-	 * Please advise/contact (ultimate) creditor/claimant by phone
+	 * Please advise/contact (ultimate) creditor/claimant by phone.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -280,14 +280,14 @@ public class InstructionCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Please advise/contact (ultimate) creditor/claimant by phone"</li>
+	 * "Please advise/contact (ultimate) creditor/claimant by phone."</li>
 	 * </ul>
 	 */
 	public static final InstructionCode PhoneBeneficiary = new InstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhoneBeneficiary";
-			definition = "Please advise/contact (ultimate) creditor/claimant by phone";
+			definition = "Please advise/contact (ultimate) creditor/claimant by phone.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InstructionCode.mmObject();
 			codeName = "PHOB";
 		}

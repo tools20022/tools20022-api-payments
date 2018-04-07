@@ -36,6 +36,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ExternalBankTransactionDomainCode
+ * ExternalBankTransactionDomainCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -76,6 +79,7 @@ public class ExternalBankTransactionDomain1Code extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalBankTransactionDomain1Code";
 				definition = "Specifies the bank transaction code domain, as published in an external bank transaction code domain code list.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				trace_lazy = () -> ExternalBankTransactionDomainCode.mmObject();
 				minLength = 1;
 				maxLength = 4;
 			}

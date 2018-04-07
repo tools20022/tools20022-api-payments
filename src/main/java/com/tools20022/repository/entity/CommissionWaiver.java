@@ -21,8 +21,8 @@ import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.WaivingInstructionCode;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.Commission;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -118,7 +118,7 @@ public class CommissionWaiver {
 	 * definition} = "Commission to which the waiver applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CommissionWaiver, Optional<Commission>> mmCommission = new MMBusinessAssociationEnd<CommissionWaiver, Optional<Commission>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
@@ -127,9 +127,19 @@ public class CommissionWaiver {
 			definition = "Commission to which the waiver applies.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Commission.mmCommissionWaiving;
+			opposite_lazy = () -> Commission.mmCommissionWaiving;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
+			type_lazy = () -> Commission.mmObject();
+		}
+
+		@Override
+		public Optional<Commission> getValue(CommissionWaiver obj) {
+			return obj.getCommission();
+		}
+
+		@Override
+		public void setValue(CommissionWaiver obj, Optional<Commission> value) {
+			obj.setCommission(value.orElse(null));
 		}
 	};
 	protected WaivingInstructionCode instructionBasis;
@@ -159,7 +169,7 @@ public class CommissionWaiver {
 	 * definition} = "Form of the rebate, eg, cash."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInstructionBasis = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CommissionWaiver, WaivingInstructionCode> mmInstructionBasis = new MMBusinessAttribute<CommissionWaiver, WaivingInstructionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
@@ -171,12 +181,14 @@ public class CommissionWaiver {
 			simpleType_lazy = () -> WaivingInstructionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CommissionWaiver.class.getMethod("getInstructionBasis", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public WaivingInstructionCode getValue(CommissionWaiver obj) {
+			return obj.getInstructionBasis();
+		}
+
+		@Override
+		public void setValue(CommissionWaiver obj, WaivingInstructionCode value) {
+			obj.setInstructionBasis(value);
 		}
 	};
 	protected PercentageRate waivedRate;
@@ -211,7 +223,7 @@ public class CommissionWaiver {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmWaivedRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CommissionWaiver, PercentageRate> mmWaivedRate = new MMBusinessAttribute<CommissionWaiver, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
@@ -224,12 +236,14 @@ public class CommissionWaiver {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CommissionWaiver.class.getMethod("getWaivedRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(CommissionWaiver obj) {
+			return obj.getWaivedRate();
+		}
+
+		@Override
+		public void setValue(CommissionWaiver obj, PercentageRate value) {
+			obj.setWaivedRate(value);
 		}
 	};
 	protected PercentageRate nonWaivedRate;
@@ -262,7 +276,7 @@ public class CommissionWaiver {
 	 * definition} = "New commission rate applied, after waiving."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNonWaivedRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CommissionWaiver, PercentageRate> mmNonWaivedRate = new MMBusinessAttribute<CommissionWaiver, PercentageRate>() {
 		{
 			isDerived = true;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
@@ -275,12 +289,14 @@ public class CommissionWaiver {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CommissionWaiver.class.getMethod("getNonWaivedRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(CommissionWaiver obj) {
+			return obj.getNonWaivedRate();
+		}
+
+		@Override
+		public void setValue(CommissionWaiver obj, PercentageRate value) {
+			obj.setNonWaivedRate(value);
 		}
 	};
 
@@ -291,7 +307,7 @@ public class CommissionWaiver {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommissionWaiver";
 				definition = "Non-enforcement of the right to all or part of a commission by the party entitled to the commission.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Commission.mmCommissionWaiving);
+				associationDomain_lazy = () -> Arrays.asList(Commission.mmCommissionWaiving);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CommissionWaiver.mmCommission, com.tools20022.repository.entity.CommissionWaiver.mmInstructionBasis,
 						com.tools20022.repository.entity.CommissionWaiver.mmWaivedRate, com.tools20022.repository.entity.CommissionWaiver.mmNonWaivedRate);
 			}
@@ -308,7 +324,7 @@ public class CommissionWaiver {
 		return commission == null ? Optional.empty() : Optional.of(commission);
 	}
 
-	public CommissionWaiver setCommission(com.tools20022.repository.entity.Commission commission) {
+	public CommissionWaiver setCommission(Commission commission) {
 		this.commission = commission;
 		return this;
 	}

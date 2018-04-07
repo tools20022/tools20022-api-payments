@@ -22,12 +22,9 @@ import com.tools20022.repository.choice.CommunicationMethod2Choice;
 import com.tools20022.repository.choice.ResidenceLocation1Choice;
 import com.tools20022.repository.datatype.AnyBICIdentifier;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.OtherContact1;
-import com.tools20022.repository.msg.RemittanceLocation3;
-import com.tools20022.repository.msg.RemittanceLocation4;
-import com.tools20022.repository.msg.RemittanceLocationDetails1;
-import java.lang.reflect.Method;
+import com.tools20022.repository.msg.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -144,11 +141,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * derivationElement} =
  * <ul>
  * <li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceLocation2#mmRemittanceLocationElectronicAddress
+ * RemittanceLocation2.mmRemittanceLocationElectronicAddress}</li>
+ * <li>
  * {@linkplain com.tools20022.repository.msg.RemittanceLocation3#mmRemittanceLocationDetails
  * RemittanceLocation3.mmRemittanceLocationDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.RemittanceLocation4#mmRemittanceLocationDetails
  * RemittanceLocation4.mmRemittanceLocationDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.Organisation20#mmRepresentativeOfficer
+ * Organisation20.mmRepresentativeOfficer}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.IndividualPerson19#mmPrimaryCommunicationAddress
+ * IndividualPerson19.mmPrimaryCommunicationAddress}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.IndividualPerson19#mmSecondaryCommunicationAddress
+ * IndividualPerson19.mmSecondaryCommunicationAddress}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -165,8 +174,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.CommunicationAddress3
+ * CommunicationAddress3}</li>
  * <li>{@linkplain com.tools20022.repository.choice.CommunicationMethod2Choice
  * CommunicationMethod2Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RemittanceLocation2
+ * RemittanceLocation2}</li>
  * <li>{@linkplain com.tools20022.repository.msg.OtherContact1 OtherContact1}</li>
  * <li>{@linkplain com.tools20022.repository.choice.ResidenceLocation1Choice
  * ResidenceLocation1Choice}</li>
@@ -238,19 +251,29 @@ public class ContactPoint {
 	 * definition} = "Identification of a contact point."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, GenericIdentification> mmIdentification = new MMBusinessAssociationEnd<ContactPoint, GenericIdentification>() {
 		{
 			derivation_lazy = () -> Arrays.asList(OtherContact1.mmIdentification);
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification of a contact point.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentificationForContactPoint;
+			opposite_lazy = () -> GenericIdentification.mmIdentificationForContactPoint;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
+			type_lazy = () -> GenericIdentification.mmObject();
+		}
+
+		@Override
+		public GenericIdentification getValue(ContactPoint obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, GenericIdentification value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected InvestmentFund relatedInvestmentFund;
@@ -287,18 +310,28 @@ public class ContactPoint {
 	 * "Investment fund class for which an order desk is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInvestmentFund = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, InvestmentFund> mmRelatedInvestmentFund = new MMBusinessAssociationEnd<ContactPoint, InvestmentFund>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedInvestmentFund";
 			definition = "Investment fund class for which an order desk is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmOrderDesk;
+			opposite_lazy = () -> InvestmentFund.mmOrderDesk;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
+			type_lazy = () -> InvestmentFund.mmObject();
+		}
+
+		@Override
+		public InvestmentFund getValue(ContactPoint obj) {
+			return obj.getRelatedInvestmentFund();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, InvestmentFund value) {
+			obj.setRelatedInvestmentFund(value);
 		}
 	};
 	protected AnyBICIdentifier bICAddress;
@@ -327,10 +360,10 @@ public class ContactPoint {
 	 * definition} = "BIC address which identifies the contact point."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBICAddress = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ContactPoint, AnyBICIdentifier> mmBICAddress = new MMBusinessAttribute<ContactPoint, AnyBICIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BICAddress";
 			definition = "BIC address which identifies the contact point.";
@@ -339,12 +372,14 @@ public class ContactPoint {
 			simpleType_lazy = () -> AnyBICIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ContactPoint.class.getMethod("getBICAddress", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AnyBICIdentifier getValue(ContactPoint obj) {
+			return obj.getBICAddress();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, AnyBICIdentifier value) {
+			obj.setBICAddress(value);
 		}
 	};
 	protected Party relatedParty;
@@ -379,18 +414,28 @@ public class ContactPoint {
 	 * definition} = "Party for which a contact point is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, Optional<Party>> mmRelatedParty = new MMBusinessAssociationEnd<ContactPoint, Optional<Party>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedParty";
 			definition = "Party for which a contact point is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Party.mmContactPoint;
+			opposite_lazy = () -> Party.mmContactPoint;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
+			type_lazy = () -> Party.mmObject();
+		}
+
+		@Override
+		public Optional<Party> getValue(ContactPoint obj) {
+			return obj.getRelatedParty();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, Optional<Party> value) {
+			obj.setRelatedParty(value.orElse(null));
 		}
 	};
 	protected CorporateActionEvent relatedCorporateActionEvent;
@@ -429,18 +474,28 @@ public class ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCorporateActionEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, Optional<CorporateActionEvent>> mmRelatedCorporateActionEvent = new MMBusinessAssociationEnd<ContactPoint, Optional<CorporateActionEvent>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateActionEvent";
 			definition = "Corporate action event for which the documentation location is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmDocumentationLocation;
+			opposite_lazy = () -> CorporateActionEvent.mmDocumentationLocation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
+			type_lazy = () -> CorporateActionEvent.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionEvent> getValue(ContactPoint obj) {
+			return obj.getRelatedCorporateActionEvent();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, Optional<CorporateActionEvent> value) {
+			obj.setRelatedCorporateActionEvent(value.orElse(null));
 		}
 	};
 	protected ReportingService relatedReportingService;
@@ -477,21 +532,31 @@ public class ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedReportingService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, Optional<ReportingService>> mmRelatedReportingService = new MMBusinessAssociationEnd<ContactPoint, Optional<ReportingService>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedReportingService";
 			definition = "Reporting service for which a contact point is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ReportingService.mmReportingChannel;
+			opposite_lazy = () -> ReportingService.mmReportingChannel;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
+			type_lazy = () -> ReportingService.mmObject();
+		}
+
+		@Override
+		public Optional<ReportingService> getValue(ContactPoint obj) {
+			return obj.getRelatedReportingService();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, Optional<ReportingService> value) {
+			obj.setRelatedReportingService(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.Document> storedDocument;
+	protected List<Document> storedDocument;
 	/**
 	 * 
 	 <p>
@@ -523,17 +588,27 @@ public class ContactPoint {
 	 * definition} = "Document which is stored at a specific place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStoredDocument = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, List<Document>> mmStoredDocument = new MMBusinessAssociationEnd<ContactPoint, List<Document>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StoredDocument";
 			definition = "Document which is stored at a specific place.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmPlaceOfStorage;
+			opposite_lazy = () -> Document.mmPlaceOfStorage;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
+			type_lazy = () -> Document.mmObject();
+		}
+
+		@Override
+		public List<Document> getValue(ContactPoint obj) {
+			return obj.getStoredDocument();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, List<Document> value) {
+			obj.setStoredDocument(value);
 		}
 	};
 	protected PaymentObligation remittanceRelatedPayment;
@@ -569,18 +644,28 @@ public class ContactPoint {
 	 * definition} = "Payment for which a remittance location is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRemittanceRelatedPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, Optional<PaymentObligation>> mmRemittanceRelatedPayment = new MMBusinessAssociationEnd<ContactPoint, Optional<PaymentObligation>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RemittanceRelatedPayment";
 			definition = "Payment for which a remittance location is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmRemittanceLocation;
+			opposite_lazy = () -> PaymentObligation.mmRemittanceLocation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
+			type_lazy = () -> PaymentObligation.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentObligation> getValue(ContactPoint obj) {
+			return obj.getRemittanceRelatedPayment();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, Optional<PaymentObligation> value) {
+			obj.setRemittanceRelatedPayment(value.orElse(null));
 		}
 	};
 	protected ProxyAppointmentCondition relatedProxyAppointment;
@@ -619,21 +704,31 @@ public class ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedProxyAppointment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, Optional<ProxyAppointmentCondition>> mmRelatedProxyAppointment = new MMBusinessAssociationEnd<ContactPoint, Optional<ProxyAppointmentCondition>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedProxyAppointment";
 			definition = "Proxy appointment process for which a notification address is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmNotificationAddress;
+			opposite_lazy = () -> ProxyAppointmentCondition.mmNotificationAddress;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
+			type_lazy = () -> ProxyAppointmentCondition.mmObject();
+		}
+
+		@Override
+		public Optional<ProxyAppointmentCondition> getValue(ContactPoint obj) {
+			return obj.getRelatedProxyAppointment();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, Optional<ProxyAppointmentCondition> value) {
+			obj.setRelatedProxyAppointment(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.Meeting> contactPointForMeeting;
+	protected List<Meeting> contactPointForMeeting;
 	/**
 	 * 
 	 <p>
@@ -665,17 +760,27 @@ public class ContactPoint {
 	 * definition} = "Meeting which takes place at a specific place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmContactPointForMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, List<Meeting>> mmContactPointForMeeting = new MMBusinessAssociationEnd<ContactPoint, List<Meeting>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContactPointForMeeting";
 			definition = "Meeting which takes place at a specific place.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmMeetingLocation;
+			opposite_lazy = () -> Meeting.mmMeetingLocation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
+			type_lazy = () -> Meeting.mmObject();
+		}
+
+		@Override
+		public List<Meeting> getValue(ContactPoint obj) {
+			return obj.getContactPointForMeeting();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, List<Meeting> value) {
+			obj.setContactPointForMeeting(value);
 		}
 	};
 	protected VotingCondition contactPointForVote;
@@ -711,18 +816,28 @@ public class ContactPoint {
 	 * definition} = "Vote parameters which apply to a vote location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmContactPointForVote = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, Optional<VotingCondition>> mmContactPointForVote = new MMBusinessAssociationEnd<ContactPoint, Optional<VotingCondition>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContactPointForVote";
 			definition = "Vote parameters which apply to a vote location.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmVoteLocation;
+			opposite_lazy = () -> VotingCondition.mmVoteLocation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
+			type_lazy = () -> VotingCondition.mmObject();
+		}
+
+		@Override
+		public Optional<VotingCondition> getValue(ContactPoint obj) {
+			return obj.getContactPointForVote();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, Optional<VotingCondition> value) {
+			obj.setContactPointForVote(value.orElse(null));
 		}
 	};
 	protected ContactPoint mainContact;
@@ -758,18 +873,28 @@ public class ContactPoint {
 	 * definition} = "Contact address used for normal operations."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMainContact = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, ContactPoint> mmMainContact = new MMBusinessAssociationEnd<ContactPoint, ContactPoint>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MainContact";
 			definition = "Contact address used for normal operations.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmReturnAddress;
+			opposite_lazy = () -> ContactPoint.mmReturnAddress;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			type_lazy = () -> ContactPoint.mmObject();
+		}
+
+		@Override
+		public ContactPoint getValue(ContactPoint obj) {
+			return obj.getMainContact();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, ContactPoint value) {
+			obj.setMainContact(value);
 		}
 	};
 	protected ContactPoint returnAddress;
@@ -807,18 +932,28 @@ public class ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReturnAddress = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, ContactPoint> mmReturnAddress = new MMBusinessAssociationEnd<ContactPoint, ContactPoint>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReturnAddress";
 			definition = "Physical/logical address, segregated from the main address that is used for normal operations. The return address is used to route messages that require specific attention/exception handling, eg, returns or rejects.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmMainContact;
+			opposite_lazy = () -> ContactPoint.mmMainContact;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			type_lazy = () -> ContactPoint.mmObject();
+		}
+
+		@Override
+		public ContactPoint getValue(ContactPoint obj) {
+			return obj.getReturnAddress();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, ContactPoint value) {
+			obj.setReturnAddress(value);
 		}
 	};
 	protected PaymentProcessing relatedPayment;
@@ -854,18 +989,28 @@ public class ContactPoint {
 	 * definition} = "Payment for which a notification method is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, PaymentProcessing> mmRelatedPayment = new MMBusinessAssociationEnd<ContactPoint, PaymentProcessing>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPayment";
 			definition = "Payment for which a notification method is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.mmContactPoint;
+			opposite_lazy = () -> PaymentProcessing.mmContactPoint;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.mmObject();
+			type_lazy = () -> PaymentProcessing.mmObject();
+		}
+
+		@Override
+		public PaymentProcessing getValue(ContactPoint obj) {
+			return obj.getRelatedPayment();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, PaymentProcessing value) {
+			obj.setRelatedPayment(value);
 		}
 	};
 	protected YesNoIndicator temporaryIndicator;
@@ -894,10 +1039,10 @@ public class ContactPoint {
 	 * definition} = "Indicates whether the address is a temporary address."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTemporaryIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ContactPoint, YesNoIndicator> mmTemporaryIndicator = new MMBusinessAttribute<ContactPoint, YesNoIndicator>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TemporaryIndicator";
 			definition = "Indicates whether the address is a temporary address.";
@@ -906,12 +1051,14 @@ public class ContactPoint {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ContactPoint.class.getMethod("getTemporaryIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(ContactPoint obj) {
+			return obj.getTemporaryIndicator();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, YesNoIndicator value) {
+			obj.setTemporaryIndicator(value);
 		}
 	};
 	protected AttendanceCard deliveredAttendanceCard;
@@ -948,18 +1095,28 @@ public class ContactPoint {
 	 * "Attendance card which is delivered at a specific location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDeliveredAttendanceCard = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, Optional<AttendanceCard>> mmDeliveredAttendanceCard = new MMBusinessAssociationEnd<ContactPoint, Optional<AttendanceCard>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveredAttendanceCard";
 			definition = "Attendance card which is delivered at a specific location.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmDeliveryPlace;
+			opposite_lazy = () -> AttendanceCard.mmDeliveryPlace;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmObject();
+			type_lazy = () -> AttendanceCard.mmObject();
+		}
+
+		@Override
+		public Optional<AttendanceCard> getValue(ContactPoint obj) {
+			return obj.getDeliveredAttendanceCard();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, Optional<AttendanceCard> value) {
+			obj.setDeliveredAttendanceCard(value.orElse(null));
 		}
 	};
 	protected InvestmentFundClassProcessingCharacteristics investmentFundClassProcessing;
@@ -998,18 +1155,28 @@ public class ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFundClassProcessing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ContactPoint, InvestmentFundClassProcessingCharacteristics> mmInvestmentFundClassProcessing = new MMBusinessAssociationEnd<ContactPoint, InvestmentFundClassProcessingCharacteristics>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			elementContext_lazy = () -> ContactPoint.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundClassProcessing";
 			definition = "Processing characteristics of an investment fund class for which a local market annex is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmLocalMarketAnnex;
+			opposite_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmLocalMarketAnnex;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
+			type_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmObject();
+		}
+
+		@Override
+		public InvestmentFundClassProcessingCharacteristics getValue(ContactPoint obj) {
+			return obj.getInvestmentFundClassProcessing();
+		}
+
+		@Override
+		public void setValue(ContactPoint obj, InvestmentFundClassProcessingCharacteristics value) {
+			obj.setInvestmentFundClassProcessing(value);
 		}
 	};
 
@@ -1020,23 +1187,18 @@ public class ContactPoint {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContactPoint";
 				definition = "Number, physical or virtual address, used for communication.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentificationForContactPoint, com.tools20022.repository.entity.InvestmentFund.mmOrderDesk,
-						com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmLocalMarketAnnex, com.tools20022.repository.entity.Party.mmContactPoint, com.tools20022.repository.entity.ContactPoint.mmMainContact,
-						com.tools20022.repository.entity.ContactPoint.mmReturnAddress, com.tools20022.repository.entity.ReportingService.mmReportingChannel, com.tools20022.repository.entity.Document.mmPlaceOfStorage,
-						com.tools20022.repository.entity.PaymentObligation.mmRemittanceLocation, com.tools20022.repository.entity.PaymentProcessing.mmContactPoint,
-						com.tools20022.repository.entity.CorporateActionEvent.mmDocumentationLocation, com.tools20022.repository.entity.Meeting.mmMeetingLocation,
-						com.tools20022.repository.entity.ProxyAppointmentCondition.mmNotificationAddress, com.tools20022.repository.entity.VotingCondition.mmVoteLocation, com.tools20022.repository.entity.AttendanceCard.mmDeliveryPlace);
-				derivationElement_lazy = () -> Arrays.asList(RemittanceLocation3.mmRemittanceLocationDetails, RemittanceLocation4.mmRemittanceLocationDetails);
+				associationDomain_lazy = () -> Arrays.asList(GenericIdentification.mmIdentificationForContactPoint, InvestmentFund.mmOrderDesk, InvestmentFundClassProcessingCharacteristics.mmLocalMarketAnnex, Party.mmContactPoint,
+						ContactPoint.mmMainContact, ContactPoint.mmReturnAddress, ReportingService.mmReportingChannel, Document.mmPlaceOfStorage, PaymentObligation.mmRemittanceLocation, PaymentProcessing.mmContactPoint,
+						CorporateActionEvent.mmDocumentationLocation, Meeting.mmMeetingLocation, ProxyAppointmentCondition.mmNotificationAddress, VotingCondition.mmVoteLocation, AttendanceCard.mmDeliveryPlace);
+				derivationElement_lazy = () -> Arrays.asList(RemittanceLocation2.mmRemittanceLocationElectronicAddress, RemittanceLocation3.mmRemittanceLocationDetails, RemittanceLocation4.mmRemittanceLocationDetails,
+						Organisation20.mmRepresentativeOfficer, IndividualPerson19.mmPrimaryCommunicationAddress, IndividualPerson19.mmSecondaryCommunicationAddress);
 				subType_lazy = () -> Arrays.asList(PostalAddress.mmObject(), PhoneAddress.mmObject(), ElectronicAddress.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ContactPoint.mmIdentification, com.tools20022.repository.entity.ContactPoint.mmRelatedInvestmentFund,
-						com.tools20022.repository.entity.ContactPoint.mmBICAddress, com.tools20022.repository.entity.ContactPoint.mmRelatedParty, com.tools20022.repository.entity.ContactPoint.mmRelatedCorporateActionEvent,
-						com.tools20022.repository.entity.ContactPoint.mmRelatedReportingService, com.tools20022.repository.entity.ContactPoint.mmStoredDocument, com.tools20022.repository.entity.ContactPoint.mmRemittanceRelatedPayment,
-						com.tools20022.repository.entity.ContactPoint.mmRelatedProxyAppointment, com.tools20022.repository.entity.ContactPoint.mmContactPointForMeeting, com.tools20022.repository.entity.ContactPoint.mmContactPointForVote,
-						com.tools20022.repository.entity.ContactPoint.mmMainContact, com.tools20022.repository.entity.ContactPoint.mmReturnAddress, com.tools20022.repository.entity.ContactPoint.mmRelatedPayment,
-						com.tools20022.repository.entity.ContactPoint.mmTemporaryIndicator, com.tools20022.repository.entity.ContactPoint.mmDeliveredAttendanceCard,
-						com.tools20022.repository.entity.ContactPoint.mmInvestmentFundClassProcessing);
-				derivationComponent_lazy = () -> Arrays.asList(CommunicationMethod2Choice.mmObject(), OtherContact1.mmObject(), ResidenceLocation1Choice.mmObject(), RemittanceLocation3.mmObject(), RemittanceLocationDetails1.mmObject(),
-						RemittanceLocation4.mmObject());
+				element_lazy = () -> Arrays.asList(ContactPoint.mmIdentification, ContactPoint.mmRelatedInvestmentFund, ContactPoint.mmBICAddress, ContactPoint.mmRelatedParty, ContactPoint.mmRelatedCorporateActionEvent,
+						ContactPoint.mmRelatedReportingService, ContactPoint.mmStoredDocument, ContactPoint.mmRemittanceRelatedPayment, ContactPoint.mmRelatedProxyAppointment, ContactPoint.mmContactPointForMeeting,
+						ContactPoint.mmContactPointForVote, ContactPoint.mmMainContact, ContactPoint.mmReturnAddress, ContactPoint.mmRelatedPayment, ContactPoint.mmTemporaryIndicator, ContactPoint.mmDeliveredAttendanceCard,
+						ContactPoint.mmInvestmentFundClassProcessing);
+				derivationComponent_lazy = () -> Arrays.asList(CommunicationAddress3.mmObject(), CommunicationMethod2Choice.mmObject(), RemittanceLocation2.mmObject(), OtherContact1.mmObject(), ResidenceLocation1Choice.mmObject(),
+						RemittanceLocation3.mmObject(), RemittanceLocationDetails1.mmObject(), RemittanceLocation4.mmObject());
 			}
 
 			@Override
@@ -1051,7 +1213,7 @@ public class ContactPoint {
 		return identification;
 	}
 
-	public ContactPoint setIdentification(com.tools20022.repository.entity.GenericIdentification identification) {
+	public ContactPoint setIdentification(GenericIdentification identification) {
 		this.identification = Objects.requireNonNull(identification);
 		return this;
 	}
@@ -1060,7 +1222,7 @@ public class ContactPoint {
 		return relatedInvestmentFund;
 	}
 
-	public ContactPoint setRelatedInvestmentFund(com.tools20022.repository.entity.InvestmentFund relatedInvestmentFund) {
+	public ContactPoint setRelatedInvestmentFund(InvestmentFund relatedInvestmentFund) {
 		this.relatedInvestmentFund = Objects.requireNonNull(relatedInvestmentFund);
 		return this;
 	}
@@ -1078,7 +1240,7 @@ public class ContactPoint {
 		return relatedParty == null ? Optional.empty() : Optional.of(relatedParty);
 	}
 
-	public ContactPoint setRelatedParty(com.tools20022.repository.entity.Party relatedParty) {
+	public ContactPoint setRelatedParty(Party relatedParty) {
 		this.relatedParty = relatedParty;
 		return this;
 	}
@@ -1087,7 +1249,7 @@ public class ContactPoint {
 		return relatedCorporateActionEvent == null ? Optional.empty() : Optional.of(relatedCorporateActionEvent);
 	}
 
-	public ContactPoint setRelatedCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateActionEvent) {
+	public ContactPoint setRelatedCorporateActionEvent(CorporateActionEvent relatedCorporateActionEvent) {
 		this.relatedCorporateActionEvent = relatedCorporateActionEvent;
 		return this;
 	}
@@ -1096,7 +1258,7 @@ public class ContactPoint {
 		return relatedReportingService == null ? Optional.empty() : Optional.of(relatedReportingService);
 	}
 
-	public ContactPoint setRelatedReportingService(com.tools20022.repository.entity.ReportingService relatedReportingService) {
+	public ContactPoint setRelatedReportingService(ReportingService relatedReportingService) {
 		this.relatedReportingService = relatedReportingService;
 		return this;
 	}
@@ -1105,7 +1267,7 @@ public class ContactPoint {
 		return storedDocument == null ? storedDocument = new ArrayList<>() : storedDocument;
 	}
 
-	public ContactPoint setStoredDocument(List<com.tools20022.repository.entity.Document> storedDocument) {
+	public ContactPoint setStoredDocument(List<Document> storedDocument) {
 		this.storedDocument = Objects.requireNonNull(storedDocument);
 		return this;
 	}
@@ -1114,7 +1276,7 @@ public class ContactPoint {
 		return remittanceRelatedPayment == null ? Optional.empty() : Optional.of(remittanceRelatedPayment);
 	}
 
-	public ContactPoint setRemittanceRelatedPayment(com.tools20022.repository.entity.PaymentObligation remittanceRelatedPayment) {
+	public ContactPoint setRemittanceRelatedPayment(PaymentObligation remittanceRelatedPayment) {
 		this.remittanceRelatedPayment = remittanceRelatedPayment;
 		return this;
 	}
@@ -1123,7 +1285,7 @@ public class ContactPoint {
 		return relatedProxyAppointment == null ? Optional.empty() : Optional.of(relatedProxyAppointment);
 	}
 
-	public ContactPoint setRelatedProxyAppointment(com.tools20022.repository.entity.ProxyAppointmentCondition relatedProxyAppointment) {
+	public ContactPoint setRelatedProxyAppointment(ProxyAppointmentCondition relatedProxyAppointment) {
 		this.relatedProxyAppointment = relatedProxyAppointment;
 		return this;
 	}
@@ -1132,7 +1294,7 @@ public class ContactPoint {
 		return contactPointForMeeting == null ? contactPointForMeeting = new ArrayList<>() : contactPointForMeeting;
 	}
 
-	public ContactPoint setContactPointForMeeting(List<com.tools20022.repository.entity.Meeting> contactPointForMeeting) {
+	public ContactPoint setContactPointForMeeting(List<Meeting> contactPointForMeeting) {
 		this.contactPointForMeeting = Objects.requireNonNull(contactPointForMeeting);
 		return this;
 	}
@@ -1141,7 +1303,7 @@ public class ContactPoint {
 		return contactPointForVote == null ? Optional.empty() : Optional.of(contactPointForVote);
 	}
 
-	public ContactPoint setContactPointForVote(com.tools20022.repository.entity.VotingCondition contactPointForVote) {
+	public ContactPoint setContactPointForVote(VotingCondition contactPointForVote) {
 		this.contactPointForVote = contactPointForVote;
 		return this;
 	}
@@ -1150,7 +1312,7 @@ public class ContactPoint {
 		return mainContact;
 	}
 
-	public ContactPoint setMainContact(com.tools20022.repository.entity.ContactPoint mainContact) {
+	public ContactPoint setMainContact(ContactPoint mainContact) {
 		this.mainContact = Objects.requireNonNull(mainContact);
 		return this;
 	}
@@ -1159,7 +1321,7 @@ public class ContactPoint {
 		return returnAddress;
 	}
 
-	public ContactPoint setReturnAddress(com.tools20022.repository.entity.ContactPoint returnAddress) {
+	public ContactPoint setReturnAddress(ContactPoint returnAddress) {
 		this.returnAddress = Objects.requireNonNull(returnAddress);
 		return this;
 	}
@@ -1168,7 +1330,7 @@ public class ContactPoint {
 		return relatedPayment;
 	}
 
-	public ContactPoint setRelatedPayment(com.tools20022.repository.entity.PaymentProcessing relatedPayment) {
+	public ContactPoint setRelatedPayment(PaymentProcessing relatedPayment) {
 		this.relatedPayment = Objects.requireNonNull(relatedPayment);
 		return this;
 	}
@@ -1186,7 +1348,7 @@ public class ContactPoint {
 		return deliveredAttendanceCard == null ? Optional.empty() : Optional.of(deliveredAttendanceCard);
 	}
 
-	public ContactPoint setDeliveredAttendanceCard(com.tools20022.repository.entity.AttendanceCard deliveredAttendanceCard) {
+	public ContactPoint setDeliveredAttendanceCard(AttendanceCard deliveredAttendanceCard) {
 		this.deliveredAttendanceCard = deliveredAttendanceCard;
 		return this;
 	}
@@ -1195,7 +1357,7 @@ public class ContactPoint {
 		return investmentFundClassProcessing;
 	}
 
-	public ContactPoint setInvestmentFundClassProcessing(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics investmentFundClassProcessing) {
+	public ContactPoint setInvestmentFundClassProcessing(InvestmentFundClassProcessingCharacteristics investmentFundClassProcessing) {
 		this.investmentFundClassProcessing = Objects.requireNonNull(investmentFundClassProcessing);
 		return this;
 	}

@@ -48,7 +48,7 @@ public class ConstraintISINGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forSecurityIdentification19 = new MMConstraint() {
+	public static final MMConstraint<SecurityIdentification19> forSecurityIdentification19 = new MMConstraint<SecurityIdentification19>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ISINGuideline";
@@ -57,8 +57,8 @@ public class ConstraintISINGuideline {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkSecurityIdentification19((SecurityIdentification19) obj);
+		public void executeValidator(SecurityIdentification19 obj) throws Exception {
+			checkSecurityIdentification19(obj);
 		}
 	};
 

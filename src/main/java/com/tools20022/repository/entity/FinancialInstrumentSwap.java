@@ -20,8 +20,10 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.FrequencyCode;
 import com.tools20022.repository.codeset.InterestComputationMethodCode;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.Quote;
+import com.tools20022.repository.entity.SecuritiesSwapLeg;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -147,7 +149,7 @@ public class FinancialInstrumentSwap {
 	 * definition} = "Range of time during which a swap is in effect."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMaturity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialInstrumentSwap, DateTimePeriod> mmMaturity = new MMBusinessAssociationEnd<FinancialInstrumentSwap, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
@@ -156,9 +158,19 @@ public class FinancialInstrumentSwap {
 			definition = "Range of time during which a swap is in effect.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmFinancialInstrumentSwap;
+			opposite_lazy = () -> DateTimePeriod.mmFinancialInstrumentSwap;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(FinancialInstrumentSwap obj) {
+			return obj.getMaturity();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentSwap obj, DateTimePeriod value) {
+			obj.setMaturity(value);
 		}
 	};
 	protected SecuritiesSwapLeg spotSell;
@@ -195,7 +207,7 @@ public class FinancialInstrumentSwap {
 	 * definition} = "Details of the spot leg of the sell-side of a swap."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSpotSell = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialInstrumentSwap, SecuritiesSwapLeg> mmSpotSell = new MMBusinessAssociationEnd<FinancialInstrumentSwap, SecuritiesSwapLeg>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
@@ -204,9 +216,19 @@ public class FinancialInstrumentSwap {
 			definition = "Details of the spot leg of the sell-side of a swap.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmSpotSellSwap;
+			opposite_lazy = () -> SecuritiesSwapLeg.mmSpotSellSwap;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
+			type_lazy = () -> SecuritiesSwapLeg.mmObject();
+		}
+
+		@Override
+		public SecuritiesSwapLeg getValue(FinancialInstrumentSwap obj) {
+			return obj.getSpotSell();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentSwap obj, SecuritiesSwapLeg value) {
+			obj.setSpotSell(value);
 		}
 	};
 	protected SecuritiesSwapLeg spotBuy;
@@ -243,7 +265,7 @@ public class FinancialInstrumentSwap {
 	 * definition} = "Details of the spot leg of the buy-side of a swap."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSpotBuy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialInstrumentSwap, SecuritiesSwapLeg> mmSpotBuy = new MMBusinessAssociationEnd<FinancialInstrumentSwap, SecuritiesSwapLeg>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
@@ -252,9 +274,19 @@ public class FinancialInstrumentSwap {
 			definition = "Details of the spot leg of the buy-side of a swap.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmSpotBuySwap;
+			opposite_lazy = () -> SecuritiesSwapLeg.mmSpotBuySwap;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
+			type_lazy = () -> SecuritiesSwapLeg.mmObject();
+		}
+
+		@Override
+		public SecuritiesSwapLeg getValue(FinancialInstrumentSwap obj) {
+			return obj.getSpotBuy();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentSwap obj, SecuritiesSwapLeg value) {
+			obj.setSpotBuy(value);
 		}
 	};
 	protected SecuritiesSwapLeg forwardBuyBack;
@@ -293,7 +325,7 @@ public class FinancialInstrumentSwap {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmForwardBuyBack = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialInstrumentSwap, SecuritiesSwapLeg> mmForwardBuyBack = new MMBusinessAssociationEnd<FinancialInstrumentSwap, SecuritiesSwapLeg>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
@@ -302,9 +334,19 @@ public class FinancialInstrumentSwap {
 			definition = "Details of the forward leg of a swap that has been sold and is being returned, ie, bought back.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmForwardBuyBackSwap;
+			opposite_lazy = () -> SecuritiesSwapLeg.mmForwardBuyBackSwap;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
+			type_lazy = () -> SecuritiesSwapLeg.mmObject();
+		}
+
+		@Override
+		public SecuritiesSwapLeg getValue(FinancialInstrumentSwap obj) {
+			return obj.getForwardBuyBack();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentSwap obj, SecuritiesSwapLeg value) {
+			obj.setForwardBuyBack(value);
 		}
 	};
 	protected SecuritiesSwapLeg forwardSellBack;
@@ -343,7 +385,7 @@ public class FinancialInstrumentSwap {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmForwardSellBack = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialInstrumentSwap, SecuritiesSwapLeg> mmForwardSellBack = new MMBusinessAssociationEnd<FinancialInstrumentSwap, SecuritiesSwapLeg>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
@@ -352,9 +394,19 @@ public class FinancialInstrumentSwap {
 			definition = "Details of the forward leg of a swap that has been bought and is being returned, ie, sold back.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmForwardSellBackSwap;
+			opposite_lazy = () -> SecuritiesSwapLeg.mmForwardSellBackSwap;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSwapLeg.mmObject();
+			type_lazy = () -> SecuritiesSwapLeg.mmObject();
+		}
+
+		@Override
+		public SecuritiesSwapLeg getValue(FinancialInstrumentSwap obj) {
+			return obj.getForwardSellBack();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentSwap obj, SecuritiesSwapLeg value) {
+			obj.setForwardSellBack(value);
 		}
 	};
 	protected Quote relatedQuote;
@@ -390,7 +442,7 @@ public class FinancialInstrumentSwap {
 	 * definition} = "Quote related to a swap."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedQuote = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialInstrumentSwap, Optional<Quote>> mmRelatedQuote = new MMBusinessAssociationEnd<FinancialInstrumentSwap, Optional<Quote>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
@@ -399,9 +451,19 @@ public class FinancialInstrumentSwap {
 			definition = "Quote related to a swap.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmQuoteSwap;
+			opposite_lazy = () -> Quote.mmQuoteSwap;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			type_lazy = () -> Quote.mmObject();
+		}
+
+		@Override
+		public Optional<Quote> getValue(FinancialInstrumentSwap obj) {
+			return obj.getRelatedQuote();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentSwap obj, Optional<Quote> value) {
+			obj.setRelatedQuote(value.orElse(null));
 		}
 	};
 	protected FrequencyCode forwardSellBackFrequency;
@@ -432,7 +494,7 @@ public class FinancialInstrumentSwap {
 	 * "Frequency at which the sold financial instrument is being returned."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmForwardSellBackFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FinancialInstrumentSwap, FrequencyCode> mmForwardSellBackFrequency = new MMBusinessAttribute<FinancialInstrumentSwap, FrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
@@ -444,12 +506,14 @@ public class FinancialInstrumentSwap {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentSwap.class.getMethod("getForwardSellBackFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(FinancialInstrumentSwap obj) {
+			return obj.getForwardSellBackFrequency();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentSwap obj, FrequencyCode value) {
+			obj.setForwardSellBackFrequency(value);
 		}
 	};
 	protected FrequencyCode forwardBuyBackFrequency;
@@ -480,7 +544,7 @@ public class FinancialInstrumentSwap {
 	 * "Frequency at which the bought financial instrument is being returned."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmForwardBuyBackFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FinancialInstrumentSwap, FrequencyCode> mmForwardBuyBackFrequency = new MMBusinessAttribute<FinancialInstrumentSwap, FrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
@@ -492,12 +556,14 @@ public class FinancialInstrumentSwap {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentSwap.class.getMethod("getForwardBuyBackFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(FinancialInstrumentSwap obj) {
+			return obj.getForwardBuyBackFrequency();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentSwap obj, FrequencyCode value) {
+			obj.setForwardBuyBackFrequency(value);
 		}
 	};
 	protected InterestComputationMethodCode interestComputation;
@@ -528,7 +594,7 @@ public class FinancialInstrumentSwap {
 	 * "Method used to compute the accrued interest of a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInterestComputation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FinancialInstrumentSwap, InterestComputationMethodCode> mmInterestComputation = new MMBusinessAttribute<FinancialInstrumentSwap, InterestComputationMethodCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
@@ -540,12 +606,14 @@ public class FinancialInstrumentSwap {
 			simpleType_lazy = () -> InterestComputationMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentSwap.class.getMethod("getInterestComputation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InterestComputationMethodCode getValue(FinancialInstrumentSwap obj) {
+			return obj.getInterestComputation();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentSwap obj, InterestComputationMethodCode value) {
+			obj.setInterestComputation(value);
 		}
 	};
 
@@ -556,9 +624,8 @@ public class FinancialInstrumentSwap {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentSwap";
 				definition = "Characteristics and conditions by which a borrower can exchange one type of financial instrument for another.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmFinancialInstrumentSwap, com.tools20022.repository.entity.Quote.mmQuoteSwap,
-						com.tools20022.repository.entity.SecuritiesSwapLeg.mmSpotSellSwap, com.tools20022.repository.entity.SecuritiesSwapLeg.mmSpotBuySwap, com.tools20022.repository.entity.SecuritiesSwapLeg.mmForwardBuyBackSwap,
-						com.tools20022.repository.entity.SecuritiesSwapLeg.mmForwardSellBackSwap);
+				associationDomain_lazy = () -> Arrays.asList(DateTimePeriod.mmFinancialInstrumentSwap, Quote.mmQuoteSwap, SecuritiesSwapLeg.mmSpotSellSwap, SecuritiesSwapLeg.mmSpotBuySwap, SecuritiesSwapLeg.mmForwardBuyBackSwap,
+						SecuritiesSwapLeg.mmForwardSellBackSwap);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FinancialInstrumentSwap.mmMaturity, com.tools20022.repository.entity.FinancialInstrumentSwap.mmSpotSell,
 						com.tools20022.repository.entity.FinancialInstrumentSwap.mmSpotBuy, com.tools20022.repository.entity.FinancialInstrumentSwap.mmForwardBuyBack,
 						com.tools20022.repository.entity.FinancialInstrumentSwap.mmForwardSellBack, com.tools20022.repository.entity.FinancialInstrumentSwap.mmRelatedQuote,
@@ -578,7 +645,7 @@ public class FinancialInstrumentSwap {
 		return maturity;
 	}
 
-	public FinancialInstrumentSwap setMaturity(com.tools20022.repository.entity.DateTimePeriod maturity) {
+	public FinancialInstrumentSwap setMaturity(DateTimePeriod maturity) {
 		this.maturity = Objects.requireNonNull(maturity);
 		return this;
 	}
@@ -587,7 +654,7 @@ public class FinancialInstrumentSwap {
 		return spotSell;
 	}
 
-	public FinancialInstrumentSwap setSpotSell(com.tools20022.repository.entity.SecuritiesSwapLeg spotSell) {
+	public FinancialInstrumentSwap setSpotSell(SecuritiesSwapLeg spotSell) {
 		this.spotSell = Objects.requireNonNull(spotSell);
 		return this;
 	}
@@ -596,7 +663,7 @@ public class FinancialInstrumentSwap {
 		return spotBuy;
 	}
 
-	public FinancialInstrumentSwap setSpotBuy(com.tools20022.repository.entity.SecuritiesSwapLeg spotBuy) {
+	public FinancialInstrumentSwap setSpotBuy(SecuritiesSwapLeg spotBuy) {
 		this.spotBuy = Objects.requireNonNull(spotBuy);
 		return this;
 	}
@@ -605,7 +672,7 @@ public class FinancialInstrumentSwap {
 		return forwardBuyBack;
 	}
 
-	public FinancialInstrumentSwap setForwardBuyBack(com.tools20022.repository.entity.SecuritiesSwapLeg forwardBuyBack) {
+	public FinancialInstrumentSwap setForwardBuyBack(SecuritiesSwapLeg forwardBuyBack) {
 		this.forwardBuyBack = Objects.requireNonNull(forwardBuyBack);
 		return this;
 	}
@@ -614,7 +681,7 @@ public class FinancialInstrumentSwap {
 		return forwardSellBack;
 	}
 
-	public FinancialInstrumentSwap setForwardSellBack(com.tools20022.repository.entity.SecuritiesSwapLeg forwardSellBack) {
+	public FinancialInstrumentSwap setForwardSellBack(SecuritiesSwapLeg forwardSellBack) {
 		this.forwardSellBack = Objects.requireNonNull(forwardSellBack);
 		return this;
 	}
@@ -623,7 +690,7 @@ public class FinancialInstrumentSwap {
 		return relatedQuote == null ? Optional.empty() : Optional.of(relatedQuote);
 	}
 
-	public FinancialInstrumentSwap setRelatedQuote(com.tools20022.repository.entity.Quote relatedQuote) {
+	public FinancialInstrumentSwap setRelatedQuote(Quote relatedQuote) {
 		this.relatedQuote = relatedQuote;
 		return this;
 	}

@@ -31,6 +31,8 @@ import com.tools20022.repository.codeset.ActiveCurrencyCode;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Restriction1;
+import com.tools20022.repository.msg.StatementFrequencyAndForm1;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -162,7 +164,7 @@ public class CustomerAccount4 {
 	 * definition} = "Identification of the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<AccountIdentification4Choice>> mmIdentification = new MMMessageAttribute<CustomerAccount4, Optional<AccountIdentification4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -174,6 +176,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> AccountIdentification4Choice.mmObject();
+		}
+
+		@Override
+		public Optional<AccountIdentification4Choice> getValue(CustomerAccount4 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<AccountIdentification4Choice> value) {
+			obj.setIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Nm")
@@ -212,7 +224,7 @@ public class CustomerAccount4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<Max70Text>> mmName = new MMMessageAttribute<CustomerAccount4, Optional<Max70Text>>() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -224,6 +236,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max70Text> getValue(CustomerAccount4 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<Max70Text> value) {
+			obj.setName(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Sts")
@@ -262,7 +284,7 @@ public class CustomerAccount4 {
 	 * "Specifies the current state of an account, eg, enabled or deleted."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<AccountStatus3Code>> mmStatus = new MMMessageAttribute<CustomerAccount4, Optional<AccountStatus3Code>>() {
 		{
 			businessElementTrace_lazy = () -> AccountStatus.mmStatus;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -274,6 +296,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> AccountStatus3Code.mmObject();
+		}
+
+		@Override
+		public Optional<AccountStatus3Code> getValue(CustomerAccount4 obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<AccountStatus3Code> value) {
+			obj.setStatus(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Tp")
@@ -310,7 +342,7 @@ public class CustomerAccount4 {
 	 * definition} = "Type of the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<CashAccountType2Choice>> mmType = new MMMessageAttribute<CustomerAccount4, Optional<CashAccountType2Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccount.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -322,6 +354,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> CashAccountType2Choice.mmObject();
+		}
+
+		@Override
+		public Optional<CashAccountType2Choice> getValue(CustomerAccount4 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<CashAccountType2Choice> value) {
+			obj.setType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Ccy", required = true)
@@ -359,7 +401,7 @@ public class CustomerAccount4 {
 	 * definition} = "Medium of exchange of value."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, ActiveCurrencyCode> mmCurrency = new MMMessageAttribute<CustomerAccount4, ActiveCurrencyCode>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmBaseCurrency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -371,6 +413,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyCode getValue(CustomerAccount4 obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, ActiveCurrencyCode value) {
+			obj.setCurrency(value);
 		}
 	};
 	@XmlElement(name = "MnthlyPmtVal")
@@ -410,7 +462,7 @@ public class CustomerAccount4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMonthlyPaymentValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<ImpliedCurrencyAndAmount>> mmMonthlyPaymentValue = new MMMessageAttribute<CustomerAccount4, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> AccountReportedMovement.mmMonthlyPaymentValue;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -422,6 +474,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(CustomerAccount4 obj) {
+			return obj.getMonthlyPaymentValue();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setMonthlyPaymentValue(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "MnthlyRcvdVal")
@@ -461,7 +523,7 @@ public class CustomerAccount4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMonthlyReceivedValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<ImpliedCurrencyAndAmount>> mmMonthlyReceivedValue = new MMMessageAttribute<CustomerAccount4, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> AccountReportedMovement.mmMonthlyReceivedValue;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -473,6 +535,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(CustomerAccount4 obj) {
+			return obj.getMonthlyReceivedValue();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setMonthlyReceivedValue(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "MnthlyTxNb")
@@ -512,7 +584,7 @@ public class CustomerAccount4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMonthlyTransactionNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<Max5NumericText>> mmMonthlyTransactionNumber = new MMMessageAttribute<CustomerAccount4, Optional<Max5NumericText>>() {
 		{
 			businessElementTrace_lazy = () -> AccountReportedMovement.mmMonthlyTransactionNumber;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -524,6 +596,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max5NumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Max5NumericText> getValue(CustomerAccount4 obj) {
+			return obj.getMonthlyTransactionNumber();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<Max5NumericText> value) {
+			obj.setMonthlyTransactionNumber(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AvrgBal")
@@ -563,7 +645,7 @@ public class CustomerAccount4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAverageBalance = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<ImpliedCurrencyAndAmount>> mmAverageBalance = new MMMessageAttribute<CustomerAccount4, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> AccountReportedMovement.mmAverageBalance;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -575,6 +657,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(CustomerAccount4 obj) {
+			return obj.getAverageBalance();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setAverageBalance(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AcctPurp")
@@ -611,7 +703,7 @@ public class CustomerAccount4 {
 	 * definition} = "Specifies the purpose of the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountPurpose = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<Max140Text>> mmAccountPurpose = new MMMessageAttribute<CustomerAccount4, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmPurpose;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -623,6 +715,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(CustomerAccount4 obj) {
+			return obj.getAccountPurpose();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<Max140Text> value) {
+			obj.setAccountPurpose(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "FlrNtfctnAmt")
@@ -662,7 +764,7 @@ public class CustomerAccount4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFloorNotificationAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<ImpliedCurrencyAndAmount>> mmFloorNotificationAmount = new MMMessageAttribute<CustomerAccount4, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ReportingService.mmFloorNotificationAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -674,6 +776,16 @@ public class CustomerAccount4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(CustomerAccount4 obj) {
+			return obj.getFloorNotificationAmount();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setFloorNotificationAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ClngNtfctnAmt")
@@ -713,7 +825,7 @@ public class CustomerAccount4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCeilingNotificationAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<ImpliedCurrencyAndAmount>> mmCeilingNotificationAmount = new MMMessageAttribute<CustomerAccount4, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ReportingService.mmCeilingNotificationAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -726,9 +838,19 @@ public class CustomerAccount4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(CustomerAccount4 obj) {
+			return obj.getCeilingNotificationAmount();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setCeilingNotificationAmount(value.orElse(null));
+		}
 	};
 	@XmlElement(name = "StmtFrqcyAndFrmt")
-	protected List<com.tools20022.repository.msg.StatementFrequencyAndForm1> statementFrequencyAndFormat;
+	protected List<StatementFrequencyAndForm1> statementFrequencyAndFormat;
 	/**
 	 * 
 	 <p>
@@ -764,7 +886,7 @@ public class CustomerAccount4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatementFrequencyAndFormat = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, List<StatementFrequencyAndForm1>> mmStatementFrequencyAndFormat = new MMMessageAttribute<CustomerAccount4, List<StatementFrequencyAndForm1>>() {
 		{
 			businessElementTrace_lazy = () -> ReportingService.mmStatementFrequency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -774,7 +896,17 @@ public class CustomerAccount4 {
 			name = "StatementFrequencyAndFormat";
 			definition = "Specifies how often statements (for audit purposes) will be sent, in which format, to which address.";
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
+			complexType_lazy = () -> StatementFrequencyAndForm1.mmObject();
+		}
+
+		@Override
+		public List<StatementFrequencyAndForm1> getValue(CustomerAccount4 obj) {
+			return obj.getStatementFrequencyAndFormat();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, List<StatementFrequencyAndForm1> value) {
+			obj.setStatementFrequencyAndFormat(value);
 		}
 	};
 	@XmlElement(name = "ClsgDt")
@@ -811,7 +943,7 @@ public class CustomerAccount4 {
 	 * definition} = "Date when the account will be or was closed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClosingDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerAccount4, Optional<ISODate>> mmClosingDate = new MMMessageAttribute<CustomerAccount4, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmClosingDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -824,9 +956,19 @@ public class CustomerAccount4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(CustomerAccount4 obj) {
+			return obj.getClosingDate();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, Optional<ISODate> value) {
+			obj.setClosingDate(value.orElse(null));
+		}
 	};
 	@XmlElement(name = "Rstrctn")
-	protected List<com.tools20022.repository.msg.Restriction1> restriction;
+	protected List<Restriction1> restriction;
 	/**
 	 * 
 	 <p>
@@ -858,7 +1000,7 @@ public class CustomerAccount4 {
 	 * definition} = "Restriction on capability or operations allowed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRestriction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CustomerAccount4, List<Restriction1>> mmRestriction = new MMMessageAssociationEnd<CustomerAccount4, List<Restriction1>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmAccountRestriction;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerAccount4.mmObject();
@@ -869,7 +1011,17 @@ public class CustomerAccount4 {
 			definition = "Restriction on capability or operations allowed.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Restriction1.mmObject();
+			type_lazy = () -> Restriction1.mmObject();
+		}
+
+		@Override
+		public List<Restriction1> getValue(CustomerAccount4 obj) {
+			return obj.getRestriction();
+		}
+
+		@Override
+		public void setValue(CustomerAccount4 obj, List<Restriction1> value) {
+			obj.setRestriction(value);
 		}
 	};
 
@@ -1004,7 +1156,7 @@ public class CustomerAccount4 {
 		return statementFrequencyAndFormat == null ? statementFrequencyAndFormat = new ArrayList<>() : statementFrequencyAndFormat;
 	}
 
-	public CustomerAccount4 setStatementFrequencyAndFormat(List<com.tools20022.repository.msg.StatementFrequencyAndForm1> statementFrequencyAndFormat) {
+	public CustomerAccount4 setStatementFrequencyAndFormat(List<StatementFrequencyAndForm1> statementFrequencyAndFormat) {
 		this.statementFrequencyAndFormat = Objects.requireNonNull(statementFrequencyAndFormat);
 		return this;
 	}
@@ -1022,7 +1174,7 @@ public class CustomerAccount4 {
 		return restriction == null ? restriction = new ArrayList<>() : restriction;
 	}
 
-	public CustomerAccount4 setRestriction(List<com.tools20022.repository.msg.Restriction1> restriction) {
+	public CustomerAccount4 setRestriction(List<Restriction1> restriction) {
 		this.restriction = Objects.requireNonNull(restriction);
 		return this;
 	}

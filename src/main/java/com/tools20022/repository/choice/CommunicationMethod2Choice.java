@@ -105,7 +105,7 @@ public class CommunicationMethod2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommunicationMethod2Choice, CommunicationMethod2Code> mmCode = new MMMessageAttribute<CommunicationMethod2Choice, CommunicationMethod2Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.CommunicationMethod2Choice.mmObject();
 			isDerived = false;
@@ -116,6 +116,16 @@ public class CommunicationMethod2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CommunicationMethod2Code.mmObject();
+		}
+
+		@Override
+		public CommunicationMethod2Code getValue(CommunicationMethod2Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(CommunicationMethod2Choice obj, CommunicationMethod2Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -149,7 +159,7 @@ public class CommunicationMethod2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommunicationMethod2Choice, Max35Text> mmProprietary = new MMMessageAttribute<CommunicationMethod2Choice, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.CommunicationMethod2Choice.mmObject();
 			isDerived = false;
@@ -160,6 +170,16 @@ public class CommunicationMethod2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(CommunicationMethod2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CommunicationMethod2Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

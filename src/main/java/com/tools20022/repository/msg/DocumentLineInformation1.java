@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Max2048Text;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DocumentLineIdentification1;
+import com.tools20022.repository.msg.RemittanceAmount3;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -75,7 +77,7 @@ public class DocumentLineInformation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
 	@XmlElement(name = "Id", required = true)
-	protected List<com.tools20022.repository.msg.DocumentLineIdentification1> identification;
+	protected List<DocumentLineIdentification1> identification;
 	/**
 	 * 
 	 <p>
@@ -108,7 +110,7 @@ public class DocumentLineInformation1 {
 	 * definition} = "Provides identification of the document line."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DocumentLineInformation1, List<DocumentLineIdentification1>> mmIdentification = new MMMessageAssociationEnd<DocumentLineInformation1, List<DocumentLineIdentification1>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentLineInformation1.mmObject();
@@ -119,7 +121,17 @@ public class DocumentLineInformation1 {
 			definition = "Provides identification of the document line.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DocumentLineIdentification1.mmObject();
+			type_lazy = () -> DocumentLineIdentification1.mmObject();
+		}
+
+		@Override
+		public List<DocumentLineIdentification1> getValue(DocumentLineInformation1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(DocumentLineInformation1 obj, List<DocumentLineIdentification1> value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "Desc")
@@ -155,7 +167,7 @@ public class DocumentLineInformation1 {
 	 * definition} = "Description associated with the document line."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentLineInformation1, Optional<Max2048Text>> mmDescription = new MMMessageAttribute<DocumentLineInformation1, Optional<Max2048Text>>() {
 		{
 			businessComponentTrace_lazy = () -> Document.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentLineInformation1.mmObject();
@@ -167,6 +179,16 @@ public class DocumentLineInformation1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max2048Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max2048Text> getValue(DocumentLineInformation1 obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(DocumentLineInformation1 obj, Optional<Max2048Text> value) {
+			obj.setDescription(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt")
@@ -202,7 +224,7 @@ public class DocumentLineInformation1 {
 	 * definition} = "Provides details on the amounts of the document line."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DocumentLineInformation1, Optional<RemittanceAmount3>> mmAmount = new MMMessageAssociationEnd<DocumentLineInformation1, Optional<RemittanceAmount3>>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentLineInformation1.mmObject();
@@ -214,7 +236,17 @@ public class DocumentLineInformation1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.RemittanceAmount3.mmObject();
+			type_lazy = () -> RemittanceAmount3.mmObject();
+		}
+
+		@Override
+		public Optional<RemittanceAmount3> getValue(DocumentLineInformation1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(DocumentLineInformation1 obj, Optional<RemittanceAmount3> value) {
+			obj.setAmount(value.orElse(null));
 		}
 	};
 
@@ -237,7 +269,7 @@ public class DocumentLineInformation1 {
 		return identification == null ? identification = new ArrayList<>() : identification;
 	}
 
-	public DocumentLineInformation1 setIdentification(List<com.tools20022.repository.msg.DocumentLineIdentification1> identification) {
+	public DocumentLineInformation1 setIdentification(List<DocumentLineIdentification1> identification) {
 		this.identification = Objects.requireNonNull(identification);
 		return this;
 	}
@@ -255,7 +287,7 @@ public class DocumentLineInformation1 {
 		return amount == null ? Optional.empty() : Optional.of(amount);
 	}
 
-	public DocumentLineInformation1 setAmount(com.tools20022.repository.msg.RemittanceAmount3 amount) {
+	public DocumentLineInformation1 setAmount(RemittanceAmount3 amount) {
 		this.amount = amount;
 		return this;
 	}

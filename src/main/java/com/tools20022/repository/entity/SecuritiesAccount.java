@@ -20,10 +20,9 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ClearingAccountTypeCode;
 import com.tools20022.repository.codeset.SecuritiesAccountPurposeTypeCode;
-import com.tools20022.repository.entity.Account;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.SecuritiesAccount19;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -223,7 +222,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Specifies the type of securities account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSecuritiesAccountType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesAccount, SecuritiesAccountPurposeTypeCode> mmSecuritiesAccountType = new MMBusinessAttribute<SecuritiesAccount, SecuritiesAccountPurposeTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SecuritiesAccount19.mmType);
 			isDerived = false;
@@ -236,12 +235,14 @@ public class SecuritiesAccount extends Account {
 			simpleType_lazy = () -> SecuritiesAccountPurposeTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesAccount.class.getMethod("getSecuritiesAccountType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesAccountPurposeTypeCode getValue(SecuritiesAccount obj) {
+			return obj.getSecuritiesAccountType();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, SecuritiesAccountPurposeTypeCode value) {
+			obj.setSecuritiesAccountType(value);
 		}
 	};
 	protected InvestmentAccount relatedInvestmentAccount;
@@ -280,7 +281,7 @@ public class SecuritiesAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInvestmentAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, InvestmentAccount> mmRelatedInvestmentAccount = new MMBusinessAssociationEnd<SecuritiesAccount, InvestmentAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -289,12 +290,22 @@ public class SecuritiesAccount extends Account {
 			definition = "Investment account which contains a securities account to make securities movements.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmSecuritiesAccount;
+			opposite_lazy = () -> InvestmentAccount.mmSecuritiesAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
+			type_lazy = () -> InvestmentAccount.mmObject();
+		}
+
+		@Override
+		public InvestmentAccount getValue(SecuritiesAccount obj) {
+			return obj.getRelatedInvestmentAccount();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, InvestmentAccount value) {
+			obj.setRelatedInvestmentAccount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesTransfer> relatedTransfer;
+	protected List<SecuritiesTransfer> relatedTransfer;
 	/**
 	 * 
 	 <p>
@@ -330,7 +341,7 @@ public class SecuritiesAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, List<SecuritiesTransfer>> mmRelatedTransfer = new MMBusinessAssociationEnd<SecuritiesAccount, List<SecuritiesTransfer>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -338,9 +349,19 @@ public class SecuritiesAccount extends Account {
 			name = "RelatedTransfer";
 			definition = "Specifies the process which moves securities out of an account to another one.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmAccount;
+			opposite_lazy = () -> SecuritiesTransfer.mmAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
+			type_lazy = () -> SecuritiesTransfer.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesTransfer> getValue(SecuritiesAccount obj) {
+			return obj.getRelatedTransfer();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, List<SecuritiesTransfer> value) {
+			obj.setRelatedTransfer(value);
 		}
 	};
 	protected SecuritiesPartyRole securitiesPartyRole;
@@ -377,7 +398,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Specifies the role which uses a securities account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, com.tools20022.repository.entity.SecuritiesPartyRole> mmSecuritiesPartyRole = new MMBusinessAssociationEnd<SecuritiesAccount, com.tools20022.repository.entity.SecuritiesPartyRole>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -389,6 +410,16 @@ public class SecuritiesAccount extends Account {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPartyRole.mmSecuritiesAccount;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPartyRole.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesPartyRole getValue(SecuritiesAccount obj) {
+			return obj.getSecuritiesPartyRole();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, com.tools20022.repository.entity.SecuritiesPartyRole value) {
+			obj.setSecuritiesPartyRole(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Security> security;
@@ -424,7 +455,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Security which is held on the securities account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, List<Security>> mmSecurity = new MMBusinessAssociationEnd<SecuritiesAccount, List<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -435,6 +466,16 @@ public class SecuritiesAccount extends Account {
 			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmSecuritiesAccount;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+		}
+
+		@Override
+		public List<Security> getValue(SecuritiesAccount obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, List<Security> value) {
+			obj.setSecurity(value);
 		}
 	};
 	protected RegistrarRole relatedRegistrar;
@@ -472,7 +513,7 @@ public class SecuritiesAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedRegistrar = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, Optional<RegistrarRole>> mmRelatedRegistrar = new MMBusinessAssociationEnd<SecuritiesAccount, Optional<RegistrarRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -481,9 +522,19 @@ public class SecuritiesAccount extends Account {
 			definition = "Specifies where the financial instruments are registered.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegistrarRole.mmRegistrarAccount;
+			opposite_lazy = () -> RegistrarRole.mmRegistrarAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegistrarRole.mmObject();
+			type_lazy = () -> RegistrarRole.mmObject();
+		}
+
+		@Override
+		public Optional<RegistrarRole> getValue(SecuritiesAccount obj) {
+			return obj.getRelatedRegistrar();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, Optional<RegistrarRole> value) {
+			obj.setRelatedRegistrar(value.orElse(null));
 		}
 	};
 	protected List<com.tools20022.repository.entity.SafekeepingPlace> safekeepingPlace;
@@ -520,7 +571,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Location where the financial instruments are safekept."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSafekeepingPlace = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, List<SafekeepingPlace>> mmSafekeepingPlace = new MMBusinessAssociationEnd<SecuritiesAccount, List<SafekeepingPlace>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -531,6 +582,16 @@ public class SecuritiesAccount extends Account {
 			opposite_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmRelatedSecuritiesAccount;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
+		}
+
+		@Override
+		public List<SafekeepingPlace> getValue(SecuritiesAccount obj) {
+			return obj.getSafekeepingPlace();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, List<SafekeepingPlace> value) {
+			obj.setSafekeepingPlace(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesBalance> securitiesBalance;
@@ -569,7 +630,7 @@ public class SecuritiesAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, List<SecuritiesBalance>> mmSecuritiesBalance = new MMBusinessAssociationEnd<SecuritiesAccount, List<SecuritiesBalance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -580,6 +641,16 @@ public class SecuritiesAccount extends Account {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesAccount;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesBalance> getValue(SecuritiesAccount obj) {
+			return obj.getSecuritiesBalance();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, List<SecuritiesBalance> value) {
+			obj.setSecuritiesBalance(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.CorporateActionServicing> corporateActionServicing;
@@ -619,7 +690,7 @@ public class SecuritiesAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateActionServicing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, List<CorporateActionServicing>> mmCorporateActionServicing = new MMBusinessAssociationEnd<SecuritiesAccount, List<CorporateActionServicing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -630,6 +701,16 @@ public class SecuritiesAccount extends Account {
 			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmSecuritiesAccount;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
+		}
+
+		@Override
+		public List<CorporateActionServicing> getValue(SecuritiesAccount obj) {
+			return obj.getCorporateActionServicing();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, List<CorporateActionServicing> value) {
+			obj.setCorporateActionServicing(value);
 		}
 	};
 	protected Allocation relatedAllocation;
@@ -666,7 +747,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Allocation process for which an account is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedAllocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, Optional<Allocation>> mmRelatedAllocation = new MMBusinessAssociationEnd<SecuritiesAccount, Optional<Allocation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -675,9 +756,19 @@ public class SecuritiesAccount extends Account {
 			definition = "Allocation process for which an account is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Allocation.mmAllocationAccount;
+			opposite_lazy = () -> Allocation.mmAllocationAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
+			type_lazy = () -> Allocation.mmObject();
+		}
+
+		@Override
+		public Optional<Allocation> getValue(SecuritiesAccount obj) {
+			return obj.getRelatedAllocation();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, Optional<Allocation> value) {
+			obj.setRelatedAllocation(value.orElse(null));
 		}
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesEntry> securitiesEntry;
@@ -714,7 +805,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Record of the movements into or out of an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, List<SecuritiesEntry>> mmSecuritiesEntry = new MMBusinessAssociationEnd<SecuritiesAccount, List<SecuritiesEntry>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -725,6 +816,16 @@ public class SecuritiesAccount extends Account {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmSecuritiesAccount;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesEntry> getValue(SecuritiesAccount obj) {
+			return obj.getSecuritiesEntry();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, List<SecuritiesEntry> value) {
+			obj.setSecuritiesEntry(value);
 		}
 	};
 	protected ClearingMemberRole clearingAccountOwner;
@@ -761,7 +862,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Clearing member which holds a clearing account at a CCP."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmClearingAccountOwner = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, Optional<ClearingMemberRole>> mmClearingAccountOwner = new MMBusinessAssociationEnd<SecuritiesAccount, Optional<ClearingMemberRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -770,9 +871,19 @@ public class SecuritiesAccount extends Account {
 			definition = "Clearing member which holds a clearing account at a CCP.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmClearingAccount;
+			opposite_lazy = () -> ClearingMemberRole.mmClearingAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
+			type_lazy = () -> ClearingMemberRole.mmObject();
+		}
+
+		@Override
+		public Optional<ClearingMemberRole> getValue(SecuritiesAccount obj) {
+			return obj.getClearingAccountOwner();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, Optional<ClearingMemberRole> value) {
+			obj.setClearingAccountOwner(value.orElse(null));
 		}
 	};
 	protected ClearingMemberRole marginAccountOwner;
@@ -809,7 +920,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Clearing member which holds a margin account at a CCP."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMarginAccountOwner = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, Optional<ClearingMemberRole>> mmMarginAccountOwner = new MMBusinessAssociationEnd<SecuritiesAccount, Optional<ClearingMemberRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -818,9 +929,19 @@ public class SecuritiesAccount extends Account {
 			definition = "Clearing member which holds a margin account at a CCP.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmMarginAccount;
+			opposite_lazy = () -> ClearingMemberRole.mmMarginAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
+			type_lazy = () -> ClearingMemberRole.mmObject();
+		}
+
+		@Override
+		public Optional<ClearingMemberRole> getValue(SecuritiesAccount obj) {
+			return obj.getMarginAccountOwner();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, Optional<ClearingMemberRole> value) {
+			obj.setMarginAccountOwner(value.orElse(null));
 		}
 	};
 	protected ClearingMemberRole deliveryAccountOwner;
@@ -857,7 +978,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Clearing member which holds a delivery account at a CCP."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDeliveryAccountOwner = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, Optional<ClearingMemberRole>> mmDeliveryAccountOwner = new MMBusinessAssociationEnd<SecuritiesAccount, Optional<ClearingMemberRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -866,9 +987,19 @@ public class SecuritiesAccount extends Account {
 			definition = "Clearing member which holds a delivery account at a CCP.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmDeliveryAccount;
+			opposite_lazy = () -> ClearingMemberRole.mmDeliveryAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
+			type_lazy = () -> ClearingMemberRole.mmObject();
+		}
+
+		@Override
+		public Optional<ClearingMemberRole> getValue(SecuritiesAccount obj) {
+			return obj.getDeliveryAccountOwner();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, Optional<ClearingMemberRole> value) {
+			obj.setDeliveryAccountOwner(value.orElse(null));
 		}
 	};
 	protected PowerOfAttorney relatedPowerOfAttorney;
@@ -905,7 +1036,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Power of attorney related to the securities account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPowerOfAttorney = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, Optional<PowerOfAttorney>> mmRelatedPowerOfAttorney = new MMBusinessAssociationEnd<SecuritiesAccount, Optional<PowerOfAttorney>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -914,9 +1045,19 @@ public class SecuritiesAccount extends Account {
 			definition = "Power of attorney related to the securities account.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmAuthorisedAccount;
+			opposite_lazy = () -> PowerOfAttorney.mmAuthorisedAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
+			type_lazy = () -> PowerOfAttorney.mmObject();
+		}
+
+		@Override
+		public Optional<PowerOfAttorney> getValue(SecuritiesAccount obj) {
+			return obj.getRelatedPowerOfAttorney();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, Optional<PowerOfAttorney> value) {
+			obj.setRelatedPowerOfAttorney(value.orElse(null));
 		}
 	};
 	protected InstructionForMeeting relatedMeetingInstruction;
@@ -954,7 +1095,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Meeting instruction which specifies an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedMeetingInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, Optional<InstructionForMeeting>> mmRelatedMeetingInstruction = new MMBusinessAssociationEnd<SecuritiesAccount, Optional<InstructionForMeeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -963,9 +1104,19 @@ public class SecuritiesAccount extends Account {
 			definition = "Meeting instruction which specifies an account.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmSafekeepingAccount;
+			opposite_lazy = () -> InstructionForMeeting.mmSafekeepingAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
+			type_lazy = () -> InstructionForMeeting.mmObject();
+		}
+
+		@Override
+		public Optional<InstructionForMeeting> getValue(SecuritiesAccount obj) {
+			return obj.getRelatedMeetingInstruction();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, Optional<InstructionForMeeting> value) {
+			obj.setRelatedMeetingInstruction(value.orElse(null));
 		}
 	};
 	protected ClearingAccountTypeCode clearingAccountType;
@@ -995,7 +1146,7 @@ public class SecuritiesAccount extends Account {
 	 * definition} = "Specifies the clearing account type."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClearingAccountType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesAccount, ClearingAccountTypeCode> mmClearingAccountType = new MMBusinessAttribute<SecuritiesAccount, ClearingAccountTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -1007,12 +1158,14 @@ public class SecuritiesAccount extends Account {
 			simpleType_lazy = () -> ClearingAccountTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesAccount.class.getMethod("getClearingAccountType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ClearingAccountTypeCode getValue(SecuritiesAccount obj) {
+			return obj.getClearingAccountType();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, ClearingAccountTypeCode value) {
+			obj.setClearingAccountType(value);
 		}
 	};
 	protected SecuritiesOrder relatedOrder;
@@ -1050,7 +1203,7 @@ public class SecuritiesAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, Optional<SecuritiesOrder>> mmRelatedOrder = new MMBusinessAssociationEnd<SecuritiesAccount, Optional<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -1059,9 +1212,19 @@ public class SecuritiesAccount extends Account {
 			definition = "Order process for which an ordering account is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmOrderingAccount;
+			opposite_lazy = () -> SecuritiesOrder.mmOrderingAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesOrder> getValue(SecuritiesAccount obj) {
+			return obj.getRelatedOrder();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, Optional<SecuritiesOrder> value) {
+			obj.setRelatedOrder(value.orElse(null));
 		}
 	};
 	protected DisclosedListTrading disclosedListTrading;
@@ -1101,7 +1264,7 @@ public class SecuritiesAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDisclosedListTrading = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, Optional<DisclosedListTrading>> mmDisclosedListTrading = new MMBusinessAssociationEnd<SecuritiesAccount, Optional<DisclosedListTrading>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -1113,6 +1276,16 @@ public class SecuritiesAccount extends Account {
 			opposite_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmDisclosedListTradingAccount;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
+		}
+
+		@Override
+		public Optional<DisclosedListTrading> getValue(SecuritiesAccount obj) {
+			return obj.getDisclosedListTrading();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, Optional<DisclosedListTrading> value) {
+			obj.setDisclosedListTrading(value.orElse(null));
 		}
 	};
 	protected AccountLink accountLink;
@@ -1150,7 +1323,7 @@ public class SecuritiesAccount extends Account {
 	 * "Defines the link between a cash account and a securities account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccountLink = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesAccount, com.tools20022.repository.entity.AccountLink> mmAccountLink = new MMBusinessAssociationEnd<SecuritiesAccount, com.tools20022.repository.entity.AccountLink>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
@@ -1163,6 +1336,16 @@ public class SecuritiesAccount extends Account {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AccountLink.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.AccountLink getValue(SecuritiesAccount obj) {
+			return obj.getAccountLink();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount obj, com.tools20022.repository.entity.AccountLink value) {
+			obj.setAccountLink(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -1172,13 +1355,12 @@ public class SecuritiesAccount extends Account {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesAccount";
 				definition = "Account to or from which a securities entry is made.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmSecuritiesAccount, com.tools20022.repository.entity.InvestmentAccount.mmSecuritiesAccount,
-						com.tools20022.repository.entity.SecuritiesTransfer.mmAccount, com.tools20022.repository.entity.ClearingMemberRole.mmClearingAccount, com.tools20022.repository.entity.ClearingMemberRole.mmMarginAccount,
-						com.tools20022.repository.entity.ClearingMemberRole.mmDeliveryAccount, com.tools20022.repository.entity.SecuritiesPartyRole.mmSecuritiesAccount, com.tools20022.repository.entity.SecuritiesEntry.mmSecuritiesAccount,
-						com.tools20022.repository.entity.SafekeepingPlace.mmRelatedSecuritiesAccount, com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesAccount,
-						com.tools20022.repository.entity.RegistrarRole.mmRegistrarAccount, com.tools20022.repository.entity.CorporateActionServicing.mmSecuritiesAccount, com.tools20022.repository.entity.SecuritiesOrder.mmOrderingAccount,
-						com.tools20022.repository.entity.Allocation.mmAllocationAccount, com.tools20022.repository.entity.InstructionForMeeting.mmSafekeepingAccount, com.tools20022.repository.entity.PowerOfAttorney.mmAuthorisedAccount,
-						com.tools20022.repository.entity.AccountLink.mmSecuritiesAccount, com.tools20022.repository.entity.DisclosedListTrading.mmDisclosedListTradingAccount);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmSecuritiesAccount, InvestmentAccount.mmSecuritiesAccount, SecuritiesTransfer.mmAccount, ClearingMemberRole.mmClearingAccount,
+						ClearingMemberRole.mmMarginAccount, ClearingMemberRole.mmDeliveryAccount, com.tools20022.repository.entity.SecuritiesPartyRole.mmSecuritiesAccount,
+						com.tools20022.repository.entity.SecuritiesEntry.mmSecuritiesAccount, com.tools20022.repository.entity.SafekeepingPlace.mmRelatedSecuritiesAccount,
+						com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesAccount, RegistrarRole.mmRegistrarAccount, com.tools20022.repository.entity.CorporateActionServicing.mmSecuritiesAccount,
+						SecuritiesOrder.mmOrderingAccount, Allocation.mmAllocationAccount, InstructionForMeeting.mmSafekeepingAccount, PowerOfAttorney.mmAuthorisedAccount, com.tools20022.repository.entity.AccountLink.mmSecuritiesAccount,
+						com.tools20022.repository.entity.DisclosedListTrading.mmDisclosedListTradingAccount);
 				superType_lazy = () -> Account.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.mmSecuritiesAccountType, com.tools20022.repository.entity.SecuritiesAccount.mmRelatedInvestmentAccount,
 						com.tools20022.repository.entity.SecuritiesAccount.mmRelatedTransfer, com.tools20022.repository.entity.SecuritiesAccount.mmSecuritiesPartyRole, com.tools20022.repository.entity.SecuritiesAccount.mmSecurity,
@@ -1213,7 +1395,7 @@ public class SecuritiesAccount extends Account {
 		return relatedInvestmentAccount;
 	}
 
-	public SecuritiesAccount setRelatedInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount relatedInvestmentAccount) {
+	public SecuritiesAccount setRelatedInvestmentAccount(InvestmentAccount relatedInvestmentAccount) {
 		this.relatedInvestmentAccount = Objects.requireNonNull(relatedInvestmentAccount);
 		return this;
 	}
@@ -1222,7 +1404,7 @@ public class SecuritiesAccount extends Account {
 		return relatedTransfer == null ? relatedTransfer = new ArrayList<>() : relatedTransfer;
 	}
 
-	public SecuritiesAccount setRelatedTransfer(List<com.tools20022.repository.entity.SecuritiesTransfer> relatedTransfer) {
+	public SecuritiesAccount setRelatedTransfer(List<SecuritiesTransfer> relatedTransfer) {
 		this.relatedTransfer = Objects.requireNonNull(relatedTransfer);
 		return this;
 	}
@@ -1249,7 +1431,7 @@ public class SecuritiesAccount extends Account {
 		return relatedRegistrar == null ? Optional.empty() : Optional.of(relatedRegistrar);
 	}
 
-	public SecuritiesAccount setRelatedRegistrar(com.tools20022.repository.entity.RegistrarRole relatedRegistrar) {
+	public SecuritiesAccount setRelatedRegistrar(RegistrarRole relatedRegistrar) {
 		this.relatedRegistrar = relatedRegistrar;
 		return this;
 	}
@@ -1285,7 +1467,7 @@ public class SecuritiesAccount extends Account {
 		return relatedAllocation == null ? Optional.empty() : Optional.of(relatedAllocation);
 	}
 
-	public SecuritiesAccount setRelatedAllocation(com.tools20022.repository.entity.Allocation relatedAllocation) {
+	public SecuritiesAccount setRelatedAllocation(Allocation relatedAllocation) {
 		this.relatedAllocation = relatedAllocation;
 		return this;
 	}
@@ -1303,7 +1485,7 @@ public class SecuritiesAccount extends Account {
 		return clearingAccountOwner == null ? Optional.empty() : Optional.of(clearingAccountOwner);
 	}
 
-	public SecuritiesAccount setClearingAccountOwner(com.tools20022.repository.entity.ClearingMemberRole clearingAccountOwner) {
+	public SecuritiesAccount setClearingAccountOwner(ClearingMemberRole clearingAccountOwner) {
 		this.clearingAccountOwner = clearingAccountOwner;
 		return this;
 	}
@@ -1312,7 +1494,7 @@ public class SecuritiesAccount extends Account {
 		return marginAccountOwner == null ? Optional.empty() : Optional.of(marginAccountOwner);
 	}
 
-	public SecuritiesAccount setMarginAccountOwner(com.tools20022.repository.entity.ClearingMemberRole marginAccountOwner) {
+	public SecuritiesAccount setMarginAccountOwner(ClearingMemberRole marginAccountOwner) {
 		this.marginAccountOwner = marginAccountOwner;
 		return this;
 	}
@@ -1321,7 +1503,7 @@ public class SecuritiesAccount extends Account {
 		return deliveryAccountOwner == null ? Optional.empty() : Optional.of(deliveryAccountOwner);
 	}
 
-	public SecuritiesAccount setDeliveryAccountOwner(com.tools20022.repository.entity.ClearingMemberRole deliveryAccountOwner) {
+	public SecuritiesAccount setDeliveryAccountOwner(ClearingMemberRole deliveryAccountOwner) {
 		this.deliveryAccountOwner = deliveryAccountOwner;
 		return this;
 	}
@@ -1330,7 +1512,7 @@ public class SecuritiesAccount extends Account {
 		return relatedPowerOfAttorney == null ? Optional.empty() : Optional.of(relatedPowerOfAttorney);
 	}
 
-	public SecuritiesAccount setRelatedPowerOfAttorney(com.tools20022.repository.entity.PowerOfAttorney relatedPowerOfAttorney) {
+	public SecuritiesAccount setRelatedPowerOfAttorney(PowerOfAttorney relatedPowerOfAttorney) {
 		this.relatedPowerOfAttorney = relatedPowerOfAttorney;
 		return this;
 	}
@@ -1339,7 +1521,7 @@ public class SecuritiesAccount extends Account {
 		return relatedMeetingInstruction == null ? Optional.empty() : Optional.of(relatedMeetingInstruction);
 	}
 
-	public SecuritiesAccount setRelatedMeetingInstruction(com.tools20022.repository.entity.InstructionForMeeting relatedMeetingInstruction) {
+	public SecuritiesAccount setRelatedMeetingInstruction(InstructionForMeeting relatedMeetingInstruction) {
 		this.relatedMeetingInstruction = relatedMeetingInstruction;
 		return this;
 	}
@@ -1357,7 +1539,7 @@ public class SecuritiesAccount extends Account {
 		return relatedOrder == null ? Optional.empty() : Optional.of(relatedOrder);
 	}
 
-	public SecuritiesAccount setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+	public SecuritiesAccount setRelatedOrder(SecuritiesOrder relatedOrder) {
 		this.relatedOrder = relatedOrder;
 		return this;
 	}

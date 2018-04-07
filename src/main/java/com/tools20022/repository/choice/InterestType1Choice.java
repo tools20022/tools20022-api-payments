@@ -106,7 +106,7 @@ public class InterestType1Choice {
 	 * definition} = "Specifies the type of interest."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestType1Choice, InterestType1Code> mmCode = new MMMessageAttribute<InterestType1Choice, InterestType1Code>() {
 		{
 			businessElementTrace_lazy = () -> InterestCalculation.mmInterestType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.InterestType1Choice.mmObject();
@@ -118,6 +118,16 @@ public class InterestType1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> InterestType1Code.mmObject();
+		}
+
+		@Override
+		public InterestType1Code getValue(InterestType1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(InterestType1Choice obj, InterestType1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -154,7 +164,7 @@ public class InterestType1Choice {
 	 * definition} = "Specifies the type of interest in uncoded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestType1Choice, Max35Text> mmProprietary = new MMMessageAttribute<InterestType1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> InterestCalculation.mmInterestType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.InterestType1Choice.mmObject();
@@ -166,6 +176,16 @@ public class InterestType1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(InterestType1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(InterestType1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

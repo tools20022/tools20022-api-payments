@@ -194,7 +194,7 @@ public class ProcessingTypeCode extends MMCode {
 	/**
 	 * Restriction is the blocking of a party, securities account, security or
 	 * cash account from settlement, blocking of securities position or cash
-	 * balance for a specific purpose
+	 * balance for a specific purpose.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -212,7 +212,7 @@ public class ProcessingTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Restriction is the blocking of a party, securities account, security or cash account from settlement, blocking of securities position or cash balance for a specific purpose"
+	 * "Restriction is the blocking of a party, securities account, security or cash account from settlement, blocking of securities position or cash balance for a specific purpose."
 	 * </li>
 	 * </ul>
 	 */
@@ -220,7 +220,7 @@ public class ProcessingTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Blocking";
-			definition = "Restriction is the blocking of a party, securities account, security or cash account from settlement, blocking of securities position or cash balance for a specific purpose";
+			definition = "Restriction is the blocking of a party, securities account, security or cash account from settlement, blocking of securities position or cash balance for a specific purpose.";
 			owner_lazy = () -> com.tools20022.repository.codeset.ProcessingTypeCode.mmObject();
 			codeName = "BLCK";
 		}

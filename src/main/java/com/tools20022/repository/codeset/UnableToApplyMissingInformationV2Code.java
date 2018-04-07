@@ -313,7 +313,7 @@ public class UnableToApplyMissingInformationV2Code extends MMCode {
 		}
 	};
 	/**
-	 * SettlementAccount is missing. (former MissingNostroVostroAccount)
+	 * SettlementAccount is missing. (former MissingNostroVostroAccount).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -331,14 +331,14 @@ public class UnableToApplyMissingInformationV2Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "SettlementAccount is missing. (former MissingNostroVostroAccount)"</li>
+	 * "SettlementAccount is missing. (former MissingNostroVostroAccount)."</li>
 	 * </ul>
 	 */
 	public static final UnableToApplyMissingInformationV2Code MissingSettlementAccount = new UnableToApplyMissingInformationV2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingSettlementAccount";
-			definition = "SettlementAccount is missing. (former MissingNostroVostroAccount)";
+			definition = "SettlementAccount is missing. (former MissingNostroVostroAccount).";
 			owner_lazy = () -> com.tools20022.repository.codeset.UnableToApplyMissingInformationV2Code.mmObject();
 			codeName = "MS07";
 		}

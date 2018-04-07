@@ -205,7 +205,7 @@ public class PrePaymentSpeedCode extends MMCode {
 	/**
 	 * Repayment measure for nonamortizing assets not subject to prepayment. It
 	 * is calculated by dividing the sum of the interest and principal payments
-	 * received in a month by the outstanding balance
+	 * received in a month by the outstanding balance.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -226,7 +226,7 @@ public class PrePaymentSpeedCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Repayment measure for nonamortizing assets not subject to prepayment. It is calculated by dividing the sum of the interest and principal payments received in a month by the outstanding balance"
+	 * "Repayment measure for nonamortizing assets not subject to prepayment. It is calculated by dividing the sum of the interest and principal payments received in a month by the outstanding balance."
 	 * </li>
 	 * </ul>
 	 */
@@ -235,7 +235,7 @@ public class PrePaymentSpeedCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "233 value MPR"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MonthlyPrePaymentRate";
-			definition = "Repayment measure for nonamortizing assets not subject to prepayment. It is calculated by dividing the sum of the interest and principal payments received in a month by the outstanding balance";
+			definition = "Repayment measure for nonamortizing assets not subject to prepayment. It is calculated by dividing the sum of the interest and principal payments received in a month by the outstanding balance.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PrePaymentSpeedCode.mmObject();
 			codeName = "MOPR";
 		}
@@ -359,7 +359,7 @@ public class PrePaymentSpeedCode extends MMCode {
 	/**
 	 * Contains the type of prepayment speed of the financial instrument,
 	 * expressed as a percentage of the Manufactured Housing Prepayment Curve
-	 * (24-month seasoning scale composed of even step-ups)
+	 * (24-month seasoning scale composed of even step-ups).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -380,7 +380,7 @@ public class PrePaymentSpeedCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Contains the type of prepayment speed of the financial instrument, expressed as a percentage of the Manufactured Housing Prepayment Curve (24-month seasoning scale composed of even step-ups)"
+	 * "Contains the type of prepayment speed of the financial instrument, expressed as a percentage of the Manufactured Housing Prepayment Curve (24-month seasoning scale composed of even step-ups)."
 	 * </li>
 	 * </ul>
 	 */
@@ -389,7 +389,7 @@ public class PrePaymentSpeedCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "233 value MHP"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ManufacturedHousingPrePaymentCurve";
-			definition = "Contains the type of prepayment speed of the financial instrument, expressed as a percentage of the Manufactured Housing Prepayment Curve (24-month seasoning scale composed of even step-ups)";
+			definition = "Contains the type of prepayment speed of the financial instrument, expressed as a percentage of the Manufactured Housing Prepayment Curve (24-month seasoning scale composed of even step-ups).";
 			owner_lazy = () -> com.tools20022.repository.codeset.PrePaymentSpeedCode.mmObject();
 			codeName = "MAHP";
 		}

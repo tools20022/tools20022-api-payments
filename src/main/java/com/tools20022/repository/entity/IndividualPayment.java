@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.BulkPayment;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.TransactionCertificate2;
@@ -131,7 +132,7 @@ public class IndividualPayment extends Payment {
 	 * definition} = "Payment hich groups a series of individual payments."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBulkPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<IndividualPayment, Optional<BulkPayment>> mmBulkPayment = new MMBusinessAssociationEnd<IndividualPayment, Optional<BulkPayment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.IndividualPayment.mmObject();
@@ -143,6 +144,16 @@ public class IndividualPayment extends Payment {
 			opposite_lazy = () -> com.tools20022.repository.entity.BulkPayment.mmGroups;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.BulkPayment.mmObject();
+		}
+
+		@Override
+		public Optional<BulkPayment> getValue(IndividualPayment obj) {
+			return obj.getBulkPayment();
+		}
+
+		@Override
+		public void setValue(IndividualPayment obj, Optional<BulkPayment> value) {
+			obj.setBulkPayment(value.orElse(null));
 		}
 	};
 

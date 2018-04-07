@@ -25,6 +25,8 @@ import com.tools20022.repository.entity.CorporateActionDistribution;
 import com.tools20022.repository.entity.CurrencyExchange;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3;
+import com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails4;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -117,7 +119,7 @@ public class AmountAndCurrencyExchange3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInstructedAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmountAndCurrencyExchange3, Optional<AmountAndCurrencyExchangeDetails3>> mmInstructedAmount = new MMMessageAssociationEnd<AmountAndCurrencyExchange3, Optional<AmountAndCurrencyExchangeDetails3>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchange3.mmObject();
@@ -129,7 +131,17 @@ public class AmountAndCurrencyExchange3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3.mmObject();
+			type_lazy = () -> AmountAndCurrencyExchangeDetails3.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndCurrencyExchangeDetails3> getValue(AmountAndCurrencyExchange3 obj) {
+			return obj.getInstructedAmount();
+		}
+
+		@Override
+		public void setValue(AmountAndCurrencyExchange3 obj, Optional<AmountAndCurrencyExchangeDetails3> value) {
+			obj.setInstructedAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TxAmt")
@@ -166,7 +178,7 @@ public class AmountAndCurrencyExchange3 {
 	 * definition} = "Amount of the underlying transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmountAndCurrencyExchange3, Optional<AmountAndCurrencyExchangeDetails3>> mmTransactionAmount = new MMMessageAssociationEnd<AmountAndCurrencyExchange3, Optional<AmountAndCurrencyExchangeDetails3>>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmOriginalAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchange3.mmObject();
@@ -178,7 +190,17 @@ public class AmountAndCurrencyExchange3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3.mmObject();
+			type_lazy = () -> AmountAndCurrencyExchangeDetails3.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndCurrencyExchangeDetails3> getValue(AmountAndCurrencyExchange3 obj) {
+			return obj.getTransactionAmount();
+		}
+
+		@Override
+		public void setValue(AmountAndCurrencyExchange3 obj, Optional<AmountAndCurrencyExchangeDetails3> value) {
+			obj.setTransactionAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CntrValAmt")
@@ -213,11 +235,11 @@ public class AmountAndCurrencyExchange3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Set of elements used to provide the countervalue amount and  currency exchange information. \nUsage: This can be either the counter amount quoted in an FX deal, or the result of the currency information applied to an instructed amount, before deduction of charges."
+	 * "Set of elements used to provide the countervalue amount and currency exchange information. \nUsage: This can be either the counter amount quoted in an FX deal, or the result of the currency information applied to an instructed amount, before deduction of charges."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCounterValueAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmountAndCurrencyExchange3, Optional<AmountAndCurrencyExchangeDetails3>> mmCounterValueAmount = new MMMessageAssociationEnd<AmountAndCurrencyExchange3, Optional<AmountAndCurrencyExchangeDetails3>>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmResultingAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchange3.mmObject();
@@ -225,11 +247,21 @@ public class AmountAndCurrencyExchange3 {
 			xmlTag = "CntrValAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterValueAmount";
-			definition = "Set of elements used to provide the countervalue amount and  currency exchange information. \nUsage: This can be either the counter amount quoted in an FX deal, or the result of the currency information applied to an instructed amount, before deduction of charges.";
+			definition = "Set of elements used to provide the countervalue amount and currency exchange information. \nUsage: This can be either the counter amount quoted in an FX deal, or the result of the currency information applied to an instructed amount, before deduction of charges.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3.mmObject();
+			type_lazy = () -> AmountAndCurrencyExchangeDetails3.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndCurrencyExchangeDetails3> getValue(AmountAndCurrencyExchange3 obj) {
+			return obj.getCounterValueAmount();
+		}
+
+		@Override
+		public void setValue(AmountAndCurrencyExchange3 obj, Optional<AmountAndCurrencyExchangeDetails3> value) {
+			obj.setCounterValueAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AnncdPstngAmt")
@@ -268,7 +300,7 @@ public class AmountAndCurrencyExchange3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAnnouncedPostingAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmountAndCurrencyExchange3, Optional<AmountAndCurrencyExchangeDetails3>> mmAnnouncedPostingAmount = new MMMessageAssociationEnd<AmountAndCurrencyExchange3, Optional<AmountAndCurrencyExchangeDetails3>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionDistribution.mmPostingAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchange3.mmObject();
@@ -280,11 +312,21 @@ public class AmountAndCurrencyExchange3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3.mmObject();
+			type_lazy = () -> AmountAndCurrencyExchangeDetails3.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndCurrencyExchangeDetails3> getValue(AmountAndCurrencyExchange3 obj) {
+			return obj.getAnnouncedPostingAmount();
+		}
+
+		@Override
+		public void setValue(AmountAndCurrencyExchange3 obj, Optional<AmountAndCurrencyExchangeDetails3> value) {
+			obj.setAnnouncedPostingAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PrtryAmt")
-	protected List<com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails4> proprietaryAmount;
+	protected List<AmountAndCurrencyExchangeDetails4> proprietaryAmount;
 	/**
 	 * 
 	 <p>
@@ -318,7 +360,7 @@ public class AmountAndCurrencyExchange3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietaryAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmountAndCurrencyExchange3, List<AmountAndCurrencyExchangeDetails4>> mmProprietaryAmount = new MMMessageAssociationEnd<AmountAndCurrencyExchange3, List<AmountAndCurrencyExchangeDetails4>>() {
 		{
 			businessComponentTrace_lazy = () -> CashEntry.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchange3.mmObject();
@@ -329,7 +371,17 @@ public class AmountAndCurrencyExchange3 {
 			definition = "Set of elements used to provide information on the original amount and currency exchange.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails4.mmObject();
+			type_lazy = () -> AmountAndCurrencyExchangeDetails4.mmObject();
+		}
+
+		@Override
+		public List<AmountAndCurrencyExchangeDetails4> getValue(AmountAndCurrencyExchange3 obj) {
+			return obj.getProprietaryAmount();
+		}
+
+		@Override
+		public void setValue(AmountAndCurrencyExchange3 obj, List<AmountAndCurrencyExchangeDetails4> value) {
+			obj.setProprietaryAmount(value);
 		}
 	};
 
@@ -353,7 +405,7 @@ public class AmountAndCurrencyExchange3 {
 		return instructedAmount == null ? Optional.empty() : Optional.of(instructedAmount);
 	}
 
-	public AmountAndCurrencyExchange3 setInstructedAmount(com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3 instructedAmount) {
+	public AmountAndCurrencyExchange3 setInstructedAmount(AmountAndCurrencyExchangeDetails3 instructedAmount) {
 		this.instructedAmount = instructedAmount;
 		return this;
 	}
@@ -362,7 +414,7 @@ public class AmountAndCurrencyExchange3 {
 		return transactionAmount == null ? Optional.empty() : Optional.of(transactionAmount);
 	}
 
-	public AmountAndCurrencyExchange3 setTransactionAmount(com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3 transactionAmount) {
+	public AmountAndCurrencyExchange3 setTransactionAmount(AmountAndCurrencyExchangeDetails3 transactionAmount) {
 		this.transactionAmount = transactionAmount;
 		return this;
 	}
@@ -371,7 +423,7 @@ public class AmountAndCurrencyExchange3 {
 		return counterValueAmount == null ? Optional.empty() : Optional.of(counterValueAmount);
 	}
 
-	public AmountAndCurrencyExchange3 setCounterValueAmount(com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3 counterValueAmount) {
+	public AmountAndCurrencyExchange3 setCounterValueAmount(AmountAndCurrencyExchangeDetails3 counterValueAmount) {
 		this.counterValueAmount = counterValueAmount;
 		return this;
 	}
@@ -380,7 +432,7 @@ public class AmountAndCurrencyExchange3 {
 		return announcedPostingAmount == null ? Optional.empty() : Optional.of(announcedPostingAmount);
 	}
 
-	public AmountAndCurrencyExchange3 setAnnouncedPostingAmount(com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3 announcedPostingAmount) {
+	public AmountAndCurrencyExchange3 setAnnouncedPostingAmount(AmountAndCurrencyExchangeDetails3 announcedPostingAmount) {
 		this.announcedPostingAmount = announcedPostingAmount;
 		return this;
 	}
@@ -389,7 +441,7 @@ public class AmountAndCurrencyExchange3 {
 		return proprietaryAmount == null ? proprietaryAmount = new ArrayList<>() : proprietaryAmount;
 	}
 
-	public AmountAndCurrencyExchange3 setProprietaryAmount(List<com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails4> proprietaryAmount) {
+	public AmountAndCurrencyExchange3 setProprietaryAmount(List<AmountAndCurrencyExchangeDetails4> proprietaryAmount) {
 		this.proprietaryAmount = Objects.requireNonNull(proprietaryAmount);
 		return this;
 	}

@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.TradePartyRole;
+import com.tools20022.repository.entity.TradingMarket;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -75,7 +76,7 @@ import java.util.Objects;
 public class StockExchange extends TradePartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.TradingMarket> market;
+	protected List<TradingMarket> market;
 	/**
 	 * 
 	 <p>
@@ -109,7 +110,7 @@ public class StockExchange extends TradePartyRole {
 	 * definition} = "Market for which the stock exchange system operates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<StockExchange, List<TradingMarket>> mmMarket = new MMBusinessAssociationEnd<StockExchange, List<TradingMarket>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StockExchange.mmObject();
@@ -117,9 +118,19 @@ public class StockExchange extends TradePartyRole {
 			name = "Market";
 			definition = "Market for which the stock exchange system operates.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmStockExchange;
+			opposite_lazy = () -> TradingMarket.mmStockExchange;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
+			type_lazy = () -> TradingMarket.mmObject();
+		}
+
+		@Override
+		public List<TradingMarket> getValue(StockExchange obj) {
+			return obj.getMarket();
+		}
+
+		@Override
+		public void setValue(StockExchange obj, List<TradingMarket> value) {
+			obj.setMarket(value);
 		}
 	};
 
@@ -130,7 +141,7 @@ public class StockExchange extends TradePartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StockExchange";
 				definition = "Party that identifies the stock exchange.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradingMarket.mmStockExchange);
+				associationDomain_lazy = () -> Arrays.asList(TradingMarket.mmStockExchange);
 				superType_lazy = () -> TradePartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.StockExchange.mmMarket);
 			}
@@ -147,7 +158,7 @@ public class StockExchange extends TradePartyRole {
 		return market == null ? market = new ArrayList<>() : market;
 	}
 
-	public StockExchange setMarket(List<com.tools20022.repository.entity.TradingMarket> market) {
+	public StockExchange setMarket(List<TradingMarket> market) {
 		this.market = Objects.requireNonNull(market);
 		return this;
 	}

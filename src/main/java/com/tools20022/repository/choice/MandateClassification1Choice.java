@@ -115,7 +115,7 @@ public class MandateClassification1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateClassification1Choice, MandateClassification1Code> mmCode = new MMMessageAttribute<MandateClassification1Choice, MandateClassification1Code>() {
 		{
 			businessElementTrace_lazy = () -> PaymentProcessing.mmCategoryPurpose;
 			componentContext_lazy = () -> com.tools20022.repository.choice.MandateClassification1Choice.mmObject();
@@ -127,6 +127,16 @@ public class MandateClassification1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> MandateClassification1Code.mmObject();
+		}
+
+		@Override
+		public MandateClassification1Code getValue(MandateClassification1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(MandateClassification1Choice obj, MandateClassification1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -163,7 +173,7 @@ public class MandateClassification1Choice {
 	 * definition} = "Category purpose, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateClassification1Choice, Max35Text> mmProprietary = new MMMessageAttribute<MandateClassification1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentProcessing.mmCategoryPurpose;
 			componentContext_lazy = () -> com.tools20022.repository.choice.MandateClassification1Choice.mmObject();
@@ -175,6 +185,16 @@ public class MandateClassification1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(MandateClassification1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(MandateClassification1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

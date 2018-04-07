@@ -24,6 +24,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.ContactPoint;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.RemittanceLocationDetails1;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -65,6 +66,10 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "Set of elements used to provide information on the remittance advice."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.msg.RemittanceLocation2
+ * RemittanceLocation2}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -103,7 +108,7 @@ public class RemittanceLocation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRemittanceIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RemittanceLocation4, Optional<Max35Text>> mmRemittanceIdentification = new MMMessageAttribute<RemittanceLocation4, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceLocation4.mmObject();
 			isDerived = false;
@@ -115,9 +120,19 @@ public class RemittanceLocation4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(RemittanceLocation4 obj) {
+			return obj.getRemittanceIdentification();
+		}
+
+		@Override
+		public void setValue(RemittanceLocation4 obj, Optional<Max35Text> value) {
+			obj.setRemittanceIdentification(value.orElse(null));
+		}
 	};
 	@XmlElement(name = "RmtLctnDtls")
-	protected List<com.tools20022.repository.msg.RemittanceLocationDetails1> remittanceLocationDetails;
+	protected List<RemittanceLocationDetails1> remittanceLocationDetails;
 	/**
 	 * 
 	 <p>
@@ -151,7 +166,7 @@ public class RemittanceLocation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRemittanceLocationDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RemittanceLocation4, List<RemittanceLocationDetails1>> mmRemittanceLocationDetails = new MMMessageAssociationEnd<RemittanceLocation4, List<RemittanceLocationDetails1>>() {
 		{
 			businessComponentTrace_lazy = () -> ContactPoint.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceLocation4.mmObject();
@@ -162,7 +177,17 @@ public class RemittanceLocation4 {
 			definition = "Set of elements used to provide information on the location and/or delivery of the remittance information.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.RemittanceLocationDetails1.mmObject();
+			type_lazy = () -> RemittanceLocationDetails1.mmObject();
+		}
+
+		@Override
+		public List<RemittanceLocationDetails1> getValue(RemittanceLocation4 obj) {
+			return obj.getRemittanceLocationDetails();
+		}
+
+		@Override
+		public void setValue(RemittanceLocation4 obj, List<RemittanceLocationDetails1> value) {
+			obj.setRemittanceLocationDetails(value);
 		}
 	};
 
@@ -175,6 +200,7 @@ public class RemittanceLocation4 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RemittanceLocation4";
 				definition = "Set of elements used to provide information on the remittance advice.";
+				previousVersion_lazy = () -> RemittanceLocation2.mmObject();
 			}
 		});
 		return mmObject_lazy.get();
@@ -193,7 +219,7 @@ public class RemittanceLocation4 {
 		return remittanceLocationDetails == null ? remittanceLocationDetails = new ArrayList<>() : remittanceLocationDetails;
 	}
 
-	public RemittanceLocation4 setRemittanceLocationDetails(List<com.tools20022.repository.msg.RemittanceLocationDetails1> remittanceLocationDetails) {
+	public RemittanceLocation4 setRemittanceLocationDetails(List<RemittanceLocationDetails1> remittanceLocationDetails) {
 		this.remittanceLocationDetails = Objects.requireNonNull(remittanceLocationDetails);
 		return this;
 	}

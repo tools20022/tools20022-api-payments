@@ -25,7 +25,6 @@ import com.tools20022.repository.area.PaymentsInitiationLatestVersion;
 import com.tools20022.repository.msg.GroupHeader47;
 import com.tools20022.repository.msg.Mandate10;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -84,8 +83,8 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forMandateInitiationRequestV05
- * ConstraintSupplementaryDataRule.forMandateInitiationRequestV05}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#for_pain_MandateInitiationRequestV05
+ * ConstraintSupplementaryDataRule.for_pain_MandateInitiationRequestV05}</li>
  * </ul>
  * </li>
  * <li>
@@ -131,7 +130,7 @@ public class MandateInitiationRequestV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateInitiationRequestV05, GroupHeader47> mmGroupHeader = new MMMessageBuildingBlock<MandateInitiationRequestV05, GroupHeader47>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -142,12 +141,14 @@ public class MandateInitiationRequestV05 {
 			complexType_lazy = () -> GroupHeader47.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateInitiationRequestV05.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader47 getValue(MandateInitiationRequestV05 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(MandateInitiationRequestV05 obj, GroupHeader47 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "Mndt", required = true)
@@ -176,7 +177,7 @@ public class MandateInitiationRequestV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMandate = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateInitiationRequestV05, List<Mandate10>> mmMandate = new MMMessageBuildingBlock<MandateInitiationRequestV05, List<Mandate10>>() {
 		{
 			xmlTag = "Mndt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -186,12 +187,14 @@ public class MandateInitiationRequestV05 {
 			complexType_lazy = () -> Mandate10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateInitiationRequestV05.class.getMethod("getMandate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Mandate10> getValue(MandateInitiationRequestV05 obj) {
+			return obj.getMandate();
+		}
+
+		@Override
+		public void setValue(MandateInitiationRequestV05 obj, List<Mandate10> value) {
+			obj.setMandate(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -221,7 +224,7 @@ public class MandateInitiationRequestV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateInitiationRequestV05, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MandateInitiationRequestV05, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -231,19 +234,21 @@ public class MandateInitiationRequestV05 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateInitiationRequestV05.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MandateInitiationRequestV05 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MandateInitiationRequestV05 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forMandateInitiationRequestV05);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.for_pain_MandateInitiationRequestV05);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateInitiationRequestV05";
 				definition = "Scope\r\nThe MandateInitiationRequest message is sent by the initiator of the request to his agent. The initiator can either be the debtor or the creditor.\r\nThe MandateInitiationRequest message is forwarded by the agent of the initiator to the agent of the counterparty.\r\nThe MandateInitiationRequest message is used to setup the instruction that allows the debtor agent to accept instructions from the creditor, through the creditor agent, to debit the account of the debtor.\r\nUsage\r\nThe MandateInitiationRequest message can contain one or more request(s) to setup a specific mandate.\r\nThe messages can be exchanged between creditor and creditor agent or debtor and debtor agent and between creditor agent and debtor agent.\r\nThe message can also be used by an initiating party that has authority to send the message on behalf of the creditor or debtor.\r\nThe MandateInitiationRequest message can be used in domestic and cross-border scenarios.";

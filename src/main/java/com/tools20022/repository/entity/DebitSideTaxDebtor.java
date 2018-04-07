@@ -23,6 +23,8 @@ import com.tools20022.repository.entity.TaxPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.TaxInformation3;
 import com.tools20022.repository.msg.TaxInformation4;
+import com.tools20022.repository.msg.TaxInformation6;
+import com.tools20022.repository.msg.TaxInformation7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -46,6 +48,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * TaxInformation3.mmDebtor}</li>
  * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#mmDebtor
  * TaxInformation4.mmDebtor}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxInformation6#mmDebtor
+ * TaxInformation6.mmDebtor}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxInformation7#mmDebtor
+ * TaxInformation7.mmDebtor}</li>
  * </ul>
  * </li>
  * <li>
@@ -75,7 +81,7 @@ public class DebitSideTaxDebtor extends TaxPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DebitSideTaxDebtor";
 				definition = "Party on the debit side of the transaction to which the tax applies.";
-				derivationElement_lazy = () -> Arrays.asList(TaxInformation3.mmDebtor, TaxInformation4.mmDebtor);
+				derivationElement_lazy = () -> Arrays.asList(TaxInformation3.mmDebtor, TaxInformation4.mmDebtor, TaxInformation6.mmDebtor, TaxInformation7.mmDebtor);
 				superType_lazy = () -> TaxPartyRole.mmObject();
 			}
 

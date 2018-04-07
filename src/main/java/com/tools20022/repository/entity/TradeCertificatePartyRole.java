@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.entity.TradeCertificate;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -111,7 +112,7 @@ public class TradeCertificatePartyRole extends Role {
 	 * definition} = "Specifies the trade certificate issued by a party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradeCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradeCertificatePartyRole, List<TradeCertificate>> mmTradeCertificate = new MMBusinessAssociationEnd<TradeCertificatePartyRole, List<TradeCertificate>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradeCertificatePartyRole.mmObject();
@@ -122,6 +123,16 @@ public class TradeCertificatePartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmTradeCertificatePartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
+		}
+
+		@Override
+		public List<TradeCertificate> getValue(TradeCertificatePartyRole obj) {
+			return obj.getTradeCertificate();
+		}
+
+		@Override
+		public void setValue(TradeCertificatePartyRole obj, List<TradeCertificate> value) {
+			obj.setTradeCertificate(value);
 		}
 	};
 

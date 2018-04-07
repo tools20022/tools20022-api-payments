@@ -22,6 +22,7 @@ import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import com.tools20022.core.metamodel.RuntimePropertyAware;
 import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
 import com.tools20022.metamodel.constraints.AtMostOneAggregatedEnd;
@@ -39,7 +40,7 @@ import java.util.Optional;
  * The context of a BusinessAssociation must be the type of its opposite and
  * vice-versa
  */
-public class MMBusinessAssociationEnd implements MMBusinessElement {
+public class MMBusinessAssociationEnd<T, V> implements RuntimePropertyAware<T, V>, MMBusinessElement {
 
 	/**
 	 * Opposite end of a bi-directional relationship between 2

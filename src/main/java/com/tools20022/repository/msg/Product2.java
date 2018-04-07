@@ -119,7 +119,7 @@ public class Product2 {
 	 * definition} = "Product code of the item purchased."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProductCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product2, Max70Text> mmProductCode = new MMMessageAttribute<Product2, Max70Text>() {
 		{
 			businessElementTrace_lazy = () -> ProductIdentification.mmIdentifier;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
@@ -131,6 +131,16 @@ public class Product2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public Max70Text getValue(Product2 obj) {
+			return obj.getProductCode();
+		}
+
+		@Override
+		public void setValue(Product2 obj, Max70Text value) {
+			obj.setProductCode(value);
 		}
 	};
 	@XmlElement(name = "UnitOfMeasr")
@@ -167,7 +177,7 @@ public class Product2 {
 	 * definition} = "Unit of measure of the item purchased."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnitOfMeasure = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product2, Optional<UnitOfMeasure1Code>> mmUnitOfMeasure = new MMMessageAttribute<Product2, Optional<UnitOfMeasure1Code>>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmUnitOfMeasure;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
@@ -179,6 +189,16 @@ public class Product2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> UnitOfMeasure1Code.mmObject();
+		}
+
+		@Override
+		public Optional<UnitOfMeasure1Code> getValue(Product2 obj) {
+			return obj.getUnitOfMeasure();
+		}
+
+		@Override
+		public void setValue(Product2 obj, Optional<UnitOfMeasure1Code> value) {
+			obj.setUnitOfMeasure(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PdctQty")
@@ -215,7 +235,7 @@ public class Product2 {
 	 * definition} = "Product quantity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProductQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product2, Optional<DecimalNumber>> mmProductQuantity = new MMMessageAttribute<Product2, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
@@ -227,6 +247,16 @@ public class Product2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(Product2 obj) {
+			return obj.getProductQuantity();
+		}
+
+		@Override
+		public void setValue(Product2 obj, Optional<DecimalNumber> value) {
+			obj.setProductQuantity(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "UnitPric")
@@ -263,7 +293,7 @@ public class Product2 {
 	 * definition} = "Price per unit of product."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnitPrice = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product2, Optional<ImpliedCurrencyAndAmount>> mmUnitPrice = new MMMessageAttribute<Product2, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
@@ -275,6 +305,16 @@ public class Product2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(Product2 obj) {
+			return obj.getUnitPrice();
+		}
+
+		@Override
+		public void setValue(Product2 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setUnitPrice(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PdctAmt")
@@ -306,7 +346,7 @@ public class Product2 {
 	 * definition} = "Monetary value of purchased product."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProductAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product2, Optional<ImpliedCurrencyAndAmount>> mmProductAmount = new MMMessageAttribute<Product2, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 			isDerived = false;
@@ -317,6 +357,16 @@ public class Product2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(Product2 obj) {
+			return obj.getProductAmount();
+		}
+
+		@Override
+		public void setValue(Product2 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setProductAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TaxTp")
@@ -347,7 +397,7 @@ public class Product2 {
 	 * definition} = "Information on tax paid on the product."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product2, Optional<Max35Text>> mmTaxType = new MMMessageAttribute<Product2, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 			isDerived = false;
@@ -358,6 +408,16 @@ public class Product2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(Product2 obj) {
+			return obj.getTaxType();
+		}
+
+		@Override
+		public void setValue(Product2 obj, Optional<Max35Text> value) {
+			obj.setTaxType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlPdctInf")
@@ -388,7 +448,7 @@ public class Product2 {
 	 * definition} = "Additional information related to the product."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalProductInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product2, Optional<Max35Text>> mmAdditionalProductInformation = new MMMessageAttribute<Product2, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.Product2.mmObject();
 			isDerived = false;
@@ -399,6 +459,16 @@ public class Product2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(Product2 obj) {
+			return obj.getAdditionalProductInformation();
+		}
+
+		@Override
+		public void setValue(Product2 obj, Optional<Max35Text> value) {
+			obj.setAdditionalProductInformation(value.orElse(null));
 		}
 	};
 

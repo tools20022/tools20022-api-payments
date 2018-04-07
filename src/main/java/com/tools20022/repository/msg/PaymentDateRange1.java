@@ -108,7 +108,7 @@ public class PaymentDateRange1 {
 	 * "Unique and unambiguous identification of the payment schedule."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPaymentScheduleIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentDateRange1, Optional<Max35Text>> mmPaymentScheduleIdentification = new MMMessageAttribute<PaymentDateRange1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentDateRange1.mmObject();
 			isDerived = false;
@@ -119,6 +119,16 @@ public class PaymentDateRange1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(PaymentDateRange1 obj) {
+			return obj.getPaymentScheduleIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentDateRange1 obj, Optional<Max35Text> value) {
+			obj.setPaymentScheduleIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "XpctdDt")
@@ -160,7 +170,7 @@ public class PaymentDateRange1 {
 	 * ShipmentDateRange1.mmEarliestShipmentDate}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentDateRange1, Optional<ISODate>> mmExpectedDate = new MMMessageAttribute<PaymentDateRange1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentSchedule.mmDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentDateRange1.mmObject();
@@ -173,6 +183,16 @@ public class PaymentDateRange1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(PaymentDateRange1 obj) {
+			return obj.getExpectedDate();
+		}
+
+		@Override
+		public void setValue(PaymentDateRange1 obj, Optional<ISODate> value) {
+			obj.setExpectedDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "DueDt")
@@ -214,7 +234,7 @@ public class PaymentDateRange1 {
 	 * ShipmentDateRange1.mmLatestShipmentDate}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentDateRange1, Optional<ISODate>> mmDueDate = new MMMessageAttribute<PaymentDateRange1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentSchedule.mmDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentDateRange1.mmObject();
@@ -227,6 +247,16 @@ public class PaymentDateRange1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(PaymentDateRange1 obj) {
+			return obj.getDueDate();
+		}
+
+		@Override
+		public void setValue(PaymentDateRange1 obj, Optional<ISODate> value) {
+			obj.setDueDate(value.orElse(null));
 		}
 	};
 

@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.entity.CardholderRole;
 import com.tools20022.repository.entity.CardPaymentAcquiring;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CardholderAuthentication2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -138,7 +139,7 @@ public class PaymentContext3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCardPresent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, Optional<TrueFalseIndicator>> mmCardPresent = new MMMessageAttribute<PaymentContext3, Optional<TrueFalseIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmCardPresent;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -150,6 +151,16 @@ public class PaymentContext3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(PaymentContext3 obj) {
+			return obj.getCardPresent();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, Optional<TrueFalseIndicator> value) {
+			obj.setCardPresent(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CrdhldrPres")
@@ -189,7 +200,7 @@ public class PaymentContext3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCardholderPresent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, Optional<TrueFalseIndicator>> mmCardholderPresent = new MMMessageAttribute<PaymentContext3, Optional<TrueFalseIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmCardholderPresent;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -201,6 +212,16 @@ public class PaymentContext3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(PaymentContext3 obj) {
+			return obj.getCardholderPresent();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, Optional<TrueFalseIndicator> value) {
+			obj.setCardholderPresent(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OnLineCntxt")
@@ -238,7 +259,7 @@ public class PaymentContext3 {
 	 * definition} = "On-line or off-line context of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOnLineContext = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, Optional<TrueFalseIndicator>> mmOnLineContext = new MMMessageAttribute<PaymentContext3, Optional<TrueFalseIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmOnLineContext;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -250,6 +271,16 @@ public class PaymentContext3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(PaymentContext3 obj) {
+			return obj.getOnLineContext();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, Optional<TrueFalseIndicator> value) {
+			obj.setOnLineContext(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AttndncCntxt")
@@ -288,7 +319,7 @@ public class PaymentContext3 {
 	 * "Human attendance at the POI location during the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttendanceContext = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, Optional<AttendanceContext1Code>> mmAttendanceContext = new MMMessageAttribute<PaymentContext3, Optional<AttendanceContext1Code>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmAttendanceContext;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -300,6 +331,16 @@ public class PaymentContext3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> AttendanceContext1Code.mmObject();
+		}
+
+		@Override
+		public Optional<AttendanceContext1Code> getValue(PaymentContext3 obj) {
+			return obj.getAttendanceContext();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, Optional<AttendanceContext1Code> value) {
+			obj.setAttendanceContext(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TxEnvt")
@@ -337,7 +378,7 @@ public class PaymentContext3 {
 	 * definition} = "Indicates the environment of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionEnvironment = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, Optional<TransactionEnvironment1Code>> mmTransactionEnvironment = new MMMessageAttribute<PaymentContext3, Optional<TransactionEnvironment1Code>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmTransactionEnvironment;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -349,6 +390,16 @@ public class PaymentContext3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TransactionEnvironment1Code.mmObject();
+		}
+
+		@Override
+		public Optional<TransactionEnvironment1Code> getValue(PaymentContext3 obj) {
+			return obj.getTransactionEnvironment();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, Optional<TransactionEnvironment1Code> value) {
+			obj.setTransactionEnvironment(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TxChanl")
@@ -388,7 +439,7 @@ public class PaymentContext3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionChannel = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, Optional<TransactionChannel1Code>> mmTransactionChannel = new MMMessageAttribute<PaymentContext3, Optional<TransactionChannel1Code>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmTransactionChannel;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -400,6 +451,16 @@ public class PaymentContext3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TransactionChannel1Code.mmObject();
+		}
+
+		@Override
+		public Optional<TransactionChannel1Code> getValue(PaymentContext3 obj) {
+			return obj.getTransactionChannel();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, Optional<TransactionChannel1Code> value) {
+			obj.setTransactionChannel(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AttndntMsgCpbl")
@@ -439,7 +500,7 @@ public class PaymentContext3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttendantMessageCapable = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, Optional<TrueFalseIndicator>> mmAttendantMessageCapable = new MMMessageAttribute<PaymentContext3, Optional<TrueFalseIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmAttendantMessageCapable;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -451,6 +512,16 @@ public class PaymentContext3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(PaymentContext3 obj) {
+			return obj.getAttendantMessageCapable();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, Optional<TrueFalseIndicator> value) {
+			obj.setAttendantMessageCapable(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AttndntLang")
@@ -488,7 +559,7 @@ public class PaymentContext3 {
 	 * definition} = "Language used to display messages to the attendant."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttendantLanguage = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, Optional<ISO2ALanguageCode>> mmAttendantLanguage = new MMMessageAttribute<PaymentContext3, Optional<ISO2ALanguageCode>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmAttendantLanguage;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -500,6 +571,16 @@ public class PaymentContext3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISO2ALanguageCode.mmObject();
+		}
+
+		@Override
+		public Optional<ISO2ALanguageCode> getValue(PaymentContext3 obj) {
+			return obj.getAttendantLanguage();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, Optional<ISO2ALanguageCode> value) {
+			obj.setAttendantLanguage(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CardDataNtryMd", required = true)
@@ -537,7 +618,7 @@ public class PaymentContext3 {
 	 * definition} = "Entry mode of the card data."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCardDataEntryMode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, CardDataReading1Code> mmCardDataEntryMode = new MMMessageAttribute<PaymentContext3, CardDataReading1Code>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmCardDataEntryMode;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -549,6 +630,16 @@ public class PaymentContext3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CardDataReading1Code.mmObject();
+		}
+
+		@Override
+		public CardDataReading1Code getValue(PaymentContext3 obj) {
+			return obj.getCardDataEntryMode();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, CardDataReading1Code value) {
+			obj.setCardDataEntryMode(value);
 		}
 	};
 	@XmlElement(name = "FllbckInd")
@@ -586,7 +677,7 @@ public class PaymentContext3 {
 	 * definition} = "Indicator of a card entry mode fallback."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFallbackIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, Optional<TrueFalseIndicator>> mmFallbackIndicator = new MMMessageAttribute<PaymentContext3, Optional<TrueFalseIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmFallbackIndicator;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -598,6 +689,16 @@ public class PaymentContext3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(PaymentContext3 obj) {
+			return obj.getFallbackIndicator();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, Optional<TrueFalseIndicator> value) {
+			obj.setFallbackIndicator(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AuthntcnMtd")
@@ -635,7 +736,7 @@ public class PaymentContext3 {
 	 * definition} = "Method used to authenticate a cardholder."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAuthenticationMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentContext3, Optional<CardholderAuthentication2>> mmAuthenticationMethod = new MMMessageAttribute<PaymentContext3, Optional<CardholderAuthentication2>>() {
 		{
 			businessElementTrace_lazy = () -> CardholderRole.mmAuthentication;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentContext3.mmObject();
@@ -646,7 +747,17 @@ public class PaymentContext3 {
 			definition = "Method used to authenticate a cardholder.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication2.mmObject();
+			complexType_lazy = () -> CardholderAuthentication2.mmObject();
+		}
+
+		@Override
+		public Optional<CardholderAuthentication2> getValue(PaymentContext3 obj) {
+			return obj.getAuthenticationMethod();
+		}
+
+		@Override
+		public void setValue(PaymentContext3 obj, Optional<CardholderAuthentication2> value) {
+			obj.setAuthenticationMethod(value.orElse(null));
 		}
 	};
 
@@ -761,7 +872,7 @@ public class PaymentContext3 {
 		return authenticationMethod == null ? Optional.empty() : Optional.of(authenticationMethod);
 	}
 
-	public PaymentContext3 setAuthenticationMethod(com.tools20022.repository.msg.CardholderAuthentication2 authenticationMethod) {
+	public PaymentContext3 setAuthenticationMethod(CardholderAuthentication2 authenticationMethod) {
 		this.authenticationMethod = authenticationMethod;
 		return this;
 	}

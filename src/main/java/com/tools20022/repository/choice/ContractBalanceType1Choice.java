@@ -106,7 +106,7 @@ public class ContractBalanceType1Choice {
 	 * definition} = "Specifies the nature of a balance, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractBalanceType1Choice, ExternalContractBalanceType1Code> mmCode = new MMMessageAttribute<ContractBalanceType1Choice, ExternalContractBalanceType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ContractBalanceType1Choice.mmObject();
@@ -118,6 +118,16 @@ public class ContractBalanceType1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalContractBalanceType1Code.mmObject();
+		}
+
+		@Override
+		public ExternalContractBalanceType1Code getValue(ContractBalanceType1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ContractBalanceType1Choice obj, ExternalContractBalanceType1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -155,7 +165,7 @@ public class ContractBalanceType1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractBalanceType1Choice, Max35Text> mmProprietary = new MMMessageAttribute<ContractBalanceType1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ContractBalanceType1Choice.mmObject();
@@ -167,6 +177,16 @@ public class ContractBalanceType1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ContractBalanceType1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ContractBalanceType1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

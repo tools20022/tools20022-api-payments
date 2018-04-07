@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -111,7 +112,7 @@ public class ChargePartyRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAdjustment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ChargePartyRole, List<Adjustment>> mmAdjustment = new MMBusinessAssociationEnd<ChargePartyRole, List<Adjustment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ChargePartyRole.mmObject();
@@ -122,6 +123,16 @@ public class ChargePartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Adjustment.mmChargesPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
+		}
+
+		@Override
+		public List<Adjustment> getValue(ChargePartyRole obj) {
+			return obj.getAdjustment();
+		}
+
+		@Override
+		public void setValue(ChargePartyRole obj, List<Adjustment> value) {
+			obj.setAdjustment(value);
 		}
 	};
 

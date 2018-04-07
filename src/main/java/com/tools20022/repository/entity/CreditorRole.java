@@ -22,7 +22,9 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.PaymentPartyRole;
+import com.tools20022.repository.entity.Scheme;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DirectDebitInstructionDetails1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -53,6 +55,15 @@ import java.util.Objects;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmCreditorRole
  * Scheme.mmCreditorRole}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.DirectDebitInstructionDetails1#mmCreditor
+ * DirectDebitInstructionDetails1.mmCreditor}</li>
  * </ul>
  * </li>
  * <li>
@@ -105,7 +116,7 @@ public class CreditorRole extends PaymentPartyRole {
 	 * definition} = "Credit party that signs a direct debit mandate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSchemeIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CreditorRole, Scheme> mmSchemeIdentification = new MMBusinessAssociationEnd<CreditorRole, Scheme>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CreditorRole.mmObject();
@@ -114,9 +125,19 @@ public class CreditorRole extends PaymentPartyRole {
 			definition = "Credit party that signs a direct debit mandate.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Scheme.mmCreditorRole;
+			opposite_lazy = () -> Scheme.mmCreditorRole;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
+			type_lazy = () -> Scheme.mmObject();
+		}
+
+		@Override
+		public Scheme getValue(CreditorRole obj) {
+			return obj.getSchemeIdentification();
+		}
+
+		@Override
+		public void setValue(CreditorRole obj, Scheme value) {
+			obj.setSchemeIdentification(value);
 		}
 	};
 
@@ -127,7 +148,8 @@ public class CreditorRole extends PaymentPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditorRole";
 				definition = "Party to which an amount of money is due.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Scheme.mmCreditorRole);
+				associationDomain_lazy = () -> Arrays.asList(Scheme.mmCreditorRole);
+				derivationElement_lazy = () -> Arrays.asList(DirectDebitInstructionDetails1.mmCreditor);
 				superType_lazy = () -> PaymentPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CreditorRole.mmSchemeIdentification);
 			}
@@ -144,7 +166,7 @@ public class CreditorRole extends PaymentPartyRole {
 		return schemeIdentification;
 	}
 
-	public CreditorRole setSchemeIdentification(com.tools20022.repository.entity.Scheme schemeIdentification) {
+	public CreditorRole setSchemeIdentification(Scheme schemeIdentification) {
 		this.schemeIdentification = Objects.requireNonNull(schemeIdentification);
 		return this;
 	}

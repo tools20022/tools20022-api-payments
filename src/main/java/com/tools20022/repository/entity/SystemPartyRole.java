@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -87,7 +88,7 @@ import java.util.Objects;
 public class SystemPartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.System> relatedSystem;
+	protected List<System> relatedSystem;
 	/**
 	 * 
 	 <p>
@@ -120,7 +121,7 @@ public class SystemPartyRole extends Role {
 	 * definition} = "Specifies the system for which a party plays a role"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SystemPartyRole, List<System>> mmRelatedSystem = new MMBusinessAssociationEnd<SystemPartyRole, List<System>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemPartyRole.mmObject();
@@ -128,9 +129,19 @@ public class SystemPartyRole extends Role {
 			name = "RelatedSystem";
 			definition = "Specifies the system for which a party plays a role";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.System.mmPartyRole;
+			opposite_lazy = () -> System.mmPartyRole;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
+			type_lazy = () -> System.mmObject();
+		}
+
+		@Override
+		public List<System> getValue(SystemPartyRole obj) {
+			return obj.getRelatedSystem();
+		}
+
+		@Override
+		public void setValue(SystemPartyRole obj, List<System> value) {
+			obj.setRelatedSystem(value);
 		}
 	};
 
@@ -141,7 +152,7 @@ public class SystemPartyRole extends Role {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemPartyRole";
 				definition = "Role played by a party in a system.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.System.mmPartyRole);
+				associationDomain_lazy = () -> Arrays.asList(System.mmPartyRole);
 				subType_lazy = () -> Arrays.asList(SystemMemberRole.mmObject(), TransactionAdministrator.mmObject(), TerminalManagerRole.mmObject(), ClearingMemberRole.mmObject());
 				superType_lazy = () -> Role.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemPartyRole.mmRelatedSystem);
@@ -159,7 +170,7 @@ public class SystemPartyRole extends Role {
 		return relatedSystem == null ? relatedSystem = new ArrayList<>() : relatedSystem;
 	}
 
-	public SystemPartyRole setRelatedSystem(List<com.tools20022.repository.entity.System> relatedSystem) {
+	public SystemPartyRole setRelatedSystem(List<System> relatedSystem) {
 		this.relatedSystem = Objects.requireNonNull(relatedSystem);
 		return this;
 	}

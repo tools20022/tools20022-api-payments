@@ -287,14 +287,14 @@ public class SettlementAdviceTypeCode extends MMCode {
 	 * name} = "Refund"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Settlement advice related to a refund. "</li>
+	 * definition} = "Settlement advice related to a refund."</li>
 	 * </ul>
 	 */
 	public static final SettlementAdviceTypeCode Refund = new SettlementAdviceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Refund";
-			definition = "Settlement advice related to a refund. ";
+			definition = "Settlement advice related to a refund.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettlementAdviceTypeCode.mmObject();
 			codeName = "REFD";
 		}
@@ -317,15 +317,14 @@ public class SettlementAdviceTypeCode extends MMCode {
 	 * name} = "CorrespondentBankCharges"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Settlement advice related to correspondent bank charges. "
-	 * </li>
+	 * definition} = "Settlement advice related to correspondent bank charges."</li>
 	 * </ul>
 	 */
 	public static final SettlementAdviceTypeCode CorrespondentBankCharges = new SettlementAdviceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorrespondentBankCharges";
-			definition = "Settlement advice related to correspondent bank charges. ";
+			definition = "Settlement advice related to correspondent bank charges.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettlementAdviceTypeCode.mmObject();
 			codeName = "CORP";
 		}

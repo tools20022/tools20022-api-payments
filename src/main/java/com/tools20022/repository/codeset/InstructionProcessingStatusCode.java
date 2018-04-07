@@ -428,7 +428,7 @@ public class InstructionProcessingStatusCode extends MMCode {
 	};
 	/**
 	 * Cancellation request from the counterparty is awaiting for your
-	 * cancellation request or your concent.
+	 * cancellation request or your consent.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -446,7 +446,7 @@ public class InstructionProcessingStatusCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Cancellation request from the counterparty is awaiting for your cancellation request or your concent."
+	 * "Cancellation request from the counterparty is awaiting for your cancellation request or your consent."
 	 * </li>
 	 * </ul>
 	 */
@@ -454,7 +454,7 @@ public class InstructionProcessingStatusCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CancellationRequested";
-			definition = "Cancellation request from the counterparty is awaiting for your cancellation request or your concent.";
+			definition = "Cancellation request from the counterparty is awaiting for your cancellation request or your consent.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InstructionProcessingStatusCode.mmObject();
 			codeName = "CPRC";
 		}
@@ -1179,7 +1179,7 @@ public class InstructionProcessingStatusCode extends MMCode {
 	};
 	/**
 	 * Modification request from the counterparty is awaiting for your
-	 * modification request or your concent.
+	 * modification request or your consent.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1197,7 +1197,7 @@ public class InstructionProcessingStatusCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Modification request from the counterparty is awaiting for your modification request or your concent."
+	 * "Modification request from the counterparty is awaiting for your modification request or your consent."
 	 * </li>
 	 * </ul>
 	 */
@@ -1205,7 +1205,7 @@ public class InstructionProcessingStatusCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModificationRequested";
-			definition = "Modification request from the counterparty is awaiting for your modification request or your concent.";
+			definition = "Modification request from the counterparty is awaiting for your modification request or your consent.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InstructionProcessingStatusCode.mmObject();
 			codeName = "MPRC";
 		}

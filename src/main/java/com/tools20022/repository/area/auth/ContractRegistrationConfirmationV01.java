@@ -25,7 +25,6 @@ import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.msg.CurrencyControlHeader2;
 import com.tools20022.repository.msg.RegisteredContract4;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -110,7 +109,7 @@ public class ContractRegistrationConfirmationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ContractRegistrationConfirmationV01, CurrencyControlHeader2> mmGroupHeader = new MMMessageBuildingBlock<ContractRegistrationConfirmationV01, CurrencyControlHeader2>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,12 +120,14 @@ public class ContractRegistrationConfirmationV01 {
 			complexType_lazy = () -> CurrencyControlHeader2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ContractRegistrationConfirmationV01.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyControlHeader2 getValue(ContractRegistrationConfirmationV01 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationConfirmationV01 obj, CurrencyControlHeader2 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "RegdCtrct", required = true)
@@ -156,7 +157,7 @@ public class ContractRegistrationConfirmationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRegisteredContract = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ContractRegistrationConfirmationV01, List<RegisteredContract4>> mmRegisteredContract = new MMMessageBuildingBlock<ContractRegistrationConfirmationV01, List<RegisteredContract4>>() {
 		{
 			xmlTag = "RegdCtrct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,12 +167,14 @@ public class ContractRegistrationConfirmationV01 {
 			complexType_lazy = () -> RegisteredContract4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ContractRegistrationConfirmationV01.class.getMethod("getRegisteredContract", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<RegisteredContract4> getValue(ContractRegistrationConfirmationV01 obj) {
+			return obj.getRegisteredContract();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationConfirmationV01 obj, List<RegisteredContract4> value) {
+			obj.setRegisteredContract(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -201,7 +204,7 @@ public class ContractRegistrationConfirmationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ContractRegistrationConfirmationV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<ContractRegistrationConfirmationV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -211,12 +214,14 @@ public class ContractRegistrationConfirmationV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ContractRegistrationConfirmationV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(ContractRegistrationConfirmationV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationConfirmationV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

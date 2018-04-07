@@ -68,7 +68,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "PositionEffectCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Indicates whether the resulting position after a  trade should be an opening position or closing position."
+ * "Indicates whether the resulting position after a trade should be an opening position or closing position."
  * </li>
  * </ul>
  */
@@ -247,7 +247,7 @@ public class PositionEffectCode extends MMCode {
 				example = Arrays.asList("OPEN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PositionEffectCode";
-				definition = "Indicates whether the resulting position after a  trade should be an opening position or closing position.";
+				definition = "Indicates whether the resulting position after a trade should be an opening position or closing position.";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PositionEffectCode.Open, com.tools20022.repository.codeset.PositionEffectCode.Close, com.tools20022.repository.codeset.PositionEffectCode.Rolled,
 						com.tools20022.repository.codeset.PositionEffectCode.Fifo, com.tools20022.repository.codeset.PositionEffectCode.Lifo);
 			}

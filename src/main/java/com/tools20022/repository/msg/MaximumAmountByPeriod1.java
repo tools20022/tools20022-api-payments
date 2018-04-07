@@ -108,7 +108,7 @@ public class MaximumAmountByPeriod1 {
 	 * definition} = "Maximum amount allowed over a specific period of time."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaximumAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MaximumAmountByPeriod1, ActiveCurrencyAndAmount> mmMaximumAmount = new MMMessageAttribute<MaximumAmountByPeriod1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> OperationThreshold.mmMaximumAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.MaximumAmountByPeriod1.mmObject();
@@ -120,6 +120,16 @@ public class MaximumAmountByPeriod1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(MaximumAmountByPeriod1 obj) {
+			return obj.getMaximumAmount();
+		}
+
+		@Override
+		public void setValue(MaximumAmountByPeriod1 obj, ActiveCurrencyAndAmount value) {
+			obj.setMaximumAmount(value);
 		}
 	};
 	@XmlElement(name = "NbOfDays", required = true)
@@ -157,7 +167,7 @@ public class MaximumAmountByPeriod1 {
 	 * definition} = "Period specified as a number of days."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfDays = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MaximumAmountByPeriod1, Max3NumericText> mmNumberOfDays = new MMMessageAttribute<MaximumAmountByPeriod1, Max3NumericText>() {
 		{
 			businessElementTrace_lazy = () -> BankOperation.mmApplicablePeriod;
 			componentContext_lazy = () -> com.tools20022.repository.msg.MaximumAmountByPeriod1.mmObject();
@@ -169,6 +179,16 @@ public class MaximumAmountByPeriod1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
+		}
+
+		@Override
+		public Max3NumericText getValue(MaximumAmountByPeriod1 obj) {
+			return obj.getNumberOfDays();
+		}
+
+		@Override
+		public void setValue(MaximumAmountByPeriod1 obj, Max3NumericText value) {
+			obj.setNumberOfDays(value);
 		}
 	};
 

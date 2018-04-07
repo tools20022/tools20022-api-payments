@@ -104,7 +104,7 @@ public class TaxAmountType1Choice {
 	 * definition} = "Specifies the amount type, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxAmountType1Choice, ExternalTaxAmountType1Code> mmCode = new MMMessageAttribute<TaxAmountType1Choice, ExternalTaxAmountType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.TaxAmountType1Choice.mmObject();
@@ -116,6 +116,16 @@ public class TaxAmountType1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalTaxAmountType1Code.mmObject();
+		}
+
+		@Override
+		public ExternalTaxAmountType1Code getValue(TaxAmountType1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(TaxAmountType1Choice obj, ExternalTaxAmountType1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -151,7 +161,7 @@ public class TaxAmountType1Choice {
 	 * definition} = "Specifies the amount type, in a free-text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxAmountType1Choice, Max35Text> mmProprietary = new MMMessageAttribute<TaxAmountType1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.TaxAmountType1Choice.mmObject();
@@ -163,6 +173,16 @@ public class TaxAmountType1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(TaxAmountType1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(TaxAmountType1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

@@ -27,6 +27,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Agreement;
 import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -134,7 +135,7 @@ public class SupportingDocument1 {
 	 * "Unique and unambiguous identification of the supporting document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSupportingDocumentIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SupportingDocument1, Max35Text> mmSupportingDocumentIdentification = new MMMessageAttribute<SupportingDocument1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
@@ -145,6 +146,16 @@ public class SupportingDocument1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(SupportingDocument1 obj) {
+			return obj.getSupportingDocumentIdentification();
+		}
+
+		@Override
+		public void setValue(SupportingDocument1 obj, Max35Text value) {
+			obj.setSupportingDocumentIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgnlReqId")
@@ -176,7 +187,7 @@ public class SupportingDocument1 {
 	 * definition} = "Unique identification of the original query message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalRequestIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SupportingDocument1, Optional<Max35Text>> mmOriginalRequestIdentification = new MMMessageAttribute<SupportingDocument1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
@@ -187,6 +198,16 @@ public class SupportingDocument1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(SupportingDocument1 obj) {
+			return obj.getOriginalRequestIdentification();
+		}
+
+		@Override
+		public void setValue(SupportingDocument1 obj, Optional<Max35Text> value) {
+			obj.setOriginalRequestIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Cert", required = true)
@@ -225,7 +246,7 @@ public class SupportingDocument1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCertificate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SupportingDocument1, DocumentIdentification28> mmCertificate = new MMMessageAssociationEnd<SupportingDocument1, DocumentIdentification28>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmCertificate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
@@ -237,7 +258,17 @@ public class SupportingDocument1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DocumentIdentification28.mmObject();
+			type_lazy = () -> DocumentIdentification28.mmObject();
+		}
+
+		@Override
+		public DocumentIdentification28 getValue(SupportingDocument1 obj) {
+			return obj.getCertificate();
+		}
+
+		@Override
+		public void setValue(SupportingDocument1 obj, DocumentIdentification28 value) {
+			obj.setCertificate(value);
 		}
 	};
 	@XmlElement(name = "AcctOwnr", required = true)
@@ -273,7 +304,7 @@ public class SupportingDocument1 {
 	 * definition} = "Party that legally owns the cash account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountOwner = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SupportingDocument1, PartyIdentification77> mmAccountOwner = new MMMessageAssociationEnd<SupportingDocument1, PartyIdentification77>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmReportingParty;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
@@ -285,7 +316,17 @@ public class SupportingDocument1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification77.mmObject();
+			type_lazy = () -> PartyIdentification77.mmObject();
+		}
+
+		@Override
+		public PartyIdentification77 getValue(SupportingDocument1 obj) {
+			return obj.getAccountOwner();
+		}
+
+		@Override
+		public void setValue(SupportingDocument1 obj, PartyIdentification77 value) {
+			obj.setAccountOwner(value);
 		}
 	};
 	@XmlElement(name = "AcctSvcr", required = true)
@@ -324,7 +365,7 @@ public class SupportingDocument1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountServicer = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SupportingDocument1, BranchAndFinancialInstitutionIdentification5> mmAccountServicer = new MMMessageAssociationEnd<SupportingDocument1, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmRegistrationAgent;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
@@ -336,7 +377,17 @@ public class SupportingDocument1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(SupportingDocument1 obj) {
+			return obj.getAccountServicer();
+		}
+
+		@Override
+		public void setValue(SupportingDocument1 obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setAccountServicer(value);
 		}
 	};
 	@XmlElement(name = "Amdmnt")
@@ -372,7 +423,7 @@ public class SupportingDocument1 {
 	 * definition} = "Amendment indicator details."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAmendment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SupportingDocument1, Optional<DocumentAmendment1>> mmAmendment = new MMMessageAssociationEnd<SupportingDocument1, Optional<DocumentAmendment1>>() {
 		{
 			businessComponentTrace_lazy = () -> RegisteredContract.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
@@ -384,7 +435,17 @@ public class SupportingDocument1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DocumentAmendment1.mmObject();
+			type_lazy = () -> DocumentAmendment1.mmObject();
+		}
+
+		@Override
+		public Optional<DocumentAmendment1> getValue(SupportingDocument1 obj) {
+			return obj.getAmendment();
+		}
+
+		@Override
+		public void setValue(SupportingDocument1 obj, Optional<DocumentAmendment1> value) {
+			obj.setAmendment(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CtrctRef", required = true)
@@ -423,7 +484,7 @@ public class SupportingDocument1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContractReference = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SupportingDocument1, ContractRegistrationReference1Choice> mmContractReference = new MMMessageAssociationEnd<SupportingDocument1, ContractRegistrationReference1Choice>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
@@ -437,9 +498,19 @@ public class SupportingDocument1 {
 			isComposite = true;
 			type_lazy = () -> ContractRegistrationReference1Choice.mmObject();
 		}
+
+		@Override
+		public ContractRegistrationReference1Choice getValue(SupportingDocument1 obj) {
+			return obj.getContractReference();
+		}
+
+		@Override
+		public void setValue(SupportingDocument1 obj, ContractRegistrationReference1Choice value) {
+			obj.setContractReference(value);
+		}
 	};
 	@XmlElement(name = "Ntry", required = true)
-	protected List<com.tools20022.repository.msg.SupportingDocumentEntry1> entry;
+	protected List<SupportingDocumentEntry1> entry;
 	/**
 	 * 
 	 <p>
@@ -472,7 +543,7 @@ public class SupportingDocument1 {
 	 * definition} = "Individual entry of the supporting document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEntry = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SupportingDocument1, List<SupportingDocumentEntry1>> mmEntry = new MMMessageAssociationEnd<SupportingDocument1, List<SupportingDocumentEntry1>>() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDocument;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
@@ -483,11 +554,21 @@ public class SupportingDocument1 {
 			definition = "Individual entry of the supporting document.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SupportingDocumentEntry1.mmObject();
+			type_lazy = () -> SupportingDocumentEntry1.mmObject();
+		}
+
+		@Override
+		public List<SupportingDocumentEntry1> getValue(SupportingDocument1 obj) {
+			return obj.getEntry();
+		}
+
+		@Override
+		public void setValue(SupportingDocument1 obj, List<SupportingDocumentEntry1> value) {
+			obj.setEntry(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
-	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
+	protected List<SupplementaryData1> supplementaryData;
 	/**
 	 * 
 	 <p>
@@ -516,7 +597,7 @@ public class SupportingDocument1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SupportingDocument1, List<SupplementaryData1>> mmSupplementaryData = new MMMessageAssociationEnd<SupportingDocument1, List<SupplementaryData1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupportingDocument1.mmObject();
 			isDerived = false;
@@ -526,7 +607,17 @@ public class SupportingDocument1 {
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
+			type_lazy = () -> SupplementaryData1.mmObject();
+		}
+
+		@Override
+		public List<SupplementaryData1> getValue(SupportingDocument1 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(SupportingDocument1 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -570,7 +661,7 @@ public class SupportingDocument1 {
 		return certificate;
 	}
 
-	public SupportingDocument1 setCertificate(com.tools20022.repository.msg.DocumentIdentification28 certificate) {
+	public SupportingDocument1 setCertificate(DocumentIdentification28 certificate) {
 		this.certificate = Objects.requireNonNull(certificate);
 		return this;
 	}
@@ -579,7 +670,7 @@ public class SupportingDocument1 {
 		return accountOwner;
 	}
 
-	public SupportingDocument1 setAccountOwner(com.tools20022.repository.msg.PartyIdentification77 accountOwner) {
+	public SupportingDocument1 setAccountOwner(PartyIdentification77 accountOwner) {
 		this.accountOwner = Objects.requireNonNull(accountOwner);
 		return this;
 	}
@@ -588,7 +679,7 @@ public class SupportingDocument1 {
 		return accountServicer;
 	}
 
-	public SupportingDocument1 setAccountServicer(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 accountServicer) {
+	public SupportingDocument1 setAccountServicer(BranchAndFinancialInstitutionIdentification5 accountServicer) {
 		this.accountServicer = Objects.requireNonNull(accountServicer);
 		return this;
 	}
@@ -597,7 +688,7 @@ public class SupportingDocument1 {
 		return amendment == null ? Optional.empty() : Optional.of(amendment);
 	}
 
-	public SupportingDocument1 setAmendment(com.tools20022.repository.msg.DocumentAmendment1 amendment) {
+	public SupportingDocument1 setAmendment(DocumentAmendment1 amendment) {
 		this.amendment = amendment;
 		return this;
 	}
@@ -615,7 +706,7 @@ public class SupportingDocument1 {
 		return entry == null ? entry = new ArrayList<>() : entry;
 	}
 
-	public SupportingDocument1 setEntry(List<com.tools20022.repository.msg.SupportingDocumentEntry1> entry) {
+	public SupportingDocument1 setEntry(List<SupportingDocumentEntry1> entry) {
 		this.entry = Objects.requireNonNull(entry);
 		return this;
 	}
@@ -624,7 +715,7 @@ public class SupportingDocument1 {
 		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public SupportingDocument1 setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+	public SupportingDocument1 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
 		this.supplementaryData = Objects.requireNonNull(supplementaryData);
 		return this;
 	}

@@ -103,7 +103,7 @@ public class VerificationReason1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VerificationReason1Choice, ExternalVerificationReason1Code> mmCode = new MMMessageAttribute<VerificationReason1Choice, ExternalVerificationReason1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.VerificationReason1Choice.mmObject();
 			isDerived = false;
@@ -114,6 +114,16 @@ public class VerificationReason1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalVerificationReason1Code.mmObject();
+		}
+
+		@Override
+		public ExternalVerificationReason1Code getValue(VerificationReason1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(VerificationReason1Choice obj, ExternalVerificationReason1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -147,7 +157,7 @@ public class VerificationReason1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VerificationReason1Choice, Max35Text> mmProprietary = new MMMessageAttribute<VerificationReason1Choice, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.VerificationReason1Choice.mmObject();
 			isDerived = false;
@@ -158,6 +168,16 @@ public class VerificationReason1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(VerificationReason1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(VerificationReason1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

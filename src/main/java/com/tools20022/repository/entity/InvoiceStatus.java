@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Invoice;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
@@ -104,7 +105,7 @@ public class InvoiceStatus extends Status {
 	 * definition} = "Invoice for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvoice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoiceStatus, com.tools20022.repository.entity.Invoice> mmInvoice = new MMBusinessAssociationEnd<InvoiceStatus, com.tools20022.repository.entity.Invoice>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceStatus.mmObject();
@@ -116,6 +117,16 @@ public class InvoiceStatus extends Status {
 			opposite_lazy = () -> com.tools20022.repository.entity.Invoice.mmInvoiceStatus;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Invoice getValue(InvoiceStatus obj) {
+			return obj.getInvoice();
+		}
+
+		@Override
+		public void setValue(InvoiceStatus obj, com.tools20022.repository.entity.Invoice value) {
+			obj.setInvoice(value);
 		}
 	};
 

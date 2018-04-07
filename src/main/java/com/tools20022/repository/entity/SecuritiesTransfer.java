@@ -25,9 +25,8 @@ import com.tools20022.repository.codeset.TransferTypeCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
-import com.tools20022.repository.entity.ObligationFulfilment;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -185,7 +184,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTransfer, Max35Text> mmIdentification = new MMBusinessAttribute<SecuritiesTransfer, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -197,12 +196,14 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransfer.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTransfer obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected SecuritiesQuantity transferredQuantity;
@@ -242,7 +243,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Total quantity of securities settled."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTransferredQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTransfer, SecuritiesQuantity> mmTransferredQuantity = new MMBusinessAssociationEnd<SecuritiesTransfer, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -252,12 +253,22 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			definition = "Total quantity of securities settled.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmSecuritiesTransfer;
+			opposite_lazy = () -> SecuritiesQuantity.mmSecuritiesTransfer;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(SecuritiesTransfer obj) {
+			return obj.getTransferredQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, SecuritiesQuantity value) {
+			obj.setTransferredQuantity(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesAccount> account;
+	protected List<SecuritiesAccount> account;
 	/**
 	 * 
 	 <p>
@@ -292,7 +303,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * "Specifies the account from/to which the securities are transferred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTransfer, List<SecuritiesAccount>> mmAccount = new MMBusinessAssociationEnd<SecuritiesTransfer, List<SecuritiesAccount>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -300,9 +311,19 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			name = "Account";
 			definition = "Specifies the account from/to which the securities are transferred.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmRelatedTransfer;
+			opposite_lazy = () -> SecuritiesAccount.mmRelatedTransfer;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
+			type_lazy = () -> SecuritiesAccount.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesAccount> getValue(SecuritiesTransfer obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, List<SecuritiesAccount> value) {
+			obj.setAccount(value);
 		}
 	};
 	protected TransferTypeCode transferType;
@@ -334,7 +355,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransferType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTransfer, TransferTypeCode> mmTransferType = new MMBusinessAttribute<SecuritiesTransfer, TransferTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -346,12 +367,14 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			simpleType_lazy = () -> TransferTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransfer.class.getMethod("getTransferType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TransferTypeCode getValue(SecuritiesTransfer obj) {
+			return obj.getTransferType();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, TransferTypeCode value) {
+			obj.setTransferType(value);
 		}
 	};
 	protected SecuritiesSettlement relatedSettlement;
@@ -390,7 +413,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * "Settlement process which is the source of the transfer operation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTransfer, Optional<SecuritiesSettlement>> mmRelatedSettlement = new MMBusinessAssociationEnd<SecuritiesTransfer, Optional<SecuritiesSettlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -399,9 +422,19 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			definition = "Settlement process which is the source of the transfer operation.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmTransferOperation;
+			opposite_lazy = () -> SecuritiesSettlement.mmTransferOperation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
+			type_lazy = () -> SecuritiesSettlement.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesSettlement> getValue(SecuritiesTransfer obj) {
+			return obj.getRelatedSettlement();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, Optional<SecuritiesSettlement> value) {
+			obj.setRelatedSettlement(value.orElse(null));
 		}
 	};
 	protected YesNoIndicator ownAccountTransferIndicator;
@@ -433,7 +466,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOwnAccountTransferIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTransfer, YesNoIndicator> mmOwnAccountTransferIndicator = new MMBusinessAttribute<SecuritiesTransfer, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -445,12 +478,14 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransfer.class.getMethod("getOwnAccountTransferIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesTransfer obj) {
+			return obj.getOwnAccountTransferIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, YesNoIndicator value) {
+			obj.setOwnAccountTransferIndicator(value);
 		}
 	};
 	protected PhysicalDelivery physicalDelivery;
@@ -488,7 +523,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * "Information related to physical delivery of the securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPhysicalDelivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTransfer, com.tools20022.repository.entity.PhysicalDelivery> mmPhysicalDelivery = new MMBusinessAssociationEnd<SecuritiesTransfer, com.tools20022.repository.entity.PhysicalDelivery>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -500,6 +535,16 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			opposite_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmRelatedTransfer;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.PhysicalDelivery getValue(SecuritiesTransfer obj) {
+			return obj.getPhysicalDelivery();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, com.tools20022.repository.entity.PhysicalDelivery value) {
+			obj.setPhysicalDelivery(value);
 		}
 	};
 	protected ISODateTime lateDeliveryDate;
@@ -533,7 +578,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLateDeliveryDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTransfer, ISODateTime> mmLateDeliveryDate = new MMBusinessAttribute<SecuritiesTransfer, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -546,12 +591,14 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransfer.class.getMethod("getLateDeliveryDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SecuritiesTransfer obj) {
+			return obj.getLateDeliveryDate();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, ISODateTime value) {
+			obj.setLateDeliveryDate(value);
 		}
 	};
 	protected Tax transferTax;
@@ -587,7 +634,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Tax related to the transfer of a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTransferTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTransfer, Tax> mmTransferTax = new MMBusinessAssociationEnd<SecuritiesTransfer, Tax>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -596,9 +643,19 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			definition = "Tax related to the transfer of a financial instrument.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmSecuritiesTransfer;
+			opposite_lazy = () -> Tax.mmSecuritiesTransfer;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
+			type_lazy = () -> Tax.mmObject();
+		}
+
+		@Override
+		public Tax getValue(SecuritiesTransfer obj) {
+			return obj.getTransferTax();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, Tax value) {
+			obj.setTransferTax(value);
 		}
 	};
 	protected TransferReasonCode transferReason;
@@ -628,7 +685,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Identifies the transfer reason."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransferReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTransfer, TransferReasonCode> mmTransferReason = new MMBusinessAttribute<SecuritiesTransfer, TransferReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -640,12 +697,14 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			simpleType_lazy = () -> TransferReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransfer.class.getMethod("getTransferReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TransferReasonCode getValue(SecuritiesTransfer obj) {
+			return obj.getTransferReason();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, TransferReasonCode value) {
+			obj.setTransferReason(value);
 		}
 	};
 	protected PartialSettlementCode partialSettlementType;
@@ -678,7 +737,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Information about partial settlement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPartialSettlementType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTransfer, PartialSettlementCode> mmPartialSettlementType = new MMBusinessAttribute<SecuritiesTransfer, PartialSettlementCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -691,12 +750,14 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			simpleType_lazy = () -> PartialSettlementCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransfer.class.getMethod("getPartialSettlementType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PartialSettlementCode getValue(SecuritiesTransfer obj) {
+			return obj.getPartialSettlementType();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, PartialSettlementCode value) {
+			obj.setPartialSettlementType(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation;
@@ -735,7 +796,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * "Obligation for one party to deliver securities to another party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTransfer, List<SecuritiesDeliveryObligation>> mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd<SecuritiesTransfer, List<SecuritiesDeliveryObligation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -747,8 +808,18 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 		}
+
+		@Override
+		public List<SecuritiesDeliveryObligation> getValue(SecuritiesTransfer obj) {
+			return obj.getSecuritiesDeliveryObligation();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, List<SecuritiesDeliveryObligation> value) {
+			obj.setSecuritiesDeliveryObligation(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesEntry> bookEntry;
+	protected List<SecuritiesEntry> bookEntry;
 	/**
 	 * 
 	 <p>
@@ -784,7 +855,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBookEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTransfer, List<SecuritiesEntry>> mmBookEntry = new MMBusinessAssociationEnd<SecuritiesTransfer, List<SecuritiesEntry>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -792,9 +863,19 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			name = "BookEntry";
 			definition = "Record in a securities account resulting from the transfer of a security.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmTriggeringSecuritiesTransfer;
+			opposite_lazy = () -> SecuritiesEntry.mmTriggeringSecuritiesTransfer;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
+			type_lazy = () -> SecuritiesEntry.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesEntry> getValue(SecuritiesTransfer obj) {
+			return obj.getBookEntry();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, List<SecuritiesEntry> value) {
+			obj.setBookEntry(value);
 		}
 	};
 	protected Max35Text transactionIdentification;
@@ -823,7 +904,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Unambiguous identification of a securities transfer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTransfer, Max35Text> mmTransactionIdentification = new MMBusinessAttribute<SecuritiesTransfer, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -835,12 +916,14 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransfer.class.getMethod("getTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTransfer obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, Max35Text value) {
+			obj.setTransactionIdentification(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Security> security;
@@ -876,7 +959,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Security which is transferred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTransfer, List<Security>> mmSecurity = new MMBusinessAssociationEnd<SecuritiesTransfer, List<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -887,6 +970,16 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmSecuritiesTransfer;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+		}
+
+		@Override
+		public List<Security> getValue(SecuritiesTransfer obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, List<Security> value) {
+			obj.setSecurity(value);
 		}
 	};
 	protected SecuritiesTradeStatus status;
@@ -924,7 +1017,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Status of a securities transfer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTransfer, SecuritiesTradeStatus> mmStatus = new MMBusinessAssociationEnd<SecuritiesTransfer, SecuritiesTradeStatus>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
@@ -933,9 +1026,19 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 			definition = "Status of a securities transfer.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmRelatedSecuritiesTransfer;
+			opposite_lazy = () -> SecuritiesTradeStatus.mmRelatedSecuritiesTransfer;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
+			type_lazy = () -> SecuritiesTradeStatus.mmObject();
+		}
+
+		@Override
+		public SecuritiesTradeStatus getValue(SecuritiesTransfer obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransfer obj, SecuritiesTradeStatus value) {
+			obj.setStatus(value);
 		}
 	};
 
@@ -946,10 +1049,9 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTransfer";
 				definition = "Completion of a securities settlement instruction, wherein securities are delivered/debited from a securities account and received/credited to the designated securities account.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmSecuritiesTransfer, com.tools20022.repository.entity.SecuritiesAccount.mmRelatedTransfer,
-						com.tools20022.repository.entity.Tax.mmSecuritiesTransfer, com.tools20022.repository.entity.SecuritiesQuantity.mmSecuritiesTransfer, com.tools20022.repository.entity.SecuritiesSettlement.mmTransferOperation,
-						com.tools20022.repository.entity.SecuritiesEntry.mmTriggeringSecuritiesTransfer, com.tools20022.repository.entity.PhysicalDelivery.mmRelatedTransfer,
-						com.tools20022.repository.entity.SecuritiesTradeStatus.mmRelatedSecuritiesTransfer, com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmSecuritiesTransfer);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmSecuritiesTransfer, SecuritiesAccount.mmRelatedTransfer, Tax.mmSecuritiesTransfer, SecuritiesQuantity.mmSecuritiesTransfer,
+						SecuritiesSettlement.mmTransferOperation, SecuritiesEntry.mmTriggeringSecuritiesTransfer, com.tools20022.repository.entity.PhysicalDelivery.mmRelatedTransfer, SecuritiesTradeStatus.mmRelatedSecuritiesTransfer,
+						com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmSecuritiesTransfer);
 				subType_lazy = () -> Arrays.asList(IntraPositionTransfer.mmObject());
 				superType_lazy = () -> ObligationFulfilment.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTransfer.mmIdentification, com.tools20022.repository.entity.SecuritiesTransfer.mmTransferredQuantity,
@@ -982,7 +1084,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 		return transferredQuantity;
 	}
 
-	public SecuritiesTransfer setTransferredQuantity(com.tools20022.repository.entity.SecuritiesQuantity transferredQuantity) {
+	public SecuritiesTransfer setTransferredQuantity(SecuritiesQuantity transferredQuantity) {
 		this.transferredQuantity = Objects.requireNonNull(transferredQuantity);
 		return this;
 	}
@@ -991,7 +1093,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 		return account == null ? account = new ArrayList<>() : account;
 	}
 
-	public SecuritiesTransfer setAccount(List<com.tools20022.repository.entity.SecuritiesAccount> account) {
+	public SecuritiesTransfer setAccount(List<SecuritiesAccount> account) {
 		this.account = Objects.requireNonNull(account);
 		return this;
 	}
@@ -1009,7 +1111,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 		return relatedSettlement == null ? Optional.empty() : Optional.of(relatedSettlement);
 	}
 
-	public SecuritiesTransfer setRelatedSettlement(com.tools20022.repository.entity.SecuritiesSettlement relatedSettlement) {
+	public SecuritiesTransfer setRelatedSettlement(SecuritiesSettlement relatedSettlement) {
 		this.relatedSettlement = relatedSettlement;
 		return this;
 	}
@@ -1045,7 +1147,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 		return transferTax;
 	}
 
-	public SecuritiesTransfer setTransferTax(com.tools20022.repository.entity.Tax transferTax) {
+	public SecuritiesTransfer setTransferTax(Tax transferTax) {
 		this.transferTax = Objects.requireNonNull(transferTax);
 		return this;
 	}
@@ -1081,7 +1183,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 		return bookEntry == null ? bookEntry = new ArrayList<>() : bookEntry;
 	}
 
-	public SecuritiesTransfer setBookEntry(List<com.tools20022.repository.entity.SecuritiesEntry> bookEntry) {
+	public SecuritiesTransfer setBookEntry(List<SecuritiesEntry> bookEntry) {
 		this.bookEntry = Objects.requireNonNull(bookEntry);
 		return this;
 	}
@@ -1108,7 +1210,7 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 		return status;
 	}
 
-	public SecuritiesTransfer setStatus(com.tools20022.repository.entity.SecuritiesTradeStatus status) {
+	public SecuritiesTransfer setStatus(SecuritiesTradeStatus status) {
 		this.status = Objects.requireNonNull(status);
 		return this;
 	}

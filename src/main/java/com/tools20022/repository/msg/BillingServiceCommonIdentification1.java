@@ -107,7 +107,7 @@ public class BillingServiceCommonIdentification1 {
 	 * definition} = "Defines the issuer of the common code, such as \"AFP\"."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceCommonIdentification1, Max6Text> mmIssuer = new MMMessageAttribute<BillingServiceCommonIdentification1, Max6Text>() {
 		{
 			businessComponentTrace_lazy = () -> IdentificationIssuerRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceCommonIdentification1.mmObject();
@@ -119,6 +119,16 @@ public class BillingServiceCommonIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max6Text.mmObject();
+		}
+
+		@Override
+		public Max6Text getValue(BillingServiceCommonIdentification1 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(BillingServiceCommonIdentification1 obj, Max6Text value) {
+			obj.setIssuer(value);
 		}
 	};
 	@XmlElement(name = "Id", required = true)
@@ -157,7 +167,7 @@ public class BillingServiceCommonIdentification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceCommonIdentification1, Max8Text> mmIdentification = new MMMessageAttribute<BillingServiceCommonIdentification1, Max8Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceCommonIdentification1.mmObject();
@@ -169,6 +179,16 @@ public class BillingServiceCommonIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max8Text.mmObject();
+		}
+
+		@Override
+		public Max8Text getValue(BillingServiceCommonIdentification1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(BillingServiceCommonIdentification1 obj, Max8Text value) {
+			obj.setIdentification(value);
 		}
 	};
 

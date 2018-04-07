@@ -107,7 +107,7 @@ public class ContractClosureReason1Choice {
 	 * definition} = "Reason in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractClosureReason1Choice, ExternalContractClosureReason1Code> mmCode = new MMMessageAttribute<ContractClosureReason1Choice, ExternalContractClosureReason1Code>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ContractClosureReason1Choice.mmObject();
@@ -119,6 +119,16 @@ public class ContractClosureReason1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalContractClosureReason1Code.mmObject();
+		}
+
+		@Override
+		public ExternalContractClosureReason1Code getValue(ContractClosureReason1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ContractClosureReason1Choice obj, ExternalContractClosureReason1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -155,7 +165,7 @@ public class ContractClosureReason1Choice {
 	 * definition} = "Reason in a proprietary format."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractClosureReason1Choice, Max35Text> mmProprietary = new MMMessageAttribute<ContractClosureReason1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ContractClosureReason1Choice.mmObject();
@@ -167,6 +177,16 @@ public class ContractClosureReason1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ContractClosureReason1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ContractClosureReason1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

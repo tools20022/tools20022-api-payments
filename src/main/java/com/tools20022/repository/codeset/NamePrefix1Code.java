@@ -46,6 +46,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * NamePrefix1Code.Madam}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.NamePrefixCode NamePrefixCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -72,123 +74,99 @@ public class NamePrefix1Code extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Title of the person is Doctor or Dr.
+	 * (No doc)
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
 	 * {@linkplain com.tools20022.repository.codeset.NamePrefix1Code
 	 * NamePrefix1Code}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
-	 * "DOCT"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "Doctor"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Title of the person is Doctor or Dr."</li>
 	 * </ul>
 	 */
 	public static final NamePrefix1Code Doctor = new NamePrefix1Code() {
 		{
-			registrationStatus = MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Doctor";
-			definition = "Title of the person is Doctor or Dr.";
 			owner_lazy = () -> com.tools20022.repository.codeset.NamePrefix1Code.mmObject();
-			codeName = "DOCT";
+			codeName = NamePrefixCode.Doctor.getCodeName().orElse(name);
 		}
 	};
 	/**
-	 * Title of the person is Mister or Mr.
+	 * (No doc)
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
 	 * {@linkplain com.tools20022.repository.codeset.NamePrefix1Code
 	 * NamePrefix1Code}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
-	 * "MIST"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "Mister"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Title of the person is Mister or Mr."</li>
 	 * </ul>
 	 */
 	public static final NamePrefix1Code Mister = new NamePrefix1Code() {
 		{
-			registrationStatus = MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Mister";
-			definition = "Title of the person is Mister or Mr.";
 			owner_lazy = () -> com.tools20022.repository.codeset.NamePrefix1Code.mmObject();
-			codeName = "MIST";
+			codeName = NamePrefixCode.Mister.getCodeName().orElse(name);
 		}
 	};
 	/**
-	 * Title of the person is Miss.
+	 * (No doc)
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
 	 * {@linkplain com.tools20022.repository.codeset.NamePrefix1Code
 	 * NamePrefix1Code}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
-	 * "MISS"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "Miss"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Title of the person is Miss."</li>
 	 * </ul>
 	 */
 	public static final NamePrefix1Code Miss = new NamePrefix1Code() {
 		{
-			registrationStatus = MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Miss";
-			definition = "Title of the person is Miss.";
 			owner_lazy = () -> com.tools20022.repository.codeset.NamePrefix1Code.mmObject();
-			codeName = "MISS";
+			codeName = NamePrefixCode.Miss.getCodeName().orElse(name);
 		}
 	};
 	/**
-	 * Title of the person is Madam.
+	 * (No doc)
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
 	 * {@linkplain com.tools20022.repository.codeset.NamePrefix1Code
 	 * NamePrefix1Code}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
-	 * "MADM"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "Madam"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Title of the person is Madam."</li>
 	 * </ul>
 	 */
 	public static final NamePrefix1Code Madam = new NamePrefix1Code() {
 		{
-			registrationStatus = MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Madam";
-			definition = "Title of the person is Madam.";
 			owner_lazy = () -> com.tools20022.repository.codeset.NamePrefix1Code.mmObject();
-			codeName = "MADM";
+			codeName = NamePrefixCode.Madam.getCodeName().orElse(name);
 		}
 	};
 	final static private LinkedHashMap<String, NamePrefix1Code> codesByName = new LinkedHashMap<>();
@@ -204,6 +182,7 @@ public class NamePrefix1Code extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NamePrefix1Code";
 				definition = "Specifies the terms used to formally address a person.";
+				trace_lazy = () -> NamePrefixCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NamePrefix1Code.Doctor, com.tools20022.repository.codeset.NamePrefix1Code.Mister, com.tools20022.repository.codeset.NamePrefix1Code.Miss,
 						com.tools20022.repository.codeset.NamePrefix1Code.Madam);
 			}

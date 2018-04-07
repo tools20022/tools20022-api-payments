@@ -241,7 +241,7 @@ public class CardDataReadingCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "ICC  (Integrated Circuit Card) with contact containing software applications conform to ISO 7816."
+	 * "ICC (Integrated Circuit Card) with contact containing software applications conform to ISO 7816."
 	 * </li>
 	 * </ul>
 	 */
@@ -249,7 +249,7 @@ public class CardDataReadingCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ICC";
-			definition = "ICC  (Integrated Circuit Card) with contact containing software applications conform to ISO 7816.";
+			definition = "ICC (Integrated Circuit Card) with contact containing software applications conform to ISO 7816.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CardDataReadingCode.mmObject();
 			codeName = "CICC";
 		}

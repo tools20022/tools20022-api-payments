@@ -21,9 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.GuarantyTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.PercentageRate;
-import com.tools20022.repository.entity.Asset;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -124,7 +123,7 @@ public class Guarantee extends Asset {
 	 * definition} = "Amount covered by the guarantee."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCoveredAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Guarantee, CurrencyAndAmount> mmCoveredAmount = new MMBusinessAttribute<Guarantee, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
@@ -136,12 +135,14 @@ public class Guarantee extends Asset {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Guarantee.class.getMethod("getCoveredAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Guarantee obj) {
+			return obj.getCoveredAmount();
+		}
+
+		@Override
+		public void setValue(Guarantee obj, CurrencyAndAmount value) {
+			obj.setCoveredAmount(value);
 		}
 	};
 	protected DateTimePeriod effectivePeriod;
@@ -177,7 +178,7 @@ public class Guarantee extends Asset {
 	 * definition} = "Period during which the guarantee is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEffectivePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Guarantee, DateTimePeriod> mmEffectivePeriod = new MMBusinessAssociationEnd<Guarantee, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
@@ -186,9 +187,19 @@ public class Guarantee extends Asset {
 			definition = "Period during which the guarantee is valid.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmGuarantee;
+			opposite_lazy = () -> DateTimePeriod.mmGuarantee;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(Guarantee obj) {
+			return obj.getEffectivePeriod();
+		}
+
+		@Override
+		public void setValue(Guarantee obj, DateTimePeriod value) {
+			obj.setEffectivePeriod(value);
 		}
 	};
 	protected GuarantyTypeCode guaranteeType;
@@ -219,7 +230,7 @@ public class Guarantee extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGuaranteeType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Guarantee, GuarantyTypeCode> mmGuaranteeType = new MMBusinessAttribute<Guarantee, GuarantyTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
@@ -231,12 +242,14 @@ public class Guarantee extends Asset {
 			simpleType_lazy = () -> GuarantyTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Guarantee.class.getMethod("getGuaranteeType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GuarantyTypeCode getValue(Guarantee obj) {
+			return obj.getGuaranteeType();
+		}
+
+		@Override
+		public void setValue(Guarantee obj, GuarantyTypeCode value) {
+			obj.setGuaranteeType(value);
 		}
 	};
 	protected PercentageRate coveredPercentage;
@@ -266,7 +279,7 @@ public class Guarantee extends Asset {
 	 * "Amount covered by the guarantee, expressed as a percentage."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCoveredPercentage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Guarantee, PercentageRate> mmCoveredPercentage = new MMBusinessAttribute<Guarantee, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
@@ -278,12 +291,14 @@ public class Guarantee extends Asset {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Guarantee.class.getMethod("getCoveredPercentage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Guarantee obj) {
+			return obj.getCoveredPercentage();
+		}
+
+		@Override
+		public void setValue(Guarantee obj, PercentageRate value) {
+			obj.setCoveredPercentage(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Document> document;
@@ -319,7 +334,7 @@ public class Guarantee extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDocument = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Guarantee, List<Document>> mmDocument = new MMBusinessAssociationEnd<Guarantee, List<Document>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
@@ -330,6 +345,16 @@ public class Guarantee extends Asset {
 			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmGuarantee;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
+		}
+
+		@Override
+		public List<Document> getValue(Guarantee obj) {
+			return obj.getDocument();
+		}
+
+		@Override
+		public void setValue(Guarantee obj, List<Document> value) {
+			obj.setDocument(value);
 		}
 	};
 	protected Trade guaranteedTrade;
@@ -365,7 +390,7 @@ public class Guarantee extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGuaranteedTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Guarantee, com.tools20022.repository.entity.Trade> mmGuaranteedTrade = new MMBusinessAssociationEnd<Guarantee, com.tools20022.repository.entity.Trade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
@@ -377,6 +402,16 @@ public class Guarantee extends Asset {
 			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmGuarantee;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Trade getValue(Guarantee obj) {
+			return obj.getGuaranteedTrade();
+		}
+
+		@Override
+		public void setValue(Guarantee obj, com.tools20022.repository.entity.Trade value) {
+			obj.setGuaranteedTrade(value);
 		}
 	};
 	protected CurrencyAndAmount excessAmount;
@@ -405,7 +440,7 @@ public class Guarantee extends Asset {
 	 * definition} = "Amount not covered by the guarantee."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExcessAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Guarantee, CurrencyAndAmount> mmExcessAmount = new MMBusinessAttribute<Guarantee, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
@@ -417,12 +452,14 @@ public class Guarantee extends Asset {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Guarantee.class.getMethod("getExcessAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Guarantee obj) {
+			return obj.getExcessAmount();
+		}
+
+		@Override
+		public void setValue(Guarantee obj, CurrencyAndAmount value) {
+			obj.setExcessAmount(value);
 		}
 	};
 	protected GuaranteePartyRole guaranteePartyRole;
@@ -459,7 +496,7 @@ public class Guarantee extends Asset {
 	 * "Specifies the roles played by a party in the context of guarantees."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGuaranteePartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Guarantee, com.tools20022.repository.entity.GuaranteePartyRole> mmGuaranteePartyRole = new MMBusinessAssociationEnd<Guarantee, com.tools20022.repository.entity.GuaranteePartyRole>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
@@ -472,6 +509,16 @@ public class Guarantee extends Asset {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.GuaranteePartyRole.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.GuaranteePartyRole getValue(Guarantee obj) {
+			return obj.getGuaranteePartyRole();
+		}
+
+		@Override
+		public void setValue(Guarantee obj, com.tools20022.repository.entity.GuaranteePartyRole value) {
+			obj.setGuaranteePartyRole(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -481,7 +528,7 @@ public class Guarantee extends Asset {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Guarantee";
 				definition = "Partial or full coverage of amounts by a party other than the debtor.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.mmGuarantee, com.tools20022.repository.entity.DateTimePeriod.mmGuarantee, com.tools20022.repository.entity.Document.mmGuarantee,
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.mmGuarantee, DateTimePeriod.mmGuarantee, com.tools20022.repository.entity.Document.mmGuarantee,
 						com.tools20022.repository.entity.GuaranteePartyRole.mmGuarantee);
 				superType_lazy = () -> Asset.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Guarantee.mmCoveredAmount, com.tools20022.repository.entity.Guarantee.mmEffectivePeriod, com.tools20022.repository.entity.Guarantee.mmGuaranteeType,
@@ -510,7 +557,7 @@ public class Guarantee extends Asset {
 		return effectivePeriod;
 	}
 
-	public Guarantee setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
+	public Guarantee setEffectivePeriod(DateTimePeriod effectivePeriod) {
 		this.effectivePeriod = Objects.requireNonNull(effectivePeriod);
 		return this;
 	}

@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.FinancialInstrumentQuantityChoice;
 import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.OriginalAndCurrentQuantities1;
@@ -114,7 +115,7 @@ public class TransactionQuantities2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmQuantity = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TransactionQuantities2Choice, FinancialInstrumentQuantityChoice> mmQuantity = new MMMessageAssociationEnd<TransactionQuantities2Choice, FinancialInstrumentQuantityChoice>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.TransactionQuantities2Choice.mmObject();
@@ -126,7 +127,17 @@ public class TransactionQuantities2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantityChoice.mmObject();
+			type_lazy = () -> FinancialInstrumentQuantityChoice.mmObject();
+		}
+
+		@Override
+		public FinancialInstrumentQuantityChoice getValue(TransactionQuantities2Choice obj) {
+			return obj.getQuantity();
+		}
+
+		@Override
+		public void setValue(TransactionQuantities2Choice obj, FinancialInstrumentQuantityChoice value) {
+			obj.setQuantity(value);
 		}
 	};
 	@XmlElement(name = "OrgnlAndCurFaceAmt", required = true)
@@ -164,7 +175,7 @@ public class TransactionQuantities2Choice {
 	 * definition} = "Face amount and amortised value of security."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalAndCurrentFaceAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionQuantities2Choice, OriginalAndCurrentQuantities1> mmOriginalAndCurrentFaceAmount = new MMMessageAttribute<TransactionQuantities2Choice, OriginalAndCurrentQuantities1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.TransactionQuantities2Choice.mmObject();
@@ -176,6 +187,16 @@ public class TransactionQuantities2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> OriginalAndCurrentQuantities1.mmObject();
+		}
+
+		@Override
+		public OriginalAndCurrentQuantities1 getValue(TransactionQuantities2Choice obj) {
+			return obj.getOriginalAndCurrentFaceAmount();
+		}
+
+		@Override
+		public void setValue(TransactionQuantities2Choice obj, OriginalAndCurrentQuantities1 value) {
+			obj.setOriginalAndCurrentFaceAmount(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -213,7 +234,7 @@ public class TransactionQuantities2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TransactionQuantities2Choice, ProprietaryQuantity1> mmProprietary = new MMMessageAssociationEnd<TransactionQuantities2Choice, ProprietaryQuantity1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.TransactionQuantities2Choice.mmObject();
@@ -226,6 +247,16 @@ public class TransactionQuantities2Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> ProprietaryQuantity1.mmObject();
+		}
+
+		@Override
+		public ProprietaryQuantity1 getValue(TransactionQuantities2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(TransactionQuantities2Choice obj, ProprietaryQuantity1 value) {
+			obj.setProprietary(value);
 		}
 	};
 
@@ -248,7 +279,7 @@ public class TransactionQuantities2Choice {
 		return quantity;
 	}
 
-	public TransactionQuantities2Choice setQuantity(com.tools20022.repository.choice.FinancialInstrumentQuantityChoice quantity) {
+	public TransactionQuantities2Choice setQuantity(FinancialInstrumentQuantityChoice quantity) {
 		this.quantity = Objects.requireNonNull(quantity);
 		return this;
 	}

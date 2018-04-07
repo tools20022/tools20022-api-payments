@@ -107,7 +107,7 @@ public class CardholderAuthentication2 {
 	 * definition} = "Method used to authenticate the cardholder."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAuthenticationMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardholderAuthentication2, AuthenticationMethod1Code> mmAuthenticationMethod = new MMMessageAttribute<CardholderAuthentication2, AuthenticationMethod1Code>() {
 		{
 			businessElementTrace_lazy = () -> Authentication.mmAuthenticationMethod;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication2.mmObject();
@@ -119,6 +119,16 @@ public class CardholderAuthentication2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> AuthenticationMethod1Code.mmObject();
+		}
+
+		@Override
+		public AuthenticationMethod1Code getValue(CardholderAuthentication2 obj) {
+			return obj.getAuthenticationMethod();
+		}
+
+		@Override
+		public void setValue(CardholderAuthentication2 obj, AuthenticationMethod1Code value) {
+			obj.setAuthenticationMethod(value);
 		}
 	};
 	@XmlElement(name = "AuthntcnNtty", required = true)
@@ -157,7 +167,7 @@ public class CardholderAuthentication2 {
 	 * "Entity or object in charge of verifying the cardholder authenticity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAuthenticationEntity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardholderAuthentication2, AuthenticationEntity1Code> mmAuthenticationEntity = new MMMessageAttribute<CardholderAuthentication2, AuthenticationEntity1Code>() {
 		{
 			businessElementTrace_lazy = () -> Authentication.mmAuthenticationEntity;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication2.mmObject();
@@ -169,6 +179,16 @@ public class CardholderAuthentication2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> AuthenticationEntity1Code.mmObject();
+		}
+
+		@Override
+		public AuthenticationEntity1Code getValue(CardholderAuthentication2 obj) {
+			return obj.getAuthenticationEntity();
+		}
+
+		@Override
+		public void setValue(CardholderAuthentication2 obj, AuthenticationEntity1Code value) {
+			obj.setAuthenticationEntity(value);
 		}
 	};
 

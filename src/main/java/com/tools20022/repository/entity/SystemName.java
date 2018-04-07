@@ -19,9 +19,9 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max70Text;
+import com.tools20022.repository.entity.SystemIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.PointOfInteraction1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -107,7 +107,7 @@ public class SystemName {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SystemName, Max70Text> mmName = new MMBusinessAttribute<SystemName, Max70Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PointOfInteraction1.mmSystemName);
 			isDerived = false;
@@ -120,12 +120,14 @@ public class SystemName {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SystemName.class.getMethod("getName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max70Text getValue(SystemName obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(SystemName obj, Max70Text value) {
+			obj.setName(value);
 		}
 	};
 	protected SystemIdentification systemIdentification;
@@ -162,7 +164,7 @@ public class SystemName {
 	 * definition} = "System identification which contains a name."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystemIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SystemName, SystemIdentification> mmSystemIdentification = new MMBusinessAssociationEnd<SystemName, SystemIdentification>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemName.mmObject();
@@ -171,9 +173,19 @@ public class SystemName {
 			definition = "System identification which contains a name.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmSystemName;
+			opposite_lazy = () -> SystemIdentification.mmSystemName;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
+			type_lazy = () -> SystemIdentification.mmObject();
+		}
+
+		@Override
+		public SystemIdentification getValue(SystemName obj) {
+			return obj.getSystemIdentification();
+		}
+
+		@Override
+		public void setValue(SystemName obj, SystemIdentification value) {
+			obj.setSystemIdentification(value);
 		}
 	};
 
@@ -184,7 +196,7 @@ public class SystemName {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemName";
 				definition = "Name of a system.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemIdentification.mmSystemName);
+				associationDomain_lazy = () -> Arrays.asList(SystemIdentification.mmSystemName);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemName.mmName, com.tools20022.repository.entity.SystemName.mmSystemIdentification);
 			}
 
@@ -209,7 +221,7 @@ public class SystemName {
 		return systemIdentification;
 	}
 
-	public SystemName setSystemIdentification(com.tools20022.repository.entity.SystemIdentification systemIdentification) {
+	public SystemName setSystemIdentification(SystemIdentification systemIdentification) {
 		this.systemIdentification = Objects.requireNonNull(systemIdentification);
 		return this;
 	}

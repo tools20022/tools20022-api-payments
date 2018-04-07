@@ -108,7 +108,7 @@ public class BillingCompensationType1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingCompensationType1Choice, ExternalBillingCompensationType1Code> mmCode = new MMMessageAttribute<BillingCompensationType1Choice, ExternalBillingCompensationType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Invoice.mmBillingCompensationType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.BillingCompensationType1Choice.mmObject();
@@ -120,6 +120,16 @@ public class BillingCompensationType1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalBillingCompensationType1Code.mmObject();
+		}
+
+		@Override
+		public ExternalBillingCompensationType1Code getValue(BillingCompensationType1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(BillingCompensationType1Choice obj, ExternalBillingCompensationType1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -158,7 +168,7 @@ public class BillingCompensationType1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingCompensationType1Choice, Max35Text> mmProprietary = new MMMessageAttribute<BillingCompensationType1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Invoice.mmBillingCompensationType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.BillingCompensationType1Choice.mmObject();
@@ -170,6 +180,16 @@ public class BillingCompensationType1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(BillingCompensationType1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(BillingCompensationType1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

@@ -105,7 +105,7 @@ public class UnderlyingContract1Choice {
 	 * definition} = "Underlying registered contract is a loan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmLoan = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<UnderlyingContract1Choice, LoanContract1> mmLoan = new MMMessageAssociationEnd<UnderlyingContract1Choice, LoanContract1>() {
 		{
 			businessComponentTrace_lazy = () -> Loan.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.UnderlyingContract1Choice.mmObject();
@@ -118,6 +118,16 @@ public class UnderlyingContract1Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> LoanContract1.mmObject();
+		}
+
+		@Override
+		public LoanContract1 getValue(UnderlyingContract1Choice obj) {
+			return obj.getLoan();
+		}
+
+		@Override
+		public void setValue(UnderlyingContract1Choice obj, LoanContract1 value) {
+			obj.setLoan(value);
 		}
 	};
 	@XmlElement(name = "Trad", required = true)
@@ -153,7 +163,7 @@ public class UnderlyingContract1Choice {
 	 * definition} = "Underlying registered contract is a commercial trade."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTrade = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<UnderlyingContract1Choice, TradeContract1> mmTrade = new MMMessageAssociationEnd<UnderlyingContract1Choice, TradeContract1>() {
 		{
 			businessComponentTrace_lazy = () -> CommercialTrade.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.UnderlyingContract1Choice.mmObject();
@@ -166,6 +176,16 @@ public class UnderlyingContract1Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> TradeContract1.mmObject();
+		}
+
+		@Override
+		public TradeContract1 getValue(UnderlyingContract1Choice obj) {
+			return obj.getTrade();
+		}
+
+		@Override
+		public void setValue(UnderlyingContract1Choice obj, TradeContract1 value) {
+			obj.setTrade(value);
 		}
 	};
 

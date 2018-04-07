@@ -1164,7 +1164,7 @@ public class RejectionReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * The instruction is irrevocable
+	 * The instruction is irrevocable.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1181,14 +1181,14 @@ public class RejectionReasonCode extends MMCode {
 	 * name} = "InstructionIrrevocable"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "The instruction is irrevocable"</li>
+	 * definition} = "The instruction is irrevocable."</li>
 	 * </ul>
 	 */
 	public static final RejectionReasonCode InstructionIrrevocable = new RejectionReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructionIrrevocable";
-			definition = "The instruction is irrevocable";
+			definition = "The instruction is irrevocable.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectionReasonCode.mmObject();
 			codeName = "INIR";
 		}
@@ -1197,7 +1197,7 @@ public class RejectionReasonCode extends MMCode {
 	 * Option is not valid; it has been cancelled by the market or service
 	 * provider, and cannot be responded to. Any responses already processed
 	 * against this option are considered void and new responses will be
-	 * required .
+	 * required.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1215,7 +1215,7 @@ public class RejectionReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Option is not valid; it has been cancelled by the market or service provider, and cannot be responded to. Any responses already processed against this option are considered void and new responses will be required ."
+	 * "Option is not valid; it has been cancelled by the market or service provider, and cannot be responded to. Any responses already processed against this option are considered void and new responses will be required."
 	 * </li>
 	 * </ul>
 	 */
@@ -1223,7 +1223,7 @@ public class RejectionReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionCancelled";
-			definition = "Option is not valid; it has been cancelled by the market or service provider, and cannot be responded to. Any responses already processed against this option are considered void and new responses will be required .";
+			definition = "Option is not valid; it has been cancelled by the market or service provider, and cannot be responded to. Any responses already processed against this option are considered void and new responses will be required.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectionReasonCode.mmObject();
 			codeName = "CANC";
 		}
@@ -1541,7 +1541,7 @@ public class RejectionReasonCode extends MMCode {
 	};
 	/**
 	 * Unrecognised event number or identification (eg corporate action event
-	 * number, a meeting identification)
+	 * number, a meeting identification).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1559,7 +1559,7 @@ public class RejectionReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Unrecognised event number or identification (eg corporate action event number, a meeting identification)"
+	 * "Unrecognised event number or identification (eg corporate action event number, a meeting identification)."
 	 * </li>
 	 * </ul>
 	 */
@@ -1567,7 +1567,7 @@ public class RejectionReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnrecognizedIdentification";
-			definition = "Unrecognised event number or identification (eg corporate action event number, a meeting identification)";
+			definition = "Unrecognised event number or identification (eg corporate action event number, a meeting identification).";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectionReasonCode.mmObject();
 			codeName = "EVNM";
 		}
@@ -2004,7 +2004,7 @@ public class RejectionReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "This is primarily used when the Notice of Execution received by the buy-side contains fees, gross trade amount, net trade amount, etc., values that differ from the buy-side's calculations.  Buy-side may reject the trade if they feel that the difference in calculations is too high."
+	 * "This is primarily used when the Notice of Execution received by the buy-side contains fees, gross trade amount, net trade amount, etc., values that differ from the buy-side's calculations. Buy-side may reject the trade if they feel that the difference in calculations is too high."
 	 * </li>
 	 * </ul>
 	 */
@@ -2012,7 +2012,7 @@ public class RejectionReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationDifference";
-			definition = "This is primarily used when the Notice of Execution received by the buy-side contains fees, gross trade amount, net trade amount, etc., values that differ from the buy-side's calculations.  Buy-side may reject the trade if they feel that the difference in calculations is too high.";
+			definition = "This is primarily used when the Notice of Execution received by the buy-side contains fees, gross trade amount, net trade amount, etc., values that differ from the buy-side's calculations. Buy-side may reject the trade if they feel that the difference in calculations is too high.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectionReasonCode.mmObject();
 			codeName = "CADI";
 		}
@@ -4172,7 +4172,7 @@ public class RejectionReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * Party is not defined as an agent
+	 * Party is not defined as an agent.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -4189,14 +4189,14 @@ public class RejectionReasonCode extends MMCode {
 	 * name} = "NotDefinedAgent"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Party is not defined as an agent"</li>
+	 * definition} = "Party is not defined as an agent."</li>
 	 * </ul>
 	 */
 	public static final RejectionReasonCode NotDefinedAgent = new RejectionReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotDefinedAgent";
-			definition = "Party is not defined as an agent";
+			definition = "Party is not defined as an agent.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectionReasonCode.mmObject();
 			codeName = "AGID";
 		}
@@ -4232,7 +4232,7 @@ public class RejectionReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * Period Starting Date or Code is missing
+	 * Period Starting Date or Code is missing.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -4249,14 +4249,14 @@ public class RejectionReasonCode extends MMCode {
 	 * name} = "MissingPeriodStartDate"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Period Starting Date or Code is missing"</li>
+	 * definition} = "Period Starting Date or Code is missing."</li>
 	 * </ul>
 	 */
 	public static final RejectionReasonCode MissingPeriodStartDate = new RejectionReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingPeriodStartDate";
-			definition = "Period Starting Date or Code is missing";
+			definition = "Period Starting Date or Code is missing.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectionReasonCode.mmObject();
 			codeName = "STAR";
 		}
@@ -4539,7 +4539,7 @@ public class RejectionReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * Date is not a business day for the security market
+	 * Date is not a business day for the security market.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -4556,14 +4556,14 @@ public class RejectionReasonCode extends MMCode {
 	 * name} = "NotBusinessDay"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Date is not a business day for the security market"</li>
+	 * definition} = "Date is not a business day for the security market."</li>
 	 * </ul>
 	 */
 	public static final RejectionReasonCode NotBusinessDay = new RejectionReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotBusinessDay";
-			definition = "Date is not a business day for the security market";
+			definition = "Date is not a business day for the security market.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectionReasonCode.mmObject();
 			codeName = "BDAY";
 		}
@@ -5151,7 +5151,7 @@ public class RejectionReasonCode extends MMCode {
 	};
 	/**
 	 * The specified Corporate Action option already has a pending deactivation
-	 * instruction
+	 * instruction.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -5169,7 +5169,7 @@ public class RejectionReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "The specified Corporate Action option already has a pending deactivation instruction"
+	 * "The specified Corporate Action option already has a pending deactivation instruction."
 	 * </li>
 	 * </ul>
 	 */
@@ -5177,7 +5177,7 @@ public class RejectionReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingDeactivation";
-			definition = "The specified Corporate Action option already has a pending deactivation instruction";
+			definition = "The specified Corporate Action option already has a pending deactivation instruction.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectionReasonCode.mmObject();
 			codeName = "PEDA";
 		}
@@ -5396,7 +5396,7 @@ public class RejectionReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * CA Event Type does not correspond with the relating Corporate Action
+	 * CA Event Type does not correspond with the relating Corporate Action.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -5414,14 +5414,14 @@ public class RejectionReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "CA Event Type does not correspond with the relating Corporate Action"</li>
+	 * "CA Event Type does not correspond with the relating Corporate Action."</li>
 	 * </ul>
 	 */
 	public static final RejectionReasonCode InvalidEventType = new RejectionReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidEventType";
-			definition = "CA Event Type does not correspond with the relating Corporate Action";
+			definition = "CA Event Type does not correspond with the relating Corporate Action.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectionReasonCode.mmObject();
 			codeName = "INET";
 		}

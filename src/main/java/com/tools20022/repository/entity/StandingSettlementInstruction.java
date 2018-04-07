@@ -24,8 +24,8 @@ import com.tools20022.repository.codeset.SettlementStandingInstructionDatabaseCo
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -124,7 +124,7 @@ import java.util.Objects;
 public class StandingSettlementInstruction {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Settlement> settlement;
+	protected List<Settlement> settlement;
 	/**
 	 * 
 	 <p>
@@ -160,7 +160,7 @@ public class StandingSettlementInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<StandingSettlementInstruction, List<Settlement>> mmSettlement = new MMBusinessAssociationEnd<StandingSettlementInstruction, List<Settlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
@@ -168,9 +168,19 @@ public class StandingSettlementInstruction {
 			name = "Settlement";
 			definition = "Settlement process to which the settlement instruction database applies.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Settlement.mmStandingSettlementInstruction;
+			opposite_lazy = () -> Settlement.mmStandingSettlementInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Settlement.mmObject();
+			type_lazy = () -> Settlement.mmObject();
+		}
+
+		@Override
+		public List<Settlement> getValue(StandingSettlementInstruction obj) {
+			return obj.getSettlement();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstruction obj, List<Settlement> value) {
+			obj.setSettlement(value);
 		}
 	};
 	protected YesNoIndicator fXStandingInstruction;
@@ -202,7 +212,7 @@ public class StandingSettlementInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFXStandingInstruction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<StandingSettlementInstruction, YesNoIndicator> mmFXStandingInstruction = new MMBusinessAttribute<StandingSettlementInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
@@ -214,12 +224,14 @@ public class StandingSettlementInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstruction.class.getMethod("getFXStandingInstruction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(StandingSettlementInstruction obj) {
+			return obj.getFXStandingInstruction();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstruction obj, YesNoIndicator value) {
+			obj.setFXStandingInstruction(value);
 		}
 	};
 	protected SettlementStandingInstructionDatabaseCode settlementStandingInstructionDatabase;
@@ -254,7 +266,7 @@ public class StandingSettlementInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSettlementStandingInstructionDatabase = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<StandingSettlementInstruction, SettlementStandingInstructionDatabaseCode> mmSettlementStandingInstructionDatabase = new MMBusinessAttribute<StandingSettlementInstruction, SettlementStandingInstructionDatabaseCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
@@ -267,12 +279,14 @@ public class StandingSettlementInstruction {
 			simpleType_lazy = () -> SettlementStandingInstructionDatabaseCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstruction.class.getMethod("getSettlementStandingInstructionDatabase", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SettlementStandingInstructionDatabaseCode getValue(StandingSettlementInstruction obj) {
+			return obj.getSettlementStandingInstructionDatabase();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstruction obj, SettlementStandingInstructionDatabaseCode value) {
+			obj.setSettlementStandingInstructionDatabase(value);
 		}
 	};
 	protected Max35Text identification;
@@ -301,7 +315,7 @@ public class StandingSettlementInstruction {
 	 * definition} = "Identification of the standing instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<StandingSettlementInstruction, Max35Text> mmIdentification = new MMBusinessAttribute<StandingSettlementInstruction, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
@@ -313,12 +327,14 @@ public class StandingSettlementInstruction {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstruction.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(StandingSettlementInstruction obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstruction obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected CollateralAgreement relatedCollateralAgreement;
@@ -357,7 +373,7 @@ public class StandingSettlementInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCollateralAgreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<StandingSettlementInstruction, CollateralAgreement> mmRelatedCollateralAgreement = new MMBusinessAssociationEnd<StandingSettlementInstruction, CollateralAgreement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
@@ -366,9 +382,19 @@ public class StandingSettlementInstruction {
 			definition = "Collateral agreement for which standing settlement instructions are specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmStandingSettlementInstructions;
+			opposite_lazy = () -> CollateralAgreement.mmStandingSettlementInstructions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
+			type_lazy = () -> CollateralAgreement.mmObject();
+		}
+
+		@Override
+		public CollateralAgreement getValue(StandingSettlementInstruction obj) {
+			return obj.getRelatedCollateralAgreement();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstruction obj, CollateralAgreement value) {
+			obj.setRelatedCollateralAgreement(value);
 		}
 	};
 	protected Max350Text sSIDatabaseName;
@@ -399,7 +425,7 @@ public class StandingSettlementInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSSIDatabaseName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<StandingSettlementInstruction, Max350Text> mmSSIDatabaseName = new MMBusinessAttribute<StandingSettlementInstruction, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
@@ -411,12 +437,14 @@ public class StandingSettlementInstruction {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstruction.class.getMethod("getSSIDatabaseName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(StandingSettlementInstruction obj) {
+			return obj.getSSIDatabaseName();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstruction obj, Max350Text value) {
+			obj.setSSIDatabaseName(value);
 		}
 	};
 	protected SSIDatabaseProvider sSIDatabaseProvider;
@@ -455,7 +483,7 @@ public class StandingSettlementInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSSIDatabaseProvider = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<StandingSettlementInstruction, SSIDatabaseProvider> mmSSIDatabaseProvider = new MMBusinessAssociationEnd<StandingSettlementInstruction, SSIDatabaseProvider>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
@@ -464,9 +492,19 @@ public class StandingSettlementInstruction {
 			definition = "Party which provides information on the parties and accounts to be used to settle a transaction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SSIDatabaseProvider.mmStandingSettlementDatabase;
+			opposite_lazy = () -> SSIDatabaseProvider.mmStandingSettlementDatabase;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SSIDatabaseProvider.mmObject();
+			type_lazy = () -> SSIDatabaseProvider.mmObject();
+		}
+
+		@Override
+		public SSIDatabaseProvider getValue(StandingSettlementInstruction obj) {
+			return obj.getSSIDatabaseProvider();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstruction obj, SSIDatabaseProvider value) {
+			obj.setSSIDatabaseProvider(value);
 		}
 	};
 	protected DateTimePeriod validityPeriod;
@@ -503,7 +541,7 @@ public class StandingSettlementInstruction {
 	 * definition} = "Period during which the SSI is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<StandingSettlementInstruction, DateTimePeriod> mmValidityPeriod = new MMBusinessAssociationEnd<StandingSettlementInstruction, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
@@ -512,9 +550,19 @@ public class StandingSettlementInstruction {
 			definition = "Period during which the SSI is valid.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedStandingSettlementInstruction;
+			opposite_lazy = () -> DateTimePeriod.mmRelatedStandingSettlementInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(StandingSettlementInstruction obj) {
+			return obj.getValidityPeriod();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstruction obj, DateTimePeriod value) {
+			obj.setValidityPeriod(value);
 		}
 	};
 	protected CurrencyCode currency;
@@ -543,7 +591,7 @@ public class StandingSettlementInstruction {
 	 * definition} = "Currency of the payment to which the SSI applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<StandingSettlementInstruction, CurrencyCode> mmCurrency = new MMBusinessAttribute<StandingSettlementInstruction, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
@@ -555,12 +603,14 @@ public class StandingSettlementInstruction {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstruction.class.getMethod("getCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(StandingSettlementInstruction obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstruction obj, CurrencyCode value) {
+			obj.setCurrency(value);
 		}
 	};
 	protected Asset asset;
@@ -597,7 +647,7 @@ public class StandingSettlementInstruction {
 	 * "Inidicates the asset for the standing settlement instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<StandingSettlementInstruction, Asset> mmAsset = new MMBusinessAssociationEnd<StandingSettlementInstruction, Asset>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
@@ -606,9 +656,19 @@ public class StandingSettlementInstruction {
 			definition = "Inidicates the asset for the standing settlement instruction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Asset.mmStandingSettlementInstruction;
+			opposite_lazy = () -> Asset.mmStandingSettlementInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
+			type_lazy = () -> Asset.mmObject();
+		}
+
+		@Override
+		public Asset getValue(StandingSettlementInstruction obj) {
+			return obj.getAsset();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstruction obj, Asset value) {
+			obj.setAsset(value);
 		}
 	};
 
@@ -619,9 +679,8 @@ public class StandingSettlementInstruction {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StandingSettlementInstruction";
 				definition = "Settlement instruction database information.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.mmStandingSettlementInstruction, com.tools20022.repository.entity.DateTimePeriod.mmRelatedStandingSettlementInstruction,
-						com.tools20022.repository.entity.Settlement.mmStandingSettlementInstruction, com.tools20022.repository.entity.CollateralAgreement.mmStandingSettlementInstructions,
-						com.tools20022.repository.entity.SSIDatabaseProvider.mmStandingSettlementDatabase);
+				associationDomain_lazy = () -> Arrays.asList(Asset.mmStandingSettlementInstruction, DateTimePeriod.mmRelatedStandingSettlementInstruction, Settlement.mmStandingSettlementInstruction,
+						CollateralAgreement.mmStandingSettlementInstructions, SSIDatabaseProvider.mmStandingSettlementDatabase);
 				subType_lazy = () -> Arrays.asList(AgentCorporateActionStandingInstruction.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.StandingSettlementInstruction.mmSettlement, com.tools20022.repository.entity.StandingSettlementInstruction.mmFXStandingInstruction,
 						com.tools20022.repository.entity.StandingSettlementInstruction.mmSettlementStandingInstructionDatabase, com.tools20022.repository.entity.StandingSettlementInstruction.mmIdentification,
@@ -642,7 +701,7 @@ public class StandingSettlementInstruction {
 		return settlement == null ? settlement = new ArrayList<>() : settlement;
 	}
 
-	public StandingSettlementInstruction setSettlement(List<com.tools20022.repository.entity.Settlement> settlement) {
+	public StandingSettlementInstruction setSettlement(List<Settlement> settlement) {
 		this.settlement = Objects.requireNonNull(settlement);
 		return this;
 	}
@@ -678,7 +737,7 @@ public class StandingSettlementInstruction {
 		return relatedCollateralAgreement;
 	}
 
-	public StandingSettlementInstruction setRelatedCollateralAgreement(com.tools20022.repository.entity.CollateralAgreement relatedCollateralAgreement) {
+	public StandingSettlementInstruction setRelatedCollateralAgreement(CollateralAgreement relatedCollateralAgreement) {
 		this.relatedCollateralAgreement = Objects.requireNonNull(relatedCollateralAgreement);
 		return this;
 	}
@@ -696,7 +755,7 @@ public class StandingSettlementInstruction {
 		return sSIDatabaseProvider;
 	}
 
-	public StandingSettlementInstruction setSSIDatabaseProvider(com.tools20022.repository.entity.SSIDatabaseProvider sSIDatabaseProvider) {
+	public StandingSettlementInstruction setSSIDatabaseProvider(SSIDatabaseProvider sSIDatabaseProvider) {
 		this.sSIDatabaseProvider = Objects.requireNonNull(sSIDatabaseProvider);
 		return this;
 	}
@@ -705,7 +764,7 @@ public class StandingSettlementInstruction {
 		return validityPeriod;
 	}
 
-	public StandingSettlementInstruction setValidityPeriod(com.tools20022.repository.entity.DateTimePeriod validityPeriod) {
+	public StandingSettlementInstruction setValidityPeriod(DateTimePeriod validityPeriod) {
 		this.validityPeriod = Objects.requireNonNull(validityPeriod);
 		return this;
 	}
@@ -723,7 +782,7 @@ public class StandingSettlementInstruction {
 		return asset;
 	}
 
-	public StandingSettlementInstruction setAsset(com.tools20022.repository.entity.Asset asset) {
+	public StandingSettlementInstruction setAsset(Asset asset) {
 		this.asset = Objects.requireNonNull(asset);
 		return this;
 	}

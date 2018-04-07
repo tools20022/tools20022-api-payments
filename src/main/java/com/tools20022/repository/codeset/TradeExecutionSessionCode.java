@@ -100,7 +100,7 @@ public class TradeExecutionSessionCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Opening Session. 8:00 AM - 9:30 AM Eastern of the Archipelago Exchange
+	 * Opening Session. 8: 00 AM - 9: 30 AM Eastern of the Archipelago Exchange
 	 * (Pacific Stock Exchange).
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -119,7 +119,7 @@ public class TradeExecutionSessionCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Opening Session. 8:00 AM - 9:30 AM Eastern of the Archipelago Exchange (Pacific Stock Exchange)."
+	 * "Opening Session. 8: 00 AM - 9: 30 AM Eastern of the Archipelago Exchange (Pacific Stock Exchange)."
 	 * </li>
 	 * </ul>
 	 */
@@ -127,13 +127,13 @@ public class TradeExecutionSessionCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ArchipelagoOpeningSession";
-			definition = "Opening Session. 8:00 AM - 9:30 AM Eastern of the Archipelago Exchange (Pacific Stock Exchange).";
+			definition = "Opening Session. 8: 00 AM - 9: 30 AM Eastern of the Archipelago Exchange (Pacific Stock Exchange).";
 			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "ACHO";
 		}
 	};
 	/**
-	 * Core Trading Session. 9:30 AM - 4:00 PM Eastern of the Archipelago
+	 * Core Trading Session. 9: 30 AM - 4: 00 PM Eastern of the Archipelago
 	 * Exchange (Pacific Stock Exchange).
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -152,7 +152,7 @@ public class TradeExecutionSessionCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Core Trading Session. 9:30 AM - 4:00 PM Eastern of the Archipelago Exchange (Pacific Stock Exchange)."
+	 * "Core Trading Session. 9: 30 AM - 4: 00 PM Eastern of the Archipelago Exchange (Pacific Stock Exchange)."
 	 * </li>
 	 * </ul>
 	 */
@@ -160,13 +160,13 @@ public class TradeExecutionSessionCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ArchipelagoCoreSession";
-			definition = "Core Trading Session. 9:30 AM - 4:00 PM Eastern of the Archipelago Exchange (Pacific Stock Exchange).";
+			definition = "Core Trading Session. 9: 30 AM - 4: 00 PM Eastern of the Archipelago Exchange (Pacific Stock Exchange).";
 			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "ACHC";
 		}
 	};
 	/**
-	 * Late Trading Session. 4:00 PM - 8:00 PM Easternof the Archipelago
+	 * Late Trading Session. 4: 00 PM - 8: 00 PM Easternof the Archipelago
 	 * Exchange (Pacific Stock Exchange).
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -185,7 +185,7 @@ public class TradeExecutionSessionCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Late Trading Session. 4:00 PM - 8:00 PM Easternof the Archipelago Exchange (Pacific Stock Exchange)."
+	 * "Late Trading Session. 4: 00 PM - 8: 00 PM Easternof the Archipelago Exchange (Pacific Stock Exchange)."
 	 * </li>
 	 * </ul>
 	 */
@@ -193,7 +193,7 @@ public class TradeExecutionSessionCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ArchipelagoLateSession";
-			definition = "Late Trading Session. 4:00 PM - 8:00 PM Easternof the Archipelago Exchange (Pacific Stock Exchange).";
+			definition = "Late Trading Session. 4: 00 PM - 8: 00 PM Easternof the Archipelago Exchange (Pacific Stock Exchange).";
 			owner_lazy = () -> com.tools20022.repository.codeset.TradeExecutionSessionCode.mmObject();
 			codeName = "ACHL";
 		}

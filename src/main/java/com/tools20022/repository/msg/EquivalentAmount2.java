@@ -111,7 +111,7 @@ public class EquivalentAmount2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EquivalentAmount2, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<EquivalentAmount2, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmEquivalentAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.EquivalentAmount2.mmObject();
@@ -123,6 +123,16 @@ public class EquivalentAmount2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(EquivalentAmount2 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(EquivalentAmount2 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "CcyOfTrf", required = true)
@@ -162,7 +172,7 @@ public class EquivalentAmount2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrencyOfTransfer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EquivalentAmount2, ActiveOrHistoricCurrencyCode> mmCurrencyOfTransfer = new MMMessageAttribute<EquivalentAmount2, ActiveOrHistoricCurrencyCode>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmCurrencyOfTransfer;
 			componentContext_lazy = () -> com.tools20022.repository.msg.EquivalentAmount2.mmObject();
@@ -174,6 +184,16 @@ public class EquivalentAmount2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyCode getValue(EquivalentAmount2 obj) {
+			return obj.getCurrencyOfTransfer();
+		}
+
+		@Override
+		public void setValue(EquivalentAmount2 obj, ActiveOrHistoricCurrencyCode value) {
+			obj.setCurrencyOfTransfer(value);
 		}
 	};
 

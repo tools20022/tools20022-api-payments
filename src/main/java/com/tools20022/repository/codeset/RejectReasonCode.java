@@ -158,7 +158,7 @@ public class RejectReasonCode extends MMCode {
 	};
 	/**
 	 * Invalid message: At least one of the data element or data structure is
-	 * not present , the format, or the content of one data element or one data
+	 * not present, the format, or the content of one data element or one data
 	 * structure is not correct.
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -177,7 +177,7 @@ public class RejectReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Invalid message:  At least one of the data element or data structure is not present , the format, or the content of one data element or one data structure is not correct."
+	 * "Invalid message: At least one of the data element or data structure is not present, the format, or the content of one data element or one data structure is not correct."
 	 * </li>
 	 * </ul>
 	 */
@@ -185,7 +185,7 @@ public class RejectReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParsingError";
-			definition = "Invalid message:  At least one of the data element or data structure is not present , the format, or the content of one data element or one data structure is not correct.";
+			definition = "Invalid message: At least one of the data element or data structure is not present, the format, or the content of one data element or one data structure is not correct.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectReasonCode.mmObject();
 			codeName = "PARS";
 		}

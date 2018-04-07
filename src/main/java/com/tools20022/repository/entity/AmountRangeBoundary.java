@@ -20,9 +20,9 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ImpliedCurrencyAndAmount;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.AmountRange;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.AmountRangeBoundary1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -123,7 +123,7 @@ public class AmountRangeBoundary {
 	 * definition} = "Amount range for which a lower boundary is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFromAmountRange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AmountRangeBoundary, AmountRange> mmFromAmountRange = new MMBusinessAssociationEnd<AmountRangeBoundary, AmountRange>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRangeBoundary.mmObject();
@@ -132,9 +132,19 @@ public class AmountRangeBoundary {
 			definition = "Amount range for which a lower boundary is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AmountRange.mmFromAmount;
+			opposite_lazy = () -> AmountRange.mmFromAmount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
+			type_lazy = () -> AmountRange.mmObject();
+		}
+
+		@Override
+		public AmountRange getValue(AmountRangeBoundary obj) {
+			return obj.getFromAmountRange();
+		}
+
+		@Override
+		public void setValue(AmountRangeBoundary obj, AmountRange value) {
+			obj.setFromAmountRange(value);
 		}
 	};
 	protected ImpliedCurrencyAndAmount boundaryAmount;
@@ -172,7 +182,7 @@ public class AmountRangeBoundary {
 	 * definition} = "Amount value of the range limit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBoundaryAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AmountRangeBoundary, ImpliedCurrencyAndAmount> mmBoundaryAmount = new MMBusinessAttribute<AmountRangeBoundary, ImpliedCurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AmountRangeBoundary1.mmBoundaryAmount);
 			isDerived = false;
@@ -185,12 +195,14 @@ public class AmountRangeBoundary {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AmountRangeBoundary.class.getMethod("getBoundaryAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ImpliedCurrencyAndAmount getValue(AmountRangeBoundary obj) {
+			return obj.getBoundaryAmount();
+		}
+
+		@Override
+		public void setValue(AmountRangeBoundary obj, ImpliedCurrencyAndAmount value) {
+			obj.setBoundaryAmount(value);
 		}
 	};
 	protected YesNoIndicator included;
@@ -230,7 +242,7 @@ public class AmountRangeBoundary {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIncluded = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AmountRangeBoundary, YesNoIndicator> mmIncluded = new MMBusinessAttribute<AmountRangeBoundary, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AmountRangeBoundary1.mmIncluded);
 			isDerived = false;
@@ -243,12 +255,14 @@ public class AmountRangeBoundary {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AmountRangeBoundary.class.getMethod("getIncluded", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(AmountRangeBoundary obj) {
+			return obj.getIncluded();
+		}
+
+		@Override
+		public void setValue(AmountRangeBoundary obj, YesNoIndicator value) {
+			obj.setIncluded(value);
 		}
 	};
 	protected AmountRange toAmountRange;
@@ -285,7 +299,7 @@ public class AmountRangeBoundary {
 	 * definition} = "Amount range for which an upper boundary is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmToAmountRange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AmountRangeBoundary, AmountRange> mmToAmountRange = new MMBusinessAssociationEnd<AmountRangeBoundary, AmountRange>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRangeBoundary.mmObject();
@@ -294,9 +308,19 @@ public class AmountRangeBoundary {
 			definition = "Amount range for which an upper boundary is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AmountRange.mmToAmount;
+			opposite_lazy = () -> AmountRange.mmToAmount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AmountRange.mmObject();
+			type_lazy = () -> AmountRange.mmObject();
+		}
+
+		@Override
+		public AmountRange getValue(AmountRangeBoundary obj) {
+			return obj.getToAmountRange();
+		}
+
+		@Override
+		public void setValue(AmountRangeBoundary obj, AmountRange value) {
+			obj.setToAmountRange(value);
 		}
 	};
 
@@ -307,7 +331,7 @@ public class AmountRangeBoundary {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountRangeBoundary";
 				definition = "Limit for an amount range.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AmountRange.mmFromAmount, com.tools20022.repository.entity.AmountRange.mmToAmount);
+				associationDomain_lazy = () -> Arrays.asList(AmountRange.mmFromAmount, AmountRange.mmToAmount);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AmountRangeBoundary.mmFromAmountRange, com.tools20022.repository.entity.AmountRangeBoundary.mmBoundaryAmount,
 						com.tools20022.repository.entity.AmountRangeBoundary.mmIncluded, com.tools20022.repository.entity.AmountRangeBoundary.mmToAmountRange);
 				derivationComponent_lazy = () -> Arrays.asList(AmountRangeBoundary1.mmObject());
@@ -325,7 +349,7 @@ public class AmountRangeBoundary {
 		return fromAmountRange;
 	}
 
-	public AmountRangeBoundary setFromAmountRange(com.tools20022.repository.entity.AmountRange fromAmountRange) {
+	public AmountRangeBoundary setFromAmountRange(AmountRange fromAmountRange) {
 		this.fromAmountRange = Objects.requireNonNull(fromAmountRange);
 		return this;
 	}
@@ -352,7 +376,7 @@ public class AmountRangeBoundary {
 		return toAmountRange;
 	}
 
-	public AmountRangeBoundary setToAmountRange(com.tools20022.repository.entity.AmountRange toAmountRange) {
+	public AmountRangeBoundary setToAmountRange(AmountRange toAmountRange) {
 		this.toAmountRange = Objects.requireNonNull(toAmountRange);
 		return this;
 	}

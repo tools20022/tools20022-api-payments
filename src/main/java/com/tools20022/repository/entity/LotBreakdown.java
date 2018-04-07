@@ -22,8 +22,11 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.GenericIdentification;
+import com.tools20022.repository.entity.SecuritiesPricing;
+import com.tools20022.repository.entity.SecuritiesQuantity;
+import com.tools20022.repository.entity.TradingMarket;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -137,7 +140,7 @@ public class LotBreakdown {
 	 * definition} = "Quantity of securities included in the lot."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLotUnit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LotBreakdown, DecimalNumber> mmLotUnit = new MMBusinessAttribute<LotBreakdown, DecimalNumber>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
@@ -150,12 +153,14 @@ public class LotBreakdown {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LotBreakdown.class.getMethod("getLotUnit", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(LotBreakdown obj) {
+			return obj.getLotUnit();
+		}
+
+		@Override
+		public void setValue(LotBreakdown obj, DecimalNumber value) {
+			obj.setLotUnit(value);
 		}
 	};
 	protected SecuritiesQuantity securitiesQuantity;
@@ -191,7 +196,7 @@ public class LotBreakdown {
 	 * definition} = "Number of securities included in a lot."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LotBreakdown, SecuritiesQuantity> mmSecuritiesQuantity = new MMBusinessAssociationEnd<LotBreakdown, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
@@ -200,12 +205,22 @@ public class LotBreakdown {
 			definition = "Number of securities included in a lot.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmLotBreakdown;
+			opposite_lazy = () -> SecuritiesQuantity.mmLotBreakdown;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(LotBreakdown obj) {
+			return obj.getSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(LotBreakdown obj, SecuritiesQuantity value) {
+			obj.setSecuritiesQuantity(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.GenericIdentification> lotNumber;
+	protected List<GenericIdentification> lotNumber;
 	/**
 	 * 
 	 <p>
@@ -239,7 +254,7 @@ public class LotBreakdown {
 	 * definition} = "Specifies the number of the lot."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLotNumber = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LotBreakdown, List<GenericIdentification>> mmLotNumber = new MMBusinessAssociationEnd<LotBreakdown, List<GenericIdentification>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
@@ -247,9 +262,19 @@ public class LotBreakdown {
 			name = "LotNumber";
 			definition = "Specifies the number of the lot.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentificationForLot;
+			opposite_lazy = () -> GenericIdentification.mmIdentificationForLot;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
+			type_lazy = () -> GenericIdentification.mmObject();
+		}
+
+		@Override
+		public List<GenericIdentification> getValue(LotBreakdown obj) {
+			return obj.getLotNumber();
+		}
+
+		@Override
+		public void setValue(LotBreakdown obj, List<GenericIdentification> value) {
+			obj.setLotNumber(value);
 		}
 	};
 	protected ISODateTime lotDateTime;
@@ -277,7 +302,7 @@ public class LotBreakdown {
 	 * definition} = "Date and time at which the lot was purchased."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLotDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LotBreakdown, ISODateTime> mmLotDateTime = new MMBusinessAttribute<LotBreakdown, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
@@ -289,15 +314,17 @@ public class LotBreakdown {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LotBreakdown.class.getMethod("getLotDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(LotBreakdown obj) {
+			return obj.getLotDateTime();
+		}
+
+		@Override
+		public void setValue(LotBreakdown obj, ISODateTime value) {
+			obj.setLotDateTime(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesPricing> lotPrice;
+	protected List<SecuritiesPricing> lotPrice;
 	/**
 	 * 
 	 <p>
@@ -330,7 +357,7 @@ public class LotBreakdown {
 	 * definition} = "Specifies the price of the lot."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLotPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LotBreakdown, List<SecuritiesPricing>> mmLotPrice = new MMBusinessAssociationEnd<LotBreakdown, List<SecuritiesPricing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
@@ -338,9 +365,19 @@ public class LotBreakdown {
 			name = "LotPrice";
 			definition = "Specifies the price of the lot.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmLotBreakdown;
+			opposite_lazy = () -> SecuritiesPricing.mmLotBreakdown;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesPricing> getValue(LotBreakdown obj) {
+			return obj.getLotPrice();
+		}
+
+		@Override
+		public void setValue(LotBreakdown obj, List<SecuritiesPricing> value) {
+			obj.setLotPrice(value);
 		}
 	};
 	protected Max35Text lotIdentifier;
@@ -370,7 +407,7 @@ public class LotBreakdown {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLotIdentifier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LotBreakdown, Max35Text> mmLotIdentifier = new MMBusinessAttribute<LotBreakdown, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
@@ -382,12 +419,14 @@ public class LotBreakdown {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LotBreakdown.class.getMethod("getLotIdentifier", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(LotBreakdown obj) {
+			return obj.getLotIdentifier();
+		}
+
+		@Override
+		public void setValue(LotBreakdown obj, Max35Text value) {
+			obj.setLotIdentifier(value);
 		}
 	};
 	protected TradingMarket tradeLotMarket;
@@ -423,7 +462,7 @@ public class LotBreakdown {
 	 * definition} = "Market for which a trade lot is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradeLotMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LotBreakdown, TradingMarket> mmTradeLotMarket = new MMBusinessAssociationEnd<LotBreakdown, TradingMarket>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
@@ -432,9 +471,19 @@ public class LotBreakdown {
 			definition = "Market for which a trade lot is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmTradeLotSize;
+			opposite_lazy = () -> TradingMarket.mmTradeLotSize;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
+			type_lazy = () -> TradingMarket.mmObject();
+		}
+
+		@Override
+		public TradingMarket getValue(LotBreakdown obj) {
+			return obj.getTradeLotMarket();
+		}
+
+		@Override
+		public void setValue(LotBreakdown obj, TradingMarket value) {
+			obj.setTradeLotMarket(value);
 		}
 	};
 	protected TradingMarket quoteLotMarket;
@@ -470,7 +519,7 @@ public class LotBreakdown {
 	 * definition} = "Market for which a quote lot is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmQuoteLotMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LotBreakdown, Optional<TradingMarket>> mmQuoteLotMarket = new MMBusinessAssociationEnd<LotBreakdown, Optional<TradingMarket>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
@@ -479,9 +528,19 @@ public class LotBreakdown {
 			definition = "Market for which a quote lot is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmQuoteLot;
+			opposite_lazy = () -> TradingMarket.mmQuoteLot;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
+			type_lazy = () -> TradingMarket.mmObject();
+		}
+
+		@Override
+		public Optional<TradingMarket> getValue(LotBreakdown obj) {
+			return obj.getQuoteLotMarket();
+		}
+
+		@Override
+		public void setValue(LotBreakdown obj, Optional<TradingMarket> value) {
+			obj.setQuoteLotMarket(value.orElse(null));
 		}
 	};
 	protected TradingMarket roundLotMarket;
@@ -517,7 +576,7 @@ public class LotBreakdown {
 	 * definition} = "Market for which a round lot size is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRoundLotMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LotBreakdown, Optional<TradingMarket>> mmRoundLotMarket = new MMBusinessAssociationEnd<LotBreakdown, Optional<TradingMarket>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
@@ -526,9 +585,19 @@ public class LotBreakdown {
 			definition = "Market for which a round lot size is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmRoundLot;
+			opposite_lazy = () -> TradingMarket.mmRoundLot;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
+			type_lazy = () -> TradingMarket.mmObject();
+		}
+
+		@Override
+		public Optional<TradingMarket> getValue(LotBreakdown obj) {
+			return obj.getRoundLotMarket();
+		}
+
+		@Override
+		public void setValue(LotBreakdown obj, Optional<TradingMarket> value) {
+			obj.setRoundLotMarket(value.orElse(null));
 		}
 	};
 
@@ -539,9 +608,8 @@ public class LotBreakdown {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LotBreakdown";
 				definition = "Number of securities purchased or sold in one transaction. In terms of options, a lot represents the number of contracts contained in one derivative security.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentificationForLot, com.tools20022.repository.entity.SecuritiesPricing.mmLotBreakdown,
-						com.tools20022.repository.entity.TradingMarket.mmTradeLotSize, com.tools20022.repository.entity.TradingMarket.mmQuoteLot, com.tools20022.repository.entity.TradingMarket.mmRoundLot,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmLotBreakdown);
+				associationDomain_lazy = () -> Arrays.asList(GenericIdentification.mmIdentificationForLot, SecuritiesPricing.mmLotBreakdown, TradingMarket.mmTradeLotSize, TradingMarket.mmQuoteLot, TradingMarket.mmRoundLot,
+						SecuritiesQuantity.mmLotBreakdown);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LotBreakdown.mmLotUnit, com.tools20022.repository.entity.LotBreakdown.mmSecuritiesQuantity, com.tools20022.repository.entity.LotBreakdown.mmLotNumber,
 						com.tools20022.repository.entity.LotBreakdown.mmLotDateTime, com.tools20022.repository.entity.LotBreakdown.mmLotPrice, com.tools20022.repository.entity.LotBreakdown.mmLotIdentifier,
 						com.tools20022.repository.entity.LotBreakdown.mmTradeLotMarket, com.tools20022.repository.entity.LotBreakdown.mmQuoteLotMarket, com.tools20022.repository.entity.LotBreakdown.mmRoundLotMarket);
@@ -568,7 +636,7 @@ public class LotBreakdown {
 		return securitiesQuantity;
 	}
 
-	public LotBreakdown setSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantity) {
+	public LotBreakdown setSecuritiesQuantity(SecuritiesQuantity securitiesQuantity) {
 		this.securitiesQuantity = Objects.requireNonNull(securitiesQuantity);
 		return this;
 	}
@@ -577,7 +645,7 @@ public class LotBreakdown {
 		return lotNumber == null ? lotNumber = new ArrayList<>() : lotNumber;
 	}
 
-	public LotBreakdown setLotNumber(List<com.tools20022.repository.entity.GenericIdentification> lotNumber) {
+	public LotBreakdown setLotNumber(List<GenericIdentification> lotNumber) {
 		this.lotNumber = Objects.requireNonNull(lotNumber);
 		return this;
 	}
@@ -595,7 +663,7 @@ public class LotBreakdown {
 		return lotPrice == null ? lotPrice = new ArrayList<>() : lotPrice;
 	}
 
-	public LotBreakdown setLotPrice(List<com.tools20022.repository.entity.SecuritiesPricing> lotPrice) {
+	public LotBreakdown setLotPrice(List<SecuritiesPricing> lotPrice) {
 		this.lotPrice = Objects.requireNonNull(lotPrice);
 		return this;
 	}
@@ -613,7 +681,7 @@ public class LotBreakdown {
 		return tradeLotMarket;
 	}
 
-	public LotBreakdown setTradeLotMarket(com.tools20022.repository.entity.TradingMarket tradeLotMarket) {
+	public LotBreakdown setTradeLotMarket(TradingMarket tradeLotMarket) {
 		this.tradeLotMarket = Objects.requireNonNull(tradeLotMarket);
 		return this;
 	}
@@ -622,7 +690,7 @@ public class LotBreakdown {
 		return quoteLotMarket == null ? Optional.empty() : Optional.of(quoteLotMarket);
 	}
 
-	public LotBreakdown setQuoteLotMarket(com.tools20022.repository.entity.TradingMarket quoteLotMarket) {
+	public LotBreakdown setQuoteLotMarket(TradingMarket quoteLotMarket) {
 		this.quoteLotMarket = quoteLotMarket;
 		return this;
 	}
@@ -631,7 +699,7 @@ public class LotBreakdown {
 		return roundLotMarket == null ? Optional.empty() : Optional.of(roundLotMarket);
 	}
 
-	public LotBreakdown setRoundLotMarket(com.tools20022.repository.entity.TradingMarket roundLotMarket) {
+	public LotBreakdown setRoundLotMarket(TradingMarket roundLotMarket) {
 		this.roundLotMarket = roundLotMarket;
 		return this;
 	}

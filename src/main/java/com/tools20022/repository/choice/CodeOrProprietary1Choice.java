@@ -112,7 +112,7 @@ public class CodeOrProprietary1Choice {
 	 * "Element expressed as an ISO 20022 code from an external list."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CodeOrProprietary1Choice, Max4Text> mmCode = new MMMessageAttribute<CodeOrProprietary1Choice, Max4Text>() {
 		{
 			businessElementTrace_lazy = () -> AccountRestriction.mmRestrictionType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.CodeOrProprietary1Choice.mmObject();
@@ -125,6 +125,16 @@ public class CodeOrProprietary1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max4Text.mmObject();
+		}
+
+		@Override
+		public Max4Text getValue(CodeOrProprietary1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(CodeOrProprietary1Choice obj, Max4Text value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -165,7 +175,7 @@ public class CodeOrProprietary1Choice {
 	 * definition} = "Element expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CodeOrProprietary1Choice, GenericIdentification13> mmProprietary = new MMMessageAttribute<CodeOrProprietary1Choice, GenericIdentification13>() {
 		{
 			businessElementTrace_lazy = () -> AccountRestriction.mmRestrictionType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.CodeOrProprietary1Choice.mmObject();
@@ -178,6 +188,16 @@ public class CodeOrProprietary1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
+		}
+
+		@Override
+		public GenericIdentification13 getValue(CodeOrProprietary1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CodeOrProprietary1Choice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
 		}
 	};
 

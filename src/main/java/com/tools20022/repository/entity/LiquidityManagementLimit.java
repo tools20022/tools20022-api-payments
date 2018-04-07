@@ -21,9 +21,10 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LiquidityLimitTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.CashManagementService;
+import com.tools20022.repository.entity.CurrencyExchange;
 import com.tools20022.repository.entity.Limit;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -127,7 +128,7 @@ public class LiquidityManagementLimit extends Limit {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVolatilityMargin = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LiquidityManagementLimit, PercentageRate> mmVolatilityMargin = new MMBusinessAttribute<LiquidityManagementLimit, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
@@ -139,12 +140,14 @@ public class LiquidityManagementLimit extends Limit {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LiquidityManagementLimit.class.getMethod("getVolatilityMargin", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(LiquidityManagementLimit obj) {
+			return obj.getVolatilityMargin();
+		}
+
+		@Override
+		public void setValue(LiquidityManagementLimit obj, PercentageRate value) {
+			obj.setVolatilityMargin(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange;
@@ -183,7 +186,7 @@ public class LiquidityManagementLimit extends Limit {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LiquidityManagementLimit, List<CurrencyExchange>> mmCurrencyExchange = new MMBusinessAssociationEnd<LiquidityManagementLimit, List<CurrencyExchange>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
@@ -194,6 +197,16 @@ public class LiquidityManagementLimit extends Limit {
 			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmRelatedLimitManagement;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
+		}
+
+		@Override
+		public List<CurrencyExchange> getValue(LiquidityManagementLimit obj) {
+			return obj.getCurrencyExchange();
+		}
+
+		@Override
+		public void setValue(LiquidityManagementLimit obj, List<CurrencyExchange> value) {
+			obj.setCurrencyExchange(value);
 		}
 	};
 	protected CashManagementService relatedCashServices;
@@ -233,7 +246,7 @@ public class LiquidityManagementLimit extends Limit {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCashServices = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LiquidityManagementLimit, CashManagementService> mmRelatedCashServices = new MMBusinessAssociationEnd<LiquidityManagementLimit, CashManagementService>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
@@ -242,9 +255,19 @@ public class LiquidityManagementLimit extends Limit {
 			definition = "Cash management services which provide standing liquidity management facilities.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmLiquidityManagementLimit;
+			opposite_lazy = () -> CashManagementService.mmLiquidityManagementLimit;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
+			type_lazy = () -> CashManagementService.mmObject();
+		}
+
+		@Override
+		public CashManagementService getValue(LiquidityManagementLimit obj) {
+			return obj.getRelatedCashServices();
+		}
+
+		@Override
+		public void setValue(LiquidityManagementLimit obj, CashManagementService value) {
+			obj.setRelatedCashServices(value);
 		}
 	};
 	protected LiquidityLimitTypeCode liquidityLimitType;
@@ -274,7 +297,7 @@ public class LiquidityManagementLimit extends Limit {
 	 * definition} = "Type of liquidity management limit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLiquidityLimitType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LiquidityManagementLimit, LiquidityLimitTypeCode> mmLiquidityLimitType = new MMBusinessAttribute<LiquidityManagementLimit, LiquidityLimitTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
@@ -286,12 +309,14 @@ public class LiquidityManagementLimit extends Limit {
 			simpleType_lazy = () -> LiquidityLimitTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LiquidityManagementLimit.class.getMethod("getLiquidityLimitType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LiquidityLimitTypeCode getValue(LiquidityManagementLimit obj) {
+			return obj.getLiquidityLimitType();
+		}
+
+		@Override
+		public void setValue(LiquidityManagementLimit obj, LiquidityLimitTypeCode value) {
+			obj.setLiquidityLimitType(value);
 		}
 	};
 	protected CurrencyAndAmount requiredAmount;
@@ -322,7 +347,7 @@ public class LiquidityManagementLimit extends Limit {
 	 * "Amount required to cover the needs of liquidity management."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequiredAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LiquidityManagementLimit, CurrencyAndAmount> mmRequiredAmount = new MMBusinessAttribute<LiquidityManagementLimit, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
@@ -334,12 +359,14 @@ public class LiquidityManagementLimit extends Limit {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LiquidityManagementLimit.class.getMethod("getRequiredAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(LiquidityManagementLimit obj) {
+			return obj.getRequiredAmount();
+		}
+
+		@Override
+		public void setValue(LiquidityManagementLimit obj, CurrencyAndAmount value) {
+			obj.setRequiredAmount(value);
 		}
 	};
 
@@ -350,7 +377,7 @@ public class LiquidityManagementLimit extends Limit {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LiquidityManagementLimit";
 				definition = "Cash management feature limiting the amount of liquidity needed to perform clearing and settlement operations. At any point in time during the process, the limit imposes the maximum amount of liquidity available for operations concerning the system or other managed elements, for example, transaction amount or counterparty.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashManagementService.mmLiquidityManagementLimit, com.tools20022.repository.entity.CurrencyExchange.mmRelatedLimitManagement);
+				associationDomain_lazy = () -> Arrays.asList(CashManagementService.mmLiquidityManagementLimit, com.tools20022.repository.entity.CurrencyExchange.mmRelatedLimitManagement);
 				superType_lazy = () -> Limit.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LiquidityManagementLimit.mmVolatilityMargin, com.tools20022.repository.entity.LiquidityManagementLimit.mmCurrencyExchange,
 						com.tools20022.repository.entity.LiquidityManagementLimit.mmRelatedCashServices, com.tools20022.repository.entity.LiquidityManagementLimit.mmLiquidityLimitType,
@@ -387,7 +414,7 @@ public class LiquidityManagementLimit extends Limit {
 		return relatedCashServices;
 	}
 
-	public LiquidityManagementLimit setRelatedCashServices(com.tools20022.repository.entity.CashManagementService relatedCashServices) {
+	public LiquidityManagementLimit setRelatedCashServices(CashManagementService relatedCashServices) {
 		this.relatedCashServices = Objects.requireNonNull(relatedCashServices);
 		return this;
 	}

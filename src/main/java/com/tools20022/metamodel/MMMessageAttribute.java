@@ -21,6 +21,7 @@ import com.tools20022.core.metamodel.Derived;
 import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import com.tools20022.core.metamodel.RuntimePropertyAware;
 import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
 import com.tools20022.metamodel.constraints.MessageAttributeHasExactlyOneType;
@@ -37,7 +38,7 @@ import java.util.Optional;
 /**
  * Kind of MessageElement whose type is a DataType or a MessageComponentType
  */
-public class MMMessageAttribute implements MMMessageElement {
+public class MMMessageAttribute<T, V> implements RuntimePropertyAware<T, V>, MMMessageElement {
 
 	/**
 	 * the simple content model of a MessageAttribute when it is expressed using

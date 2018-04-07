@@ -19,9 +19,9 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.PartyTypeCode;
+import com.tools20022.repository.entity.CardPayment;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -119,7 +119,7 @@ public class CardPaymentPartyRole extends Role {
 	 * "Identifies the payment by card for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCardPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CardPaymentPartyRole, List<CardPayment>> mmCardPayment = new MMBusinessAssociationEnd<CardPaymentPartyRole, List<CardPayment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentPartyRole.mmObject();
@@ -130,6 +130,16 @@ public class CardPaymentPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.CardPayment.mmPaymentCardPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
+		}
+
+		@Override
+		public List<CardPayment> getValue(CardPaymentPartyRole obj) {
+			return obj.getCardPayment();
+		}
+
+		@Override
+		public void setValue(CardPaymentPartyRole obj, List<CardPayment> value) {
+			obj.setCardPayment(value);
 		}
 	};
 	protected PartyTypeCode partyType;
@@ -161,7 +171,7 @@ public class CardPaymentPartyRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPartyType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CardPaymentPartyRole, PartyTypeCode> mmPartyType = new MMBusinessAttribute<CardPaymentPartyRole, PartyTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentPartyRole.mmObject();
@@ -173,12 +183,14 @@ public class CardPaymentPartyRole extends Role {
 			simpleType_lazy = () -> PartyTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CardPaymentPartyRole.class.getMethod("getPartyType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PartyTypeCode getValue(CardPaymentPartyRole obj) {
+			return obj.getPartyType();
+		}
+
+		@Override
+		public void setValue(CardPaymentPartyRole obj, PartyTypeCode value) {
+			obj.setPartyType(value);
 		}
 	};
 

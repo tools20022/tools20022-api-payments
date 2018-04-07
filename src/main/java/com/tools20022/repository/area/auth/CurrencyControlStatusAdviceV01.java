@@ -26,7 +26,6 @@ import com.tools20022.repository.msg.CurrencyControlGroupStatus1;
 import com.tools20022.repository.msg.CurrencyControlHeader2;
 import com.tools20022.repository.msg.CurrencyControlPackageStatus1;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -84,7 +83,7 @@ import javax.xml.bind.annotation.*;
  * "CurrencyControlStatusAdviceV01"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "The CurrencyControlStatusAdvice message is sent by either the reporting party (respectively the registration agent or the registration agent (respectively the reporting party) to provide a status advice on a previously sent currency control message.\r\n\r\nUsage: \r\nThe message may be sent in response to requests on the registration of  the currency control contract, supporting document or on the payment regulatory information notification."
+ * "The CurrencyControlStatusAdvice message is sent by either the reporting party (respectively the registration agent or the registration agent (respectively the reporting party) to provide a status advice on a previously sent currency control message.\r\n\r\nUsage: \r\nThe message may be sent in response to requests on the registration of the currency control contract, supporting document or on the payment regulatory information notification."
  * </li>
  * </ul>
  */
@@ -120,7 +119,7 @@ public class CurrencyControlStatusAdviceV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CurrencyControlStatusAdviceV01, CurrencyControlHeader2> mmGroupHeader = new MMMessageBuildingBlock<CurrencyControlStatusAdviceV01, CurrencyControlHeader2>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,12 +130,14 @@ public class CurrencyControlStatusAdviceV01 {
 			complexType_lazy = () -> CurrencyControlHeader2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CurrencyControlStatusAdviceV01.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyControlHeader2 getValue(CurrencyControlStatusAdviceV01 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(CurrencyControlStatusAdviceV01 obj, CurrencyControlHeader2 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "GrpSts", required = true)
@@ -164,7 +165,7 @@ public class CurrencyControlStatusAdviceV01 {
 	 * definition} = "Provides the group status for the global message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CurrencyControlStatusAdviceV01, List<CurrencyControlGroupStatus1>> mmGroupStatus = new MMMessageBuildingBlock<CurrencyControlStatusAdviceV01, List<CurrencyControlGroupStatus1>>() {
 		{
 			xmlTag = "GrpSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,12 +175,14 @@ public class CurrencyControlStatusAdviceV01 {
 			complexType_lazy = () -> CurrencyControlGroupStatus1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CurrencyControlStatusAdviceV01.class.getMethod("getGroupStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<CurrencyControlGroupStatus1> getValue(CurrencyControlStatusAdviceV01 obj) {
+			return obj.getGroupStatus();
+		}
+
+		@Override
+		public void setValue(CurrencyControlStatusAdviceV01 obj, List<CurrencyControlGroupStatus1> value) {
+			obj.setGroupStatus(value);
 		}
 	};
 	@XmlElement(name = "PackgSts")
@@ -209,7 +212,7 @@ public class CurrencyControlStatusAdviceV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPackageStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CurrencyControlStatusAdviceV01, List<CurrencyControlPackageStatus1>> mmPackageStatus = new MMMessageBuildingBlock<CurrencyControlStatusAdviceV01, List<CurrencyControlPackageStatus1>>() {
 		{
 			xmlTag = "PackgSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,12 +222,14 @@ public class CurrencyControlStatusAdviceV01 {
 			complexType_lazy = () -> CurrencyControlPackageStatus1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CurrencyControlStatusAdviceV01.class.getMethod("getPackageStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<CurrencyControlPackageStatus1> getValue(CurrencyControlStatusAdviceV01 obj) {
+			return obj.getPackageStatus();
+		}
+
+		@Override
+		public void setValue(CurrencyControlStatusAdviceV01 obj, List<CurrencyControlPackageStatus1> value) {
+			obj.setPackageStatus(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -254,7 +259,7 @@ public class CurrencyControlStatusAdviceV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CurrencyControlStatusAdviceV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CurrencyControlStatusAdviceV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -264,12 +269,14 @@ public class CurrencyControlStatusAdviceV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CurrencyControlStatusAdviceV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CurrencyControlStatusAdviceV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CurrencyControlStatusAdviceV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -278,7 +285,7 @@ public class CurrencyControlStatusAdviceV01 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CurrencyControlStatusAdviceV01";
-				definition = "The CurrencyControlStatusAdvice message is sent by either the reporting party (respectively the registration agent or the registration agent (respectively the reporting party) to provide a status advice on a previously sent currency control message.\r\n\r\nUsage: \r\nThe message may be sent in response to requests on the registration of  the currency control contract, supporting document or on the payment regulatory information notification.";
+				definition = "The CurrencyControlStatusAdvice message is sent by either the reporting party (respectively the registration agent or the registration agent (respectively the reporting party) to provide a status advice on a previously sent currency control message.\r\n\r\nUsage: \r\nThe message may be sent in response to requests on the registration of the currency control contract, supporting document or on the payment regulatory information notification.";
 				rootElement = "Document";
 				xmlTag = "CcyCtrlStsAdvc";
 				businessArea_lazy = () -> AuthoritiesLatestVersion.mmObject();

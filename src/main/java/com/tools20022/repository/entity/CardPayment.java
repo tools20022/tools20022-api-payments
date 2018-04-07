@@ -18,17 +18,16 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
-import com.tools20022.repository.choice.CardTransaction2Choice;
+import com.tools20022.repository.choice.CardTransaction3Choice;
 import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.codeset.ExternalCardTransactionCategoryCode;
 import com.tools20022.repository.codeset.TypeOfAmountCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ImpliedCurrencyAndAmount;
 import com.tools20022.repository.datatype.Max35Text;
-import com.tools20022.repository.entity.IndividualPayment;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -116,36 +115,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.CardTransaction2#mmTransaction
- * CardTransaction2.mmTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.CardTransaction2Choice#mmAggregated
- * CardTransaction2Choice.mmAggregated}</li>
+ * {@linkplain com.tools20022.repository.msg.CardTransaction16#mmTransaction
+ * CardTransaction16.mmTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.CardTransaction2Choice#mmIndividual
- * CardTransaction2Choice.mmIndividual}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CardEntry2#mmAggregatedEntry
- * CardEntry2.mmAggregatedEntry}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ReportEntry8#mmCardTransaction
- * ReportEntry8.mmCardTransaction}</li>
+ * {@linkplain com.tools20022.repository.msg.EntryTransaction9#mmCardTransaction
+ * EntryTransaction9.mmCardTransaction}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReportEntry9#mmCardTransaction
+ * ReportEntry9.mmCardTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.EntryTransaction8#mmCardTransaction
- * EntryTransaction8.mmCardTransaction}</li>
+ * {@linkplain com.tools20022.repository.choice.CardTransaction3Choice#mmAggregated
+ * CardTransaction3Choice.mmAggregated}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.CardTransaction3Choice#mmIndividual
+ * CardTransaction3Choice.mmIndividual}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CardEntry3#mmAggregatedEntry
+ * CardEntry3.mmAggregatedEntry}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.CardAggregated1
- * CardAggregated1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CardTransaction2
- * CardTransaction2}</li>
- * <li>{@linkplain com.tools20022.repository.choice.CardTransaction2Choice
- * CardTransaction2Choice}</li>
  * <li>{@linkplain com.tools20022.repository.msg.CardIndividualTransaction2
  * CardIndividualTransaction2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CardEntry2 CardEntry2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CardTransaction16
+ * CardTransaction16}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.CardTransaction3Choice
+ * CardTransaction3Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CardAggregated2
+ * CardAggregated2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CardEntry3 CardEntry3}</li>
  * </ul>
  * </li>
  * <li>
@@ -187,10 +187,10 @@ public class CardPayment extends IndividualPayment {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.CardTransaction2#mmCard
-	 * CardTransaction2.mmCard}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.CardEntry2#mmCard
-	 * CardEntry2.mmCard}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CardTransaction16#mmCard
+	 * CardTransaction16.mmCard}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CardEntry3#mmCard
+	 * CardEntry3.mmCard}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -208,9 +208,9 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Specifies the card which is used in a payment by card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPaymentCard = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CardPayment, com.tools20022.repository.entity.PaymentCard> mmPaymentCard = new MMBusinessAssociationEnd<CardPayment, com.tools20022.repository.entity.PaymentCard>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardTransaction2.mmCard, CardEntry2.mmCard);
+			derivation_lazy = () -> Arrays.asList(CardTransaction16.mmCard, CardEntry3.mmCard);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -221,6 +221,16 @@ public class CardPayment extends IndividualPayment {
 			opposite_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmPayment;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.PaymentCard getValue(CardPayment obj) {
+			return obj.getPaymentCard();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, com.tools20022.repository.entity.PaymentCard value) {
+			obj.setPaymentCard(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Product> product;
@@ -263,7 +273,7 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Product purchased with the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CardPayment, List<Product>> mmProduct = new MMBusinessAssociationEnd<CardPayment, List<Product>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardIndividualTransaction2.mmProduct);
 			isDerived = false;
@@ -275,6 +285,16 @@ public class CardPayment extends IndividualPayment {
 			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmCardPayment;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
+		}
+
+		@Override
+		public List<Product> getValue(CardPayment obj) {
+			return obj.getProduct();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, List<Product> value) {
+			obj.setProduct(value);
 		}
 	};
 	protected ImpliedCurrencyAndAmount detailedAmount;
@@ -303,7 +323,7 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Detailed amount value."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDetailedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CardPayment, ImpliedCurrencyAndAmount> mmDetailedAmount = new MMBusinessAttribute<CardPayment, ImpliedCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -315,12 +335,14 @@ public class CardPayment extends IndividualPayment {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CardPayment.class.getMethod("getDetailedAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ImpliedCurrencyAndAmount getValue(CardPayment obj) {
+			return obj.getDetailedAmount();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, ImpliedCurrencyAndAmount value) {
+			obj.setDetailedAmount(value);
 		}
 	};
 	protected TypeOfAmountCode amountQualifier;
@@ -349,7 +371,7 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Identification of the type of amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmountQualifier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CardPayment, TypeOfAmountCode> mmAmountQualifier = new MMBusinessAttribute<CardPayment, TypeOfAmountCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -361,12 +383,14 @@ public class CardPayment extends IndividualPayment {
 			simpleType_lazy = () -> TypeOfAmountCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CardPayment.class.getMethod("getAmountQualifier", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TypeOfAmountCode getValue(CardPayment obj) {
+			return obj.getAmountQualifier();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, TypeOfAmountCode value) {
+			obj.setAmountQualifier(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.CardPaymentAcquiring> cardPaymentAcquiring;
@@ -411,7 +435,7 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Parameters of the process of acquiring a card payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCardPaymentAcquiring = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CardPayment, List<CardPaymentAcquiring>> mmCardPaymentAcquiring = new MMBusinessAssociationEnd<CardPayment, List<CardPaymentAcquiring>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardIndividualTransaction2.mmPaymentContext);
 			isDerived = false;
@@ -424,8 +448,18 @@ public class CardPayment extends IndividualPayment {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 		}
+
+		@Override
+		public List<CardPaymentAcquiring> getValue(CardPayment obj) {
+			return obj.getCardPaymentAcquiring();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, List<CardPaymentAcquiring> value) {
+			obj.setCardPaymentAcquiring(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.CardPaymentPartyRole> paymentCardPartyRole;
+	protected List<CardPaymentPartyRole> paymentCardPartyRole;
 	/**
 	 * 
 	 <p>
@@ -461,7 +495,7 @@ public class CardPayment extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPaymentCardPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CardPayment, List<CardPaymentPartyRole>> mmPaymentCardPartyRole = new MMBusinessAssociationEnd<CardPayment, List<CardPaymentPartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -469,9 +503,19 @@ public class CardPayment extends IndividualPayment {
 			name = "PaymentCardPartyRole";
 			definition = "Specifies each role played by a party in the process of a payment by card.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentPartyRole.mmCardPayment;
+			opposite_lazy = () -> CardPaymentPartyRole.mmCardPayment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CardPaymentPartyRole.mmObject();
+			type_lazy = () -> CardPaymentPartyRole.mmObject();
+		}
+
+		@Override
+		public List<CardPaymentPartyRole> getValue(CardPayment obj) {
+			return obj.getPaymentCardPartyRole();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, List<CardPaymentPartyRole> value) {
+			obj.setPaymentCardPartyRole(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.CardPaymentStatus> cardPaymentStatus;
@@ -507,7 +551,7 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Status of the payment by card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCardPaymentStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CardPayment, List<CardPaymentStatus>> mmCardPaymentStatus = new MMBusinessAssociationEnd<CardPayment, List<CardPaymentStatus>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -518,6 +562,16 @@ public class CardPayment extends IndividualPayment {
 			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentStatus.mmCardPayment;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CardPaymentStatus.mmObject();
+		}
+
+		@Override
+		public List<CardPaymentStatus> getValue(CardPayment obj) {
+			return obj.getCardPaymentStatus();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, List<CardPaymentStatus> value) {
+			obj.setCardPaymentStatus(value);
 		}
 	};
 	protected Max35Text detailedAmountLabel;
@@ -545,7 +599,7 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Short description of the amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDetailedAmountLabel = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CardPayment, Max35Text> mmDetailedAmountLabel = new MMBusinessAttribute<CardPayment, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -557,12 +611,14 @@ public class CardPayment extends IndividualPayment {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CardPayment.class.getMethod("getDetailedAmountLabel", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(CardPayment obj) {
+			return obj.getDetailedAmountLabel();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, Max35Text value) {
+			obj.setDetailedAmountLabel(value);
 		}
 	};
 	protected ReconciliationTransaction reconciliation;
@@ -599,7 +655,7 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Total of a certain type of transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReconciliation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CardPayment, Optional<ReconciliationTransaction>> mmReconciliation = new MMBusinessAssociationEnd<CardPayment, Optional<ReconciliationTransaction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -608,9 +664,19 @@ public class CardPayment extends IndividualPayment {
 			definition = "Total of a certain type of transaction.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmCardPaymentTotal;
+			opposite_lazy = () -> ReconciliationTransaction.mmCardPaymentTotal;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ReconciliationTransaction.mmObject();
+			type_lazy = () -> ReconciliationTransaction.mmObject();
+		}
+
+		@Override
+		public Optional<ReconciliationTransaction> getValue(CardPayment obj) {
+			return obj.getReconciliation();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, Optional<ReconciliationTransaction> value) {
+			obj.setReconciliation(value.orElse(null));
 		}
 	};
 	protected ExternalCardTransactionCategoryCode transactionCategory;
@@ -640,7 +706,7 @@ public class CardPayment extends IndividualPayment {
 	 * "Specifies the category to which the card transaction belongs."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransactionCategory = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CardPayment, ExternalCardTransactionCategoryCode> mmTransactionCategory = new MMBusinessAttribute<CardPayment, ExternalCardTransactionCategoryCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -652,12 +718,14 @@ public class CardPayment extends IndividualPayment {
 			simpleType_lazy = () -> ExternalCardTransactionCategoryCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CardPayment.class.getMethod("getTransactionCategory", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExternalCardTransactionCategoryCode getValue(CardPayment obj) {
+			return obj.getTransactionCategory();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, ExternalCardTransactionCategoryCode value) {
+			obj.setTransactionCategory(value);
 		}
 	};
 	protected CurrencyAndAmount cashBackAmount;
@@ -688,7 +756,7 @@ public class CardPayment extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCashBackAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CardPayment, CurrencyAndAmount> mmCashBackAmount = new MMBusinessAttribute<CardPayment, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -700,12 +768,14 @@ public class CardPayment extends IndividualPayment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CardPayment.class.getMethod("getCashBackAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CardPayment obj) {
+			return obj.getCashBackAmount();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, CurrencyAndAmount value) {
+			obj.setCashBackAmount(value);
 		}
 	};
 	protected CurrencyAndAmount gratuity;
@@ -734,7 +804,7 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Amount tendered for a service performed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGratuity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CardPayment, CurrencyAndAmount> mmGratuity = new MMBusinessAttribute<CardPayment, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -746,12 +816,14 @@ public class CardPayment extends IndividualPayment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CardPayment.class.getMethod("getGratuity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CardPayment obj) {
+			return obj.getGratuity();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, CurrencyAndAmount value) {
+			obj.setGratuity(value);
 		}
 	};
 	protected DebitCreditCode debitCreditDirection;
@@ -780,7 +852,7 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Specifies the direction of a payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDebitCreditDirection = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CardPayment, DebitCreditCode> mmDebitCreditDirection = new MMBusinessAttribute<CardPayment, DebitCreditCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -792,12 +864,14 @@ public class CardPayment extends IndividualPayment {
 			simpleType_lazy = () -> DebitCreditCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CardPayment.class.getMethod("getDebitCreditDirection", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DebitCreditCode getValue(CardPayment obj) {
+			return obj.getDebitCreditDirection();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, DebitCreditCode value) {
+			obj.setDebitCreditDirection(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.ATMTotal> aTMTotal;
@@ -832,7 +906,7 @@ public class CardPayment extends IndividualPayment {
 	 * definition} = "Current totals of the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmATMTotal = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CardPayment, List<ATMTotal>> mmATMTotal = new MMBusinessAssociationEnd<CardPayment, List<ATMTotal>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
@@ -844,6 +918,16 @@ public class CardPayment extends IndividualPayment {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 		}
+
+		@Override
+		public List<ATMTotal> getValue(CardPayment obj) {
+			return obj.getATMTotal();
+		}
+
+		@Override
+		public void setValue(CardPayment obj, List<ATMTotal> value) {
+			obj.setATMTotal(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -853,18 +937,18 @@ public class CardPayment extends IndividualPayment {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPayment";
 				definition = "Payment through an electronic money product.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Product.mmCardPayment, com.tools20022.repository.entity.PaymentCard.mmPayment,
-						com.tools20022.repository.entity.CardPaymentPartyRole.mmCardPayment, com.tools20022.repository.entity.CardPaymentAcquiring.mmRelatedCardPayment,
-						com.tools20022.repository.entity.ReconciliationTransaction.mmCardPaymentTotal, com.tools20022.repository.entity.CardPaymentStatus.mmCardPayment, com.tools20022.repository.entity.ATMTotal.mmRelatedCardPayment);
-				derivationElement_lazy = () -> Arrays.asList(CardTransaction2.mmTransaction, CardTransaction2Choice.mmAggregated, CardTransaction2Choice.mmIndividual, CardEntry2.mmAggregatedEntry, ReportEntry8.mmCardTransaction,
-						EntryTransaction8.mmCardTransaction);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Product.mmCardPayment, com.tools20022.repository.entity.PaymentCard.mmPayment, CardPaymentPartyRole.mmCardPayment,
+						com.tools20022.repository.entity.CardPaymentAcquiring.mmRelatedCardPayment, ReconciliationTransaction.mmCardPaymentTotal, com.tools20022.repository.entity.CardPaymentStatus.mmCardPayment,
+						com.tools20022.repository.entity.ATMTotal.mmRelatedCardPayment);
+				derivationElement_lazy = () -> Arrays.asList(CardTransaction16.mmTransaction, EntryTransaction9.mmCardTransaction, ReportEntry9.mmCardTransaction, CardTransaction3Choice.mmAggregated, CardTransaction3Choice.mmIndividual,
+						CardEntry3.mmAggregatedEntry);
 				superType_lazy = () -> IndividualPayment.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPayment.mmPaymentCard, com.tools20022.repository.entity.CardPayment.mmProduct, com.tools20022.repository.entity.CardPayment.mmDetailedAmount,
 						com.tools20022.repository.entity.CardPayment.mmAmountQualifier, com.tools20022.repository.entity.CardPayment.mmCardPaymentAcquiring, com.tools20022.repository.entity.CardPayment.mmPaymentCardPartyRole,
 						com.tools20022.repository.entity.CardPayment.mmCardPaymentStatus, com.tools20022.repository.entity.CardPayment.mmDetailedAmountLabel, com.tools20022.repository.entity.CardPayment.mmReconciliation,
 						com.tools20022.repository.entity.CardPayment.mmTransactionCategory, com.tools20022.repository.entity.CardPayment.mmCashBackAmount, com.tools20022.repository.entity.CardPayment.mmGratuity,
 						com.tools20022.repository.entity.CardPayment.mmDebitCreditDirection, com.tools20022.repository.entity.CardPayment.mmATMTotal);
-				derivationComponent_lazy = () -> Arrays.asList(CardAggregated1.mmObject(), CardTransaction2.mmObject(), CardTransaction2Choice.mmObject(), CardIndividualTransaction2.mmObject(), CardEntry2.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(CardIndividualTransaction2.mmObject(), CardTransaction16.mmObject(), CardTransaction3Choice.mmObject(), CardAggregated2.mmObject(), CardEntry3.mmObject());
 			}
 
 			@Override
@@ -924,7 +1008,7 @@ public class CardPayment extends IndividualPayment {
 		return paymentCardPartyRole == null ? paymentCardPartyRole = new ArrayList<>() : paymentCardPartyRole;
 	}
 
-	public CardPayment setPaymentCardPartyRole(List<com.tools20022.repository.entity.CardPaymentPartyRole> paymentCardPartyRole) {
+	public CardPayment setPaymentCardPartyRole(List<CardPaymentPartyRole> paymentCardPartyRole) {
 		this.paymentCardPartyRole = Objects.requireNonNull(paymentCardPartyRole);
 		return this;
 	}
@@ -951,7 +1035,7 @@ public class CardPayment extends IndividualPayment {
 		return reconciliation == null ? Optional.empty() : Optional.of(reconciliation);
 	}
 
-	public CardPayment setReconciliation(com.tools20022.repository.entity.ReconciliationTransaction reconciliation) {
+	public CardPayment setReconciliation(ReconciliationTransaction reconciliation) {
 		this.reconciliation = reconciliation;
 		return this;
 	}

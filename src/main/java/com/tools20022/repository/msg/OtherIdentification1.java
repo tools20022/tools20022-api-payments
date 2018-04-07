@@ -114,7 +114,7 @@ public class OtherIdentification1 {
 	 * definition} = "Identification of a security."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OtherIdentification1, Max35Text> mmIdentification = new MMMessageAttribute<OtherIdentification1, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OtherIdentification1.mmObject();
@@ -126,6 +126,16 @@ public class OtherIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(OtherIdentification1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(OtherIdentification1 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "Sfx")
@@ -162,7 +172,7 @@ public class OtherIdentification1 {
 	 * definition} = "Identifies the suffix of the security identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSuffix = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OtherIdentification1, Optional<Max16Text>> mmSuffix = new MMMessageAttribute<OtherIdentification1, Optional<Max16Text>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesIdentification.mmIdentificationSuffix;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OtherIdentification1.mmObject();
@@ -174,6 +184,16 @@ public class OtherIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max16Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max16Text> getValue(OtherIdentification1 obj) {
+			return obj.getSuffix();
+		}
+
+		@Override
+		public void setValue(OtherIdentification1 obj, Optional<Max16Text> value) {
+			obj.setSuffix(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Tp", required = true)
@@ -210,7 +230,7 @@ public class OtherIdentification1 {
 	 * definition} = "Type of the identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<OtherIdentification1, IdentificationSource3Choice> mmType = new MMMessageAssociationEnd<OtherIdentification1, IdentificationSource3Choice>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OtherIdentification1.mmObject();
@@ -223,6 +243,16 @@ public class OtherIdentification1 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> IdentificationSource3Choice.mmObject();
+		}
+
+		@Override
+		public IdentificationSource3Choice getValue(OtherIdentification1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(OtherIdentification1 obj, IdentificationSource3Choice value) {
+			obj.setType(value);
 		}
 	};
 

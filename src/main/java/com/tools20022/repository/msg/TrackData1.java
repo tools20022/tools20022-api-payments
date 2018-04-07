@@ -100,7 +100,7 @@ public class TrackData1 {
 	 * definition} = "Track number of the card."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTrackNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TrackData1, Optional<Exact1NumericText>> mmTrackNumber = new MMMessageAttribute<TrackData1, Optional<Exact1NumericText>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.TrackData1.mmObject();
 			isDerived = false;
@@ -111,6 +111,16 @@ public class TrackData1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact1NumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Exact1NumericText> getValue(TrackData1 obj) {
+			return obj.getTrackNumber();
+		}
+
+		@Override
+		public void setValue(TrackData1 obj, Optional<Exact1NumericText> value) {
+			obj.setTrackNumber(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TrckVal", required = true)
@@ -146,7 +156,7 @@ public class TrackData1 {
 	 * definition} = "Card track content or equivalent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTrackValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TrackData1, Max140Text> mmTrackValue = new MMMessageAttribute<TrackData1, Max140Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmTrackValue;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TrackData1.mmObject();
@@ -158,6 +168,16 @@ public class TrackData1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Max140Text getValue(TrackData1 obj) {
+			return obj.getTrackValue();
+		}
+
+		@Override
+		public void setValue(TrackData1 obj, Max140Text value) {
+			obj.setTrackValue(value);
 		}
 	};
 

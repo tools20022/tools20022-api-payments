@@ -105,7 +105,7 @@ public class DeliveryPlaceCode extends MMCode {
 		}
 	};
 	/**
-	 * Card needs to be mailed to individual specified in PersonDetail
+	 * Card needs to be mailed to individual specified in PersonDetail.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -123,14 +123,14 @@ public class DeliveryPlaceCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Card needs to be mailed to individual specified in PersonDetail"</li>
+	 * "Card needs to be mailed to individual specified in PersonDetail."</li>
 	 * </ul>
 	 */
 	public static final DeliveryPlaceCode Individual = new DeliveryPlaceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Individual";
-			definition = "Card needs to be mailed to individual specified in PersonDetail";
+			definition = "Card needs to be mailed to individual specified in PersonDetail.";
 			owner_lazy = () -> com.tools20022.repository.codeset.DeliveryPlaceCode.mmObject();
 			codeName = "INDI";
 		}

@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Invoice;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -114,7 +115,7 @@ public class InvoicePartyRole extends Role {
 	 * definition} = "Identifies the invoice for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvoice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoicePartyRole, List<Invoice>> mmInvoice = new MMBusinessAssociationEnd<InvoicePartyRole, List<Invoice>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoicePartyRole.mmObject();
@@ -125,6 +126,16 @@ public class InvoicePartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Invoice.mmInvoicePartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
+		}
+
+		@Override
+		public List<Invoice> getValue(InvoicePartyRole obj) {
+			return obj.getInvoice();
+		}
+
+		@Override
+		public void setValue(InvoicePartyRole obj, List<Invoice> value) {
+			obj.setInvoice(value);
 		}
 	};
 

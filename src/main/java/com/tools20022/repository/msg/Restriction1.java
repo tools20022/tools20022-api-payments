@@ -108,7 +108,7 @@ public class Restriction1 {
 	 * definition} = "Type of the restriction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRestrictionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Restriction1, CodeOrProprietary1Choice> mmRestrictionType = new MMMessageAttribute<Restriction1, CodeOrProprietary1Choice>() {
 		{
 			businessComponentTrace_lazy = () -> AccountRestriction.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.Restriction1.mmObject();
@@ -120,6 +120,16 @@ public class Restriction1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> CodeOrProprietary1Choice.mmObject();
+		}
+
+		@Override
+		public CodeOrProprietary1Choice getValue(Restriction1 obj) {
+			return obj.getRestrictionType();
+		}
+
+		@Override
+		public void setValue(Restriction1 obj, CodeOrProprietary1Choice value) {
+			obj.setRestrictionType(value);
 		}
 	};
 	@XmlElement(name = "VldFr", required = true)
@@ -155,7 +165,7 @@ public class Restriction1 {
 	 * definition} = "Date from when the restriction is valid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValidFrom = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Restriction1, ISODateTime> mmValidFrom = new MMMessageAttribute<Restriction1, ISODateTime>() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmFromDateTime;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Restriction1.mmObject();
@@ -167,6 +177,16 @@ public class Restriction1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public ISODateTime getValue(Restriction1 obj) {
+			return obj.getValidFrom();
+		}
+
+		@Override
+		public void setValue(Restriction1 obj, ISODateTime value) {
+			obj.setValidFrom(value);
 		}
 	};
 	@XmlElement(name = "VldUntil")
@@ -202,7 +222,7 @@ public class Restriction1 {
 	 * definition} = "Date until when the restriction is valid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValidUntil = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Restriction1, Optional<ISODateTime>> mmValidUntil = new MMMessageAttribute<Restriction1, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmToDateTime;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Restriction1.mmObject();
@@ -214,6 +234,16 @@ public class Restriction1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public Optional<ISODateTime> getValue(Restriction1 obj) {
+			return obj.getValidUntil();
+		}
+
+		@Override
+		public void setValue(Restriction1 obj, Optional<ISODateTime> value) {
+			obj.setValidUntil(value.orElse(null));
 		}
 	};
 

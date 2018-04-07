@@ -97,7 +97,7 @@ public class RequestType1 {
 	 * definition} = "Idetifies the transaction number."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RequestType1, Max35Text> mmNumber = new MMMessageAttribute<RequestType1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.RequestType1.mmObject();
 			isDerived = false;
@@ -108,6 +108,16 @@ public class RequestType1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(RequestType1 obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(RequestType1 obj, Max35Text value) {
+			obj.setNumber(value);
 		}
 	};
 	@XmlElement(name = "Tp", required = true)
@@ -141,7 +151,7 @@ public class RequestType1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RequestType1, List<TransactionRequestType1Code>> mmType = new MMMessageAttribute<RequestType1, List<TransactionRequestType1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.RequestType1.mmObject();
 			isDerived = false;
@@ -151,6 +161,16 @@ public class RequestType1 {
 			definition = "Identifies the type of information request related to an original transaction number as a code.";
 			minOccurs = 1;
 			simpleType_lazy = () -> TransactionRequestType1Code.mmObject();
+		}
+
+		@Override
+		public List<TransactionRequestType1Code> getValue(RequestType1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(RequestType1 obj, List<TransactionRequestType1Code> value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -183,7 +203,7 @@ public class RequestType1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RequestType1, Optional<Max500Text>> mmAdditionalInformation = new MMMessageAttribute<RequestType1, Optional<Max500Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.RequestType1.mmObject();
 			isDerived = false;
@@ -194,6 +214,16 @@ public class RequestType1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max500Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max500Text> getValue(RequestType1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(RequestType1 obj, Optional<Max500Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 

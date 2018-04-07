@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.entity.ObligationFulfilment;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CertificateIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -110,7 +111,7 @@ public class CertificateReference1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CertificateReference1, CertificateIdentification1> mmIdentification = new MMMessageAssociationEnd<CertificateReference1, CertificateIdentification1>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CertificateReference1.mmObject();
@@ -122,7 +123,17 @@ public class CertificateReference1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CertificateIdentification1.mmObject();
+			type_lazy = () -> CertificateIdentification1.mmObject();
+		}
+
+		@Override
+		public CertificateIdentification1 getValue(CertificateReference1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(CertificateReference1 obj, CertificateIdentification1 value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "Dt", required = true)
@@ -160,7 +171,7 @@ public class CertificateReference1 {
 	 * "Date of the underlying payment instruction or statement entry."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CertificateReference1, ISODate> mmDate = new MMMessageAttribute<CertificateReference1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> ObligationFulfilment.mmDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CertificateReference1.mmObject();
@@ -172,6 +183,16 @@ public class CertificateReference1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(CertificateReference1 obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(CertificateReference1 obj, ISODate value) {
+			obj.setDate(value);
 		}
 	};
 
@@ -193,7 +214,7 @@ public class CertificateReference1 {
 		return identification;
 	}
 
-	public CertificateReference1 setIdentification(com.tools20022.repository.msg.CertificateIdentification1 identification) {
+	public CertificateReference1 setIdentification(CertificateIdentification1 identification) {
 		this.identification = Objects.requireNonNull(identification);
 		return this;
 	}

@@ -71,6 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.choice.Party28Choice Party28Choice}
  * </li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party35Choice Party35Choice}
+ * </li>
  * </ul>
  * </li>
  * </ul>
@@ -116,11 +118,13 @@ public class Party12Choice {
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#mmParty
 	 * Party28Choice.mmParty}</li>
+	 * <li>{@linkplain com.tools20022.repository.choice.Party35Choice#mmParty
+	 * Party35Choice.mmParty}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Party12Choice, PartyIdentification43> mmParty = new MMMessageAssociationEnd<Party12Choice, PartyIdentification43>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.Party12Choice.mmObject();
@@ -129,11 +133,21 @@ public class Party12Choice {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Party";
 			definition = "Identification of a person or an organisation.";
-			nextVersions_lazy = () -> Arrays.asList(Party28Choice.mmParty);
+			nextVersions_lazy = () -> Arrays.asList(Party28Choice.mmParty, Party35Choice.mmParty);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> PartyIdentification43.mmObject();
+		}
+
+		@Override
+		public PartyIdentification43 getValue(Party12Choice obj) {
+			return obj.getParty();
+		}
+
+		@Override
+		public void setValue(Party12Choice obj, PartyIdentification43 value) {
+			obj.setParty(value);
 		}
 	};
 	@XmlElement(name = "Agt", required = true)
@@ -173,11 +187,13 @@ public class Party12Choice {
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#mmAgent
 	 * Party28Choice.mmAgent}</li>
+	 * <li>{@linkplain com.tools20022.repository.choice.Party35Choice#mmAgent
+	 * Party35Choice.mmAgent}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Party12Choice, BranchAndFinancialInstitutionIdentification5> mmAgent = new MMMessageAssociationEnd<Party12Choice, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			businessComponentTrace_lazy = () -> FinancialInstitution.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.Party12Choice.mmObject();
@@ -186,11 +202,21 @@ public class Party12Choice {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Agent";
 			definition = "Identification of a financial institution.";
-			nextVersions_lazy = () -> Arrays.asList(Party28Choice.mmAgent);
+			nextVersions_lazy = () -> Arrays.asList(Party28Choice.mmAgent, Party35Choice.mmAgent);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(Party12Choice obj) {
+			return obj.getAgent();
+		}
+
+		@Override
+		public void setValue(Party12Choice obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setAgent(value);
 		}
 	};
 
@@ -203,7 +229,7 @@ public class Party12Choice {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Party12Choice";
 				definition = "Identification of a person, an organisation or a financial institution.";
-				nextVersions_lazy = () -> Arrays.asList(Party28Choice.mmObject());
+				nextVersions_lazy = () -> Arrays.asList(Party28Choice.mmObject(), Party35Choice.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

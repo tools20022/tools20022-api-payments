@@ -26,6 +26,7 @@ import com.tools20022.repository.choice.VerificationReason1Choice;
 import com.tools20022.repository.datatype.IdentificationVerificationIndicator;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.IdentificationInformation2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -123,7 +124,7 @@ public class VerificationReport2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VerificationReport2, Max35Text> mmOriginalIdentification = new MMMessageAttribute<VerificationReport2, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.VerificationReport2.mmObject();
 			isDerived = false;
@@ -134,6 +135,16 @@ public class VerificationReport2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(VerificationReport2 obj) {
+			return obj.getOriginalIdentification();
+		}
+
+		@Override
+		public void setValue(VerificationReport2 obj, Max35Text value) {
+			obj.setOriginalIdentification(value);
 		}
 	};
 	@XmlElement(name = "Vrfctn", required = true)
@@ -168,7 +179,7 @@ public class VerificationReport2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVerification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VerificationReport2, IdentificationVerificationIndicator> mmVerification = new MMMessageAttribute<VerificationReport2, IdentificationVerificationIndicator>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.VerificationReport2.mmObject();
 			isDerived = false;
@@ -179,6 +190,16 @@ public class VerificationReport2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> IdentificationVerificationIndicator.mmObject();
+		}
+
+		@Override
+		public IdentificationVerificationIndicator getValue(VerificationReport2 obj) {
+			return obj.getVerification();
+		}
+
+		@Override
+		public void setValue(VerificationReport2 obj, IdentificationVerificationIndicator value) {
+			obj.setVerification(value);
 		}
 	};
 	@XmlElement(name = "Rsn")
@@ -212,7 +233,7 @@ public class VerificationReport2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VerificationReport2, Optional<VerificationReason1Choice>> mmReason = new MMMessageAssociationEnd<VerificationReport2, Optional<VerificationReason1Choice>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.VerificationReport2.mmObject();
 			isDerived = false;
@@ -224,6 +245,16 @@ public class VerificationReport2 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> VerificationReason1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<VerificationReason1Choice> getValue(VerificationReport2 obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(VerificationReport2 obj, Optional<VerificationReason1Choice> value) {
+			obj.setReason(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlPtyAndAcctId")
@@ -257,7 +288,7 @@ public class VerificationReport2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalPartyAndAccountIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VerificationReport2, Optional<IdentificationInformation2>> mmOriginalPartyAndAccountIdentification = new MMMessageAssociationEnd<VerificationReport2, Optional<IdentificationInformation2>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.VerificationReport2.mmObject();
 			isDerived = false;
@@ -268,7 +299,17 @@ public class VerificationReport2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.IdentificationInformation2.mmObject();
+			type_lazy = () -> IdentificationInformation2.mmObject();
+		}
+
+		@Override
+		public Optional<IdentificationInformation2> getValue(VerificationReport2 obj) {
+			return obj.getOriginalPartyAndAccountIdentification();
+		}
+
+		@Override
+		public void setValue(VerificationReport2 obj, Optional<IdentificationInformation2> value) {
+			obj.setOriginalPartyAndAccountIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "UpdtdPtyAndAcctId")
@@ -301,7 +342,7 @@ public class VerificationReport2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUpdatedPartyAndAccountIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VerificationReport2, Optional<IdentificationInformation2>> mmUpdatedPartyAndAccountIdentification = new MMMessageAssociationEnd<VerificationReport2, Optional<IdentificationInformation2>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.VerificationReport2.mmObject();
 			isDerived = false;
@@ -312,7 +353,17 @@ public class VerificationReport2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.IdentificationInformation2.mmObject();
+			type_lazy = () -> IdentificationInformation2.mmObject();
+		}
+
+		@Override
+		public Optional<IdentificationInformation2> getValue(VerificationReport2 obj) {
+			return obj.getUpdatedPartyAndAccountIdentification();
+		}
+
+		@Override
+		public void setValue(VerificationReport2 obj, Optional<IdentificationInformation2> value) {
+			obj.setUpdatedPartyAndAccountIdentification(value.orElse(null));
 		}
 	};
 
@@ -363,7 +414,7 @@ public class VerificationReport2 {
 		return originalPartyAndAccountIdentification == null ? Optional.empty() : Optional.of(originalPartyAndAccountIdentification);
 	}
 
-	public VerificationReport2 setOriginalPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 originalPartyAndAccountIdentification) {
+	public VerificationReport2 setOriginalPartyAndAccountIdentification(IdentificationInformation2 originalPartyAndAccountIdentification) {
 		this.originalPartyAndAccountIdentification = originalPartyAndAccountIdentification;
 		return this;
 	}
@@ -372,7 +423,7 @@ public class VerificationReport2 {
 		return updatedPartyAndAccountIdentification == null ? Optional.empty() : Optional.of(updatedPartyAndAccountIdentification);
 	}
 
-	public VerificationReport2 setUpdatedPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 updatedPartyAndAccountIdentification) {
+	public VerificationReport2 setUpdatedPartyAndAccountIdentification(IdentificationInformation2 updatedPartyAndAccountIdentification) {
 		this.updatedPartyAndAccountIdentification = updatedPartyAndAccountIdentification;
 		return this;
 	}

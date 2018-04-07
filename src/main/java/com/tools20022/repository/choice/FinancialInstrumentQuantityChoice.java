@@ -26,8 +26,11 @@ import com.tools20022.repository.datatype.ImpliedCurrencyAndAmount;
 import com.tools20022.repository.entity.AssetHolding;
 import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Date;
+import java.util.function.Supplier;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -64,8 +67,9 @@ import javax.xml.bind.annotation.XmlType;
  * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
- * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRemovalDate
+ * removalDate} = September 9, 2018</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "FinancialInstrumentQuantityChoice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
@@ -115,7 +119,7 @@ public class FinancialInstrumentQuantityChoice {
 	 * definition} = "Quantity expressed as a number, eg, a number of shares."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentQuantityChoice, DecimalNumber> mmUnit = new MMMessageAttribute<FinancialInstrumentQuantityChoice, DecimalNumber>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmUnit;
 			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantityChoice.mmObject();
@@ -128,6 +132,16 @@ public class FinancialInstrumentQuantityChoice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public DecimalNumber getValue(FinancialInstrumentQuantityChoice obj) {
+			return obj.getUnit();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentQuantityChoice obj, DecimalNumber value) {
+			obj.setUnit(value);
 		}
 	};
 	@XmlElement(name = "FaceAmt", required = true)
@@ -167,7 +181,7 @@ public class FinancialInstrumentQuantityChoice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFaceAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentQuantityChoice, ImpliedCurrencyAndAmount> mmFaceAmount = new MMMessageAttribute<FinancialInstrumentQuantityChoice, ImpliedCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> AssetHolding.mmFaceAmount;
 			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantityChoice.mmObject();
@@ -179,6 +193,16 @@ public class FinancialInstrumentQuantityChoice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ImpliedCurrencyAndAmount getValue(FinancialInstrumentQuantityChoice obj) {
+			return obj.getFaceAmount();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentQuantityChoice obj, ImpliedCurrencyAndAmount value) {
+			obj.setFaceAmount(value);
 		}
 	};
 	@XmlElement(name = "AmtsdVal", required = true)
@@ -218,7 +242,7 @@ public class FinancialInstrumentQuantityChoice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmortisedValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentQuantityChoice, ImpliedCurrencyAndAmount> mmAmortisedValue = new MMMessageAttribute<FinancialInstrumentQuantityChoice, ImpliedCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> AssetHolding.mmAmortisedFaceValue;
 			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantityChoice.mmObject();
@@ -231,6 +255,16 @@ public class FinancialInstrumentQuantityChoice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ImpliedCurrencyAndAmount getValue(FinancialInstrumentQuantityChoice obj) {
+			return obj.getAmortisedValue();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentQuantityChoice obj, ImpliedCurrencyAndAmount value) {
+			obj.setAmortisedValue(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
@@ -240,7 +274,14 @@ public class FinancialInstrumentQuantityChoice {
 						com.tools20022.repository.choice.FinancialInstrumentQuantityChoice.mmAmortisedValue);
 				trace_lazy = () -> SecuritiesQuantity.mmObject();
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
-				registrationStatus = MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.OBSOLETE;
+				removalDate = ((Supplier<Date>) (() -> {
+					try {
+						return DateFormat.getDateInstance(java.text.DateFormat.LONG).parse("September 9, 2018");
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+				})).get();
 				name = "FinancialInstrumentQuantityChoice";
 				definition = "Choice between formats for the quantity of security.";
 			}

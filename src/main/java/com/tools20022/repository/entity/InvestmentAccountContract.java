@@ -20,8 +20,10 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.AccountContract;
+import com.tools20022.repository.entity.InvestmentAccount;
+import com.tools20022.repository.entity.InvestmentAccountService;
+import com.tools20022.repository.entity.ManagedAccountProduct;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -122,7 +124,7 @@ public class InvestmentAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLetterIntentReference = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccountContract, Max35Text> mmLetterIntentReference = new MMBusinessAttribute<InvestmentAccountContract, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
@@ -134,12 +136,14 @@ public class InvestmentAccountContract extends AccountContract {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccountContract.class.getMethod("getLetterIntentReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(InvestmentAccountContract obj) {
+			return obj.getLetterIntentReference();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountContract obj, Max35Text value) {
+			obj.setLetterIntentReference(value);
 		}
 	};
 	protected Max35Text accumulationRightReference;
@@ -170,7 +174,7 @@ public class InvestmentAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAccumulationRightReference = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccountContract, Max35Text> mmAccumulationRightReference = new MMBusinessAttribute<InvestmentAccountContract, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
@@ -182,12 +186,14 @@ public class InvestmentAccountContract extends AccountContract {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccountContract.class.getMethod("getAccumulationRightReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(InvestmentAccountContract obj) {
+			return obj.getAccumulationRightReference();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountContract obj, Max35Text value) {
+			obj.setAccumulationRightReference(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount;
@@ -224,7 +230,7 @@ public class InvestmentAccountContract extends AccountContract {
 	 * definition} = "Specifies the account for which the service is offered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccountContract, List<InvestmentAccount>> mmInvestmentAccount = new MMBusinessAssociationEnd<InvestmentAccountContract, List<InvestmentAccount>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
@@ -236,8 +242,18 @@ public class InvestmentAccountContract extends AccountContract {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 		}
+
+		@Override
+		public List<InvestmentAccount> getValue(InvestmentAccountContract obj) {
+			return obj.getInvestmentAccount();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountContract obj, List<InvestmentAccount> value) {
+			obj.setInvestmentAccount(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.InvestmentAccountService> services;
+	protected List<InvestmentAccountService> services;
 	/**
 	 * 
 	 <p>
@@ -274,7 +290,7 @@ public class InvestmentAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccountContract, List<InvestmentAccountService>> mmServices = new MMBusinessAssociationEnd<InvestmentAccountContract, List<InvestmentAccountService>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
@@ -282,9 +298,19 @@ public class InvestmentAccountContract extends AccountContract {
 			name = "Services";
 			definition = "Services linked to an account which are available to the account owner or to the holder of a mandate. The exercise of these services may be submitted to a limit.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmInvestmentAccountContract;
+			opposite_lazy = () -> InvestmentAccountService.mmInvestmentAccountContract;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
+			type_lazy = () -> InvestmentAccountService.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountService> getValue(InvestmentAccountContract obj) {
+			return obj.getServices();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountContract obj, List<InvestmentAccountService> value) {
+			obj.setServices(value);
 		}
 	};
 	protected ManagedAccountProduct modeledAccount;
@@ -324,7 +350,7 @@ public class InvestmentAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmModeledAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccountContract, ManagedAccountProduct> mmModeledAccount = new MMBusinessAssociationEnd<InvestmentAccountContract, ManagedAccountProduct>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
@@ -333,9 +359,19 @@ public class InvestmentAccountContract extends AccountContract {
 			definition = "Product which provides guidance to investors to manage their portfolios.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ManagedAccountProduct.mmInvestmentAccountContract;
+			opposite_lazy = () -> ManagedAccountProduct.mmInvestmentAccountContract;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ManagedAccountProduct.mmObject();
+			type_lazy = () -> ManagedAccountProduct.mmObject();
+		}
+
+		@Override
+		public ManagedAccountProduct getValue(InvestmentAccountContract obj) {
+			return obj.getModeledAccount();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountContract obj, ManagedAccountProduct value) {
+			obj.setModeledAccount(value);
 		}
 	};
 
@@ -346,8 +382,8 @@ public class InvestmentAccountContract extends AccountContract {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccountContract";
 				definition = "Contract defining the related investment account.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.mmInvestmentAccountContract, com.tools20022.repository.entity.InvestmentAccountService.mmInvestmentAccountContract,
-						com.tools20022.repository.entity.ManagedAccountProduct.mmInvestmentAccountContract);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.mmInvestmentAccountContract, InvestmentAccountService.mmInvestmentAccountContract,
+						ManagedAccountProduct.mmInvestmentAccountContract);
 				superType_lazy = () -> AccountContract.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccountContract.mmLetterIntentReference, com.tools20022.repository.entity.InvestmentAccountContract.mmAccumulationRightReference,
 						com.tools20022.repository.entity.InvestmentAccountContract.mmInvestmentAccount, com.tools20022.repository.entity.InvestmentAccountContract.mmServices,
@@ -393,7 +429,7 @@ public class InvestmentAccountContract extends AccountContract {
 		return services == null ? services = new ArrayList<>() : services;
 	}
 
-	public InvestmentAccountContract setServices(List<com.tools20022.repository.entity.InvestmentAccountService> services) {
+	public InvestmentAccountContract setServices(List<InvestmentAccountService> services) {
 		this.services = Objects.requireNonNull(services);
 		return this;
 	}
@@ -402,7 +438,7 @@ public class InvestmentAccountContract extends AccountContract {
 		return modeledAccount;
 	}
 
-	public InvestmentAccountContract setModeledAccount(com.tools20022.repository.entity.ManagedAccountProduct modeledAccount) {
+	public InvestmentAccountContract setModeledAccount(ManagedAccountProduct modeledAccount) {
 		this.modeledAccount = Objects.requireNonNull(modeledAccount);
 		return this;
 	}

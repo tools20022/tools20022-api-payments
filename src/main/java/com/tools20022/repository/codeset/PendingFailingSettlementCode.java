@@ -1580,14 +1580,14 @@ public class PendingFailingSettlementCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Counterparty is in receivership, ie, a  form of bankruptcy."</li>
+	 * "Counterparty is in receivership, ie, a form of bankruptcy."</li>
 	 * </ul>
 	 */
 	public static final PendingFailingSettlementCode CounterpartyInReceivership = new PendingFailingSettlementCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CounterpartyInReceivership";
-			definition = "Counterparty is in receivership, ie, a  form of bankruptcy.";
+			definition = "Counterparty is in receivership, ie, a form of bankruptcy.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PendingFailingSettlementCode.mmObject();
 			codeName = "CPEC";
 		}

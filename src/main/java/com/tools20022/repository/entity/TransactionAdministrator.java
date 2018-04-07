@@ -19,9 +19,8 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
-import com.tools20022.repository.entity.SystemPartyRole;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -134,7 +133,7 @@ public class TransactionAdministrator extends SystemPartyRole {
 	 * definition} = "System where the clearing takes place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashClearingSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TransactionAdministrator, com.tools20022.repository.entity.CashClearingSystem> mmCashClearingSystem = new MMBusinessAssociationEnd<TransactionAdministrator, com.tools20022.repository.entity.CashClearingSystem>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
@@ -146,6 +145,16 @@ public class TransactionAdministrator extends SystemPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmTransactionAdministrator;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.CashClearingSystem getValue(TransactionAdministrator obj) {
+			return obj.getCashClearingSystem();
+		}
+
+		@Override
+		public void setValue(TransactionAdministrator obj, com.tools20022.repository.entity.CashClearingSystem value) {
+			obj.setCashClearingSystem(value);
 		}
 	};
 	protected CurrencyCode currency;
@@ -176,7 +185,7 @@ public class TransactionAdministrator extends SystemPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TransactionAdministrator, CurrencyCode> mmCurrency = new MMBusinessAttribute<TransactionAdministrator, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
@@ -188,12 +197,14 @@ public class TransactionAdministrator extends SystemPartyRole {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TransactionAdministrator.class.getMethod("getCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(TransactionAdministrator obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(TransactionAdministrator obj, CurrencyCode value) {
+			obj.setCurrency(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange;
@@ -232,7 +243,7 @@ public class TransactionAdministrator extends SystemPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TransactionAdministrator, List<CurrencyExchange>> mmCurrencyExchange = new MMBusinessAssociationEnd<TransactionAdministrator, List<CurrencyExchange>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
@@ -243,6 +254,16 @@ public class TransactionAdministrator extends SystemPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForTransactionAdministrator;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
+		}
+
+		@Override
+		public List<CurrencyExchange> getValue(TransactionAdministrator obj) {
+			return obj.getCurrencyExchange();
+		}
+
+		@Override
+		public void setValue(TransactionAdministrator obj, List<CurrencyExchange> value) {
+			obj.setCurrencyExchange(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.CashManagementService> cashManagementService;
@@ -282,7 +303,7 @@ public class TransactionAdministrator extends SystemPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashManagementService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TransactionAdministrator, List<CashManagementService>> mmCashManagementService = new MMBusinessAssociationEnd<TransactionAdministrator, List<CashManagementService>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
@@ -294,8 +315,18 @@ public class TransactionAdministrator extends SystemPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 		}
+
+		@Override
+		public List<CashManagementService> getValue(TransactionAdministrator obj) {
+			return obj.getCashManagementService();
+		}
+
+		@Override
+		public void setValue(TransactionAdministrator obj, List<CashManagementService> value) {
+			obj.setCashManagementService(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.CashSettlement> settlementInstruction;
+	protected List<CashSettlement> settlementInstruction;
 	/**
 	 * 
 	 <p>
@@ -331,7 +362,7 @@ public class TransactionAdministrator extends SystemPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlementInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TransactionAdministrator, List<CashSettlement>> mmSettlementInstruction = new MMBusinessAssociationEnd<TransactionAdministrator, List<CashSettlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
@@ -339,9 +370,19 @@ public class TransactionAdministrator extends SystemPartyRole {
 			name = "SettlementInstruction";
 			definition = "Specifies the settlement instruction managed by the transaction administrator.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmRelatedTransactionAdministrator;
+			opposite_lazy = () -> CashSettlement.mmRelatedTransactionAdministrator;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
+			type_lazy = () -> CashSettlement.mmObject();
+		}
+
+		@Override
+		public List<CashSettlement> getValue(TransactionAdministrator obj) {
+			return obj.getSettlementInstruction();
+		}
+
+		@Override
+		public void setValue(TransactionAdministrator obj, List<CashSettlement> value) {
+			obj.setSettlementInstruction(value);
 		}
 	};
 
@@ -352,7 +393,7 @@ public class TransactionAdministrator extends SystemPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionAdministrator";
 				definition = "Set of integrated applications that provides centralised services such as clearing and settlement.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashClearingSystem.mmTransactionAdministrator, com.tools20022.repository.entity.CashSettlement.mmRelatedTransactionAdministrator,
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashClearingSystem.mmTransactionAdministrator, CashSettlement.mmRelatedTransactionAdministrator,
 						com.tools20022.repository.entity.CashManagementService.mmRelatedTransactionAdministrator, com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForTransactionAdministrator);
 				superType_lazy = () -> SystemPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TransactionAdministrator.mmCashClearingSystem, com.tools20022.repository.entity.TransactionAdministrator.mmCurrency,
@@ -408,7 +449,7 @@ public class TransactionAdministrator extends SystemPartyRole {
 		return settlementInstruction == null ? settlementInstruction = new ArrayList<>() : settlementInstruction;
 	}
 
-	public TransactionAdministrator setSettlementInstruction(List<com.tools20022.repository.entity.CashSettlement> settlementInstruction) {
+	public TransactionAdministrator setSettlementInstruction(List<CashSettlement> settlementInstruction) {
 		this.settlementInstruction = Objects.requireNonNull(settlementInstruction);
 		return this;
 	}

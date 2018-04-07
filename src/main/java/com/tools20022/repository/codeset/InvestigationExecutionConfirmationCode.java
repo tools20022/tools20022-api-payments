@@ -98,14 +98,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * InvestigationExecutionConfirmationCode.InstructionIsDuplicate}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
- * =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code
- * InvestigationExecutionConfirmation3Code}</li>
- * </ul>
- * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -776,7 +768,6 @@ public class InvestigationExecutionConfirmationCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationExecutionConfirmationCode";
 				definition = "Indicates the result of an investigation.";
-				derivation_lazy = () -> Arrays.asList(InvestigationExecutionConfirmation3Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.CancelledAsPerRequest, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.ModifiedAsPerRequest,
 						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.AcceptedDebitAuthorisation, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.PaymentInitiated,
 						com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.CoverInitiated, com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode.CoverModified,

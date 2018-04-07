@@ -24,9 +24,8 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.YesNoIndicator;
-import com.tools20022.repository.entity.SecuritiesOrder;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -180,7 +179,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGrossAmountIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, YesNoIndicator> mmGrossAmountIndicator = new MMBusinessAttribute<InvestmentFundOrder, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -192,12 +191,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getGrossAmountIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundOrder obj) {
+			return obj.getGrossAmountIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, YesNoIndicator value) {
+			obj.setGrossAmountIndicator(value);
 		}
 	};
 	protected InvestmentFundTransaction relatedTransaction;
@@ -235,7 +236,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Transaction which is the source of the order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundOrder, Optional<InvestmentFundTransaction>> mmRelatedTransaction = new MMBusinessAssociationEnd<InvestmentFundOrder, Optional<InvestmentFundTransaction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -244,9 +245,19 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			definition = "Transaction which is the source of the order.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmInvestmentFundOrder;
+			opposite_lazy = () -> InvestmentFundTransaction.mmInvestmentFundOrder;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
+			type_lazy = () -> InvestmentFundTransaction.mmObject();
+		}
+
+		@Override
+		public Optional<InvestmentFundTransaction> getValue(InvestmentFundOrder obj) {
+			return obj.getRelatedTransaction();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, Optional<InvestmentFundTransaction> value) {
+			obj.setRelatedTransaction(value.orElse(null));
 		}
 	};
 	protected FundOrderTypeCode orderType;
@@ -276,7 +287,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Specifies the category of the investment fund order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOrderType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, FundOrderTypeCode> mmOrderType = new MMBusinessAttribute<InvestmentFundOrder, FundOrderTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -288,12 +299,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> FundOrderTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getOrderType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FundOrderTypeCode getValue(InvestmentFundOrder obj) {
+			return obj.getOrderType();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, FundOrderTypeCode value) {
+			obj.setOrderType(value);
 		}
 	};
 	protected CurrencyAndAmount grossAmount;
@@ -325,7 +338,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGrossAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, CurrencyAndAmount> mmGrossAmount = new MMBusinessAttribute<InvestmentFundOrder, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -337,12 +350,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getGrossAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(InvestmentFundOrder obj) {
+			return obj.getGrossAmount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, CurrencyAndAmount value) {
+			obj.setGrossAmount(value);
 		}
 	};
 	protected SecuritiesQuantity unitsNumber;
@@ -380,7 +395,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * "Quantity of investment fund units to be subscribed or redeemed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUnitsNumber = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundOrder, SecuritiesQuantity> mmUnitsNumber = new MMBusinessAssociationEnd<InvestmentFundOrder, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -389,9 +404,19 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			definition = "Quantity of investment fund units to be subscribed or redeemed.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmOrder;
+			opposite_lazy = () -> SecuritiesQuantity.mmOrder;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(InvestmentFundOrder obj) {
+			return obj.getUnitsNumber();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, SecuritiesQuantity value) {
+			obj.setUnitsNumber(value);
 		}
 	};
 	protected InvestmentFundOrderExecution investmentFundOrderExecution;
@@ -429,7 +454,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Execution of an investment fund order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFundOrderExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundOrder, Optional<InvestmentFundOrderExecution>> mmInvestmentFundOrderExecution = new MMBusinessAssociationEnd<InvestmentFundOrder, Optional<InvestmentFundOrderExecution>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -441,6 +466,16 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrderExecution.mmOrder;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrderExecution.mmObject();
+		}
+
+		@Override
+		public Optional<InvestmentFundOrderExecution> getValue(InvestmentFundOrder obj) {
+			return obj.getInvestmentFundOrderExecution();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, Optional<InvestmentFundOrderExecution> value) {
+			obj.setInvestmentFundOrderExecution(value.orElse(null));
 		}
 	};
 	protected CurrencyAndAmount netAmount;
@@ -472,7 +507,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNetAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, CurrencyAndAmount> mmNetAmount = new MMBusinessAttribute<InvestmentFundOrder, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -484,12 +519,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getNetAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(InvestmentFundOrder obj) {
+			return obj.getNetAmount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, CurrencyAndAmount value) {
+			obj.setNetAmount(value);
 		}
 	};
 	protected ISODateTime orderDateTime;
@@ -519,7 +556,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * "Date and time at which the order was placed by the investor."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOrderDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, ISODateTime> mmOrderDateTime = new MMBusinessAttribute<InvestmentFundOrder, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -531,12 +568,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getOrderDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(InvestmentFundOrder obj) {
+			return obj.getOrderDateTime();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, ISODateTime value) {
+			obj.setOrderDateTime(value);
 		}
 	};
 	protected ISODateTime expiryDateTime;
@@ -565,7 +604,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Date on which the order expires."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExpiryDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, ISODateTime> mmExpiryDateTime = new MMBusinessAttribute<InvestmentFundOrder, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -577,12 +616,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getExpiryDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(InvestmentFundOrder obj) {
+			return obj.getExpiryDateTime();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, ISODateTime value) {
+			obj.setExpiryDateTime(value);
 		}
 	};
 	protected CancellationRightCode cancellationRight;
@@ -614,7 +655,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancellationRight = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, CancellationRightCode> mmCancellationRight = new MMBusinessAttribute<InvestmentFundOrder, CancellationRightCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -626,12 +667,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> CancellationRightCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getCancellationRight", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CancellationRightCode getValue(InvestmentFundOrder obj) {
+			return obj.getCancellationRight();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, CancellationRightCode value) {
+			obj.setCancellationRight(value);
 		}
 	};
 	protected CurrencyCode requestedSettlementCurrency;
@@ -660,7 +703,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Currency requested for settlement of cash proceeds."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedSettlementCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, CurrencyCode> mmRequestedSettlementCurrency = new MMBusinessAttribute<InvestmentFundOrder, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -672,12 +715,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getRequestedSettlementCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(InvestmentFundOrder obj) {
+			return obj.getRequestedSettlementCurrency();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, CurrencyCode value) {
+			obj.setRequestedSettlementCurrency(value);
 		}
 	};
 	protected ISODateTime requestedExecutionDateTime;
@@ -707,7 +752,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * "Date and time at which the investor requests the order to be executed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedExecutionDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, ISODateTime> mmRequestedExecutionDateTime = new MMBusinessAttribute<InvestmentFundOrder, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -719,12 +764,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getRequestedExecutionDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(InvestmentFundOrder obj) {
+			return obj.getRequestedExecutionDateTime();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, ISODateTime value) {
+			obj.setRequestedExecutionDateTime(value);
 		}
 	};
 	protected FinancialAdviceCode financialAdvice;
@@ -756,7 +803,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancialAdvice = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, FinancialAdviceCode> mmFinancialAdvice = new MMBusinessAttribute<InvestmentFundOrder, FinancialAdviceCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -768,12 +815,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> FinancialAdviceCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getFinancialAdvice", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FinancialAdviceCode getValue(InvestmentFundOrder obj) {
+			return obj.getFinancialAdvice();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, FinancialAdviceCode value) {
+			obj.setFinancialAdvice(value);
 		}
 	};
 	protected NegotiatedTradeCode negotiatedTrade;
@@ -803,7 +852,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Specifies whether the trade is negotiated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNegotiatedTrade = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, NegotiatedTradeCode> mmNegotiatedTrade = new MMBusinessAttribute<InvestmentFundOrder, NegotiatedTradeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -815,12 +864,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> NegotiatedTradeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getNegotiatedTrade", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public NegotiatedTradeCode getValue(InvestmentFundOrder obj) {
+			return obj.getNegotiatedTrade();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, NegotiatedTradeCode value) {
+			obj.setNegotiatedTrade(value);
 		}
 	};
 	protected PercentageRate holdingsRate;
@@ -851,7 +902,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * "Percentage of the financial quantity to be invested or redeemed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHoldingsRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, PercentageRate> mmHoldingsRate = new MMBusinessAttribute<InvestmentFundOrder, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -863,12 +914,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getHoldingsRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(InvestmentFundOrder obj) {
+			return obj.getHoldingsRate();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, PercentageRate value) {
+			obj.setHoldingsRate(value);
 		}
 	};
 	protected OrderWaiverReasonCode orderWaiverReason;
@@ -900,7 +953,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOrderWaiverReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, OrderWaiverReasonCode> mmOrderWaiverReason = new MMBusinessAttribute<InvestmentFundOrder, OrderWaiverReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -912,12 +965,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> OrderWaiverReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getOrderWaiverReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OrderWaiverReasonCode getValue(InvestmentFundOrder obj) {
+			return obj.getOrderWaiverReason();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, OrderWaiverReasonCode value) {
+			obj.setOrderWaiverReason(value);
 		}
 	};
 	protected YesNoIndicator initialOrderIndicator;
@@ -948,7 +1003,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * "Indicates whether the subscription order is an initial order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInitialOrderIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, YesNoIndicator> mmInitialOrderIndicator = new MMBusinessAttribute<InvestmentFundOrder, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -960,12 +1015,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getInitialOrderIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundOrder obj) {
+			return obj.getInitialOrderIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, YesNoIndicator value) {
+			obj.setInitialOrderIndicator(value);
 		}
 	};
 	protected ISODateTime orderBookingDate;
@@ -999,7 +1056,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOrderBookingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, ISODateTime> mmOrderBookingDate = new MMBusinessAttribute<InvestmentFundOrder, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -1012,12 +1069,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getOrderBookingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(InvestmentFundOrder obj) {
+			return obj.getOrderBookingDate();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, ISODateTime value) {
+			obj.setOrderBookingDate(value);
 		}
 	};
 	protected InvestmentPlan investmentPlan;
@@ -1054,7 +1113,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Investment plan which triggers the standing orders."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentPlan = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundOrder, Optional<InvestmentPlan>> mmInvestmentPlan = new MMBusinessAssociationEnd<InvestmentFundOrder, Optional<InvestmentPlan>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -1067,8 +1126,18 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 		}
+
+		@Override
+		public Optional<InvestmentPlan> getValue(InvestmentFundOrder obj) {
+			return obj.getInvestmentPlan();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, Optional<InvestmentPlan> value) {
+			obj.setInvestmentPlan(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesOrderStatus> orderStatus;
+	protected List<SecuritiesOrderStatus> orderStatus;
 	/**
 	 * 
 	 <p>
@@ -1103,7 +1172,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Status of an investment fund order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrderStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundOrder, List<SecuritiesOrderStatus>> mmOrderStatus = new MMBusinessAssociationEnd<InvestmentFundOrder, List<SecuritiesOrderStatus>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -1111,9 +1180,19 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			name = "OrderStatus";
 			definition = "Status of an investment fund order.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmInvestmentFundOrder;
+			opposite_lazy = () -> SecuritiesOrderStatus.mmInvestmentFundOrder;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
+			type_lazy = () -> SecuritiesOrderStatus.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesOrderStatus> getValue(InvestmentFundOrder obj) {
+			return obj.getOrderStatus();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, List<SecuritiesOrderStatus> value) {
+			obj.setOrderStatus(value);
 		}
 	};
 	protected CurrencyAndAmount totalAmount;
@@ -1143,7 +1222,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Total amount subscribed in the current tax year."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundOrder, CurrencyAndAmount> mmTotalAmount = new MMBusinessAttribute<InvestmentFundOrder, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
@@ -1155,12 +1234,14 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundOrder.class.getMethod("getTotalAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(InvestmentFundOrder obj) {
+			return obj.getTotalAmount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder obj, CurrencyAndAmount value) {
+			obj.setTotalAmount(value);
 		}
 	};
 
@@ -1171,9 +1252,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundOrder";
 				definition = "An investor's instruction to either subscribe or redeem an amount of money or its equivalent, for example other assets, into or out of an investment fund.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentPlan.mmStandingOrder, com.tools20022.repository.entity.SecuritiesQuantity.mmOrder,
-						com.tools20022.repository.entity.InvestmentFundTransaction.mmInvestmentFundOrder, com.tools20022.repository.entity.InvestmentFundOrderExecution.mmOrder,
-						com.tools20022.repository.entity.SecuritiesOrderStatus.mmInvestmentFundOrder);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentPlan.mmStandingOrder, SecuritiesQuantity.mmOrder, InvestmentFundTransaction.mmInvestmentFundOrder,
+						com.tools20022.repository.entity.InvestmentFundOrderExecution.mmOrder, SecuritiesOrderStatus.mmInvestmentFundOrder);
 				superType_lazy = () -> SecuritiesOrder.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundOrder.mmGrossAmountIndicator, com.tools20022.repository.entity.InvestmentFundOrder.mmRelatedTransaction,
 						com.tools20022.repository.entity.InvestmentFundOrder.mmOrderType, com.tools20022.repository.entity.InvestmentFundOrder.mmGrossAmount, com.tools20022.repository.entity.InvestmentFundOrder.mmUnitsNumber,
@@ -1207,7 +1287,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 		return relatedTransaction == null ? Optional.empty() : Optional.of(relatedTransaction);
 	}
 
-	public InvestmentFundOrder setRelatedTransaction(com.tools20022.repository.entity.InvestmentFundTransaction relatedTransaction) {
+	public InvestmentFundOrder setRelatedTransaction(InvestmentFundTransaction relatedTransaction) {
 		this.relatedTransaction = relatedTransaction;
 		return this;
 	}
@@ -1234,7 +1314,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 		return unitsNumber;
 	}
 
-	public InvestmentFundOrder setUnitsNumber(com.tools20022.repository.entity.SecuritiesQuantity unitsNumber) {
+	public InvestmentFundOrder setUnitsNumber(SecuritiesQuantity unitsNumber) {
 		this.unitsNumber = Objects.requireNonNull(unitsNumber);
 		return this;
 	}
@@ -1369,7 +1449,7 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 		return orderStatus == null ? orderStatus = new ArrayList<>() : orderStatus;
 	}
 
-	public InvestmentFundOrder setOrderStatus(List<com.tools20022.repository.entity.SecuritiesOrderStatus> orderStatus) {
+	public InvestmentFundOrder setOrderStatus(List<SecuritiesOrderStatus> orderStatus) {
 		this.orderStatus = Objects.requireNonNull(orderStatus);
 		return this;
 	}

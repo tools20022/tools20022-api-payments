@@ -39,7 +39,7 @@ import java.util.Optional;
  * Characteristic of a MessageDefinition, having a unique meaning within the
  * scope of that MessageDefinition.
  */
-public class MMMessageBuildingBlock implements RuntimePropertyAware, MMMessageConstruct {
+public class MMMessageBuildingBlock<T, V> implements RuntimePropertyAware<T, V>, MMMessageConstruct {
 
 	/**
 	 * The simple content model of a MessageBuildingBlock when it is expressed

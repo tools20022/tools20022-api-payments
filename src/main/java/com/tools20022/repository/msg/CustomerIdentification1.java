@@ -21,6 +21,8 @@ import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AuthorityInvestigation2;
+import com.tools20022.repository.msg.PartyIdentification43;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -101,7 +103,7 @@ public class CustomerIdentification1 {
 	 * definition} = "Identifies the customer for the investigation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmParty = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerIdentification1, PartyIdentification43> mmParty = new MMMessageAttribute<CustomerIdentification1, PartyIdentification43>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerIdentification1.mmObject();
 			isDerived = false;
@@ -111,11 +113,21 @@ public class CustomerIdentification1 {
 			definition = "Identifies the customer for the investigation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
+			complexType_lazy = () -> PartyIdentification43.mmObject();
+		}
+
+		@Override
+		public PartyIdentification43 getValue(CustomerIdentification1 obj) {
+			return obj.getParty();
+		}
+
+		@Override
+		public void setValue(CustomerIdentification1 obj, PartyIdentification43 value) {
+			obj.setParty(value);
 		}
 	};
 	@XmlElement(name = "AuthrtyReq", required = true)
-	protected List<com.tools20022.repository.msg.AuthorityInvestigation2> authorityRequest;
+	protected List<AuthorityInvestigation2> authorityRequest;
 	/**
 	 * 
 	 <p>
@@ -146,7 +158,7 @@ public class CustomerIdentification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAuthorityRequest = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CustomerIdentification1, List<AuthorityInvestigation2>> mmAuthorityRequest = new MMMessageAttribute<CustomerIdentification1, List<AuthorityInvestigation2>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CustomerIdentification1.mmObject();
 			isDerived = false;
@@ -155,7 +167,17 @@ public class CustomerIdentification1 {
 			name = "AuthorityRequest";
 			definition = "Specifies the authority request related to the identified investigation party.";
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.AuthorityInvestigation2.mmObject();
+			complexType_lazy = () -> AuthorityInvestigation2.mmObject();
+		}
+
+		@Override
+		public List<AuthorityInvestigation2> getValue(CustomerIdentification1 obj) {
+			return obj.getAuthorityRequest();
+		}
+
+		@Override
+		public void setValue(CustomerIdentification1 obj, List<AuthorityInvestigation2> value) {
+			obj.setAuthorityRequest(value);
 		}
 	};
 
@@ -176,7 +198,7 @@ public class CustomerIdentification1 {
 		return party;
 	}
 
-	public CustomerIdentification1 setParty(com.tools20022.repository.msg.PartyIdentification43 party) {
+	public CustomerIdentification1 setParty(PartyIdentification43 party) {
 		this.party = Objects.requireNonNull(party);
 		return this;
 	}
@@ -185,7 +207,7 @@ public class CustomerIdentification1 {
 		return authorityRequest == null ? authorityRequest = new ArrayList<>() : authorityRequest;
 	}
 
-	public CustomerIdentification1 setAuthorityRequest(List<com.tools20022.repository.msg.AuthorityInvestigation2> authorityRequest) {
+	public CustomerIdentification1 setAuthorityRequest(List<AuthorityInvestigation2> authorityRequest) {
 		this.authorityRequest = Objects.requireNonNull(authorityRequest);
 		return this;
 	}

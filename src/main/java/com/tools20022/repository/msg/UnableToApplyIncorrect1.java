@@ -106,7 +106,7 @@ public class UnableToApplyIncorrect1 {
 	 * definition} = "Specifies the missing information in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnableToApplyIncorrect1, UnableToApplyIncorrectInformation4Code> mmCode = new MMMessageAttribute<UnableToApplyIncorrect1, UnableToApplyIncorrectInformation4Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.UnableToApplyIncorrect1.mmObject();
 			isDerived = false;
@@ -117,6 +117,16 @@ public class UnableToApplyIncorrect1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> UnableToApplyIncorrectInformation4Code.mmObject();
+		}
+
+		@Override
+		public UnableToApplyIncorrectInformation4Code getValue(UnableToApplyIncorrect1 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(UnableToApplyIncorrect1 obj, UnableToApplyIncorrectInformation4Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "AddtlIncrrctInf")
@@ -148,7 +158,7 @@ public class UnableToApplyIncorrect1 {
 	 * definition} = "Further details about the incorrect information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalIncorrectInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnableToApplyIncorrect1, Optional<Max140Text>> mmAdditionalIncorrectInformation = new MMMessageAttribute<UnableToApplyIncorrect1, Optional<Max140Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.UnableToApplyIncorrect1.mmObject();
 			isDerived = false;
@@ -159,6 +169,16 @@ public class UnableToApplyIncorrect1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(UnableToApplyIncorrect1 obj) {
+			return obj.getAdditionalIncorrectInformation();
+		}
+
+		@Override
+		public void setValue(UnableToApplyIncorrect1 obj, Optional<Max140Text> value) {
+			obj.setAdditionalIncorrectInformation(value.orElse(null));
 		}
 	};
 

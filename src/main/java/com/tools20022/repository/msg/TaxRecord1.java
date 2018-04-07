@@ -26,6 +26,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.entity.TaxRecord;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.TaxAmount1;
+import com.tools20022.repository.msg.TaxPeriod1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -80,6 +82,12 @@ import javax.xml.bind.annotation.XmlType;
  * "TaxRecord1"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Set of elements used to define the tax record."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxRecord2 TaxRecord2}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -118,9 +126,16 @@ public class TaxRecord1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "High level code to identify the type of tax details."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxRecord2#mmType
+	 * TaxRecord2.mmType}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxRecord1, Optional<Max35Text>> mmType = new MMMessageAttribute<TaxRecord1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> TaxRecord.mmTaxRecordType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxRecord1.mmObject();
@@ -129,9 +144,20 @@ public class TaxRecord1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "High level code to identify the type of tax details.";
+			nextVersions_lazy = () -> Arrays.asList(TaxRecord2.mmType);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxRecord1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(TaxRecord1 obj, Optional<Max35Text> value) {
+			obj.setType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Ctgy")
@@ -166,9 +192,16 @@ public class TaxRecord1 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Specifies the tax code as published by the tax authority."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxRecord2#mmCategory
+	 * TaxRecord2.mmCategory}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCategory = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxRecord1, Optional<Max35Text>> mmCategory = new MMMessageAttribute<TaxRecord1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> TaxRecord.mmCategory;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxRecord1.mmObject();
@@ -177,9 +210,20 @@ public class TaxRecord1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Category";
 			definition = "Specifies the tax code as published by the tax authority.";
+			nextVersions_lazy = () -> Arrays.asList(TaxRecord2.mmCategory);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxRecord1 obj) {
+			return obj.getCategory();
+		}
+
+		@Override
+		public void setValue(TaxRecord1 obj, Optional<Max35Text> value) {
+			obj.setCategory(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CtgyDtls")
@@ -208,9 +252,17 @@ public class TaxRecord1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Provides further details of the category tax code."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TaxRecord2#mmCategoryDetails
+	 * TaxRecord2.mmCategoryDetails}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCategoryDetails = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxRecord1, Optional<Max35Text>> mmCategoryDetails = new MMMessageAttribute<TaxRecord1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxRecord1.mmObject();
 			isDerived = false;
@@ -218,9 +270,20 @@ public class TaxRecord1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CategoryDetails";
 			definition = "Provides further details of the category tax code.";
+			nextVersions_lazy = () -> Arrays.asList(TaxRecord2.mmCategoryDetails);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxRecord1 obj) {
+			return obj.getCategoryDetails();
+		}
+
+		@Override
+		public void setValue(TaxRecord1 obj, Optional<Max35Text> value) {
+			obj.setCategoryDetails(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "DbtrSts")
@@ -256,9 +319,16 @@ public class TaxRecord1 {
 	 * definition} =
 	 * "Code provided by local authority to identify the status of the party that has drawn up the settlement document."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxRecord2#mmDebtorStatus
+	 * TaxRecord2.mmDebtorStatus}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDebtorStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxRecord1, Optional<Max35Text>> mmDebtorStatus = new MMMessageAttribute<TaxRecord1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> TaxRecord.mmStatus;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxRecord1.mmObject();
@@ -267,9 +337,20 @@ public class TaxRecord1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DebtorStatus";
 			definition = "Code provided by local authority to identify the status of the party that has drawn up the settlement document.";
+			nextVersions_lazy = () -> Arrays.asList(TaxRecord2.mmDebtorStatus);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxRecord1 obj) {
+			return obj.getDebtorStatus();
+		}
+
+		@Override
+		public void setValue(TaxRecord1 obj, Optional<Max35Text> value) {
+			obj.setDebtorStatus(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CertId")
@@ -305,9 +386,17 @@ public class TaxRecord1 {
 	 * definition} =
 	 * "Identification number of the tax report as assigned by the taxing authority."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TaxRecord2#mmCertificateIdentification
+	 * TaxRecord2.mmCertificateIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCertificateIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxRecord1, Optional<Max35Text>> mmCertificateIdentification = new MMMessageAttribute<TaxRecord1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmCertificateIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxRecord1.mmObject();
@@ -316,9 +405,20 @@ public class TaxRecord1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CertificateIdentification";
 			definition = "Identification number of the tax report as assigned by the taxing authority.";
+			nextVersions_lazy = () -> Arrays.asList(TaxRecord2.mmCertificateIdentification);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxRecord1 obj) {
+			return obj.getCertificateIdentification();
+		}
+
+		@Override
+		public void setValue(TaxRecord1 obj, Optional<Max35Text> value) {
+			obj.setCertificateIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "FrmsCd")
@@ -354,9 +454,16 @@ public class TaxRecord1 {
 	 * definition} =
 	 * "Identifies, in a coded form, on which template the tax report is to be provided."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxRecord2#mmFormsCode
+	 * TaxRecord2.mmFormsCode}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFormsCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxRecord1, Optional<Max35Text>> mmFormsCode = new MMMessageAttribute<TaxRecord1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> TaxRecord.mmFormsCode;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxRecord1.mmObject();
@@ -365,9 +472,20 @@ public class TaxRecord1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FormsCode";
 			definition = "Identifies, in a coded form, on which template the tax report is to be provided.";
+			nextVersions_lazy = () -> Arrays.asList(TaxRecord2.mmFormsCode);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxRecord1 obj) {
+			return obj.getFormsCode();
+		}
+
+		@Override
+		public void setValue(TaxRecord1 obj, Optional<Max35Text> value) {
+			obj.setFormsCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Prd")
@@ -401,9 +519,16 @@ public class TaxRecord1 {
 	 * definition} =
 	 * "Set of elements used to provide details on the period of time related to the tax payment."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxRecord2#mmPeriod
+	 * TaxRecord2.mmPeriod}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPeriod = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TaxRecord1, Optional<TaxPeriod1>> mmPeriod = new MMMessageAssociationEnd<TaxRecord1, Optional<TaxPeriod1>>() {
 		{
 			businessElementTrace_lazy = () -> TaxRecord.mmPeriod;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxRecord1.mmObject();
@@ -412,10 +537,21 @@ public class TaxRecord1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Period";
 			definition = "Set of elements used to provide details on the period of time related to the tax payment.";
+			nextVersions_lazy = () -> Arrays.asList(TaxRecord2.mmPeriod);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TaxPeriod1.mmObject();
+			type_lazy = () -> TaxPeriod1.mmObject();
+		}
+
+		@Override
+		public Optional<TaxPeriod1> getValue(TaxRecord1 obj) {
+			return obj.getPeriod();
+		}
+
+		@Override
+		public void setValue(TaxRecord1 obj, Optional<TaxPeriod1> value) {
+			obj.setPeriod(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TaxAmt")
@@ -449,9 +585,16 @@ public class TaxRecord1 {
 	 * definition} =
 	 * "Set of elements used to provide information on the amount of the tax record."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxRecord2#mmTaxAmount
+	 * TaxRecord2.mmTaxAmount}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTaxAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TaxRecord1, Optional<TaxAmount1>> mmTaxAmount = new MMMessageAssociationEnd<TaxRecord1, Optional<TaxAmount1>>() {
 		{
 			businessElementTrace_lazy = () -> TaxRecord.mmTax;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxRecord1.mmObject();
@@ -460,10 +603,21 @@ public class TaxRecord1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TaxAmount";
 			definition = "Set of elements used to provide information on the amount of the tax record.";
+			nextVersions_lazy = () -> Arrays.asList(TaxRecord2.mmTaxAmount);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TaxAmount1.mmObject();
+			type_lazy = () -> TaxAmount1.mmObject();
+		}
+
+		@Override
+		public Optional<TaxAmount1> getValue(TaxRecord1 obj) {
+			return obj.getTaxAmount();
+		}
+
+		@Override
+		public void setValue(TaxRecord1 obj, Optional<TaxAmount1> value) {
+			obj.setTaxAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -492,9 +646,17 @@ public class TaxRecord1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Further details of the tax record."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TaxRecord2#mmAdditionalInformation
+	 * TaxRecord2.mmAdditionalInformation}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxRecord1, Optional<Max140Text>> mmAdditionalInformation = new MMMessageAttribute<TaxRecord1, Optional<Max140Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxRecord1.mmObject();
 			isDerived = false;
@@ -502,9 +664,20 @@ public class TaxRecord1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Further details of the tax record.";
+			nextVersions_lazy = () -> Arrays.asList(TaxRecord2.mmAdditionalInformation);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(TaxRecord1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(TaxRecord1 obj, Optional<Max140Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 
@@ -519,6 +692,7 @@ public class TaxRecord1 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxRecord1";
 				definition = "Set of elements used to define the tax record.";
+				nextVersions_lazy = () -> Arrays.asList(TaxRecord2.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
@@ -582,7 +756,7 @@ public class TaxRecord1 {
 		return period == null ? Optional.empty() : Optional.of(period);
 	}
 
-	public TaxRecord1 setPeriod(com.tools20022.repository.msg.TaxPeriod1 period) {
+	public TaxRecord1 setPeriod(TaxPeriod1 period) {
 		this.period = period;
 		return this;
 	}
@@ -591,7 +765,7 @@ public class TaxRecord1 {
 		return taxAmount == null ? Optional.empty() : Optional.of(taxAmount);
 	}
 
-	public TaxRecord1 setTaxAmount(com.tools20022.repository.msg.TaxAmount1 taxAmount) {
+	public TaxRecord1 setTaxAmount(TaxAmount1 taxAmount) {
 		this.taxAmount = taxAmount;
 		return this;
 	}

@@ -110,7 +110,7 @@ public class CashDeposit1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNoteDenomination = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashDeposit1, ActiveCurrencyAndAmount> mmNoteDenomination = new MMMessageAttribute<CashDeposit1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CashDeposit.mmNoteDenomination;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CashDeposit1.mmObject();
@@ -122,6 +122,16 @@ public class CashDeposit1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(CashDeposit1 obj) {
+			return obj.getNoteDenomination();
+		}
+
+		@Override
+		public void setValue(CashDeposit1 obj, ActiveCurrencyAndAmount value) {
+			obj.setNoteDenomination(value);
 		}
 	};
 	@XmlElement(name = "NbOfNotes", required = true)
@@ -159,7 +169,7 @@ public class CashDeposit1 {
 	 * "Specifies the number of notes of the same denomination in the deposit."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfNotes = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashDeposit1, Max15NumericText> mmNumberOfNotes = new MMMessageAttribute<CashDeposit1, Max15NumericText>() {
 		{
 			businessElementTrace_lazy = () -> CashDeposit.mmNumberOfNotes;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CashDeposit1.mmObject();
@@ -171,6 +181,16 @@ public class CashDeposit1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
+		}
+
+		@Override
+		public Max15NumericText getValue(CashDeposit1 obj) {
+			return obj.getNumberOfNotes();
+		}
+
+		@Override
+		public void setValue(CashDeposit1 obj, Max15NumericText value) {
+			obj.setNumberOfNotes(value);
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -209,7 +229,7 @@ public class CashDeposit1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashDeposit1, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<CashDeposit1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CashDeposit.mmDepositAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CashDeposit1.mmObject();
@@ -221,6 +241,16 @@ public class CashDeposit1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(CashDeposit1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(CashDeposit1 obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 

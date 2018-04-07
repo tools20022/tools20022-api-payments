@@ -52,7 +52,7 @@ public class ConstraintChequeMaturityDateRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCheque7 = new MMConstraint() {
+	public static final MMConstraint<Cheque7> forCheque7 = new MMConstraint<Cheque7>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChequeMaturityDateRule";
@@ -62,8 +62,8 @@ public class ConstraintChequeMaturityDateRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCheque7((Cheque7) obj);
+		public void executeValidator(Cheque7 obj) throws Exception {
+			checkCheque7(obj);
 		}
 	};
 

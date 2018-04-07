@@ -24,8 +24,8 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -202,7 +202,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmExercisePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Distribution, DateTimePeriod> mmExercisePeriod = new MMBusinessAssociationEnd<Distribution, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -211,9 +211,19 @@ public class Distribution {
 			definition = "Period during which the right and/or privilege on an underlying financial instrument may be executed.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmExercisePeriodDistribution;
+			opposite_lazy = () -> DateTimePeriod.mmExercisePeriodDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(Distribution obj) {
+			return obj.getExercisePeriod();
+		}
+
+		@Override
+		public void setValue(Distribution obj, DateTimePeriod value) {
+			obj.setExercisePeriod(value);
 		}
 	};
 	protected DateTimePeriod offerPeriod;
@@ -249,7 +259,7 @@ public class Distribution {
 	 * definition} = "Period during which an open offer remains valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOfferPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Distribution, DateTimePeriod> mmOfferPeriod = new MMBusinessAssociationEnd<Distribution, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -258,9 +268,19 @@ public class Distribution {
 			definition = "Period during which an open offer remains valid.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmOfferPeriodDistribution;
+			opposite_lazy = () -> DateTimePeriod.mmOfferPeriodDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(Distribution obj) {
+			return obj.getOfferPeriod();
+		}
+
+		@Override
+		public void setValue(Distribution obj, DateTimePeriod value) {
+			obj.setOfferPeriod(value);
 		}
 	};
 	protected DateTimePeriod tradingPeriod;
@@ -297,7 +317,7 @@ public class Distribution {
 	 * "Period during which a financial instrument is available for trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradingPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Distribution, DateTimePeriod> mmTradingPeriod = new MMBusinessAssociationEnd<Distribution, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -306,9 +326,19 @@ public class Distribution {
 			definition = "Period during which a financial instrument is available for trading.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmTradingPeriodDistribution;
+			opposite_lazy = () -> DateTimePeriod.mmTradingPeriodDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(Distribution obj) {
+			return obj.getTradingPeriod();
+		}
+
+		@Override
+		public void setValue(Distribution obj, DateTimePeriod value) {
+			obj.setTradingPeriod(value);
 		}
 	};
 	protected DateTimePeriod blockingPeriod;
@@ -346,7 +376,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBlockingPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Distribution, DateTimePeriod> mmBlockingPeriod = new MMBusinessAssociationEnd<Distribution, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -355,9 +385,19 @@ public class Distribution {
 			definition = "Period, set by the issuer, during which the security is blocked, ie, not available for exchange.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmBlockingPeriodDistribution;
+			opposite_lazy = () -> DateTimePeriod.mmBlockingPeriodDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(Distribution obj) {
+			return obj.getBlockingPeriod();
+		}
+
+		@Override
+		public void setValue(Distribution obj, DateTimePeriod value) {
+			obj.setBlockingPeriod(value);
 		}
 	};
 	protected DateTimePeriod interestPeriod;
@@ -393,7 +433,7 @@ public class Distribution {
 	 * definition} = "Period during which interest has accrued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterestPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Distribution, DateTimePeriod> mmInterestPeriod = new MMBusinessAssociationEnd<Distribution, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -402,9 +442,19 @@ public class Distribution {
 			definition = "Period during which interest has accrued.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmCashDistribution;
+			opposite_lazy = () -> DateTimePeriod.mmCashDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(Distribution obj) {
+			return obj.getInterestPeriod();
+		}
+
+		@Override
+		public void setValue(Distribution obj, DateTimePeriod value) {
+			obj.setInterestPeriod(value);
 		}
 	};
 	protected Tax distributionTax;
@@ -440,7 +490,7 @@ public class Distribution {
 	 * "Provides the tax description associated with the corporate event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDistributionTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Distribution, Tax> mmDistributionTax = new MMBusinessAssociationEnd<Distribution, Tax>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -449,9 +499,19 @@ public class Distribution {
 			definition = "Provides the tax description associated with the corporate event.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmRelatedCorporateActionDistribution;
+			opposite_lazy = () -> Tax.mmRelatedCorporateActionDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
+			type_lazy = () -> Tax.mmObject();
+		}
+
+		@Override
+		public Tax getValue(Distribution obj) {
+			return obj.getDistributionTax();
+		}
+
+		@Override
+		public void setValue(Distribution obj, Tax value) {
+			obj.setDistributionTax(value);
 		}
 	};
 	protected SecuritiesPricing offerPrice;
@@ -489,7 +549,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOfferPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Distribution, SecuritiesPricing> mmOfferPrice = new MMBusinessAssociationEnd<Distribution, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -498,9 +558,19 @@ public class Distribution {
 			definition = "Price, determined by the offerer, at which the investor is entitled to take part in an event.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmDistribution;
+			opposite_lazy = () -> SecuritiesPricing.mmDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(Distribution obj) {
+			return obj.getOfferPrice();
+		}
+
+		@Override
+		public void setValue(Distribution obj, SecuritiesPricing value) {
+			obj.setOfferPrice(value);
 		}
 	};
 	protected IncentivePremium incentivePremium;
@@ -538,7 +608,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIncentivePremium = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Distribution, Optional<IncentivePremium>> mmIncentivePremium = new MMBusinessAssociationEnd<Distribution, Optional<IncentivePremium>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -547,9 +617,19 @@ public class Distribution {
 			definition = "Cash premium made available to encourage participation by a certain deadline (avoids to have a second call).";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmCorporateActionDistribution;
+			opposite_lazy = () -> IncentivePremium.mmCorporateActionDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
+			type_lazy = () -> IncentivePremium.mmObject();
+		}
+
+		@Override
+		public Optional<IncentivePremium> getValue(Distribution obj) {
+			return obj.getIncentivePremium();
+		}
+
+		@Override
+		public void setValue(Distribution obj, Optional<IncentivePremium> value) {
+			obj.setIncentivePremium(value.orElse(null));
 		}
 	};
 	protected ISODateTime effectiveDate;
@@ -579,7 +659,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, ISODateTime> mmEffectiveDate = new MMBusinessAttribute<Distribution, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -591,12 +671,14 @@ public class Distribution {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getEffectiveDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Distribution obj) {
+			return obj.getEffectiveDate();
+		}
+
+		@Override
+		public void setValue(Distribution obj, ISODateTime value) {
+			obj.setEffectiveDate(value);
 		}
 	};
 	protected Max350Text eventConditions;
@@ -626,7 +708,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEventConditions = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, Max350Text> mmEventConditions = new MMBusinessAttribute<Distribution, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -638,12 +720,14 @@ public class Distribution {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getEventConditions", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(Distribution obj) {
+			return obj.getEventConditions();
+		}
+
+		@Override
+		public void setValue(Distribution obj, Max350Text value) {
+			obj.setEventConditions(value);
 		}
 	};
 	protected ISODateTime exDate;
@@ -673,7 +757,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, ISODateTime> mmExDate = new MMBusinessAttribute<Distribution, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -685,12 +769,14 @@ public class Distribution {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getExDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Distribution obj) {
+			return obj.getExDate();
+		}
+
+		@Override
+		public void setValue(Distribution obj, ISODateTime value) {
+			obj.setExDate(value);
 		}
 	};
 	protected PercentageRate grossRate;
@@ -720,7 +806,7 @@ public class Distribution {
 	 * "Percentage paid before deductions and/or allowances have been made."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGrossRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, PercentageRate> mmGrossRate = new MMBusinessAttribute<Distribution, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -732,12 +818,14 @@ public class Distribution {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getGrossRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Distribution obj) {
+			return obj.getGrossRate();
+		}
+
+		@Override
+		public void setValue(Distribution obj, PercentageRate value) {
+			obj.setGrossRate(value);
 		}
 	};
 	protected ISODateTime meetingDate;
@@ -765,7 +853,7 @@ public class Distribution {
 	 * definition} = "Date/time at which the meeting will take place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMeetingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, ISODateTime> mmMeetingDate = new MMBusinessAttribute<Distribution, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -777,12 +865,14 @@ public class Distribution {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getMeetingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Distribution obj) {
+			return obj.getMeetingDate();
+		}
+
+		@Override
+		public void setValue(Distribution obj, ISODateTime value) {
+			obj.setMeetingDate(value);
 		}
 	};
 	protected PercentageRate netRate;
@@ -812,7 +902,7 @@ public class Distribution {
 	 * "Percentage paid after deductions and/or allowances have been made."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNetRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, PercentageRate> mmNetRate = new MMBusinessAttribute<Distribution, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -824,12 +914,14 @@ public class Distribution {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getNetRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Distribution obj) {
+			return obj.getNetRate();
+		}
+
+		@Override
+		public void setValue(Distribution obj, PercentageRate value) {
+			obj.setNetRate(value);
 		}
 	};
 	protected CurrencyAndAmount newFaceValue;
@@ -858,7 +950,7 @@ public class Distribution {
 	 * definition} = "New unit value of a debt security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNewFaceValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, CurrencyAndAmount> mmNewFaceValue = new MMBusinessAttribute<Distribution, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -870,12 +962,14 @@ public class Distribution {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getNewFaceValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Distribution obj) {
+			return obj.getNewFaceValue();
+		}
+
+		@Override
+		public void setValue(Distribution obj, CurrencyAndAmount value) {
+			obj.setNewFaceValue(value);
 		}
 	};
 	protected CurrencyAndAmount newParValue;
@@ -904,7 +998,7 @@ public class Distribution {
 	 * definition} = "New nominal value of an equity security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNewParValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, CurrencyAndAmount> mmNewParValue = new MMBusinessAttribute<Distribution, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -916,12 +1010,14 @@ public class Distribution {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getNewParValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Distribution obj) {
+			return obj.getNewParValue();
+		}
+
+		@Override
+		public void setValue(Distribution obj, CurrencyAndAmount value) {
+			obj.setNewParValue(value);
 		}
 	};
 	protected ISODateTime paymentDate;
@@ -951,7 +1047,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPaymentDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, ISODateTime> mmPaymentDate = new MMBusinessAttribute<Distribution, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -963,12 +1059,14 @@ public class Distribution {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getPaymentDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Distribution obj) {
+			return obj.getPaymentDate();
+		}
+
+		@Override
+		public void setValue(Distribution obj, ISODateTime value) {
+			obj.setPaymentDate(value);
 		}
 	};
 	protected Dividend dividend;
@@ -1003,7 +1101,7 @@ public class Distribution {
 	 * definition} = "Dividend per financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDividend = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Distribution, Dividend> mmDividend = new MMBusinessAssociationEnd<Distribution, Dividend>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -1012,9 +1110,19 @@ public class Distribution {
 			definition = "Dividend per financial instrument.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Dividend.mmRelatedDistribution;
+			opposite_lazy = () -> Dividend.mmRelatedDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
+			type_lazy = () -> Dividend.mmObject();
+		}
+
+		@Override
+		public Dividend getValue(Distribution obj) {
+			return obj.getDividend();
+		}
+
+		@Override
+		public void setValue(Distribution obj, Dividend value) {
+			obj.setDividend(value);
 		}
 	};
 	protected CorporateActionOptionCode corporateActionOption;
@@ -1045,7 +1153,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCorporateActionOption = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, CorporateActionOptionCode> mmCorporateActionOption = new MMBusinessAttribute<Distribution, CorporateActionOptionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -1057,12 +1165,14 @@ public class Distribution {
 			simpleType_lazy = () -> CorporateActionOptionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getCorporateActionOption", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CorporateActionOptionCode getValue(Distribution obj) {
+			return obj.getCorporateActionOption();
+		}
+
+		@Override
+		public void setValue(Distribution obj, CorporateActionOptionCode value) {
+			obj.setCorporateActionOption(value);
 		}
 	};
 	protected CurrencyCode currencyOption;
@@ -1090,7 +1200,7 @@ public class Distribution {
 	 * definition} = "Currency choice given to the investor."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCurrencyOption = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, CurrencyCode> mmCurrencyOption = new MMBusinessAttribute<Distribution, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -1102,12 +1212,14 @@ public class Distribution {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getCurrencyOption", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(Distribution obj) {
+			return obj.getCurrencyOption();
+		}
+
+		@Override
+		public void setValue(Distribution obj, CurrencyCode value) {
+			obj.setCurrencyOption(value);
 		}
 	};
 	protected CurrencyAndAmount decreaseAmount;
@@ -1138,7 +1250,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDecreaseAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, CurrencyAndAmount> mmDecreaseAmount = new MMBusinessAttribute<Distribution, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -1150,12 +1262,14 @@ public class Distribution {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getDecreaseAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Distribution obj) {
+			return obj.getDecreaseAmount();
+		}
+
+		@Override
+		public void setValue(Distribution obj, CurrencyAndAmount value) {
+			obj.setDecreaseAmount(value);
 		}
 	};
 	protected PercentageRate decreaseRate;
@@ -1186,7 +1300,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDecreaseRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, PercentageRate> mmDecreaseRate = new MMBusinessAttribute<Distribution, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -1198,12 +1312,14 @@ public class Distribution {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getDecreaseRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Distribution obj) {
+			return obj.getDecreaseRate();
+		}
+
+		@Override
+		public void setValue(Distribution obj, PercentageRate value) {
+			obj.setDecreaseRate(value);
 		}
 	};
 	protected ISODateTime offerPriceFixingDate;
@@ -1233,7 +1349,7 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOfferPriceFixingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Distribution, ISODateTime> mmOfferPriceFixingDate = new MMBusinessAttribute<Distribution, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
@@ -1245,12 +1361,14 @@ public class Distribution {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Distribution.class.getMethod("getOfferPriceFixingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Distribution obj) {
+			return obj.getOfferPriceFixingDate();
+		}
+
+		@Override
+		public void setValue(Distribution obj, ISODateTime value) {
+			obj.setOfferPriceFixingDate(value);
 		}
 	};
 
@@ -1261,11 +1379,8 @@ public class Distribution {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Distribution";
 				definition = "Distributions in cash and/or securities following a corporate event.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Dividend.mmRelatedDistribution, com.tools20022.repository.entity.SecuritiesPricing.mmDistribution,
-						com.tools20022.repository.entity.DateTimePeriod.mmExercisePeriodDistribution, com.tools20022.repository.entity.DateTimePeriod.mmOfferPeriodDistribution,
-						com.tools20022.repository.entity.DateTimePeriod.mmTradingPeriodDistribution, com.tools20022.repository.entity.DateTimePeriod.mmBlockingPeriodDistribution,
-						com.tools20022.repository.entity.DateTimePeriod.mmCashDistribution, com.tools20022.repository.entity.Tax.mmRelatedCorporateActionDistribution,
-						com.tools20022.repository.entity.IncentivePremium.mmCorporateActionDistribution);
+				associationDomain_lazy = () -> Arrays.asList(Dividend.mmRelatedDistribution, SecuritiesPricing.mmDistribution, DateTimePeriod.mmExercisePeriodDistribution, DateTimePeriod.mmOfferPeriodDistribution,
+						DateTimePeriod.mmTradingPeriodDistribution, DateTimePeriod.mmBlockingPeriodDistribution, DateTimePeriod.mmCashDistribution, Tax.mmRelatedCorporateActionDistribution, IncentivePremium.mmCorporateActionDistribution);
 				subType_lazy = () -> Arrays.asList(CashDistribution.mmObject(), SecuritiesAndCashDistribution.mmObject(), SecuritiesDistribution.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Distribution.mmExercisePeriod, com.tools20022.repository.entity.Distribution.mmOfferPeriod, com.tools20022.repository.entity.Distribution.mmTradingPeriod,
 						com.tools20022.repository.entity.Distribution.mmBlockingPeriod, com.tools20022.repository.entity.Distribution.mmInterestPeriod, com.tools20022.repository.entity.Distribution.mmDistributionTax,
@@ -1289,7 +1404,7 @@ public class Distribution {
 		return exercisePeriod;
 	}
 
-	public Distribution setExercisePeriod(com.tools20022.repository.entity.DateTimePeriod exercisePeriod) {
+	public Distribution setExercisePeriod(DateTimePeriod exercisePeriod) {
 		this.exercisePeriod = Objects.requireNonNull(exercisePeriod);
 		return this;
 	}
@@ -1298,7 +1413,7 @@ public class Distribution {
 		return offerPeriod;
 	}
 
-	public Distribution setOfferPeriod(com.tools20022.repository.entity.DateTimePeriod offerPeriod) {
+	public Distribution setOfferPeriod(DateTimePeriod offerPeriod) {
 		this.offerPeriod = Objects.requireNonNull(offerPeriod);
 		return this;
 	}
@@ -1307,7 +1422,7 @@ public class Distribution {
 		return tradingPeriod;
 	}
 
-	public Distribution setTradingPeriod(com.tools20022.repository.entity.DateTimePeriod tradingPeriod) {
+	public Distribution setTradingPeriod(DateTimePeriod tradingPeriod) {
 		this.tradingPeriod = Objects.requireNonNull(tradingPeriod);
 		return this;
 	}
@@ -1316,7 +1431,7 @@ public class Distribution {
 		return blockingPeriod;
 	}
 
-	public Distribution setBlockingPeriod(com.tools20022.repository.entity.DateTimePeriod blockingPeriod) {
+	public Distribution setBlockingPeriod(DateTimePeriod blockingPeriod) {
 		this.blockingPeriod = Objects.requireNonNull(blockingPeriod);
 		return this;
 	}
@@ -1325,7 +1440,7 @@ public class Distribution {
 		return interestPeriod;
 	}
 
-	public Distribution setInterestPeriod(com.tools20022.repository.entity.DateTimePeriod interestPeriod) {
+	public Distribution setInterestPeriod(DateTimePeriod interestPeriod) {
 		this.interestPeriod = Objects.requireNonNull(interestPeriod);
 		return this;
 	}
@@ -1334,7 +1449,7 @@ public class Distribution {
 		return distributionTax;
 	}
 
-	public Distribution setDistributionTax(com.tools20022.repository.entity.Tax distributionTax) {
+	public Distribution setDistributionTax(Tax distributionTax) {
 		this.distributionTax = Objects.requireNonNull(distributionTax);
 		return this;
 	}
@@ -1343,7 +1458,7 @@ public class Distribution {
 		return offerPrice;
 	}
 
-	public Distribution setOfferPrice(com.tools20022.repository.entity.SecuritiesPricing offerPrice) {
+	public Distribution setOfferPrice(SecuritiesPricing offerPrice) {
 		this.offerPrice = Objects.requireNonNull(offerPrice);
 		return this;
 	}
@@ -1352,7 +1467,7 @@ public class Distribution {
 		return incentivePremium == null ? Optional.empty() : Optional.of(incentivePremium);
 	}
 
-	public Distribution setIncentivePremium(com.tools20022.repository.entity.IncentivePremium incentivePremium) {
+	public Distribution setIncentivePremium(IncentivePremium incentivePremium) {
 		this.incentivePremium = incentivePremium;
 		return this;
 	}
@@ -1442,7 +1557,7 @@ public class Distribution {
 		return dividend;
 	}
 
-	public Distribution setDividend(com.tools20022.repository.entity.Dividend dividend) {
+	public Distribution setDividend(Dividend dividend) {
 		this.dividend = Objects.requireNonNull(dividend);
 		return this;
 	}

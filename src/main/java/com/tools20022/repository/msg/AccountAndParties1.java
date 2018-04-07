@@ -23,6 +23,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.InvestigatedParties1Choice;
 import com.tools20022.repository.entity.CashAccount;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AuthorityRequestType1;
+import com.tools20022.repository.msg.CashAccount25;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -112,7 +114,7 @@ public class AccountAndParties1 {
 	 * definition} = "Specifies the account for the investigation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountAndParties1, CashAccount25> mmIdentification = new MMMessageAttribute<AccountAndParties1, CashAccount25>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccount.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountAndParties1.mmObject();
@@ -123,7 +125,17 @@ public class AccountAndParties1 {
 			definition = "Specifies the account for the investigation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.CashAccount25.mmObject();
+			complexType_lazy = () -> CashAccount25.mmObject();
+		}
+
+		@Override
+		public CashAccount25 getValue(AccountAndParties1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(AccountAndParties1 obj, CashAccount25 value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "InvstgtdPties", required = true)
@@ -158,7 +170,7 @@ public class AccountAndParties1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInvestigatedParties = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountAndParties1, InvestigatedParties1Choice> mmInvestigatedParties = new MMMessageAttribute<AccountAndParties1, InvestigatedParties1Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountAndParties1.mmObject();
 			isDerived = false;
@@ -170,9 +182,19 @@ public class AccountAndParties1 {
 			minOccurs = 1;
 			complexType_lazy = () -> InvestigatedParties1Choice.mmObject();
 		}
+
+		@Override
+		public InvestigatedParties1Choice getValue(AccountAndParties1 obj) {
+			return obj.getInvestigatedParties();
+		}
+
+		@Override
+		public void setValue(AccountAndParties1 obj, InvestigatedParties1Choice value) {
+			obj.setInvestigatedParties(value);
+		}
 	};
 	@XmlElement(name = "AuthrtyReqTp", required = true)
-	protected List<com.tools20022.repository.msg.AuthorityRequestType1> authorityRequestType;
+	protected List<AuthorityRequestType1> authorityRequestType;
 	/**
 	 * 
 	 <p>
@@ -201,7 +223,7 @@ public class AccountAndParties1 {
 	 * definition} = "Identifies the authority request type as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAuthorityRequestType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountAndParties1, List<AuthorityRequestType1>> mmAuthorityRequestType = new MMMessageAttribute<AccountAndParties1, List<AuthorityRequestType1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountAndParties1.mmObject();
 			isDerived = false;
@@ -210,7 +232,17 @@ public class AccountAndParties1 {
 			name = "AuthorityRequestType";
 			definition = "Identifies the authority request type as a code.";
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.AuthorityRequestType1.mmObject();
+			complexType_lazy = () -> AuthorityRequestType1.mmObject();
+		}
+
+		@Override
+		public List<AuthorityRequestType1> getValue(AccountAndParties1 obj) {
+			return obj.getAuthorityRequestType();
+		}
+
+		@Override
+		public void setValue(AccountAndParties1 obj, List<AuthorityRequestType1> value) {
+			obj.setAuthorityRequestType(value);
 		}
 	};
 
@@ -233,7 +265,7 @@ public class AccountAndParties1 {
 		return identification;
 	}
 
-	public AccountAndParties1 setIdentification(com.tools20022.repository.msg.CashAccount25 identification) {
+	public AccountAndParties1 setIdentification(CashAccount25 identification) {
 		this.identification = Objects.requireNonNull(identification);
 		return this;
 	}
@@ -251,7 +283,7 @@ public class AccountAndParties1 {
 		return authorityRequestType == null ? authorityRequestType = new ArrayList<>() : authorityRequestType;
 	}
 
-	public AccountAndParties1 setAuthorityRequestType(List<com.tools20022.repository.msg.AuthorityRequestType1> authorityRequestType) {
+	public AccountAndParties1 setAuthorityRequestType(List<AuthorityRequestType1> authorityRequestType) {
 		this.authorityRequestType = Objects.requireNonNull(authorityRequestType);
 		return this;
 	}

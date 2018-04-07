@@ -398,7 +398,7 @@ public class TransferStatusCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Transfer or settlement  instruction  has been rejected for further processing."
+	 * "Transfer or settlement instruction has been rejected for further processing."
 	 * </li>
 	 * </ul>
 	 */
@@ -407,7 +407,7 @@ public class TransferStatusCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":25D::CPRC//REJT"), new ISO15022Synonym(this, ":25D::IPRC//REJT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rejected";
-			definition = "Transfer or settlement  instruction  has been rejected for further processing.";
+			definition = "Transfer or settlement instruction has been rejected for further processing.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TransferStatusCode.mmObject();
 			codeName = "REJT";
 		}

@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -117,7 +118,7 @@ public class AccountPartyRole extends Role {
 	 * definition} = "Identifies the account for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AccountPartyRole, List<Account>> mmAccount = new MMBusinessAssociationEnd<AccountPartyRole, List<Account>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountPartyRole.mmObject();
@@ -128,6 +129,16 @@ public class AccountPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
+		}
+
+		@Override
+		public List<Account> getValue(AccountPartyRole obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(AccountPartyRole obj, List<Account> value) {
+			obj.setAccount(value);
 		}
 	};
 

@@ -21,6 +21,8 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CashAccount;
+import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
@@ -65,7 +67,11 @@ import java.util.Objects;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.DebtorAgentRole
+ * DebtorAgentRole}</li>
  * <li>{@linkplain com.tools20022.repository.entity.CreditorRole CreditorRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CreditorAgentRole
+ * CreditorAgentRole}</li>
  * <li>{@linkplain com.tools20022.repository.entity.InitiatingPartyRole
  * InitiatingPartyRole}</li>
  * </ul>
@@ -74,8 +80,8 @@ import java.util.Objects;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionParties3
- * TransactionParties3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionParties4
+ * TransactionParties4}</li>
  * </ul>
  * </li>
  * <li>
@@ -121,12 +127,6 @@ public class PaymentPartyRole extends Role {
 	 * {@linkplain com.tools20022.repository.msg.AccountReport15#mmBalanceTransferAccount
 	 * AccountReport15.mmBalanceTransferAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmDebtorAccount
-	 * TransactionParties3.mmDebtorAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmCreditorAccount
-	 * TransactionParties3.mmCreditorAccount}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation15#mmDebtorAccount
 	 * DirectDebitTransactionInformation15.mmDebtorAccount}</li>
 	 * <li>
@@ -147,78 +147,6 @@ public class PaymentPartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction9#mmCreditorAccount
 	 * CreditTransferTransaction9.mmCreditorAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmPreviousInstructingAgentAccount
-	 * CreditTransferTransaction23.mmPreviousInstructingAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmIntermediaryAgent1Account
-	 * CreditTransferTransaction23.mmIntermediaryAgent1Account}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmIntermediaryAgent2Account
-	 * CreditTransferTransaction23.mmIntermediaryAgent2Account}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmIntermediaryAgent3Account
-	 * CreditTransferTransaction23.mmIntermediaryAgent3Account}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmDebtorAccount
-	 * CreditTransferTransaction23.mmDebtorAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmDebtorAgentAccount
-	 * CreditTransferTransaction23.mmDebtorAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmCreditorAgentAccount
-	 * CreditTransferTransaction23.mmCreditorAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmCreditorAccount
-	 * CreditTransferTransaction23.mmCreditorAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmPreviousInstructingAgentAccount
-	 * CreditTransferTransaction25.mmPreviousInstructingAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmIntermediaryAgent1Account
-	 * CreditTransferTransaction25.mmIntermediaryAgent1Account}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmIntermediaryAgent2Account
-	 * CreditTransferTransaction25.mmIntermediaryAgent2Account}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmIntermediaryAgent3Account
-	 * CreditTransferTransaction25.mmIntermediaryAgent3Account}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmDebtorAccount
-	 * CreditTransferTransaction25.mmDebtorAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmDebtorAgentAccount
-	 * CreditTransferTransaction25.mmDebtorAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmCreditorAgentAccount
-	 * CreditTransferTransaction25.mmCreditorAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmCreditorAccount
-	 * CreditTransferTransaction25.mmCreditorAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmDebtorAccount
-	 * CreditTransferTransaction24.mmDebtorAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmDebtorAgentAccount
-	 * CreditTransferTransaction24.mmDebtorAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmPreviousInstructingAgentAccount
-	 * CreditTransferTransaction24.mmPreviousInstructingAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmIntermediaryAgent1Account
-	 * CreditTransferTransaction24.mmIntermediaryAgent1Account}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmIntermediaryAgent2Account
-	 * CreditTransferTransaction24.mmIntermediaryAgent2Account}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmIntermediaryAgent3Account
-	 * CreditTransferTransaction24.mmIntermediaryAgent3Account}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmCreditorAgentAccount
-	 * CreditTransferTransaction24.mmCreditorAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmCreditorAccount
-	 * CreditTransferTransaction24.mmCreditorAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction26#mmIntermediaryAgent1Account
 	 * CreditTransferTransaction26.mmIntermediaryAgent1Account}</li>
@@ -270,18 +198,6 @@ public class PaymentPartyRole extends Role {
 	 * <li>{@linkplain com.tools20022.repository.msg.Mandate10#mmDebtorAccount
 	 * Mandate10.mmDebtorAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmDebtorAccount
-	 * RequestedModification6.mmDebtorAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmDebtorAgentAccount
-	 * RequestedModification6.mmDebtorAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmCreditorAgentAccount
-	 * RequestedModification6.mmCreditorAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmCreditorAccount
-	 * RequestedModification6.mmCreditorAccount}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction23#mmDebtorAccount
 	 * PaymentInstruction23.mmDebtorAccount}</li>
 	 * <li>
@@ -294,18 +210,6 @@ public class PaymentPartyRole extends Role {
 	 * Mandate9.mmCreditorAccount}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Mandate9#mmDebtorAccount
 	 * Mandate9.mmDebtorAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmDebtorAccount
-	 * OriginalTransactionReference24.mmDebtorAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmDebtorAgentAccount
-	 * OriginalTransactionReference24.mmDebtorAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmCreditorAgentAccount
-	 * OriginalTransactionReference24.mmCreditorAgentAccount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmCreditorAccount
-	 * OriginalTransactionReference24.mmCreditorAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInformation7#mmDebtorAccount
 	 * OriginalPaymentInformation7.mmDebtorAccount}</li>
@@ -343,29 +247,173 @@ public class PaymentPartyRole extends Role {
 	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails11#mmOriginalDebtorAgentAccount
 	 * AmendmentInformationDetails11.mmOriginalDebtorAgentAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmDebtorAccount
-	 * PaymentComplementaryInformation6.mmDebtorAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24#mmDebtorAccount
+	 * PaymentInstruction24.mmDebtorAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmDebtorAgentAccount
-	 * PaymentComplementaryInformation6.mmDebtorAgentAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24#mmDebtorAgentAccount
+	 * PaymentInstruction24.mmDebtorAgentAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmIntermediaryAgent1Account
-	 * PaymentComplementaryInformation6.mmIntermediaryAgent1Account}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction27#mmCreditorAccount
+	 * CreditTransferTransaction27.mmCreditorAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmIntermediaryAgent2Account
-	 * PaymentComplementaryInformation6.mmIntermediaryAgent2Account}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmDebtorAccount
+	 * PaymentComplementaryInformation7.mmDebtorAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmIntermediaryAgent3Account
-	 * PaymentComplementaryInformation6.mmIntermediaryAgent3Account}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmDebtorAgentAccount
+	 * PaymentComplementaryInformation7.mmDebtorAgentAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmCreditorAgentAccount
-	 * PaymentComplementaryInformation6.mmCreditorAgentAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmIntermediaryAgent1Account
+	 * PaymentComplementaryInformation7.mmIntermediaryAgent1Account}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmCreditorAccount
-	 * PaymentComplementaryInformation6.mmCreditorAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmIntermediaryAgent2Account
+	 * PaymentComplementaryInformation7.mmIntermediaryAgent2Account}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmPreviousInstructingAgentAccount
-	 * PaymentComplementaryInformation6.mmPreviousInstructingAgentAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmIntermediaryAgent3Account
+	 * PaymentComplementaryInformation7.mmIntermediaryAgent3Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmCreditorAgentAccount
+	 * PaymentComplementaryInformation7.mmCreditorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmCreditorAccount
+	 * PaymentComplementaryInformation7.mmCreditorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmPreviousInstructingAgent1Account
+	 * PaymentComplementaryInformation7.mmPreviousInstructingAgent1Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmPreviousInstructingAgent2Account
+	 * PaymentComplementaryInformation7.mmPreviousInstructingAgent2Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmPreviousInstructingAgent3Account
+	 * PaymentComplementaryInformation7.mmPreviousInstructingAgent3Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmPreviousInstructingAgent1Account
+	 * CreditTransferTransaction31.mmPreviousInstructingAgent1Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmPreviousInstructingAgent2Account
+	 * CreditTransferTransaction31.mmPreviousInstructingAgent2Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmPreviousInstructingAgent3Account
+	 * CreditTransferTransaction31.mmPreviousInstructingAgent3Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmIntermediaryAgent1Account
+	 * CreditTransferTransaction31.mmIntermediaryAgent1Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmIntermediaryAgent2Account
+	 * CreditTransferTransaction31.mmIntermediaryAgent2Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmIntermediaryAgent3Account
+	 * CreditTransferTransaction31.mmIntermediaryAgent3Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmDebtorAccount
+	 * CreditTransferTransaction31.mmDebtorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmDebtorAgentAccount
+	 * CreditTransferTransaction31.mmDebtorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmCreditorAgentAccount
+	 * CreditTransferTransaction31.mmCreditorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmCreditorAccount
+	 * CreditTransferTransaction31.mmCreditorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmDebtorAccount
+	 * RequestedModification7.mmDebtorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmDebtorAgentAccount
+	 * RequestedModification7.mmDebtorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmCreditorAgentAccount
+	 * RequestedModification7.mmCreditorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmCreditorAccount
+	 * RequestedModification7.mmCreditorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties4#mmDebtorAccount
+	 * TransactionParties4.mmDebtorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties4#mmCreditorAccount
+	 * TransactionParties4.mmCreditorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmDebtorAccount
+	 * OriginalTransactionReference27.mmDebtorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmDebtorAgentAccount
+	 * OriginalTransactionReference27.mmDebtorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmCreditorAgentAccount
+	 * OriginalTransactionReference27.mmCreditorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmCreditorAccount
+	 * OriginalTransactionReference27.mmCreditorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmDebtorAccount
+	 * CreditTransferTransaction32.mmDebtorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmDebtorAgentAccount
+	 * CreditTransferTransaction32.mmDebtorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmPreviousInstructingAgent1Account
+	 * CreditTransferTransaction32.mmPreviousInstructingAgent1Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmPreviousInstructingAgent2Account
+	 * CreditTransferTransaction32.mmPreviousInstructingAgent2Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmPreviousInstructingAgent3Account
+	 * CreditTransferTransaction32.mmPreviousInstructingAgent3Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmIntermediaryAgent1Account
+	 * CreditTransferTransaction32.mmIntermediaryAgent1Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmIntermediaryAgent2Account
+	 * CreditTransferTransaction32.mmIntermediaryAgent2Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmIntermediaryAgent3Account
+	 * CreditTransferTransaction32.mmIntermediaryAgent3Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmCreditorAgentAccount
+	 * CreditTransferTransaction32.mmCreditorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmCreditorAccount
+	 * CreditTransferTransaction32.mmCreditorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmPreviousInstructingAgent1Account
+	 * CreditTransferTransaction30.mmPreviousInstructingAgent1Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmPreviousInstructingAgent2Account
+	 * CreditTransferTransaction30.mmPreviousInstructingAgent2Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmPreviousInstructingAgent3Account
+	 * CreditTransferTransaction30.mmPreviousInstructingAgent3Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmIntermediaryAgent1Account
+	 * CreditTransferTransaction30.mmIntermediaryAgent1Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmIntermediaryAgent2Account
+	 * CreditTransferTransaction30.mmIntermediaryAgent2Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmIntermediaryAgent3Account
+	 * CreditTransferTransaction30.mmIntermediaryAgent3Account}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmDebtorAccount
+	 * CreditTransferTransaction30.mmDebtorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmDebtorAgentAccount
+	 * CreditTransferTransaction30.mmDebtorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmCreditorAgentAccount
+	 * CreditTransferTransaction30.mmCreditorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmCreditorAccount
+	 * CreditTransferTransaction30.mmCreditorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalCreditorAgentAccount
+	 * AmendmentInformationDetails12.mmOriginalCreditorAgentAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalDebtorAccount
+	 * AmendmentInformationDetails12.mmOriginalDebtorAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalDebtorAgentAccount
+	 * AmendmentInformationDetails12.mmOriginalDebtorAgentAccount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -386,30 +434,35 @@ public class PaymentPartyRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentPartyRole, List<CashAccount>> mmCashAccount = new MMBusinessAssociationEnd<PaymentPartyRole, List<CashAccount>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AccountReport15.mmBalanceTransferAccount, TransactionParties3.mmDebtorAccount, TransactionParties3.mmCreditorAccount, DirectDebitTransactionInformation15.mmDebtorAccount,
-					DirectDebitTransactionInformation15.mmDebtorAgentAccount, CreditTransferTransaction9.mmIntermediaryAgent1Account, CreditTransferTransaction9.mmIntermediaryAgent2Account,
-					CreditTransferTransaction9.mmIntermediaryAgent3Account, CreditTransferTransaction9.mmCreditorAgentAccount, CreditTransferTransaction9.mmCreditorAccount, CreditTransferTransaction23.mmPreviousInstructingAgentAccount,
-					CreditTransferTransaction23.mmIntermediaryAgent1Account, CreditTransferTransaction23.mmIntermediaryAgent2Account, CreditTransferTransaction23.mmIntermediaryAgent3Account, CreditTransferTransaction23.mmDebtorAccount,
-					CreditTransferTransaction23.mmDebtorAgentAccount, CreditTransferTransaction23.mmCreditorAgentAccount, CreditTransferTransaction23.mmCreditorAccount, CreditTransferTransaction25.mmPreviousInstructingAgentAccount,
-					CreditTransferTransaction25.mmIntermediaryAgent1Account, CreditTransferTransaction25.mmIntermediaryAgent2Account, CreditTransferTransaction25.mmIntermediaryAgent3Account, CreditTransferTransaction25.mmDebtorAccount,
-					CreditTransferTransaction25.mmDebtorAgentAccount, CreditTransferTransaction25.mmCreditorAgentAccount, CreditTransferTransaction25.mmCreditorAccount, CreditTransferTransaction24.mmDebtorAccount,
-					CreditTransferTransaction24.mmDebtorAgentAccount, CreditTransferTransaction24.mmPreviousInstructingAgentAccount, CreditTransferTransaction24.mmIntermediaryAgent1Account,
-					CreditTransferTransaction24.mmIntermediaryAgent2Account, CreditTransferTransaction24.mmIntermediaryAgent3Account, CreditTransferTransaction24.mmCreditorAgentAccount, CreditTransferTransaction24.mmCreditorAccount,
-					CreditTransferTransaction26.mmIntermediaryAgent1Account, CreditTransferTransaction26.mmIntermediaryAgent2Account, CreditTransferTransaction26.mmIntermediaryAgent3Account,
+			derivation_lazy = () -> Arrays.asList(AccountReport15.mmBalanceTransferAccount, DirectDebitTransactionInformation15.mmDebtorAccount, DirectDebitTransactionInformation15.mmDebtorAgentAccount,
+					CreditTransferTransaction9.mmIntermediaryAgent1Account, CreditTransferTransaction9.mmIntermediaryAgent2Account, CreditTransferTransaction9.mmIntermediaryAgent3Account, CreditTransferTransaction9.mmCreditorAgentAccount,
+					CreditTransferTransaction9.mmCreditorAccount, CreditTransferTransaction26.mmIntermediaryAgent1Account, CreditTransferTransaction26.mmIntermediaryAgent2Account, CreditTransferTransaction26.mmIntermediaryAgent3Account,
 					CreditTransferTransaction26.mmCreditorAgentAccount, CreditTransferTransaction26.mmCreditorAccount, CreditTransferTransaction22.mmCreditorAccount, PaymentInstruction21.mmCreditorAccount,
 					PaymentInstruction21.mmCreditorAgentAccount, DirectDebitTransactionInformation21.mmCreditorAccount, DirectDebitTransactionInformation21.mmCreditorAgentAccount,
 					DirectDebitTransactionInformation21.mmIntermediaryAgent1Account, DirectDebitTransactionInformation21.mmIntermediaryAgent2Account, DirectDebitTransactionInformation21.mmIntermediaryAgent3Account,
-					DirectDebitTransactionInformation21.mmDebtorAccount, DirectDebitTransactionInformation21.mmDebtorAgentAccount, Mandate10.mmCreditorAccount, Mandate10.mmDebtorAccount, RequestedModification6.mmDebtorAccount,
-					RequestedModification6.mmDebtorAgentAccount, RequestedModification6.mmCreditorAgentAccount, RequestedModification6.mmCreditorAccount, PaymentInstruction23.mmDebtorAccount, PaymentInstruction22.mmDebtorAccount,
-					PaymentInstruction22.mmDebtorAgentAccount, Mandate9.mmCreditorAccount, Mandate9.mmDebtorAccount, OriginalTransactionReference24.mmDebtorAccount, OriginalTransactionReference24.mmDebtorAgentAccount,
-					OriginalTransactionReference24.mmCreditorAgentAccount, OriginalTransactionReference24.mmCreditorAccount, OriginalPaymentInformation7.mmDebtorAccount, OriginalPaymentInformation7.mmCreditorAccount,
-					OriginalTransactionReference26.mmDebtorAccount, OriginalTransactionReference26.mmCreditorAccount, Mandate11.mmCreditorAccount, Mandate11.mmDebtorAccount, DirectDebitTransactionInformation22.mmDebtorAgentAccount,
-					DirectDebitTransactionInformation22.mmDebtorAccount, Mandate8.mmCreditorAccount, Mandate8.mmDebtorAccount, AmendmentInformationDetails11.mmOriginalCreditorAgentAccount,
-					AmendmentInformationDetails11.mmOriginalDebtorAccount, AmendmentInformationDetails11.mmOriginalDebtorAgentAccount, PaymentComplementaryInformation6.mmDebtorAccount, PaymentComplementaryInformation6.mmDebtorAgentAccount,
-					PaymentComplementaryInformation6.mmIntermediaryAgent1Account, PaymentComplementaryInformation6.mmIntermediaryAgent2Account, PaymentComplementaryInformation6.mmIntermediaryAgent3Account,
-					PaymentComplementaryInformation6.mmCreditorAgentAccount, PaymentComplementaryInformation6.mmCreditorAccount, PaymentComplementaryInformation6.mmPreviousInstructingAgentAccount);
+					DirectDebitTransactionInformation21.mmDebtorAccount, DirectDebitTransactionInformation21.mmDebtorAgentAccount, Mandate10.mmCreditorAccount, Mandate10.mmDebtorAccount, PaymentInstruction23.mmDebtorAccount,
+					PaymentInstruction22.mmDebtorAccount, PaymentInstruction22.mmDebtorAgentAccount, Mandate9.mmCreditorAccount, Mandate9.mmDebtorAccount, OriginalPaymentInformation7.mmDebtorAccount,
+					OriginalPaymentInformation7.mmCreditorAccount, OriginalTransactionReference26.mmDebtorAccount, OriginalTransactionReference26.mmCreditorAccount, Mandate11.mmCreditorAccount, Mandate11.mmDebtorAccount,
+					DirectDebitTransactionInformation22.mmDebtorAgentAccount, DirectDebitTransactionInformation22.mmDebtorAccount, Mandate8.mmCreditorAccount, Mandate8.mmDebtorAccount,
+					AmendmentInformationDetails11.mmOriginalCreditorAgentAccount, AmendmentInformationDetails11.mmOriginalDebtorAccount, AmendmentInformationDetails11.mmOriginalDebtorAgentAccount, PaymentInstruction24.mmDebtorAccount,
+					PaymentInstruction24.mmDebtorAgentAccount, CreditTransferTransaction27.mmCreditorAccount, PaymentComplementaryInformation7.mmDebtorAccount, PaymentComplementaryInformation7.mmDebtorAgentAccount,
+					PaymentComplementaryInformation7.mmIntermediaryAgent1Account, PaymentComplementaryInformation7.mmIntermediaryAgent2Account, PaymentComplementaryInformation7.mmIntermediaryAgent3Account,
+					PaymentComplementaryInformation7.mmCreditorAgentAccount, PaymentComplementaryInformation7.mmCreditorAccount, PaymentComplementaryInformation7.mmPreviousInstructingAgent1Account,
+					PaymentComplementaryInformation7.mmPreviousInstructingAgent2Account, PaymentComplementaryInformation7.mmPreviousInstructingAgent3Account, CreditTransferTransaction31.mmPreviousInstructingAgent1Account,
+					CreditTransferTransaction31.mmPreviousInstructingAgent2Account, CreditTransferTransaction31.mmPreviousInstructingAgent3Account, CreditTransferTransaction31.mmIntermediaryAgent1Account,
+					CreditTransferTransaction31.mmIntermediaryAgent2Account, CreditTransferTransaction31.mmIntermediaryAgent3Account, CreditTransferTransaction31.mmDebtorAccount, CreditTransferTransaction31.mmDebtorAgentAccount,
+					CreditTransferTransaction31.mmCreditorAgentAccount, CreditTransferTransaction31.mmCreditorAccount, RequestedModification7.mmDebtorAccount, RequestedModification7.mmDebtorAgentAccount,
+					RequestedModification7.mmCreditorAgentAccount, RequestedModification7.mmCreditorAccount, TransactionParties4.mmDebtorAccount, TransactionParties4.mmCreditorAccount, OriginalTransactionReference27.mmDebtorAccount,
+					OriginalTransactionReference27.mmDebtorAgentAccount, OriginalTransactionReference27.mmCreditorAgentAccount, OriginalTransactionReference27.mmCreditorAccount, CreditTransferTransaction32.mmDebtorAccount,
+					CreditTransferTransaction32.mmDebtorAgentAccount, CreditTransferTransaction32.mmPreviousInstructingAgent1Account, CreditTransferTransaction32.mmPreviousInstructingAgent2Account,
+					CreditTransferTransaction32.mmPreviousInstructingAgent3Account, CreditTransferTransaction32.mmIntermediaryAgent1Account, CreditTransferTransaction32.mmIntermediaryAgent2Account,
+					CreditTransferTransaction32.mmIntermediaryAgent3Account, CreditTransferTransaction32.mmCreditorAgentAccount, CreditTransferTransaction32.mmCreditorAccount, CreditTransferTransaction30.mmPreviousInstructingAgent1Account,
+					CreditTransferTransaction30.mmPreviousInstructingAgent2Account, CreditTransferTransaction30.mmPreviousInstructingAgent3Account, CreditTransferTransaction30.mmIntermediaryAgent1Account,
+					CreditTransferTransaction30.mmIntermediaryAgent2Account, CreditTransferTransaction30.mmIntermediaryAgent3Account, CreditTransferTransaction30.mmDebtorAccount, CreditTransferTransaction30.mmDebtorAgentAccount,
+					CreditTransferTransaction30.mmCreditorAgentAccount, CreditTransferTransaction30.mmCreditorAccount, AmendmentInformationDetails12.mmOriginalCreditorAgentAccount, AmendmentInformationDetails12.mmOriginalDebtorAccount,
+					AmendmentInformationDetails12.mmOriginalDebtorAgentAccount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentPartyRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -419,6 +472,16 @@ public class PaymentPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmPaymentPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
+		}
+
+		@Override
+		public List<CashAccount> getValue(PaymentPartyRole obj) {
+			return obj.getCashAccount();
+		}
+
+		@Override
+		public void setValue(PaymentPartyRole obj, List<CashAccount> value) {
+			obj.setCashAccount(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Payment> payment;
@@ -454,7 +517,7 @@ public class PaymentPartyRole extends Role {
 	 * definition} = "Identifies the payment in which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentPartyRole, List<Payment>> mmPayment = new MMBusinessAssociationEnd<PaymentPartyRole, List<Payment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentPartyRole.mmObject();
@@ -466,6 +529,16 @@ public class PaymentPartyRole extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Payment.mmObject();
 		}
+
+		@Override
+		public List<Payment> getValue(PaymentPartyRole obj) {
+			return obj.getPayment();
+		}
+
+		@Override
+		public void setValue(PaymentPartyRole obj, List<Payment> value) {
+			obj.setPayment(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -476,10 +549,10 @@ public class PaymentPartyRole extends Role {
 				name = "PaymentPartyRole";
 				definition = "Role played by a party in the context of a payment.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmPaymentPartyRole, com.tools20022.repository.entity.Payment.mmPartyRole);
-				subType_lazy = () -> Arrays.asList(CreditorRole.mmObject(), InitiatingPartyRole.mmObject());
+				subType_lazy = () -> Arrays.asList(DebtorAgentRole.mmObject(), CreditorRole.mmObject(), CreditorAgentRole.mmObject(), InitiatingPartyRole.mmObject());
 				superType_lazy = () -> Role.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentPartyRole.mmCashAccount, com.tools20022.repository.entity.PaymentPartyRole.mmPayment);
-				derivationComponent_lazy = () -> Arrays.asList(TransactionParties3.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(TransactionParties4.mmObject());
 			}
 
 			@Override

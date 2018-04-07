@@ -34,6 +34,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ExternalGarnishmentTypeCode
+ * ExternalGarnishmentTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -67,6 +70,7 @@ public class ExternalGarnishmentType1Code extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalGarnishmentType1Code";
 				definition = "Specifies the garnishment type as published in an external document type code list.";
+				trace_lazy = () -> ExternalGarnishmentTypeCode.mmObject();
 				minLength = 1;
 				maxLength = 4;
 			}

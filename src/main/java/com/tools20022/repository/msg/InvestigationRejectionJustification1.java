@@ -20,7 +20,7 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.camt.RejectInvestigationV04;
+import com.tools20022.repository.area.camt.RejectInvestigationV05;
 import com.tools20022.repository.codeset.InvestigationRejection1Code;
 import com.tools20022.repository.entity.PaymentInvestigationCaseRejection;
 import com.tools20022.repository.GeneratedRepository;
@@ -55,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.RejectInvestigationV04#mmJustification
- * RejectInvestigationV04.mmJustification}</li>
+ * {@linkplain com.tools20022.repository.area.camt.RejectInvestigationV05#mmJustification
+ * RejectInvestigationV05.mmJustification}</li>
  * </ul>
  * </li>
  * <li>
@@ -115,7 +115,7 @@ public class InvestigationRejectionJustification1 {
 	 * "Reason for the rejection of a case assignment, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRejectionReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestigationRejectionJustification1, InvestigationRejection1Code> mmRejectionReason = new MMMessageAttribute<InvestigationRejectionJustification1, InvestigationRejection1Code>() {
 		{
 			businessElementTrace_lazy = () -> PaymentInvestigationCaseRejection.mmInvestigationRejection;
 			componentContext_lazy = () -> com.tools20022.repository.msg.InvestigationRejectionJustification1.mmObject();
@@ -128,13 +128,23 @@ public class InvestigationRejectionJustification1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> InvestigationRejection1Code.mmObject();
 		}
+
+		@Override
+		public InvestigationRejection1Code getValue(InvestigationRejectionJustification1 obj) {
+			return obj.getRejectionReason();
+		}
+
+		@Override
+		public void setValue(InvestigationRejectionJustification1 obj, InvestigationRejection1Code value) {
+			obj.setRejectionReason(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InvestigationRejectionJustification1.mmRejectionReason);
-				messageBuildingBlock_lazy = () -> Arrays.asList(RejectInvestigationV04.mmJustification);
+				messageBuildingBlock_lazy = () -> Arrays.asList(RejectInvestigationV05.mmJustification);
 				trace_lazy = () -> PaymentInvestigationCaseRejection.mmObject();
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;

@@ -100,7 +100,7 @@ public class BillingRateIdentification1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingRateIdentification1Choice, ExternalBillingRateIdentification1Code> mmCode = new MMMessageAttribute<BillingRateIdentification1Choice, ExternalBillingRateIdentification1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.BillingRateIdentification1Choice.mmObject();
 			isDerived = false;
@@ -111,6 +111,16 @@ public class BillingRateIdentification1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalBillingRateIdentification1Code.mmObject();
+		}
+
+		@Override
+		public ExternalBillingRateIdentification1Code getValue(BillingRateIdentification1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(BillingRateIdentification1Choice obj, ExternalBillingRateIdentification1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -144,7 +154,7 @@ public class BillingRateIdentification1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingRateIdentification1Choice, Max35Text> mmProprietary = new MMMessageAttribute<BillingRateIdentification1Choice, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.BillingRateIdentification1Choice.mmObject();
 			isDerived = false;
@@ -155,6 +165,16 @@ public class BillingRateIdentification1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(BillingRateIdentification1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(BillingRateIdentification1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

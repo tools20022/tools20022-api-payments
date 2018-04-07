@@ -118,11 +118,11 @@ public class AccountContract3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Date on which the account and related basic services  are expected to be operational for the account owner."
+	 * "Date on which the account and related basic services are expected to be operational for the account owner."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTargetGoLiveDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountContract3, Optional<ISODate>> mmTargetGoLiveDate = new MMMessageAttribute<AccountContract3, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmTargetGoLiveDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract3.mmObject();
@@ -130,10 +130,20 @@ public class AccountContract3 {
 			xmlTag = "TrgtGoLiveDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TargetGoLiveDate";
-			definition = "Date on which the account and related basic services  are expected to be operational for the account owner.";
+			definition = "Date on which the account and related basic services are expected to be operational for the account owner.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(AccountContract3 obj) {
+			return obj.getTargetGoLiveDate();
+		}
+
+		@Override
+		public void setValue(AccountContract3 obj, Optional<ISODate> value) {
+			obj.setTargetGoLiveDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TrgtClsgDt")
@@ -172,7 +182,7 @@ public class AccountContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTargetClosingDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountContract3, Optional<ISODate>> mmTargetClosingDate = new MMMessageAttribute<AccountContract3, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmTargetClosingDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract3.mmObject();
@@ -184,6 +194,16 @@ public class AccountContract3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(AccountContract3 obj) {
+			return obj.getTargetClosingDate();
+		}
+
+		@Override
+		public void setValue(AccountContract3 obj, Optional<ISODate> value) {
+			obj.setTargetClosingDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "GoLiveDt")
@@ -222,7 +242,7 @@ public class AccountContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGoLiveDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountContract3, Optional<ISODate>> mmGoLiveDate = new MMMessageAttribute<AccountContract3, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmLiveDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract3.mmObject();
@@ -234,6 +254,16 @@ public class AccountContract3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(AccountContract3 obj) {
+			return obj.getGoLiveDate();
+		}
+
+		@Override
+		public void setValue(AccountContract3 obj, Optional<ISODate> value) {
+			obj.setGoLiveDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ClsgDt")
@@ -272,7 +302,7 @@ public class AccountContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClosingDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountContract3, Optional<ISODate>> mmClosingDate = new MMMessageAttribute<AccountContract3, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmClosingDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract3.mmObject();
@@ -284,6 +314,16 @@ public class AccountContract3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(AccountContract3 obj) {
+			return obj.getClosingDate();
+		}
+
+		@Override
+		public void setValue(AccountContract3 obj, Optional<ISODate> value) {
+			obj.setClosingDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "UrgcyFlg")
@@ -323,7 +363,7 @@ public class AccountContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUrgencyFlag = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountContract3, Optional<YesNoIndicator>> mmUrgencyFlag = new MMMessageAttribute<AccountContract3, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmUrgencyFlag;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract3.mmObject();
@@ -335,6 +375,16 @@ public class AccountContract3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(AccountContract3 obj) {
+			return obj.getUrgencyFlag();
+		}
+
+		@Override
+		public void setValue(AccountContract3 obj, Optional<YesNoIndicator> value) {
+			obj.setUrgencyFlag(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "RmvlInd")
@@ -374,7 +424,7 @@ public class AccountContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRemovalIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountContract3, Optional<YesNoIndicator>> mmRemovalIndicator = new MMMessageAttribute<AccountContract3, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmRemovalIndicator;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountContract3.mmObject();
@@ -386,6 +436,16 @@ public class AccountContract3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(AccountContract3 obj) {
+			return obj.getRemovalIndicator();
+		}
+
+		@Override
+		public void setValue(AccountContract3 obj, Optional<YesNoIndicator> value) {
+			obj.setRemovalIndicator(value.orElse(null));
 		}
 	};
 

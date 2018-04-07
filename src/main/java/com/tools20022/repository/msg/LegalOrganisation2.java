@@ -116,7 +116,7 @@ public class LegalOrganisation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LegalOrganisation2, Optional<Max35Text>> mmIdentification = new MMMessageAttribute<LegalOrganisation2, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LegalOrganisation2.mmObject();
@@ -128,6 +128,16 @@ public class LegalOrganisation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(LegalOrganisation2 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(LegalOrganisation2 obj, Optional<Max35Text> value) {
+			obj.setIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Nm")
@@ -164,7 +174,7 @@ public class LegalOrganisation2 {
 	 * definition} = "Specifies the short name of the organisation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LegalOrganisation2, Optional<Max140Text>> mmName = new MMMessageAttribute<LegalOrganisation2, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LegalOrganisation2.mmObject();
@@ -176,6 +186,16 @@ public class LegalOrganisation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(LegalOrganisation2 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(LegalOrganisation2 obj, Optional<Max140Text> value) {
+			obj.setName(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "EstblishmtDt")
@@ -212,7 +232,7 @@ public class LegalOrganisation2 {
 	 * definition} = "Date when the organisation was established."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEstablishmentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LegalOrganisation2, Optional<ISODate>> mmEstablishmentDate = new MMMessageAttribute<LegalOrganisation2, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmEstablishmentDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LegalOrganisation2.mmObject();
@@ -224,6 +244,16 @@ public class LegalOrganisation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(LegalOrganisation2 obj) {
+			return obj.getEstablishmentDate();
+		}
+
+		@Override
+		public void setValue(LegalOrganisation2 obj, Optional<ISODate> value) {
+			obj.setEstablishmentDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "RegnDt")
@@ -260,7 +290,7 @@ public class LegalOrganisation2 {
 	 * definition} = "Date when the organisation was registered."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegistrationDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LegalOrganisation2, Optional<ISODate>> mmRegistrationDate = new MMMessageAttribute<LegalOrganisation2, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmRegistrationDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LegalOrganisation2.mmObject();
@@ -272,6 +302,16 @@ public class LegalOrganisation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(LegalOrganisation2 obj) {
+			return obj.getRegistrationDate();
+		}
+
+		@Override
+		public void setValue(LegalOrganisation2 obj, Optional<ISODate> value) {
+			obj.setRegistrationDate(value.orElse(null));
 		}
 	};
 

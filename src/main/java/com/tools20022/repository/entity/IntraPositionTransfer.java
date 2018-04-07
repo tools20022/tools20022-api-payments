@@ -19,9 +19,10 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.Reservation;
+import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.entity.SecuritiesTransfer;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -123,7 +124,7 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 * "Quantity of securities set aside by a party for specific purpose."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReservation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<IntraPositionTransfer, List<Reservation>> mmReservation = new MMBusinessAssociationEnd<IntraPositionTransfer, List<Reservation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
@@ -134,6 +135,16 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 			opposite_lazy = () -> com.tools20022.repository.entity.Reservation.mmRelatedIntraPositionTransfer;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
+		}
+
+		@Override
+		public List<Reservation> getValue(IntraPositionTransfer obj) {
+			return obj.getReservation();
+		}
+
+		@Override
+		public void setValue(IntraPositionTransfer obj, List<Reservation> value) {
+			obj.setReservation(value);
 		}
 	};
 	protected CurrencyAndAmount collateralAmount;
@@ -164,7 +175,7 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 * "Value of the collateral available for the delivery settlement process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCollateralAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IntraPositionTransfer, CurrencyAndAmount> mmCollateralAmount = new MMBusinessAttribute<IntraPositionTransfer, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
@@ -176,12 +187,14 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionTransfer.class.getMethod("getCollateralAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(IntraPositionTransfer obj) {
+			return obj.getCollateralAmount();
+		}
+
+		@Override
+		public void setValue(IntraPositionTransfer obj, CurrencyAndAmount value) {
+			obj.setCollateralAmount(value);
 		}
 	};
 	protected SecuritiesBalance securitiesBalance;
@@ -220,7 +233,7 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<IntraPositionTransfer, com.tools20022.repository.entity.SecuritiesBalance> mmSecuritiesBalance = new MMBusinessAssociationEnd<IntraPositionTransfer, com.tools20022.repository.entity.SecuritiesBalance>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
@@ -232,6 +245,16 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmRelatedIntraPositionTransfer;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesBalance getValue(IntraPositionTransfer obj) {
+			return obj.getSecuritiesBalance();
+		}
+
+		@Override
+		public void setValue(IntraPositionTransfer obj, com.tools20022.repository.entity.SecuritiesBalance value) {
+			obj.setSecuritiesBalance(value);
 		}
 	};
 

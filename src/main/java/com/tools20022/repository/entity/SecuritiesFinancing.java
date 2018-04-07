@@ -22,9 +22,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.RepurchaseTypeCode;
 import com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code;
 import com.tools20022.repository.datatype.*;
-import com.tools20022.repository.entity.SecuritiesTrade;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -224,7 +223,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReturnLegInstruction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, YesNoIndicator> mmReturnLegInstruction = new MMBusinessAttribute<SecuritiesFinancing, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -236,12 +235,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getReturnLegInstruction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesFinancing obj) {
+			return obj.getReturnLegInstruction();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, YesNoIndicator value) {
+			obj.setReturnLegInstruction(value);
 		}
 	};
 	protected SecuritiesTransactionTypeV2Code type;
@@ -273,7 +274,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, SecuritiesTransactionTypeV2Code> mmType = new MMBusinessAttribute<SecuritiesFinancing, SecuritiesTransactionTypeV2Code>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -285,12 +286,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> SecuritiesTransactionTypeV2Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesTransactionTypeV2Code getValue(SecuritiesFinancing obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, SecuritiesTransactionTypeV2Code value) {
+			obj.setType(value);
 		}
 	};
 	protected ISODateTime terminationDateTime;
@@ -323,7 +326,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * "Closing date/time or maturity date/time of the repo transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTerminationDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, ISODateTime> mmTerminationDateTime = new MMBusinessAttribute<SecuritiesFinancing, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -336,12 +339,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getTerminationDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SecuritiesFinancing obj) {
+			return obj.getTerminationDateTime();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, ISODateTime value) {
+			obj.setTerminationDateTime(value);
 		}
 	};
 	protected ISODateTime rateChangeDateTime;
@@ -370,7 +375,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Date/Time at which rate change has taken place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRateChangeDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, ISODateTime> mmRateChangeDateTime = new MMBusinessAttribute<SecuritiesFinancing, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -382,12 +387,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getRateChangeDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SecuritiesFinancing obj) {
+			return obj.getRateChangeDateTime();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, ISODateTime value) {
+			obj.setRateChangeDateTime(value);
 		}
 	};
 	protected YesNoIndicator revaluationIndicator;
@@ -419,7 +426,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRevaluationIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, YesNoIndicator> mmRevaluationIndicator = new MMBusinessAttribute<SecuritiesFinancing, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -431,12 +438,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getRevaluationIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesFinancing obj) {
+			return obj.getRevaluationIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, YesNoIndicator value) {
+			obj.setRevaluationIndicator(value);
 		}
 	};
 	protected YesNoIndicator interestPayment;
@@ -468,7 +477,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInterestPayment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, YesNoIndicator> mmInterestPayment = new MMBusinessAttribute<SecuritiesFinancing, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -480,12 +489,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getInterestPayment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesFinancing obj) {
+			return obj.getInterestPayment();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, YesNoIndicator value) {
+			obj.setInterestPayment(value);
 		}
 	};
 	protected Max35Text variableRateSupport;
@@ -519,7 +530,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVariableRateSupport = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, Max35Text> mmVariableRateSupport = new MMBusinessAttribute<SecuritiesFinancing, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -532,12 +543,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getVariableRateSupport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesFinancing obj) {
+			return obj.getVariableRateSupport();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, Max35Text value) {
+			obj.setVariableRateSupport(value);
 		}
 	};
 	protected PercentageRate repurchaseRate;
@@ -570,7 +583,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Rate to be used to recalculate the repurchase amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRepurchaseRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, PercentageRate> mmRepurchaseRate = new MMBusinessAttribute<SecuritiesFinancing, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -583,12 +596,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getRepurchaseRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(SecuritiesFinancing obj) {
+			return obj.getRepurchaseRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, PercentageRate value) {
+			obj.setRepurchaseRate(value);
 		}
 	};
 	protected PercentageRate stockLoanMargin;
@@ -620,7 +635,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStockLoanMargin = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, PercentageRate> mmStockLoanMargin = new MMBusinessAttribute<SecuritiesFinancing, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -632,12 +647,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getStockLoanMargin", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(SecuritiesFinancing obj) {
+			return obj.getStockLoanMargin();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, PercentageRate value) {
+			obj.setStockLoanMargin(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Interest> interest;
@@ -673,7 +690,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Interest to be paid on the transaction amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesFinancing, List<Interest>> mmInterest = new MMBusinessAssociationEnd<SecuritiesFinancing, List<Interest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -684,6 +701,16 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmSecuritiesFinancing;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
+		}
+
+		@Override
+		public List<Interest> getValue(SecuritiesFinancing obj) {
+			return obj.getInterest();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, List<Interest> value) {
+			obj.setInterest(value);
 		}
 	};
 	protected Spread repurchaseSpread;
@@ -724,7 +751,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRepurchaseSpread = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesFinancing, Spread> mmRepurchaseSpread = new MMBusinessAssociationEnd<SecuritiesFinancing, Spread>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -734,9 +761,19 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			definition = "Repurchase spread expressed as a rate; margin over or under an index that determines the repurchase rate.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Spread.mmSecuritiesFinancing;
+			opposite_lazy = () -> Spread.mmSecuritiesFinancing;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
+			type_lazy = () -> Spread.mmObject();
+		}
+
+		@Override
+		public Spread getValue(SecuritiesFinancing obj) {
+			return obj.getRepurchaseSpread();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, Spread value) {
+			obj.setRepurchaseSpread(value);
 		}
 	};
 	protected Max3NumericText transactionCallDelay;
@@ -768,7 +805,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransactionCallDelay = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, Max3NumericText> mmTransactionCallDelay = new MMBusinessAttribute<SecuritiesFinancing, Max3NumericText>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -780,12 +817,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getTransactionCallDelay", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max3NumericText getValue(SecuritiesFinancing obj) {
+			return obj.getTransactionCallDelay();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, Max3NumericText value) {
+			obj.setTransactionCallDelay(value);
 		}
 	};
 	protected Max3NumericText totalNumberOfCollateralInstructions;
@@ -820,7 +859,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalNumberOfCollateralInstructions = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, Max3NumericText> mmTotalNumberOfCollateralInstructions = new MMBusinessAttribute<SecuritiesFinancing, Max3NumericText>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -833,12 +872,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getTotalNumberOfCollateralInstructions", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max3NumericText getValue(SecuritiesFinancing obj) {
+			return obj.getTotalNumberOfCollateralInstructions();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, Max3NumericText value) {
+			obj.setTotalNumberOfCollateralInstructions(value);
 		}
 	};
 	protected CurrencyAndAmount dealAmount;
@@ -871,7 +912,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Deal amount of the second leg."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDealAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount> mmDealAmount = new MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -884,12 +925,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getDealAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesFinancing obj) {
+			return obj.getDealAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, CurrencyAndAmount value) {
+			obj.setDealAmount(value);
 		}
 	};
 	protected CurrencyAndAmount forfeitRepurchaseAmount;
@@ -924,7 +967,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmForfeitRepurchaseAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount> mmForfeitRepurchaseAmount = new MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -937,12 +980,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getForfeitRepurchaseAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesFinancing obj) {
+			return obj.getForfeitRepurchaseAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, CurrencyAndAmount value) {
+			obj.setForfeitRepurchaseAmount(value);
 		}
 	};
 	protected CurrencyAndAmount premiumAmount;
@@ -977,7 +1022,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPremiumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount> mmPremiumAmount = new MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -990,12 +1035,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getPremiumAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesFinancing obj) {
+			return obj.getPremiumAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, CurrencyAndAmount value) {
+			obj.setPremiumAmount(value);
 		}
 	};
 	protected CurrencyAndAmount terminationAmountPerPieceOfCollateral;
@@ -1027,7 +1074,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTerminationAmountPerPieceOfCollateral = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount> mmTerminationAmountPerPieceOfCollateral = new MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1039,12 +1086,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getTerminationAmountPerPieceOfCollateral", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesFinancing obj) {
+			return obj.getTerminationAmountPerPieceOfCollateral();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, CurrencyAndAmount value) {
+			obj.setTerminationAmountPerPieceOfCollateral(value);
 		}
 	};
 	protected CurrencyAndAmount terminationTransactionAmount;
@@ -1075,7 +1124,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * "Total amount of money to be settled to terminate the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTerminationTransactionAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount> mmTerminationTransactionAmount = new MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1087,12 +1136,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getTerminationTransactionAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesFinancing obj) {
+			return obj.getTerminationTransactionAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, CurrencyAndAmount value) {
+			obj.setTerminationTransactionAmount(value);
 		}
 	};
 	protected YesNoIndicator maturityDateModification;
@@ -1124,7 +1175,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaturityDateModification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, Optional<YesNoIndicator>> mmMaturityDateModification = new MMBusinessAttribute<SecuritiesFinancing, Optional<YesNoIndicator>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1136,12 +1187,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getMaturityDateModification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<YesNoIndicator> getValue(SecuritiesFinancing obj) {
+			return obj.getMaturityDateModification();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, Optional<YesNoIndicator> value) {
+			obj.setMaturityDateModification(value.orElse(null));
 		}
 	};
 	protected ISODateTime earliestCallBackDate;
@@ -1171,7 +1224,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEarliestCallBackDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, ISODateTime> mmEarliestCallBackDate = new MMBusinessAttribute<SecuritiesFinancing, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1183,12 +1236,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getEarliestCallBackDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SecuritiesFinancing obj) {
+			return obj.getEarliestCallBackDate();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, ISODateTime value) {
+			obj.setEarliestCallBackDate(value);
 		}
 	};
 	protected ISODateTime openingSettlementDate;
@@ -1218,7 +1273,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * "Date and time at which the securities are to be delivered or received."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOpeningSettlementDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, ISODateTime> mmOpeningSettlementDate = new MMBusinessAttribute<SecuritiesFinancing, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1230,12 +1285,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getOpeningSettlementDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SecuritiesFinancing obj) {
+			return obj.getOpeningSettlementDate();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, ISODateTime value) {
+			obj.setOpeningSettlementDate(value);
 		}
 	};
 	protected RepurchaseTypeCode repurchaseType;
@@ -1265,7 +1322,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Specifies the type of repurchase transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRepurchaseType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, RepurchaseTypeCode> mmRepurchaseType = new MMBusinessAttribute<SecuritiesFinancing, RepurchaseTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1277,15 +1334,17 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> RepurchaseTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getRepurchaseType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RepurchaseTypeCode getValue(SecuritiesFinancing obj) {
+			return obj.getRepurchaseType();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, RepurchaseTypeCode value) {
+			obj.setRepurchaseType(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesPricing> endPrice;
+	protected List<SecuritiesPricing> endPrice;
 	/**
 	 * 
 	 <p>
@@ -1319,7 +1378,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Negotiated fixed price of the security to buy it back."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEndPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesFinancing, List<SecuritiesPricing>> mmEndPrice = new MMBusinessAssociationEnd<SecuritiesFinancing, List<SecuritiesPricing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1327,9 +1386,19 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			name = "EndPrice";
 			definition = "Negotiated fixed price of the security to buy it back.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmRelatedSecuritiesFinancing;
+			opposite_lazy = () -> SecuritiesPricing.mmRelatedSecuritiesFinancing;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesPricing> getValue(SecuritiesFinancing obj) {
+			return obj.getEndPrice();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, List<SecuritiesPricing> value) {
+			obj.setEndPrice(value);
 		}
 	};
 	protected YesNoIndicator spreadTransaction;
@@ -1361,7 +1430,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSpreadTransaction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, YesNoIndicator> mmSpreadTransaction = new MMBusinessAttribute<SecuritiesFinancing, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1373,12 +1442,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getSpreadTransaction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesFinancing obj) {
+			return obj.getSpreadTransaction();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, YesNoIndicator value) {
+			obj.setSpreadTransaction(value);
 		}
 	};
 	protected SecuritiesFinancingAgreement financingAgreement;
@@ -1418,7 +1489,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFinancingAgreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesFinancing, SecuritiesFinancingAgreement> mmFinancingAgreement = new MMBusinessAssociationEnd<SecuritiesFinancing, SecuritiesFinancingAgreement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1427,9 +1498,19 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			definition = "Provides the contractual details related to the agreement between parties.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancingAgreement.mmSecuritiesFinancingTrade;
+			opposite_lazy = () -> SecuritiesFinancingAgreement.mmSecuritiesFinancingTrade;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancingAgreement.mmObject();
+			type_lazy = () -> SecuritiesFinancingAgreement.mmObject();
+		}
+
+		@Override
+		public SecuritiesFinancingAgreement getValue(SecuritiesFinancing obj) {
+			return obj.getFinancingAgreement();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, SecuritiesFinancingAgreement value) {
+			obj.setFinancingAgreement(value);
 		}
 	};
 	protected CurrencyAndAmount openingSettlementAmount;
@@ -1461,7 +1542,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOpeningSettlementAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount> mmOpeningSettlementAmount = new MMBusinessAttribute<SecuritiesFinancing, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1473,12 +1554,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getOpeningSettlementAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesFinancing obj) {
+			return obj.getOpeningSettlementAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, CurrencyAndAmount value) {
+			obj.setOpeningSettlementAmount(value);
 		}
 	};
 	protected SecuritiesTrade closingLegExecution;
@@ -1517,7 +1600,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmClosingLegExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesFinancing, Optional<SecuritiesTrade>> mmClosingLegExecution = new MMBusinessAssociationEnd<SecuritiesFinancing, Optional<SecuritiesTrade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1529,6 +1612,16 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			opposite_lazy = () -> SecuritiesTrade.mmSecuritiesFinancingClosingData;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> SecuritiesTrade.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesTrade> getValue(SecuritiesFinancing obj) {
+			return obj.getClosingLegExecution();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, Optional<SecuritiesTrade> value) {
+			obj.setClosingLegExecution(value.orElse(null));
 		}
 	};
 	protected SecuritiesTrade openingLegExecution;
@@ -1567,7 +1660,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOpeningLegExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesFinancing, Optional<SecuritiesTrade>> mmOpeningLegExecution = new MMBusinessAssociationEnd<SecuritiesFinancing, Optional<SecuritiesTrade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1579,6 +1672,16 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			opposite_lazy = () -> SecuritiesTrade.mmSecuritiesFinancingOpeningData;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> SecuritiesTrade.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesTrade> getValue(SecuritiesFinancing obj) {
+			return obj.getOpeningLegExecution();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, Optional<SecuritiesTrade> value) {
+			obj.setOpeningLegExecution(value.orElse(null));
 		}
 	};
 	protected BuyOrSellIndicationOfInterest relatedIndicationOfInterest;
@@ -1618,7 +1721,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesFinancing, Optional<BuyOrSellIndicationOfInterest>> mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd<SecuritiesFinancing, Optional<BuyOrSellIndicationOfInterest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1627,9 +1730,19 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			definition = "Indication of interest process which is the source of a securities financing process.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmTwoLegTransaction;
+			opposite_lazy = () -> BuyOrSellIndicationOfInterest.mmTwoLegTransaction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
+			type_lazy = () -> BuyOrSellIndicationOfInterest.mmObject();
+		}
+
+		@Override
+		public Optional<BuyOrSellIndicationOfInterest> getValue(SecuritiesFinancing obj) {
+			return obj.getRelatedIndicationOfInterest();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, Optional<BuyOrSellIndicationOfInterest> value) {
+			obj.setRelatedIndicationOfInterest(value.orElse(null));
 		}
 	};
 	protected Max35Text identification;
@@ -1661,7 +1774,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Unique identification of the repurchase agreement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesFinancing, Max35Text> mmIdentification = new MMBusinessAttribute<SecuritiesFinancing, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
@@ -1674,12 +1787,14 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesFinancing.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesFinancing obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 
@@ -1691,9 +1806,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesFinancing";
 				definition = "Process of lending or borrowing cash or securities against securities or cash collateral. It aims at optimising liquidity, support a trading strategy, or increase settlement efficiency.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmRelatedSecuritiesFinancing, SecuritiesTrade.mmSecuritiesFinancingClosingData,
-						SecuritiesTrade.mmSecuritiesFinancingOpeningData, com.tools20022.repository.entity.Interest.mmSecuritiesFinancing, com.tools20022.repository.entity.Spread.mmSecuritiesFinancing,
-						com.tools20022.repository.entity.SecuritiesFinancingAgreement.mmSecuritiesFinancingTrade, com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmTwoLegTransaction);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmRelatedSecuritiesFinancing, SecuritiesTrade.mmSecuritiesFinancingClosingData, SecuritiesTrade.mmSecuritiesFinancingOpeningData,
+						com.tools20022.repository.entity.Interest.mmSecuritiesFinancing, Spread.mmSecuritiesFinancing, SecuritiesFinancingAgreement.mmSecuritiesFinancingTrade, BuyOrSellIndicationOfInterest.mmTwoLegTransaction);
 				subType_lazy = () -> Arrays.asList(SecuritiesLending.mmObject(), RepurchaseAgreement.mmObject());
 				superType_lazy = () -> SecuritiesTrade.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesFinancing.mmReturnLegInstruction, com.tools20022.repository.entity.SecuritiesFinancing.mmType,
@@ -1814,7 +1928,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 		return repurchaseSpread;
 	}
 
-	public SecuritiesFinancing setRepurchaseSpread(com.tools20022.repository.entity.Spread repurchaseSpread) {
+	public SecuritiesFinancing setRepurchaseSpread(Spread repurchaseSpread) {
 		this.repurchaseSpread = Objects.requireNonNull(repurchaseSpread);
 		return this;
 	}
@@ -1922,7 +2036,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 		return endPrice == null ? endPrice = new ArrayList<>() : endPrice;
 	}
 
-	public SecuritiesFinancing setEndPrice(List<com.tools20022.repository.entity.SecuritiesPricing> endPrice) {
+	public SecuritiesFinancing setEndPrice(List<SecuritiesPricing> endPrice) {
 		this.endPrice = Objects.requireNonNull(endPrice);
 		return this;
 	}
@@ -1940,7 +2054,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 		return financingAgreement;
 	}
 
-	public SecuritiesFinancing setFinancingAgreement(com.tools20022.repository.entity.SecuritiesFinancingAgreement financingAgreement) {
+	public SecuritiesFinancing setFinancingAgreement(SecuritiesFinancingAgreement financingAgreement) {
 		this.financingAgreement = Objects.requireNonNull(financingAgreement);
 		return this;
 	}
@@ -1976,7 +2090,7 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 		return relatedIndicationOfInterest == null ? Optional.empty() : Optional.of(relatedIndicationOfInterest);
 	}
 
-	public SecuritiesFinancing setRelatedIndicationOfInterest(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest relatedIndicationOfInterest) {
+	public SecuritiesFinancing setRelatedIndicationOfInterest(BuyOrSellIndicationOfInterest relatedIndicationOfInterest) {
 		this.relatedIndicationOfInterest = relatedIndicationOfInterest;
 		return this;
 	}

@@ -58,7 +58,7 @@ public class ConstraintCreditorAgentRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction23 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction23> forPaymentInstruction23 = new MMConstraint<PaymentInstruction23>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditorAgentRule";
@@ -67,8 +67,8 @@ public class ConstraintCreditorAgentRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction23((PaymentInstruction23) obj);
+		public void executeValidator(PaymentInstruction23 obj) throws Exception {
+			checkPaymentInstruction23(obj);
 		}
 	};
 

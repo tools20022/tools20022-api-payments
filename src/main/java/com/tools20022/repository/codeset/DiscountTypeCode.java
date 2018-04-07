@@ -242,7 +242,7 @@ public class DiscountTypeCode extends MMCode {
 	};
 	/**
 	 * Addition discount based on third-party agreed business promotional
-	 * activity, i.e., extra 10 percent discount for 15 days)
+	 * activity, i.e., extra 10 percent discount for 15 days).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -260,7 +260,7 @@ public class DiscountTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Addition discount based on third-party agreed business promotional activity, i.e., extra 10 percent discount for 15 days)"
+	 * "Addition discount based on third-party agreed business promotional activity, i.e., extra 10 percent discount for 15 days)."
 	 * </li>
 	 * </ul>
 	 */
@@ -268,7 +268,7 @@ public class DiscountTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalPromotionalDiscount";
-			definition = "Addition discount based on third-party agreed business promotional activity, i.e., extra 10 percent discount for 15 days)";
+			definition = "Addition discount based on third-party agreed business promotional activity, i.e., extra 10 percent discount for 15 days).";
 			owner_lazy = () -> com.tools20022.repository.codeset.DiscountTypeCode.mmObject();
 			codeName = "ADPS";
 		}

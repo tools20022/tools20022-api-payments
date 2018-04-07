@@ -23,6 +23,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.Max15NumericText;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection35;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -101,7 +102,7 @@ public class NumberAndSumOfTransactions4 {
 	 * definition} = "Number of individual entries included in the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfEntries = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberAndSumOfTransactions4, Optional<Max15NumericText>> mmNumberOfEntries = new MMMessageAttribute<NumberAndSumOfTransactions4, Optional<Max15NumericText>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.NumberAndSumOfTransactions4.mmObject();
 			isDerived = false;
@@ -112,6 +113,16 @@ public class NumberAndSumOfTransactions4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Max15NumericText> getValue(NumberAndSumOfTransactions4 obj) {
+			return obj.getNumberOfEntries();
+		}
+
+		@Override
+		public void setValue(NumberAndSumOfTransactions4 obj, Optional<Max15NumericText> value) {
+			obj.setNumberOfEntries(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Sum")
@@ -144,7 +155,7 @@ public class NumberAndSumOfTransactions4 {
 	 * definition} = "Total of all individual entries included in the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSum = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberAndSumOfTransactions4, Optional<DecimalNumber>> mmSum = new MMMessageAttribute<NumberAndSumOfTransactions4, Optional<DecimalNumber>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.NumberAndSumOfTransactions4.mmObject();
 			isDerived = false;
@@ -155,6 +166,16 @@ public class NumberAndSumOfTransactions4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(NumberAndSumOfTransactions4 obj) {
+			return obj.getSum();
+		}
+
+		@Override
+		public void setValue(NumberAndSumOfTransactions4 obj, Optional<DecimalNumber> value) {
+			obj.setSum(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TtlNetNtry")
@@ -189,7 +210,7 @@ public class NumberAndSumOfTransactions4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalNetEntry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberAndSumOfTransactions4, Optional<AmountAndDirection35>> mmTotalNetEntry = new MMMessageAttribute<NumberAndSumOfTransactions4, Optional<AmountAndDirection35>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.NumberAndSumOfTransactions4.mmObject();
 			isDerived = false;
@@ -199,7 +220,17 @@ public class NumberAndSumOfTransactions4 {
 			definition = "Resulting debit or credit amount of the netted amounts for all debit and credit entries.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.AmountAndDirection35.mmObject();
+			complexType_lazy = () -> AmountAndDirection35.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection35> getValue(NumberAndSumOfTransactions4 obj) {
+			return obj.getTotalNetEntry();
+		}
+
+		@Override
+		public void setValue(NumberAndSumOfTransactions4 obj, Optional<AmountAndDirection35> value) {
+			obj.setTotalNetEntry(value.orElse(null));
 		}
 	};
 
@@ -239,7 +270,7 @@ public class NumberAndSumOfTransactions4 {
 		return totalNetEntry == null ? Optional.empty() : Optional.of(totalNetEntry);
 	}
 
-	public NumberAndSumOfTransactions4 setTotalNetEntry(com.tools20022.repository.msg.AmountAndDirection35 totalNetEntry) {
+	public NumberAndSumOfTransactions4 setTotalNetEntry(AmountAndDirection35 totalNetEntry) {
 		this.totalNetEntry = totalNetEntry;
 		return this;
 	}

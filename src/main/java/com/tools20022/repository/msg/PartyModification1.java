@@ -23,6 +23,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyIdentification40;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -103,7 +104,7 @@ public class PartyModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyModification1, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<PartyModification1, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.PartyModification1.mmObject();
 			isDerived = false;
@@ -114,6 +115,16 @@ public class PartyModification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(PartyModification1 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(PartyModification1 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PtyId", required = true)
@@ -151,7 +162,7 @@ public class PartyModification1 {
 	 * definition} = "Identification of the party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartyIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyModification1, PartyIdentification40> mmPartyIdentification = new MMMessageAttribute<PartyModification1, PartyIdentification40>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.PartyModification1.mmObject();
@@ -162,7 +173,17 @@ public class PartyModification1 {
 			definition = "Identification of the party.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyIdentification40.mmObject();
+			complexType_lazy = () -> PartyIdentification40.mmObject();
+		}
+
+		@Override
+		public PartyIdentification40 getValue(PartyModification1 obj) {
+			return obj.getPartyIdentification();
+		}
+
+		@Override
+		public void setValue(PartyModification1 obj, PartyIdentification40 value) {
+			obj.setPartyIdentification(value);
 		}
 	};
 
@@ -193,7 +214,7 @@ public class PartyModification1 {
 		return partyIdentification;
 	}
 
-	public PartyModification1 setPartyIdentification(com.tools20022.repository.msg.PartyIdentification40 partyIdentification) {
+	public PartyModification1 setPartyIdentification(PartyIdentification40 partyIdentification) {
 		this.partyIdentification = Objects.requireNonNull(partyIdentification);
 		return this;
 	}

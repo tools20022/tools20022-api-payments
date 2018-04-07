@@ -21,9 +21,9 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.TradePostingCode;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.ClearingSystem;
 import com.tools20022.repository.entity.ObligationFulfilment;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -126,7 +126,7 @@ public class Clearing extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClearingThresholdIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Clearing, YesNoIndicator> mmClearingThresholdIndicator = new MMBusinessAttribute<Clearing, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
@@ -138,12 +138,14 @@ public class Clearing extends ObligationFulfilment {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Clearing.class.getMethod("getClearingThresholdIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Clearing obj) {
+			return obj.getClearingThresholdIndicator();
+		}
+
+		@Override
+		public void setValue(Clearing obj, YesNoIndicator value) {
+			obj.setClearingThresholdIndicator(value);
 		}
 	};
 	protected Max35Text clearedIdentification;
@@ -172,7 +174,7 @@ public class Clearing extends ObligationFulfilment {
 	 * "Reference number assigned by the Central Counterparty (CCP)."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClearedIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Clearing, Max35Text> mmClearedIdentification = new MMBusinessAttribute<Clearing, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
@@ -184,12 +186,14 @@ public class Clearing extends ObligationFulfilment {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Clearing.class.getMethod("getClearedIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Clearing obj) {
+			return obj.getClearedIdentification();
+		}
+
+		@Override
+		public void setValue(Clearing obj, Max35Text value) {
+			obj.setClearedIdentification(value);
 		}
 	};
 	protected YesNoIndicator guaranteedTrade;
@@ -220,7 +224,7 @@ public class Clearing extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGuaranteedTrade = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Clearing, YesNoIndicator> mmGuaranteedTrade = new MMBusinessAttribute<Clearing, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
@@ -232,12 +236,14 @@ public class Clearing extends ObligationFulfilment {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Clearing.class.getMethod("getGuaranteedTrade", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Clearing obj) {
+			return obj.getGuaranteedTrade();
+		}
+
+		@Override
+		public void setValue(Clearing obj, YesNoIndicator value) {
+			obj.setGuaranteedTrade(value);
 		}
 	};
 	protected TradePostingCode tradePostingType;
@@ -267,7 +273,7 @@ public class Clearing extends ObligationFulfilment {
 	 * "Indicates how a trade is maintained in the clearing account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradePostingType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Clearing, TradePostingCode> mmTradePostingType = new MMBusinessAttribute<Clearing, TradePostingCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
@@ -279,12 +285,14 @@ public class Clearing extends ObligationFulfilment {
 			simpleType_lazy = () -> TradePostingCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Clearing.class.getMethod("getTradePostingType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TradePostingCode getValue(Clearing obj) {
+			return obj.getTradePostingType();
+		}
+
+		@Override
+		public void setValue(Clearing obj, TradePostingCode value) {
+			obj.setTradePostingType(value);
 		}
 	};
 	protected ClearingSystem clearingSystem;
@@ -322,7 +330,7 @@ public class Clearing extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmClearingSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Clearing, Optional<ClearingSystem>> mmClearingSystem = new MMBusinessAssociationEnd<Clearing, Optional<ClearingSystem>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
@@ -334,6 +342,16 @@ public class Clearing extends ObligationFulfilment {
 			opposite_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmClearing;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmObject();
+		}
+
+		@Override
+		public Optional<ClearingSystem> getValue(Clearing obj) {
+			return obj.getClearingSystem();
+		}
+
+		@Override
+		public void setValue(Clearing obj, Optional<ClearingSystem> value) {
+			obj.setClearingSystem(value.orElse(null));
 		}
 	};
 

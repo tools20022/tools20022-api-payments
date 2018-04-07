@@ -20,7 +20,7 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.camt.DebitAuthorisationResponseV03;
+import com.tools20022.repository.area.camt.DebitAuthorisationResponseV04;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max140Text;
@@ -64,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationResponseV03#mmConfirmation
- * DebitAuthorisationResponseV03.mmConfirmation}</li>
+ * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationResponseV04#mmConfirmation
+ * DebitAuthorisationResponseV04.mmConfirmation}</li>
  * </ul>
  * </li>
  * <li>
@@ -125,7 +125,7 @@ public class DebitAuthorisationConfirmation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDebitAuthorisation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DebitAuthorisationConfirmation2, YesNoIndicator> mmDebitAuthorisation = new MMMessageAttribute<DebitAuthorisationConfirmation2, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> DebitAuthorisation.mmDebitAuthorisationDecision;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmObject();
@@ -137,6 +137,16 @@ public class DebitAuthorisationConfirmation2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		@Override
+		public YesNoIndicator getValue(DebitAuthorisationConfirmation2 obj) {
+			return obj.getDebitAuthorisation();
+		}
+
+		@Override
+		public void setValue(DebitAuthorisationConfirmation2 obj, YesNoIndicator value) {
+			obj.setDebitAuthorisation(value);
 		}
 	};
 	@XmlElement(name = "AmtToDbt")
@@ -176,7 +186,7 @@ public class DebitAuthorisationConfirmation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmountToDebit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DebitAuthorisationConfirmation2, Optional<ActiveCurrencyAndAmount>> mmAmountToDebit = new MMMessageAttribute<DebitAuthorisationConfirmation2, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> DebitAuthorisation.mmAmountToDebit;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmObject();
@@ -188,6 +198,16 @@ public class DebitAuthorisationConfirmation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(DebitAuthorisationConfirmation2 obj) {
+			return obj.getAmountToDebit();
+		}
+
+		@Override
+		public void setValue(DebitAuthorisationConfirmation2 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setAmountToDebit(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ValDtToDbt")
@@ -224,7 +244,7 @@ public class DebitAuthorisationConfirmation2 {
 	 * definition} = "Value date for debiting the amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValueDateToDebit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DebitAuthorisationConfirmation2, Optional<ISODate>> mmValueDateToDebit = new MMMessageAttribute<DebitAuthorisationConfirmation2, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> DebitAuthorisation.mmValueDateToDebit;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmObject();
@@ -236,6 +256,16 @@ public class DebitAuthorisationConfirmation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(DebitAuthorisationConfirmation2 obj) {
+			return obj.getValueDateToDebit();
+		}
+
+		@Override
+		public void setValue(DebitAuthorisationConfirmation2 obj, Optional<ISODate> value) {
+			obj.setValueDateToDebit(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rsn")
@@ -273,7 +303,7 @@ public class DebitAuthorisationConfirmation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DebitAuthorisationConfirmation2, Optional<Max140Text>> mmReason = new MMMessageAttribute<DebitAuthorisationConfirmation2, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> DebitAuthorisation.mmReason;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmObject();
@@ -286,6 +316,16 @@ public class DebitAuthorisationConfirmation2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(DebitAuthorisationConfirmation2 obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(DebitAuthorisationConfirmation2 obj, Optional<Max140Text> value) {
+			obj.setReason(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
@@ -293,7 +333,7 @@ public class DebitAuthorisationConfirmation2 {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmDebitAuthorisation, com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmAmountToDebit,
 						com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmValueDateToDebit, com.tools20022.repository.msg.DebitAuthorisationConfirmation2.mmReason);
-				messageBuildingBlock_lazy = () -> Arrays.asList(DebitAuthorisationResponseV03.mmConfirmation);
+				messageBuildingBlock_lazy = () -> Arrays.asList(DebitAuthorisationResponseV04.mmConfirmation);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DebitAuthorisationConfirmation2";

@@ -21,8 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.FATCASourceStatusCode;
 import com.tools20022.repository.codeset.FATCAStatusCode;
 import com.tools20022.repository.datatype.ISODate;
+import com.tools20022.repository.entity.InvestmentAccountPartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -111,7 +111,7 @@ public class FATCAStatus {
 	 * "Foreign Account Tax Compliance Act (FATCA) status of the investor."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFATCAStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FATCAStatus, FATCAStatusCode> mmFATCAStatus = new MMBusinessAttribute<FATCAStatus, FATCAStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
@@ -123,12 +123,14 @@ public class FATCAStatus {
 			simpleType_lazy = () -> FATCAStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FATCAStatus.class.getMethod("getFATCAStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FATCAStatusCode getValue(FATCAStatus obj) {
+			return obj.getFATCAStatus();
+		}
+
+		@Override
+		public void setValue(FATCAStatus obj, FATCAStatusCode value) {
+			obj.setFATCAStatus(value);
 		}
 	};
 	protected FATCASourceStatusCode fATCASourceStatus;
@@ -158,7 +160,7 @@ public class FATCAStatus {
 	 * "Source of the Foreign Account Tax Compliance Act (FATCA) status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFATCASourceStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FATCAStatus, FATCASourceStatusCode> mmFATCASourceStatus = new MMBusinessAttribute<FATCAStatus, FATCASourceStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
@@ -170,15 +172,17 @@ public class FATCAStatus {
 			simpleType_lazy = () -> FATCASourceStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FATCAStatus.class.getMethod("getFATCASourceStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FATCASourceStatusCode getValue(FATCAStatus obj) {
+			return obj.getFATCASourceStatus();
+		}
+
+		@Override
+		public void setValue(FATCAStatus obj, FATCASourceStatusCode value) {
+			obj.setFATCASourceStatus(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.InvestmentAccountPartyRole> investmentAccountParty;
+	protected List<InvestmentAccountPartyRole> investmentAccountParty;
 	/**
 	 * 
 	 <p>
@@ -214,7 +218,7 @@ public class FATCAStatus {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentAccountParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FATCAStatus, List<InvestmentAccountPartyRole>> mmInvestmentAccountParty = new MMBusinessAssociationEnd<FATCAStatus, List<InvestmentAccountPartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
@@ -222,9 +226,19 @@ public class FATCAStatus {
 			name = "InvestmentAccountParty";
 			definition = "Foreign Account Tax Compliance Act (FATCA) status linked to an investment account and played by a party in that context.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmFATCAStatus;
+			opposite_lazy = () -> InvestmentAccountPartyRole.mmFATCAStatus;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
+			type_lazy = () -> InvestmentAccountPartyRole.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountPartyRole> getValue(FATCAStatus obj) {
+			return obj.getInvestmentAccountParty();
+		}
+
+		@Override
+		public void setValue(FATCAStatus obj, List<InvestmentAccountPartyRole> value) {
+			obj.setInvestmentAccountParty(value);
 		}
 	};
 	protected ISODate fATCAReportingDate;
@@ -254,7 +268,7 @@ public class FATCAStatus {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFATCAReportingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FATCAStatus, ISODate> mmFATCAReportingDate = new MMBusinessAttribute<FATCAStatus, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
@@ -266,12 +280,14 @@ public class FATCAStatus {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FATCAStatus.class.getMethod("getFATCAReportingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(FATCAStatus obj) {
+			return obj.getFATCAReportingDate();
+		}
+
+		@Override
+		public void setValue(FATCAStatus obj, ISODate value) {
+			obj.setFATCAReportingDate(value);
 		}
 	};
 
@@ -282,7 +298,7 @@ public class FATCAStatus {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FATCAStatus";
 				definition = "Foreign Account Tax Compliance Act (FATCA) status and the status source of the investor.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccountPartyRole.mmFATCAStatus);
+				associationDomain_lazy = () -> Arrays.asList(InvestmentAccountPartyRole.mmFATCAStatus);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FATCAStatus.mmFATCAStatus, com.tools20022.repository.entity.FATCAStatus.mmFATCASourceStatus,
 						com.tools20022.repository.entity.FATCAStatus.mmInvestmentAccountParty, com.tools20022.repository.entity.FATCAStatus.mmFATCAReportingDate);
 			}
@@ -317,7 +333,7 @@ public class FATCAStatus {
 		return investmentAccountParty == null ? investmentAccountParty = new ArrayList<>() : investmentAccountParty;
 	}
 
-	public FATCAStatus setInvestmentAccountParty(List<com.tools20022.repository.entity.InvestmentAccountPartyRole> investmentAccountParty) {
+	public FATCAStatus setInvestmentAccountParty(List<InvestmentAccountPartyRole> investmentAccountParty) {
 		this.investmentAccountParty = Objects.requireNonNull(investmentAccountParty);
 		return this;
 	}

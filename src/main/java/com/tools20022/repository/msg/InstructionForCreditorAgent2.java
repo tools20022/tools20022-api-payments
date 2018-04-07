@@ -113,7 +113,7 @@ public class InstructionForCreditorAgent2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InstructionForCreditorAgent2, Optional<Instruction5Code>> mmCode = new MMMessageAttribute<InstructionForCreditorAgent2, Optional<Instruction5Code>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructionForCreditorAgent;
 			componentContext_lazy = () -> com.tools20022.repository.msg.InstructionForCreditorAgent2.mmObject();
@@ -125,6 +125,16 @@ public class InstructionForCreditorAgent2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Instruction5Code.mmObject();
+		}
+
+		@Override
+		public Optional<Instruction5Code> getValue(InstructionForCreditorAgent2 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(InstructionForCreditorAgent2 obj, Optional<Instruction5Code> value) {
+			obj.setCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "InstrInf")
@@ -158,7 +168,7 @@ public class InstructionForCreditorAgent2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructionInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InstructionForCreditorAgent2, Optional<Max140Text>> mmInstructionInformation = new MMMessageAttribute<InstructionForCreditorAgent2, Optional<Max140Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.InstructionForCreditorAgent2.mmObject();
 			isDerived = false;
@@ -169,6 +179,16 @@ public class InstructionForCreditorAgent2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(InstructionForCreditorAgent2 obj) {
+			return obj.getInstructionInformation();
+		}
+
+		@Override
+		public void setValue(InstructionForCreditorAgent2 obj, Optional<Max140Text> value) {
+			obj.setInstructionInformation(value.orElse(null));
 		}
 	};
 

@@ -124,7 +124,7 @@ public class StructuredRegulatoryReporting3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StructuredRegulatoryReporting3, Optional<Max35Text>> mmType = new MMMessageAttribute<StructuredRegulatoryReporting3, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> RegulatoryReport.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
@@ -136,6 +136,16 @@ public class StructuredRegulatoryReporting3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(StructuredRegulatoryReporting3 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(StructuredRegulatoryReporting3 obj, Optional<Max35Text> value) {
+			obj.setType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Dt")
@@ -173,7 +183,7 @@ public class StructuredRegulatoryReporting3 {
 	 * "Date related to the specified type of regulatory reporting details."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StructuredRegulatoryReporting3, Optional<ISODate>> mmDate = new MMMessageAttribute<StructuredRegulatoryReporting3, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> RegulatoryReport.mmDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
@@ -185,6 +195,16 @@ public class StructuredRegulatoryReporting3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(StructuredRegulatoryReporting3 obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(StructuredRegulatoryReporting3 obj, Optional<ISODate> value) {
+			obj.setDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Ctry")
@@ -222,7 +242,7 @@ public class StructuredRegulatoryReporting3 {
 	 * "Country related to the specified type of regulatory reporting details."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StructuredRegulatoryReporting3, Optional<CountryCode>> mmCountry = new MMMessageAttribute<StructuredRegulatoryReporting3, Optional<CountryCode>>() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
@@ -234,6 +254,16 @@ public class StructuredRegulatoryReporting3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
+		}
+
+		@Override
+		public Optional<CountryCode> getValue(StructuredRegulatoryReporting3 obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(StructuredRegulatoryReporting3 obj, Optional<CountryCode> value) {
+			obj.setCountry(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Cd")
@@ -272,7 +302,7 @@ public class StructuredRegulatoryReporting3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StructuredRegulatoryReporting3, Optional<Max10Text>> mmCode = new MMMessageAttribute<StructuredRegulatoryReporting3, Optional<Max10Text>>() {
 		{
 			businessElementTrace_lazy = () -> RegulatoryReport.mmCode;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
@@ -284,6 +314,16 @@ public class StructuredRegulatoryReporting3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max10Text> getValue(StructuredRegulatoryReporting3 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(StructuredRegulatoryReporting3 obj, Optional<Max10Text> value) {
+			obj.setCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt")
@@ -323,7 +363,7 @@ public class StructuredRegulatoryReporting3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StructuredRegulatoryReporting3, Optional<ActiveOrHistoricCurrencyAndAmount>> mmAmount = new MMMessageAttribute<StructuredRegulatoryReporting3, Optional<ActiveOrHistoricCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> RegulatoryReport.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
@@ -335,6 +375,16 @@ public class StructuredRegulatoryReporting3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyAndAmount> getValue(StructuredRegulatoryReporting3 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(StructuredRegulatoryReporting3 obj, Optional<ActiveOrHistoricCurrencyAndAmount> value) {
+			obj.setAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Inf")
@@ -373,7 +423,7 @@ public class StructuredRegulatoryReporting3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StructuredRegulatoryReporting3, List<Max35Text>> mmInformation = new MMMessageAttribute<StructuredRegulatoryReporting3, List<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> RegulatoryReport.mmDescription;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StructuredRegulatoryReporting3.mmObject();
@@ -384,6 +434,16 @@ public class StructuredRegulatoryReporting3 {
 			definition = "Additional details that cater for specific domestic regulatory requirements.";
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public List<Max35Text> getValue(StructuredRegulatoryReporting3 obj) {
+			return obj.getInformation();
+		}
+
+		@Override
+		public void setValue(StructuredRegulatoryReporting3 obj, List<Max35Text> value) {
+			obj.setInformation(value);
 		}
 	};
 

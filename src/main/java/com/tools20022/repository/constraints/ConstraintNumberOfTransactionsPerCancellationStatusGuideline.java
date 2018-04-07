@@ -20,12 +20,13 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.msg.OriginalGroupHeader5;
-import com.tools20022.repository.msg.OriginalPaymentInstruction22;
+import com.tools20022.repository.msg.OriginalGroupHeader9;
+import com.tools20022.repository.msg.OriginalPaymentInstruction26;
 
 /**
  * OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should only
- * be present if GroupCancellationStatus equals PACR.
+ * be present if GroupCancellationStatus equals PACR
+ * (PartialCancellationRequest).
  */
 public class ConstraintNumberOfTransactionsPerCancellationStatusGuideline {
 
@@ -35,42 +36,8 @@ public class ConstraintNumberOfTransactionsPerCancellationStatusGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader5
-	 * OriginalGroupHeader5}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "NumberOfTransactionsPerCancellationStatusGuideline"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should only be present if GroupCancellationStatus equals PACR."
-	 * </li>
-	 * </ul>
-	 */
-	public static final MMConstraint forOriginalGroupHeader5 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "NumberOfTransactionsPerCancellationStatusGuideline";
-			definition = "OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should only be present if GroupCancellationStatus equals PACR.";
-			owner_lazy = () -> OriginalGroupHeader5.mmObject();
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalGroupHeader5((OriginalGroupHeader5) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction22
-	 * OriginalPaymentInstruction22}</li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction26
+	 * OriginalPaymentInstruction26}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -84,34 +51,68 @@ public class ConstraintNumberOfTransactionsPerCancellationStatusGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOriginalPaymentInstruction22 = new MMConstraint() {
+	public static final MMConstraint<OriginalPaymentInstruction26> forOriginalPaymentInstruction26 = new MMConstraint<OriginalPaymentInstruction26>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumberOfTransactionsPerCancellationStatusGuideline";
 			definition = "OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should only be present if GroupCancellationStatus equals PACR (PartialCancellationRequest).";
-			owner_lazy = () -> OriginalPaymentInstruction22.mmObject();
+			owner_lazy = () -> OriginalPaymentInstruction26.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalPaymentInstruction22((OriginalPaymentInstruction22) obj);
+		public void executeValidator(OriginalPaymentInstruction26 obj) throws Exception {
+			checkOriginalPaymentInstruction26(obj);
 		}
 	};
-
 	/**
-	 * OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should
-	 * only be present if GroupCancellationStatus equals PACR.
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader9
+	 * OriginalGroupHeader9}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "NumberOfTransactionsPerCancellationStatusGuideline"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should only be present if GroupCancellationStatus equals PACR."
+	 * </li>
+	 * </ul>
 	 */
-	public static void checkOriginalGroupHeader5(OriginalGroupHeader5 obj) throws Exception {
-		throw new NotImplementedConstraintException();
-	}
+	public static final MMConstraint<OriginalGroupHeader9> forOriginalGroupHeader9 = new MMConstraint<OriginalGroupHeader9>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "NumberOfTransactionsPerCancellationStatusGuideline";
+			definition = "OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should only be present if GroupCancellationStatus equals PACR.";
+			owner_lazy = () -> OriginalGroupHeader9.mmObject();
+		}
+
+		@Override
+		public void executeValidator(OriginalGroupHeader9 obj) throws Exception {
+			checkOriginalGroupHeader9(obj);
+		}
+	};
 
 	/**
 	 * OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should
 	 * only be present if GroupCancellationStatus equals PACR
 	 * (PartialCancellationRequest).
 	 */
-	public static void checkOriginalPaymentInstruction22(OriginalPaymentInstruction22 obj) throws Exception {
+	public static void checkOriginalPaymentInstruction26(OriginalPaymentInstruction26 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should
+	 * only be present if GroupCancellationStatus equals PACR.
+	 */
+	public static void checkOriginalGroupHeader9(OriginalGroupHeader9 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

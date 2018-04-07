@@ -19,8 +19,8 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max350Text;
+import com.tools20022.repository.entity.InvestmentFund;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -100,7 +100,7 @@ public class InvestmentFundFamily {
 	 * definition} = "Name of the investment fund family."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFundFamilyName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundFamily, Max350Text> mmFundFamilyName = new MMBusinessAttribute<InvestmentFundFamily, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundFamily.mmObject();
@@ -112,15 +112,17 @@ public class InvestmentFundFamily {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundFamily.class.getMethod("getFundFamilyName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(InvestmentFundFamily obj) {
+			return obj.getFundFamilyName();
+		}
+
+		@Override
+		public void setValue(InvestmentFundFamily obj, Max350Text value) {
+			obj.setFundFamilyName(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.InvestmentFund> investmentFund;
+	protected List<InvestmentFund> investmentFund;
 	/**
 	 * 
 	 <p>
@@ -156,7 +158,7 @@ public class InvestmentFundFamily {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFund = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundFamily, List<InvestmentFund>> mmInvestmentFund = new MMBusinessAssociationEnd<InvestmentFundFamily, List<InvestmentFund>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundFamily.mmObject();
@@ -164,9 +166,19 @@ public class InvestmentFundFamily {
 			name = "InvestmentFund";
 			definition = "Pool of financial instruments managed by a professional asset manager and belonging to one or several investment fund families that are part of the same investment fund network.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmFamily;
+			opposite_lazy = () -> InvestmentFund.mmFamily;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
+			type_lazy = () -> InvestmentFund.mmObject();
+		}
+
+		@Override
+		public List<InvestmentFund> getValue(InvestmentFundFamily obj) {
+			return obj.getInvestmentFund();
+		}
+
+		@Override
+		public void setValue(InvestmentFundFamily obj, List<InvestmentFund> value) {
+			obj.setInvestmentFund(value);
 		}
 	};
 
@@ -177,7 +189,7 @@ public class InvestmentFundFamily {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundFamily";
 				definition = "Group of investment funds under the same fund management company.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFund.mmFamily);
+				associationDomain_lazy = () -> Arrays.asList(InvestmentFund.mmFamily);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundFamily.mmFundFamilyName, com.tools20022.repository.entity.InvestmentFundFamily.mmInvestmentFund);
 			}
 
@@ -202,7 +214,7 @@ public class InvestmentFundFamily {
 		return investmentFund == null ? investmentFund = new ArrayList<>() : investmentFund;
 	}
 
-	public InvestmentFundFamily setInvestmentFund(List<com.tools20022.repository.entity.InvestmentFund> investmentFund) {
+	public InvestmentFundFamily setInvestmentFund(List<InvestmentFund> investmentFund) {
 		this.investmentFund = Objects.requireNonNull(investmentFund);
 		return this;
 	}

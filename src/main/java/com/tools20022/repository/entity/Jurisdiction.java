@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -144,7 +145,7 @@ public class Jurisdiction {
 	 * "Rules for which an applicable law and a jurisdiction are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGovernanceRules = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Jurisdiction, GovernanceRules> mmGovernanceRules = new MMBusinessAssociationEnd<Jurisdiction, GovernanceRules>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
@@ -153,9 +154,19 @@ public class Jurisdiction {
 			definition = "Rules for which an applicable law and a jurisdiction are specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmJurisdiction;
+			opposite_lazy = () -> GovernanceRules.mmJurisdiction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
+			type_lazy = () -> GovernanceRules.mmObject();
+		}
+
+		@Override
+		public GovernanceRules getValue(Jurisdiction obj) {
+			return obj.getGovernanceRules();
+		}
+
+		@Override
+		public void setValue(Jurisdiction obj, GovernanceRules value) {
+			obj.setGovernanceRules(value);
 		}
 	};
 	protected Location identification;
@@ -191,7 +202,7 @@ public class Jurisdiction {
 	 * "Specifies the jurisdiction (country, county, state, province, city)."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Jurisdiction, Location> mmIdentification = new MMBusinessAssociationEnd<Jurisdiction, Location>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
@@ -200,9 +211,19 @@ public class Jurisdiction {
 			definition = "Specifies the jurisdiction (country, county, state, province, city).";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmRelatedJurisdiction;
+			opposite_lazy = () -> Location.mmRelatedJurisdiction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+			type_lazy = () -> Location.mmObject();
+		}
+
+		@Override
+		public Location getValue(Jurisdiction obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Jurisdiction obj, Location value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected Security registeredSecurities;
@@ -238,7 +259,7 @@ public class Jurisdiction {
 	 * "Securities which are registered under a specific jurisdiction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRegisteredSecurities = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Jurisdiction, Optional<Security>> mmRegisteredSecurities = new MMBusinessAssociationEnd<Jurisdiction, Optional<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
@@ -247,12 +268,22 @@ public class Jurisdiction {
 			definition = "Securities which are registered under a specific jurisdiction.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmRegistrationJurisdiction;
+			opposite_lazy = () -> Security.mmRegistrationJurisdiction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Optional<Security> getValue(Jurisdiction obj) {
+			return obj.getRegisteredSecurities();
+		}
+
+		@Override
+		public void setValue(Jurisdiction obj, Optional<Security> value) {
+			obj.setRegisteredSecurities(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.JurisdictionStrategy> associatedStrategy;
+	protected List<JurisdictionStrategy> associatedStrategy;
 	/**
 	 * 
 	 <p>
@@ -286,7 +317,7 @@ public class Jurisdiction {
 	 * definition} = "Strategy which is based on a specific jurisdiction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssociatedStrategy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Jurisdiction, List<JurisdictionStrategy>> mmAssociatedStrategy = new MMBusinessAssociationEnd<Jurisdiction, List<JurisdictionStrategy>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
@@ -294,9 +325,19 @@ public class Jurisdiction {
 			name = "AssociatedStrategy";
 			definition = "Strategy which is based on a specific jurisdiction.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.JurisdictionStrategy.mmJurisdiction;
+			opposite_lazy = () -> JurisdictionStrategy.mmJurisdiction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.JurisdictionStrategy.mmObject();
+			type_lazy = () -> JurisdictionStrategy.mmObject();
+		}
+
+		@Override
+		public List<JurisdictionStrategy> getValue(Jurisdiction obj) {
+			return obj.getAssociatedStrategy();
+		}
+
+		@Override
+		public void setValue(Jurisdiction obj, List<JurisdictionStrategy> value) {
+			obj.setAssociatedStrategy(value);
 		}
 	};
 	protected SecuritiesRestriction securitiesRestriction;
@@ -334,7 +375,7 @@ public class Jurisdiction {
 	 * "Securities restrictions which apply in a specific jurisdiction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesRestriction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Jurisdiction, SecuritiesRestriction> mmSecuritiesRestriction = new MMBusinessAssociationEnd<Jurisdiction, SecuritiesRestriction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
@@ -343,9 +384,19 @@ public class Jurisdiction {
 			definition = "Securities restrictions which apply in a specific jurisdiction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmJurisdiction;
+			opposite_lazy = () -> SecuritiesRestriction.mmJurisdiction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
+			type_lazy = () -> SecuritiesRestriction.mmObject();
+		}
+
+		@Override
+		public SecuritiesRestriction getValue(Jurisdiction obj) {
+			return obj.getSecuritiesRestriction();
+		}
+
+		@Override
+		public void setValue(Jurisdiction obj, SecuritiesRestriction value) {
+			obj.setSecuritiesRestriction(value);
 		}
 	};
 	protected SecuritiesTax relatedSecuritiesTax;
@@ -381,7 +432,7 @@ public class Jurisdiction {
 	 * definition} = "Securities tax for which a jurisdiction is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecuritiesTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Jurisdiction, SecuritiesTax> mmRelatedSecuritiesTax = new MMBusinessAssociationEnd<Jurisdiction, SecuritiesTax>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
@@ -390,9 +441,19 @@ public class Jurisdiction {
 			definition = "Securities tax for which a jurisdiction is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmJurisdiction;
+			opposite_lazy = () -> SecuritiesTax.mmJurisdiction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
+			type_lazy = () -> SecuritiesTax.mmObject();
+		}
+
+		@Override
+		public SecuritiesTax getValue(Jurisdiction obj) {
+			return obj.getRelatedSecuritiesTax();
+		}
+
+		@Override
+		public void setValue(Jurisdiction obj, SecuritiesTax value) {
+			obj.setRelatedSecuritiesTax(value);
 		}
 	};
 	protected Market relatedMarket;
@@ -427,7 +488,7 @@ public class Jurisdiction {
 	 * definition} = "Market to which the jurisdiction is related."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Jurisdiction, Market> mmRelatedMarket = new MMBusinessAssociationEnd<Jurisdiction, Market>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
@@ -436,12 +497,22 @@ public class Jurisdiction {
 			definition = "Market to which the jurisdiction is related.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Market.mmJurisdiction;
+			opposite_lazy = () -> Market.mmJurisdiction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Market.mmObject();
+			type_lazy = () -> Market.mmObject();
+		}
+
+		@Override
+		public Market getValue(Jurisdiction obj) {
+			return obj.getRelatedMarket();
+		}
+
+		@Override
+		public void setValue(Jurisdiction obj, Market value) {
+			obj.setRelatedMarket(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Agreement> relatedAgreement;
+	protected List<Agreement> relatedAgreement;
 	/**
 	 * 
 	 <p>
@@ -474,7 +545,7 @@ public class Jurisdiction {
 	 * definition} = "Agreement which is subject to a specific jurisdiction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedAgreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Jurisdiction, List<Agreement>> mmRelatedAgreement = new MMBusinessAssociationEnd<Jurisdiction, List<Agreement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
@@ -482,9 +553,19 @@ public class Jurisdiction {
 			name = "RelatedAgreement";
 			definition = "Agreement which is subject to a specific jurisdiction.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Agreement.mmJurisdiction;
+			opposite_lazy = () -> Agreement.mmJurisdiction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
+			type_lazy = () -> Agreement.mmObject();
+		}
+
+		@Override
+		public List<Agreement> getValue(Jurisdiction obj) {
+			return obj.getRelatedAgreement();
+		}
+
+		@Override
+		public void setValue(Jurisdiction obj, List<Agreement> value) {
+			obj.setRelatedAgreement(value);
 		}
 	};
 
@@ -495,9 +576,8 @@ public class Jurisdiction {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Jurisdiction";
 				definition = "Specifies the jurisdiction (country, county, state, province, city).";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmRegistrationJurisdiction, com.tools20022.repository.entity.Location.mmRelatedJurisdiction,
-						com.tools20022.repository.entity.Agreement.mmJurisdiction, com.tools20022.repository.entity.SecuritiesTax.mmJurisdiction, com.tools20022.repository.entity.SecuritiesRestriction.mmJurisdiction,
-						com.tools20022.repository.entity.GovernanceRules.mmJurisdiction, com.tools20022.repository.entity.JurisdictionStrategy.mmJurisdiction, com.tools20022.repository.entity.Market.mmJurisdiction);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmRegistrationJurisdiction, Location.mmRelatedJurisdiction, Agreement.mmJurisdiction, SecuritiesTax.mmJurisdiction, SecuritiesRestriction.mmJurisdiction,
+						GovernanceRules.mmJurisdiction, JurisdictionStrategy.mmJurisdiction, Market.mmJurisdiction);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Jurisdiction.mmGovernanceRules, com.tools20022.repository.entity.Jurisdiction.mmIdentification,
 						com.tools20022.repository.entity.Jurisdiction.mmRegisteredSecurities, com.tools20022.repository.entity.Jurisdiction.mmAssociatedStrategy, com.tools20022.repository.entity.Jurisdiction.mmSecuritiesRestriction,
 						com.tools20022.repository.entity.Jurisdiction.mmRelatedSecuritiesTax, com.tools20022.repository.entity.Jurisdiction.mmRelatedMarket, com.tools20022.repository.entity.Jurisdiction.mmRelatedAgreement);
@@ -515,7 +595,7 @@ public class Jurisdiction {
 		return governanceRules;
 	}
 
-	public Jurisdiction setGovernanceRules(com.tools20022.repository.entity.GovernanceRules governanceRules) {
+	public Jurisdiction setGovernanceRules(GovernanceRules governanceRules) {
 		this.governanceRules = Objects.requireNonNull(governanceRules);
 		return this;
 	}
@@ -524,7 +604,7 @@ public class Jurisdiction {
 		return identification;
 	}
 
-	public Jurisdiction setIdentification(com.tools20022.repository.entity.Location identification) {
+	public Jurisdiction setIdentification(Location identification) {
 		this.identification = Objects.requireNonNull(identification);
 		return this;
 	}
@@ -533,7 +613,7 @@ public class Jurisdiction {
 		return registeredSecurities == null ? Optional.empty() : Optional.of(registeredSecurities);
 	}
 
-	public Jurisdiction setRegisteredSecurities(com.tools20022.repository.entity.Security registeredSecurities) {
+	public Jurisdiction setRegisteredSecurities(Security registeredSecurities) {
 		this.registeredSecurities = registeredSecurities;
 		return this;
 	}
@@ -542,7 +622,7 @@ public class Jurisdiction {
 		return associatedStrategy == null ? associatedStrategy = new ArrayList<>() : associatedStrategy;
 	}
 
-	public Jurisdiction setAssociatedStrategy(List<com.tools20022.repository.entity.JurisdictionStrategy> associatedStrategy) {
+	public Jurisdiction setAssociatedStrategy(List<JurisdictionStrategy> associatedStrategy) {
 		this.associatedStrategy = Objects.requireNonNull(associatedStrategy);
 		return this;
 	}
@@ -551,7 +631,7 @@ public class Jurisdiction {
 		return securitiesRestriction;
 	}
 
-	public Jurisdiction setSecuritiesRestriction(com.tools20022.repository.entity.SecuritiesRestriction securitiesRestriction) {
+	public Jurisdiction setSecuritiesRestriction(SecuritiesRestriction securitiesRestriction) {
 		this.securitiesRestriction = Objects.requireNonNull(securitiesRestriction);
 		return this;
 	}
@@ -560,7 +640,7 @@ public class Jurisdiction {
 		return relatedSecuritiesTax;
 	}
 
-	public Jurisdiction setRelatedSecuritiesTax(com.tools20022.repository.entity.SecuritiesTax relatedSecuritiesTax) {
+	public Jurisdiction setRelatedSecuritiesTax(SecuritiesTax relatedSecuritiesTax) {
 		this.relatedSecuritiesTax = Objects.requireNonNull(relatedSecuritiesTax);
 		return this;
 	}
@@ -569,7 +649,7 @@ public class Jurisdiction {
 		return relatedMarket;
 	}
 
-	public Jurisdiction setRelatedMarket(com.tools20022.repository.entity.Market relatedMarket) {
+	public Jurisdiction setRelatedMarket(Market relatedMarket) {
 		this.relatedMarket = Objects.requireNonNull(relatedMarket);
 		return this;
 	}
@@ -578,7 +658,7 @@ public class Jurisdiction {
 		return relatedAgreement == null ? relatedAgreement = new ArrayList<>() : relatedAgreement;
 	}
 
-	public Jurisdiction setRelatedAgreement(List<com.tools20022.repository.entity.Agreement> relatedAgreement) {
+	public Jurisdiction setRelatedAgreement(List<Agreement> relatedAgreement) {
 		this.relatedAgreement = Objects.requireNonNull(relatedAgreement);
 		return this;
 	}

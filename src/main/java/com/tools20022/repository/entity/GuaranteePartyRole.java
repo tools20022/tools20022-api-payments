@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Guarantee;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
@@ -107,7 +108,7 @@ public class GuaranteePartyRole extends Role {
 	 * definition} = "Guarantee for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGuarantee = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GuaranteePartyRole, com.tools20022.repository.entity.Guarantee> mmGuarantee = new MMBusinessAssociationEnd<GuaranteePartyRole, com.tools20022.repository.entity.Guarantee>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GuaranteePartyRole.mmObject();
@@ -119,6 +120,16 @@ public class GuaranteePartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Guarantee.mmGuaranteePartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Guarantee getValue(GuaranteePartyRole obj) {
+			return obj.getGuarantee();
+		}
+
+		@Override
+		public void setValue(GuaranteePartyRole obj, com.tools20022.repository.entity.Guarantee value) {
+			obj.setGuarantee(value);
 		}
 	};
 

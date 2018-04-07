@@ -22,7 +22,9 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.PaymentObligation;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Garnishment1;
+import com.tools20022.repository.msg.Garnishment2;
 import com.tools20022.repository.msg.StructuredRemittanceInformation13;
+import com.tools20022.repository.msg.StructuredRemittanceInformation15;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -46,6 +48,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13#mmGarnishmentRemittance
  * StructuredRemittanceInformation13.mmGarnishmentRemittance}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmGarnishmentRemittance
+ * StructuredRemittanceInformation15.mmGarnishmentRemittance}</li>
  * </ul>
  * </li>
  * <li>
@@ -53,6 +58,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * derivationComponent} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.Garnishment1 Garnishment1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Garnishment2 Garnishment2}</li>
  * </ul>
  * </li>
  * <li>
@@ -83,9 +89,9 @@ public class Garnishment extends PaymentObligation {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Garnishment";
 				definition = "Legal process whereby the debtor pays another party than the creditor to settle a debt due by the creditor to that other party.";
-				derivationElement_lazy = () -> Arrays.asList(StructuredRemittanceInformation13.mmGarnishmentRemittance);
+				derivationElement_lazy = () -> Arrays.asList(StructuredRemittanceInformation13.mmGarnishmentRemittance, StructuredRemittanceInformation15.mmGarnishmentRemittance);
 				superType_lazy = () -> PaymentObligation.mmObject();
-				derivationComponent_lazy = () -> Arrays.asList(Garnishment1.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(Garnishment1.mmObject(), Garnishment2.mmObject());
 			}
 
 			@Override

@@ -108,7 +108,7 @@ public class CorporateAction9 {
 	 * definition} = "Type of corporate action event, in a free-text format."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEventType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction9, Max35Text> mmEventType = new MMMessageAttribute<CorporateAction9, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction9.mmObject();
@@ -120,6 +120,16 @@ public class CorporateAction9 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(CorporateAction9 obj) {
+			return obj.getEventType();
+		}
+
+		@Override
+		public void setValue(CorporateAction9 obj, Max35Text value) {
+			obj.setEventType(value);
 		}
 	};
 	@XmlElement(name = "EvtId", required = true)
@@ -158,7 +168,7 @@ public class CorporateAction9 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEventIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction9, Max35Text> mmEventIdentification = new MMMessageAttribute<CorporateAction9, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEventRegistration.mmCorporateActionEventIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction9.mmObject();
@@ -170,6 +180,16 @@ public class CorporateAction9 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(CorporateAction9 obj) {
+			return obj.getEventIdentification();
+		}
+
+		@Override
+		public void setValue(CorporateAction9 obj, Max35Text value) {
+			obj.setEventIdentification(value);
 		}
 	};
 

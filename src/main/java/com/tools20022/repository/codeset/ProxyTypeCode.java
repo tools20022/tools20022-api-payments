@@ -102,7 +102,7 @@ public class ProxyTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Any type of proxy is allowed
+	 * Any type of proxy is allowed.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -119,14 +119,14 @@ public class ProxyTypeCode extends MMCode {
 	 * name} = "Discretionary"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Any type of proxy is allowed"</li>
+	 * definition} = "Any type of proxy is allowed."</li>
 	 * </ul>
 	 */
 	public static final ProxyTypeCode Discretionary = new ProxyTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Discretionary";
-			definition = "Any type of proxy is allowed";
+			definition = "Any type of proxy is allowed.";
 			owner_lazy = () -> com.tools20022.repository.codeset.ProxyTypeCode.mmObject();
 			codeName = "DISC";
 		}

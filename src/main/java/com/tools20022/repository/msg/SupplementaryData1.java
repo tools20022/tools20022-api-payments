@@ -116,29 +116,11 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationReportV02#mmSupplementaryData
  * IdentificationVerificationReportV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.AccountReportingRequestV03#mmSupplementaryData
- * AccountReportingRequestV03.mmSupplementaryData}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04#mmSupplementaryData
  * NotificationOfCaseAssignmentV04.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.RejectInvestigationV04#mmSupplementaryData
- * RejectInvestigationV04.mmSupplementaryData}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.camt.CancelCaseAssignmentV03#mmSupplementaryData
  * CancelCaseAssignmentV03.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.RequestForDuplicateV04#mmSupplementaryData
- * RequestForDuplicateV04.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.DuplicateV04#mmSupplementaryData
- * DuplicateV04.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.ProprietaryFormatInvestigationV03#mmSupplementaryData
- * ProprietaryFormatInvestigationV03.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationResponseV03#mmSupplementaryData
- * DebitAuthorisationResponseV03.mmSupplementaryData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.camt.CaseStatusReportRequestV03#mmSupplementaryData
  * CaseStatusReportRequestV03.mmSupplementaryData}</li>
@@ -188,26 +170,11 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.auth.CurrencyControlRequestOrLetterV01#mmSupplementaryData
  * CurrencyControlRequestOrLetterV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.BankToCustomerAccountReportV06#mmSupplementaryData
- * BankToCustomerAccountReportV06.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV06#mmSupplementaryData
- * FinancialInstitutionCreditTransferV06.mmSupplementaryData}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05#mmSupplementaryData
  * NotificationToReceiveStatusReportV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV06#mmSupplementaryData
- * FIToFICustomerCreditTransferV06.mmSupplementaryData}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveCancellationAdviceV05#mmSupplementaryData
  * NotificationToReceiveCancellationAdviceV05.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.BankToCustomerStatementV06#mmSupplementaryData
- * BankToCustomerStatementV06.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.BankToCustomerDebitCreditNotificationV06#mmSupplementaryData
- * BankToCustomerDebitCreditNotificationV06.mmSupplementaryData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveV05#mmSupplementaryData
  * NotificationToReceiveV05.mmSupplementaryData}</li>
@@ -215,50 +182,26 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionDirectDebitV02#mmSupplementaryData
  * FinancialInstitutionDirectDebitV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV01#mmSupplementaryData
- * FIToFIPaymentStatusRequestV01.mmSupplementaryData}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.pain.MandateAcceptanceReportV05#mmSupplementaryData
  * MandateAcceptanceReportV05.mmSupplementaryData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.pain.MandateAmendmentRequestV05#mmSupplementaryData
  * MandateAmendmentRequestV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.UnableToApplyV05#mmSupplementaryData
- * UnableToApplyV05.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.pacs.PaymentReturnV07#mmSupplementaryData
- * PaymentReturnV07.mmSupplementaryData}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.pain.MandateInitiationRequestV05#mmSupplementaryData
  * MandateInitiationRequestV05.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV08#mmSupplementaryData
- * FIToFIPaymentStatusReportV08.mmSupplementaryData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.remt.RemittanceAdviceV03#mmSupplementaryData
  * RemittanceAdviceV03.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentReversalV07#mmSupplementaryData
- * FIToFIPaymentReversalV07.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06#mmSupplementaryData
- * CustomerPaymentCancellationRequestV06.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.AdditionalPaymentInformationV07#mmSupplementaryData
- * AdditionalPaymentInformationV07.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.ResolutionOfInvestigationV07#mmSupplementaryData
- * ResolutionOfInvestigationV07.mmSupplementaryData}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerDirectDebitV07#mmSupplementaryData
  * FIToFICustomerDirectDebitV07.mmSupplementaryData}</li>
  * <li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV07#mmSupplementaryData
+ * FIToFICustomerCreditTransferV07.mmSupplementaryData}</li>
+ * <li>
  * {@linkplain com.tools20022.repository.area.pain.CustomerCreditTransferInitiationV08#mmSupplementaryData
  * CustomerCreditTransferInitiationV08.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06#mmSupplementaryData
- * FIToFIPaymentCancellationRequestV06.mmSupplementaryData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.pain.MandateCancellationRequestV05#mmSupplementaryData
  * MandateCancellationRequestV05.mmSupplementaryData}</li>
@@ -266,32 +209,122 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.pain.CustomerDirectDebitInitiationV07#mmSupplementaryData
  * CustomerDirectDebitInitiationV07.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationRequestV05#mmSupplementaryData
- * DebitAuthorisationRequestV05.mmSupplementaryData}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.pain.CreditorPaymentActivationRequestStatusReportV06#mmSupplementaryData
  * CreditorPaymentActivationRequestStatusReportV06.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#mmSupplementaryData
- * CustomerPaymentStatusReportV08.mmSupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV07#mmSupplementaryData
+ * FinancialInstitutionCreditTransferV07.mmSupplementaryData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.pain.CreditorPaymentActivationRequestV06#mmSupplementaryData
  * CreditorPaymentActivationRequestV06.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.ClaimNonReceiptV05#mmSupplementaryData
- * ClaimNonReceiptV05.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.RequestToModifyPaymentV04#mmSupplementaryData
- * RequestToModifyPaymentV04.mmSupplementaryData}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentReversalV07#mmSupplementaryData
- * CustomerPaymentReversalV07.mmSupplementaryData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.pain.MandateSuspensionRequestV01#mmSupplementaryData
  * MandateSuspensionRequestV01.mmSupplementaryData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.pain.MandateCopyRequestV01#mmSupplementaryData
  * MandateCopyRequestV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.BankToCustomerAccountReportV07#mmSupplementaryData
+ * BankToCustomerAccountReportV07.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV07#mmSupplementaryData
+ * FIToFIPaymentCancellationRequestV07.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.DuplicateV05#mmSupplementaryData
+ * DuplicateV05.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.RejectInvestigationV05#mmSupplementaryData
+ * RejectInvestigationV05.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.ProprietaryFormatInvestigationV04#mmSupplementaryData
+ * ProprietaryFormatInvestigationV04.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.RequestForDuplicateV05#mmSupplementaryData
+ * RequestForDuplicateV05.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentReversalV08#mmSupplementaryData
+ * FIToFIPaymentReversalV08.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.RequestToModifyPaymentV05#mmSupplementaryData
+ * RequestToModifyPaymentV05.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.ClaimNonReceiptV06#mmSupplementaryData
+ * ClaimNonReceiptV06.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.BankToCustomerStatementV07#mmSupplementaryData
+ * BankToCustomerStatementV07.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationRequestV06#mmSupplementaryData
+ * DebitAuthorisationRequestV06.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.ResolutionOfInvestigationV08#mmSupplementaryData
+ * ResolutionOfInvestigationV08.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationResponseV04#mmSupplementaryData
+ * DebitAuthorisationResponseV04.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.UnableToApplyV06#mmSupplementaryData
+ * UnableToApplyV06.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.AccountReportingRequestV04#mmSupplementaryData
+ * AccountReportingRequestV04.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.BankToCustomerDebitCreditNotificationV07#mmSupplementaryData
+ * BankToCustomerDebitCreditNotificationV07.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.pacs.PaymentReturnV08#mmSupplementaryData
+ * PaymentReturnV08.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV09#mmSupplementaryData
+ * FIToFIPaymentStatusReportV09.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.AdditionalPaymentInformationV08#mmSupplementaryData
+ * AdditionalPaymentInformationV08.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchInformationResponseV01#mmSupplementaryData
+ * AccountSwitchInformationResponseV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchBalanceTransferAcknowledgementV01#mmSupplementaryData
+ * AccountSwitchBalanceTransferAcknowledgementV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchTechnicalRejectionV01#mmSupplementaryData
+ * AccountSwitchTechnicalRejectionV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchPaymentResponseV01#mmSupplementaryData
+ * AccountSwitchPaymentResponseV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchNotifyAccountSwitchCompleteV01#mmSupplementaryData
+ * AccountSwitchNotifyAccountSwitchCompleteV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchRequestBalanceTransferV01#mmSupplementaryData
+ * AccountSwitchRequestBalanceTransferV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchInformationRequestV01#mmSupplementaryData
+ * AccountSwitchInformationRequestV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchRequestRedirectionV01#mmSupplementaryData
+ * AccountSwitchRequestRedirectionV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchTerminationSwitchV01#mmSupplementaryData
+ * AccountSwitchTerminationSwitchV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchCancelExistingPaymentV01#mmSupplementaryData
+ * AccountSwitchCancelExistingPaymentV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchRequestPaymentV01#mmSupplementaryData
+ * AccountSwitchRequestPaymentV01.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV09#mmSupplementaryData
+ * CustomerPaymentStatusReportV09.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV07#mmSupplementaryData
+ * CustomerPaymentCancellationRequestV07.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentReversalV08#mmSupplementaryData
+ * CustomerPaymentReversalV08.mmSupplementaryData}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV02#mmSupplementaryData
+ * FIToFIPaymentStatusRequestV02.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>
@@ -355,7 +388,7 @@ public class SupplementaryData1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPlaceAndName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SupplementaryData1, Optional<Max350Text>> mmPlaceAndName = new MMMessageAttribute<SupplementaryData1, Optional<Max350Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
 			isDerived = false;
@@ -366,6 +399,16 @@ public class SupplementaryData1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max350Text> getValue(SupplementaryData1 obj) {
+			return obj.getPlaceAndName();
+		}
+
+		@Override
+		public void setValue(SupplementaryData1 obj, Optional<Max350Text> value) {
+			obj.setPlaceAndName(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Envlp", required = true)
@@ -397,7 +440,7 @@ public class SupplementaryData1 {
 	 * definition} = "Technical element wrapping the supplementary data."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvelope = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SupplementaryData1, SupplementaryDataEnvelope1> mmEnvelope = new MMMessageAssociationEnd<SupplementaryData1, SupplementaryDataEnvelope1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
 			isDerived = false;
@@ -410,6 +453,16 @@ public class SupplementaryData1 {
 			isComposite = true;
 			type_lazy = () -> SupplementaryDataEnvelope1.mmObject();
 		}
+
+		@Override
+		public SupplementaryDataEnvelope1 getValue(SupplementaryData1 obj) {
+			return obj.getEnvelope();
+		}
+
+		@Override
+		public void setValue(SupplementaryData1 obj, SupplementaryDataEnvelope1 value) {
+			obj.setEnvelope(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
@@ -421,24 +474,27 @@ public class SupplementaryData1 {
 						AccountExcludedMandateMaintenanceRequestV02.mmSupplementaryData, AccountMandateMaintenanceAmendmentRequestV02.mmSupplementaryData, AccountMandateMaintenanceRequestV02.mmSupplementaryData,
 						AccountOpeningAdditionalInformationRequestV02.mmSupplementaryData, AccountOpeningAmendmentRequestV02.mmSupplementaryData, AccountOpeningRequestV02.mmSupplementaryData, AccountReportRequestV02.mmSupplementaryData,
 						AccountReportV02.mmSupplementaryData, AccountRequestAcknowledgementV02.mmSupplementaryData, AccountRequestRejectionV02.mmSupplementaryData, IdentificationModificationAdviceV02.mmSupplementaryData,
-						IdentificationVerificationRequestV02.mmSupplementaryData, IdentificationVerificationReportV02.mmSupplementaryData, AccountReportingRequestV03.mmSupplementaryData, NotificationOfCaseAssignmentV04.mmSupplementaryData,
-						RejectInvestigationV04.mmSupplementaryData, CancelCaseAssignmentV03.mmSupplementaryData, RequestForDuplicateV04.mmSupplementaryData, DuplicateV04.mmSupplementaryData,
-						ProprietaryFormatInvestigationV03.mmSupplementaryData, DebitAuthorisationResponseV03.mmSupplementaryData, CaseStatusReportRequestV03.mmSupplementaryData, CaseStatusReportV04.mmSupplementaryData,
-						InformationRequestOpeningV01.mmSupplementaryData, InformationRequestResponseV01.mmSupplementaryData, InformationRequestStatusChangeNotificationV01.mmSupplementaryData,
-						RemittanceLocationAdviceV01.mmSupplementaryData, ContractRegistrationStatementRequestV01.mmSupplementaryData, ContractRegistrationAmendmentRequestV01.mmSupplementaryData,
-						ContractRegistrationConfirmationV01.mmSupplementaryData, ContractRegistrationRequestV01.mmSupplementaryData, CurrencyControlStatusAdviceV01.mmSupplementaryData,
-						CurrencyControlSupportingDocumentDeliveryV01.mmSupplementaryData, ContractRegistrationClosureRequestV01.mmSupplementaryData, ContractRegistrationStatementV01.mmSupplementaryData,
-						PaymentRegulatoryInformationNotificationV01.mmSupplementaryData, CurrencyControlRequestOrLetterV01.mmSupplementaryData, BankToCustomerAccountReportV06.mmSupplementaryData,
-						FinancialInstitutionCreditTransferV06.mmSupplementaryData, NotificationToReceiveStatusReportV05.mmSupplementaryData, FIToFICustomerCreditTransferV06.mmSupplementaryData,
-						NotificationToReceiveCancellationAdviceV05.mmSupplementaryData, BankToCustomerStatementV06.mmSupplementaryData, BankToCustomerDebitCreditNotificationV06.mmSupplementaryData,
-						NotificationToReceiveV05.mmSupplementaryData, FinancialInstitutionDirectDebitV02.mmSupplementaryData, FIToFIPaymentStatusRequestV01.mmSupplementaryData, MandateAcceptanceReportV05.mmSupplementaryData,
-						MandateAmendmentRequestV05.mmSupplementaryData, UnableToApplyV05.mmSupplementaryData, PaymentReturnV07.mmSupplementaryData, MandateInitiationRequestV05.mmSupplementaryData,
-						FIToFIPaymentStatusReportV08.mmSupplementaryData, RemittanceAdviceV03.mmSupplementaryData, FIToFIPaymentReversalV07.mmSupplementaryData, CustomerPaymentCancellationRequestV06.mmSupplementaryData,
-						AdditionalPaymentInformationV07.mmSupplementaryData, ResolutionOfInvestigationV07.mmSupplementaryData, FIToFICustomerDirectDebitV07.mmSupplementaryData, CustomerCreditTransferInitiationV08.mmSupplementaryData,
-						FIToFIPaymentCancellationRequestV06.mmSupplementaryData, MandateCancellationRequestV05.mmSupplementaryData, CustomerDirectDebitInitiationV07.mmSupplementaryData, DebitAuthorisationRequestV05.mmSupplementaryData,
-						CreditorPaymentActivationRequestStatusReportV06.mmSupplementaryData, CustomerPaymentStatusReportV08.mmSupplementaryData, CreditorPaymentActivationRequestV06.mmSupplementaryData,
-						ClaimNonReceiptV05.mmSupplementaryData, RequestToModifyPaymentV04.mmSupplementaryData, CustomerPaymentReversalV07.mmSupplementaryData, MandateSuspensionRequestV01.mmSupplementaryData,
-						MandateCopyRequestV01.mmSupplementaryData);
+						IdentificationVerificationRequestV02.mmSupplementaryData, IdentificationVerificationReportV02.mmSupplementaryData, NotificationOfCaseAssignmentV04.mmSupplementaryData, CancelCaseAssignmentV03.mmSupplementaryData,
+						CaseStatusReportRequestV03.mmSupplementaryData, CaseStatusReportV04.mmSupplementaryData, InformationRequestOpeningV01.mmSupplementaryData, InformationRequestResponseV01.mmSupplementaryData,
+						InformationRequestStatusChangeNotificationV01.mmSupplementaryData, RemittanceLocationAdviceV01.mmSupplementaryData, ContractRegistrationStatementRequestV01.mmSupplementaryData,
+						ContractRegistrationAmendmentRequestV01.mmSupplementaryData, ContractRegistrationConfirmationV01.mmSupplementaryData, ContractRegistrationRequestV01.mmSupplementaryData,
+						CurrencyControlStatusAdviceV01.mmSupplementaryData, CurrencyControlSupportingDocumentDeliveryV01.mmSupplementaryData, ContractRegistrationClosureRequestV01.mmSupplementaryData,
+						ContractRegistrationStatementV01.mmSupplementaryData, PaymentRegulatoryInformationNotificationV01.mmSupplementaryData, CurrencyControlRequestOrLetterV01.mmSupplementaryData,
+						NotificationToReceiveStatusReportV05.mmSupplementaryData, NotificationToReceiveCancellationAdviceV05.mmSupplementaryData, NotificationToReceiveV05.mmSupplementaryData,
+						FinancialInstitutionDirectDebitV02.mmSupplementaryData, MandateAcceptanceReportV05.mmSupplementaryData, MandateAmendmentRequestV05.mmSupplementaryData, MandateInitiationRequestV05.mmSupplementaryData,
+						RemittanceAdviceV03.mmSupplementaryData, FIToFICustomerDirectDebitV07.mmSupplementaryData, FIToFICustomerCreditTransferV07.mmSupplementaryData, CustomerCreditTransferInitiationV08.mmSupplementaryData,
+						MandateCancellationRequestV05.mmSupplementaryData, CustomerDirectDebitInitiationV07.mmSupplementaryData, CreditorPaymentActivationRequestStatusReportV06.mmSupplementaryData,
+						FinancialInstitutionCreditTransferV07.mmSupplementaryData, CreditorPaymentActivationRequestV06.mmSupplementaryData, MandateSuspensionRequestV01.mmSupplementaryData, MandateCopyRequestV01.mmSupplementaryData,
+						BankToCustomerAccountReportV07.mmSupplementaryData, FIToFIPaymentCancellationRequestV07.mmSupplementaryData, DuplicateV05.mmSupplementaryData, RejectInvestigationV05.mmSupplementaryData,
+						ProprietaryFormatInvestigationV04.mmSupplementaryData, RequestForDuplicateV05.mmSupplementaryData, FIToFIPaymentReversalV08.mmSupplementaryData, RequestToModifyPaymentV05.mmSupplementaryData,
+						ClaimNonReceiptV06.mmSupplementaryData, BankToCustomerStatementV07.mmSupplementaryData, DebitAuthorisationRequestV06.mmSupplementaryData, ResolutionOfInvestigationV08.mmSupplementaryData,
+						DebitAuthorisationResponseV04.mmSupplementaryData, UnableToApplyV06.mmSupplementaryData, AccountReportingRequestV04.mmSupplementaryData, BankToCustomerDebitCreditNotificationV07.mmSupplementaryData,
+						PaymentReturnV08.mmSupplementaryData, FIToFIPaymentStatusReportV09.mmSupplementaryData, AdditionalPaymentInformationV08.mmSupplementaryData, AccountSwitchInformationResponseV01.mmSupplementaryData,
+						AccountSwitchBalanceTransferAcknowledgementV01.mmSupplementaryData, AccountSwitchTechnicalRejectionV01.mmSupplementaryData, AccountSwitchPaymentResponseV01.mmSupplementaryData,
+						AccountSwitchNotifyAccountSwitchCompleteV01.mmSupplementaryData, AccountSwitchRequestBalanceTransferV01.mmSupplementaryData, AccountSwitchInformationRequestV01.mmSupplementaryData,
+						AccountSwitchRequestRedirectionV01.mmSupplementaryData, AccountSwitchTerminationSwitchV01.mmSupplementaryData, AccountSwitchCancelExistingPaymentV01.mmSupplementaryData,
+						AccountSwitchRequestPaymentV01.mmSupplementaryData, CustomerPaymentStatusReportV09.mmSupplementaryData, CustomerPaymentCancellationRequestV07.mmSupplementaryData, CustomerPaymentReversalV08.mmSupplementaryData,
+						FIToFIPaymentStatusRequestV02.mmSupplementaryData);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forSupplementaryData1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;

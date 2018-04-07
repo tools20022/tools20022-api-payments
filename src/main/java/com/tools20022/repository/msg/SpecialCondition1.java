@@ -112,7 +112,7 @@ public class SpecialCondition1 {
 	 * definition} = "Incoming amount on special conditions."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIncomingAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SpecialCondition1, ActiveCurrencyAndAmount> mmIncomingAmount = new MMMessageAttribute<SpecialCondition1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SpecialCondition1.mmObject();
@@ -124,6 +124,16 @@ public class SpecialCondition1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(SpecialCondition1 obj) {
+			return obj.getIncomingAmount();
+		}
+
+		@Override
+		public void setValue(SpecialCondition1 obj, ActiveCurrencyAndAmount value) {
+			obj.setIncomingAmount(value);
 		}
 	};
 	@XmlElement(name = "OutgngAmt", required = true)
@@ -161,7 +171,7 @@ public class SpecialCondition1 {
 	 * definition} = "Outgoing amount on special conditions."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOutgoingAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SpecialCondition1, ActiveCurrencyAndAmount> mmOutgoingAmount = new MMMessageAttribute<SpecialCondition1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SpecialCondition1.mmObject();
@@ -173,6 +183,16 @@ public class SpecialCondition1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(SpecialCondition1 obj) {
+			return obj.getOutgoingAmount();
+		}
+
+		@Override
+		public void setValue(SpecialCondition1 obj, ActiveCurrencyAndAmount value) {
+			obj.setOutgoingAmount(value);
 		}
 	};
 	@XmlElement(name = "IncmgAmtToOthrAcct")
@@ -210,7 +230,7 @@ public class SpecialCondition1 {
 	 * definition} = "Incoming amount to other account on special conditions."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIncomingAmountToOtherAccount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SpecialCondition1, Optional<ActiveCurrencyAndAmount>> mmIncomingAmountToOtherAccount = new MMMessageAttribute<SpecialCondition1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SpecialCondition1.mmObject();
@@ -222,6 +242,16 @@ public class SpecialCondition1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SpecialCondition1 obj) {
+			return obj.getIncomingAmountToOtherAccount();
+		}
+
+		@Override
+		public void setValue(SpecialCondition1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setIncomingAmountToOtherAccount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PmtFrOthrAcct")
@@ -260,7 +290,7 @@ public class SpecialCondition1 {
 	 * "Outgoing payment amount from other account on special conditions."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPaymentFromOtherAccount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SpecialCondition1, Optional<ActiveCurrencyAndAmount>> mmPaymentFromOtherAccount = new MMMessageAttribute<SpecialCondition1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SpecialCondition1.mmObject();
@@ -272,6 +302,16 @@ public class SpecialCondition1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SpecialCondition1 obj) {
+			return obj.getPaymentFromOtherAccount();
+		}
+
+		@Override
+		public void setValue(SpecialCondition1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setPaymentFromOtherAccount(value.orElse(null));
 		}
 	};
 

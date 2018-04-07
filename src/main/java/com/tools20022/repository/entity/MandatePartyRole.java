@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -113,7 +114,7 @@ public class MandatePartyRole extends Role {
 	 * definition} = "Identifies the mandate in which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMandate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MandatePartyRole, List<Mandate>> mmMandate = new MMBusinessAssociationEnd<MandatePartyRole, List<Mandate>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MandatePartyRole.mmObject();
@@ -124,6 +125,16 @@ public class MandatePartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Mandate.mmMandatePartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Mandate.mmObject();
+		}
+
+		@Override
+		public List<Mandate> getValue(MandatePartyRole obj) {
+			return obj.getMandate();
+		}
+
+		@Override
+		public void setValue(MandatePartyRole obj, List<Mandate> value) {
+			obj.setMandate(value);
 		}
 	};
 

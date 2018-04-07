@@ -657,7 +657,7 @@ public class TransactionReasonCode extends MMCode {
 	};
 	/**
 	 * Identification of end customer is not consistent with associated account
-	 * number. (formerly CreditorConsistency)
+	 * number. (formerly CreditorConsistency).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -675,7 +675,7 @@ public class TransactionReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Identification of end customer is not consistent with associated account number. (formerly CreditorConsistency)"
+	 * "Identification of end customer is not consistent with associated account number. (formerly CreditorConsistency)."
 	 * </li>
 	 * </ul>
 	 */
@@ -683,7 +683,7 @@ public class TransactionReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InconsistentWithEndCustomer";
-			definition = "Identification of end customer is not consistent with associated account number. (formerly CreditorConsistency)";
+			definition = "Identification of end customer is not consistent with associated account number. (formerly CreditorConsistency).";
 			owner_lazy = () -> com.tools20022.repository.codeset.TransactionReasonCode.mmObject();
 			codeName = "BE01";
 		}

@@ -24,6 +24,7 @@ import com.tools20022.repository.area.acmt.IdentificationVerificationReportV02;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -115,7 +116,7 @@ public class MessageIdentification5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MessageIdentification5, Optional<Max35Text>> mmMessageIdentification = new MMMessageAttribute<MessageIdentification5, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MessageIdentification5.mmObject();
 			isDerived = false;
@@ -126,6 +127,16 @@ public class MessageIdentification5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(MessageIdentification5 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(MessageIdentification5 obj, Optional<Max35Text> value) {
+			obj.setMessageIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CreDtTm")
@@ -157,7 +168,7 @@ public class MessageIdentification5 {
 	 * definition} = "Date and time at which the message was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MessageIdentification5, Optional<ISODateTime>> mmCreationDateTime = new MMMessageAttribute<MessageIdentification5, Optional<ISODateTime>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MessageIdentification5.mmObject();
 			isDerived = false;
@@ -168,6 +179,16 @@ public class MessageIdentification5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public Optional<ISODateTime> getValue(MessageIdentification5 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(MessageIdentification5 obj, Optional<ISODateTime> value) {
+			obj.setCreationDateTime(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "FrstAgt")
@@ -202,7 +223,7 @@ public class MessageIdentification5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFirstAgent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MessageIdentification5, Optional<BranchAndFinancialInstitutionIdentification5>> mmFirstAgent = new MMMessageAttribute<MessageIdentification5, Optional<BranchAndFinancialInstitutionIdentification5>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MessageIdentification5.mmObject();
 			isDerived = false;
@@ -212,7 +233,17 @@ public class MessageIdentification5 {
 			definition = "Identifies the first agent in the identification chain, following the payment initiating party.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			complexType_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public Optional<BranchAndFinancialInstitutionIdentification5> getValue(MessageIdentification5 obj) {
+			return obj.getFirstAgent();
+		}
+
+		@Override
+		public void setValue(MessageIdentification5 obj, Optional<BranchAndFinancialInstitutionIdentification5> value) {
+			obj.setFirstAgent(value.orElse(null));
 		}
 	};
 
@@ -253,7 +284,7 @@ public class MessageIdentification5 {
 		return firstAgent == null ? Optional.empty() : Optional.of(firstAgent);
 	}
 
-	public MessageIdentification5 setFirstAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 firstAgent) {
+	public MessageIdentification5 setFirstAgent(BranchAndFinancialInstitutionIdentification5 firstAgent) {
 		this.firstAgent = firstAgent;
 		return this;
 	}

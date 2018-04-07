@@ -111,7 +111,7 @@ public class Period4Choice {
 	 * definition} = "Date period is limited to a single date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Period4Choice, ISODate> mmDate = new MMMessageAttribute<Period4Choice, ISODate>() {
 		{
 			businessComponentTrace_lazy = () -> DateTimePeriod.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.Period4Choice.mmObject();
@@ -123,6 +123,16 @@ public class Period4Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(Period4Choice obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(Period4Choice obj, ISODate value) {
+			obj.setDate(value);
 		}
 	};
 	@XmlElement(name = "FrDt", required = true)
@@ -159,7 +169,7 @@ public class Period4Choice {
 	 * definition} = "Date at which the date period range starts."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFromDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Period4Choice, ISODate> mmFromDate = new MMMessageAttribute<Period4Choice, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmFromDateTime;
 			componentContext_lazy = () -> com.tools20022.repository.choice.Period4Choice.mmObject();
@@ -171,6 +181,16 @@ public class Period4Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(Period4Choice obj) {
+			return obj.getFromDate();
+		}
+
+		@Override
+		public void setValue(Period4Choice obj, ISODate value) {
+			obj.setFromDate(value);
 		}
 	};
 	@XmlElement(name = "ToDt", required = true)
@@ -207,7 +227,7 @@ public class Period4Choice {
 	 * definition} = "Date which the range date period ends."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmToDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Period4Choice, ISODate> mmToDate = new MMMessageAttribute<Period4Choice, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmToDateTime;
 			componentContext_lazy = () -> com.tools20022.repository.choice.Period4Choice.mmObject();
@@ -219,6 +239,16 @@ public class Period4Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(Period4Choice obj) {
+			return obj.getToDate();
+		}
+
+		@Override
+		public void setValue(Period4Choice obj, ISODate value) {
+			obj.setToDate(value);
 		}
 	};
 	@XmlElement(name = "FrDtToDt", required = true)
@@ -253,7 +283,7 @@ public class Period4Choice {
 	 * definition} = "Time span defined by a start date, and an end date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFromDateToDate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Period4Choice, Period2> mmFromDateToDate = new MMMessageAssociationEnd<Period4Choice, Period2>() {
 		{
 			businessComponentTrace_lazy = () -> DateTimePeriod.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.Period4Choice.mmObject();
@@ -266,6 +296,16 @@ public class Period4Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Period2.mmObject();
+		}
+
+		@Override
+		public Period2 getValue(Period4Choice obj) {
+			return obj.getFromDateToDate();
+		}
+
+		@Override
+		public void setValue(Period4Choice obj, Period2 value) {
+			obj.setFromDateToDate(value);
 		}
 	};
 

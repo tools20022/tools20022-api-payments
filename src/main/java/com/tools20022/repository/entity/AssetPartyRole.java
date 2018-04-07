@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Asset;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -116,7 +117,7 @@ public class AssetPartyRole extends Role {
 	 * definition} = "Specifies the asset for which the party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetPartyRole, List<Asset>> mmAsset = new MMBusinessAssociationEnd<AssetPartyRole, List<Asset>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetPartyRole.mmObject();
@@ -127,6 +128,16 @@ public class AssetPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Asset.mmAssetPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
+		}
+
+		@Override
+		public List<Asset> getValue(AssetPartyRole obj) {
+			return obj.getAsset();
+		}
+
+		@Override
+		public void setValue(AssetPartyRole obj, List<Asset> value) {
+			obj.setAsset(value);
 		}
 	};
 

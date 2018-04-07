@@ -1001,7 +1001,7 @@ public class FinancialAssetBalanceTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Balance attributed to syndicated bank loans
+	 * Balance attributed to syndicated bank loans.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1018,14 +1018,14 @@ public class FinancialAssetBalanceTypeCode extends MMCode {
 	 * name} = "SyndicatedBankLoan"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Balance attributed to syndicated bank loans"</li>
+	 * definition} = "Balance attributed to syndicated bank loans."</li>
 	 * </ul>
 	 */
 	public static final FinancialAssetBalanceTypeCode SyndicatedBankLoan = new FinancialAssetBalanceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SyndicatedBankLoan";
-			definition = "Balance attributed to syndicated bank loans";
+			definition = "Balance attributed to syndicated bank loans.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialAssetBalanceTypeCode.mmObject();
 			codeName = "SYBL";
 		}
@@ -1151,7 +1151,7 @@ public class FinancialAssetBalanceTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Balance attributed to collateralised mortgage obligations
+	 * Balance attributed to collateralised mortgage obligations.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1168,15 +1168,15 @@ public class FinancialAssetBalanceTypeCode extends MMCode {
 	 * name} = "CollateralisedMortgageObligation"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Balance attributed to collateralised mortgage obligations"
-	 * </li>
+	 * definition} =
+	 * "Balance attributed to collateralised mortgage obligations."</li>
 	 * </ul>
 	 */
 	public static final FinancialAssetBalanceTypeCode CollateralisedMortgageObligation = new FinancialAssetBalanceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralisedMortgageObligation";
-			definition = "Balance attributed to collateralised mortgage obligations";
+			definition = "Balance attributed to collateralised mortgage obligations.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialAssetBalanceTypeCode.mmObject();
 			codeName = "CMOO";
 		}
@@ -1454,7 +1454,7 @@ public class FinancialAssetBalanceTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Balance attributed to treasuries and agencies debentures
+	 * Balance attributed to treasuries and agencies debentures.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1471,14 +1471,15 @@ public class FinancialAssetBalanceTypeCode extends MMCode {
 	 * name} = "TreasuriesAndAgenciesDebentures"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Balance attributed to treasuries and agencies debentures"</li>
+	 * definition} = "Balance attributed to treasuries and agencies debentures."
+	 * </li>
 	 * </ul>
 	 */
 	public static final FinancialAssetBalanceTypeCode TreasuriesAndAgenciesDebentures = new FinancialAssetBalanceTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TreasuriesAndAgenciesDebentures";
-			definition = "Balance attributed to treasuries and agencies debentures";
+			definition = "Balance attributed to treasuries and agencies debentures.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialAssetBalanceTypeCode.mmObject();
 			codeName = "TAAB";
 		}

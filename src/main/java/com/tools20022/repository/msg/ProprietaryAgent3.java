@@ -24,6 +24,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.OrganisationIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -100,7 +101,7 @@ public class ProprietaryAgent3 {
 	 * definition} = "Specifies the type of proprietary agent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProprietaryAgent3, Max35Text> mmType = new MMMessageAttribute<ProprietaryAgent3, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryAgent3.mmObject();
 			isDerived = false;
@@ -111,6 +112,16 @@ public class ProprietaryAgent3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ProprietaryAgent3 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ProprietaryAgent3 obj, Max35Text value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "Agt", required = true)
@@ -148,7 +159,7 @@ public class ProprietaryAgent3 {
 	 * "Organisation established primarily to provide financial services."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProprietaryAgent3, BranchAndFinancialInstitutionIdentification5> mmAgent = new MMMessageAssociationEnd<ProprietaryAgent3, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			businessComponentTrace_lazy = () -> OrganisationIdentification.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryAgent3.mmObject();
@@ -160,7 +171,17 @@ public class ProprietaryAgent3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(ProprietaryAgent3 obj) {
+			return obj.getAgent();
+		}
+
+		@Override
+		public void setValue(ProprietaryAgent3 obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setAgent(value);
 		}
 	};
 
@@ -191,7 +212,7 @@ public class ProprietaryAgent3 {
 		return agent;
 	}
 
-	public ProprietaryAgent3 setAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 agent) {
+	public ProprietaryAgent3 setAgent(BranchAndFinancialInstitutionIdentification5 agent) {
 		this.agent = Objects.requireNonNull(agent);
 		return this;
 	}

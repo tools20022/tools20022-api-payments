@@ -110,7 +110,7 @@ public class ContractBalance1 {
 	 * definition} = "Specifies the type of the contract balance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ContractBalance1, ContractBalanceType1Choice> mmType = new MMMessageAssociationEnd<ContractBalance1, ContractBalanceType1Choice>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ContractBalance1.mmObject();
@@ -123,6 +123,16 @@ public class ContractBalance1 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> ContractBalanceType1Choice.mmObject();
+		}
+
+		@Override
+		public ContractBalanceType1Choice getValue(ContractBalance1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ContractBalance1 obj, ContractBalanceType1Choice value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -160,7 +170,7 @@ public class ContractBalance1 {
 	 * definition} = "Currency and amount of money of the contract balance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractBalance1, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<ContractBalance1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CashBalance.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ContractBalance1.mmObject();
@@ -172,6 +182,16 @@ public class ContractBalance1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(ContractBalance1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(ContractBalance1 obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "CdtDbtInd", required = true)
@@ -207,11 +227,11 @@ public class ContractBalance1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Indicates whether the balance is a credit or a debit balance. A zero balance is considered to be a credit balance"
+	 * "Indicates whether the balance is a credit or a debit balance. A zero balance is considered to be a credit balance."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractBalance1, CreditDebit3Code> mmCreditDebitIndicator = new MMMessageAttribute<ContractBalance1, CreditDebit3Code>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmCreditDebitIndicator;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ContractBalance1.mmObject();
@@ -219,10 +239,20 @@ public class ContractBalance1 {
 			xmlTag = "CdtDbtInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditDebitIndicator";
-			definition = "Indicates whether the balance is a credit or a debit balance. A zero balance is considered to be a credit balance";
+			definition = "Indicates whether the balance is a credit or a debit balance. A zero balance is considered to be a credit balance.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CreditDebit3Code.mmObject();
+		}
+
+		@Override
+		public CreditDebit3Code getValue(ContractBalance1 obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(ContractBalance1 obj, CreditDebit3Code value) {
+			obj.setCreditDebitIndicator(value);
 		}
 	};
 

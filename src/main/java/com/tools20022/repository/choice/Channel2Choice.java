@@ -103,7 +103,7 @@ public class Channel2Choice {
 	 * definition} = "Specifies a channel by means of a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Channel2Choice, CommunicationMethod3Code> mmCode = new MMMessageAttribute<Channel2Choice, CommunicationMethod3Code>() {
 		{
 			businessElementTrace_lazy = () -> Presentation.mmCommunicationMethod;
 			componentContext_lazy = () -> com.tools20022.repository.choice.Channel2Choice.mmObject();
@@ -115,6 +115,16 @@ public class Channel2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CommunicationMethod3Code.mmObject();
+		}
+
+		@Override
+		public CommunicationMethod3Code getValue(Channel2Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(Channel2Choice obj, CommunicationMethod3Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -151,7 +161,7 @@ public class Channel2Choice {
 	 * definition} = "Specifies a channel by means of a text."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Channel2Choice, Max35Text> mmProprietary = new MMMessageAttribute<Channel2Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Presentation.mmCommunicationMethod;
 			componentContext_lazy = () -> com.tools20022.repository.choice.Channel2Choice.mmObject();
@@ -163,6 +173,16 @@ public class Channel2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(Channel2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(Channel2Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

@@ -19,8 +19,8 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -113,7 +113,7 @@ public class Order {
 	 * definition} = "Agreement between two parties to buy and sell assets."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Order, Trade> mmTrade = new MMBusinessAssociationEnd<Order, Trade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Order.mmObject();
@@ -122,9 +122,19 @@ public class Order {
 			definition = "Agreement between two parties to buy and sell assets.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmOrder;
+			opposite_lazy = () -> Trade.mmOrder;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
+			type_lazy = () -> Trade.mmObject();
+		}
+
+		@Override
+		public Trade getValue(Order obj) {
+			return obj.getTrade();
+		}
+
+		@Override
+		public void setValue(Order obj, Trade value) {
+			obj.setTrade(value);
 		}
 	};
 	protected Max35Text masterIdentification;
@@ -154,7 +164,7 @@ public class Order {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMasterIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Order, Max35Text> mmMasterIdentification = new MMBusinessAttribute<Order, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Order.mmObject();
@@ -166,12 +176,14 @@ public class Order {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Order.class.getMethod("getMasterIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Order obj) {
+			return obj.getMasterIdentification();
+		}
+
+		@Override
+		public void setValue(Order obj, Max35Text value) {
+			obj.setMasterIdentification(value);
 		}
 	};
 
@@ -182,7 +194,7 @@ public class Order {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Order";
 				definition = "Order placed by an investor to buy or sell an asset at a price specified or not.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.mmOrder);
+				associationDomain_lazy = () -> Arrays.asList(Trade.mmOrder);
 				subType_lazy = () -> Arrays.asList(SecuritiesOrder.mmObject(), PurchaseOrder.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Order.mmTrade, com.tools20022.repository.entity.Order.mmMasterIdentification);
 			}
@@ -199,7 +211,7 @@ public class Order {
 		return trade;
 	}
 
-	public Order setTrade(com.tools20022.repository.entity.Trade trade) {
+	public Order setTrade(Trade trade) {
 		this.trade = Objects.requireNonNull(trade);
 		return this;
 	}

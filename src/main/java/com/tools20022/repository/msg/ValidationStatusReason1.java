@@ -26,6 +26,8 @@ import com.tools20022.repository.datatype.Max105Text;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.entity.StatusOriginator;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericValidationRuleIdentification1;
+import com.tools20022.repository.msg.PartyIdentification77;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -128,7 +130,7 @@ public class ValidationStatusReason1 {
 	 * StatusReasonInformation9.mmOriginator}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginator = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ValidationStatusReason1, Optional<PartyIdentification77>> mmOriginator = new MMMessageAssociationEnd<ValidationStatusReason1, Optional<PartyIdentification77>>() {
 		{
 			businessComponentTrace_lazy = () -> StatusOriginator.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.ValidationStatusReason1.mmObject();
@@ -141,7 +143,17 @@ public class ValidationStatusReason1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification77.mmObject();
+			type_lazy = () -> PartyIdentification77.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification77> getValue(ValidationStatusReason1 obj) {
+			return obj.getOriginator();
+		}
+
+		@Override
+		public void setValue(ValidationStatusReason1 obj, Optional<PartyIdentification77> value) {
+			obj.setOriginator(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rsn")
@@ -182,7 +194,7 @@ public class ValidationStatusReason1 {
 	 * StatusReasonInformation9.mmReason}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ValidationStatusReason1, Optional<StatusReason6Choice>> mmReason = new MMMessageAssociationEnd<ValidationStatusReason1, Optional<StatusReason6Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ValidationStatusReason1.mmObject();
@@ -197,9 +209,19 @@ public class ValidationStatusReason1 {
 			isComposite = true;
 			type_lazy = () -> StatusReason6Choice.mmObject();
 		}
+
+		@Override
+		public Optional<StatusReason6Choice> getValue(ValidationStatusReason1 obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(ValidationStatusReason1 obj, Optional<StatusReason6Choice> value) {
+			obj.setReason(value.orElse(null));
+		}
 	};
 	@XmlElement(name = "VldtnRule")
-	protected List<com.tools20022.repository.msg.GenericValidationRuleIdentification1> validationRule;
+	protected List<GenericValidationRuleIdentification1> validationRule;
 	/**
 	 * 
 	 <p>
@@ -233,7 +255,7 @@ public class ValidationStatusReason1 {
 	 * "Provides details about the rule which could not be validated."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmValidationRule = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ValidationStatusReason1, List<GenericValidationRuleIdentification1>> mmValidationRule = new MMMessageAssociationEnd<ValidationStatusReason1, List<GenericValidationRuleIdentification1>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDescription;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ValidationStatusReason1.mmObject();
@@ -244,7 +266,17 @@ public class ValidationStatusReason1 {
 			definition = "Provides details about the rule which could not be validated.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericValidationRuleIdentification1.mmObject();
+			type_lazy = () -> GenericValidationRuleIdentification1.mmObject();
+		}
+
+		@Override
+		public List<GenericValidationRuleIdentification1> getValue(ValidationStatusReason1 obj) {
+			return obj.getValidationRule();
+		}
+
+		@Override
+		public void setValue(ValidationStatusReason1 obj, List<GenericValidationRuleIdentification1> value) {
+			obj.setValidationRule(value);
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -288,7 +320,7 @@ public class ValidationStatusReason1 {
 	 * StatusReasonInformation9.mmAdditionalInformation}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ValidationStatusReason1, List<Max105Text>> mmAdditionalInformation = new MMMessageAttribute<ValidationStatusReason1, List<Max105Text>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDescription;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ValidationStatusReason1.mmObject();
@@ -300,6 +332,16 @@ public class ValidationStatusReason1 {
 			previousVersion_lazy = () -> StatusReasonInformation9.mmAdditionalInformation;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max105Text.mmObject();
+		}
+
+		@Override
+		public List<Max105Text> getValue(ValidationStatusReason1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(ValidationStatusReason1 obj, List<Max105Text> value) {
+			obj.setAdditionalInformation(value);
 		}
 	};
 
@@ -324,7 +366,7 @@ public class ValidationStatusReason1 {
 		return originator == null ? Optional.empty() : Optional.of(originator);
 	}
 
-	public ValidationStatusReason1 setOriginator(com.tools20022.repository.msg.PartyIdentification77 originator) {
+	public ValidationStatusReason1 setOriginator(PartyIdentification77 originator) {
 		this.originator = originator;
 		return this;
 	}
@@ -342,7 +384,7 @@ public class ValidationStatusReason1 {
 		return validationRule == null ? validationRule = new ArrayList<>() : validationRule;
 	}
 
-	public ValidationStatusReason1 setValidationRule(List<com.tools20022.repository.msg.GenericValidationRuleIdentification1> validationRule) {
+	public ValidationStatusReason1 setValidationRule(List<GenericValidationRuleIdentification1> validationRule) {
 		this.validationRule = Objects.requireNonNull(validationRule);
 		return this;
 	}

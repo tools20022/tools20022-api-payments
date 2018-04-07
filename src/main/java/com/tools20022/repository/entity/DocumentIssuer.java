@@ -23,6 +23,7 @@ import com.tools20022.repository.entity.DocumentPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CreditorReferenceType2;
 import com.tools20022.repository.msg.GarnishmentType1;
+import com.tools20022.repository.msg.ReferredDocumentType2;
 import com.tools20022.repository.msg.ReferredDocumentType4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -46,6 +47,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.ReferredDocumentType2#mmIssuer
+ * ReferredDocumentType2.mmIssuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.CreditorReferenceType2#mmIssuer
  * CreditorReferenceType2.mmIssuer}</li>
@@ -83,7 +86,7 @@ public class DocumentIssuer extends DocumentPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentIssuer";
 				definition = "Party that issues a document such as a bank guarantee or letter of / documentary credit. For instance the inspection company for a trade certificate or the insurance company or its agent for an insurance certificate.";
-				derivationElement_lazy = () -> Arrays.asList(CreditorReferenceType2.mmIssuer, GarnishmentType1.mmIssuer, ReferredDocumentType4.mmIssuer);
+				derivationElement_lazy = () -> Arrays.asList(ReferredDocumentType2.mmIssuer, CreditorReferenceType2.mmIssuer, GarnishmentType1.mmIssuer, ReferredDocumentType4.mmIssuer);
 				superType_lazy = () -> DocumentPartyRole.mmObject();
 			}
 

@@ -25,7 +25,6 @@ import com.tools20022.repository.area.CashManagementLatestVersion;
 import com.tools20022.repository.msg.Case3;
 import com.tools20022.repository.msg.ReportHeader4;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -132,7 +131,7 @@ public class CaseStatusReportRequestV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRequestHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CaseStatusReportRequestV03, ReportHeader4> mmRequestHeader = new MMMessageBuildingBlock<CaseStatusReportRequestV03, ReportHeader4>() {
 		{
 			xmlTag = "ReqHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -143,12 +142,14 @@ public class CaseStatusReportRequestV03 {
 			complexType_lazy = () -> ReportHeader4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CaseStatusReportRequestV03.class.getMethod("getRequestHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ReportHeader4 getValue(CaseStatusReportRequestV03 obj) {
+			return obj.getRequestHeader();
+		}
+
+		@Override
+		public void setValue(CaseStatusReportRequestV03 obj, ReportHeader4 value) {
+			obj.setRequestHeader(value);
 		}
 	};
 	@XmlElement(name = "Case", required = true)
@@ -174,7 +175,7 @@ public class CaseStatusReportRequestV03 {
 	 * definition} = "Identifies the investigation case."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCase = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CaseStatusReportRequestV03, Case3> mmCase = new MMMessageBuildingBlock<CaseStatusReportRequestV03, Case3>() {
 		{
 			xmlTag = "Case";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,12 +186,14 @@ public class CaseStatusReportRequestV03 {
 			complexType_lazy = () -> Case3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CaseStatusReportRequestV03.class.getMethod("getCase", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Case3 getValue(CaseStatusReportRequestV03 obj) {
+			return obj.getCase();
+		}
+
+		@Override
+		public void setValue(CaseStatusReportRequestV03 obj, Case3 value) {
+			obj.setCase(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -220,7 +223,7 @@ public class CaseStatusReportRequestV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CaseStatusReportRequestV03, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CaseStatusReportRequestV03, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -230,12 +233,14 @@ public class CaseStatusReportRequestV03 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CaseStatusReportRequestV03.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CaseStatusReportRequestV03 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CaseStatusReportRequestV03 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

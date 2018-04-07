@@ -25,7 +25,6 @@ import com.tools20022.repository.area.AccountManagementLatestVersion;
 import com.tools20022.repository.msg.IdentificationAssignment2;
 import com.tools20022.repository.msg.IdentificationVerification2;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -114,7 +113,7 @@ public class IdentificationVerificationRequestV02 {
 	 * definition} = "Identifies the identification assignment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAssignment = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IdentificationVerificationRequestV02, IdentificationAssignment2> mmAssignment = new MMMessageBuildingBlock<IdentificationVerificationRequestV02, IdentificationAssignment2>() {
 		{
 			xmlTag = "Assgnmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,12 +124,14 @@ public class IdentificationVerificationRequestV02 {
 			complexType_lazy = () -> IdentificationAssignment2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IdentificationVerificationRequestV02.class.getMethod("getAssignment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IdentificationAssignment2 getValue(IdentificationVerificationRequestV02 obj) {
+			return obj.getAssignment();
+		}
+
+		@Override
+		public void setValue(IdentificationVerificationRequestV02 obj, IdentificationAssignment2 value) {
+			obj.setAssignment(value);
 		}
 	};
 	@XmlElement(name = "Vrfctn", required = true)
@@ -160,7 +161,7 @@ public class IdentificationVerificationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmVerification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IdentificationVerificationRequestV02, List<IdentificationVerification2>> mmVerification = new MMMessageBuildingBlock<IdentificationVerificationRequestV02, List<IdentificationVerification2>>() {
 		{
 			xmlTag = "Vrfctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,12 +171,14 @@ public class IdentificationVerificationRequestV02 {
 			complexType_lazy = () -> IdentificationVerification2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IdentificationVerificationRequestV02.class.getMethod("getVerification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<IdentificationVerification2> getValue(IdentificationVerificationRequestV02 obj) {
+			return obj.getVerification();
+		}
+
+		@Override
+		public void setValue(IdentificationVerificationRequestV02 obj, List<IdentificationVerification2> value) {
+			obj.setVerification(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -205,7 +208,7 @@ public class IdentificationVerificationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IdentificationVerificationRequestV02, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<IdentificationVerificationRequestV02, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -215,12 +218,14 @@ public class IdentificationVerificationRequestV02 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IdentificationVerificationRequestV02.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(IdentificationVerificationRequestV02 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(IdentificationVerificationRequestV02 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

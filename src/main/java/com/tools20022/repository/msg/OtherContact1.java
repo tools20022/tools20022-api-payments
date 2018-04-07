@@ -102,7 +102,7 @@ public class OtherContact1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmChannelType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OtherContact1, Max4Text> mmChannelType = new MMMessageAttribute<OtherContact1, Max4Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.OtherContact1.mmObject();
 			isDerived = false;
@@ -113,6 +113,16 @@ public class OtherContact1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max4Text.mmObject();
+		}
+
+		@Override
+		public Max4Text getValue(OtherContact1 obj) {
+			return obj.getChannelType();
+		}
+
+		@Override
+		public void setValue(OtherContact1 obj, Max4Text value) {
+			obj.setChannelType(value);
 		}
 	};
 	@XmlElement(name = "Id")
@@ -149,7 +159,7 @@ public class OtherContact1 {
 	 * "Communication value such as phone number or email address."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OtherContact1, Optional<Max128Text>> mmIdentification = new MMMessageAttribute<OtherContact1, Optional<Max128Text>>() {
 		{
 			businessElementTrace_lazy = () -> ContactPoint.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OtherContact1.mmObject();
@@ -161,6 +171,16 @@ public class OtherContact1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max128Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max128Text> getValue(OtherContact1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(OtherContact1 obj, Optional<Max128Text> value) {
+			obj.setIdentification(value.orElse(null));
 		}
 	};
 

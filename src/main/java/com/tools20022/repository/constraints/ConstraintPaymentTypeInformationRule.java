@@ -20,13 +20,10 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV06;
-import com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV06;
+import com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV07;
+import com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV07;
 import com.tools20022.repository.area.pacs.FIToFICustomerDirectDebitV07;
-import com.tools20022.repository.msg.CreditTransferTransaction9;
-import com.tools20022.repository.msg.PaymentInstruction21;
-import com.tools20022.repository.msg.PaymentInstruction22;
-import com.tools20022.repository.msg.PaymentInstruction23;
+import com.tools20022.repository.msg.*;
 
 /**
  * If GroupHeader/PaymentTypeInformation is present, then
@@ -40,8 +37,8 @@ public class ConstraintPaymentTypeInformationRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV06
-	 * FinancialInstitutionCreditTransferV06}</li>
+	 * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV07
+	 * FinancialInstitutionCreditTransferV07}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/CreditTransferTransactionInformation[*]/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/GroupHeader/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -59,18 +56,18 @@ public class ConstraintPaymentTypeInformationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forFinancialInstitutionCreditTransferV06 = new MMConstraint() {
+	public static final MMConstraint<FinancialInstitutionCreditTransferV07> for_pacs_FinancialInstitutionCreditTransferV07 = new MMConstraint<FinancialInstitutionCreditTransferV07>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentTypeInformationRule";
 			definition = "If GroupHeader/PaymentTypeInformation is present, then CreditTransferTransactionInformation/PaymentTypeInformation is not allowed.";
-			owner_lazy = () -> FinancialInstitutionCreditTransferV06.mmObject();
+			owner_lazy = () -> FinancialInstitutionCreditTransferV07.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/CreditTransferTransactionInformation[*]/PaymentTypeInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/GroupHeader/PaymentTypeInformation</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFinancialInstitutionCreditTransferV06((FinancialInstitutionCreditTransferV06) obj);
+		public void executeValidator(FinancialInstitutionCreditTransferV07 obj) throws Exception {
+			check_pacs_FinancialInstitutionCreditTransferV07(obj);
 		}
 	};
 	/**
@@ -79,8 +76,8 @@ public class ConstraintPaymentTypeInformationRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV06
-	 * FIToFICustomerCreditTransferV06}</li>
+	 * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV07
+	 * FIToFICustomerCreditTransferV07}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/CreditTransferTransactionInformation[*]/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/GroupHeader/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -98,96 +95,18 @@ public class ConstraintPaymentTypeInformationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forFIToFICustomerCreditTransferV06 = new MMConstraint() {
+	public static final MMConstraint<FIToFICustomerCreditTransferV07> for_pacs_FIToFICustomerCreditTransferV07 = new MMConstraint<FIToFICustomerCreditTransferV07>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentTypeInformationRule";
 			definition = "If GroupHeader/PaymentTypeInformation is present, then CreditTransferTransactionInformation/PaymentTypeInformation is not allowed.";
-			owner_lazy = () -> FIToFICustomerCreditTransferV06.mmObject();
+			owner_lazy = () -> FIToFICustomerCreditTransferV07.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/CreditTransferTransactionInformation[*]/PaymentTypeInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/GroupHeader/PaymentTypeInformation</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFIToFICustomerCreditTransferV06((FIToFICustomerCreditTransferV06) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerDirectDebitV07
-	 * FIToFICustomerDirectDebitV07}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
-	 * expression} =
-	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/DirectDebitTransactionInformation[*]/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/GroupHeader/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
-	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "PaymentTypeInformationRule"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "If GroupHeader/PaymentTypeInformation is present, then DirectDebitTransactionInformation/PaymentTypeInformation is not allowed."
-	 * </li>
-	 * </ul>
-	 */
-	public static final MMConstraint forFIToFICustomerDirectDebitV07 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "PaymentTypeInformationRule";
-			definition = "If GroupHeader/PaymentTypeInformation is present, then DirectDebitTransactionInformation/PaymentTypeInformation is not allowed.";
-			owner_lazy = () -> FIToFICustomerDirectDebitV07.mmObject();
-			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/DirectDebitTransactionInformation[*]/PaymentTypeInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/GroupHeader/PaymentTypeInformation</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFIToFICustomerDirectDebitV07((FIToFICustomerDirectDebitV07) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction9
-	 * CreditTransferTransaction9}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
-	 * expression} =
-	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/DirectDebitTransactionInformation[*]/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
-	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "PaymentTypeInformationRule"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "If PaymentTypeInformation is present, then DirectDebitTransactionInformation/PaymentTypeInformation is not allowed."
-	 * </li>
-	 * </ul>
-	 */
-	public static final MMConstraint forCreditTransferTransaction9 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "PaymentTypeInformationRule";
-			definition = "If PaymentTypeInformation is present, then DirectDebitTransactionInformation/PaymentTypeInformation is not allowed.";
-			owner_lazy = () -> CreditTransferTransaction9.mmObject();
-			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/DirectDebitTransactionInformation[*]/PaymentTypeInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/PaymentTypeInformation</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction9((CreditTransferTransaction9) obj);
+		public void executeValidator(FIToFICustomerCreditTransferV07 obj) throws Exception {
+			check_pacs_FIToFICustomerCreditTransferV07(obj);
 		}
 	};
 	/**
@@ -215,7 +134,7 @@ public class ConstraintPaymentTypeInformationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction21 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction21> forPaymentInstruction21 = new MMConstraint<PaymentInstruction21>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentTypeInformationRule";
@@ -225,8 +144,86 @@ public class ConstraintPaymentTypeInformationRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction21((PaymentInstruction21) obj);
+		public void executeValidator(PaymentInstruction21 obj) throws Exception {
+			checkPaymentInstruction21(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction9
+	 * CreditTransferTransaction9}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/DirectDebitTransactionInformation[*]/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "PaymentTypeInformationRule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If PaymentTypeInformation is present, then DirectDebitTransactionInformation/PaymentTypeInformation is not allowed."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<CreditTransferTransaction9> forCreditTransferTransaction9 = new MMConstraint<CreditTransferTransaction9>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "PaymentTypeInformationRule";
+			definition = "If PaymentTypeInformation is present, then DirectDebitTransactionInformation/PaymentTypeInformation is not allowed.";
+			owner_lazy = () -> CreditTransferTransaction9.mmObject();
+			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/DirectDebitTransactionInformation[*]/PaymentTypeInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/PaymentTypeInformation</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
+		}
+
+		@Override
+		public void executeValidator(CreditTransferTransaction9 obj) throws Exception {
+			checkCreditTransferTransaction9(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerDirectDebitV07
+	 * FIToFICustomerDirectDebitV07}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/DirectDebitTransactionInformation[*]/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/GroupHeader/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "PaymentTypeInformationRule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If GroupHeader/PaymentTypeInformation is present, then DirectDebitTransactionInformation/PaymentTypeInformation is not allowed."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<FIToFICustomerDirectDebitV07> for_pacs_FIToFICustomerDirectDebitV07 = new MMConstraint<FIToFICustomerDirectDebitV07>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "PaymentTypeInformationRule";
+			definition = "If GroupHeader/PaymentTypeInformation is present, then DirectDebitTransactionInformation/PaymentTypeInformation is not allowed.";
+			owner_lazy = () -> FIToFICustomerDirectDebitV07.mmObject();
+			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/DirectDebitTransactionInformation[*]/PaymentTypeInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/GroupHeader/PaymentTypeInformation</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
+		}
+
+		@Override
+		public void executeValidator(FIToFICustomerDirectDebitV07 obj) throws Exception {
+			check_pacs_FIToFICustomerDirectDebitV07(obj);
 		}
 	};
 	/**
@@ -250,7 +247,7 @@ public class ConstraintPaymentTypeInformationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction23 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction23> forPaymentInstruction23 = new MMConstraint<PaymentInstruction23>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentTypeInformationRule";
@@ -259,8 +256,8 @@ public class ConstraintPaymentTypeInformationRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction23((PaymentInstruction23) obj);
+		public void executeValidator(PaymentInstruction23 obj) throws Exception {
+			checkPaymentInstruction23(obj);
 		}
 	};
 	/**
@@ -288,7 +285,7 @@ public class ConstraintPaymentTypeInformationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction22 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction22> forPaymentInstruction22 = new MMConstraint<PaymentInstruction22>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentTypeInformationRule";
@@ -298,8 +295,47 @@ public class ConstraintPaymentTypeInformationRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction22((PaymentInstruction22) obj);
+		public void executeValidator(PaymentInstruction22 obj) throws Exception {
+			checkPaymentInstruction22(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24
+	 * PaymentInstruction24}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/CreditTransferTransactionInformation[*]/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/PaymentTypeInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "PaymentTypeInformationRule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If PaymentTypeInformation is present, then CreditTransferTransactionInformation/PaymentTypeInformation is not allowed."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<PaymentInstruction24> forPaymentInstruction24 = new MMConstraint<PaymentInstruction24>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "PaymentTypeInformationRule";
+			definition = "If PaymentTypeInformation is present, then CreditTransferTransactionInformation/PaymentTypeInformation is not allowed.";
+			owner_lazy = () -> PaymentInstruction24.mmObject();
+			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/CreditTransferTransactionInformation[*]/PaymentTypeInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/PaymentTypeInformation</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
+		}
+
+		@Override
+		public void executeValidator(PaymentInstruction24 obj) throws Exception {
+			checkPaymentInstruction24(obj);
 		}
 	};
 
@@ -308,7 +344,7 @@ public class ConstraintPaymentTypeInformationRule {
 	 * CreditTransferTransactionInformation/PaymentTypeInformation is not
 	 * allowed.
 	 */
-	public static void checkFinancialInstitutionCreditTransferV06(FinancialInstitutionCreditTransferV06 obj) throws Exception {
+	public static void check_pacs_FinancialInstitutionCreditTransferV07(FinancialInstitutionCreditTransferV07 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
@@ -317,15 +353,15 @@ public class ConstraintPaymentTypeInformationRule {
 	 * CreditTransferTransactionInformation/PaymentTypeInformation is not
 	 * allowed.
 	 */
-	public static void checkFIToFICustomerCreditTransferV06(FIToFICustomerCreditTransferV06 obj) throws Exception {
+	public static void check_pacs_FIToFICustomerCreditTransferV07(FIToFICustomerCreditTransferV07 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
 	/**
-	 * If GroupHeader/PaymentTypeInformation is present, then
+	 * If PaymentTypeInformation is present, then
 	 * DirectDebitTransactionInformation/PaymentTypeInformation is not allowed.
 	 */
-	public static void checkFIToFICustomerDirectDebitV07(FIToFICustomerDirectDebitV07 obj) throws Exception {
+	public static void checkPaymentInstruction21(PaymentInstruction21 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
@@ -338,10 +374,10 @@ public class ConstraintPaymentTypeInformationRule {
 	}
 
 	/**
-	 * If PaymentTypeInformation is present, then
+	 * If GroupHeader/PaymentTypeInformation is present, then
 	 * DirectDebitTransactionInformation/PaymentTypeInformation is not allowed.
 	 */
-	public static void checkPaymentInstruction21(PaymentInstruction21 obj) throws Exception {
+	public static void check_pacs_FIToFICustomerDirectDebitV07(FIToFICustomerDirectDebitV07 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
@@ -359,6 +395,15 @@ public class ConstraintPaymentTypeInformationRule {
 	 * allowed.
 	 */
 	public static void checkPaymentInstruction22(PaymentInstruction22 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If PaymentTypeInformation is present, then
+	 * CreditTransferTransactionInformation/PaymentTypeInformation is not
+	 * allowed.
+	 */
+	public static void checkPaymentInstruction24(PaymentInstruction24 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

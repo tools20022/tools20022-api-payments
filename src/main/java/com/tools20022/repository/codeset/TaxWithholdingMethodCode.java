@@ -332,14 +332,14 @@ public class TaxWithholdingMethodCode extends MMCode {
 	 * name} = "InvestmentCompany"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Withholding tax is applied to an investment company. "</li>
+	 * definition} = "Withholding tax is applied to an investment company."</li>
 	 * </ul>
 	 */
 	public static final TaxWithholdingMethodCode InvestmentCompany = new TaxWithholdingMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentCompany";
-			definition = "Withholding tax is applied to an investment company. ";
+			definition = "Withholding tax is applied to an investment company.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxWithholdingMethodCode.mmObject();
 			codeName = "INVE";
 		}
@@ -362,14 +362,14 @@ public class TaxWithholdingMethodCode extends MMCode {
 	 * name} = "MinorityInterestTax"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Minority interest tax is withheld. "</li>
+	 * definition} = "Minority interest tax is withheld."</li>
 	 * </ul>
 	 */
 	public static final TaxWithholdingMethodCode MinorityInterestTax = new TaxWithholdingMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinorityInterestTax";
-			definition = "Minority interest tax is withheld. ";
+			definition = "Minority interest tax is withheld.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxWithholdingMethodCode.mmObject();
 			codeName = "MITX";
 		}

@@ -23,9 +23,8 @@ import com.tools20022.repository.codeset.SecuritiesBalanceTypeV2Code;
 import com.tools20022.repository.codeset.ShortLongCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.YesNoIndicator;
-import com.tools20022.repository.entity.Balance;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -232,10 +231,10 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNetGainLoss = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesBalance, CurrencyAndAmount> mmNetGainLoss = new MMBusinessAttribute<SecuritiesBalance, CurrencyAndAmount>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::ANTO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetGainLoss";
@@ -245,12 +244,14 @@ public class SecuritiesBalance extends Balance {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesBalance.class.getMethod("getNetGainLoss", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesBalance obj) {
+			return obj.getNetGainLoss();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, CurrencyAndAmount value) {
+			obj.setNetGainLoss(value);
 		}
 	};
 	protected SecuritiesAccount securitiesAccount;
@@ -289,10 +290,10 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, Optional<SecuritiesAccount>> mmSecuritiesAccount = new MMBusinessAssociationEnd<SecuritiesBalance, Optional<SecuritiesAccount>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccount";
 			definition = "Account or sub-account for which a balance is calculated. It is derived from the association between Balance and Account.";
@@ -301,6 +302,16 @@ public class SecuritiesBalance extends Balance {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmSecuritiesBalance;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesAccount> getValue(SecuritiesBalance obj) {
+			return obj.getSecuritiesAccount();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, Optional<SecuritiesAccount> value) {
+			obj.setSecuritiesAccount(value.orElse(null));
 		}
 	};
 	protected CorporateActionEntitlement eligibleBalanceRelatedEntitlement;
@@ -340,10 +351,10 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEligibleBalanceRelatedEntitlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, Optional<CorporateActionEntitlement>> mmEligibleBalanceRelatedEntitlement = new MMBusinessAssociationEnd<SecuritiesBalance, Optional<CorporateActionEntitlement>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EligibleBalanceRelatedEntitlement";
 			definition = "Corporate action entitlement for which an eligible balance is specified.";
@@ -352,6 +363,16 @@ public class SecuritiesBalance extends Balance {
 			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmEligibleBalance;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionEntitlement> getValue(SecuritiesBalance obj) {
+			return obj.getEligibleBalanceRelatedEntitlement();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, Optional<CorporateActionEntitlement> value) {
+			obj.setEligibleBalanceRelatedEntitlement(value.orElse(null));
 		}
 	};
 	protected ShortLongCode shortLong;
@@ -381,10 +402,10 @@ public class SecuritiesBalance extends Balance {
 	 * definition} = "Indication that the position is short or long."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmShortLong = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesBalance, ShortLongCode> mmShortLong = new MMBusinessAttribute<SecuritiesBalance, ShortLongCode>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShortLong";
 			definition = "Indication that the position is short or long.";
@@ -393,12 +414,14 @@ public class SecuritiesBalance extends Balance {
 			simpleType_lazy = () -> ShortLongCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesBalance.class.getMethod("getShortLong", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ShortLongCode getValue(SecuritiesBalance obj) {
+			return obj.getShortLong();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, ShortLongCode value) {
+			obj.setShortLong(value);
 		}
 	};
 	protected SecuritiesQuantity aggregateQuantity;
@@ -438,19 +461,29 @@ public class SecuritiesBalance extends Balance {
 	 * definition} = "Total quantity of financial instruments of the balance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAggregateQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, SecuritiesQuantity> mmAggregateQuantity = new MMBusinessAssociationEnd<SecuritiesBalance, SecuritiesQuantity>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93B::AGGR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AggregateQuantity";
 			definition = "Total quantity of financial instruments of the balance.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmAggregateQuantityBalance;
+			opposite_lazy = () -> SecuritiesQuantity.mmAggregateQuantityBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(SecuritiesBalance obj) {
+			return obj.getAggregateQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, SecuritiesQuantity value) {
+			obj.setAggregateQuantity(value);
 		}
 	};
 	protected CorporateActionEntitlement corporateActionEntitlement;
@@ -489,10 +522,10 @@ public class SecuritiesBalance extends Balance {
 	 * "Corporate action entitlement for which a balance is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateActionEntitlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, com.tools20022.repository.entity.CorporateActionEntitlement> mmCorporateActionEntitlement = new MMBusinessAssociationEnd<SecuritiesBalance, com.tools20022.repository.entity.CorporateActionEntitlement>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEntitlement";
 			definition = "Corporate action entitlement for which a balance is specified.";
@@ -501,6 +534,16 @@ public class SecuritiesBalance extends Balance {
 			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmSecuritiesBalance;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.CorporateActionEntitlement getValue(SecuritiesBalance obj) {
+			return obj.getCorporateActionEntitlement();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, com.tools20022.repository.entity.CorporateActionEntitlement value) {
+			obj.setCorporateActionEntitlement(value);
 		}
 	};
 	protected CorporateActionEntitlement instructedBalanceRelatedEntitlement;
@@ -540,10 +583,10 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInstructedBalanceRelatedEntitlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, Optional<CorporateActionEntitlement>> mmInstructedBalanceRelatedEntitlement = new MMBusinessAssociationEnd<SecuritiesBalance, Optional<CorporateActionEntitlement>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructedBalanceRelatedEntitlement";
 			definition = "Corporate action entitlement for which an instructed balance is specified.";
@@ -552,6 +595,16 @@ public class SecuritiesBalance extends Balance {
 			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmInstructedBalance;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionEntitlement> getValue(SecuritiesBalance obj) {
+			return obj.getInstructedBalanceRelatedEntitlement();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, Optional<CorporateActionEntitlement> value) {
+			obj.setInstructedBalanceRelatedEntitlement(value.orElse(null));
 		}
 	};
 	protected CorporateActionEntitlement uninstructedBalanceRelatedEntitlement;
@@ -591,10 +644,10 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUninstructedBalanceRelatedEntitlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, Optional<CorporateActionEntitlement>> mmUninstructedBalanceRelatedEntitlement = new MMBusinessAssociationEnd<SecuritiesBalance, Optional<CorporateActionEntitlement>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UninstructedBalanceRelatedEntitlement";
 			definition = "Corporate action entitlement for which an uninstructed balance is specified.";
@@ -603,6 +656,16 @@ public class SecuritiesBalance extends Balance {
 			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmUninstructedBalance;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionEntitlement> getValue(SecuritiesBalance obj) {
+			return obj.getUninstructedBalanceRelatedEntitlement();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, Optional<CorporateActionEntitlement> value) {
+			obj.setUninstructedBalanceRelatedEntitlement(value.orElse(null));
 		}
 	};
 	protected SecuritiesBalance mainSecuritiesBalance;
@@ -639,21 +702,31 @@ public class SecuritiesBalance extends Balance {
 	 * definition} = "Balance which is divided in sub-balances."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMainSecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, Optional<SecuritiesBalance>> mmMainSecuritiesBalance = new MMBusinessAssociationEnd<SecuritiesBalance, Optional<SecuritiesBalance>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MainSecuritiesBalance";
 			definition = "Balance which is divided in sub-balances.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesSubBalance;
+			opposite_lazy = () -> SecuritiesBalance.mmSecuritiesSubBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			type_lazy = () -> SecuritiesBalance.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesBalance> getValue(SecuritiesBalance obj) {
+			return obj.getMainSecuritiesBalance();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, Optional<SecuritiesBalance> value) {
+			obj.setMainSecuritiesBalance(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesBalance> securitiesSubBalance;
+	protected List<SecuritiesBalance> securitiesSubBalance;
 	/**
 	 * 
 	 <p>
@@ -689,17 +762,27 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesSubBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, List<SecuritiesBalance>> mmSecuritiesSubBalance = new MMBusinessAssociationEnd<SecuritiesBalance, List<SecuritiesBalance>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSubBalance";
 			definition = "Net position of a segregated holding of a single security within the overall position held in an account, eg, sub-balance per status.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmMainSecuritiesBalance;
+			opposite_lazy = () -> SecuritiesBalance.mmMainSecuritiesBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			type_lazy = () -> SecuritiesBalance.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesBalance> getValue(SecuritiesBalance obj) {
+			return obj.getSecuritiesSubBalance();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, List<SecuritiesBalance> value) {
+			obj.setSecuritiesSubBalance(value);
 		}
 	};
 	protected SecuritiesBalanceTypeV2Code securitiesBalanceType;
@@ -731,10 +814,10 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSecuritiesBalanceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesBalance, SecuritiesBalanceTypeV2Code> mmSecuritiesBalanceType = new MMBusinessAttribute<SecuritiesBalance, SecuritiesBalanceTypeV2Code>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBalanceType";
 			definition = "Reason a security is not available or additional information about the financial instrument for which the balance is given, for example, unregistered, registered in nominee name.";
@@ -743,12 +826,14 @@ public class SecuritiesBalance extends Balance {
 			simpleType_lazy = () -> SecuritiesBalanceTypeV2Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesBalance.class.getMethod("getSecuritiesBalanceType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesBalanceTypeV2Code getValue(SecuritiesBalance obj) {
+			return obj.getSecuritiesBalanceType();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, SecuritiesBalanceTypeV2Code value) {
+			obj.setSecuritiesBalanceType(value);
 		}
 	};
 	protected SecuritiesQuantity subBalanceQuantity;
@@ -787,18 +872,28 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSubBalanceQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, SecuritiesQuantity> mmSubBalanceQuantity = new MMBusinessAssociationEnd<SecuritiesBalance, SecuritiesQuantity>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubBalanceQuantity";
 			definition = "Net position of a segregated holding of a single security within the overall position held in a securities account, for instance. sub-balance per type.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedSubBalance;
+			opposite_lazy = () -> SecuritiesQuantity.mmRelatedSubBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(SecuritiesBalance obj) {
+			return obj.getSubBalanceQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, SecuritiesQuantity value) {
+			obj.setSubBalanceQuantity(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Security> security;
@@ -834,10 +929,10 @@ public class SecuritiesBalance extends Balance {
 	 * definition} = "Security for which a balance is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, List<Security>> mmSecurity = new MMBusinessAssociationEnd<SecuritiesBalance, List<Security>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which a balance is calculated.";
@@ -846,8 +941,18 @@ public class SecuritiesBalance extends Balance {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 		}
+
+		@Override
+		public List<Security> getValue(SecuritiesBalance obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, List<Security> value) {
+			obj.setSecurity(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate;
+	protected List<CurrencyExchange> exchangeRate;
 	/**
 	 * 
 	 <p>
@@ -883,17 +988,27 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmExchangeRate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, List<CurrencyExchange>> mmExchangeRate = new MMBusinessAssociationEnd<SecuritiesBalance, List<CurrencyExchange>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeRate";
 			definition = "Specifies the exchange rate used to convert the balance value in another currency.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForSecuritiesBalance;
+			opposite_lazy = () -> CurrencyExchange.mmCurrencyExchangeForSecuritiesBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
+			type_lazy = () -> CurrencyExchange.mmObject();
+		}
+
+		@Override
+		public List<CurrencyExchange> getValue(SecuritiesBalance obj) {
+			return obj.getExchangeRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, List<CurrencyExchange> value) {
+			obj.setExchangeRate(value);
 		}
 	};
 	protected YesNoIndicator availabilityIndicator;
@@ -925,10 +1040,10 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAvailabilityIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesBalance, YesNoIndicator> mmAvailabilityIndicator = new MMBusinessAttribute<SecuritiesBalance, YesNoIndicator>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AvailabilityIndicator";
 			definition = "Indicates whether the quantity of securities on the balance is available.";
@@ -937,12 +1052,14 @@ public class SecuritiesBalance extends Balance {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesBalance.class.getMethod("getAvailabilityIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesBalance obj) {
+			return obj.getAvailabilityIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, YesNoIndicator value) {
+			obj.setAvailabilityIndicator(value);
 		}
 	};
 	protected SecuritiesQuantity availableQuantity;
@@ -981,18 +1098,28 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAvailableQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, SecuritiesQuantity> mmAvailableQuantity = new MMBusinessAssociationEnd<SecuritiesBalance, SecuritiesQuantity>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AvailableQuantity";
 			definition = "Total quantity of financial instruments of the balance that is available.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmAvailableQuantityBalance;
+			opposite_lazy = () -> SecuritiesQuantity.mmAvailableQuantityBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(SecuritiesBalance obj) {
+			return obj.getAvailableQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, SecuritiesQuantity value) {
+			obj.setAvailableQuantity(value);
 		}
 	};
 	protected MeetingEntitlement relatedMeetingEntitlement;
@@ -1030,18 +1157,28 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedMeetingEntitlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, Optional<MeetingEntitlement>> mmRelatedMeetingEntitlement = new MMBusinessAssociationEnd<SecuritiesBalance, Optional<MeetingEntitlement>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedMeetingEntitlement";
 			definition = "Entitlement for which an eligible posistion is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmEligiblePosition;
+			opposite_lazy = () -> MeetingEntitlement.mmEligiblePosition;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
+			type_lazy = () -> MeetingEntitlement.mmObject();
+		}
+
+		@Override
+		public Optional<MeetingEntitlement> getValue(SecuritiesBalance obj) {
+			return obj.getRelatedMeetingEntitlement();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, Optional<MeetingEntitlement> value) {
+			obj.setRelatedMeetingEntitlement(value.orElse(null));
 		}
 	};
 	protected SecuritiesQuantity unavailableQuantity;
@@ -1080,18 +1217,28 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUnavailableQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, SecuritiesQuantity> mmUnavailableQuantity = new MMBusinessAssociationEnd<SecuritiesBalance, SecuritiesQuantity>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnavailableQuantity";
 			definition = "Total quantity of financial instruments of the balance that is not available.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmUnavailableQuantityBalance;
+			opposite_lazy = () -> SecuritiesQuantity.mmUnavailableQuantityBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(SecuritiesBalance obj) {
+			return obj.getUnavailableQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, SecuritiesQuantity value) {
+			obj.setUnavailableQuantity(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.SafekeepingPlace> safekeepingPlace;
@@ -1128,10 +1275,10 @@ public class SecuritiesBalance extends Balance {
 	 * definition} = "Safekeeping place at which the securities are held."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSafekeepingPlace = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, List<SafekeepingPlace>> mmSafekeepingPlace = new MMBusinessAssociationEnd<SecuritiesBalance, List<SafekeepingPlace>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SafekeepingPlace";
 			definition = "Safekeeping place at which the securities are held.";
@@ -1139,6 +1286,16 @@ public class SecuritiesBalance extends Balance {
 			opposite_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmSecuritiesBalance;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
+		}
+
+		@Override
+		public List<SafekeepingPlace> getValue(SecuritiesBalance obj) {
+			return obj.getSafekeepingPlace();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, List<SafekeepingPlace> value) {
+			obj.setSafekeepingPlace(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesEntry> securitiesEntry;
@@ -1177,10 +1334,10 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, List<SecuritiesEntry>> mmSecuritiesEntry = new MMBusinessAssociationEnd<SecuritiesBalance, List<SecuritiesEntry>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesEntry";
 			definition = "Postings used to calculate a balance. It is derived from the association between Balance and Entry";
@@ -1188,6 +1345,16 @@ public class SecuritiesBalance extends Balance {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmSecuritiesBalance;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesEntry> getValue(SecuritiesBalance obj) {
+			return obj.getSecuritiesEntry();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, List<SecuritiesEntry> value) {
+			obj.setSecuritiesEntry(value);
 		}
 	};
 	protected CorporateActionEntitlement notEligibleBalanceRelatedEntitlement;
@@ -1227,10 +1394,10 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNotEligibleBalanceRelatedEntitlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, com.tools20022.repository.entity.CorporateActionEntitlement> mmNotEligibleBalanceRelatedEntitlement = new MMBusinessAssociationEnd<SecuritiesBalance, com.tools20022.repository.entity.CorporateActionEntitlement>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotEligibleBalanceRelatedEntitlement";
 			definition = "Corporate action entitlement for which a non eligible balance is specified.";
@@ -1239,6 +1406,16 @@ public class SecuritiesBalance extends Balance {
 			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmNotEligibleBalance;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.CorporateActionEntitlement getValue(SecuritiesBalance obj) {
+			return obj.getNotEligibleBalanceRelatedEntitlement();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, com.tools20022.repository.entity.CorporateActionEntitlement value) {
+			obj.setNotEligibleBalanceRelatedEntitlement(value);
 		}
 	};
 	protected IntraPositionTransfer relatedIntraPositionTransfer;
@@ -1276,18 +1453,28 @@ public class SecuritiesBalance extends Balance {
 	 * definition} = "Transfer between two balances or sub balances."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedIntraPositionTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, IntraPositionTransfer> mmRelatedIntraPositionTransfer = new MMBusinessAssociationEnd<SecuritiesBalance, IntraPositionTransfer>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedIntraPositionTransfer";
 			definition = "Transfer between two balances or sub balances.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmSecuritiesBalance;
+			opposite_lazy = () -> IntraPositionTransfer.mmSecuritiesBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
+			type_lazy = () -> IntraPositionTransfer.mmObject();
+		}
+
+		@Override
+		public IntraPositionTransfer getValue(SecuritiesBalance obj) {
+			return obj.getRelatedIntraPositionTransfer();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, IntraPositionTransfer value) {
+			obj.setRelatedIntraPositionTransfer(value);
 		}
 	};
 	protected CurrencyAndAmount costAdjustment;
@@ -1319,10 +1506,10 @@ public class SecuritiesBalance extends Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCostAdjustment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesBalance, CurrencyAndAmount> mmCostAdjustment = new MMBusinessAttribute<SecuritiesBalance, CurrencyAndAmount>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CostAdjustment";
 			definition = "Specifies the amount added or substracted to the original cost of a transaction.";
@@ -1331,12 +1518,14 @@ public class SecuritiesBalance extends Balance {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesBalance.class.getMethod("getCostAdjustment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesBalance obj) {
+			return obj.getCostAdjustment();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, CurrencyAndAmount value) {
+			obj.setCostAdjustment(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Pledgee> pledgee;
@@ -1372,10 +1561,10 @@ public class SecuritiesBalance extends Balance {
 	 * definition} = "Pledgee at which the securities are held."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPledgee = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesBalance, List<Pledgee>> mmPledgee = new MMBusinessAssociationEnd<SecuritiesBalance, List<Pledgee>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			elementContext_lazy = () -> SecuritiesBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pledgee";
 			definition = "Pledgee at which the securities are held.";
@@ -1383,6 +1572,16 @@ public class SecuritiesBalance extends Balance {
 			opposite_lazy = () -> com.tools20022.repository.entity.Pledgee.mmSecuritiesBalance;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Pledgee.mmObject();
+		}
+
+		@Override
+		public List<Pledgee> getValue(SecuritiesBalance obj) {
+			return obj.getPledgee();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalance obj, List<Pledgee> value) {
+			obj.setPledgee(value);
 		}
 	};
 
@@ -1393,27 +1592,20 @@ public class SecuritiesBalance extends Balance {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalance";
 				definition = "Net position of a segregated holding, in a single security, within the overall position held in a securities account. A securities balance is calculated from the sum of securities' receipts minus the sum of securities' deliveries.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmBalance, com.tools20022.repository.entity.SecuritiesAccount.mmSecuritiesBalance,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmAggregateQuantityBalance, com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedSubBalance,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmAvailableQuantityBalance, com.tools20022.repository.entity.SecuritiesQuantity.mmUnavailableQuantityBalance,
-						com.tools20022.repository.entity.SecuritiesEntry.mmSecuritiesBalance, com.tools20022.repository.entity.SafekeepingPlace.mmSecuritiesBalance,
-						com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForSecuritiesBalance, com.tools20022.repository.entity.SecuritiesBalance.mmMainSecuritiesBalance,
-						com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesSubBalance, com.tools20022.repository.entity.CorporateActionEntitlement.mmEligibleBalance,
-						com.tools20022.repository.entity.CorporateActionEntitlement.mmSecuritiesBalance, com.tools20022.repository.entity.CorporateActionEntitlement.mmInstructedBalance,
-						com.tools20022.repository.entity.CorporateActionEntitlement.mmUninstructedBalance, com.tools20022.repository.entity.CorporateActionEntitlement.mmNotEligibleBalance,
-						com.tools20022.repository.entity.IntraPositionTransfer.mmSecuritiesBalance, com.tools20022.repository.entity.MeetingEntitlement.mmEligiblePosition, com.tools20022.repository.entity.Pledgee.mmSecuritiesBalance);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmBalance, com.tools20022.repository.entity.SecuritiesAccount.mmSecuritiesBalance, SecuritiesQuantity.mmAggregateQuantityBalance,
+						SecuritiesQuantity.mmRelatedSubBalance, SecuritiesQuantity.mmAvailableQuantityBalance, SecuritiesQuantity.mmUnavailableQuantityBalance, com.tools20022.repository.entity.SecuritiesEntry.mmSecuritiesBalance,
+						com.tools20022.repository.entity.SafekeepingPlace.mmSecuritiesBalance, CurrencyExchange.mmCurrencyExchangeForSecuritiesBalance, SecuritiesBalance.mmMainSecuritiesBalance, SecuritiesBalance.mmSecuritiesSubBalance,
+						com.tools20022.repository.entity.CorporateActionEntitlement.mmEligibleBalance, com.tools20022.repository.entity.CorporateActionEntitlement.mmSecuritiesBalance,
+						com.tools20022.repository.entity.CorporateActionEntitlement.mmInstructedBalance, com.tools20022.repository.entity.CorporateActionEntitlement.mmUninstructedBalance,
+						com.tools20022.repository.entity.CorporateActionEntitlement.mmNotEligibleBalance, IntraPositionTransfer.mmSecuritiesBalance, MeetingEntitlement.mmEligiblePosition,
+						com.tools20022.repository.entity.Pledgee.mmSecuritiesBalance);
 				superType_lazy = () -> Balance.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesBalance.mmNetGainLoss, com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesAccount,
-						com.tools20022.repository.entity.SecuritiesBalance.mmEligibleBalanceRelatedEntitlement, com.tools20022.repository.entity.SecuritiesBalance.mmShortLong,
-						com.tools20022.repository.entity.SecuritiesBalance.mmAggregateQuantity, com.tools20022.repository.entity.SecuritiesBalance.mmCorporateActionEntitlement,
-						com.tools20022.repository.entity.SecuritiesBalance.mmInstructedBalanceRelatedEntitlement, com.tools20022.repository.entity.SecuritiesBalance.mmUninstructedBalanceRelatedEntitlement,
-						com.tools20022.repository.entity.SecuritiesBalance.mmMainSecuritiesBalance, com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesSubBalance,
-						com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesBalanceType, com.tools20022.repository.entity.SecuritiesBalance.mmSubBalanceQuantity, com.tools20022.repository.entity.SecuritiesBalance.mmSecurity,
-						com.tools20022.repository.entity.SecuritiesBalance.mmExchangeRate, com.tools20022.repository.entity.SecuritiesBalance.mmAvailabilityIndicator, com.tools20022.repository.entity.SecuritiesBalance.mmAvailableQuantity,
-						com.tools20022.repository.entity.SecuritiesBalance.mmRelatedMeetingEntitlement, com.tools20022.repository.entity.SecuritiesBalance.mmUnavailableQuantity,
-						com.tools20022.repository.entity.SecuritiesBalance.mmSafekeepingPlace, com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesEntry,
-						com.tools20022.repository.entity.SecuritiesBalance.mmNotEligibleBalanceRelatedEntitlement, com.tools20022.repository.entity.SecuritiesBalance.mmRelatedIntraPositionTransfer,
-						com.tools20022.repository.entity.SecuritiesBalance.mmCostAdjustment, com.tools20022.repository.entity.SecuritiesBalance.mmPledgee);
+				element_lazy = () -> Arrays.asList(SecuritiesBalance.mmNetGainLoss, SecuritiesBalance.mmSecuritiesAccount, SecuritiesBalance.mmEligibleBalanceRelatedEntitlement, SecuritiesBalance.mmShortLong,
+						SecuritiesBalance.mmAggregateQuantity, SecuritiesBalance.mmCorporateActionEntitlement, SecuritiesBalance.mmInstructedBalanceRelatedEntitlement, SecuritiesBalance.mmUninstructedBalanceRelatedEntitlement,
+						SecuritiesBalance.mmMainSecuritiesBalance, SecuritiesBalance.mmSecuritiesSubBalance, SecuritiesBalance.mmSecuritiesBalanceType, SecuritiesBalance.mmSubBalanceQuantity, SecuritiesBalance.mmSecurity,
+						SecuritiesBalance.mmExchangeRate, SecuritiesBalance.mmAvailabilityIndicator, SecuritiesBalance.mmAvailableQuantity, SecuritiesBalance.mmRelatedMeetingEntitlement, SecuritiesBalance.mmUnavailableQuantity,
+						SecuritiesBalance.mmSafekeepingPlace, SecuritiesBalance.mmSecuritiesEntry, SecuritiesBalance.mmNotEligibleBalanceRelatedEntitlement, SecuritiesBalance.mmRelatedIntraPositionTransfer,
+						SecuritiesBalance.mmCostAdjustment, SecuritiesBalance.mmPledgee);
 			}
 
 			@Override
@@ -1464,7 +1656,7 @@ public class SecuritiesBalance extends Balance {
 		return aggregateQuantity;
 	}
 
-	public SecuritiesBalance setAggregateQuantity(com.tools20022.repository.entity.SecuritiesQuantity aggregateQuantity) {
+	public SecuritiesBalance setAggregateQuantity(SecuritiesQuantity aggregateQuantity) {
 		this.aggregateQuantity = Objects.requireNonNull(aggregateQuantity);
 		return this;
 	}
@@ -1500,7 +1692,7 @@ public class SecuritiesBalance extends Balance {
 		return mainSecuritiesBalance == null ? Optional.empty() : Optional.of(mainSecuritiesBalance);
 	}
 
-	public SecuritiesBalance setMainSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance mainSecuritiesBalance) {
+	public SecuritiesBalance setMainSecuritiesBalance(SecuritiesBalance mainSecuritiesBalance) {
 		this.mainSecuritiesBalance = mainSecuritiesBalance;
 		return this;
 	}
@@ -1509,7 +1701,7 @@ public class SecuritiesBalance extends Balance {
 		return securitiesSubBalance == null ? securitiesSubBalance = new ArrayList<>() : securitiesSubBalance;
 	}
 
-	public SecuritiesBalance setSecuritiesSubBalance(List<com.tools20022.repository.entity.SecuritiesBalance> securitiesSubBalance) {
+	public SecuritiesBalance setSecuritiesSubBalance(List<SecuritiesBalance> securitiesSubBalance) {
 		this.securitiesSubBalance = Objects.requireNonNull(securitiesSubBalance);
 		return this;
 	}
@@ -1527,7 +1719,7 @@ public class SecuritiesBalance extends Balance {
 		return subBalanceQuantity;
 	}
 
-	public SecuritiesBalance setSubBalanceQuantity(com.tools20022.repository.entity.SecuritiesQuantity subBalanceQuantity) {
+	public SecuritiesBalance setSubBalanceQuantity(SecuritiesQuantity subBalanceQuantity) {
 		this.subBalanceQuantity = Objects.requireNonNull(subBalanceQuantity);
 		return this;
 	}
@@ -1545,7 +1737,7 @@ public class SecuritiesBalance extends Balance {
 		return exchangeRate == null ? exchangeRate = new ArrayList<>() : exchangeRate;
 	}
 
-	public SecuritiesBalance setExchangeRate(List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate) {
+	public SecuritiesBalance setExchangeRate(List<CurrencyExchange> exchangeRate) {
 		this.exchangeRate = Objects.requireNonNull(exchangeRate);
 		return this;
 	}
@@ -1563,7 +1755,7 @@ public class SecuritiesBalance extends Balance {
 		return availableQuantity;
 	}
 
-	public SecuritiesBalance setAvailableQuantity(com.tools20022.repository.entity.SecuritiesQuantity availableQuantity) {
+	public SecuritiesBalance setAvailableQuantity(SecuritiesQuantity availableQuantity) {
 		this.availableQuantity = Objects.requireNonNull(availableQuantity);
 		return this;
 	}
@@ -1572,7 +1764,7 @@ public class SecuritiesBalance extends Balance {
 		return relatedMeetingEntitlement == null ? Optional.empty() : Optional.of(relatedMeetingEntitlement);
 	}
 
-	public SecuritiesBalance setRelatedMeetingEntitlement(com.tools20022.repository.entity.MeetingEntitlement relatedMeetingEntitlement) {
+	public SecuritiesBalance setRelatedMeetingEntitlement(MeetingEntitlement relatedMeetingEntitlement) {
 		this.relatedMeetingEntitlement = relatedMeetingEntitlement;
 		return this;
 	}
@@ -1581,7 +1773,7 @@ public class SecuritiesBalance extends Balance {
 		return unavailableQuantity;
 	}
 
-	public SecuritiesBalance setUnavailableQuantity(com.tools20022.repository.entity.SecuritiesQuantity unavailableQuantity) {
+	public SecuritiesBalance setUnavailableQuantity(SecuritiesQuantity unavailableQuantity) {
 		this.unavailableQuantity = Objects.requireNonNull(unavailableQuantity);
 		return this;
 	}
@@ -1617,7 +1809,7 @@ public class SecuritiesBalance extends Balance {
 		return relatedIntraPositionTransfer;
 	}
 
-	public SecuritiesBalance setRelatedIntraPositionTransfer(com.tools20022.repository.entity.IntraPositionTransfer relatedIntraPositionTransfer) {
+	public SecuritiesBalance setRelatedIntraPositionTransfer(IntraPositionTransfer relatedIntraPositionTransfer) {
 		this.relatedIntraPositionTransfer = Objects.requireNonNull(relatedIntraPositionTransfer);
 		return this;
 	}

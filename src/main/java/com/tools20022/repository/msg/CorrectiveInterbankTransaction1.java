@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.CashSettlement;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.entity.PaymentIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CorrectiveGroupInformation1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -130,7 +131,7 @@ public class CorrectiveInterbankTransaction1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmGroupHeader = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorrectiveInterbankTransaction1, Optional<CorrectiveGroupInformation1>> mmGroupHeader = new MMMessageAssociationEnd<CorrectiveInterbankTransaction1, Optional<CorrectiveGroupInformation1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
 			isDerived = false;
@@ -141,7 +142,17 @@ public class CorrectiveInterbankTransaction1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CorrectiveGroupInformation1.mmObject();
+			type_lazy = () -> CorrectiveGroupInformation1.mmObject();
+		}
+
+		@Override
+		public Optional<CorrectiveGroupInformation1> getValue(CorrectiveInterbankTransaction1 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(CorrectiveInterbankTransaction1 obj, Optional<CorrectiveGroupInformation1> value) {
+			obj.setGroupHeader(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "InstrId")
@@ -180,7 +191,7 @@ public class CorrectiveInterbankTransaction1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorrectiveInterbankTransaction1, Optional<Max35Text>> mmInstructionIdentification = new MMMessageAttribute<CorrectiveInterbankTransaction1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmInstructionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
@@ -192,6 +203,16 @@ public class CorrectiveInterbankTransaction1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(CorrectiveInterbankTransaction1 obj) {
+			return obj.getInstructionIdentification();
+		}
+
+		@Override
+		public void setValue(CorrectiveInterbankTransaction1 obj, Optional<Max35Text> value) {
+			obj.setInstructionIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "EndToEndId")
@@ -230,7 +251,7 @@ public class CorrectiveInterbankTransaction1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEndToEndIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorrectiveInterbankTransaction1, Optional<Max35Text>> mmEndToEndIdentification = new MMMessageAttribute<CorrectiveInterbankTransaction1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmEndToEndIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
@@ -242,6 +263,16 @@ public class CorrectiveInterbankTransaction1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(CorrectiveInterbankTransaction1 obj) {
+			return obj.getEndToEndIdentification();
+		}
+
+		@Override
+		public void setValue(CorrectiveInterbankTransaction1 obj, Optional<Max35Text> value) {
+			obj.setEndToEndIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TxId")
@@ -280,7 +311,7 @@ public class CorrectiveInterbankTransaction1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorrectiveInterbankTransaction1, Optional<Max35Text>> mmTransactionIdentification = new MMMessageAttribute<CorrectiveInterbankTransaction1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmTransactionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
@@ -292,6 +323,16 @@ public class CorrectiveInterbankTransaction1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(CorrectiveInterbankTransaction1 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(CorrectiveInterbankTransaction1 obj, Optional<Max35Text> value) {
+			obj.setTransactionIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "IntrBkSttlmAmt", required = true)
@@ -331,7 +372,7 @@ public class CorrectiveInterbankTransaction1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterbankSettlementAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorrectiveInterbankTransaction1, ActiveOrHistoricCurrencyAndAmount> mmInterbankSettlementAmount = new MMMessageAttribute<CorrectiveInterbankTransaction1, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CashSettlement.mmInterbankSettlementAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
@@ -343,6 +384,16 @@ public class CorrectiveInterbankTransaction1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(CorrectiveInterbankTransaction1 obj) {
+			return obj.getInterbankSettlementAmount();
+		}
+
+		@Override
+		public void setValue(CorrectiveInterbankTransaction1 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setInterbankSettlementAmount(value);
 		}
 	};
 	@XmlElement(name = "IntrBkSttlmDt", required = true)
@@ -381,7 +432,7 @@ public class CorrectiveInterbankTransaction1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterbankSettlementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorrectiveInterbankTransaction1, ISODate> mmInterbankSettlementDate = new MMMessageAttribute<CorrectiveInterbankTransaction1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> CashSettlement.mmInterbankSettlementDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CorrectiveInterbankTransaction1.mmObject();
@@ -393,6 +444,16 @@ public class CorrectiveInterbankTransaction1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(CorrectiveInterbankTransaction1 obj) {
+			return obj.getInterbankSettlementDate();
+		}
+
+		@Override
+		public void setValue(CorrectiveInterbankTransaction1 obj, ISODate value) {
+			obj.setInterbankSettlementDate(value);
 		}
 	};
 
@@ -417,7 +478,7 @@ public class CorrectiveInterbankTransaction1 {
 		return groupHeader == null ? Optional.empty() : Optional.of(groupHeader);
 	}
 
-	public CorrectiveInterbankTransaction1 setGroupHeader(com.tools20022.repository.msg.CorrectiveGroupInformation1 groupHeader) {
+	public CorrectiveInterbankTransaction1 setGroupHeader(CorrectiveGroupInformation1 groupHeader) {
 		this.groupHeader = groupHeader;
 		return this;
 	}

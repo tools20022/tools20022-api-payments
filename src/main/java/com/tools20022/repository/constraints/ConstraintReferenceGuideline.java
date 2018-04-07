@@ -20,7 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.msg.ReportEntry8;
+import com.tools20022.repository.msg.ReportEntry9;
 
 /**
  * At least one reference should be present to identify the underlying
@@ -34,7 +34,7 @@ public class ConstraintReferenceGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.ReportEntry8 ReportEntry8}</li>
+	 * {@linkplain com.tools20022.repository.msg.ReportEntry9 ReportEntry9}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -48,17 +48,17 @@ public class ConstraintReferenceGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forReportEntry8 = new MMConstraint() {
+	public static final MMConstraint<ReportEntry9> forReportEntry9 = new MMConstraint<ReportEntry9>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReferenceGuideline";
 			definition = "At least one reference should be present to identify the underlying transaction(s).";
-			owner_lazy = () -> ReportEntry8.mmObject();
+			owner_lazy = () -> ReportEntry9.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkReportEntry8((ReportEntry8) obj);
+		public void executeValidator(ReportEntry9 obj) throws Exception {
+			checkReportEntry9(obj);
 		}
 	};
 
@@ -66,7 +66,7 @@ public class ConstraintReferenceGuideline {
 	 * At least one reference should be present to identify the underlying
 	 * transaction(s).
 	 */
-	public static void checkReportEntry8(ReportEntry8 obj) throws Exception {
+	public static void checkReportEntry9(ReportEntry9 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

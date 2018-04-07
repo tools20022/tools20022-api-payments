@@ -20,8 +20,9 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.MeetingResultDissemination;
+import com.tools20022.repository.entity.Vote;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -80,7 +81,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class VoteResult {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Vote> vote;
+	protected List<Vote> vote;
 	/**
 	 * 
 	 <p>
@@ -111,7 +112,7 @@ public class VoteResult {
 	 * definition} = "Number of votes per type of vote and per resolution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVote = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VoteResult, List<Vote>> mmVote = new MMBusinessAssociationEnd<VoteResult, List<Vote>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
@@ -119,9 +120,19 @@ public class VoteResult {
 			name = "Vote";
 			definition = "Number of votes per type of vote and per resolution.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Vote.mmResult;
+			opposite_lazy = () -> Vote.mmResult;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
+			type_lazy = () -> Vote.mmObject();
+		}
+
+		@Override
+		public List<Vote> getValue(VoteResult obj) {
+			return obj.getVote();
+		}
+
+		@Override
+		public void setValue(VoteResult obj, List<Vote> value) {
+			obj.setVote(value);
 		}
 	};
 	protected YesNoIndicator accepted;
@@ -150,7 +161,7 @@ public class VoteResult {
 	 * definition} = "Specifies whether a resolution is accepted or not."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAccepted = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VoteResult, YesNoIndicator> mmAccepted = new MMBusinessAttribute<VoteResult, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
@@ -162,12 +173,14 @@ public class VoteResult {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VoteResult.class.getMethod("getAccepted", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(VoteResult obj) {
+			return obj.getAccepted();
+		}
+
+		@Override
+		public void setValue(VoteResult obj, YesNoIndicator value) {
+			obj.setAccepted(value);
 		}
 	};
 	protected MeetingResultDissemination voteDissemination;
@@ -205,7 +218,7 @@ public class VoteResult {
 	 * "Disemination process through which the results are propagated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVoteDissemination = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VoteResult, Optional<MeetingResultDissemination>> mmVoteDissemination = new MMBusinessAssociationEnd<VoteResult, Optional<MeetingResultDissemination>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
@@ -214,9 +227,19 @@ public class VoteResult {
 			definition = "Disemination process through which the results are propagated.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmVoteResult;
+			opposite_lazy = () -> MeetingResultDissemination.mmVoteResult;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmObject();
+			type_lazy = () -> MeetingResultDissemination.mmObject();
+		}
+
+		@Override
+		public Optional<MeetingResultDissemination> getValue(VoteResult obj) {
+			return obj.getVoteDissemination();
+		}
+
+		@Override
+		public void setValue(VoteResult obj, Optional<MeetingResultDissemination> value) {
+			obj.setVoteDissemination(value.orElse(null));
 		}
 	};
 	protected Number totalVotesCast;
@@ -244,7 +267,7 @@ public class VoteResult {
 	 * definition} = "Total number of votes cast per resolution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalVotesCast = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VoteResult, Number> mmTotalVotesCast = new MMBusinessAttribute<VoteResult, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
@@ -256,12 +279,14 @@ public class VoteResult {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VoteResult.class.getMethod("getTotalVotesCast", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(VoteResult obj) {
+			return obj.getTotalVotesCast();
+		}
+
+		@Override
+		public void setValue(VoteResult obj, Number value) {
+			obj.setTotalVotesCast(value);
 		}
 	};
 
@@ -272,7 +297,7 @@ public class VoteResult {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VoteResult";
 				definition = "Specifies whether an agenda item of a general meeting has been accepted or rejected, together with the number of votes.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Vote.mmResult, com.tools20022.repository.entity.MeetingResultDissemination.mmVoteResult);
+				associationDomain_lazy = () -> Arrays.asList(Vote.mmResult, MeetingResultDissemination.mmVoteResult);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.VoteResult.mmVote, com.tools20022.repository.entity.VoteResult.mmAccepted, com.tools20022.repository.entity.VoteResult.mmVoteDissemination,
 						com.tools20022.repository.entity.VoteResult.mmTotalVotesCast);
 			}
@@ -289,7 +314,7 @@ public class VoteResult {
 		return vote == null ? vote = new ArrayList<>() : vote;
 	}
 
-	public VoteResult setVote(List<com.tools20022.repository.entity.Vote> vote) {
+	public VoteResult setVote(List<Vote> vote) {
 		this.vote = Objects.requireNonNull(vote);
 		return this;
 	}
@@ -307,7 +332,7 @@ public class VoteResult {
 		return voteDissemination == null ? Optional.empty() : Optional.of(voteDissemination);
 	}
 
-	public VoteResult setVoteDissemination(com.tools20022.repository.entity.MeetingResultDissemination voteDissemination) {
+	public VoteResult setVoteDissemination(MeetingResultDissemination voteDissemination) {
 		this.voteDissemination = voteDissemination;
 		return this;
 	}

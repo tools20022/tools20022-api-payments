@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.entity.Charges;
 import com.tools20022.repository.entity.OrganisationIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -108,7 +109,7 @@ public class Charges2 {
 	 * definition} = "Transaction charges to be paid by the charge bearer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Charges2, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<Charges2, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Charges2.mmObject();
@@ -120,6 +121,16 @@ public class Charges2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(Charges2 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(Charges2 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "Agt", required = true)
@@ -157,7 +168,7 @@ public class Charges2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Charges2, BranchAndFinancialInstitutionIdentification5> mmAgent = new MMMessageAssociationEnd<Charges2, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			businessComponentTrace_lazy = () -> OrganisationIdentification.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.Charges2.mmObject();
@@ -169,7 +180,17 @@ public class Charges2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(Charges2 obj) {
+			return obj.getAgent();
+		}
+
+		@Override
+		public void setValue(Charges2 obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setAgent(value);
 		}
 	};
 
@@ -200,7 +221,7 @@ public class Charges2 {
 		return agent;
 	}
 
-	public Charges2 setAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 agent) {
+	public Charges2 setAgent(BranchAndFinancialInstitutionIdentification5 agent) {
 		this.agent = Objects.requireNonNull(agent);
 		return this;
 	}

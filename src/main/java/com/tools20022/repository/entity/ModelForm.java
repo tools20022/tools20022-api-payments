@@ -22,8 +22,9 @@ import com.tools20022.repository.codeset.ExternalModelFormIdentificationCode;
 import com.tools20022.repository.codeset.ISO2ALanguageCode;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.GovernanceRules;
+import com.tools20022.repository.entity.Undertaking;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -119,7 +120,7 @@ public class ModelForm {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGovernanceRules = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ModelForm, Optional<GovernanceRules>> mmGovernanceRules = new MMBusinessAssociationEnd<ModelForm, Optional<GovernanceRules>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
@@ -128,9 +129,19 @@ public class ModelForm {
 			definition = "Rules governing an undertaking such as a guarantee or standby letter of credit.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmModelForm;
+			opposite_lazy = () -> GovernanceRules.mmModelForm;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GovernanceRules.mmObject();
+			type_lazy = () -> GovernanceRules.mmObject();
+		}
+
+		@Override
+		public Optional<GovernanceRules> getValue(ModelForm obj) {
+			return obj.getGovernanceRules();
+		}
+
+		@Override
+		public void setValue(ModelForm obj, Optional<GovernanceRules> value) {
+			obj.setGovernanceRules(value.orElse(null));
 		}
 	};
 	protected Undertaking undertaking;
@@ -166,7 +177,7 @@ public class ModelForm {
 	 * definition} = "Undertaking for which the model form is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ModelForm, Undertaking> mmUndertaking = new MMBusinessAssociationEnd<ModelForm, Undertaking>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
@@ -175,9 +186,19 @@ public class ModelForm {
 			definition = "Undertaking for which the model form is used.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.mmModelForm;
+			opposite_lazy = () -> Undertaking.mmModelForm;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
+			type_lazy = () -> Undertaking.mmObject();
+		}
+
+		@Override
+		public Undertaking getValue(ModelForm obj) {
+			return obj.getUndertaking();
+		}
+
+		@Override
+		public void setValue(ModelForm obj, Undertaking value) {
+			obj.setUndertaking(value);
 		}
 	};
 	protected ExternalModelFormIdentificationCode identification;
@@ -206,7 +227,7 @@ public class ModelForm {
 	 * definition} = "Identification of the model form."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ModelForm, ExternalModelFormIdentificationCode> mmIdentification = new MMBusinessAttribute<ModelForm, ExternalModelFormIdentificationCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
@@ -218,12 +239,14 @@ public class ModelForm {
 			simpleType_lazy = () -> ExternalModelFormIdentificationCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ModelForm.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExternalModelFormIdentificationCode getValue(ModelForm obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(ModelForm obj, ExternalModelFormIdentificationCode value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected Max35Text version;
@@ -251,7 +274,7 @@ public class ModelForm {
 	 * definition} = "Version of the model form."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVersion = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ModelForm, Max35Text> mmVersion = new MMBusinessAttribute<ModelForm, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
@@ -263,12 +286,14 @@ public class ModelForm {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ModelForm.class.getMethod("getVersion", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ModelForm obj) {
+			return obj.getVersion();
+		}
+
+		@Override
+		public void setValue(ModelForm obj, Max35Text value) {
+			obj.setVersion(value);
 		}
 	};
 	protected ISO2ALanguageCode requestedWordingLanguage;
@@ -297,7 +322,7 @@ public class ModelForm {
 	 * definition} = "Language of the standard wording provided by the issuer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedWordingLanguage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ModelForm, ISO2ALanguageCode> mmRequestedWordingLanguage = new MMBusinessAttribute<ModelForm, ISO2ALanguageCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
@@ -309,12 +334,14 @@ public class ModelForm {
 			simpleType_lazy = () -> ISO2ALanguageCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ModelForm.class.getMethod("getRequestedWordingLanguage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISO2ALanguageCode getValue(ModelForm obj) {
+			return obj.getRequestedWordingLanguage();
+		}
+
+		@Override
+		public void setValue(ModelForm obj, ISO2ALanguageCode value) {
+			obj.setRequestedWordingLanguage(value);
 		}
 	};
 	protected ISODate effectiveDate;
@@ -342,7 +369,7 @@ public class ModelForm {
 	 * definition} = "Date on which the use of the model form is effective."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ModelForm, ISODate> mmEffectiveDate = new MMBusinessAttribute<ModelForm, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ModelForm.mmObject();
@@ -354,12 +381,14 @@ public class ModelForm {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ModelForm.class.getMethod("getEffectiveDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(ModelForm obj) {
+			return obj.getEffectiveDate();
+		}
+
+		@Override
+		public void setValue(ModelForm obj, ISODate value) {
+			obj.setEffectiveDate(value);
 		}
 	};
 
@@ -370,7 +399,7 @@ public class ModelForm {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ModelForm";
 				definition = "Identification of a model form.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Undertaking.mmModelForm, com.tools20022.repository.entity.GovernanceRules.mmModelForm);
+				associationDomain_lazy = () -> Arrays.asList(Undertaking.mmModelForm, GovernanceRules.mmModelForm);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ModelForm.mmGovernanceRules, com.tools20022.repository.entity.ModelForm.mmUndertaking, com.tools20022.repository.entity.ModelForm.mmIdentification,
 						com.tools20022.repository.entity.ModelForm.mmVersion, com.tools20022.repository.entity.ModelForm.mmRequestedWordingLanguage, com.tools20022.repository.entity.ModelForm.mmEffectiveDate);
 			}
@@ -387,7 +416,7 @@ public class ModelForm {
 		return governanceRules == null ? Optional.empty() : Optional.of(governanceRules);
 	}
 
-	public ModelForm setGovernanceRules(com.tools20022.repository.entity.GovernanceRules governanceRules) {
+	public ModelForm setGovernanceRules(GovernanceRules governanceRules) {
 		this.governanceRules = governanceRules;
 		return this;
 	}
@@ -396,7 +425,7 @@ public class ModelForm {
 		return undertaking;
 	}
 
-	public ModelForm setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
+	public ModelForm setUndertaking(Undertaking undertaking) {
 		this.undertaking = Objects.requireNonNull(undertaking);
 		return this;
 	}

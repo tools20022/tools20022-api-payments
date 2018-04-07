@@ -23,9 +23,9 @@ import com.tools20022.repository.codeset.CertificationFormatTypeCode;
 import com.tools20022.repository.codeset.ERISAEligibilityCode;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Country;
 import com.tools20022.repository.entity.SecuritiesPartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -126,7 +126,7 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 * definition} = "Type of certification which is required."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCertificationType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BeneficialOwner, BeneficiaryCertificationTypeCode> mmCertificationType = new MMBusinessAttribute<BeneficialOwner, BeneficiaryCertificationTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
@@ -138,12 +138,14 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 			simpleType_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BeneficialOwner.class.getMethod("getCertificationType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BeneficiaryCertificationTypeCode getValue(BeneficialOwner obj) {
+			return obj.getCertificationType();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner obj, BeneficiaryCertificationTypeCode value) {
+			obj.setCertificationType(value);
 		}
 	};
 	protected Country nonDomicileCountry;
@@ -181,7 +183,7 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNonDomicileCountry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BeneficialOwner, Country> mmNonDomicileCountry = new MMBusinessAssociationEnd<BeneficialOwner, Country>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
@@ -190,9 +192,19 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 			definition = "The holder of the security has to certify, in line with the terms of the corporate action, that it is not domiciled in the country indicated.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Country.mmCountryForBeneficialOwner;
+			opposite_lazy = () -> Country.mmCountryForBeneficialOwner;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
+			type_lazy = () -> Country.mmObject();
+		}
+
+		@Override
+		public Country getValue(BeneficialOwner obj) {
+			return obj.getNonDomicileCountry();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner obj, Country value) {
+			obj.setNonDomicileCountry(value);
 		}
 	};
 	protected YesNoIndicator certificationIndicator;
@@ -224,7 +236,7 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCertificationIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BeneficialOwner, YesNoIndicator> mmCertificationIndicator = new MMBusinessAttribute<BeneficialOwner, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
@@ -236,12 +248,14 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BeneficialOwner.class.getMethod("getCertificationIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(BeneficialOwner obj) {
+			return obj.getCertificationIndicator();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner obj, YesNoIndicator value) {
+			obj.setCertificationIndicator(value);
 		}
 	};
 	protected CertificationFormatTypeCode certificationFormat;
@@ -273,7 +287,7 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCertificationFormat = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BeneficialOwner, CertificationFormatTypeCode> mmCertificationFormat = new MMBusinessAttribute<BeneficialOwner, CertificationFormatTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
@@ -285,12 +299,14 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 			simpleType_lazy = () -> CertificationFormatTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BeneficialOwner.class.getMethod("getCertificationFormat", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CertificationFormatTypeCode getValue(BeneficialOwner obj) {
+			return obj.getCertificationFormat();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner obj, CertificationFormatTypeCode value) {
+			obj.setCertificationFormat(value);
 		}
 	};
 	protected ERISAEligibilityCode eRISAEligibility;
@@ -321,7 +337,7 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 * "Eligibility to federal Employee Retirement Income Security Act."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmERISAEligibility = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BeneficialOwner, ERISAEligibilityCode> mmERISAEligibility = new MMBusinessAttribute<BeneficialOwner, ERISAEligibilityCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
@@ -333,12 +349,14 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 			simpleType_lazy = () -> ERISAEligibilityCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BeneficialOwner.class.getMethod("getERISAEligibility", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ERISAEligibilityCode getValue(BeneficialOwner obj) {
+			return obj.getERISAEligibility();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner obj, ERISAEligibilityCode value) {
+			obj.setERISAEligibility(value);
 		}
 	};
 	protected PercentageRate eRISARate;
@@ -369,7 +387,7 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 * "Federal Employee Retirement Income Security Act (ERISA) rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmERISARate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BeneficialOwner, PercentageRate> mmERISARate = new MMBusinessAttribute<BeneficialOwner, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
@@ -381,12 +399,14 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BeneficialOwner.class.getMethod("getERISARate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(BeneficialOwner obj) {
+			return obj.getERISARate();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner obj, PercentageRate value) {
+			obj.setERISARate(value);
 		}
 	};
 	protected YesNoIndicator benefitPlanDeclarationIndicator;
@@ -417,7 +437,7 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 	 * "Indicates whether the investor is a benefit plan investor."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBenefitPlanDeclarationIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BeneficialOwner, YesNoIndicator> mmBenefitPlanDeclarationIndicator = new MMBusinessAttribute<BeneficialOwner, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
@@ -429,12 +449,14 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BeneficialOwner.class.getMethod("getBenefitPlanDeclarationIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(BeneficialOwner obj) {
+			return obj.getBenefitPlanDeclarationIndicator();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner obj, YesNoIndicator value) {
+			obj.setBenefitPlanDeclarationIndicator(value);
 		}
 	};
 
@@ -445,7 +467,7 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BeneficialOwner";
 				definition = "Characteristics of an individual or entity that is ultimately entitled to the benefit of income and rights in a security, as opposed to a nominal or legal owner.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.mmCountryForBeneficialOwner);
+				associationDomain_lazy = () -> Arrays.asList(Country.mmCountryForBeneficialOwner);
 				superType_lazy = () -> SecuritiesPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BeneficialOwner.mmCertificationType, com.tools20022.repository.entity.BeneficialOwner.mmNonDomicileCountry,
 						com.tools20022.repository.entity.BeneficialOwner.mmCertificationIndicator, com.tools20022.repository.entity.BeneficialOwner.mmCertificationFormat, com.tools20022.repository.entity.BeneficialOwner.mmERISAEligibility,
@@ -473,7 +495,7 @@ public class BeneficialOwner extends SecuritiesPartyRole {
 		return nonDomicileCountry;
 	}
 
-	public BeneficialOwner setNonDomicileCountry(com.tools20022.repository.entity.Country nonDomicileCountry) {
+	public BeneficialOwner setNonDomicileCountry(Country nonDomicileCountry) {
 		this.nonDomicileCountry = Objects.requireNonNull(nonDomicileCountry);
 		return this;
 	}

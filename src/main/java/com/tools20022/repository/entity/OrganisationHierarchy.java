@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Organisation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -107,7 +108,7 @@ public class OrganisationHierarchy {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrganisation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<OrganisationHierarchy, Organisation> mmOrganisation = new MMBusinessAssociationEnd<OrganisationHierarchy, Organisation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationHierarchy.mmObject();
@@ -116,9 +117,19 @@ public class OrganisationHierarchy {
 			definition = "Specifies the organisation which plays a specific role in the company structure.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmOrganisationHierarchy;
+			opposite_lazy = () -> Organisation.mmOrganisationHierarchy;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			type_lazy = () -> Organisation.mmObject();
+		}
+
+		@Override
+		public Organisation getValue(OrganisationHierarchy obj) {
+			return obj.getOrganisation();
+		}
+
+		@Override
+		public void setValue(OrganisationHierarchy obj, Organisation value) {
+			obj.setOrganisation(value);
 		}
 	};
 
@@ -129,7 +140,7 @@ public class OrganisationHierarchy {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrganisationHierarchy";
 				definition = "Description of the structure of a company.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Organisation.mmOrganisationHierarchy);
+				associationDomain_lazy = () -> Arrays.asList(Organisation.mmOrganisationHierarchy);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.OrganisationHierarchy.mmOrganisation);
 			}
 
@@ -145,7 +156,7 @@ public class OrganisationHierarchy {
 		return organisation;
 	}
 
-	public OrganisationHierarchy setOrganisation(com.tools20022.repository.entity.Organisation organisation) {
+	public OrganisationHierarchy setOrganisation(Organisation organisation) {
 		this.organisation = Objects.requireNonNull(organisation);
 		return this;
 	}

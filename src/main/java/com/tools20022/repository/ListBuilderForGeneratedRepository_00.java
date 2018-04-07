@@ -317,6 +317,7 @@ class ListBuilderForGeneratedRepository_00 {
 		list.add((T) ProductIdentification.mmObject());
 		list.add((T) ProductQuantity.mmObject());
 		list.add((T) ServiceLevel.mmObject());
+		list.add((T) DebtorAgentRole.mmObject());
 		list.add((T) PaymentObligationPartyRole.mmObject());
 		list.add((T) UltimateDebtorRole.mmObject());
 		list.add((T) ChargePartyRole.mmObject());
@@ -336,6 +337,7 @@ class ListBuilderForGeneratedRepository_00 {
 		list.add((T) Expiry.mmObject());
 		list.add((T) UndertakingDocument.mmObject());
 		list.add((T) SettlementTimeRequest.mmObject());
+		list.add((T) Assignee.mmObject());
 		list.add((T) MandateStatus.mmObject());
 		list.add((T) AmendmentOfUndertaking.mmObject());
 		list.add((T) UndertakingAmount.mmObject());
@@ -357,6 +359,7 @@ class ListBuilderForGeneratedRepository_00 {
 		list.add((T) Negotiation.mmObject());
 		list.add((T) LiquidityManagementLimit.mmObject());
 		list.add((T) Authentication.mmObject());
+		list.add((T) CreditorAgentRole.mmObject());
 		list.add((T) InvoiceFinancingPartyRole.mmObject());
 		list.add((T) AcceptorConfiguration.mmObject());
 		list.add((T) TerminalManagementAction.mmObject());
@@ -522,9 +525,6 @@ class ListBuilderForGeneratedRepository_00 {
 		list.add((T) GuaranteePartyRole.mmObject());
 		list.add((T) Order.mmObject());
 		list.add((T) BankingTransaction.mmObject());
-		list.add((T) RepurchaseAgreement.mmObject());
-		list.add((T) Assignment.mmObject());
-		list.add((T) FinancialTransaction.mmObject());
 		ListBuilderForGeneratedRepository_01.addElems(list);
 		return list;
 	}

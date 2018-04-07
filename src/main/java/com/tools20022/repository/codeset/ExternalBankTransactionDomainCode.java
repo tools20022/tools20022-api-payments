@@ -37,6 +37,14 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
+ * =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ExternalBankTransactionDomain1Code
+ * ExternalBankTransactionDomain1Code}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -77,6 +85,7 @@ public class ExternalBankTransactionDomainCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalBankTransactionDomainCode";
 				definition = "Specifies the external domain code of the bank transaction code in the format of character string with a maximum length of 4 characters.\r\nThe list of valid codes is an external code list published separately.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				derivation_lazy = () -> Arrays.asList(ExternalBankTransactionDomain1Code.mmObject());
 				minLength = 1;
 				maxLength = 4;
 			}

@@ -118,7 +118,7 @@ public class GenericIdentification30 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification30, Exact4AlphaNumericText> mmIdentification = new MMMessageAttribute<GenericIdentification30, Exact4AlphaNumericText>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification30.mmObject();
@@ -130,6 +130,16 @@ public class GenericIdentification30 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact4AlphaNumericText.mmObject();
+		}
+
+		@Override
+		public Exact4AlphaNumericText getValue(GenericIdentification30 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(GenericIdentification30 obj, Exact4AlphaNumericText value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "Issr", required = true)
@@ -166,7 +176,7 @@ public class GenericIdentification30 {
 	 * definition} = "Entity that assigns the identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification30, Max35Text> mmIssuer = new MMMessageAttribute<GenericIdentification30, Max35Text>() {
 		{
 			businessComponentTrace_lazy = () -> IdentificationIssuerRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification30.mmObject();
@@ -178,6 +188,16 @@ public class GenericIdentification30 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(GenericIdentification30 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(GenericIdentification30 obj, Max35Text value) {
+			obj.setIssuer(value);
 		}
 	};
 	@XmlElement(name = "SchmeNm")
@@ -214,7 +234,7 @@ public class GenericIdentification30 {
 	 * definition} = "Short textual description of the scheme."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSchemeName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification30, Optional<Max35Text>> mmSchemeName = new MMMessageAttribute<GenericIdentification30, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmNameShort;
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification30.mmObject();
@@ -226,6 +246,16 @@ public class GenericIdentification30 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(GenericIdentification30 obj) {
+			return obj.getSchemeName();
+		}
+
+		@Override
+		public void setValue(GenericIdentification30 obj, Optional<Max35Text> value) {
+			obj.setSchemeName(value.orElse(null));
 		}
 	};
 

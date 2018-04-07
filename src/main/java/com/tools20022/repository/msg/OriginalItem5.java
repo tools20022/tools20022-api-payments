@@ -27,6 +27,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.entity.PaymentIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.OriginalItemReference4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -119,7 +120,7 @@ public class OriginalItem5 {
 	 * definition} = "Identification of the original notification item."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalItemIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalItem5, Max35Text> mmOriginalItemIdentification = new MMMessageAttribute<OriginalItem5, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmExecutionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalItem5.mmObject();
@@ -131,6 +132,16 @@ public class OriginalItem5 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(OriginalItem5 obj) {
+			return obj.getOriginalItemIdentification();
+		}
+
+		@Override
+		public void setValue(OriginalItem5 obj, Max35Text value) {
+			obj.setOriginalItemIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgnlEndToEndId")
@@ -168,7 +179,7 @@ public class OriginalItem5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalEndToEndIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalItem5, Optional<Max35Text>> mmOriginalEndToEndIdentification = new MMMessageAttribute<OriginalItem5, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmEndToEndIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalItem5.mmObject();
@@ -180,6 +191,16 @@ public class OriginalItem5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(OriginalItem5 obj) {
+			return obj.getOriginalEndToEndIdentification();
+		}
+
+		@Override
+		public void setValue(OriginalItem5 obj, Optional<Max35Text> value) {
+			obj.setOriginalEndToEndIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -218,7 +239,7 @@ public class OriginalItem5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalItem5, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<OriginalItem5, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalItem5.mmObject();
@@ -230,6 +251,16 @@ public class OriginalItem5 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(OriginalItem5 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(OriginalItem5 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "XpctdValDt")
@@ -266,7 +297,7 @@ public class OriginalItem5 {
 	 * "Value date on which the account was expected to be credited."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedValueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalItem5, Optional<ISODate>> mmExpectedValueDate = new MMMessageAttribute<OriginalItem5, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmValueDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalItem5.mmObject();
@@ -278,6 +309,16 @@ public class OriginalItem5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(OriginalItem5 obj) {
+			return obj.getExpectedValueDate();
+		}
+
+		@Override
+		public void setValue(OriginalItem5 obj, Optional<ISODate> value) {
+			obj.setExpectedValueDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlItmRef")
@@ -313,7 +354,7 @@ public class OriginalItem5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalItemReference = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<OriginalItem5, Optional<OriginalItemReference4>> mmOriginalItemReference = new MMMessageAssociationEnd<OriginalItem5, Optional<OriginalItemReference4>>() {
 		{
 			businessComponentTrace_lazy = () -> Payment.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalItem5.mmObject();
@@ -325,7 +366,17 @@ public class OriginalItem5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OriginalItemReference4.mmObject();
+			type_lazy = () -> OriginalItemReference4.mmObject();
+		}
+
+		@Override
+		public Optional<OriginalItemReference4> getValue(OriginalItem5 obj) {
+			return obj.getOriginalItemReference();
+		}
+
+		@Override
+		public void setValue(OriginalItem5 obj, Optional<OriginalItemReference4> value) {
+			obj.setOriginalItemReference(value.orElse(null));
 		}
 	};
 
@@ -384,7 +435,7 @@ public class OriginalItem5 {
 		return originalItemReference == null ? Optional.empty() : Optional.of(originalItemReference);
 	}
 
-	public OriginalItem5 setOriginalItemReference(com.tools20022.repository.msg.OriginalItemReference4 originalItemReference) {
+	public OriginalItem5 setOriginalItemReference(OriginalItemReference4 originalItemReference) {
 		this.originalItemReference = originalItemReference;
 		return this;
 	}

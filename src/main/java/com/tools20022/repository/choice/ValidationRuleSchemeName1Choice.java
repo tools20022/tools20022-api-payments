@@ -100,7 +100,7 @@ public class ValidationRuleSchemeName1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ValidationRuleSchemeName1Choice, ExternalValidationRuleIdentification1Code> mmCode = new MMMessageAttribute<ValidationRuleSchemeName1Choice, ExternalValidationRuleIdentification1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.ValidationRuleSchemeName1Choice.mmObject();
 			isDerived = false;
@@ -111,6 +111,16 @@ public class ValidationRuleSchemeName1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalValidationRuleIdentification1Code.mmObject();
+		}
+
+		@Override
+		public ExternalValidationRuleIdentification1Code getValue(ValidationRuleSchemeName1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ValidationRuleSchemeName1Choice obj, ExternalValidationRuleIdentification1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -142,7 +152,7 @@ public class ValidationRuleSchemeName1Choice {
 	 * definition} = "Name of the identification scheme, in a free text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ValidationRuleSchemeName1Choice, Max35Text> mmProprietary = new MMMessageAttribute<ValidationRuleSchemeName1Choice, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.ValidationRuleSchemeName1Choice.mmObject();
 			isDerived = false;
@@ -153,6 +163,16 @@ public class ValidationRuleSchemeName1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ValidationRuleSchemeName1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ValidationRuleSchemeName1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

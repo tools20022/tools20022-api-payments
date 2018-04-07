@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Person;
 import com.tools20022.repository.entity.TaxPartyRole;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ContactDetails3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -108,11 +109,11 @@ public class BillingTaxIdentification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Value added tax (VAT) registration number as provided by the  region’s local taxing authority."
+	 * "Value added tax (VAT) registration number as provided by the region’s local taxing authority."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVATRegistrationNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingTaxIdentification1, Optional<Max35Text>> mmVATRegistrationNumber = new MMMessageAttribute<BillingTaxIdentification1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> TaxPartyRole.mmVATRegistrationNumber;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingTaxIdentification1.mmObject();
@@ -120,10 +121,20 @@ public class BillingTaxIdentification1 {
 			xmlTag = "VATRegnNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VATRegistrationNumber";
-			definition = "Value added tax (VAT) registration number as provided by the  region’s local taxing authority.";
+			definition = "Value added tax (VAT) registration number as provided by the region’s local taxing authority.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(BillingTaxIdentification1 obj) {
+			return obj.getVATRegistrationNumber();
+		}
+
+		@Override
+		public void setValue(BillingTaxIdentification1 obj, Optional<Max35Text> value) {
+			obj.setVATRegistrationNumber(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TaxRegnNb")
@@ -157,7 +168,7 @@ public class BillingTaxIdentification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxRegistrationNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingTaxIdentification1, Optional<Max35Text>> mmTaxRegistrationNumber = new MMMessageAttribute<BillingTaxIdentification1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingTaxIdentification1.mmObject();
 			isDerived = false;
@@ -168,6 +179,16 @@ public class BillingTaxIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(BillingTaxIdentification1 obj) {
+			return obj.getTaxRegistrationNumber();
+		}
+
+		@Override
+		public void setValue(BillingTaxIdentification1 obj, Optional<Max35Text> value) {
+			obj.setTaxRegistrationNumber(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TaxCtct")
@@ -206,7 +227,7 @@ public class BillingTaxIdentification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxContact = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingTaxIdentification1, Optional<ContactDetails3>> mmTaxContact = new MMMessageAttribute<BillingTaxIdentification1, Optional<ContactDetails3>>() {
 		{
 			businessElementTrace_lazy = () -> Person.mmPersonIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingTaxIdentification1.mmObject();
@@ -217,7 +238,17 @@ public class BillingTaxIdentification1 {
 			definition = "Specifies financial institution's contact details for the tax region. This contact works for the financial institution, not the tax region.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
+			complexType_lazy = () -> ContactDetails3.mmObject();
+		}
+
+		@Override
+		public Optional<ContactDetails3> getValue(BillingTaxIdentification1 obj) {
+			return obj.getTaxContact();
+		}
+
+		@Override
+		public void setValue(BillingTaxIdentification1 obj, Optional<ContactDetails3> value) {
+			obj.setTaxContact(value.orElse(null));
 		}
 	};
 
@@ -258,7 +289,7 @@ public class BillingTaxIdentification1 {
 		return taxContact == null ? Optional.empty() : Optional.of(taxContact);
 	}
 
-	public BillingTaxIdentification1 setTaxContact(com.tools20022.repository.msg.ContactDetails3 taxContact) {
+	public BillingTaxIdentification1 setTaxContact(ContactDetails3 taxContact) {
 		this.taxContact = taxContact;
 		return this;
 	}

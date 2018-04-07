@@ -100,7 +100,7 @@ public class GeneratedRepository extends ReflectionBasedRepository {
 	 * GeneratedRepository}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMDataDictionary#getTopLevelDictionaryEntry
-	 * topLevelDictionaryEntry} = List of 1844 elements</li>
+	 * topLevelDictionaryEntry} = List of 1992 elements</li>
 	 * </ul>
 	 */
 	public static final MMDataDictionary dataDict = new MMDataDictionary() {

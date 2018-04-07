@@ -109,7 +109,7 @@ public class RegisteredContractCommunication1 {
 	 * "Method by which the registered contract document is exchanged."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContractCommunication1, CommunicationMethod4Code> mmMethod = new MMMessageAttribute<RegisteredContractCommunication1, CommunicationMethod4Code>() {
 		{
 			businessElementTrace_lazy = () -> Presentation.mmCommunicationMethod;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractCommunication1.mmObject();
@@ -121,6 +121,16 @@ public class RegisteredContractCommunication1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CommunicationMethod4Code.mmObject();
+		}
+
+		@Override
+		public CommunicationMethod4Code getValue(RegisteredContractCommunication1 obj) {
+			return obj.getMethod();
+		}
+
+		@Override
+		public void setValue(RegisteredContractCommunication1 obj, CommunicationMethod4Code value) {
+			obj.setMethod(value);
 		}
 	};
 	@XmlElement(name = "Dt", required = true)
@@ -157,7 +167,7 @@ public class RegisteredContractCommunication1 {
 	 * definition} = "Date of the exchange."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContractCommunication1, ISODate> mmDate = new MMMessageAttribute<RegisteredContractCommunication1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Presentation.mmPresentationDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractCommunication1.mmObject();
@@ -169,6 +179,16 @@ public class RegisteredContractCommunication1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(RegisteredContractCommunication1 obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(RegisteredContractCommunication1 obj, ISODate value) {
+			obj.setDate(value);
 		}
 	};
 

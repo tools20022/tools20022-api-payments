@@ -98,7 +98,7 @@ public class DateModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DateModification1, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<DateModification1, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.DateModification1.mmObject();
 			isDerived = false;
@@ -109,6 +109,16 @@ public class DateModification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(DateModification1 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(DateModification1 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Dt", required = true)
@@ -140,7 +150,7 @@ public class DateModification1 {
 	 * definition} = "Date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DateModification1, ISODate> mmDate = new MMMessageAttribute<DateModification1, ISODate>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.DateModification1.mmObject();
 			isDerived = false;
@@ -151,6 +161,16 @@ public class DateModification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(DateModification1 obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(DateModification1 obj, ISODate value) {
+			obj.setDate(value);
 		}
 	};
 

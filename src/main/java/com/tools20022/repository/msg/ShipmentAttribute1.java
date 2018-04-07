@@ -113,7 +113,7 @@ public class ShipmentAttribute1 {
 	 * definition} = "Shipment conditions."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmConditions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ShipmentAttribute1, Optional<ExternalShipmentCondition1Code>> mmConditions = new MMMessageAttribute<ShipmentAttribute1, Optional<ExternalShipmentCondition1Code>>() {
 		{
 			businessComponentTrace_lazy = () -> Incoterms.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.ShipmentAttribute1.mmObject();
@@ -125,6 +125,16 @@ public class ShipmentAttribute1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ExternalShipmentCondition1Code.mmObject();
+		}
+
+		@Override
+		public Optional<ExternalShipmentCondition1Code> getValue(ShipmentAttribute1 obj) {
+			return obj.getConditions();
+		}
+
+		@Override
+		public void setValue(ShipmentAttribute1 obj, Optional<ExternalShipmentCondition1Code> value) {
+			obj.setConditions(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "XpctdDt")
@@ -161,7 +171,7 @@ public class ShipmentAttribute1 {
 	 * definition} = "Expected shipment date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ShipmentAttribute1, Optional<ISODate>> mmExpectedDate = new MMMessageAttribute<ShipmentAttribute1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> ShipmentDateRange.mmLatestShipmentDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ShipmentAttribute1.mmObject();
@@ -173,6 +183,16 @@ public class ShipmentAttribute1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(ShipmentAttribute1 obj) {
+			return obj.getExpectedDate();
+		}
+
+		@Override
+		public void setValue(ShipmentAttribute1 obj, Optional<ISODate> value) {
+			obj.setExpectedDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CtryOfCntrPty", required = true)
@@ -209,7 +229,7 @@ public class ShipmentAttribute1 {
 	 * definition} = "Country in which the counter party is located."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountryOfCounterParty = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ShipmentAttribute1, CountryCode> mmCountryOfCounterParty = new MMMessageAttribute<ShipmentAttribute1, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> PostalAddress.mmCountry;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ShipmentAttribute1.mmObject();
@@ -221,6 +241,16 @@ public class ShipmentAttribute1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
+		}
+
+		@Override
+		public CountryCode getValue(ShipmentAttribute1 obj) {
+			return obj.getCountryOfCounterParty();
+		}
+
+		@Override
+		public void setValue(ShipmentAttribute1 obj, CountryCode value) {
+			obj.setCountryOfCounterParty(value);
 		}
 	};
 

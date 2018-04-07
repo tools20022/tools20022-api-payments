@@ -21,9 +21,10 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.Period4Choice;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.entity.*;
+import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -440,14 +441,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ReportingRequest3#mmReportingPeriod
- * ReportingRequest3.mmReportingPeriod}</li>
  * <li>{@linkplain com.tools20022.repository.choice.Period4Choice#mmDate
  * Period4Choice.mmDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.choice.Period4Choice#mmFromDateToDate
  * Period4Choice.mmFromDateToDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ReportingRequest4#mmReportingPeriod
+ * ReportingRequest4.mmReportingPeriod}</li>
  * </ul>
  * </li>
  * <li>
@@ -465,6 +466,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * ReportingPeriod1}</li>
  * <li>{@linkplain com.tools20022.repository.choice.Period4Choice Period4Choice}
  * </li>
+ * <li>{@linkplain com.tools20022.repository.msg.DateTimePeriod1
+ * DateTimePeriod1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReportingPeriod2
+ * ReportingPeriod2}</li>
  * </ul>
  * </li>
  * <li>
@@ -529,6 +534,28 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.Period4Choice#mmFromDate
 	 * Period4Choice.mmFromDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DateTimePeriod1#mmFromDateTime
+	 * DateTimePeriod1.mmFromDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Organisation20#mmEstablishedDate
+	 * Organisation20.mmEstablishedDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Organisation20#mmRegistrationDate
+	 * Organisation20.mmRegistrationDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.IndividualPersonNameLong1#mmStartDate
+	 * IndividualPersonNameLong1.mmStartDate}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.DatePeriod2#mmFromDate
+	 * DatePeriod2.mmFromDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReportingPeriod2#mmFromToDate
+	 * ReportingPeriod2.mmFromToDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReportingPeriod2#mmFromToTime
+	 * ReportingPeriod2.mmFromToTime}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CreditLine3#mmDate
+	 * CreditLine3.mmDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -547,10 +574,11 @@ public class DateTimePeriod {
 	 * definition} = "Date and time at which the range starts."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFromDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DateTimePeriod, ISODateTime> mmFromDateTime = new MMBusinessAttribute<DateTimePeriod, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DatePeriodDetails.mmFromDate, DateTimePeriodDetails.mmFromDateTime, Period2.mmFromDate, DatePeriodDetails1.mmFromDate, Restriction1.mmValidFrom, OperationMandate2.mmStartDate,
-					OperationMandate3.mmStartDate, ReportingPeriod1.mmFromToDate, ReportingPeriod1.mmFromToTime, DatePeriod1.mmFromDate, Period4Choice.mmFromDate);
+					OperationMandate3.mmStartDate, ReportingPeriod1.mmFromToDate, ReportingPeriod1.mmFromToTime, DatePeriod1.mmFromDate, Period4Choice.mmFromDate, DateTimePeriod1.mmFromDateTime, Organisation20.mmEstablishedDate,
+					Organisation20.mmRegistrationDate, IndividualPersonNameLong1.mmStartDate, DatePeriod2.mmFromDate, ReportingPeriod2.mmFromToDate, ReportingPeriod2.mmFromToTime, CreditLine3.mmDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -561,12 +589,14 @@ public class DateTimePeriod {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DateTimePeriod.class.getMethod("getFromDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(DateTimePeriod obj) {
+			return obj.getFromDateTime();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, ISODateTime value) {
+			obj.setFromDateTime(value);
 		}
 	};
 	protected ISODateTime toDateTime;
@@ -604,6 +634,14 @@ public class DateTimePeriod {
 	 * DatePeriod1.mmToDate}</li>
 	 * <li>{@linkplain com.tools20022.repository.choice.Period4Choice#mmToDate
 	 * Period4Choice.mmToDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DateTimePeriod1#mmToDateTime
+	 * DateTimePeriod1.mmToDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.IndividualPersonNameLong1#mmEndDate
+	 * IndividualPersonNameLong1.mmEndDate}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.DatePeriod2#mmToDate
+	 * DatePeriod2.mmToDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -622,10 +660,10 @@ public class DateTimePeriod {
 	 * definition} = "Date and time at which the range ends."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmToDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DateTimePeriod, ISODateTime> mmToDateTime = new MMBusinessAttribute<DateTimePeriod, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DatePeriodDetails.mmToDate, DateTimePeriodDetails.mmToDateTime, Period2.mmToDate, DatePeriodDetails1.mmToDate, Restriction1.mmValidUntil, OperationMandate2.mmEndDate,
-					OperationMandate3.mmEndDate, DatePeriod1.mmToDate, Period4Choice.mmToDate);
+					OperationMandate3.mmEndDate, DatePeriod1.mmToDate, Period4Choice.mmToDate, DateTimePeriod1.mmToDateTime, IndividualPersonNameLong1.mmEndDate, DatePeriod2.mmToDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -636,12 +674,14 @@ public class DateTimePeriod {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DateTimePeriod.class.getMethod("getToDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(DateTimePeriod obj) {
+			return obj.getToDateTime();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, ISODateTime value) {
+			obj.setToDateTime(value);
 		}
 	};
 	protected StandingOrder relatedStandingOrder;
@@ -678,7 +718,7 @@ public class DateTimePeriod {
 	 * definition} = "Standing order for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedStandingOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, StandingOrder> mmRelatedStandingOrder = new MMBusinessAssociationEnd<DateTimePeriod, StandingOrder>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -687,9 +727,19 @@ public class DateTimePeriod {
 			definition = "Standing order for which a validity period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmValidityPeriod;
+			opposite_lazy = () -> StandingOrder.mmValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
+			type_lazy = () -> StandingOrder.mmObject();
+		}
+
+		@Override
+		public StandingOrder getValue(DateTimePeriod obj) {
+			return obj.getRelatedStandingOrder();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, StandingOrder value) {
+			obj.setRelatedStandingOrder(value);
 		}
 	};
 	protected PaymentInstruction paymentInstruction;
@@ -727,7 +777,7 @@ public class DateTimePeriod {
 	 * "Payment instruction for which a processing validity time is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPaymentInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, PaymentInstruction> mmPaymentInstruction = new MMBusinessAssociationEnd<DateTimePeriod, PaymentInstruction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -736,9 +786,19 @@ public class DateTimePeriod {
 			definition = "Payment instruction for which a processing validity time is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmProcessingValidityTime;
+			opposite_lazy = () -> PaymentInstruction.mmProcessingValidityTime;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmObject();
+			type_lazy = () -> PaymentInstruction.mmObject();
+		}
+
+		@Override
+		public PaymentInstruction getValue(DateTimePeriod obj) {
+			return obj.getPaymentInstruction();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, PaymentInstruction value) {
+			obj.setPaymentInstruction(value);
 		}
 	};
 	protected Number numberOfDays;
@@ -774,7 +834,7 @@ public class DateTimePeriod {
 	 * definition} = "Period specified as a number of days."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumberOfDays = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DateTimePeriod, Number> mmNumberOfDays = new MMBusinessAttribute<DateTimePeriod, Number>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BalanceAdjustment1.mmDays);
 			isDerived = false;
@@ -787,12 +847,14 @@ public class DateTimePeriod {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DateTimePeriod.class.getMethod("getNumberOfDays", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(DateTimePeriod obj) {
+			return obj.getNumberOfDays();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Number value) {
+			obj.setNumberOfDays(value);
 		}
 	};
 	protected ValuationStatistics valuationStatistics;
@@ -830,7 +892,7 @@ public class DateTimePeriod {
 	 * "Valuation statistics for which a reference period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmValuationStatistics = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, ValuationStatistics> mmValuationStatistics = new MMBusinessAssociationEnd<DateTimePeriod, ValuationStatistics>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -839,9 +901,19 @@ public class DateTimePeriod {
 			definition = "Valuation statistics for which a reference period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmPeriod;
+			opposite_lazy = () -> ValuationStatistics.mmPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
+			type_lazy = () -> ValuationStatistics.mmObject();
+		}
+
+		@Override
+		public ValuationStatistics getValue(DateTimePeriod obj) {
+			return obj.getValuationStatistics();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, ValuationStatistics value) {
+			obj.setValuationStatistics(value);
 		}
 	};
 	protected PerformanceFactors performanceFactors;
@@ -879,7 +951,7 @@ public class DateTimePeriod {
 	 * "Performance factors for which an accumulation period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPerformanceFactors = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, PerformanceFactors> mmPerformanceFactors = new MMBusinessAssociationEnd<DateTimePeriod, PerformanceFactors>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -888,9 +960,19 @@ public class DateTimePeriod {
 			definition = "Performance factors for which an accumulation period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmAccumulationPeriod;
+			opposite_lazy = () -> PerformanceFactors.mmAccumulationPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
+			type_lazy = () -> PerformanceFactors.mmObject();
+		}
+
+		@Override
+		public PerformanceFactors getValue(DateTimePeriod obj) {
+			return obj.getPerformanceFactors();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, PerformanceFactors value) {
+			obj.setPerformanceFactors(value);
 		}
 	};
 	protected Status status;
@@ -926,7 +1008,7 @@ public class DateTimePeriod {
 	 * definition} = "Status for which a validity time is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Status> mmStatus = new MMBusinessAssociationEnd<DateTimePeriod, Status>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -935,9 +1017,19 @@ public class DateTimePeriod {
 			definition = "Status for which a validity time is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Status.mmValidityTime;
+			opposite_lazy = () -> Status.mmValidityTime;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
+			type_lazy = () -> Status.mmObject();
+		}
+
+		@Override
+		public Status getValue(DateTimePeriod obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Status value) {
+			obj.setStatus(value);
 		}
 	};
 	protected SecuritiesPricing priceCalculationRelatedPricing;
@@ -975,7 +1067,7 @@ public class DateTimePeriod {
 	 * "Securities pricing for which a price calculation period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPriceCalculationRelatedPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SecuritiesPricing> mmPriceCalculationRelatedPricing = new MMBusinessAssociationEnd<DateTimePeriod, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -984,9 +1076,19 @@ public class DateTimePeriod {
 			definition = "Securities pricing for which a price calculation period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmPriceCalculationPeriod;
+			opposite_lazy = () -> SecuritiesPricing.mmPriceCalculationPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(DateTimePeriod obj) {
+			return obj.getPriceCalculationRelatedPricing();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SecuritiesPricing value) {
+			obj.setPriceCalculationRelatedPricing(value);
 		}
 	};
 	protected CorporateActionOption corporateActionOption;
@@ -1025,7 +1127,7 @@ public class DateTimePeriod {
 	 * "Corporate action option for which an action period is defined."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateActionOption = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, CorporateActionOption> mmCorporateActionOption = new MMBusinessAssociationEnd<DateTimePeriod, CorporateActionOption>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1034,9 +1136,19 @@ public class DateTimePeriod {
 			definition = "Corporate action option for which an action period is defined.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmActionPeriod;
+			opposite_lazy = () -> CorporateActionOption.mmActionPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
+			type_lazy = () -> CorporateActionOption.mmObject();
+		}
+
+		@Override
+		public CorporateActionOption getValue(DateTimePeriod obj) {
+			return obj.getCorporateActionOption();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, CorporateActionOption value) {
+			obj.setCorporateActionOption(value);
 		}
 	};
 	protected SecuritiesProceedsDefinition parallelTradingProceedsDefinition;
@@ -1075,7 +1187,7 @@ public class DateTimePeriod {
 	 * "Securities proceeds for which a parallel trading period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmParallelTradingProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SecuritiesProceedsDefinition> mmParallelTradingProceedsDefinition = new MMBusinessAssociationEnd<DateTimePeriod, SecuritiesProceedsDefinition>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1084,9 +1196,19 @@ public class DateTimePeriod {
 			definition = "Securities proceeds for which a parallel trading period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmParallelTradingPeriod;
+			opposite_lazy = () -> SecuritiesProceedsDefinition.mmParallelTradingPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
+			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
+		}
+
+		@Override
+		public SecuritiesProceedsDefinition getValue(DateTimePeriod obj) {
+			return obj.getParallelTradingProceedsDefinition();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SecuritiesProceedsDefinition value) {
+			obj.setParallelTradingProceedsDefinition(value);
 		}
 	};
 	protected SuspensionPeriod privilegeSuspensionCorporateAction;
@@ -1125,7 +1247,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPrivilegeSuspensionCorporateAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmPrivilegeSuspensionCorporateAction = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1134,9 +1256,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a privilege suspension period has been defined.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmPrivilegeSuspensionPeriod;
+			opposite_lazy = () -> SuspensionPeriod.mmPrivilegeSuspensionPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getPrivilegeSuspensionCorporateAction();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setPrivilegeSuspensionCorporateAction(value);
 		}
 	};
 	protected SuspensionPeriod withdrawalSuspensionRelatedEvent;
@@ -1175,7 +1307,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmWithdrawalSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmWithdrawalSuspensionRelatedEvent = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1184,9 +1316,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a suspension period for withdrawals is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawal;
+			opposite_lazy = () -> SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawal;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getWithdrawalSuspensionRelatedEvent();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setWithdrawalSuspensionRelatedEvent(value);
 		}
 	};
 	protected InterestCalculation relatedInterestCalculation;
@@ -1225,7 +1367,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInterestCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, InterestCalculation> mmRelatedInterestCalculation = new MMBusinessAssociationEnd<DateTimePeriod, InterestCalculation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1234,9 +1376,19 @@ public class DateTimePeriod {
 			definition = "Interest calculation process for which an interest period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmInterestPeriod;
+			opposite_lazy = () -> InterestCalculation.mmInterestPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmObject();
+			type_lazy = () -> InterestCalculation.mmObject();
+		}
+
+		@Override
+		public InterestCalculation getValue(DateTimePeriod obj) {
+			return obj.getRelatedInterestCalculation();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, InterestCalculation value) {
+			obj.setRelatedInterestCalculation(value);
 		}
 	};
 	protected BiddingConditions biddingConditions;
@@ -1275,7 +1427,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBiddingConditions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, BiddingConditions> mmBiddingConditions = new MMBusinessAssociationEnd<DateTimePeriod, BiddingConditions>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1284,9 +1436,19 @@ public class DateTimePeriod {
 			definition = "Bidding conditions for which a compulsory purchase period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmCompulsoryPurchasePeriod;
+			opposite_lazy = () -> BiddingConditions.mmCompulsoryPurchasePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
+			type_lazy = () -> BiddingConditions.mmObject();
+		}
+
+		@Override
+		public BiddingConditions getValue(DateTimePeriod obj) {
+			return obj.getBiddingConditions();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, BiddingConditions value) {
+			obj.setBiddingConditions(value);
 		}
 	};
 	protected ClassAction classAction;
@@ -1323,7 +1485,7 @@ public class DateTimePeriod {
 	 * definition} = "Class action for which a claim period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmClassAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, ClassAction> mmClassAction = new MMBusinessAssociationEnd<DateTimePeriod, ClassAction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1332,9 +1494,19 @@ public class DateTimePeriod {
 			definition = "Class action for which a claim period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ClassAction.mmClaimPeriod;
+			opposite_lazy = () -> ClassAction.mmClaimPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
+			type_lazy = () -> ClassAction.mmObject();
+		}
+
+		@Override
+		public ClassAction getValue(DateTimePeriod obj) {
+			return obj.getClassAction();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, ClassAction value) {
+			obj.setClassAction(value);
 		}
 	};
 	protected SuspensionPeriod bookEntryTransferSuspensionRelatedEvent;
@@ -1373,7 +1545,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBookEntryTransferSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmBookEntryTransferSuspensionRelatedEvent = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1382,9 +1554,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a suspension period for book entry transfers is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForBookEntryTransfer;
+			opposite_lazy = () -> SuspensionPeriod.mmDepositorySuspensionPeriodForBookEntryTransfer;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getBookEntryTransferSuspensionRelatedEvent();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setBookEntryTransferSuspensionRelatedEvent(value);
 		}
 	};
 	protected SuspensionPeriod depositAtAgentSuspensionRelatedEvent;
@@ -1423,7 +1605,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDepositAtAgentSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmDepositAtAgentSuspensionRelatedEvent = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1432,9 +1614,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a suspension period for deposits at agent is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForDepositAtAgent;
+			opposite_lazy = () -> SuspensionPeriod.mmDepositorySuspensionPeriodForDepositAtAgent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getDepositAtAgentSuspensionRelatedEvent();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setDepositAtAgentSuspensionRelatedEvent(value);
 		}
 	};
 	protected SuspensionPeriod depositSuspensionRelatedEvent;
@@ -1473,7 +1665,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDepositSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmDepositSuspensionRelatedEvent = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1482,9 +1674,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a suspension period for deposits is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForDeposit;
+			opposite_lazy = () -> SuspensionPeriod.mmDepositorySuspensionPeriodForDeposit;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getDepositSuspensionRelatedEvent();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setDepositSuspensionRelatedEvent(value);
 		}
 	};
 	protected SuspensionPeriod pledgeSuspensionRelatedEvent;
@@ -1523,7 +1725,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPledgeSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmPledgeSuspensionRelatedEvent = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1532,9 +1734,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a suspension period for pledges is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForPledge;
+			opposite_lazy = () -> SuspensionPeriod.mmDepositorySuspensionPeriodForPledge;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getPledgeSuspensionRelatedEvent();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setPledgeSuspensionRelatedEvent(value);
 		}
 	};
 	protected SuspensionPeriod segregationPeriodRelatedEvent;
@@ -1573,7 +1785,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSegregationPeriodRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmSegregationPeriodRelatedEvent = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1582,9 +1794,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a suspension period for segregation is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForSegregation;
+			opposite_lazy = () -> SuspensionPeriod.mmDepositorySuspensionPeriodForSegregation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getSegregationPeriodRelatedEvent();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setSegregationPeriodRelatedEvent(value);
 		}
 	};
 	protected SuspensionPeriod withdrawalAtAgentSuspensionRelatedEvent;
@@ -1623,7 +1845,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmWithdrawalAtAgentSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmWithdrawalAtAgentSuspensionRelatedEvent = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1632,9 +1854,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a suspension period for withdrawals at agent is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalAtAgent;
+			opposite_lazy = () -> SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalAtAgent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getWithdrawalAtAgentSuspensionRelatedEvent();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setWithdrawalAtAgentSuspensionRelatedEvent(value);
 		}
 	};
 	protected SuspensionPeriod withdrawalInNomineeNameSuspensionRelatedEvent;
@@ -1673,7 +1905,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmWithdrawalInNomineeNameSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmWithdrawalInNomineeNameSuspensionRelatedEvent = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1682,9 +1914,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a suspension period for withdrawals in nominee name is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInNomineeName;
+			opposite_lazy = () -> SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInNomineeName;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getWithdrawalInNomineeNameSuspensionRelatedEvent();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setWithdrawalInNomineeNameSuspensionRelatedEvent(value);
 		}
 	};
 	protected SuspensionPeriod withdrawalInStreetNameSuspensionRelatedEvent;
@@ -1723,7 +1965,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmWithdrawalInStreetNameSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmWithdrawalInStreetNameSuspensionRelatedEvent = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1732,9 +1974,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a suspension period for withdrawals in street name is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInStreetName;
+			opposite_lazy = () -> SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInStreetName;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getWithdrawalInStreetNameSuspensionRelatedEvent();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setWithdrawalInStreetNameSuspensionRelatedEvent(value);
 		}
 	};
 	protected CorporateActionEvent bookClosureCorporateAction;
@@ -1773,7 +2025,7 @@ public class DateTimePeriod {
 	 * "Corporate action for which a book closure period has been specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBookClosureCorporateAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, CorporateActionEvent> mmBookClosureCorporateAction = new MMBusinessAssociationEnd<DateTimePeriod, CorporateActionEvent>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1782,9 +2034,19 @@ public class DateTimePeriod {
 			definition = "Corporate action for which a book closure period has been specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmBookClosurePeriod;
+			opposite_lazy = () -> CorporateActionEvent.mmBookClosurePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
+			type_lazy = () -> CorporateActionEvent.mmObject();
+		}
+
+		@Override
+		public CorporateActionEvent getValue(DateTimePeriod obj) {
+			return obj.getBookClosureCorporateAction();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, CorporateActionEvent value) {
+			obj.setBookClosureCorporateAction(value);
 		}
 	};
 	protected SuspensionPeriod coDepositoriesSuspensionRelatedEvent;
@@ -1823,7 +2085,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCoDepositoriesSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod> mmCoDepositoriesSuspensionRelatedEvent = new MMBusinessAssociationEnd<DateTimePeriod, SuspensionPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1832,9 +2094,19 @@ public class DateTimePeriod {
 			definition = "Corporate event for which a suspension period for co-depositories is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmCoDepositoriesSuspensionPeriod;
+			opposite_lazy = () -> SuspensionPeriod.mmCoDepositoriesSuspensionPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
+			type_lazy = () -> SuspensionPeriod.mmObject();
+		}
+
+		@Override
+		public SuspensionPeriod getValue(DateTimePeriod obj) {
+			return obj.getCoDepositoriesSuspensionRelatedEvent();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SuspensionPeriod value) {
+			obj.setCoDepositoriesSuspensionRelatedEvent(value);
 		}
 	};
 	protected Debt extendiblePeriodDebt;
@@ -1870,7 +2142,7 @@ public class DateTimePeriod {
 	 * definition} = "Debt for which an extendible period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmExtendiblePeriodDebt = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Debt> mmExtendiblePeriodDebt = new MMBusinessAssociationEnd<DateTimePeriod, Debt>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1879,9 +2151,19 @@ public class DateTimePeriod {
 			definition = "Debt for which an extendible period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Debt.mmExtendiblePeriod;
+			opposite_lazy = () -> Debt.mmExtendiblePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Debt.mmObject();
+			type_lazy = () -> Debt.mmObject();
+		}
+
+		@Override
+		public Debt getValue(DateTimePeriod obj) {
+			return obj.getExtendiblePeriodDebt();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Debt value) {
+			obj.setExtendiblePeriodDebt(value);
 		}
 	};
 	protected SecuritiesConversion securitiesConversion;
@@ -1921,7 +2203,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesConversion = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SecuritiesConversion> mmSecuritiesConversion = new MMBusinessAssociationEnd<DateTimePeriod, SecuritiesConversion>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1930,9 +2212,19 @@ public class DateTimePeriod {
 			definition = "Securities conversion process for which a conversion period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmConversionPeriod;
+			opposite_lazy = () -> SecuritiesConversion.mmConversionPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
+			type_lazy = () -> SecuritiesConversion.mmObject();
+		}
+
+		@Override
+		public SecuritiesConversion getValue(DateTimePeriod obj) {
+			return obj.getSecuritiesConversion();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SecuritiesConversion value) {
+			obj.setSecuritiesConversion(value);
 		}
 	};
 	protected YieldCalculation yieldCalculation;
@@ -1969,7 +2261,7 @@ public class DateTimePeriod {
 	 * definition} = "Yield calculation for which a value period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmYieldCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, YieldCalculation> mmYieldCalculation = new MMBusinessAssociationEnd<DateTimePeriod, YieldCalculation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -1978,9 +2270,19 @@ public class DateTimePeriod {
 			definition = "Yield calculation for which a value period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmValuePeriod;
+			opposite_lazy = () -> YieldCalculation.mmValuePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
+			type_lazy = () -> YieldCalculation.mmObject();
+		}
+
+		@Override
+		public YieldCalculation getValue(DateTimePeriod obj) {
+			return obj.getYieldCalculation();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, YieldCalculation value) {
+			obj.setYieldCalculation(value);
 		}
 	};
 	protected Debt customDateDebt;
@@ -2016,7 +2318,7 @@ public class DateTimePeriod {
 	 * definition} = "Debt for which a custom date is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCustomDateDebt = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Debt> mmCustomDateDebt = new MMBusinessAssociationEnd<DateTimePeriod, Debt>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2025,9 +2327,19 @@ public class DateTimePeriod {
 			definition = "Debt for which a custom date is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Debt.mmCustomDate;
+			opposite_lazy = () -> Debt.mmCustomDate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Debt.mmObject();
+			type_lazy = () -> Debt.mmObject();
+		}
+
+		@Override
+		public Debt getValue(DateTimePeriod obj) {
+			return obj.getCustomDateDebt();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Debt value) {
+			obj.setCustomDateDebt(value);
 		}
 	};
 	protected TaxPeriod taxPeriod;
@@ -2064,7 +2376,7 @@ public class DateTimePeriod {
 	 * definition} = "Tax period for which a from/to date is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTaxPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, TaxPeriod> mmTaxPeriod = new MMBusinessAssociationEnd<DateTimePeriod, TaxPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2073,9 +2385,19 @@ public class DateTimePeriod {
 			definition = "Tax period for which a from/to date is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmFromToDate;
+			opposite_lazy = () -> TaxPeriod.mmFromToDate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
+			type_lazy = () -> TaxPeriod.mmObject();
+		}
+
+		@Override
+		public TaxPeriod getValue(DateTimePeriod obj) {
+			return obj.getTaxPeriod();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, TaxPeriod value) {
+			obj.setTaxPeriod(value);
 		}
 	};
 	protected Account account;
@@ -2111,7 +2433,7 @@ public class DateTimePeriod {
 	 * definition} = "Account for which a reported period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Optional<Account>> mmAccount = new MMBusinessAssociationEnd<DateTimePeriod, Optional<Account>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2120,9 +2442,19 @@ public class DateTimePeriod {
 			definition = "Account for which a reported period is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmReportedPeriod;
+			opposite_lazy = () -> Account.mmReportedPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
+			type_lazy = () -> Account.mmObject();
+		}
+
+		@Override
+		public Optional<Account> getValue(DateTimePeriod obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Optional<Account> value) {
+			obj.setAccount(value.orElse(null));
 		}
 	};
 	protected Agreement relatedAgreement;
@@ -2159,7 +2491,7 @@ public class DateTimePeriod {
 	 * definition} = "Agreement for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedAgreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Agreement> mmRelatedAgreement = new MMBusinessAssociationEnd<DateTimePeriod, Agreement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2168,9 +2500,19 @@ public class DateTimePeriod {
 			definition = "Agreement for which a validity period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Agreement.mmValidityPeriod;
+			opposite_lazy = () -> Agreement.mmValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
+			type_lazy = () -> Agreement.mmObject();
+		}
+
+		@Override
+		public Agreement getValue(DateTimePeriod obj) {
+			return obj.getRelatedAgreement();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Agreement value) {
+			obj.setRelatedAgreement(value);
 		}
 	};
 	protected SecuritiesProceedsDefinition assentedLinePeriodProceedsDefinition;
@@ -2209,7 +2551,7 @@ public class DateTimePeriod {
 	 * "Securities proceeds for which an assented line period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssentedLinePeriodProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SecuritiesProceedsDefinition> mmAssentedLinePeriodProceedsDefinition = new MMBusinessAssociationEnd<DateTimePeriod, SecuritiesProceedsDefinition>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2218,9 +2560,19 @@ public class DateTimePeriod {
 			definition = "Securities proceeds for which an assented line period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmAssentedLinePeriod;
+			opposite_lazy = () -> SecuritiesProceedsDefinition.mmAssentedLinePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
+			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
+		}
+
+		@Override
+		public SecuritiesProceedsDefinition getValue(DateTimePeriod obj) {
+			return obj.getAssentedLinePeriodProceedsDefinition();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SecuritiesProceedsDefinition value) {
+			obj.setAssentedLinePeriodProceedsDefinition(value);
 		}
 	};
 	protected SecuritiesProceedsDefinition sellThruIssuerProceedsDefinition;
@@ -2259,7 +2611,7 @@ public class DateTimePeriod {
 	 * "Securities proceeds for which a sell thru issuer period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSellThruIssuerProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SecuritiesProceedsDefinition> mmSellThruIssuerProceedsDefinition = new MMBusinessAssociationEnd<DateTimePeriod, SecuritiesProceedsDefinition>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2268,9 +2620,19 @@ public class DateTimePeriod {
 			definition = "Securities proceeds for which a sell thru issuer period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmSellThruIssuerPeriod;
+			opposite_lazy = () -> SecuritiesProceedsDefinition.mmSellThruIssuerPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
+			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
+		}
+
+		@Override
+		public SecuritiesProceedsDefinition getValue(DateTimePeriod obj) {
+			return obj.getSellThruIssuerProceedsDefinition();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SecuritiesProceedsDefinition value) {
+			obj.setSellThruIssuerProceedsDefinition(value);
 		}
 	};
 	protected ProductDelivery relatedProductDelivery;
@@ -2308,7 +2670,7 @@ public class DateTimePeriod {
 	 * "Trade delivery process for which a delivery period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedProductDelivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, ProductDelivery> mmRelatedProductDelivery = new MMBusinessAssociationEnd<DateTimePeriod, ProductDelivery>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2317,9 +2679,19 @@ public class DateTimePeriod {
 			definition = "Trade delivery process for which a delivery period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmDeliveryPeriod;
+			opposite_lazy = () -> ProductDelivery.mmDeliveryPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
+			type_lazy = () -> ProductDelivery.mmObject();
+		}
+
+		@Override
+		public ProductDelivery getValue(DateTimePeriod obj) {
+			return obj.getRelatedProductDelivery();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, ProductDelivery value) {
+			obj.setRelatedProductDelivery(value);
 		}
 	};
 	protected Invoice relatedInvoice;
@@ -2355,7 +2727,7 @@ public class DateTimePeriod {
 	 * definition} = "Invoice for which a period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInvoice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Invoice> mmRelatedInvoice = new MMBusinessAssociationEnd<DateTimePeriod, Invoice>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2364,9 +2736,19 @@ public class DateTimePeriod {
 			definition = "Invoice for which a period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Invoice.mmPeriodCovered;
+			opposite_lazy = () -> Invoice.mmPeriodCovered;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
+			type_lazy = () -> Invoice.mmObject();
+		}
+
+		@Override
+		public Invoice getValue(DateTimePeriod obj) {
+			return obj.getRelatedInvoice();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Invoice value) {
+			obj.setRelatedInvoice(value);
 		}
 	};
 	protected TradeCertificate tradeCertificate;
@@ -2404,7 +2786,7 @@ public class DateTimePeriod {
 	 * "Trade certificate for which an inspection date is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradeCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, TradeCertificate> mmTradeCertificate = new MMBusinessAssociationEnd<DateTimePeriod, TradeCertificate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2413,9 +2795,19 @@ public class DateTimePeriod {
 			definition = "Trade certificate for which an inspection date is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmInspectionDate;
+			opposite_lazy = () -> TradeCertificate.mmInspectionDate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
+			type_lazy = () -> TradeCertificate.mmObject();
+		}
+
+		@Override
+		public TradeCertificate getValue(DateTimePeriod obj) {
+			return obj.getTradeCertificate();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, TradeCertificate value) {
+			obj.setTradeCertificate(value);
 		}
 	};
 	protected PortfolioValuation relatedPortfolioValuation;
@@ -2453,7 +2845,7 @@ public class DateTimePeriod {
 	 * "Portfolio valuation process for which a valuation period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPortfolioValuation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Optional<PortfolioValuation>> mmRelatedPortfolioValuation = new MMBusinessAssociationEnd<DateTimePeriod, Optional<PortfolioValuation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2462,9 +2854,19 @@ public class DateTimePeriod {
 			definition = "Portfolio valuation process for which a valuation period is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmValuationPeriod;
+			opposite_lazy = () -> PortfolioValuation.mmValuationPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
+			type_lazy = () -> PortfolioValuation.mmObject();
+		}
+
+		@Override
+		public Optional<PortfolioValuation> getValue(DateTimePeriod obj) {
+			return obj.getRelatedPortfolioValuation();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Optional<PortfolioValuation> value) {
+			obj.setRelatedPortfolioValuation(value.orElse(null));
 		}
 	};
 	protected System system;
@@ -2500,7 +2902,7 @@ public class DateTimePeriod {
 	 * definition} = "System for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, System> mmSystem = new MMBusinessAssociationEnd<DateTimePeriod, System>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2509,9 +2911,19 @@ public class DateTimePeriod {
 			definition = "System for which a validity period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.System.mmVersionValidityPeriod;
+			opposite_lazy = () -> System.mmVersionValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
+			type_lazy = () -> System.mmObject();
+		}
+
+		@Override
+		public System getValue(DateTimePeriod obj) {
+			return obj.getSystem();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, System value) {
+			obj.setSystem(value);
 		}
 	};
 	protected AccountRestriction accountRestriction;
@@ -2549,7 +2961,7 @@ public class DateTimePeriod {
 	 * "Account restriction for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccountRestriction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, AccountRestriction> mmAccountRestriction = new MMBusinessAssociationEnd<DateTimePeriod, AccountRestriction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2558,9 +2970,19 @@ public class DateTimePeriod {
 			definition = "Account restriction for which a validity period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmValidityPeriod;
+			opposite_lazy = () -> AccountRestriction.mmValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmObject();
+			type_lazy = () -> AccountRestriction.mmObject();
+		}
+
+		@Override
+		public AccountRestriction getValue(DateTimePeriod obj) {
+			return obj.getAccountRestriction();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, AccountRestriction value) {
+			obj.setAccountRestriction(value);
 		}
 	};
 	protected BankOperation bankOperation;
@@ -2598,7 +3020,7 @@ public class DateTimePeriod {
 	 * "Bank operation for which an applicable period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBankOperation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Optional<BankOperation>> mmBankOperation = new MMBusinessAssociationEnd<DateTimePeriod, Optional<BankOperation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2607,9 +3029,19 @@ public class DateTimePeriod {
 			definition = "Bank operation for which an applicable period is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BankOperation.mmApplicablePeriod;
+			opposite_lazy = () -> BankOperation.mmApplicablePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
+			type_lazy = () -> BankOperation.mmObject();
+		}
+
+		@Override
+		public Optional<BankOperation> getValue(DateTimePeriod obj) {
+			return obj.getBankOperation();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Optional<BankOperation> value) {
+			obj.setBankOperation(value.orElse(null));
 		}
 	};
 	protected CorporateActionEvent relatedCorporateAction;
@@ -2648,7 +3080,7 @@ public class DateTimePeriod {
 	 * "Corporate action event for which a trading period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCorporateAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, CorporateActionEvent> mmRelatedCorporateAction = new MMBusinessAssociationEnd<DateTimePeriod, CorporateActionEvent>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2657,12 +3089,22 @@ public class DateTimePeriod {
 			definition = "Corporate action event for which a trading period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmTradingPeriod;
+			opposite_lazy = () -> CorporateActionEvent.mmTradingPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
+			type_lazy = () -> CorporateActionEvent.mmObject();
+		}
+
+		@Override
+		public CorporateActionEvent getValue(DateTimePeriod obj) {
+			return obj.getRelatedCorporateAction();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, CorporateActionEvent value) {
+			obj.setRelatedCorporateAction(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Limit> relatedLimit;
+	protected List<Limit> relatedLimit;
 	/**
 	 * 
 	 <p>
@@ -2695,7 +3137,7 @@ public class DateTimePeriod {
 	 * definition} = "Limit for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedLimit = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, List<Limit>> mmRelatedLimit = new MMBusinessAssociationEnd<DateTimePeriod, List<Limit>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2703,12 +3145,22 @@ public class DateTimePeriod {
 			name = "RelatedLimit";
 			definition = "Limit for which a validity period is specified.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Limit.mmValidityPeriod;
+			opposite_lazy = () -> Limit.mmValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
+			type_lazy = () -> Limit.mmObject();
+		}
+
+		@Override
+		public List<Limit> getValue(DateTimePeriod obj) {
+			return obj.getRelatedLimit();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, List<Limit> value) {
+			obj.setRelatedLimit(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.PartyIdentificationInformation> relatedIdentification;
+	protected List<PartyIdentificationInformation> relatedIdentification;
 	/**
 	 * 
 	 <p>
@@ -2744,7 +3196,7 @@ public class DateTimePeriod {
 	 * "Party identification for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, List<PartyIdentificationInformation>> mmRelatedIdentification = new MMBusinessAssociationEnd<DateTimePeriod, List<PartyIdentificationInformation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2752,9 +3204,19 @@ public class DateTimePeriod {
 			name = "RelatedIdentification";
 			definition = "Party identification for which a validity period is specified.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmValidityPeriod;
+			opposite_lazy = () -> PartyIdentificationInformation.mmValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
+			type_lazy = () -> PartyIdentificationInformation.mmObject();
+		}
+
+		@Override
+		public List<PartyIdentificationInformation> getValue(DateTimePeriod obj) {
+			return obj.getRelatedIdentification();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, List<PartyIdentificationInformation> value) {
+			obj.setRelatedIdentification(value);
 		}
 	};
 	protected Scheme assessmentValidityScheme;
@@ -2790,7 +3252,7 @@ public class DateTimePeriod {
 	 * definition} = "Scheme for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssessmentValidityScheme = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Scheme> mmAssessmentValidityScheme = new MMBusinessAssociationEnd<DateTimePeriod, Scheme>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2799,9 +3261,19 @@ public class DateTimePeriod {
 			definition = "Scheme for which a validity period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Scheme.mmAssessmentValidityPeriod;
+			opposite_lazy = () -> Scheme.mmAssessmentValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
+			type_lazy = () -> Scheme.mmObject();
+		}
+
+		@Override
+		public Scheme getValue(DateTimePeriod obj) {
+			return obj.getAssessmentValidityScheme();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Scheme value) {
+			obj.setAssessmentValidityScheme(value);
 		}
 	};
 	protected Distribution exercisePeriodDistribution;
@@ -2840,7 +3312,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmExercisePeriodDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Distribution> mmExercisePeriodDistribution = new MMBusinessAssociationEnd<DateTimePeriod, Distribution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2849,9 +3321,19 @@ public class DateTimePeriod {
 			definition = "Cash and securities distribution information for which an exercise period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmExercisePeriod;
+			opposite_lazy = () -> Distribution.mmExercisePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
+			type_lazy = () -> Distribution.mmObject();
+		}
+
+		@Override
+		public Distribution getValue(DateTimePeriod obj) {
+			return obj.getExercisePeriodDistribution();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Distribution value) {
+			obj.setExercisePeriodDistribution(value);
 		}
 	};
 	protected Distribution offerPeriodDistribution;
@@ -2890,7 +3372,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOfferPeriodDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Distribution> mmOfferPeriodDistribution = new MMBusinessAssociationEnd<DateTimePeriod, Distribution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2899,9 +3381,19 @@ public class DateTimePeriod {
 			definition = "Cash and securities distribution information for which an offer period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmOfferPeriod;
+			opposite_lazy = () -> Distribution.mmOfferPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
+			type_lazy = () -> Distribution.mmObject();
+		}
+
+		@Override
+		public Distribution getValue(DateTimePeriod obj) {
+			return obj.getOfferPeriodDistribution();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Distribution value) {
+			obj.setOfferPeriodDistribution(value);
 		}
 	};
 	protected Distribution tradingPeriodDistribution;
@@ -2940,7 +3432,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradingPeriodDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Distribution> mmTradingPeriodDistribution = new MMBusinessAssociationEnd<DateTimePeriod, Distribution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2949,9 +3441,19 @@ public class DateTimePeriod {
 			definition = "Cash and securities distribution information for which a trading period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmTradingPeriod;
+			opposite_lazy = () -> Distribution.mmTradingPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
+			type_lazy = () -> Distribution.mmObject();
+		}
+
+		@Override
+		public Distribution getValue(DateTimePeriod obj) {
+			return obj.getTradingPeriodDistribution();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Distribution value) {
+			obj.setTradingPeriodDistribution(value);
 		}
 	};
 	protected Distribution blockingPeriodDistribution;
@@ -2990,7 +3492,7 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBlockingPeriodDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Distribution> mmBlockingPeriodDistribution = new MMBusinessAssociationEnd<DateTimePeriod, Distribution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -2999,9 +3501,19 @@ public class DateTimePeriod {
 			definition = "Cash and securities distribution information for which a blocking period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmBlockingPeriod;
+			opposite_lazy = () -> Distribution.mmBlockingPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
+			type_lazy = () -> Distribution.mmObject();
+		}
+
+		@Override
+		public Distribution getValue(DateTimePeriod obj) {
+			return obj.getBlockingPeriodDistribution();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Distribution value) {
+			obj.setBlockingPeriodDistribution(value);
 		}
 	};
 	protected Guarantee guarantee;
@@ -3038,7 +3550,7 @@ public class DateTimePeriod {
 	 * definition} = "Guarantee for which an effective period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGuarantee = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Guarantee> mmGuarantee = new MMBusinessAssociationEnd<DateTimePeriod, Guarantee>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3047,9 +3559,19 @@ public class DateTimePeriod {
 			definition = "Guarantee for which an effective period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Guarantee.mmEffectivePeriod;
+			opposite_lazy = () -> Guarantee.mmEffectivePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
+			type_lazy = () -> Guarantee.mmObject();
+		}
+
+		@Override
+		public Guarantee getValue(DateTimePeriod obj) {
+			return obj.getGuarantee();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Guarantee value) {
+			obj.setGuarantee(value);
 		}
 	};
 	protected SecuritiesPricing priceFactRelatedPricing;
@@ -3087,7 +3609,7 @@ public class DateTimePeriod {
 	 * "Securities pricing for which a price fact period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPriceFactRelatedPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SecuritiesPricing> mmPriceFactRelatedPricing = new MMBusinessAssociationEnd<DateTimePeriod, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3096,9 +3618,19 @@ public class DateTimePeriod {
 			definition = "Securities pricing for which a price fact period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmPriceFactPeriod;
+			opposite_lazy = () -> SecuritiesPricing.mmPriceFactPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(DateTimePeriod obj) {
+			return obj.getPriceFactRelatedPricing();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SecuritiesPricing value) {
+			obj.setPriceFactRelatedPricing(value);
 		}
 	};
 	protected Distribution cashDistribution;
@@ -3136,7 +3668,7 @@ public class DateTimePeriod {
 	 * "Cash distribution for which an interest period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Distribution> mmCashDistribution = new MMBusinessAssociationEnd<DateTimePeriod, Distribution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3145,9 +3677,19 @@ public class DateTimePeriod {
 			definition = "Cash distribution for which an interest period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmInterestPeriod;
+			opposite_lazy = () -> Distribution.mmInterestPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
+			type_lazy = () -> Distribution.mmObject();
+		}
+
+		@Override
+		public Distribution getValue(DateTimePeriod obj) {
+			return obj.getCashDistribution();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Distribution value) {
+			obj.setCashDistribution(value);
 		}
 	};
 	protected ComponentSecurity componentSecurity;
@@ -3185,7 +3727,7 @@ public class DateTimePeriod {
 	 * "Security component for which a separation period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmComponentSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, ComponentSecurity> mmComponentSecurity = new MMBusinessAssociationEnd<DateTimePeriod, ComponentSecurity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3194,9 +3736,19 @@ public class DateTimePeriod {
 			definition = "Security component for which a separation period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmSeparationPeriod;
+			opposite_lazy = () -> ComponentSecurity.mmSeparationPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
+			type_lazy = () -> ComponentSecurity.mmObject();
+		}
+
+		@Override
+		public ComponentSecurity getValue(DateTimePeriod obj) {
+			return obj.getComponentSecurity();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, ComponentSecurity value) {
+			obj.setComponentSecurity(value);
 		}
 	};
 	protected TradingSession tradingSession;
@@ -3233,7 +3785,7 @@ public class DateTimePeriod {
 	 * definition} = "Trading session for which a time bracket is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradingSession = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, TradingSession> mmTradingSession = new MMBusinessAssociationEnd<DateTimePeriod, TradingSession>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3242,9 +3794,19 @@ public class DateTimePeriod {
 			definition = "Trading session for which a time bracket is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingSession.mmTimeBracket;
+			opposite_lazy = () -> TradingSession.mmTimeBracket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
+			type_lazy = () -> TradingSession.mmObject();
+		}
+
+		@Override
+		public TradingSession getValue(DateTimePeriod obj) {
+			return obj.getTradingSession();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, TradingSession value) {
+			obj.setTradingSession(value);
 		}
 	};
 	protected FinancialInstrumentSwap financialInstrumentSwap;
@@ -3282,7 +3844,7 @@ public class DateTimePeriod {
 	 * definition} = "Swap for which a maturity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFinancialInstrumentSwap = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, FinancialInstrumentSwap> mmFinancialInstrumentSwap = new MMBusinessAssociationEnd<DateTimePeriod, FinancialInstrumentSwap>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3291,9 +3853,19 @@ public class DateTimePeriod {
 			definition = "Swap for which a maturity period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmMaturity;
+			opposite_lazy = () -> FinancialInstrumentSwap.mmMaturity;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
+			type_lazy = () -> FinancialInstrumentSwap.mmObject();
+		}
+
+		@Override
+		public FinancialInstrumentSwap getValue(DateTimePeriod obj) {
+			return obj.getFinancialInstrumentSwap();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, FinancialInstrumentSwap value) {
+			obj.setFinancialInstrumentSwap(value);
 		}
 	};
 	protected PostalAddress relatedPostalAddress;
@@ -3330,7 +3902,7 @@ public class DateTimePeriod {
 	 * definition} = "Postal address for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPostalAddress = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, PostalAddress> mmRelatedPostalAddress = new MMBusinessAssociationEnd<DateTimePeriod, PostalAddress>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3339,9 +3911,19 @@ public class DateTimePeriod {
 			definition = "Postal address for which a validity period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmValidityPeriod;
+			opposite_lazy = () -> PostalAddress.mmValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
+			type_lazy = () -> PostalAddress.mmObject();
+		}
+
+		@Override
+		public PostalAddress getValue(DateTimePeriod obj) {
+			return obj.getRelatedPostalAddress();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, PostalAddress value) {
+			obj.setRelatedPostalAddress(value);
 		}
 	};
 	protected RedemptionSchedule redemptionSchedule;
@@ -3379,7 +3961,7 @@ public class DateTimePeriod {
 	 * "Redemption schedule for which a notice period is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRedemptionSchedule = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, RedemptionSchedule> mmRedemptionSchedule = new MMBusinessAssociationEnd<DateTimePeriod, RedemptionSchedule>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3388,9 +3970,19 @@ public class DateTimePeriod {
 			definition = "Redemption schedule for which a notice period is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmEffectivePeriod;
+			opposite_lazy = () -> RedemptionSchedule.mmEffectivePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
+			type_lazy = () -> RedemptionSchedule.mmObject();
+		}
+
+		@Override
+		public RedemptionSchedule getValue(DateTimePeriod obj) {
+			return obj.getRedemptionSchedule();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, RedemptionSchedule value) {
+			obj.setRedemptionSchedule(value);
 		}
 	};
 	protected AccountLink relatedAccountLink;
@@ -3428,7 +4020,7 @@ public class DateTimePeriod {
 	 * "Link between two accounts for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedAccountLink = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, AccountLink> mmRelatedAccountLink = new MMBusinessAssociationEnd<DateTimePeriod, AccountLink>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3437,9 +4029,19 @@ public class DateTimePeriod {
 			definition = "Link between two accounts for which a validity period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountLink.mmValidityPeriod;
+			opposite_lazy = () -> AccountLink.mmValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AccountLink.mmObject();
+			type_lazy = () -> AccountLink.mmObject();
+		}
+
+		@Override
+		public AccountLink getValue(DateTimePeriod obj) {
+			return obj.getRelatedAccountLink();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, AccountLink value) {
+			obj.setRelatedAccountLink(value);
 		}
 	};
 	protected Adjustment relatedAdjustment;
@@ -3476,7 +4078,7 @@ public class DateTimePeriod {
 	 * definition} = "Adjustment for which a validity period is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedAdjustment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Adjustment> mmRelatedAdjustment = new MMBusinessAssociationEnd<DateTimePeriod, Adjustment>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3485,9 +4087,19 @@ public class DateTimePeriod {
 			definition = "Adjustment for which a validity period is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Adjustment.mmEffectivePeriod;
+			opposite_lazy = () -> Adjustment.mmEffectivePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
+			type_lazy = () -> Adjustment.mmObject();
+		}
+
+		@Override
+		public Adjustment getValue(DateTimePeriod obj) {
+			return obj.getRelatedAdjustment();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Adjustment value) {
+			obj.setRelatedAdjustment(value);
 		}
 	};
 	protected SecuritiesIdentification relatedSecuritiesIdentification;
@@ -3526,7 +4138,7 @@ public class DateTimePeriod {
 	 * "Securities identification for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecuritiesIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SecuritiesIdentification> mmRelatedSecuritiesIdentification = new MMBusinessAssociationEnd<DateTimePeriod, SecuritiesIdentification>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3535,12 +4147,22 @@ public class DateTimePeriod {
 			definition = "Securities identification for which a validity period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmValidityPeriod;
+			opposite_lazy = () -> SecuritiesIdentification.mmValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			type_lazy = () -> SecuritiesIdentification.mmObject();
+		}
+
+		@Override
+		public SecuritiesIdentification getValue(DateTimePeriod obj) {
+			return obj.getRelatedSecuritiesIdentification();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SecuritiesIdentification value) {
+			obj.setRelatedSecuritiesIdentification(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.StandingSettlementInstruction> relatedStandingSettlementInstruction;
+	protected List<StandingSettlementInstruction> relatedStandingSettlementInstruction;
 	/**
 	 * 
 	 <p>
@@ -3575,7 +4197,7 @@ public class DateTimePeriod {
 	 * definition} = "SSI for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedStandingSettlementInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, List<StandingSettlementInstruction>> mmRelatedStandingSettlementInstruction = new MMBusinessAssociationEnd<DateTimePeriod, List<StandingSettlementInstruction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3583,9 +4205,19 @@ public class DateTimePeriod {
 			name = "RelatedStandingSettlementInstruction";
 			definition = "SSI for which a validity period is specified.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmValidityPeriod;
+			opposite_lazy = () -> StandingSettlementInstruction.mmValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
+			type_lazy = () -> StandingSettlementInstruction.mmObject();
+		}
+
+		@Override
+		public List<StandingSettlementInstruction> getValue(DateTimePeriod obj) {
+			return obj.getRelatedStandingSettlementInstruction();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, List<StandingSettlementInstruction> value) {
+			obj.setRelatedStandingSettlementInstruction(value);
 		}
 	};
 	protected BasicSecuritiesRegistration relatedSecuritiesRegistration;
@@ -3624,7 +4256,7 @@ public class DateTimePeriod {
 	 * "Securities registration process for which a split period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecuritiesRegistration = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, BasicSecuritiesRegistration> mmRelatedSecuritiesRegistration = new MMBusinessAssociationEnd<DateTimePeriod, BasicSecuritiesRegistration>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3633,9 +4265,19 @@ public class DateTimePeriod {
 			definition = "Securities registration process for which a split period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSplitPeriod;
+			opposite_lazy = () -> BasicSecuritiesRegistration.mmSplitPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
+			type_lazy = () -> BasicSecuritiesRegistration.mmObject();
+		}
+
+		@Override
+		public BasicSecuritiesRegistration getValue(DateTimePeriod obj) {
+			return obj.getRelatedSecuritiesRegistration();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, BasicSecuritiesRegistration value) {
+			obj.setRelatedSecuritiesRegistration(value);
 		}
 	};
 	protected AmountAndPeriod amount;
@@ -3672,7 +4314,7 @@ public class DateTimePeriod {
 	 * definition} = "Relationship with an amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAmount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, AmountAndPeriod> mmAmount = new MMBusinessAssociationEnd<DateTimePeriod, AmountAndPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3681,12 +4323,22 @@ public class DateTimePeriod {
 			definition = "Relationship with an amount.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.mmPeriod;
+			opposite_lazy = () -> AmountAndPeriod.mmPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.mmObject();
+			type_lazy = () -> AmountAndPeriod.mmObject();
+		}
+
+		@Override
+		public AmountAndPeriod getValue(DateTimePeriod obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, AmountAndPeriod value) {
+			obj.setAmount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.InvestmentPlan> relatedInvestmentPlan;
+	protected List<InvestmentPlan> relatedInvestmentPlan;
 	/**
 	 * 
 	 <p>
@@ -3721,7 +4373,7 @@ public class DateTimePeriod {
 	 * "InvestmentPlan for which an investment period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInvestmentPlan = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, List<InvestmentPlan>> mmRelatedInvestmentPlan = new MMBusinessAssociationEnd<DateTimePeriod, List<InvestmentPlan>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3729,9 +4381,19 @@ public class DateTimePeriod {
 			name = "RelatedInvestmentPlan";
 			definition = "InvestmentPlan for which an investment period is specified.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmInvestmentPeriod;
+			opposite_lazy = () -> InvestmentPlan.mmInvestmentPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
+			type_lazy = () -> InvestmentPlan.mmObject();
+		}
+
+		@Override
+		public List<InvestmentPlan> getValue(DateTimePeriod obj) {
+			return obj.getRelatedInvestmentPlan();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, List<InvestmentPlan> value) {
+			obj.setRelatedInvestmentPlan(value);
 		}
 	};
 	protected Issuance issuance;
@@ -3767,7 +4429,7 @@ public class DateTimePeriod {
 	 * definition} = "Issuance for which subscription information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, Issuance> mmIssuance = new MMBusinessAssociationEnd<DateTimePeriod, Issuance>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3776,9 +4438,19 @@ public class DateTimePeriod {
 			definition = "Issuance for which subscription information is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Issuance.mmSubscriptionPeriod;
+			opposite_lazy = () -> Issuance.mmSubscriptionPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
+			type_lazy = () -> Issuance.mmObject();
+		}
+
+		@Override
+		public Issuance getValue(DateTimePeriod obj) {
+			return obj.getIssuance();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, Issuance value) {
+			obj.setIssuance(value);
 		}
 	};
 	protected PaymentTerms relatedPaymentTerms;
@@ -3815,7 +4487,7 @@ public class DateTimePeriod {
 	 * definition} = "Payment terms for which a period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPaymentTerms = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, PaymentTerms> mmRelatedPaymentTerms = new MMBusinessAssociationEnd<DateTimePeriod, PaymentTerms>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3824,9 +4496,19 @@ public class DateTimePeriod {
 			definition = "Payment terms for which a period is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmPaymentPeriod;
+			opposite_lazy = () -> PaymentTerms.mmPaymentPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
+			type_lazy = () -> PaymentTerms.mmObject();
+		}
+
+		@Override
+		public PaymentTerms getValue(DateTimePeriod obj) {
+			return obj.getRelatedPaymentTerms();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, PaymentTerms value) {
+			obj.setRelatedPaymentTerms(value);
 		}
 	};
 	protected PercentageAndPeriod percentage;
@@ -3863,7 +4545,7 @@ public class DateTimePeriod {
 	 * definition} = "Relationship with a percentage."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPercentage = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, PercentageAndPeriod> mmPercentage = new MMBusinessAssociationEnd<DateTimePeriod, PercentageAndPeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3872,12 +4554,22 @@ public class DateTimePeriod {
 			definition = "Relationship with a percentage.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.mmPeriod;
+			opposite_lazy = () -> PercentageAndPeriod.mmPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.mmObject();
+			type_lazy = () -> PercentageAndPeriod.mmObject();
+		}
+
+		@Override
+		public PercentageAndPeriod getValue(DateTimePeriod obj) {
+			return obj.getPercentage();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, PercentageAndPeriod value) {
+			obj.setPercentage(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.RolePlayer> relatedRolePlayer;
+	protected List<RolePlayer> relatedRolePlayer;
 	/**
 	 * 
 	 <p>
@@ -3911,7 +4603,7 @@ public class DateTimePeriod {
 	 * definition} = "Role player for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedRolePlayer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, List<RolePlayer>> mmRelatedRolePlayer = new MMBusinessAssociationEnd<DateTimePeriod, List<RolePlayer>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3919,9 +4611,19 @@ public class DateTimePeriod {
 			name = "RelatedRolePlayer";
 			definition = "Role player for which a validity period is specified.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmValidityPeriod;
+			opposite_lazy = () -> RolePlayer.mmValidityPeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
+			type_lazy = () -> RolePlayer.mmObject();
+		}
+
+		@Override
+		public List<RolePlayer> getValue(DateTimePeriod obj) {
+			return obj.getRelatedRolePlayer();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, List<RolePlayer> value) {
+			obj.setRelatedRolePlayer(value);
 		}
 	};
 	protected SystemAvailability relatedSystemAvailability;
@@ -3959,7 +4661,7 @@ public class DateTimePeriod {
 	 * "System availability for which the closure period is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSystemAvailability = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DateTimePeriod, SystemAvailability> mmRelatedSystemAvailability = new MMBusinessAssociationEnd<DateTimePeriod, SystemAvailability>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
@@ -3968,9 +4670,19 @@ public class DateTimePeriod {
 			definition = "System availability for which the closure period is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmClosurePeriod;
+			opposite_lazy = () -> SystemAvailability.mmClosurePeriod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
+			type_lazy = () -> SystemAvailability.mmObject();
+		}
+
+		@Override
+		public SystemAvailability getValue(DateTimePeriod obj) {
+			return obj.getRelatedSystemAvailability();
+		}
+
+		@Override
+		public void setValue(DateTimePeriod obj, SystemAvailability value) {
+			obj.setRelatedSystemAvailability(value);
 		}
 	};
 
@@ -3981,33 +4693,21 @@ public class DateTimePeriod {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DateTimePeriod";
 				definition = "Time span defined by a start date and time, and an end date and time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesIdentification.mmValidityPeriod, com.tools20022.repository.entity.SecuritiesPricing.mmPriceCalculationPeriod,
-						com.tools20022.repository.entity.SecuritiesPricing.mmPriceFactPeriod, com.tools20022.repository.entity.RolePlayer.mmValidityPeriod, com.tools20022.repository.entity.PostalAddress.mmValidityPeriod,
-						com.tools20022.repository.entity.PartyIdentificationInformation.mmValidityPeriod, com.tools20022.repository.entity.Account.mmReportedPeriod, com.tools20022.repository.entity.RedemptionSchedule.mmEffectivePeriod,
-						com.tools20022.repository.entity.Scheme.mmAssessmentValidityPeriod, com.tools20022.repository.entity.Status.mmValidityTime, com.tools20022.repository.entity.Agreement.mmValidityPeriod,
-						com.tools20022.repository.entity.Adjustment.mmEffectivePeriod, com.tools20022.repository.entity.InvestmentPlan.mmInvestmentPeriod, com.tools20022.repository.entity.PaymentInstruction.mmProcessingValidityTime,
-						com.tools20022.repository.entity.System.mmVersionValidityPeriod, com.tools20022.repository.entity.Limit.mmValidityPeriod, com.tools20022.repository.entity.StandingOrder.mmValidityPeriod,
-						com.tools20022.repository.entity.ValuationStatistics.mmPeriod, com.tools20022.repository.entity.PerformanceFactors.mmAccumulationPeriod, com.tools20022.repository.entity.AccountRestriction.mmValidityPeriod,
-						com.tools20022.repository.entity.SystemAvailability.mmClosurePeriod, com.tools20022.repository.entity.InterestCalculation.mmInterestPeriod, com.tools20022.repository.entity.Debt.mmExtendiblePeriod,
-						com.tools20022.repository.entity.Debt.mmCustomDate, com.tools20022.repository.entity.Issuance.mmSubscriptionPeriod, com.tools20022.repository.entity.SecuritiesConversion.mmConversionPeriod,
-						com.tools20022.repository.entity.StandingSettlementInstruction.mmValidityPeriod, com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSplitPeriod,
-						com.tools20022.repository.entity.CorporateActionEvent.mmBookClosurePeriod, com.tools20022.repository.entity.CorporateActionEvent.mmTradingPeriod, com.tools20022.repository.entity.ClassAction.mmClaimPeriod,
-						com.tools20022.repository.entity.CorporateActionOption.mmActionPeriod, com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmParallelTradingPeriod,
-						com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmAssentedLinePeriod, com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmSellThruIssuerPeriod,
-						com.tools20022.repository.entity.BiddingConditions.mmCompulsoryPurchasePeriod, com.tools20022.repository.entity.SuspensionPeriod.mmPrivilegeSuspensionPeriod,
-						com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawal, com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForBookEntryTransfer,
-						com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForDepositAtAgent, com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForDeposit,
-						com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForPledge, com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForSegregation,
-						com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalAtAgent, com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInNomineeName,
-						com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInStreetName, com.tools20022.repository.entity.SuspensionPeriod.mmCoDepositoriesSuspensionPeriod,
-						com.tools20022.repository.entity.TradingSession.mmTimeBracket, com.tools20022.repository.entity.YieldCalculation.mmValuePeriod, com.tools20022.repository.entity.BankOperation.mmApplicablePeriod,
-						com.tools20022.repository.entity.Invoice.mmPeriodCovered, com.tools20022.repository.entity.TaxPeriod.mmFromToDate, com.tools20022.repository.entity.Distribution.mmExercisePeriod,
-						com.tools20022.repository.entity.Distribution.mmOfferPeriod, com.tools20022.repository.entity.Distribution.mmTradingPeriod, com.tools20022.repository.entity.Distribution.mmBlockingPeriod,
-						com.tools20022.repository.entity.Distribution.mmInterestPeriod, com.tools20022.repository.entity.ProductDelivery.mmDeliveryPeriod, com.tools20022.repository.entity.TradeCertificate.mmInspectionDate,
-						com.tools20022.repository.entity.Guarantee.mmEffectivePeriod, com.tools20022.repository.entity.PortfolioValuation.mmValuationPeriod, com.tools20022.repository.entity.AccountLink.mmValidityPeriod,
-						com.tools20022.repository.entity.ComponentSecurity.mmSeparationPeriod, com.tools20022.repository.entity.FinancialInstrumentSwap.mmMaturity, com.tools20022.repository.entity.AmountAndPeriod.mmPeriod,
-						com.tools20022.repository.entity.PaymentTerms.mmPaymentPeriod, com.tools20022.repository.entity.PercentageAndPeriod.mmPeriod);
-				derivationElement_lazy = () -> Arrays.asList(ReportingRequest3.mmReportingPeriod, Period4Choice.mmDate, Period4Choice.mmFromDateToDate);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesIdentification.mmValidityPeriod, SecuritiesPricing.mmPriceCalculationPeriod, SecuritiesPricing.mmPriceFactPeriod, RolePlayer.mmValidityPeriod,
+						PostalAddress.mmValidityPeriod, PartyIdentificationInformation.mmValidityPeriod, Account.mmReportedPeriod, RedemptionSchedule.mmEffectivePeriod, Scheme.mmAssessmentValidityPeriod, Status.mmValidityTime,
+						Agreement.mmValidityPeriod, Adjustment.mmEffectivePeriod, InvestmentPlan.mmInvestmentPeriod, PaymentInstruction.mmProcessingValidityTime, System.mmVersionValidityPeriod, Limit.mmValidityPeriod,
+						StandingOrder.mmValidityPeriod, ValuationStatistics.mmPeriod, PerformanceFactors.mmAccumulationPeriod, AccountRestriction.mmValidityPeriod, SystemAvailability.mmClosurePeriod, InterestCalculation.mmInterestPeriod,
+						Debt.mmExtendiblePeriod, Debt.mmCustomDate, Issuance.mmSubscriptionPeriod, SecuritiesConversion.mmConversionPeriod, StandingSettlementInstruction.mmValidityPeriod, BasicSecuritiesRegistration.mmSplitPeriod,
+						CorporateActionEvent.mmBookClosurePeriod, CorporateActionEvent.mmTradingPeriod, ClassAction.mmClaimPeriod, CorporateActionOption.mmActionPeriod, SecuritiesProceedsDefinition.mmParallelTradingPeriod,
+						SecuritiesProceedsDefinition.mmAssentedLinePeriod, SecuritiesProceedsDefinition.mmSellThruIssuerPeriod, BiddingConditions.mmCompulsoryPurchasePeriod, SuspensionPeriod.mmPrivilegeSuspensionPeriod,
+						SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawal, SuspensionPeriod.mmDepositorySuspensionPeriodForBookEntryTransfer, SuspensionPeriod.mmDepositorySuspensionPeriodForDepositAtAgent,
+						SuspensionPeriod.mmDepositorySuspensionPeriodForDeposit, SuspensionPeriod.mmDepositorySuspensionPeriodForPledge, SuspensionPeriod.mmDepositorySuspensionPeriodForSegregation,
+						SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalAtAgent, SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInNomineeName, SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInStreetName,
+						SuspensionPeriod.mmCoDepositoriesSuspensionPeriod, TradingSession.mmTimeBracket, YieldCalculation.mmValuePeriod, BankOperation.mmApplicablePeriod, Invoice.mmPeriodCovered, TaxPeriod.mmFromToDate,
+						Distribution.mmExercisePeriod, Distribution.mmOfferPeriod, Distribution.mmTradingPeriod, Distribution.mmBlockingPeriod, Distribution.mmInterestPeriod, ProductDelivery.mmDeliveryPeriod,
+						TradeCertificate.mmInspectionDate, Guarantee.mmEffectivePeriod, PortfolioValuation.mmValuationPeriod, AccountLink.mmValidityPeriod, ComponentSecurity.mmSeparationPeriod, FinancialInstrumentSwap.mmMaturity,
+						AmountAndPeriod.mmPeriod, PaymentTerms.mmPaymentPeriod, PercentageAndPeriod.mmPeriod);
+				derivationElement_lazy = () -> Arrays.asList(Period4Choice.mmDate, Period4Choice.mmFromDateToDate, ReportingRequest4.mmReportingPeriod);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmFromDateTime, com.tools20022.repository.entity.DateTimePeriod.mmToDateTime,
 						com.tools20022.repository.entity.DateTimePeriod.mmRelatedStandingOrder, com.tools20022.repository.entity.DateTimePeriod.mmPaymentInstruction, com.tools20022.repository.entity.DateTimePeriod.mmNumberOfDays,
 						com.tools20022.repository.entity.DateTimePeriod.mmValuationStatistics, com.tools20022.repository.entity.DateTimePeriod.mmPerformanceFactors, com.tools20022.repository.entity.DateTimePeriod.mmStatus,
@@ -4037,7 +4737,8 @@ public class DateTimePeriod {
 						com.tools20022.repository.entity.DateTimePeriod.mmRelatedSecuritiesRegistration, com.tools20022.repository.entity.DateTimePeriod.mmAmount, com.tools20022.repository.entity.DateTimePeriod.mmRelatedInvestmentPlan,
 						com.tools20022.repository.entity.DateTimePeriod.mmIssuance, com.tools20022.repository.entity.DateTimePeriod.mmRelatedPaymentTerms, com.tools20022.repository.entity.DateTimePeriod.mmPercentage,
 						com.tools20022.repository.entity.DateTimePeriod.mmRelatedRolePlayer, com.tools20022.repository.entity.DateTimePeriod.mmRelatedSystemAvailability);
-				derivationComponent_lazy = () -> Arrays.asList(DatePeriodDetails.mmObject(), DateTimePeriodDetails.mmObject(), Period2.mmObject(), DatePeriodDetails1.mmObject(), ReportingPeriod1.mmObject(), Period4Choice.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(DatePeriodDetails.mmObject(), DateTimePeriodDetails.mmObject(), Period2.mmObject(), DatePeriodDetails1.mmObject(), ReportingPeriod1.mmObject(), Period4Choice.mmObject(),
+						DateTimePeriod1.mmObject(), ReportingPeriod2.mmObject());
 			}
 
 			@Override
@@ -4070,7 +4771,7 @@ public class DateTimePeriod {
 		return relatedStandingOrder;
 	}
 
-	public DateTimePeriod setRelatedStandingOrder(com.tools20022.repository.entity.StandingOrder relatedStandingOrder) {
+	public DateTimePeriod setRelatedStandingOrder(StandingOrder relatedStandingOrder) {
 		this.relatedStandingOrder = Objects.requireNonNull(relatedStandingOrder);
 		return this;
 	}
@@ -4079,7 +4780,7 @@ public class DateTimePeriod {
 		return paymentInstruction;
 	}
 
-	public DateTimePeriod setPaymentInstruction(com.tools20022.repository.entity.PaymentInstruction paymentInstruction) {
+	public DateTimePeriod setPaymentInstruction(PaymentInstruction paymentInstruction) {
 		this.paymentInstruction = Objects.requireNonNull(paymentInstruction);
 		return this;
 	}
@@ -4097,7 +4798,7 @@ public class DateTimePeriod {
 		return valuationStatistics;
 	}
 
-	public DateTimePeriod setValuationStatistics(com.tools20022.repository.entity.ValuationStatistics valuationStatistics) {
+	public DateTimePeriod setValuationStatistics(ValuationStatistics valuationStatistics) {
 		this.valuationStatistics = Objects.requireNonNull(valuationStatistics);
 		return this;
 	}
@@ -4106,7 +4807,7 @@ public class DateTimePeriod {
 		return performanceFactors;
 	}
 
-	public DateTimePeriod setPerformanceFactors(com.tools20022.repository.entity.PerformanceFactors performanceFactors) {
+	public DateTimePeriod setPerformanceFactors(PerformanceFactors performanceFactors) {
 		this.performanceFactors = Objects.requireNonNull(performanceFactors);
 		return this;
 	}
@@ -4115,7 +4816,7 @@ public class DateTimePeriod {
 		return status;
 	}
 
-	public DateTimePeriod setStatus(com.tools20022.repository.entity.Status status) {
+	public DateTimePeriod setStatus(Status status) {
 		this.status = Objects.requireNonNull(status);
 		return this;
 	}
@@ -4124,7 +4825,7 @@ public class DateTimePeriod {
 		return priceCalculationRelatedPricing;
 	}
 
-	public DateTimePeriod setPriceCalculationRelatedPricing(com.tools20022.repository.entity.SecuritiesPricing priceCalculationRelatedPricing) {
+	public DateTimePeriod setPriceCalculationRelatedPricing(SecuritiesPricing priceCalculationRelatedPricing) {
 		this.priceCalculationRelatedPricing = Objects.requireNonNull(priceCalculationRelatedPricing);
 		return this;
 	}
@@ -4133,7 +4834,7 @@ public class DateTimePeriod {
 		return corporateActionOption;
 	}
 
-	public DateTimePeriod setCorporateActionOption(com.tools20022.repository.entity.CorporateActionOption corporateActionOption) {
+	public DateTimePeriod setCorporateActionOption(CorporateActionOption corporateActionOption) {
 		this.corporateActionOption = Objects.requireNonNull(corporateActionOption);
 		return this;
 	}
@@ -4142,7 +4843,7 @@ public class DateTimePeriod {
 		return parallelTradingProceedsDefinition;
 	}
 
-	public DateTimePeriod setParallelTradingProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition parallelTradingProceedsDefinition) {
+	public DateTimePeriod setParallelTradingProceedsDefinition(SecuritiesProceedsDefinition parallelTradingProceedsDefinition) {
 		this.parallelTradingProceedsDefinition = Objects.requireNonNull(parallelTradingProceedsDefinition);
 		return this;
 	}
@@ -4151,7 +4852,7 @@ public class DateTimePeriod {
 		return privilegeSuspensionCorporateAction;
 	}
 
-	public DateTimePeriod setPrivilegeSuspensionCorporateAction(com.tools20022.repository.entity.SuspensionPeriod privilegeSuspensionCorporateAction) {
+	public DateTimePeriod setPrivilegeSuspensionCorporateAction(SuspensionPeriod privilegeSuspensionCorporateAction) {
 		this.privilegeSuspensionCorporateAction = Objects.requireNonNull(privilegeSuspensionCorporateAction);
 		return this;
 	}
@@ -4160,7 +4861,7 @@ public class DateTimePeriod {
 		return withdrawalSuspensionRelatedEvent;
 	}
 
-	public DateTimePeriod setWithdrawalSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalSuspensionRelatedEvent) {
+	public DateTimePeriod setWithdrawalSuspensionRelatedEvent(SuspensionPeriod withdrawalSuspensionRelatedEvent) {
 		this.withdrawalSuspensionRelatedEvent = Objects.requireNonNull(withdrawalSuspensionRelatedEvent);
 		return this;
 	}
@@ -4169,7 +4870,7 @@ public class DateTimePeriod {
 		return relatedInterestCalculation;
 	}
 
-	public DateTimePeriod setRelatedInterestCalculation(com.tools20022.repository.entity.InterestCalculation relatedInterestCalculation) {
+	public DateTimePeriod setRelatedInterestCalculation(InterestCalculation relatedInterestCalculation) {
 		this.relatedInterestCalculation = Objects.requireNonNull(relatedInterestCalculation);
 		return this;
 	}
@@ -4178,7 +4879,7 @@ public class DateTimePeriod {
 		return biddingConditions;
 	}
 
-	public DateTimePeriod setBiddingConditions(com.tools20022.repository.entity.BiddingConditions biddingConditions) {
+	public DateTimePeriod setBiddingConditions(BiddingConditions biddingConditions) {
 		this.biddingConditions = Objects.requireNonNull(biddingConditions);
 		return this;
 	}
@@ -4187,7 +4888,7 @@ public class DateTimePeriod {
 		return classAction;
 	}
 
-	public DateTimePeriod setClassAction(com.tools20022.repository.entity.ClassAction classAction) {
+	public DateTimePeriod setClassAction(ClassAction classAction) {
 		this.classAction = Objects.requireNonNull(classAction);
 		return this;
 	}
@@ -4196,7 +4897,7 @@ public class DateTimePeriod {
 		return bookEntryTransferSuspensionRelatedEvent;
 	}
 
-	public DateTimePeriod setBookEntryTransferSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod bookEntryTransferSuspensionRelatedEvent) {
+	public DateTimePeriod setBookEntryTransferSuspensionRelatedEvent(SuspensionPeriod bookEntryTransferSuspensionRelatedEvent) {
 		this.bookEntryTransferSuspensionRelatedEvent = Objects.requireNonNull(bookEntryTransferSuspensionRelatedEvent);
 		return this;
 	}
@@ -4205,7 +4906,7 @@ public class DateTimePeriod {
 		return depositAtAgentSuspensionRelatedEvent;
 	}
 
-	public DateTimePeriod setDepositAtAgentSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod depositAtAgentSuspensionRelatedEvent) {
+	public DateTimePeriod setDepositAtAgentSuspensionRelatedEvent(SuspensionPeriod depositAtAgentSuspensionRelatedEvent) {
 		this.depositAtAgentSuspensionRelatedEvent = Objects.requireNonNull(depositAtAgentSuspensionRelatedEvent);
 		return this;
 	}
@@ -4214,7 +4915,7 @@ public class DateTimePeriod {
 		return depositSuspensionRelatedEvent;
 	}
 
-	public DateTimePeriod setDepositSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod depositSuspensionRelatedEvent) {
+	public DateTimePeriod setDepositSuspensionRelatedEvent(SuspensionPeriod depositSuspensionRelatedEvent) {
 		this.depositSuspensionRelatedEvent = Objects.requireNonNull(depositSuspensionRelatedEvent);
 		return this;
 	}
@@ -4223,7 +4924,7 @@ public class DateTimePeriod {
 		return pledgeSuspensionRelatedEvent;
 	}
 
-	public DateTimePeriod setPledgeSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod pledgeSuspensionRelatedEvent) {
+	public DateTimePeriod setPledgeSuspensionRelatedEvent(SuspensionPeriod pledgeSuspensionRelatedEvent) {
 		this.pledgeSuspensionRelatedEvent = Objects.requireNonNull(pledgeSuspensionRelatedEvent);
 		return this;
 	}
@@ -4232,7 +4933,7 @@ public class DateTimePeriod {
 		return segregationPeriodRelatedEvent;
 	}
 
-	public DateTimePeriod setSegregationPeriodRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod segregationPeriodRelatedEvent) {
+	public DateTimePeriod setSegregationPeriodRelatedEvent(SuspensionPeriod segregationPeriodRelatedEvent) {
 		this.segregationPeriodRelatedEvent = Objects.requireNonNull(segregationPeriodRelatedEvent);
 		return this;
 	}
@@ -4241,7 +4942,7 @@ public class DateTimePeriod {
 		return withdrawalAtAgentSuspensionRelatedEvent;
 	}
 
-	public DateTimePeriod setWithdrawalAtAgentSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalAtAgentSuspensionRelatedEvent) {
+	public DateTimePeriod setWithdrawalAtAgentSuspensionRelatedEvent(SuspensionPeriod withdrawalAtAgentSuspensionRelatedEvent) {
 		this.withdrawalAtAgentSuspensionRelatedEvent = Objects.requireNonNull(withdrawalAtAgentSuspensionRelatedEvent);
 		return this;
 	}
@@ -4250,7 +4951,7 @@ public class DateTimePeriod {
 		return withdrawalInNomineeNameSuspensionRelatedEvent;
 	}
 
-	public DateTimePeriod setWithdrawalInNomineeNameSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalInNomineeNameSuspensionRelatedEvent) {
+	public DateTimePeriod setWithdrawalInNomineeNameSuspensionRelatedEvent(SuspensionPeriod withdrawalInNomineeNameSuspensionRelatedEvent) {
 		this.withdrawalInNomineeNameSuspensionRelatedEvent = Objects.requireNonNull(withdrawalInNomineeNameSuspensionRelatedEvent);
 		return this;
 	}
@@ -4259,7 +4960,7 @@ public class DateTimePeriod {
 		return withdrawalInStreetNameSuspensionRelatedEvent;
 	}
 
-	public DateTimePeriod setWithdrawalInStreetNameSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalInStreetNameSuspensionRelatedEvent) {
+	public DateTimePeriod setWithdrawalInStreetNameSuspensionRelatedEvent(SuspensionPeriod withdrawalInStreetNameSuspensionRelatedEvent) {
 		this.withdrawalInStreetNameSuspensionRelatedEvent = Objects.requireNonNull(withdrawalInStreetNameSuspensionRelatedEvent);
 		return this;
 	}
@@ -4268,7 +4969,7 @@ public class DateTimePeriod {
 		return bookClosureCorporateAction;
 	}
 
-	public DateTimePeriod setBookClosureCorporateAction(com.tools20022.repository.entity.CorporateActionEvent bookClosureCorporateAction) {
+	public DateTimePeriod setBookClosureCorporateAction(CorporateActionEvent bookClosureCorporateAction) {
 		this.bookClosureCorporateAction = Objects.requireNonNull(bookClosureCorporateAction);
 		return this;
 	}
@@ -4277,7 +4978,7 @@ public class DateTimePeriod {
 		return coDepositoriesSuspensionRelatedEvent;
 	}
 
-	public DateTimePeriod setCoDepositoriesSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod coDepositoriesSuspensionRelatedEvent) {
+	public DateTimePeriod setCoDepositoriesSuspensionRelatedEvent(SuspensionPeriod coDepositoriesSuspensionRelatedEvent) {
 		this.coDepositoriesSuspensionRelatedEvent = Objects.requireNonNull(coDepositoriesSuspensionRelatedEvent);
 		return this;
 	}
@@ -4286,7 +4987,7 @@ public class DateTimePeriod {
 		return extendiblePeriodDebt;
 	}
 
-	public DateTimePeriod setExtendiblePeriodDebt(com.tools20022.repository.entity.Debt extendiblePeriodDebt) {
+	public DateTimePeriod setExtendiblePeriodDebt(Debt extendiblePeriodDebt) {
 		this.extendiblePeriodDebt = Objects.requireNonNull(extendiblePeriodDebt);
 		return this;
 	}
@@ -4295,7 +4996,7 @@ public class DateTimePeriod {
 		return securitiesConversion;
 	}
 
-	public DateTimePeriod setSecuritiesConversion(com.tools20022.repository.entity.SecuritiesConversion securitiesConversion) {
+	public DateTimePeriod setSecuritiesConversion(SecuritiesConversion securitiesConversion) {
 		this.securitiesConversion = Objects.requireNonNull(securitiesConversion);
 		return this;
 	}
@@ -4304,7 +5005,7 @@ public class DateTimePeriod {
 		return yieldCalculation;
 	}
 
-	public DateTimePeriod setYieldCalculation(com.tools20022.repository.entity.YieldCalculation yieldCalculation) {
+	public DateTimePeriod setYieldCalculation(YieldCalculation yieldCalculation) {
 		this.yieldCalculation = Objects.requireNonNull(yieldCalculation);
 		return this;
 	}
@@ -4313,7 +5014,7 @@ public class DateTimePeriod {
 		return customDateDebt;
 	}
 
-	public DateTimePeriod setCustomDateDebt(com.tools20022.repository.entity.Debt customDateDebt) {
+	public DateTimePeriod setCustomDateDebt(Debt customDateDebt) {
 		this.customDateDebt = Objects.requireNonNull(customDateDebt);
 		return this;
 	}
@@ -4322,7 +5023,7 @@ public class DateTimePeriod {
 		return taxPeriod;
 	}
 
-	public DateTimePeriod setTaxPeriod(com.tools20022.repository.entity.TaxPeriod taxPeriod) {
+	public DateTimePeriod setTaxPeriod(TaxPeriod taxPeriod) {
 		this.taxPeriod = Objects.requireNonNull(taxPeriod);
 		return this;
 	}
@@ -4331,7 +5032,7 @@ public class DateTimePeriod {
 		return account == null ? Optional.empty() : Optional.of(account);
 	}
 
-	public DateTimePeriod setAccount(com.tools20022.repository.entity.Account account) {
+	public DateTimePeriod setAccount(Account account) {
 		this.account = account;
 		return this;
 	}
@@ -4340,7 +5041,7 @@ public class DateTimePeriod {
 		return relatedAgreement;
 	}
 
-	public DateTimePeriod setRelatedAgreement(com.tools20022.repository.entity.Agreement relatedAgreement) {
+	public DateTimePeriod setRelatedAgreement(Agreement relatedAgreement) {
 		this.relatedAgreement = Objects.requireNonNull(relatedAgreement);
 		return this;
 	}
@@ -4349,7 +5050,7 @@ public class DateTimePeriod {
 		return assentedLinePeriodProceedsDefinition;
 	}
 
-	public DateTimePeriod setAssentedLinePeriodProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition assentedLinePeriodProceedsDefinition) {
+	public DateTimePeriod setAssentedLinePeriodProceedsDefinition(SecuritiesProceedsDefinition assentedLinePeriodProceedsDefinition) {
 		this.assentedLinePeriodProceedsDefinition = Objects.requireNonNull(assentedLinePeriodProceedsDefinition);
 		return this;
 	}
@@ -4358,7 +5059,7 @@ public class DateTimePeriod {
 		return sellThruIssuerProceedsDefinition;
 	}
 
-	public DateTimePeriod setSellThruIssuerProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition sellThruIssuerProceedsDefinition) {
+	public DateTimePeriod setSellThruIssuerProceedsDefinition(SecuritiesProceedsDefinition sellThruIssuerProceedsDefinition) {
 		this.sellThruIssuerProceedsDefinition = Objects.requireNonNull(sellThruIssuerProceedsDefinition);
 		return this;
 	}
@@ -4367,7 +5068,7 @@ public class DateTimePeriod {
 		return relatedProductDelivery;
 	}
 
-	public DateTimePeriod setRelatedProductDelivery(com.tools20022.repository.entity.ProductDelivery relatedProductDelivery) {
+	public DateTimePeriod setRelatedProductDelivery(ProductDelivery relatedProductDelivery) {
 		this.relatedProductDelivery = Objects.requireNonNull(relatedProductDelivery);
 		return this;
 	}
@@ -4376,7 +5077,7 @@ public class DateTimePeriod {
 		return relatedInvoice;
 	}
 
-	public DateTimePeriod setRelatedInvoice(com.tools20022.repository.entity.Invoice relatedInvoice) {
+	public DateTimePeriod setRelatedInvoice(Invoice relatedInvoice) {
 		this.relatedInvoice = Objects.requireNonNull(relatedInvoice);
 		return this;
 	}
@@ -4385,7 +5086,7 @@ public class DateTimePeriod {
 		return tradeCertificate;
 	}
 
-	public DateTimePeriod setTradeCertificate(com.tools20022.repository.entity.TradeCertificate tradeCertificate) {
+	public DateTimePeriod setTradeCertificate(TradeCertificate tradeCertificate) {
 		this.tradeCertificate = Objects.requireNonNull(tradeCertificate);
 		return this;
 	}
@@ -4394,7 +5095,7 @@ public class DateTimePeriod {
 		return relatedPortfolioValuation == null ? Optional.empty() : Optional.of(relatedPortfolioValuation);
 	}
 
-	public DateTimePeriod setRelatedPortfolioValuation(com.tools20022.repository.entity.PortfolioValuation relatedPortfolioValuation) {
+	public DateTimePeriod setRelatedPortfolioValuation(PortfolioValuation relatedPortfolioValuation) {
 		this.relatedPortfolioValuation = relatedPortfolioValuation;
 		return this;
 	}
@@ -4403,7 +5104,7 @@ public class DateTimePeriod {
 		return system;
 	}
 
-	public DateTimePeriod setSystem(com.tools20022.repository.entity.System system) {
+	public DateTimePeriod setSystem(System system) {
 		this.system = Objects.requireNonNull(system);
 		return this;
 	}
@@ -4412,7 +5113,7 @@ public class DateTimePeriod {
 		return accountRestriction;
 	}
 
-	public DateTimePeriod setAccountRestriction(com.tools20022.repository.entity.AccountRestriction accountRestriction) {
+	public DateTimePeriod setAccountRestriction(AccountRestriction accountRestriction) {
 		this.accountRestriction = Objects.requireNonNull(accountRestriction);
 		return this;
 	}
@@ -4421,7 +5122,7 @@ public class DateTimePeriod {
 		return bankOperation == null ? Optional.empty() : Optional.of(bankOperation);
 	}
 
-	public DateTimePeriod setBankOperation(com.tools20022.repository.entity.BankOperation bankOperation) {
+	public DateTimePeriod setBankOperation(BankOperation bankOperation) {
 		this.bankOperation = bankOperation;
 		return this;
 	}
@@ -4430,7 +5131,7 @@ public class DateTimePeriod {
 		return relatedCorporateAction;
 	}
 
-	public DateTimePeriod setRelatedCorporateAction(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateAction) {
+	public DateTimePeriod setRelatedCorporateAction(CorporateActionEvent relatedCorporateAction) {
 		this.relatedCorporateAction = Objects.requireNonNull(relatedCorporateAction);
 		return this;
 	}
@@ -4439,7 +5140,7 @@ public class DateTimePeriod {
 		return relatedLimit == null ? relatedLimit = new ArrayList<>() : relatedLimit;
 	}
 
-	public DateTimePeriod setRelatedLimit(List<com.tools20022.repository.entity.Limit> relatedLimit) {
+	public DateTimePeriod setRelatedLimit(List<Limit> relatedLimit) {
 		this.relatedLimit = Objects.requireNonNull(relatedLimit);
 		return this;
 	}
@@ -4448,7 +5149,7 @@ public class DateTimePeriod {
 		return relatedIdentification == null ? relatedIdentification = new ArrayList<>() : relatedIdentification;
 	}
 
-	public DateTimePeriod setRelatedIdentification(List<com.tools20022.repository.entity.PartyIdentificationInformation> relatedIdentification) {
+	public DateTimePeriod setRelatedIdentification(List<PartyIdentificationInformation> relatedIdentification) {
 		this.relatedIdentification = Objects.requireNonNull(relatedIdentification);
 		return this;
 	}
@@ -4457,7 +5158,7 @@ public class DateTimePeriod {
 		return assessmentValidityScheme;
 	}
 
-	public DateTimePeriod setAssessmentValidityScheme(com.tools20022.repository.entity.Scheme assessmentValidityScheme) {
+	public DateTimePeriod setAssessmentValidityScheme(Scheme assessmentValidityScheme) {
 		this.assessmentValidityScheme = Objects.requireNonNull(assessmentValidityScheme);
 		return this;
 	}
@@ -4466,7 +5167,7 @@ public class DateTimePeriod {
 		return exercisePeriodDistribution;
 	}
 
-	public DateTimePeriod setExercisePeriodDistribution(com.tools20022.repository.entity.Distribution exercisePeriodDistribution) {
+	public DateTimePeriod setExercisePeriodDistribution(Distribution exercisePeriodDistribution) {
 		this.exercisePeriodDistribution = Objects.requireNonNull(exercisePeriodDistribution);
 		return this;
 	}
@@ -4475,7 +5176,7 @@ public class DateTimePeriod {
 		return offerPeriodDistribution;
 	}
 
-	public DateTimePeriod setOfferPeriodDistribution(com.tools20022.repository.entity.Distribution offerPeriodDistribution) {
+	public DateTimePeriod setOfferPeriodDistribution(Distribution offerPeriodDistribution) {
 		this.offerPeriodDistribution = Objects.requireNonNull(offerPeriodDistribution);
 		return this;
 	}
@@ -4484,7 +5185,7 @@ public class DateTimePeriod {
 		return tradingPeriodDistribution;
 	}
 
-	public DateTimePeriod setTradingPeriodDistribution(com.tools20022.repository.entity.Distribution tradingPeriodDistribution) {
+	public DateTimePeriod setTradingPeriodDistribution(Distribution tradingPeriodDistribution) {
 		this.tradingPeriodDistribution = Objects.requireNonNull(tradingPeriodDistribution);
 		return this;
 	}
@@ -4493,7 +5194,7 @@ public class DateTimePeriod {
 		return blockingPeriodDistribution;
 	}
 
-	public DateTimePeriod setBlockingPeriodDistribution(com.tools20022.repository.entity.Distribution blockingPeriodDistribution) {
+	public DateTimePeriod setBlockingPeriodDistribution(Distribution blockingPeriodDistribution) {
 		this.blockingPeriodDistribution = Objects.requireNonNull(blockingPeriodDistribution);
 		return this;
 	}
@@ -4502,7 +5203,7 @@ public class DateTimePeriod {
 		return guarantee;
 	}
 
-	public DateTimePeriod setGuarantee(com.tools20022.repository.entity.Guarantee guarantee) {
+	public DateTimePeriod setGuarantee(Guarantee guarantee) {
 		this.guarantee = Objects.requireNonNull(guarantee);
 		return this;
 	}
@@ -4511,7 +5212,7 @@ public class DateTimePeriod {
 		return priceFactRelatedPricing;
 	}
 
-	public DateTimePeriod setPriceFactRelatedPricing(com.tools20022.repository.entity.SecuritiesPricing priceFactRelatedPricing) {
+	public DateTimePeriod setPriceFactRelatedPricing(SecuritiesPricing priceFactRelatedPricing) {
 		this.priceFactRelatedPricing = Objects.requireNonNull(priceFactRelatedPricing);
 		return this;
 	}
@@ -4520,7 +5221,7 @@ public class DateTimePeriod {
 		return cashDistribution;
 	}
 
-	public DateTimePeriod setCashDistribution(com.tools20022.repository.entity.Distribution cashDistribution) {
+	public DateTimePeriod setCashDistribution(Distribution cashDistribution) {
 		this.cashDistribution = Objects.requireNonNull(cashDistribution);
 		return this;
 	}
@@ -4529,7 +5230,7 @@ public class DateTimePeriod {
 		return componentSecurity;
 	}
 
-	public DateTimePeriod setComponentSecurity(com.tools20022.repository.entity.ComponentSecurity componentSecurity) {
+	public DateTimePeriod setComponentSecurity(ComponentSecurity componentSecurity) {
 		this.componentSecurity = Objects.requireNonNull(componentSecurity);
 		return this;
 	}
@@ -4538,7 +5239,7 @@ public class DateTimePeriod {
 		return tradingSession;
 	}
 
-	public DateTimePeriod setTradingSession(com.tools20022.repository.entity.TradingSession tradingSession) {
+	public DateTimePeriod setTradingSession(TradingSession tradingSession) {
 		this.tradingSession = Objects.requireNonNull(tradingSession);
 		return this;
 	}
@@ -4547,7 +5248,7 @@ public class DateTimePeriod {
 		return financialInstrumentSwap;
 	}
 
-	public DateTimePeriod setFinancialInstrumentSwap(com.tools20022.repository.entity.FinancialInstrumentSwap financialInstrumentSwap) {
+	public DateTimePeriod setFinancialInstrumentSwap(FinancialInstrumentSwap financialInstrumentSwap) {
 		this.financialInstrumentSwap = Objects.requireNonNull(financialInstrumentSwap);
 		return this;
 	}
@@ -4556,7 +5257,7 @@ public class DateTimePeriod {
 		return relatedPostalAddress;
 	}
 
-	public DateTimePeriod setRelatedPostalAddress(com.tools20022.repository.entity.PostalAddress relatedPostalAddress) {
+	public DateTimePeriod setRelatedPostalAddress(PostalAddress relatedPostalAddress) {
 		this.relatedPostalAddress = Objects.requireNonNull(relatedPostalAddress);
 		return this;
 	}
@@ -4565,7 +5266,7 @@ public class DateTimePeriod {
 		return redemptionSchedule;
 	}
 
-	public DateTimePeriod setRedemptionSchedule(com.tools20022.repository.entity.RedemptionSchedule redemptionSchedule) {
+	public DateTimePeriod setRedemptionSchedule(RedemptionSchedule redemptionSchedule) {
 		this.redemptionSchedule = Objects.requireNonNull(redemptionSchedule);
 		return this;
 	}
@@ -4574,7 +5275,7 @@ public class DateTimePeriod {
 		return relatedAccountLink;
 	}
 
-	public DateTimePeriod setRelatedAccountLink(com.tools20022.repository.entity.AccountLink relatedAccountLink) {
+	public DateTimePeriod setRelatedAccountLink(AccountLink relatedAccountLink) {
 		this.relatedAccountLink = Objects.requireNonNull(relatedAccountLink);
 		return this;
 	}
@@ -4583,7 +5284,7 @@ public class DateTimePeriod {
 		return relatedAdjustment;
 	}
 
-	public DateTimePeriod setRelatedAdjustment(com.tools20022.repository.entity.Adjustment relatedAdjustment) {
+	public DateTimePeriod setRelatedAdjustment(Adjustment relatedAdjustment) {
 		this.relatedAdjustment = Objects.requireNonNull(relatedAdjustment);
 		return this;
 	}
@@ -4592,7 +5293,7 @@ public class DateTimePeriod {
 		return relatedSecuritiesIdentification;
 	}
 
-	public DateTimePeriod setRelatedSecuritiesIdentification(com.tools20022.repository.entity.SecuritiesIdentification relatedSecuritiesIdentification) {
+	public DateTimePeriod setRelatedSecuritiesIdentification(SecuritiesIdentification relatedSecuritiesIdentification) {
 		this.relatedSecuritiesIdentification = Objects.requireNonNull(relatedSecuritiesIdentification);
 		return this;
 	}
@@ -4601,7 +5302,7 @@ public class DateTimePeriod {
 		return relatedStandingSettlementInstruction == null ? relatedStandingSettlementInstruction = new ArrayList<>() : relatedStandingSettlementInstruction;
 	}
 
-	public DateTimePeriod setRelatedStandingSettlementInstruction(List<com.tools20022.repository.entity.StandingSettlementInstruction> relatedStandingSettlementInstruction) {
+	public DateTimePeriod setRelatedStandingSettlementInstruction(List<StandingSettlementInstruction> relatedStandingSettlementInstruction) {
 		this.relatedStandingSettlementInstruction = Objects.requireNonNull(relatedStandingSettlementInstruction);
 		return this;
 	}
@@ -4610,7 +5311,7 @@ public class DateTimePeriod {
 		return relatedSecuritiesRegistration;
 	}
 
-	public DateTimePeriod setRelatedSecuritiesRegistration(com.tools20022.repository.entity.BasicSecuritiesRegistration relatedSecuritiesRegistration) {
+	public DateTimePeriod setRelatedSecuritiesRegistration(BasicSecuritiesRegistration relatedSecuritiesRegistration) {
 		this.relatedSecuritiesRegistration = Objects.requireNonNull(relatedSecuritiesRegistration);
 		return this;
 	}
@@ -4619,7 +5320,7 @@ public class DateTimePeriod {
 		return amount;
 	}
 
-	public DateTimePeriod setAmount(com.tools20022.repository.entity.AmountAndPeriod amount) {
+	public DateTimePeriod setAmount(AmountAndPeriod amount) {
 		this.amount = Objects.requireNonNull(amount);
 		return this;
 	}
@@ -4628,7 +5329,7 @@ public class DateTimePeriod {
 		return relatedInvestmentPlan == null ? relatedInvestmentPlan = new ArrayList<>() : relatedInvestmentPlan;
 	}
 
-	public DateTimePeriod setRelatedInvestmentPlan(List<com.tools20022.repository.entity.InvestmentPlan> relatedInvestmentPlan) {
+	public DateTimePeriod setRelatedInvestmentPlan(List<InvestmentPlan> relatedInvestmentPlan) {
 		this.relatedInvestmentPlan = Objects.requireNonNull(relatedInvestmentPlan);
 		return this;
 	}
@@ -4637,7 +5338,7 @@ public class DateTimePeriod {
 		return issuance;
 	}
 
-	public DateTimePeriod setIssuance(com.tools20022.repository.entity.Issuance issuance) {
+	public DateTimePeriod setIssuance(Issuance issuance) {
 		this.issuance = Objects.requireNonNull(issuance);
 		return this;
 	}
@@ -4646,7 +5347,7 @@ public class DateTimePeriod {
 		return relatedPaymentTerms;
 	}
 
-	public DateTimePeriod setRelatedPaymentTerms(com.tools20022.repository.entity.PaymentTerms relatedPaymentTerms) {
+	public DateTimePeriod setRelatedPaymentTerms(PaymentTerms relatedPaymentTerms) {
 		this.relatedPaymentTerms = Objects.requireNonNull(relatedPaymentTerms);
 		return this;
 	}
@@ -4655,7 +5356,7 @@ public class DateTimePeriod {
 		return percentage;
 	}
 
-	public DateTimePeriod setPercentage(com.tools20022.repository.entity.PercentageAndPeriod percentage) {
+	public DateTimePeriod setPercentage(PercentageAndPeriod percentage) {
 		this.percentage = Objects.requireNonNull(percentage);
 		return this;
 	}
@@ -4664,7 +5365,7 @@ public class DateTimePeriod {
 		return relatedRolePlayer == null ? relatedRolePlayer = new ArrayList<>() : relatedRolePlayer;
 	}
 
-	public DateTimePeriod setRelatedRolePlayer(List<com.tools20022.repository.entity.RolePlayer> relatedRolePlayer) {
+	public DateTimePeriod setRelatedRolePlayer(List<RolePlayer> relatedRolePlayer) {
 		this.relatedRolePlayer = Objects.requireNonNull(relatedRolePlayer);
 		return this;
 	}
@@ -4673,7 +5374,7 @@ public class DateTimePeriod {
 		return relatedSystemAvailability;
 	}
 
-	public DateTimePeriod setRelatedSystemAvailability(com.tools20022.repository.entity.SystemAvailability relatedSystemAvailability) {
+	public DateTimePeriod setRelatedSystemAvailability(SystemAvailability relatedSystemAvailability) {
 		this.relatedSystemAvailability = Objects.requireNonNull(relatedSystemAvailability);
 		return this;
 	}

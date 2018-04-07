@@ -19,10 +19,10 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.entity.TradeIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -129,26 +129,11 @@ public class PaymentIdentification extends TradeIdentification {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader58#mmMessageIdentification
-	 * GroupHeader58.mmMessageIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader48#mmMessageIdentification
 	 * GroupHeader48.mmMessageIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader55#mmMessageIdentification
 	 * GroupHeader55.mmMessageIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalMessageIdentification
-	 * OriginalGroupInformation3.mmOriginalMessageIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader56#mmMessageIdentification
-	 * GroupHeader56.mmMessageIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader3#mmOriginalMessageIdentification
-	 * OriginalGroupHeader3.mmOriginalMessageIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader52#mmMessageIdentification
-	 * GroupHeader52.mmMessageIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader50#mmMessageIdentification
 	 * GroupHeader50.mmMessageIdentification}</li>
@@ -159,9 +144,6 @@ public class PaymentIdentification extends TradeIdentification {
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader47#mmMessageIdentification
 	 * GroupHeader47.mmMessageIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader2#mmOriginalMessageIdentification
-	 * OriginalGroupHeader2.mmOriginalMessageIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader46#mmMessageIdentification
 	 * GroupHeader46.mmMessageIdentification}</li>
 	 * <li>
@@ -170,12 +152,6 @@ public class PaymentIdentification extends TradeIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader59#mmMessageIdentification
 	 * GroupHeader59.mmMessageIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader5#mmOriginalGroupCancellationIdentification
-	 * OriginalGroupHeader5.mmOriginalGroupCancellationIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader5#mmOriginalMessageIdentification
-	 * OriginalGroupHeader5.mmOriginalMessageIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader60#mmMessageIdentification
 	 * GroupHeader60.mmMessageIdentification}</li>
@@ -207,28 +183,55 @@ public class PaymentIdentification extends TradeIdentification {
 	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation27#mmOriginalMessageIdentification
 	 * OriginalGroupInformation27.mmOriginalMessageIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader7#mmOriginalMessageIdentification
-	 * OriginalGroupHeader7.mmOriginalMessageIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmInstructionIdentification
-	 * RequestedModification6.mmInstructionIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation28#mmOriginalMessageIdentification
 	 * OriginalGroupInformation28.mmOriginalMessageIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction22#mmOriginalPaymentInformationCancellationIdentification
-	 * OriginalPaymentInstruction22.
+	 * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmInstructionIdentification
+	 * RequestedModification7.mmInstructionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction26#mmOriginalPaymentInformationCancellationIdentification
+	 * OriginalPaymentInstruction26.
 	 * mmOriginalPaymentInformationCancellationIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction20#mmPaymentCancellationIdentification
-	 * OriginalPaymentInstruction20.mmPaymentCancellationIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentInstruction3#mmOriginalPaymentInformationIdentification
-	 * UnderlyingPaymentInstruction3.mmOriginalPaymentInformationIdentification}
+	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentInstruction4#mmOriginalPaymentInformationIdentification
+	 * UnderlyingPaymentInstruction4.mmOriginalPaymentInformationIdentification}
 	 * </li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader6#mmOriginalMessageIdentification
-	 * OriginalGroupHeader6.mmOriginalMessageIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader9#mmOriginalGroupCancellationIdentification
+	 * OriginalGroupHeader9.mmOriginalGroupCancellationIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader9#mmOriginalMessageIdentification
+	 * OriginalGroupHeader9.mmOriginalMessageIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction29#mmPaymentCancellationIdentification
+	 * OriginalPaymentInstruction29.mmPaymentCancellationIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader13#mmOriginalMessageIdentification
+	 * OriginalGroupHeader13.mmOriginalMessageIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader74#mmMessageIdentification
+	 * GroupHeader74.mmMessageIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader73#mmMessageIdentification
+	 * GroupHeader73.mmMessageIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader12#mmOriginalMessageIdentification
+	 * OriginalGroupHeader12.mmOriginalMessageIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader11#mmOriginalMessageIdentification
+	 * OriginalGroupHeader11.mmOriginalMessageIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader75#mmMessageIdentification
+	 * GroupHeader75.mmMessageIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader76#mmMessageIdentification
+	 * GroupHeader76.mmMessageIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader10#mmOriginalMessageIdentification
+	 * OriginalGroupHeader10.mmOriginalMessageIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation29#mmOriginalMessageIdentification
+	 * OriginalGroupInformation29.mmOriginalMessageIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -249,16 +252,17 @@ public class PaymentIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExecutionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentIdentification, Max35Text> mmExecutionIdentification = new MMBusinessAttribute<PaymentIdentification, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(GroupHeader58.mmMessageIdentification, GroupHeader48.mmMessageIdentification, GroupHeader55.mmMessageIdentification, OriginalGroupInformation3.mmOriginalMessageIdentification,
-					GroupHeader56.mmMessageIdentification, OriginalGroupHeader3.mmOriginalMessageIdentification, GroupHeader52.mmMessageIdentification, GroupHeader50.mmMessageIdentification, GroupHeader53.mmMessageIdentification,
-					GroupHeader47.mmMessageIdentification, OriginalGroupHeader2.mmOriginalMessageIdentification, GroupHeader46.mmMessageIdentification, GroupHeader45.mmMessageIdentification, GroupHeader59.mmMessageIdentification,
-					OriginalGroupHeader5.mmOriginalGroupCancellationIdentification, OriginalGroupHeader5.mmOriginalMessageIdentification, GroupHeader60.mmMessageIdentification, GroupHeader63.mmMessageIdentification,
-					GroupHeader62.mmMessageIdentification, GroupHeader70.mmMessageIdentification, GroupHeader72.mmMessageIdentification, GroupHeader71.mmMessageIdentification, OriginalItem5.mmOriginalItemIdentification,
-					OriginalMessage2.mmOriginalMessageIdentification, OriginalMessage3.mmOriginalMessageIdentification, OriginalGroupInformation27.mmOriginalMessageIdentification, OriginalGroupHeader7.mmOriginalMessageIdentification,
-					RequestedModification6.mmInstructionIdentification, OriginalGroupInformation28.mmOriginalMessageIdentification, OriginalPaymentInstruction22.mmOriginalPaymentInformationCancellationIdentification,
-					OriginalPaymentInstruction20.mmPaymentCancellationIdentification, UnderlyingPaymentInstruction3.mmOriginalPaymentInformationIdentification, OriginalGroupHeader6.mmOriginalMessageIdentification);
+			derivation_lazy = () -> Arrays.asList(GroupHeader48.mmMessageIdentification, GroupHeader55.mmMessageIdentification, GroupHeader50.mmMessageIdentification, GroupHeader53.mmMessageIdentification,
+					GroupHeader47.mmMessageIdentification, GroupHeader46.mmMessageIdentification, GroupHeader45.mmMessageIdentification, GroupHeader59.mmMessageIdentification, GroupHeader60.mmMessageIdentification,
+					GroupHeader63.mmMessageIdentification, GroupHeader62.mmMessageIdentification, GroupHeader70.mmMessageIdentification, GroupHeader72.mmMessageIdentification, GroupHeader71.mmMessageIdentification,
+					OriginalItem5.mmOriginalItemIdentification, OriginalMessage2.mmOriginalMessageIdentification, OriginalMessage3.mmOriginalMessageIdentification, OriginalGroupInformation27.mmOriginalMessageIdentification,
+					OriginalGroupInformation28.mmOriginalMessageIdentification, RequestedModification7.mmInstructionIdentification, OriginalPaymentInstruction26.mmOriginalPaymentInformationCancellationIdentification,
+					UnderlyingPaymentInstruction4.mmOriginalPaymentInformationIdentification, OriginalGroupHeader9.mmOriginalGroupCancellationIdentification, OriginalGroupHeader9.mmOriginalMessageIdentification,
+					OriginalPaymentInstruction29.mmPaymentCancellationIdentification, OriginalGroupHeader13.mmOriginalMessageIdentification, GroupHeader74.mmMessageIdentification, GroupHeader73.mmMessageIdentification,
+					OriginalGroupHeader12.mmOriginalMessageIdentification, OriginalGroupHeader11.mmOriginalMessageIdentification, GroupHeader75.mmMessageIdentification, GroupHeader76.mmMessageIdentification,
+					OriginalGroupHeader10.mmOriginalMessageIdentification, OriginalGroupInformation29.mmOriginalMessageIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -269,12 +273,14 @@ public class PaymentIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentIdentification.class.getMethod("getExecutionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentIdentification obj) {
+			return obj.getExecutionIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification obj, Max35Text value) {
+			obj.setExecutionIdentification(value);
 		}
 	};
 	protected Max35Text endToEndIdentification;
@@ -306,9 +312,6 @@ public class PaymentIdentification extends TradeIdentification {
 	 * {@linkplain com.tools20022.repository.msg.CorrectiveInterbankTransaction1#mmEndToEndIdentification
 	 * CorrectiveInterbankTransaction1.mmEndToEndIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#mmOriginalEndToEndIdentification
-	 * UnderlyingPaymentTransaction2.mmOriginalEndToEndIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.TransactionReferences4#mmEndToEndIdentification
 	 * TransactionReferences4.mmEndToEndIdentification}</li>
 	 * <li>
@@ -324,53 +327,59 @@ public class PaymentIdentification extends TradeIdentification {
 	 * {@linkplain com.tools20022.repository.msg.NotificationItem6#mmEndToEndIdentification
 	 * NotificationItem6.mmEndToEndIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction73#mmOriginalEndToEndIdentification
-	 * PaymentTransaction73.mmOriginalEndToEndIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction80#mmOriginalEndToEndIdentification
-	 * PaymentTransaction80.mmOriginalEndToEndIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction81#mmOriginalEndToEndIdentification
-	 * PaymentTransaction81.mmOriginalEndToEndIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmEndToEndIdentification
-	 * RequestedModification6.mmEndToEndIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmTransactionIdentification
-	 * RequestedModification6.mmTransactionIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction76#mmOriginalEndToEndIdentification
-	 * PaymentTransaction76.mmOriginalEndToEndIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction78#mmOriginalEndToEndIdentification
-	 * PaymentTransaction78.mmOriginalEndToEndIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction74#mmOriginalEndToEndIdentification
-	 * PaymentTransaction74.mmOriginalEndToEndIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction83#mmOriginalEndToEndIdentification
 	 * PaymentTransaction83.mmOriginalEndToEndIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction77#mmOriginalEndToEndIdentification
-	 * PaymentTransaction77.mmOriginalEndToEndIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmEndToEndIdentification
+	 * PaymentComplementaryInformation7.mmEndToEndIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorrectivePaymentInitiation2#mmEndToEndIdentification
-	 * CorrectivePaymentInitiation2.mmEndToEndIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction87#mmOriginalEndToEndIdentification
+	 * PaymentTransaction87.mmOriginalEndToEndIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentInstruction3#mmOriginalEndToEndIdentification
-	 * UnderlyingPaymentInstruction3.mmOriginalEndToEndIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction88#mmOriginalEndToEndIdentification
+	 * PaymentTransaction88.mmOriginalEndToEndIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction75#mmOriginalEndToEndIdentification
-	 * PaymentTransaction75.mmOriginalEndToEndIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmEndToEndIdentification
+	 * RequestedModification7.mmEndToEndIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction82#mmOriginalEndToEndIdentification
-	 * PaymentTransaction82.mmOriginalEndToEndIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmTransactionIdentification
+	 * RequestedModification7.mmTransactionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction79#mmOriginalEndToEndIdentification
-	 * PaymentTransaction79.mmOriginalEndToEndIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction90#mmOriginalEndToEndIdentification
+	 * PaymentTransaction90.mmOriginalEndToEndIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmEndToEndIdentification
-	 * PaymentComplementaryInformation6.mmEndToEndIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction91#mmOriginalEndToEndIdentification
+	 * PaymentTransaction91.mmOriginalEndToEndIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction85#mmOriginalEndToEndIdentification
+	 * PaymentTransaction85.mmOriginalEndToEndIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction89#mmOriginalEndToEndIdentification
+	 * PaymentTransaction89.mmOriginalEndToEndIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction84#mmOriginalEndToEndIdentification
+	 * PaymentTransaction84.mmOriginalEndToEndIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentInstruction4#mmOriginalEndToEndIdentification
+	 * UnderlyingPaymentInstruction4.mmOriginalEndToEndIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction3#mmOriginalEndToEndIdentification
+	 * UnderlyingPaymentTransaction3.mmOriginalEndToEndIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorrectivePaymentInitiation3#mmEndToEndIdentification
+	 * CorrectivePaymentInitiation3.mmEndToEndIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction94#mmOriginalEndToEndIdentification
+	 * PaymentTransaction94.mmOriginalEndToEndIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction92#mmOriginalEndToEndIdentification
+	 * PaymentTransaction92.mmOriginalEndToEndIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction95#mmOriginalEndToEndIdentification
+	 * PaymentTransaction95.mmOriginalEndToEndIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction93#mmOriginalEndToEndIdentification
+	 * PaymentTransaction93.mmOriginalEndToEndIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -391,16 +400,16 @@ public class PaymentIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEndToEndIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentIdentification, Max35Text> mmEndToEndIdentification = new MMBusinessAttribute<PaymentIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentIdentification1.mmEndToEndIdentification, TransactionReferences3.mmEndToEndIdentification, PaymentIdentification3.mmEndToEndIdentification,
-					PaymentIdentification4.mmEndToEndIdentification, CorrectiveInterbankTransaction1.mmEndToEndIdentification, UnderlyingPaymentTransaction2.mmOriginalEndToEndIdentification, TransactionReferences4.mmEndToEndIdentification,
-					CertificateIdentification1.mmEndToEndIdentification, OriginalItem5.mmOriginalEndToEndIdentification, OriginalItemAndStatus5.mmOriginalEndToEndIdentification, NotificationItem6.mmEndToEndIdentification,
-					PaymentTransaction73.mmOriginalEndToEndIdentification, PaymentTransaction80.mmOriginalEndToEndIdentification, PaymentTransaction81.mmOriginalEndToEndIdentification, RequestedModification6.mmEndToEndIdentification,
-					RequestedModification6.mmTransactionIdentification, PaymentTransaction76.mmOriginalEndToEndIdentification, PaymentTransaction78.mmOriginalEndToEndIdentification, PaymentTransaction74.mmOriginalEndToEndIdentification,
-					PaymentTransaction83.mmOriginalEndToEndIdentification, PaymentTransaction77.mmOriginalEndToEndIdentification, CorrectivePaymentInitiation2.mmEndToEndIdentification,
-					UnderlyingPaymentInstruction3.mmOriginalEndToEndIdentification, PaymentTransaction75.mmOriginalEndToEndIdentification, PaymentTransaction82.mmOriginalEndToEndIdentification,
-					PaymentTransaction79.mmOriginalEndToEndIdentification, PaymentComplementaryInformation6.mmEndToEndIdentification);
+					PaymentIdentification4.mmEndToEndIdentification, CorrectiveInterbankTransaction1.mmEndToEndIdentification, TransactionReferences4.mmEndToEndIdentification, CertificateIdentification1.mmEndToEndIdentification,
+					OriginalItem5.mmOriginalEndToEndIdentification, OriginalItemAndStatus5.mmOriginalEndToEndIdentification, NotificationItem6.mmEndToEndIdentification, PaymentTransaction83.mmOriginalEndToEndIdentification,
+					PaymentComplementaryInformation7.mmEndToEndIdentification, PaymentTransaction87.mmOriginalEndToEndIdentification, PaymentTransaction88.mmOriginalEndToEndIdentification, RequestedModification7.mmEndToEndIdentification,
+					RequestedModification7.mmTransactionIdentification, PaymentTransaction90.mmOriginalEndToEndIdentification, PaymentTransaction91.mmOriginalEndToEndIdentification, PaymentTransaction85.mmOriginalEndToEndIdentification,
+					PaymentTransaction89.mmOriginalEndToEndIdentification, PaymentTransaction84.mmOriginalEndToEndIdentification, UnderlyingPaymentInstruction4.mmOriginalEndToEndIdentification,
+					UnderlyingPaymentTransaction3.mmOriginalEndToEndIdentification, CorrectivePaymentInitiation3.mmEndToEndIdentification, PaymentTransaction94.mmOriginalEndToEndIdentification,
+					PaymentTransaction92.mmOriginalEndToEndIdentification, PaymentTransaction95.mmOriginalEndToEndIdentification, PaymentTransaction93.mmOriginalEndToEndIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -411,12 +420,14 @@ public class PaymentIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentIdentification.class.getMethod("getEndToEndIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentIdentification obj) {
+			return obj.getEndToEndIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification obj, Max35Text value) {
+			obj.setEndToEndIdentification(value);
 		}
 	};
 	protected Max35Text instructionIdentification;
@@ -448,59 +459,62 @@ public class PaymentIdentification extends TradeIdentification {
 	 * {@linkplain com.tools20022.repository.msg.CorrectiveInterbankTransaction1#mmInstructionIdentification
 	 * CorrectiveInterbankTransaction1.mmInstructionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#mmOriginalInstructionIdentification
-	 * UnderlyingPaymentTransaction2.mmOriginalInstructionIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.TransactionReferences4#mmInstructionIdentification
 	 * TransactionReferences4.mmInstructionIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CertificateIdentification1#mmInstructionIdentification
 	 * CertificateIdentification1.mmInstructionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction73#mmOriginalInstructionIdentification
-	 * PaymentTransaction73.mmOriginalInstructionIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction80#mmOriginalInstructionIdentification
-	 * PaymentTransaction80.mmOriginalInstructionIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction81#mmOriginalInstructionIdentification
-	 * PaymentTransaction81.mmOriginalInstructionIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction21#mmReversalPaymentInformationIdentification
-	 * OriginalPaymentInstruction21.mmReversalPaymentInformationIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction76#mmOriginalInstructionIdentification
-	 * PaymentTransaction76.mmOriginalInstructionIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction78#mmOriginalInstructionIdentification
-	 * PaymentTransaction78.mmOriginalInstructionIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction74#mmOriginalInstructionIdentification
-	 * PaymentTransaction74.mmOriginalInstructionIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction83#mmOriginalInstructionIdentification
 	 * PaymentTransaction83.mmOriginalInstructionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction77#mmOriginalInstructionIdentification
-	 * PaymentTransaction77.mmOriginalInstructionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmInstructionIdentification
+	 * PaymentComplementaryInformation7.mmInstructionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorrectivePaymentInitiation2#mmInstructionIdentification
-	 * CorrectivePaymentInitiation2.mmInstructionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction87#mmOriginalInstructionIdentification
+	 * PaymentTransaction87.mmOriginalInstructionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentInstruction3#mmOriginalInstructionIdentification
-	 * UnderlyingPaymentInstruction3.mmOriginalInstructionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction88#mmOriginalInstructionIdentification
+	 * PaymentTransaction88.mmOriginalInstructionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction75#mmOriginalInstructionIdentification
-	 * PaymentTransaction75.mmOriginalInstructionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction90#mmOriginalInstructionIdentification
+	 * PaymentTransaction90.mmOriginalInstructionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction82#mmOriginalInstructionIdentification
-	 * PaymentTransaction82.mmOriginalInstructionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction91#mmOriginalInstructionIdentification
+	 * PaymentTransaction91.mmOriginalInstructionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction79#mmOriginalInstructionIdentification
-	 * PaymentTransaction79.mmOriginalInstructionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction85#mmOriginalInstructionIdentification
+	 * PaymentTransaction85.mmOriginalInstructionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmInstructionIdentification
-	 * PaymentComplementaryInformation6.mmInstructionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction89#mmOriginalInstructionIdentification
+	 * PaymentTransaction89.mmOriginalInstructionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction84#mmOriginalInstructionIdentification
+	 * PaymentTransaction84.mmOriginalInstructionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentInstruction4#mmOriginalInstructionIdentification
+	 * UnderlyingPaymentInstruction4.mmOriginalInstructionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction3#mmOriginalInstructionIdentification
+	 * UnderlyingPaymentTransaction3.mmOriginalInstructionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorrectivePaymentInitiation3#mmInstructionIdentification
+	 * CorrectivePaymentInitiation3.mmInstructionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction28#mmReversalPaymentInformationIdentification
+	 * OriginalPaymentInstruction28.mmReversalPaymentInformationIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction94#mmOriginalInstructionIdentification
+	 * PaymentTransaction94.mmOriginalInstructionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction92#mmOriginalInstructionIdentification
+	 * PaymentTransaction92.mmOriginalInstructionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction95#mmOriginalInstructionIdentification
+	 * PaymentTransaction95.mmOriginalInstructionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction93#mmOriginalInstructionIdentification
+	 * PaymentTransaction93.mmOriginalInstructionIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -521,16 +535,16 @@ public class PaymentIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInstructionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentIdentification, Max35Text> mmInstructionIdentification = new MMBusinessAttribute<PaymentIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentIdentification1.mmInstructionIdentification, TransactionReferences3.mmInstructionIdentification, PaymentIdentification3.mmInstructionIdentification,
-					PaymentIdentification4.mmInstructionIdentification, CorrectiveInterbankTransaction1.mmInstructionIdentification, UnderlyingPaymentTransaction2.mmOriginalInstructionIdentification,
-					TransactionReferences4.mmInstructionIdentification, CertificateIdentification1.mmInstructionIdentification, PaymentTransaction73.mmOriginalInstructionIdentification,
-					PaymentTransaction80.mmOriginalInstructionIdentification, PaymentTransaction81.mmOriginalInstructionIdentification, OriginalPaymentInstruction21.mmReversalPaymentInformationIdentification,
-					PaymentTransaction76.mmOriginalInstructionIdentification, PaymentTransaction78.mmOriginalInstructionIdentification, PaymentTransaction74.mmOriginalInstructionIdentification,
-					PaymentTransaction83.mmOriginalInstructionIdentification, PaymentTransaction77.mmOriginalInstructionIdentification, CorrectivePaymentInitiation2.mmInstructionIdentification,
-					UnderlyingPaymentInstruction3.mmOriginalInstructionIdentification, PaymentTransaction75.mmOriginalInstructionIdentification, PaymentTransaction82.mmOriginalInstructionIdentification,
-					PaymentTransaction79.mmOriginalInstructionIdentification, PaymentComplementaryInformation6.mmInstructionIdentification);
+					PaymentIdentification4.mmInstructionIdentification, CorrectiveInterbankTransaction1.mmInstructionIdentification, TransactionReferences4.mmInstructionIdentification,
+					CertificateIdentification1.mmInstructionIdentification, PaymentTransaction83.mmOriginalInstructionIdentification, PaymentComplementaryInformation7.mmInstructionIdentification,
+					PaymentTransaction87.mmOriginalInstructionIdentification, PaymentTransaction88.mmOriginalInstructionIdentification, PaymentTransaction90.mmOriginalInstructionIdentification,
+					PaymentTransaction91.mmOriginalInstructionIdentification, PaymentTransaction85.mmOriginalInstructionIdentification, PaymentTransaction89.mmOriginalInstructionIdentification,
+					PaymentTransaction84.mmOriginalInstructionIdentification, UnderlyingPaymentInstruction4.mmOriginalInstructionIdentification, UnderlyingPaymentTransaction3.mmOriginalInstructionIdentification,
+					CorrectivePaymentInitiation3.mmInstructionIdentification, OriginalPaymentInstruction28.mmReversalPaymentInformationIdentification, PaymentTransaction94.mmOriginalInstructionIdentification,
+					PaymentTransaction92.mmOriginalInstructionIdentification, PaymentTransaction95.mmOriginalInstructionIdentification, PaymentTransaction93.mmOriginalInstructionIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -541,12 +555,14 @@ public class PaymentIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentIdentification.class.getMethod("getInstructionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentIdentification obj) {
+			return obj.getInstructionIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification obj, Max35Text value) {
+			obj.setInstructionIdentification(value);
 		}
 	};
 	protected Max35Text transactionIdentification;
@@ -575,32 +591,35 @@ public class PaymentIdentification extends TradeIdentification {
 	 * {@linkplain com.tools20022.repository.msg.CorrectiveInterbankTransaction1#mmTransactionIdentification
 	 * CorrectiveInterbankTransaction1.mmTransactionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#mmOriginalTransactionIdentification
-	 * UnderlyingPaymentTransaction2.mmOriginalTransactionIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.TransactionReferences4#mmTransactionIdentification
 	 * TransactionReferences4.mmTransactionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction73#mmOriginalTransactionIdentification
-	 * PaymentTransaction73.mmOriginalTransactionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmTransactionIdentification
+	 * PaymentComplementaryInformation7.mmTransactionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction80#mmOriginalTransactionIdentification
-	 * PaymentTransaction80.mmOriginalTransactionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction87#mmOriginalTransactionIdentification
+	 * PaymentTransaction87.mmOriginalTransactionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction81#mmOriginalTransactionIdentification
-	 * PaymentTransaction81.mmOriginalTransactionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction88#mmOriginalTransactionIdentification
+	 * PaymentTransaction88.mmOriginalTransactionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction76#mmOriginalTransactionIdentification
-	 * PaymentTransaction76.mmOriginalTransactionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction90#mmOriginalTransactionIdentification
+	 * PaymentTransaction90.mmOriginalTransactionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction75#mmOriginalTransactionIdentification
-	 * PaymentTransaction75.mmOriginalTransactionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction91#mmOriginalTransactionIdentification
+	 * PaymentTransaction91.mmOriginalTransactionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction79#mmOriginalTransactionIdentification
-	 * PaymentTransaction79.mmOriginalTransactionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction85#mmOriginalTransactionIdentification
+	 * PaymentTransaction85.mmOriginalTransactionIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmTransactionIdentification
-	 * PaymentComplementaryInformation6.mmTransactionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction89#mmOriginalTransactionIdentification
+	 * PaymentTransaction89.mmOriginalTransactionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction3#mmOriginalTransactionIdentification
+	 * UnderlyingPaymentTransaction3.mmOriginalTransactionIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction94#mmOriginalTransactionIdentification
+	 * PaymentTransaction94.mmOriginalTransactionIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -621,13 +640,13 @@ public class PaymentIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentIdentification, Max35Text> mmTransactionIdentification = new MMBusinessAttribute<PaymentIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionReferences3.mmTransactionIdentification, PaymentIdentification3.mmTransactionIdentification, PaymentIdentification4.mmTransactionIdentification,
-					CorrectiveInterbankTransaction1.mmTransactionIdentification, UnderlyingPaymentTransaction2.mmOriginalTransactionIdentification, TransactionReferences4.mmTransactionIdentification,
-					PaymentTransaction73.mmOriginalTransactionIdentification, PaymentTransaction80.mmOriginalTransactionIdentification, PaymentTransaction81.mmOriginalTransactionIdentification,
-					PaymentTransaction76.mmOriginalTransactionIdentification, PaymentTransaction75.mmOriginalTransactionIdentification, PaymentTransaction79.mmOriginalTransactionIdentification,
-					PaymentComplementaryInformation6.mmTransactionIdentification);
+					CorrectiveInterbankTransaction1.mmTransactionIdentification, TransactionReferences4.mmTransactionIdentification, PaymentComplementaryInformation7.mmTransactionIdentification,
+					PaymentTransaction87.mmOriginalTransactionIdentification, PaymentTransaction88.mmOriginalTransactionIdentification, PaymentTransaction90.mmOriginalTransactionIdentification,
+					PaymentTransaction91.mmOriginalTransactionIdentification, PaymentTransaction85.mmOriginalTransactionIdentification, PaymentTransaction89.mmOriginalTransactionIdentification,
+					UnderlyingPaymentTransaction3.mmOriginalTransactionIdentification, PaymentTransaction94.mmOriginalTransactionIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -638,12 +657,14 @@ public class PaymentIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentIdentification.class.getMethod("getTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentIdentification obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification obj, Max35Text value) {
+			obj.setTransactionIdentification(value);
 		}
 	};
 	protected Max35Text clearingSystemReference;
@@ -669,29 +690,35 @@ public class PaymentIdentification extends TradeIdentification {
 	 * {@linkplain com.tools20022.repository.msg.PaymentIdentification4#mmClearingSystemReference
 	 * PaymentIdentification4.mmClearingSystemReference}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction73#mmClearingSystemReference
-	 * PaymentTransaction73.mmClearingSystemReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction80#mmClearingSystemReference
-	 * PaymentTransaction80.mmClearingSystemReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction81#mmOriginalClearingSystemReference
-	 * PaymentTransaction81.mmOriginalClearingSystemReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction76#mmOriginalClearingSystemReference
-	 * PaymentTransaction76.mmOriginalClearingSystemReference}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction83#mmClearingSystemReference
 	 * PaymentTransaction83.mmClearingSystemReference}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction75#mmOriginalClearingSystemReference
-	 * PaymentTransaction75.mmOriginalClearingSystemReference}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction87#mmOriginalClearingSystemReference
+	 * PaymentTransaction87.mmOriginalClearingSystemReference}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction82#mmClearingSystemReference
-	 * PaymentTransaction82.mmClearingSystemReference}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction87#mmClearingSystemReference
+	 * PaymentTransaction87.mmClearingSystemReference}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction79#mmOriginalClearingSystemReference
-	 * PaymentTransaction79.mmOriginalClearingSystemReference}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction88#mmOriginalClearingSystemReference
+	 * PaymentTransaction88.mmOriginalClearingSystemReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction90#mmOriginalClearingSystemReference
+	 * PaymentTransaction90.mmOriginalClearingSystemReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction91#mmClearingSystemReference
+	 * PaymentTransaction91.mmClearingSystemReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction85#mmOriginalClearingSystemReference
+	 * PaymentTransaction85.mmOriginalClearingSystemReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction89#mmOriginalClearingSystemReference
+	 * PaymentTransaction89.mmOriginalClearingSystemReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction94#mmClearingSystemReference
+	 * PaymentTransaction94.mmClearingSystemReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction92#mmClearingSystemReference
+	 * PaymentTransaction92.mmClearingSystemReference}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -712,11 +739,12 @@ public class PaymentIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClearingSystemReference = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentIdentification, Max35Text> mmClearingSystemReference = new MMBusinessAttribute<PaymentIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionReferences3.mmClearingSystemReference, PaymentIdentification3.mmClearingSystemReference, PaymentIdentification4.mmClearingSystemReference,
-					PaymentTransaction73.mmClearingSystemReference, PaymentTransaction80.mmClearingSystemReference, PaymentTransaction81.mmOriginalClearingSystemReference, PaymentTransaction76.mmOriginalClearingSystemReference,
-					PaymentTransaction83.mmClearingSystemReference, PaymentTransaction75.mmOriginalClearingSystemReference, PaymentTransaction82.mmClearingSystemReference, PaymentTransaction79.mmOriginalClearingSystemReference);
+					PaymentTransaction83.mmClearingSystemReference, PaymentTransaction87.mmOriginalClearingSystemReference, PaymentTransaction87.mmClearingSystemReference, PaymentTransaction88.mmOriginalClearingSystemReference,
+					PaymentTransaction90.mmOriginalClearingSystemReference, PaymentTransaction91.mmClearingSystemReference, PaymentTransaction85.mmOriginalClearingSystemReference, PaymentTransaction89.mmOriginalClearingSystemReference,
+					PaymentTransaction94.mmClearingSystemReference, PaymentTransaction92.mmClearingSystemReference);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -727,12 +755,14 @@ public class PaymentIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentIdentification.class.getMethod("getClearingSystemReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentIdentification obj) {
+			return obj.getClearingSystemReference();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification obj, Max35Text value) {
+			obj.setClearingSystemReference(value);
 		}
 	};
 	protected Max35Text creditorReference;
@@ -754,6 +784,12 @@ public class PaymentIdentification extends TradeIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13#mmCreditorReferenceInformation
 	 * StructuredRemittanceInformation13.mmCreditorReferenceInformation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation14#mmCreditorReferenceInformation
+	 * StructuredRemittanceInformation14.mmCreditorReferenceInformation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmCreditorReferenceInformation
+	 * StructuredRemittanceInformation15.mmCreditorReferenceInformation}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -774,9 +810,10 @@ public class PaymentIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreditorReference = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentIdentification, Max35Text> mmCreditorReference = new MMBusinessAttribute<PaymentIdentification, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CreditorReferenceInformation2.mmReference, StructuredRemittanceInformation13.mmCreditorReferenceInformation);
+			derivation_lazy = () -> Arrays.asList(CreditorReferenceInformation2.mmReference, StructuredRemittanceInformation13.mmCreditorReferenceInformation, StructuredRemittanceInformation14.mmCreditorReferenceInformation,
+					StructuredRemittanceInformation15.mmCreditorReferenceInformation);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -787,12 +824,14 @@ public class PaymentIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentIdentification.class.getMethod("getCreditorReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PaymentIdentification obj) {
+			return obj.getCreditorReference();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification obj, Max35Text value) {
+			obj.setCreditorReference(value);
 		}
 	};
 	protected Payment payment;
@@ -828,7 +867,7 @@ public class PaymentIdentification extends TradeIdentification {
 	 * definition} = "Payment for which identifications are provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentIdentification, com.tools20022.repository.entity.Payment> mmPayment = new MMBusinessAssociationEnd<PaymentIdentification, com.tools20022.repository.entity.Payment>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.mmObject();
@@ -840,6 +879,16 @@ public class PaymentIdentification extends TradeIdentification {
 			opposite_lazy = () -> com.tools20022.repository.entity.Payment.mmPaymentRelatedIdentifications;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Payment.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Payment getValue(PaymentIdentification obj) {
+			return obj.getPayment();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification obj, com.tools20022.repository.entity.Payment value) {
+			obj.setPayment(value);
 		}
 	};
 

@@ -67,6 +67,10 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "Specifies the type of the document referred in the remittance information."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.msg.ReferredDocumentType2
+ * ReferredDocumentType2}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -105,9 +109,14 @@ public class ReferredDocumentType4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Provides the type details of the referred document."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ReferredDocumentType2#mmCodeOrProprietary
+	 * ReferredDocumentType2.mmCodeOrProprietary}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCodeOrProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ReferredDocumentType4, ReferredDocumentType3Choice> mmCodeOrProprietary = new MMMessageAssociationEnd<ReferredDocumentType4, ReferredDocumentType3Choice>() {
 		{
 			businessComponentTrace_lazy = () -> Document.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReferredDocumentType4.mmObject();
@@ -116,10 +125,21 @@ public class ReferredDocumentType4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CodeOrProprietary";
 			definition = "Provides the type details of the referred document.";
+			previousVersion_lazy = () -> ReferredDocumentType2.mmCodeOrProprietary;
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> ReferredDocumentType3Choice.mmObject();
+		}
+
+		@Override
+		public ReferredDocumentType3Choice getValue(ReferredDocumentType4 obj) {
+			return obj.getCodeOrProprietary();
+		}
+
+		@Override
+		public void setValue(ReferredDocumentType4 obj, ReferredDocumentType3Choice value) {
+			obj.setCodeOrProprietary(value);
 		}
 	};
 	@XmlElement(name = "Issr")
@@ -155,9 +175,14 @@ public class ReferredDocumentType4 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Identification of the issuer of the reference document type."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ReferredDocumentType2#mmIssuer
+	 * ReferredDocumentType2.mmIssuer}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReferredDocumentType4, Optional<Max35Text>> mmIssuer = new MMMessageAttribute<ReferredDocumentType4, Optional<Max35Text>>() {
 		{
 			businessComponentTrace_lazy = () -> DocumentIssuer.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReferredDocumentType4.mmObject();
@@ -166,9 +191,20 @@ public class ReferredDocumentType4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuer";
 			definition = "Identification of the issuer of the reference document type.";
+			previousVersion_lazy = () -> ReferredDocumentType2.mmIssuer;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(ReferredDocumentType4 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(ReferredDocumentType4 obj, Optional<Max35Text> value) {
+			obj.setIssuer(value.orElse(null));
 		}
 	};
 
@@ -181,6 +217,7 @@ public class ReferredDocumentType4 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReferredDocumentType4";
 				definition = "Specifies the type of the document referred in the remittance information.";
+				previousVersion_lazy = () -> ReferredDocumentType2.mmObject();
 			}
 		});
 		return mmObject_lazy.get();

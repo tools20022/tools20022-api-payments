@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BillingSubServiceIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -112,7 +113,7 @@ public class BillingServiceIdentification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceIdentification2, Max35Text> mmIdentification = new MMMessageAttribute<BillingServiceIdentification2, Max35Text>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceIdentification2.mmObject();
@@ -124,6 +125,16 @@ public class BillingServiceIdentification2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(BillingServiceIdentification2 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(BillingServiceIdentification2 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "SubSvc")
@@ -163,7 +174,7 @@ public class BillingServiceIdentification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSubService = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceIdentification2, Optional<BillingSubServiceIdentification1>> mmSubService = new MMMessageAttribute<BillingServiceIdentification2, Optional<BillingSubServiceIdentification1>>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceIdentification2.mmObject();
@@ -174,7 +185,17 @@ public class BillingServiceIdentification2 {
 			definition = "Defines the financial institution sub-service identification if the financial institution service identification code is used for more than one service.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.BillingSubServiceIdentification1.mmObject();
+			complexType_lazy = () -> BillingSubServiceIdentification1.mmObject();
+		}
+
+		@Override
+		public Optional<BillingSubServiceIdentification1> getValue(BillingServiceIdentification2 obj) {
+			return obj.getSubService();
+		}
+
+		@Override
+		public void setValue(BillingServiceIdentification2 obj, Optional<BillingSubServiceIdentification1> value) {
+			obj.setSubService(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Desc", required = true)
@@ -208,7 +229,7 @@ public class BillingServiceIdentification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceIdentification2, Max70Text> mmDescription = new MMMessageAttribute<BillingServiceIdentification2, Max70Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceIdentification2.mmObject();
 			isDerived = false;
@@ -219,6 +240,16 @@ public class BillingServiceIdentification2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public Max70Text getValue(BillingServiceIdentification2 obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(BillingServiceIdentification2 obj, Max70Text value) {
+			obj.setDescription(value);
 		}
 	};
 
@@ -250,7 +281,7 @@ public class BillingServiceIdentification2 {
 		return subService == null ? Optional.empty() : Optional.of(subService);
 	}
 
-	public BillingServiceIdentification2 setSubService(com.tools20022.repository.msg.BillingSubServiceIdentification1 subService) {
+	public BillingServiceIdentification2 setSubService(BillingSubServiceIdentification1 subService) {
 		this.subService = subService;
 		return this;
 	}

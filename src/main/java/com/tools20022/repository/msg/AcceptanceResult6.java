@@ -115,7 +115,7 @@ public class AcceptanceResult6 {
 	 * "Indicates whether the mandate request was accepted or rejected."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccepted = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AcceptanceResult6, YesNoIndicator> mmAccepted = new MMMessageAttribute<AcceptanceResult6, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> MandateStatus.mmAccepted;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptanceResult6.mmObject();
@@ -127,6 +127,16 @@ public class AcceptanceResult6 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		@Override
+		public YesNoIndicator getValue(AcceptanceResult6 obj) {
+			return obj.getAccepted();
+		}
+
+		@Override
+		public void setValue(AcceptanceResult6 obj, YesNoIndicator value) {
+			obj.setAccepted(value);
 		}
 	};
 	@XmlElement(name = "RjctRsn")
@@ -164,7 +174,7 @@ public class AcceptanceResult6 {
 	 * "Specifies the reason for the rejection of a mandate request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRejectReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcceptanceResult6, Optional<MandateReason1Choice>> mmRejectReason = new MMMessageAssociationEnd<AcceptanceResult6, Optional<MandateReason1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> MandateStatus.mmRejectReason;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptanceResult6.mmObject();
@@ -177,6 +187,16 @@ public class AcceptanceResult6 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> MandateReason1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<MandateReason1Choice> getValue(AcceptanceResult6 obj) {
+			return obj.getRejectReason();
+		}
+
+		@Override
+		public void setValue(AcceptanceResult6 obj, Optional<MandateReason1Choice> value) {
+			obj.setRejectReason(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlRjctRsnInf")
@@ -213,7 +233,7 @@ public class AcceptanceResult6 {
 	 * definition} = "Further details on the reject reason."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalRejectReasonInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AcceptanceResult6, List<Max105Text>> mmAdditionalRejectReasonInformation = new MMMessageAttribute<AcceptanceResult6, List<Max105Text>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptanceResult6.mmObject();
@@ -224,6 +244,16 @@ public class AcceptanceResult6 {
 			definition = "Further details on the reject reason.";
 			minOccurs = 0;
 			simpleType_lazy = () -> Max105Text.mmObject();
+		}
+
+		@Override
+		public List<Max105Text> getValue(AcceptanceResult6 obj) {
+			return obj.getAdditionalRejectReasonInformation();
+		}
+
+		@Override
+		public void setValue(AcceptanceResult6 obj, List<Max105Text> value) {
+			obj.setAdditionalRejectReasonInformation(value);
 		}
 	};
 

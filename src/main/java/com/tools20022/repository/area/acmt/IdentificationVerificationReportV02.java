@@ -26,7 +26,6 @@ import com.tools20022.repository.msg.IdentificationAssignment2;
 import com.tools20022.repository.msg.MessageIdentification5;
 import com.tools20022.repository.msg.SupplementaryData1;
 import com.tools20022.repository.msg.VerificationReport2;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.*;
@@ -119,7 +118,7 @@ public class IdentificationVerificationReportV02 {
 	 * definition} = "Identifies the identification assignment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAssignment = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IdentificationVerificationReportV02, IdentificationAssignment2> mmAssignment = new MMMessageBuildingBlock<IdentificationVerificationReportV02, IdentificationAssignment2>() {
 		{
 			xmlTag = "Assgnmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,12 +129,14 @@ public class IdentificationVerificationReportV02 {
 			complexType_lazy = () -> IdentificationAssignment2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IdentificationVerificationReportV02.class.getMethod("getAssignment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IdentificationAssignment2 getValue(IdentificationVerificationReportV02 obj) {
+			return obj.getAssignment();
+		}
+
+		@Override
+		public void setValue(IdentificationVerificationReportV02 obj, IdentificationAssignment2 value) {
+			obj.setAssignment(value);
 		}
 	};
 	@XmlElement(name = "OrgnlAssgnmt")
@@ -164,7 +165,7 @@ public class IdentificationVerificationReportV02 {
 	 * "Provides for the reference to the original identification assignment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOriginalAssignment = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IdentificationVerificationReportV02, Optional<MessageIdentification5>> mmOriginalAssignment = new MMMessageBuildingBlock<IdentificationVerificationReportV02, Optional<MessageIdentification5>>() {
 		{
 			xmlTag = "OrgnlAssgnmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,12 +176,14 @@ public class IdentificationVerificationReportV02 {
 			complexType_lazy = () -> MessageIdentification5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IdentificationVerificationReportV02.class.getMethod("getOriginalAssignment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<MessageIdentification5> getValue(IdentificationVerificationReportV02 obj) {
+			return obj.getOriginalAssignment();
+		}
+
+		@Override
+		public void setValue(IdentificationVerificationReportV02 obj, Optional<MessageIdentification5> value) {
+			obj.setOriginalAssignment(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rpt", required = true)
@@ -210,7 +213,7 @@ public class IdentificationVerificationReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReport = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IdentificationVerificationReportV02, List<VerificationReport2>> mmReport = new MMMessageBuildingBlock<IdentificationVerificationReportV02, List<VerificationReport2>>() {
 		{
 			xmlTag = "Rpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,12 +223,14 @@ public class IdentificationVerificationReportV02 {
 			complexType_lazy = () -> VerificationReport2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IdentificationVerificationReportV02.class.getMethod("getReport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<VerificationReport2> getValue(IdentificationVerificationReportV02 obj) {
+			return obj.getReport();
+		}
+
+		@Override
+		public void setValue(IdentificationVerificationReportV02 obj, List<VerificationReport2> value) {
+			obj.setReport(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -255,7 +260,7 @@ public class IdentificationVerificationReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IdentificationVerificationReportV02, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<IdentificationVerificationReportV02, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -265,12 +270,14 @@ public class IdentificationVerificationReportV02 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IdentificationVerificationReportV02.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(IdentificationVerificationReportV02 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(IdentificationVerificationReportV02 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

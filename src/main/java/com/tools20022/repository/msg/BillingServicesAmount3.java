@@ -23,6 +23,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.entity.Service;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection34;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -102,11 +103,11 @@ public class BillingServicesAmount3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Represents the total of all taxable services in a specific tax region for a specific currency.  For example, all taxable services for a tax region in Euro would be totalled here in the Euro currency."
+	 * "Represents the total of all taxable services in a specific tax region for a specific currency. For example, all taxable services for a tax region in Euro would be totalled here in the Euro currency."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSourceAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServicesAmount3, AmountAndDirection34> mmSourceAmount = new MMMessageAssociationEnd<BillingServicesAmount3, AmountAndDirection34>() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount3.mmObject();
@@ -114,11 +115,21 @@ public class BillingServicesAmount3 {
 			xmlTag = "SrcAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SourceAmount";
-			definition = "Represents the total of all taxable services in a specific tax region for a specific currency.  For example, all taxable services for a tax region in Euro would be totalled here in the Euro currency.";
+			definition = "Represents the total of all taxable services in a specific tax region for a specific currency. For example, all taxable services for a tax region in Euro would be totalled here in the Euro currency.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection34 getValue(BillingServicesAmount3 obj) {
+			return obj.getSourceAmount();
+		}
+
+		@Override
+		public void setValue(BillingServicesAmount3 obj, AmountAndDirection34 value) {
+			obj.setSourceAmount(value);
 		}
 	};
 	@XmlElement(name = "HstAmt", required = true)
@@ -156,7 +167,7 @@ public class BillingServicesAmount3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmHostAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServicesAmount3, AmountAndDirection34> mmHostAmount = new MMMessageAssociationEnd<BillingServicesAmount3, AmountAndDirection34>() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount3.mmObject();
@@ -168,7 +179,17 @@ public class BillingServicesAmount3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection34 getValue(BillingServicesAmount3 obj) {
+			return obj.getHostAmount();
+		}
+
+		@Override
+		public void setValue(BillingServicesAmount3 obj, AmountAndDirection34 value) {
+			obj.setHostAmount(value);
 		}
 	};
 
@@ -190,7 +211,7 @@ public class BillingServicesAmount3 {
 		return sourceAmount;
 	}
 
-	public BillingServicesAmount3 setSourceAmount(com.tools20022.repository.msg.AmountAndDirection34 sourceAmount) {
+	public BillingServicesAmount3 setSourceAmount(AmountAndDirection34 sourceAmount) {
 		this.sourceAmount = Objects.requireNonNull(sourceAmount);
 		return this;
 	}
@@ -199,7 +220,7 @@ public class BillingServicesAmount3 {
 		return hostAmount;
 	}
 
-	public BillingServicesAmount3 setHostAmount(com.tools20022.repository.msg.AmountAndDirection34 hostAmount) {
+	public BillingServicesAmount3 setHostAmount(AmountAndDirection34 hostAmount) {
 		this.hostAmount = Objects.requireNonNull(hostAmount);
 		return this;
 	}

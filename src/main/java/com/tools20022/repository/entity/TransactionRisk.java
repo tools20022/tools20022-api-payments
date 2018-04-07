@@ -19,8 +19,9 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.entity.ExposureCalculation;
+import com.tools20022.repository.entity.Obligation;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -84,7 +85,7 @@ import java.util.Objects;
 public class TransactionRisk {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Obligation> obligation;
+	protected List<Obligation> obligation;
 	/**
 	 * 
 	 <p>
@@ -120,7 +121,7 @@ public class TransactionRisk {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TransactionRisk, List<Obligation>> mmObligation = new MMBusinessAssociationEnd<TransactionRisk, List<Obligation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionRisk.mmObject();
@@ -128,9 +129,19 @@ public class TransactionRisk {
 			name = "Obligation";
 			definition = "Specifies the obligations used to calculate the transaction risk.\r\nSpecifies the quantity of securities and/or the cash amounts that have to be taken into account to calculate the exposure of one trading party versus one of its counterparties.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Obligation.mmTransactionRisk;
+			opposite_lazy = () -> Obligation.mmTransactionRisk;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
+			type_lazy = () -> Obligation.mmObject();
+		}
+
+		@Override
+		public List<Obligation> getValue(TransactionRisk obj) {
+			return obj.getObligation();
+		}
+
+		@Override
+		public void setValue(TransactionRisk obj, List<Obligation> value) {
+			obj.setObligation(value);
 		}
 	};
 	protected ActiveCurrencyAndAmount exposedAmount;
@@ -162,7 +173,7 @@ public class TransactionRisk {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExposedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TransactionRisk, ActiveCurrencyAndAmount> mmExposedAmount = new MMBusinessAttribute<TransactionRisk, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionRisk.mmObject();
@@ -174,12 +185,14 @@ public class TransactionRisk {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TransactionRisk.class.getMethod("getExposedAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(TransactionRisk obj) {
+			return obj.getExposedAmount();
+		}
+
+		@Override
+		public void setValue(TransactionRisk obj, ActiveCurrencyAndAmount value) {
+			obj.setExposedAmount(value);
 		}
 	};
 	protected ExposureCalculation exposureCalculation;
@@ -218,7 +231,7 @@ public class TransactionRisk {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmExposureCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TransactionRisk, ExposureCalculation> mmExposureCalculation = new MMBusinessAssociationEnd<TransactionRisk, ExposureCalculation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TransactionRisk.mmObject();
@@ -227,9 +240,19 @@ public class TransactionRisk {
 			definition = "Specifies the exposure for which the risk is calculated on a transaction basis.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmTransactionRisk;
+			opposite_lazy = () -> ExposureCalculation.mmTransactionRisk;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
+			type_lazy = () -> ExposureCalculation.mmObject();
+		}
+
+		@Override
+		public ExposureCalculation getValue(TransactionRisk obj) {
+			return obj.getExposureCalculation();
+		}
+
+		@Override
+		public void setValue(TransactionRisk obj, ExposureCalculation value) {
+			obj.setExposureCalculation(value);
 		}
 	};
 
@@ -240,7 +263,7 @@ public class TransactionRisk {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionRisk";
 				definition = "Calculation of the exposure amount that one party has vis-a-vis one counterparty or a central system, based on the transactions that are not yet settled.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Obligation.mmTransactionRisk, com.tools20022.repository.entity.ExposureCalculation.mmTransactionRisk);
+				associationDomain_lazy = () -> Arrays.asList(Obligation.mmTransactionRisk, ExposureCalculation.mmTransactionRisk);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TransactionRisk.mmObligation, com.tools20022.repository.entity.TransactionRisk.mmExposedAmount,
 						com.tools20022.repository.entity.TransactionRisk.mmExposureCalculation);
 			}
@@ -257,7 +280,7 @@ public class TransactionRisk {
 		return obligation == null ? obligation = new ArrayList<>() : obligation;
 	}
 
-	public TransactionRisk setObligation(List<com.tools20022.repository.entity.Obligation> obligation) {
+	public TransactionRisk setObligation(List<Obligation> obligation) {
 		this.obligation = Objects.requireNonNull(obligation);
 		return this;
 	}
@@ -275,7 +298,7 @@ public class TransactionRisk {
 		return exposureCalculation;
 	}
 
-	public TransactionRisk setExposureCalculation(com.tools20022.repository.entity.ExposureCalculation exposureCalculation) {
+	public TransactionRisk setExposureCalculation(ExposureCalculation exposureCalculation) {
 		this.exposureCalculation = Objects.requireNonNull(exposureCalculation);
 		return this;
 	}

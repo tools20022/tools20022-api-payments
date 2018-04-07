@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.entity.Undertaking;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -114,7 +115,7 @@ public class UndertakingPartyRole extends Role {
 	 * "Identifies the undertaking for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<UndertakingPartyRole, com.tools20022.repository.entity.Undertaking> mmUndertaking = new MMBusinessAssociationEnd<UndertakingPartyRole, com.tools20022.repository.entity.Undertaking>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingPartyRole.mmObject();
@@ -126,6 +127,16 @@ public class UndertakingPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.mmPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Undertaking getValue(UndertakingPartyRole obj) {
+			return obj.getUndertaking();
+		}
+
+		@Override
+		public void setValue(UndertakingPartyRole obj, com.tools20022.repository.entity.Undertaking value) {
+			obj.setUndertaking(value);
 		}
 	};
 

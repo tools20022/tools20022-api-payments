@@ -27,6 +27,7 @@ import com.tools20022.repository.codeset.UseCases1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.MessageIdentification1;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -124,7 +125,7 @@ public class References5 {
 	 * definition} = "Identifies the type of acknowledged request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References5, UseCases1Code> mmRequestType = new MMMessageAttribute<References5, UseCases1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
@@ -135,6 +136,16 @@ public class References5 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> UseCases1Code.mmObject();
+		}
+
+		@Override
+		public UseCases1Code getValue(References5 obj) {
+			return obj.getRequestType();
+		}
+
+		@Override
+		public void setValue(References5 obj, UseCases1Code value) {
+			obj.setRequestType(value);
 		}
 	};
 	@XmlElement(name = "MsgId", required = true)
@@ -166,7 +177,7 @@ public class References5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMessageIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<References5, MessageIdentification1> mmMessageIdentification = new MMMessageAssociationEnd<References5, MessageIdentification1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
@@ -177,7 +188,17 @@ public class References5 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
+			type_lazy = () -> MessageIdentification1.mmObject();
+		}
+
+		@Override
+		public MessageIdentification1 getValue(References5 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(References5 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
 	@XmlElement(name = "PrcId", required = true)
@@ -209,7 +230,7 @@ public class References5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProcessIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<References5, MessageIdentification1> mmProcessIdentification = new MMMessageAssociationEnd<References5, MessageIdentification1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
@@ -220,11 +241,21 @@ public class References5 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
+			type_lazy = () -> MessageIdentification1.mmObject();
+		}
+
+		@Override
+		public MessageIdentification1 getValue(References5 obj) {
+			return obj.getProcessIdentification();
+		}
+
+		@Override
+		public void setValue(References5 obj, MessageIdentification1 value) {
+			obj.setProcessIdentification(value);
 		}
 	};
 	@XmlElement(name = "AckdMsgId")
-	protected List<com.tools20022.repository.msg.MessageIdentification1> acknowledgedMessageIdentification;
+	protected List<MessageIdentification1> acknowledgedMessageIdentification;
 	/**
 	 * 
 	 <p>
@@ -250,7 +281,7 @@ public class References5 {
 	 * definition} = "Reference to the message that is acknowledged."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAcknowledgedMessageIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<References5, List<MessageIdentification1>> mmAcknowledgedMessageIdentification = new MMMessageAssociationEnd<References5, List<MessageIdentification1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
@@ -260,7 +291,17 @@ public class References5 {
 			definition = "Reference to the message that is acknowledged.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
+			type_lazy = () -> MessageIdentification1.mmObject();
+		}
+
+		@Override
+		public List<MessageIdentification1> getValue(References5 obj) {
+			return obj.getAcknowledgedMessageIdentification();
+		}
+
+		@Override
+		public void setValue(References5 obj, List<MessageIdentification1> value) {
+			obj.setAcknowledgedMessageIdentification(value);
 		}
 	};
 	@XmlElement(name = "Sts")
@@ -291,7 +332,7 @@ public class References5 {
 	 * definition} = "Status of the request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References5, Optional<Max35Text>> mmStatus = new MMMessageAttribute<References5, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
@@ -302,6 +343,16 @@ public class References5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(References5 obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(References5 obj, Optional<Max35Text> value) {
+			obj.setStatus(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AttchdDocNm")
@@ -333,7 +384,7 @@ public class References5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttachedDocumentName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References5, List<Max70Text>> mmAttachedDocumentName = new MMMessageAttribute<References5, List<Max70Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References5.mmObject();
 			isDerived = false;
@@ -343,6 +394,16 @@ public class References5 {
 			definition = "File name of a document logically related to the request.";
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public List<Max70Text> getValue(References5 obj) {
+			return obj.getAttachedDocumentName();
+		}
+
+		@Override
+		public void setValue(References5 obj, List<Max70Text> value) {
+			obj.setAttachedDocumentName(value);
 		}
 	};
 
@@ -375,7 +436,7 @@ public class References5 {
 		return messageIdentification;
 	}
 
-	public References5 setMessageIdentification(com.tools20022.repository.msg.MessageIdentification1 messageIdentification) {
+	public References5 setMessageIdentification(MessageIdentification1 messageIdentification) {
 		this.messageIdentification = Objects.requireNonNull(messageIdentification);
 		return this;
 	}
@@ -384,7 +445,7 @@ public class References5 {
 		return processIdentification;
 	}
 
-	public References5 setProcessIdentification(com.tools20022.repository.msg.MessageIdentification1 processIdentification) {
+	public References5 setProcessIdentification(MessageIdentification1 processIdentification) {
 		this.processIdentification = Objects.requireNonNull(processIdentification);
 		return this;
 	}
@@ -393,7 +454,7 @@ public class References5 {
 		return acknowledgedMessageIdentification == null ? acknowledgedMessageIdentification = new ArrayList<>() : acknowledgedMessageIdentification;
 	}
 
-	public References5 setAcknowledgedMessageIdentification(List<com.tools20022.repository.msg.MessageIdentification1> acknowledgedMessageIdentification) {
+	public References5 setAcknowledgedMessageIdentification(List<MessageIdentification1> acknowledgedMessageIdentification) {
 		this.acknowledgedMessageIdentification = Objects.requireNonNull(acknowledgedMessageIdentification);
 		return this;
 	}

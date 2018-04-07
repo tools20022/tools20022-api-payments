@@ -110,7 +110,7 @@ public class BatchInformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BatchInformation2, Optional<Max35Text>> mmMessageIdentification = new MMMessageAttribute<BatchInformation2, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BatchInformation2.mmObject();
 			isDerived = false;
@@ -121,6 +121,16 @@ public class BatchInformation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(BatchInformation2 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(BatchInformation2 obj, Optional<Max35Text> value) {
+			obj.setMessageIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PmtInfId")
@@ -154,7 +164,7 @@ public class BatchInformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPaymentInformationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BatchInformation2, Optional<Max35Text>> mmPaymentInformationIdentification = new MMMessageAttribute<BatchInformation2, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BatchInformation2.mmObject();
 			isDerived = false;
@@ -165,6 +175,16 @@ public class BatchInformation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(BatchInformation2 obj) {
+			return obj.getPaymentInformationIdentification();
+		}
+
+		@Override
+		public void setValue(BatchInformation2 obj, Optional<Max35Text> value) {
+			obj.setPaymentInformationIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "NbOfTxs")
@@ -197,7 +217,7 @@ public class BatchInformation2 {
 	 * definition} = "Number of individual transactions included in the batch."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfTransactions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BatchInformation2, Optional<Max15NumericText>> mmNumberOfTransactions = new MMMessageAttribute<BatchInformation2, Optional<Max15NumericText>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BatchInformation2.mmObject();
 			isDerived = false;
@@ -208,6 +228,16 @@ public class BatchInformation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Max15NumericText> getValue(BatchInformation2 obj) {
+			return obj.getNumberOfTransactions();
+		}
+
+		@Override
+		public void setValue(BatchInformation2 obj, Optional<Max15NumericText> value) {
+			obj.setNumberOfTransactions(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TtlAmt")
@@ -240,7 +270,7 @@ public class BatchInformation2 {
 	 * definition} = "Total amount of money reported in the batch entry."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BatchInformation2, Optional<ActiveOrHistoricCurrencyAndAmount>> mmTotalAmount = new MMMessageAttribute<BatchInformation2, Optional<ActiveOrHistoricCurrencyAndAmount>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BatchInformation2.mmObject();
 			isDerived = false;
@@ -251,6 +281,16 @@ public class BatchInformation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyAndAmount> getValue(BatchInformation2 obj) {
+			return obj.getTotalAmount();
+		}
+
+		@Override
+		public void setValue(BatchInformation2 obj, Optional<ActiveOrHistoricCurrencyAndAmount> value) {
+			obj.setTotalAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CdtDbtInd")
@@ -284,7 +324,7 @@ public class BatchInformation2 {
 	 * "Indicates whether the batch entry is a credit or a debit entry."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BatchInformation2, Optional<CreditDebitCode>> mmCreditDebitIndicator = new MMMessageAttribute<BatchInformation2, Optional<CreditDebitCode>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BatchInformation2.mmObject();
 			isDerived = false;
@@ -295,6 +335,16 @@ public class BatchInformation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> CreditDebitCode.mmObject();
+		}
+
+		@Override
+		public Optional<CreditDebitCode> getValue(BatchInformation2 obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(BatchInformation2 obj, Optional<CreditDebitCode> value) {
+			obj.setCreditDebitIndicator(value.orElse(null));
 		}
 	};
 

@@ -99,7 +99,7 @@ public class AuthenticationChannel1Choice {
 	 * "Authentication channel expressed as an external ISO 20022 code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AuthenticationChannel1Choice, ExternalAuthenticationChannel1Code> mmCode = new MMMessageAttribute<AuthenticationChannel1Choice, ExternalAuthenticationChannel1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.AuthenticationChannel1Choice.mmObject();
 			isDerived = false;
@@ -110,6 +110,16 @@ public class AuthenticationChannel1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalAuthenticationChannel1Code.mmObject();
+		}
+
+		@Override
+		public ExternalAuthenticationChannel1Code getValue(AuthenticationChannel1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(AuthenticationChannel1Choice obj, ExternalAuthenticationChannel1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -141,7 +151,7 @@ public class AuthenticationChannel1Choice {
 	 * definition} = "Authentication channel expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AuthenticationChannel1Choice, Max35Text> mmProprietary = new MMMessageAttribute<AuthenticationChannel1Choice, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.AuthenticationChannel1Choice.mmObject();
 			isDerived = false;
@@ -152,6 +162,16 @@ public class AuthenticationChannel1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(AuthenticationChannel1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(AuthenticationChannel1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

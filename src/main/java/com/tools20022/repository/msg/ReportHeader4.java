@@ -121,7 +121,7 @@ public class ReportHeader4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportHeader4, Max35Text> mmIdentification = new MMMessageAttribute<ReportHeader4, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReportHeader4.mmObject();
 			isDerived = false;
@@ -132,6 +132,16 @@ public class ReportHeader4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ReportHeader4 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(ReportHeader4 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "Fr", required = true)
@@ -161,7 +171,7 @@ public class ReportHeader4 {
 	 * definition} = "Party reporting the status of the investigation case."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFrom = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ReportHeader4, Party12Choice> mmFrom = new MMMessageAssociationEnd<ReportHeader4, Party12Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReportHeader4.mmObject();
 			isDerived = false;
@@ -173,6 +183,16 @@ public class ReportHeader4 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Party12Choice.mmObject();
+		}
+
+		@Override
+		public Party12Choice getValue(ReportHeader4 obj) {
+			return obj.getFrom();
+		}
+
+		@Override
+		public void setValue(ReportHeader4 obj, Party12Choice value) {
+			obj.setFrom(value);
 		}
 	};
 	@XmlElement(name = "To", required = true)
@@ -202,7 +222,7 @@ public class ReportHeader4 {
 	 * definition} = "Party to which the status of the case is reported."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTo = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ReportHeader4, Party12Choice> mmTo = new MMMessageAssociationEnd<ReportHeader4, Party12Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReportHeader4.mmObject();
 			isDerived = false;
@@ -214,6 +234,16 @@ public class ReportHeader4 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Party12Choice.mmObject();
+		}
+
+		@Override
+		public Party12Choice getValue(ReportHeader4 obj) {
+			return obj.getTo();
+		}
+
+		@Override
+		public void setValue(ReportHeader4 obj, Party12Choice value) {
+			obj.setTo(value);
 		}
 	};
 	@XmlElement(name = "CreDtTm", required = true)
@@ -244,7 +274,7 @@ public class ReportHeader4 {
 	 * definition} = "Date and time at which the message was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportHeader4, ISODateTime> mmCreationDateTime = new MMMessageAttribute<ReportHeader4, ISODateTime>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReportHeader4.mmObject();
 			isDerived = false;
@@ -255,6 +285,16 @@ public class ReportHeader4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public ISODateTime getValue(ReportHeader4 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(ReportHeader4 obj, ISODateTime value) {
+			obj.setCreationDateTime(value);
 		}
 	};
 

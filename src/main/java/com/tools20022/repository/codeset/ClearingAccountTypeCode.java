@@ -45,6 +45,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClearingAccountTypeCode#LiquidityProvider
  * ClearingAccountTypeCode.LiquidityProvider}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ClearingAccountTypeCode#GrossOmnibusClientAccount
+ * ClearingAccountTypeCode.GrossOmnibusClientAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ClearingAccountTypeCode#NetOmnibusClientAccount
+ * ClearingAccountTypeCode.NetOmnibusClientAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ClearingAccountTypeCode#IndividuallySegregatedAccount
+ * ClearingAccountTypeCode.IndividuallySegregatedAccount}</li>
  * </ul>
  * </li>
  * <li>
@@ -171,6 +180,111 @@ public class ClearingAccountTypeCode extends MMCode {
 			codeName = "LIPR";
 		}
 	};
+	/**
+	 * Specifies that client position and assets within the associated position
+	 * and collateral accounts of the clearing account are operationally and
+	 * legally conmingled, however initial margin requirements are calculated on
+	 * a gross basis for each related margining account.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.ClearingAccountTypeCode
+	 * ClearingAccountTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "GOSA"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "GrossOmnibusClientAccount"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Specifies that client position and assets within the associated position and collateral accounts of the clearing account are operationally and legally conmingled, however initial margin requirements are calculated on a gross basis for each related margining account."
+	 * </li>
+	 * </ul>
+	 */
+	public static final ClearingAccountTypeCode GrossOmnibusClientAccount = new ClearingAccountTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "GrossOmnibusClientAccount";
+			definition = "Specifies that client position and assets within the associated position and collateral accounts of the clearing account are operationally and legally conmingled, however initial margin requirements are calculated on a gross basis for each related margining account.";
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingAccountTypeCode.mmObject();
+			codeName = "GOSA";
+		}
+	};
+	/**
+	 * Specifies that the client positions and assets within the associated
+	 * position and collateral accounts of the clearing account are
+	 * operationally and legally conmingled while initial margin requirements
+	 * are calculated on a net basis across all related margining or position
+	 * accounts.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.ClearingAccountTypeCode
+	 * ClearingAccountTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "NOSA"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "NetOmnibusClientAccount"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Specifies that the client positions and assets within the associated position and collateral accounts of the clearing account are operationally and legally conmingled while initial margin requirements are calculated on a net basis across all related margining or position accounts."
+	 * </li>
+	 * </ul>
+	 */
+	public static final ClearingAccountTypeCode NetOmnibusClientAccount = new ClearingAccountTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "NetOmnibusClientAccount";
+			definition = "Specifies that the client positions and assets within the associated position and collateral accounts of the clearing account are operationally and legally conmingled while initial margin requirements are calculated on a net basis across all related margining or position accounts.";
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingAccountTypeCode.mmObject();
+			codeName = "NOSA";
+		}
+	};
+	/**
+	 * Specifies that customer positions and assets within the associated
+	 * position and collateral accounts of the clearing account are
+	 * operationally and legally segregated.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.ClearingAccountTypeCode
+	 * ClearingAccountTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "ISEG"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "IndividuallySegregatedAccount"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Specifies that customer positions and assets within the associated position and collateral accounts of the clearing account are operationally and legally segregated."
+	 * </li>
+	 * </ul>
+	 */
+	public static final ClearingAccountTypeCode IndividuallySegregatedAccount = new ClearingAccountTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "IndividuallySegregatedAccount";
+			definition = "Specifies that customer positions and assets within the associated position and collateral accounts of the clearing account are operationally and legally segregated.";
+			owner_lazy = () -> com.tools20022.repository.codeset.ClearingAccountTypeCode.mmObject();
+			codeName = "ISEG";
+		}
+	};
 	final static private LinkedHashMap<String, ClearingAccountTypeCode> codesByName = new LinkedHashMap<>();
 
 	protected ClearingAccountTypeCode() {
@@ -185,7 +299,8 @@ public class ClearingAccountTypeCode extends MMCode {
 				name = "ClearingAccountTypeCode";
 				definition = "Specifies the clearing account type.";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ClearingAccountTypeCode.House, com.tools20022.repository.codeset.ClearingAccountTypeCode.Client,
-						com.tools20022.repository.codeset.ClearingAccountTypeCode.LiquidityProvider);
+						com.tools20022.repository.codeset.ClearingAccountTypeCode.LiquidityProvider, com.tools20022.repository.codeset.ClearingAccountTypeCode.GrossOmnibusClientAccount,
+						com.tools20022.repository.codeset.ClearingAccountTypeCode.NetOmnibusClientAccount, com.tools20022.repository.codeset.ClearingAccountTypeCode.IndividuallySegregatedAccount);
 			}
 		});
 		return mmObject_lazy.get();
@@ -195,6 +310,9 @@ public class ClearingAccountTypeCode extends MMCode {
 		codesByName.put(House.getCodeName().get(), House);
 		codesByName.put(Client.getCodeName().get(), Client);
 		codesByName.put(LiquidityProvider.getCodeName().get(), LiquidityProvider);
+		codesByName.put(GrossOmnibusClientAccount.getCodeName().get(), GrossOmnibusClientAccount);
+		codesByName.put(NetOmnibusClientAccount.getCodeName().get(), NetOmnibusClientAccount);
+		codesByName.put(IndividuallySegregatedAccount.getCodeName().get(), IndividuallySegregatedAccount);
 	}
 
 	public static ClearingAccountTypeCode valueOf(String codeName) {

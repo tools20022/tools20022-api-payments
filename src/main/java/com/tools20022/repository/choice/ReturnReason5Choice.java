@@ -106,7 +106,7 @@ public class ReturnReason5Choice {
 	 * "Reason for the return, as published in an external reason code list."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReturnReason5Choice, ExternalReturnReason1Code> mmCode = new MMMessageAttribute<ReturnReason5Choice, ExternalReturnReason1Code>() {
 		{
 			businessComponentTrace_lazy = () -> StatusReason.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.ReturnReason5Choice.mmObject();
@@ -118,6 +118,16 @@ public class ReturnReason5Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalReturnReason1Code.mmObject();
+		}
+
+		@Override
+		public ExternalReturnReason1Code getValue(ReturnReason5Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ReturnReason5Choice obj, ExternalReturnReason1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -153,7 +163,7 @@ public class ReturnReason5Choice {
 	 * definition} = "Reason for the return, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReturnReason5Choice, Max35Text> mmProprietary = new MMMessageAttribute<ReturnReason5Choice, Max35Text>() {
 		{
 			businessComponentTrace_lazy = () -> StatusReason.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.ReturnReason5Choice.mmObject();
@@ -165,6 +175,16 @@ public class ReturnReason5Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ReturnReason5Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ReturnReason5Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

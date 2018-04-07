@@ -116,7 +116,7 @@ public class DocumentAdjustment1 {
 	 * definition} = "Amount of money of the document adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentAdjustment1, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<DocumentAdjustment1, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentAdjustment1.mmObject();
@@ -128,6 +128,16 @@ public class DocumentAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(DocumentAdjustment1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(DocumentAdjustment1 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "CdtDbtInd")
@@ -163,11 +173,11 @@ public class DocumentAdjustment1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies whether the adjustment must be substracted or added to the total amount."
+	 * "Specifies whether the adjustment must be subtracted or added to the total amount."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentAdjustment1, Optional<CreditDebitCode>> mmCreditDebitIndicator = new MMMessageAttribute<DocumentAdjustment1, Optional<CreditDebitCode>>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmDirection;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentAdjustment1.mmObject();
@@ -175,10 +185,20 @@ public class DocumentAdjustment1 {
 			xmlTag = "CdtDbtInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditDebitIndicator";
-			definition = "Specifies whether the adjustment must be substracted or added to the total amount.";
+			definition = "Specifies whether the adjustment must be subtracted or added to the total amount.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> CreditDebitCode.mmObject();
+		}
+
+		@Override
+		public Optional<CreditDebitCode> getValue(DocumentAdjustment1 obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(DocumentAdjustment1 obj, Optional<CreditDebitCode> value) {
+			obj.setCreditDebitIndicator(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rsn")
@@ -215,7 +235,7 @@ public class DocumentAdjustment1 {
 	 * definition} = "Specifies the reason for the adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentAdjustment1, Optional<Max4Text>> mmReason = new MMMessageAttribute<DocumentAdjustment1, Optional<Max4Text>>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmReason;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentAdjustment1.mmObject();
@@ -227,6 +247,16 @@ public class DocumentAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max4Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max4Text> getValue(DocumentAdjustment1 obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(DocumentAdjustment1 obj, Optional<Max4Text> value) {
+			obj.setReason(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -258,7 +288,7 @@ public class DocumentAdjustment1 {
 	 * definition} = "Provides further details on the document adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentAdjustment1, Optional<Max140Text>> mmAdditionalInformation = new MMMessageAttribute<DocumentAdjustment1, Optional<Max140Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentAdjustment1.mmObject();
 			isDerived = false;
@@ -269,6 +299,16 @@ public class DocumentAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(DocumentAdjustment1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(DocumentAdjustment1 obj, Optional<Max140Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 

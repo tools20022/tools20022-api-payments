@@ -20,8 +20,8 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.pacs.FIToFIPaymentReversalV07;
-import com.tools20022.repository.area.pain.CustomerPaymentReversalV07;
+import com.tools20022.repository.area.pacs.FIToFIPaymentReversalV08;
+import com.tools20022.repository.area.pain.CustomerPaymentReversalV08;
 
 /**
  * If GroupHeader/GroupReversal is true, then
@@ -36,8 +36,8 @@ public class ConstraintGroupReversalAndReasonRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentReversalV07
-	 * CustomerPaymentReversalV07}</li>
+	 * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentReversalV08
+	 * CustomerPaymentReversalV08}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/OriginalGroupInformation/ReversalReasonInformation[*]/Reason&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/GroupHeader/GroupReversal&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"EqualToValue\"&gt;&lt;leftOperand&gt;/GroupHeader/GroupReversal&lt;/leftOperand&gt;&lt;rightOperand&gt;true&lt;/rightOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -55,18 +55,18 @@ public class ConstraintGroupReversalAndReasonRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCustomerPaymentReversalV07 = new MMConstraint() {
+	public static final MMConstraint<CustomerPaymentReversalV08> for_pain_CustomerPaymentReversalV08 = new MMConstraint<CustomerPaymentReversalV08>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GroupReversalAndReasonRule";
 			definition = "If GroupHeader/GroupReversal is true, then OriginalGroupInformation/ReversalReasonInformation/ReversalReason must present.";
-			owner_lazy = () -> CustomerPaymentReversalV07.mmObject();
+			owner_lazy = () -> CustomerPaymentReversalV08.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/OriginalGroupInformation/ReversalReasonInformation[*]/Reason</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/GroupHeader/GroupReversal</leftOperand></BooleanRule><BooleanRule xsi:type=\"EqualToValue\"><leftOperand>/GroupHeader/GroupReversal</leftOperand><rightOperand>true</rightOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCustomerPaymentReversalV07((CustomerPaymentReversalV07) obj);
+		public void executeValidator(CustomerPaymentReversalV08 obj) throws Exception {
+			check_pain_CustomerPaymentReversalV08(obj);
 		}
 	};
 	/**
@@ -75,8 +75,8 @@ public class ConstraintGroupReversalAndReasonRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentReversalV07
-	 * FIToFIPaymentReversalV07}</li>
+	 * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentReversalV08
+	 * FIToFIPaymentReversalV08}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/OriginalGroupInformation/ReversalReasonInformation[1]&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/OriginalGroupInformation/ReversalReasonInformation[*]/Reason&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/GroupHeader/GroupReversal&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"EqualToValue\"&gt;&lt;leftOperand&gt;/GroupHeader/GroupReversal&lt;/leftOperand&gt;&lt;rightOperand&gt;true&lt;/rightOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -94,18 +94,18 @@ public class ConstraintGroupReversalAndReasonRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forFIToFIPaymentReversalV07 = new MMConstraint() {
+	public static final MMConstraint<FIToFIPaymentReversalV08> for_pacs_FIToFIPaymentReversalV08 = new MMConstraint<FIToFIPaymentReversalV08>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GroupReversalAndReasonRule";
 			definition = "If GroupHeader/GroupReversal is true, then OriginalGroupInformation/ReversalReasonInformation/Reason must present.";
-			owner_lazy = () -> FIToFIPaymentReversalV07.mmObject();
+			owner_lazy = () -> FIToFIPaymentReversalV08.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/OriginalGroupInformation/ReversalReasonInformation[1]</leftOperand></BooleanRule><BooleanRule xsi:type=\"Presence\"><leftOperand>/OriginalGroupInformation/ReversalReasonInformation[*]/Reason</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/GroupHeader/GroupReversal</leftOperand></BooleanRule><BooleanRule xsi:type=\"EqualToValue\"><leftOperand>/GroupHeader/GroupReversal</leftOperand><rightOperand>true</rightOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFIToFIPaymentReversalV07((FIToFIPaymentReversalV07) obj);
+		public void executeValidator(FIToFIPaymentReversalV08 obj) throws Exception {
+			check_pacs_FIToFIPaymentReversalV08(obj);
 		}
 	};
 
@@ -114,7 +114,7 @@ public class ConstraintGroupReversalAndReasonRule {
 	 * OriginalGroupInformation/ReversalReasonInformation/ReversalReason must
 	 * present.
 	 */
-	public static void checkCustomerPaymentReversalV07(CustomerPaymentReversalV07 obj) throws Exception {
+	public static void check_pain_CustomerPaymentReversalV08(CustomerPaymentReversalV08 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
@@ -122,7 +122,7 @@ public class ConstraintGroupReversalAndReasonRule {
 	 * If GroupHeader/GroupReversal is true, then
 	 * OriginalGroupInformation/ReversalReasonInformation/Reason must present.
 	 */
-	public static void checkFIToFIPaymentReversalV07(FIToFIPaymentReversalV07 obj) throws Exception {
+	public static void check_pacs_FIToFIPaymentReversalV08(FIToFIPaymentReversalV08 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

@@ -23,6 +23,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.entity.AccountRestriction;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Restriction1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -102,7 +103,7 @@ public class RestrictionModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RestrictionModification1, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<RestrictionModification1, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.RestrictionModification1.mmObject();
 			isDerived = false;
@@ -113,6 +114,16 @@ public class RestrictionModification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(RestrictionModification1 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(RestrictionModification1 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rstrctn", required = true)
@@ -149,7 +160,7 @@ public class RestrictionModification1 {
 	 * definition} = "Restriction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRestriction = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RestrictionModification1, Restriction1> mmRestriction = new MMMessageAttribute<RestrictionModification1, Restriction1>() {
 		{
 			businessComponentTrace_lazy = () -> AccountRestriction.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.RestrictionModification1.mmObject();
@@ -160,7 +171,17 @@ public class RestrictionModification1 {
 			definition = "Restriction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.Restriction1.mmObject();
+			complexType_lazy = () -> Restriction1.mmObject();
+		}
+
+		@Override
+		public Restriction1 getValue(RestrictionModification1 obj) {
+			return obj.getRestriction();
+		}
+
+		@Override
+		public void setValue(RestrictionModification1 obj, Restriction1 value) {
+			obj.setRestriction(value);
 		}
 	};
 
@@ -191,7 +212,7 @@ public class RestrictionModification1 {
 		return restriction;
 	}
 
-	public RestrictionModification1 setRestriction(com.tools20022.repository.msg.Restriction1 restriction) {
+	public RestrictionModification1 setRestriction(Restriction1 restriction) {
 		this.restriction = Objects.requireNonNull(restriction);
 		return this;
 	}

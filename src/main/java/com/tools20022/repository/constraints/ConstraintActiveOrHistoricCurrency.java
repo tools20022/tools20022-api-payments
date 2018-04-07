@@ -51,7 +51,7 @@ public class ConstraintActiveOrHistoricCurrency {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forActiveOrHistoricCurrencyCode = new MMConstraint() {
+	public static final MMConstraint<ActiveOrHistoricCurrencyCode> forActiveOrHistoricCurrencyCode = new MMConstraint<ActiveOrHistoricCurrencyCode>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ActiveOrHistoricCurrency";
@@ -60,8 +60,8 @@ public class ConstraintActiveOrHistoricCurrency {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkActiveOrHistoricCurrencyCode((ActiveOrHistoricCurrencyCode) obj);
+		public void executeValidator(ActiveOrHistoricCurrencyCode obj) throws Exception {
+			checkActiveOrHistoricCurrencyCode(obj);
 		}
 	};
 

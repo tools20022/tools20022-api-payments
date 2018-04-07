@@ -20,8 +20,9 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ProductCategoryCode;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.CardPaymentValidation;
+import com.tools20022.repository.entity.Product;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -112,7 +113,7 @@ public class ProductCategory {
 	 * definition} = "Specifies the product for which a category is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ProductCategory, Optional<Product>> mmProduct = new MMBusinessAssociationEnd<ProductCategory, Optional<Product>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
@@ -121,9 +122,19 @@ public class ProductCategory {
 			definition = "Specifies the product for which a category is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmProductCategory;
+			opposite_lazy = () -> Product.mmProductCategory;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
+			type_lazy = () -> Product.mmObject();
+		}
+
+		@Override
+		public Optional<Product> getValue(ProductCategory obj) {
+			return obj.getProduct();
+		}
+
+		@Override
+		public void setValue(ProductCategory obj, Optional<Product> value) {
+			obj.setProduct(value.orElse(null));
 		}
 	};
 	protected ProductCategoryCode type;
@@ -154,7 +165,7 @@ public class ProductCategory {
 	 * "Specifies the type of product category by means of a code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ProductCategory, ProductCategoryCode> mmType = new MMBusinessAttribute<ProductCategory, ProductCategoryCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
@@ -166,12 +177,14 @@ public class ProductCategory {
 			simpleType_lazy = () -> ProductCategoryCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ProductCategory.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ProductCategoryCode getValue(ProductCategory obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ProductCategory obj, ProductCategoryCode value) {
+			obj.setType(value);
 		}
 	};
 	protected Max35Text category;
@@ -200,7 +213,7 @@ public class ProductCategory {
 	 * definition} = "Specifies the category of a product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCategory = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ProductCategory, Max35Text> mmCategory = new MMBusinessAttribute<ProductCategory, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
@@ -212,12 +225,14 @@ public class ProductCategory {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ProductCategory.class.getMethod("getCategory", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ProductCategory obj) {
+			return obj.getCategory();
+		}
+
+		@Override
+		public void setValue(ProductCategory obj, Max35Text value) {
+			obj.setCategory(value);
 		}
 	};
 	protected CardPaymentValidation relatedCardPaymentValidation;
@@ -255,7 +270,7 @@ public class ProductCategory {
 	 * definition} = "Validation process which declined a product code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCardPaymentValidation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ProductCategory, Optional<CardPaymentValidation>> mmRelatedCardPaymentValidation = new MMBusinessAssociationEnd<ProductCategory, Optional<CardPaymentValidation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
@@ -264,9 +279,19 @@ public class ProductCategory {
 			definition = "Validation process which declined a product code.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmDeclinedProductCode;
+			opposite_lazy = () -> CardPaymentValidation.mmDeclinedProductCode;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
+			type_lazy = () -> CardPaymentValidation.mmObject();
+		}
+
+		@Override
+		public Optional<CardPaymentValidation> getValue(ProductCategory obj) {
+			return obj.getRelatedCardPaymentValidation();
+		}
+
+		@Override
+		public void setValue(ProductCategory obj, Optional<CardPaymentValidation> value) {
+			obj.setRelatedCardPaymentValidation(value.orElse(null));
 		}
 	};
 
@@ -277,7 +302,7 @@ public class ProductCategory {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductCategory";
 				definition = "Specifies the category of the product.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Product.mmProductCategory, com.tools20022.repository.entity.CardPaymentValidation.mmDeclinedProductCode);
+				associationDomain_lazy = () -> Arrays.asList(Product.mmProductCategory, CardPaymentValidation.mmDeclinedProductCode);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProductCategory.mmProduct, com.tools20022.repository.entity.ProductCategory.mmType, com.tools20022.repository.entity.ProductCategory.mmCategory,
 						com.tools20022.repository.entity.ProductCategory.mmRelatedCardPaymentValidation);
 			}
@@ -294,7 +319,7 @@ public class ProductCategory {
 		return product == null ? Optional.empty() : Optional.of(product);
 	}
 
-	public ProductCategory setProduct(com.tools20022.repository.entity.Product product) {
+	public ProductCategory setProduct(Product product) {
 		this.product = product;
 		return this;
 	}
@@ -321,7 +346,7 @@ public class ProductCategory {
 		return relatedCardPaymentValidation == null ? Optional.empty() : Optional.of(relatedCardPaymentValidation);
 	}
 
-	public ProductCategory setRelatedCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation relatedCardPaymentValidation) {
+	public ProductCategory setRelatedCardPaymentValidation(CardPaymentValidation relatedCardPaymentValidation) {
 		this.relatedCardPaymentValidation = relatedCardPaymentValidation;
 		return this;
 	}

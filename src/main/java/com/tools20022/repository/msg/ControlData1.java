@@ -20,8 +20,8 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06;
-import com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06;
+import com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV07;
+import com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV07;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.Max15NumericText;
 import com.tools20022.repository.GeneratedRepository;
@@ -56,11 +56,11 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06#mmControlData
- * CustomerPaymentCancellationRequestV06.mmControlData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV07#mmControlData
+ * FIToFIPaymentCancellationRequestV07.mmControlData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06#mmControlData
- * FIToFIPaymentCancellationRequestV06.mmControlData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV07#mmControlData
+ * CustomerPaymentCancellationRequestV07.mmControlData}</li>
  * </ul>
  * </li>
  * <li>
@@ -115,7 +115,7 @@ public class ControlData1 {
 	 * "Number of individual transactions contained in the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfTransactions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ControlData1, Max15NumericText> mmNumberOfTransactions = new MMMessageAttribute<ControlData1, Max15NumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ControlData1.mmObject();
 			isDerived = false;
@@ -126,6 +126,16 @@ public class ControlData1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
+		}
+
+		@Override
+		public Max15NumericText getValue(ControlData1 obj) {
+			return obj.getNumberOfTransactions();
+		}
+
+		@Override
+		public void setValue(ControlData1 obj, Max15NumericText value) {
+			obj.setNumberOfTransactions(value);
 		}
 	};
 	@XmlElement(name = "CtrlSum")
@@ -159,7 +169,7 @@ public class ControlData1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmControlSum = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ControlData1, Optional<DecimalNumber>> mmControlSum = new MMMessageAttribute<ControlData1, Optional<DecimalNumber>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ControlData1.mmObject();
 			isDerived = false;
@@ -171,13 +181,23 @@ public class ControlData1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(ControlData1 obj) {
+			return obj.getControlSum();
+		}
+
+		@Override
+		public void setValue(ControlData1 obj, Optional<DecimalNumber> value) {
+			obj.setControlSum(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ControlData1.mmNumberOfTransactions, com.tools20022.repository.msg.ControlData1.mmControlSum);
-				messageBuildingBlock_lazy = () -> Arrays.asList(CustomerPaymentCancellationRequestV06.mmControlData, FIToFIPaymentCancellationRequestV06.mmControlData);
+				messageBuildingBlock_lazy = () -> Arrays.asList(FIToFIPaymentCancellationRequestV07.mmControlData, CustomerPaymentCancellationRequestV07.mmControlData);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ControlData1";

@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.ObligationFulfilment;
+import com.tools20022.repository.entity.SecuritiesSettlement;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -113,7 +114,7 @@ public class Rollover extends ObligationFulfilment {
 	 * "Trade settlement process which is the source of the rollover."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Rollover, List<SecuritiesSettlement>> mmSecuritiesSettlement = new MMBusinessAssociationEnd<Rollover, List<SecuritiesSettlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Rollover.mmObject();
@@ -124,6 +125,16 @@ public class Rollover extends ObligationFulfilment {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmRollover;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesSettlement> getValue(Rollover obj) {
+			return obj.getSecuritiesSettlement();
+		}
+
+		@Override
+		public void setValue(Rollover obj, List<SecuritiesSettlement> value) {
+			obj.setSecuritiesSettlement(value);
 		}
 	};
 

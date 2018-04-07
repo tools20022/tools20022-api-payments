@@ -120,7 +120,7 @@ public class Party9Choice {
 	 * definition} = "Identification of a person or an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOrganisationIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Party9Choice, PartyIdentification42> mmOrganisationIdentification = new MMMessageAssociationEnd<Party9Choice, PartyIdentification42>() {
 		{
 			businessComponentTrace_lazy = () -> OrganisationIdentification.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.Party9Choice.mmObject();
@@ -133,6 +133,16 @@ public class Party9Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> PartyIdentification42.mmObject();
+		}
+
+		@Override
+		public PartyIdentification42 getValue(Party9Choice obj) {
+			return obj.getOrganisationIdentification();
+		}
+
+		@Override
+		public void setValue(Party9Choice obj, PartyIdentification42 value) {
+			obj.setOrganisationIdentification(value);
 		}
 	};
 	@XmlElement(name = "FIId", required = true)
@@ -168,7 +178,7 @@ public class Party9Choice {
 	 * definition} = "Identification of a financial institution."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancialInstitutionIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Party9Choice, BranchAndFinancialInstitutionIdentification5> mmFinancialInstitutionIdentification = new MMMessageAssociationEnd<Party9Choice, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			businessComponentTrace_lazy = () -> OrganisationIdentification.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.Party9Choice.mmObject();
@@ -181,6 +191,16 @@ public class Party9Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(Party9Choice obj) {
+			return obj.getFinancialInstitutionIdentification();
+		}
+
+		@Override
+		public void setValue(Party9Choice obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setFinancialInstitutionIdentification(value);
 		}
 	};
 

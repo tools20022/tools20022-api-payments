@@ -25,6 +25,7 @@ import com.tools20022.repository.choice.DateOrDateTimePeriodChoice;
 import com.tools20022.repository.choice.InvestigationResult1Choice;
 import com.tools20022.repository.datatype.Max500Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AuthorityRequestType1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -118,7 +119,7 @@ public class ReturnIndicator1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResponsePeriod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReturnIndicator1, Optional<DateOrDateTimePeriodChoice>> mmResponsePeriod = new MMMessageAttribute<ReturnIndicator1, Optional<DateOrDateTimePeriodChoice>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReturnIndicator1.mmObject();
 			isDerived = false;
@@ -129,6 +130,16 @@ public class ReturnIndicator1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> DateOrDateTimePeriodChoice.mmObject();
+		}
+
+		@Override
+		public Optional<DateOrDateTimePeriodChoice> getValue(ReturnIndicator1 obj) {
+			return obj.getResponsePeriod();
+		}
+
+		@Override
+		public void setValue(ReturnIndicator1 obj, Optional<DateOrDateTimePeriodChoice> value) {
+			obj.setResponsePeriod(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AuthrtyReqTp", required = true)
@@ -161,7 +172,7 @@ public class ReturnIndicator1 {
 	 * definition} = "Identifies the authority request type as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAuthorityRequestType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReturnIndicator1, AuthorityRequestType1> mmAuthorityRequestType = new MMMessageAttribute<ReturnIndicator1, AuthorityRequestType1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReturnIndicator1.mmObject();
 			isDerived = false;
@@ -171,7 +182,17 @@ public class ReturnIndicator1 {
 			definition = "Identifies the authority request type as a code.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.AuthorityRequestType1.mmObject();
+			complexType_lazy = () -> AuthorityRequestType1.mmObject();
+		}
+
+		@Override
+		public AuthorityRequestType1 getValue(ReturnIndicator1 obj) {
+			return obj.getAuthorityRequestType();
+		}
+
+		@Override
+		public void setValue(ReturnIndicator1 obj, AuthorityRequestType1 value) {
+			obj.setAuthorityRequestType(value);
 		}
 	};
 	@XmlElement(name = "InvstgtnRslt", required = true)
@@ -204,7 +225,7 @@ public class ReturnIndicator1 {
 	 * definition} = "Provides the investigation result."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInvestigationResult = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReturnIndicator1, InvestigationResult1Choice> mmInvestigationResult = new MMMessageAttribute<ReturnIndicator1, InvestigationResult1Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReturnIndicator1.mmObject();
 			isDerived = false;
@@ -215,6 +236,16 @@ public class ReturnIndicator1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> InvestigationResult1Choice.mmObject();
+		}
+
+		@Override
+		public InvestigationResult1Choice getValue(ReturnIndicator1 obj) {
+			return obj.getInvestigationResult();
+		}
+
+		@Override
+		public void setValue(ReturnIndicator1 obj, InvestigationResult1Choice value) {
+			obj.setInvestigationResult(value);
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -248,7 +279,7 @@ public class ReturnIndicator1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReturnIndicator1, Optional<Max500Text>> mmAdditionalInformation = new MMMessageAttribute<ReturnIndicator1, Optional<Max500Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ReturnIndicator1.mmObject();
 			isDerived = false;
@@ -259,6 +290,16 @@ public class ReturnIndicator1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max500Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max500Text> getValue(ReturnIndicator1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(ReturnIndicator1 obj, Optional<Max500Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 
@@ -290,7 +331,7 @@ public class ReturnIndicator1 {
 		return authorityRequestType;
 	}
 
-	public ReturnIndicator1 setAuthorityRequestType(com.tools20022.repository.msg.AuthorityRequestType1 authorityRequestType) {
+	public ReturnIndicator1 setAuthorityRequestType(AuthorityRequestType1 authorityRequestType) {
 		this.authorityRequestType = Objects.requireNonNull(authorityRequestType);
 		return this;
 	}

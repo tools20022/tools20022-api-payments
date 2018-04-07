@@ -69,7 +69,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "PaymentMethod3Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specifies the transfer method that will be used  to transfer an amount of money."
+ * "Specifies the transfer method that will be used to transfer an amount of money."
  * </li>
  * </ul>
  */
@@ -161,7 +161,7 @@ public class PaymentMethod3Code extends MMCode {
 				example = Arrays.asList("CHK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentMethod3Code";
-				definition = "Specifies the transfer method that will be used  to transfer an amount of money.";
+				definition = "Specifies the transfer method that will be used to transfer an amount of money.";
 				trace_lazy = () -> PaymentMethodCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentMethod3Code.Cheque, com.tools20022.repository.codeset.PaymentMethod3Code.CreditTransfer,
 						com.tools20022.repository.codeset.PaymentMethod3Code.TransferAdvice);

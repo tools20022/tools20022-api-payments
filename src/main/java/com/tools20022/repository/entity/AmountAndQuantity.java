@@ -20,8 +20,8 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.DecimalNumber;
+import com.tools20022.repository.entity.SecuritiesPricing;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -113,7 +113,7 @@ public class AmountAndQuantity {
 	 * definition} = "Pricing which uses the amount and quantity as format."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AmountAndQuantity, Optional<SecuritiesPricing>> mmSecuritiesPricing = new MMBusinessAssociationEnd<AmountAndQuantity, Optional<SecuritiesPricing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndQuantity.mmObject();
@@ -122,9 +122,19 @@ public class AmountAndQuantity {
 			definition = "Pricing which uses the amount and quantity as format.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmAmountPricePerFinancialInstrumentQuantity;
+			opposite_lazy = () -> SecuritiesPricing.mmAmountPricePerFinancialInstrumentQuantity;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesPricing> getValue(AmountAndQuantity obj) {
+			return obj.getSecuritiesPricing();
+		}
+
+		@Override
+		public void setValue(AmountAndQuantity obj, Optional<SecuritiesPricing> value) {
+			obj.setSecuritiesPricing(value.orElse(null));
 		}
 	};
 	protected CurrencyAndAmount amount;
@@ -154,7 +164,7 @@ public class AmountAndQuantity {
 	 * definition} = "A number of monetary units specified in a currency."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AmountAndQuantity, CurrencyAndAmount> mmAmount = new MMBusinessAttribute<AmountAndQuantity, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndQuantity.mmObject();
@@ -166,12 +176,14 @@ public class AmountAndQuantity {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AmountAndQuantity.class.getMethod("getAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AmountAndQuantity obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(AmountAndQuantity obj, CurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	protected DecimalNumber quantity;
@@ -201,7 +213,7 @@ public class AmountAndQuantity {
 	 * definition} = "A number of non-monetary units."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmQuantity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AmountAndQuantity, DecimalNumber> mmQuantity = new MMBusinessAttribute<AmountAndQuantity, DecimalNumber>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndQuantity.mmObject();
@@ -213,12 +225,14 @@ public class AmountAndQuantity {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AmountAndQuantity.class.getMethod("getQuantity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(AmountAndQuantity obj) {
+			return obj.getQuantity();
+		}
+
+		@Override
+		public void setValue(AmountAndQuantity obj, DecimalNumber value) {
+			obj.setQuantity(value);
 		}
 	};
 
@@ -229,7 +243,7 @@ public class AmountAndQuantity {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountAndQuantity";
 				definition = "Value expressed as an amount or a quantity. For example, the value of a financial instrument.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmAmountPricePerFinancialInstrumentQuantity);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmAmountPricePerFinancialInstrumentQuantity);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AmountAndQuantity.mmSecuritiesPricing, com.tools20022.repository.entity.AmountAndQuantity.mmAmount,
 						com.tools20022.repository.entity.AmountAndQuantity.mmQuantity);
 			}
@@ -246,7 +260,7 @@ public class AmountAndQuantity {
 		return securitiesPricing == null ? Optional.empty() : Optional.of(securitiesPricing);
 	}
 
-	public AmountAndQuantity setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+	public AmountAndQuantity setSecuritiesPricing(SecuritiesPricing securitiesPricing) {
 		this.securitiesPricing = securitiesPricing;
 		return this;
 	}

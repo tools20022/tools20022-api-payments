@@ -134,7 +134,7 @@ public class QualifierCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "A limit order that is to be executed in its entirety or not at all (no partial transaction), and thus is testing the strength/conviction of the counterparty.  Unlike a fill or kill order, all or none orders are not to be treated as cancelled if not executed as soon as it is represented in the trading crowd.  Instead it remains alive until executed or cancelled.  The making of \"all or none\" bids or offers in stocks is prohibited, and the making of \"all or none\" bids or offers in bonds is subject to the restrictions of Rule 61."
+	 * "A limit order that is to be executed in its entirety or not at all (no partial transaction), and thus is testing the strength/conviction of the counterparty. Unlike a fill or kill order, all or none orders are not to be treated as cancelled if not executed as soon as it is represented in the trading crowd. Instead it remains alive until executed or cancelled. The making of \"all or none\" bids or offers in stocks is prohibited, and the making of \"all or none\" bids or offers in bonds is subject to the restrictions of Rule 61."
 	 * </li>
 	 * </ul>
 	 */
@@ -143,7 +143,7 @@ public class QualifierCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//ALNO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AllOrNone";
-			definition = "A limit order that is to be executed in its entirety or not at all (no partial transaction), and thus is testing the strength/conviction of the counterparty.  Unlike a fill or kill order, all or none orders are not to be treated as cancelled if not executed as soon as it is represented in the trading crowd.  Instead it remains alive until executed or cancelled.  The making of \"all or none\" bids or offers in stocks is prohibited, and the making of \"all or none\" bids or offers in bonds is subject to the restrictions of Rule 61.";
+			definition = "A limit order that is to be executed in its entirety or not at all (no partial transaction), and thus is testing the strength/conviction of the counterparty. Unlike a fill or kill order, all or none orders are not to be treated as cancelled if not executed as soon as it is represented in the trading crowd. Instead it remains alive until executed or cancelled. The making of \"all or none\" bids or offers in stocks is prohibited, and the making of \"all or none\" bids or offers in bonds is subject to the restrictions of Rule 61.";
 			owner_lazy = () -> com.tools20022.repository.codeset.QualifierCode.mmObject();
 			codeName = "ALNO";
 		}
@@ -208,7 +208,7 @@ public class QualifierCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "An all or none market order that is to be executed at the closing price of the security on the exchange.  If the execution cannot be made under this condition, the order is to be treated as cancelled.\n\nNote that this attribute does not apply to trading of fixed income securities."
+	 * "An all or none market order that is to be executed at the closing price of the security on the exchange. If the execution cannot be made under this condition, the order is to be treated as cancelled.\n\nNote that this attribute does not apply to trading of fixed income securities."
 	 * </li>
 	 * </ul>
 	 */
@@ -217,7 +217,7 @@ public class QualifierCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//CLOS"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AtClose";
-			definition = "An all or none market order that is to be executed at the closing price of the security on the exchange.  If the execution cannot be made under this condition, the order is to be treated as cancelled.\n\nNote that this attribute does not apply to trading of fixed income securities.";
+			definition = "An all or none market order that is to be executed at the closing price of the security on the exchange. If the execution cannot be made under this condition, the order is to be treated as cancelled.\n\nNote that this attribute does not apply to trading of fixed income securities.";
 			owner_lazy = () -> com.tools20022.repository.codeset.QualifierCode.mmObject();
 			codeName = "CLOS";
 		}
@@ -316,7 +316,7 @@ public class QualifierCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "An order to buy a stock at or below a specified price, or to sell a stock at or above a specified price.  The customer specifies a price, and the order can be executed only if the market reaches or betters that price.  A conditional trading order designed to avoid the danger of adverse unexpected price movements."
+	 * "An order to buy a stock at or below a specified price, or to sell a stock at or above a specified price. The customer specifies a price, and the order can be executed only if the market reaches or betters that price. A conditional trading order designed to avoid the danger of adverse unexpected price movements."
 	 * </li>
 	 * </ul>
 	 */
@@ -325,7 +325,7 @@ public class QualifierCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a:TOOR//LMTO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Limit";
-			definition = "An order to buy a stock at or below a specified price, or to sell a stock at or above a specified price.  The customer specifies a price, and the order can be executed only if the market reaches or betters that price.  A conditional trading order designed to avoid the danger of adverse unexpected price movements.";
+			definition = "An order to buy a stock at or below a specified price, or to sell a stock at or above a specified price. The customer specifies a price, and the order can be executed only if the market reaches or betters that price. A conditional trading order designed to avoid the danger of adverse unexpected price movements.";
 			owner_lazy = () -> com.tools20022.repository.codeset.QualifierCode.mmObject();
 			codeName = "LIMI";
 		}
@@ -353,7 +353,7 @@ public class QualifierCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "More security exists to be bought or sold by the same buyer or seller, respectively.  Often, the buyer or seller does not disclose the full size of his buy or sell interest as not to affect the market adversely.\n\nInformation that the execution is taking place in waves/iceberg."
+	 * "More security exists to be bought or sold by the same buyer or seller, respectively. Often, the buyer or seller does not disclose the full size of his buy or sell interest as not to affect the market adversely.\n\nInformation that the execution is taking place in waves/iceberg."
 	 * </li>
 	 * </ul>
 	 */
@@ -361,7 +361,7 @@ public class QualifierCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MoreBehind";
-			definition = "More security exists to be bought or sold by the same buyer or seller, respectively.  Often, the buyer or seller does not disclose the full size of his buy or sell interest as not to affect the market adversely.\n\nInformation that the execution is taking place in waves/iceberg.";
+			definition = "More security exists to be bought or sold by the same buyer or seller, respectively. Often, the buyer or seller does not disclose the full size of his buy or sell interest as not to affect the market adversely.\n\nInformation that the execution is taking place in waves/iceberg.";
 			owner_lazy = () -> com.tools20022.repository.codeset.QualifierCode.mmObject();
 			codeName = "MOBH";
 		}
@@ -459,7 +459,7 @@ public class QualifierCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "An order to buy or sell a security at the most advantageous price obtainable after the order is represented in the trading crowd.  Other special restrictions, such as all or none (AON) or good 'til cancelled (GTC), cannot be specified on a market order."
+	 * "An order to buy or sell a security at the most advantageous price obtainable after the order is represented in the trading crowd. Other special restrictions, such as all or none (AON) or good 'til cancelled (GTC), cannot be specified on a market order."
 	 * </li>
 	 * </ul>
 	 */
@@ -468,7 +468,7 @@ public class QualifierCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TOOR//MAKT"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AtMarket";
-			definition = "An order to buy or sell a security at the most advantageous price obtainable after the order is represented in the trading crowd.  Other special restrictions, such as all or none (AON) or good 'til cancelled (GTC), cannot be specified on a market order.";
+			definition = "An order to buy or sell a security at the most advantageous price obtainable after the order is represented in the trading crowd. Other special restrictions, such as all or none (AON) or good 'til cancelled (GTC), cannot be specified on a market order.";
 			owner_lazy = () -> com.tools20022.repository.codeset.QualifierCode.mmObject();
 			codeName = "MAKT";
 		}
@@ -684,7 +684,7 @@ public class QualifierCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "An all or none market order that is to be executed at the mid price spread of the security on the exchange.  If the execution cannot be made under this condition, the order is to be treated as cancelled."
+	 * "An all or none market order that is to be executed at the mid price spread of the security on the exchange. If the execution cannot be made under this condition, the order is to be treated as cancelled."
 	 * </li>
 	 * </ul>
 	 */
@@ -692,7 +692,7 @@ public class QualifierCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AtMidpoint";
-			definition = "An all or none market order that is to be executed at the mid price spread of the security on the exchange.  If the execution cannot be made under this condition, the order is to be treated as cancelled.";
+			definition = "An all or none market order that is to be executed at the mid price spread of the security on the exchange. If the execution cannot be made under this condition, the order is to be treated as cancelled.";
 			owner_lazy = () -> com.tools20022.repository.codeset.QualifierCode.mmObject();
 			codeName = "MIDP";
 		}

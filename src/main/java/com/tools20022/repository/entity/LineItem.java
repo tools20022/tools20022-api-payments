@@ -21,8 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -192,7 +192,7 @@ public class LineItem {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFinancialAdjustment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, Adjustment> mmFinancialAdjustment = new MMBusinessAssociationEnd<LineItem, Adjustment>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -201,12 +201,22 @@ public class LineItem {
 			definition = "Modification on the value of goods and / or services taking into account discounts, allowances and charges.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Adjustment.mmRelatedLineItem;
+			opposite_lazy = () -> Adjustment.mmRelatedLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
+			type_lazy = () -> Adjustment.mmObject();
+		}
+
+		@Override
+		public Adjustment getValue(LineItem obj) {
+			return obj.getFinancialAdjustment();
+		}
+
+		@Override
+		public void setValue(LineItem obj, Adjustment value) {
+			obj.setFinancialAdjustment(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Charges> logisticsCharge;
+	protected List<Charges> logisticsCharge;
 	/**
 	 * 
 	 <p>
@@ -238,7 +248,7 @@ public class LineItem {
 	 * definition} = "Logistics service charge for this line item."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLogisticsCharge = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, List<Charges>> mmLogisticsCharge = new MMBusinessAssociationEnd<LineItem, List<Charges>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -246,9 +256,19 @@ public class LineItem {
 			name = "LogisticsCharge";
 			definition = "Logistics service charge for this line item.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Charges.mmLogisticsChargeLineItem;
+			opposite_lazy = () -> Charges.mmLogisticsChargeLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
+			type_lazy = () -> Charges.mmObject();
+		}
+
+		@Override
+		public List<Charges> getValue(LineItem obj) {
+			return obj.getLogisticsCharge();
+		}
+
+		@Override
+		public void setValue(LineItem obj, List<Charges> value) {
+			obj.setLogisticsCharge(value);
 		}
 	};
 	protected CurrencyAndAmount grossAmount;
@@ -279,7 +299,7 @@ public class LineItem {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGrossAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LineItem, CurrencyAndAmount> mmGrossAmount = new MMBusinessAttribute<LineItem, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -291,12 +311,14 @@ public class LineItem {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LineItem.class.getMethod("getGrossAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(LineItem obj) {
+			return obj.getGrossAmount();
+		}
+
+		@Override
+		public void setValue(LineItem obj, CurrencyAndAmount value) {
+			obj.setGrossAmount(value);
 		}
 	};
 	protected Max35Text identification;
@@ -324,7 +346,7 @@ public class LineItem {
 	 * definition} = "Uniquely identifies a line item."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LineItem, Max35Text> mmIdentification = new MMBusinessAttribute<LineItem, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -336,12 +358,14 @@ public class LineItem {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LineItem.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(LineItem obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(LineItem obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected Product invoicedProduct;
@@ -378,7 +402,7 @@ public class LineItem {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvoicedProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, Product> mmInvoicedProduct = new MMBusinessAssociationEnd<LineItem, Product>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -387,9 +411,19 @@ public class LineItem {
 			definition = "Specifies the product and the quantity for which an invoice is generated.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmLineItem;
+			opposite_lazy = () -> Product.mmLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
+			type_lazy = () -> Product.mmObject();
+		}
+
+		@Override
+		public Product getValue(LineItem obj) {
+			return obj.getInvoicedProduct();
+		}
+
+		@Override
+		public void setValue(LineItem obj, Product value) {
+			obj.setInvoicedProduct(value);
 		}
 	};
 	protected ProductQuantity netWeight;
@@ -425,7 +459,7 @@ public class LineItem {
 	 * definition} = "Net weight of the physical item which is invoiced."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNetWeight = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, ProductQuantity> mmNetWeight = new MMBusinessAssociationEnd<LineItem, ProductQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -434,12 +468,22 @@ public class LineItem {
 			definition = "Net weight of the physical item which is invoiced.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmNetWeightRelatedLineItem;
+			opposite_lazy = () -> ProductQuantity.mmNetWeightRelatedLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
+			type_lazy = () -> ProductQuantity.mmObject();
+		}
+
+		@Override
+		public ProductQuantity getValue(LineItem obj) {
+			return obj.getNetWeight();
+		}
+
+		@Override
+		public void setValue(LineItem obj, ProductQuantity value) {
+			obj.setNetWeight(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ProductQuantity> billedQuantity;
+	protected List<ProductQuantity> billedQuantity;
 	/**
 	 * 
 	 <p>
@@ -472,7 +516,7 @@ public class LineItem {
 	 * definition} = "Quantity billed for this line item."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBilledQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, List<ProductQuantity>> mmBilledQuantity = new MMBusinessAssociationEnd<LineItem, List<ProductQuantity>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -480,12 +524,22 @@ public class LineItem {
 			name = "BilledQuantity";
 			definition = "Quantity billed for this line item.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmBilledQuantityRelatedLineItem;
+			opposite_lazy = () -> ProductQuantity.mmBilledQuantityRelatedLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
+			type_lazy = () -> ProductQuantity.mmObject();
+		}
+
+		@Override
+		public List<ProductQuantity> getValue(LineItem obj) {
+			return obj.getBilledQuantity();
+		}
+
+		@Override
+		public void setValue(LineItem obj, List<ProductQuantity> value) {
+			obj.setBilledQuantity(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ProductQuantity> chargeFreeQuantity;
+	protected List<ProductQuantity> chargeFreeQuantity;
 	/**
 	 * 
 	 <p>
@@ -518,7 +572,7 @@ public class LineItem {
 	 * definition} = "Quantity that is free of charge for this line item."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmChargeFreeQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, List<ProductQuantity>> mmChargeFreeQuantity = new MMBusinessAssociationEnd<LineItem, List<ProductQuantity>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -526,9 +580,19 @@ public class LineItem {
 			name = "ChargeFreeQuantity";
 			definition = "Quantity that is free of charge for this line item.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmChargeFreeQuantityRelatedLineItem;
+			opposite_lazy = () -> ProductQuantity.mmChargeFreeQuantityRelatedLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
+			type_lazy = () -> ProductQuantity.mmObject();
+		}
+
+		@Override
+		public List<ProductQuantity> getValue(LineItem obj) {
+			return obj.getChargeFreeQuantity();
+		}
+
+		@Override
+		public void setValue(LineItem obj, List<ProductQuantity> value) {
+			obj.setChargeFreeQuantity(value);
 		}
 	};
 	protected ProductQuantity measureQuantityStartRelatedLineItem;
@@ -564,7 +628,7 @@ public class LineItem {
 	 * definition} = "Line item for which a measure quantity end is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeasureQuantityStartRelatedLineItem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, ProductQuantity> mmMeasureQuantityStartRelatedLineItem = new MMBusinessAssociationEnd<LineItem, ProductQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -573,9 +637,19 @@ public class LineItem {
 			definition = "Line item for which a measure quantity end is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmMeasureQuantityStart;
+			opposite_lazy = () -> ProductQuantity.mmMeasureQuantityStart;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
+			type_lazy = () -> ProductQuantity.mmObject();
+		}
+
+		@Override
+		public ProductQuantity getValue(LineItem obj) {
+			return obj.getMeasureQuantityStartRelatedLineItem();
+		}
+
+		@Override
+		public void setValue(LineItem obj, ProductQuantity value) {
+			obj.setMeasureQuantityStartRelatedLineItem(value);
 		}
 	};
 	protected ProductQuantity measureQuantityEndRelatedLineItem;
@@ -611,7 +685,7 @@ public class LineItem {
 	 * definition} = "Line item for which a measure quantity end is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeasureQuantityEndRelatedLineItem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, ProductQuantity> mmMeasureQuantityEndRelatedLineItem = new MMBusinessAssociationEnd<LineItem, ProductQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -620,9 +694,19 @@ public class LineItem {
 			definition = "Line item for which a measure quantity end is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmMeasureQuantityEnd;
+			opposite_lazy = () -> ProductQuantity.mmMeasureQuantityEnd;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
+			type_lazy = () -> ProductQuantity.mmObject();
+		}
+
+		@Override
+		public ProductQuantity getValue(LineItem obj) {
+			return obj.getMeasureQuantityEndRelatedLineItem();
+		}
+
+		@Override
+		public void setValue(LineItem obj, ProductQuantity value) {
+			obj.setMeasureQuantityEndRelatedLineItem(value);
 		}
 	};
 	protected ISODateTime measureDateTimeStart;
@@ -651,7 +735,7 @@ public class LineItem {
 	 * "Date/time on which the clock time measure started for a line item."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMeasureDateTimeStart = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LineItem, ISODateTime> mmMeasureDateTimeStart = new MMBusinessAttribute<LineItem, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -663,12 +747,14 @@ public class LineItem {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LineItem.class.getMethod("getMeasureDateTimeStart", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(LineItem obj) {
+			return obj.getMeasureDateTimeStart();
+		}
+
+		@Override
+		public void setValue(LineItem obj, ISODateTime value) {
+			obj.setMeasureDateTimeStart(value);
 		}
 	};
 	protected ISODateTime measureDateTimeEnd;
@@ -697,7 +783,7 @@ public class LineItem {
 	 * "Date/time on which the clock time measure ended for a line item."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMeasureDateTimeEnd = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LineItem, ISODateTime> mmMeasureDateTimeEnd = new MMBusinessAttribute<LineItem, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -709,12 +795,14 @@ public class LineItem {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LineItem.class.getMethod("getMeasureDateTimeEnd", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(LineItem obj) {
+			return obj.getMeasureDateTimeEnd();
+		}
+
+		@Override
+		public void setValue(LineItem obj, ISODateTime value) {
+			obj.setMeasureDateTimeEnd(value);
 		}
 	};
 	protected Invoice invoice;
@@ -750,7 +838,7 @@ public class LineItem {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvoice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, Optional<Invoice>> mmInvoice = new MMBusinessAssociationEnd<LineItem, Optional<Invoice>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -759,9 +847,19 @@ public class LineItem {
 			definition = "Specifies the invoice in which the line item is included.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Invoice.mmLineItem;
+			opposite_lazy = () -> Invoice.mmLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
+			type_lazy = () -> Invoice.mmObject();
+		}
+
+		@Override
+		public Optional<Invoice> getValue(LineItem obj) {
+			return obj.getInvoice();
+		}
+
+		@Override
+		public void setValue(LineItem obj, Optional<Invoice> value) {
+			obj.setInvoice(value.orElse(null));
 		}
 	};
 	protected CurrencyAndAmount netAmount;
@@ -792,7 +890,7 @@ public class LineItem {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNetAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LineItem, CurrencyAndAmount> mmNetAmount = new MMBusinessAttribute<LineItem, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -804,15 +902,17 @@ public class LineItem {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LineItem.class.getMethod("getNetAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(LineItem obj) {
+			return obj.getNetAmount();
+		}
+
+		@Override
+		public void setValue(LineItem obj, CurrencyAndAmount value) {
+			obj.setNetAmount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Packaging> packaging;
+	protected List<Packaging> packaging;
 	/**
 	 * 
 	 <p>
@@ -845,7 +945,7 @@ public class LineItem {
 	 * definition} = "Physical packaging of the product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPackaging = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, List<Packaging>> mmPackaging = new MMBusinessAssociationEnd<LineItem, List<Packaging>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -853,9 +953,19 @@ public class LineItem {
 			name = "Packaging";
 			definition = "Physical packaging of the product.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Packaging.mmRelatedLineItem;
+			opposite_lazy = () -> Packaging.mmRelatedLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
+			type_lazy = () -> Packaging.mmObject();
+		}
+
+		@Override
+		public List<Packaging> getValue(LineItem obj) {
+			return obj.getPackaging();
+		}
+
+		@Override
+		public void setValue(LineItem obj, List<Packaging> value) {
+			obj.setPackaging(value);
 		}
 	};
 	protected ISODateTime deliveryDateTime;
@@ -885,7 +995,7 @@ public class LineItem {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDeliveryDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LineItem, ISODateTime> mmDeliveryDateTime = new MMBusinessAttribute<LineItem, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -897,15 +1007,17 @@ public class LineItem {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LineItem.class.getMethod("getDeliveryDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(LineItem obj) {
+			return obj.getDeliveryDateTime();
+		}
+
+		@Override
+		public void setValue(LineItem obj, ISODateTime value) {
+			obj.setDeliveryDateTime(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Charges> charges;
+	protected List<Charges> charges;
 	/**
 	 * 
 	 <p>
@@ -937,7 +1049,7 @@ public class LineItem {
 	 * definition} = "Charges specified for this line item."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCharges = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, List<Charges>> mmCharges = new MMBusinessAssociationEnd<LineItem, List<Charges>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -945,9 +1057,19 @@ public class LineItem {
 			name = "Charges";
 			definition = "Charges specified for this line item.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Charges.mmLineItem;
+			opposite_lazy = () -> Charges.mmLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
+			type_lazy = () -> Charges.mmObject();
+		}
+
+		@Override
+		public List<Charges> getValue(LineItem obj) {
+			return obj.getCharges();
+		}
+
+		@Override
+		public void setValue(LineItem obj, List<Charges> value) {
+			obj.setCharges(value);
 		}
 	};
 	protected Charges netPriceCharge;
@@ -984,7 +1106,7 @@ public class LineItem {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNetPriceCharge = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, Charges> mmNetPriceCharge = new MMBusinessAssociationEnd<LineItem, Charges>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -993,12 +1115,22 @@ public class LineItem {
 			definition = "Allowance or charge applied to the net price. When the charge amount is added (credit)";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Charges.mmNetPriceChargeLineItem;
+			opposite_lazy = () -> Charges.mmNetPriceChargeLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
+			type_lazy = () -> Charges.mmObject();
+		}
+
+		@Override
+		public Charges getValue(LineItem obj) {
+			return obj.getNetPriceCharge();
+		}
+
+		@Override
+		public void setValue(LineItem obj, Charges value) {
+			obj.setNetPriceCharge(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ProductQuantity> grossPriceQuantity;
+	protected List<ProductQuantity> grossPriceQuantity;
 	/**
 	 * 
 	 <p>
@@ -1033,7 +1165,7 @@ public class LineItem {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGrossPriceQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, List<ProductQuantity>> mmGrossPriceQuantity = new MMBusinessAssociationEnd<LineItem, List<ProductQuantity>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -1041,12 +1173,22 @@ public class LineItem {
 			name = "GrossPriceQuantity";
 			definition = "Quantity and conversion factor on which the gross price is based for this line item product and/or service.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmGrossPriceQuantityRelatedLineItem;
+			opposite_lazy = () -> ProductQuantity.mmGrossPriceQuantityRelatedLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
+			type_lazy = () -> ProductQuantity.mmObject();
+		}
+
+		@Override
+		public List<ProductQuantity> getValue(LineItem obj) {
+			return obj.getGrossPriceQuantity();
+		}
+
+		@Override
+		public void setValue(LineItem obj, List<ProductQuantity> value) {
+			obj.setGrossPriceQuantity(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ProductQuantity> netPriceQuantity;
+	protected List<ProductQuantity> netPriceQuantity;
 	/**
 	 * 
 	 <p>
@@ -1081,7 +1223,7 @@ public class LineItem {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNetPriceQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, List<ProductQuantity>> mmNetPriceQuantity = new MMBusinessAssociationEnd<LineItem, List<ProductQuantity>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -1089,12 +1231,22 @@ public class LineItem {
 			name = "NetPriceQuantity";
 			definition = "Quantity and conversion factor on which the net price is based for this line item product and/or service.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmNetPriceQuantityRelatedLineItem;
+			opposite_lazy = () -> ProductQuantity.mmNetPriceQuantityRelatedLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
+			type_lazy = () -> ProductQuantity.mmObject();
+		}
+
+		@Override
+		public List<ProductQuantity> getValue(LineItem obj) {
+			return obj.getNetPriceQuantity();
+		}
+
+		@Override
+		public void setValue(LineItem obj, List<ProductQuantity> value) {
+			obj.setNetPriceQuantity(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ProductQuantity> grossWeight;
+	protected List<ProductQuantity> grossWeight;
 	/**
 	 * 
 	 <p>
@@ -1127,7 +1279,7 @@ public class LineItem {
 	 * definition} = "Gross weight of the physical item which is invoiced."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGrossWeight = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LineItem, List<ProductQuantity>> mmGrossWeight = new MMBusinessAssociationEnd<LineItem, List<ProductQuantity>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
@@ -1135,9 +1287,19 @@ public class LineItem {
 			name = "GrossWeight";
 			definition = "Gross weight of the physical item which is invoiced.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmGrossWeightRelatedLineItem;
+			opposite_lazy = () -> ProductQuantity.mmGrossWeightRelatedLineItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
+			type_lazy = () -> ProductQuantity.mmObject();
+		}
+
+		@Override
+		public List<ProductQuantity> getValue(LineItem obj) {
+			return obj.getGrossWeight();
+		}
+
+		@Override
+		public void setValue(LineItem obj, List<ProductQuantity> value) {
+			obj.setGrossWeight(value);
 		}
 	};
 
@@ -1148,13 +1310,10 @@ public class LineItem {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LineItem";
 				definition = "Unit of information  showing the related  provision of products and/or services and monetary summations reported as a discrete line item.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Product.mmLineItem, com.tools20022.repository.entity.Adjustment.mmRelatedLineItem,
-						com.tools20022.repository.entity.Charges.mmLogisticsChargeLineItem, com.tools20022.repository.entity.Charges.mmLineItem, com.tools20022.repository.entity.Charges.mmNetPriceChargeLineItem,
-						com.tools20022.repository.entity.Invoice.mmLineItem, com.tools20022.repository.entity.ProductQuantity.mmNetWeightRelatedLineItem, com.tools20022.repository.entity.ProductQuantity.mmBilledQuantityRelatedLineItem,
-						com.tools20022.repository.entity.ProductQuantity.mmChargeFreeQuantityRelatedLineItem, com.tools20022.repository.entity.ProductQuantity.mmMeasureQuantityStart,
-						com.tools20022.repository.entity.ProductQuantity.mmMeasureQuantityEnd, com.tools20022.repository.entity.ProductQuantity.mmGrossPriceQuantityRelatedLineItem,
-						com.tools20022.repository.entity.ProductQuantity.mmNetPriceQuantityRelatedLineItem, com.tools20022.repository.entity.ProductQuantity.mmGrossWeightRelatedLineItem,
-						com.tools20022.repository.entity.Packaging.mmRelatedLineItem);
+				associationDomain_lazy = () -> Arrays
+						.asList(Product.mmLineItem, Adjustment.mmRelatedLineItem, Charges.mmLogisticsChargeLineItem, Charges.mmLineItem, Charges.mmNetPriceChargeLineItem, Invoice.mmLineItem, ProductQuantity.mmNetWeightRelatedLineItem,
+								ProductQuantity.mmBilledQuantityRelatedLineItem, ProductQuantity.mmChargeFreeQuantityRelatedLineItem, ProductQuantity.mmMeasureQuantityStart, ProductQuantity.mmMeasureQuantityEnd,
+								ProductQuantity.mmGrossPriceQuantityRelatedLineItem, ProductQuantity.mmNetPriceQuantityRelatedLineItem, ProductQuantity.mmGrossWeightRelatedLineItem, Packaging.mmRelatedLineItem);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LineItem.mmFinancialAdjustment, com.tools20022.repository.entity.LineItem.mmLogisticsCharge, com.tools20022.repository.entity.LineItem.mmGrossAmount,
 						com.tools20022.repository.entity.LineItem.mmIdentification, com.tools20022.repository.entity.LineItem.mmInvoicedProduct, com.tools20022.repository.entity.LineItem.mmNetWeight,
 						com.tools20022.repository.entity.LineItem.mmBilledQuantity, com.tools20022.repository.entity.LineItem.mmChargeFreeQuantity, com.tools20022.repository.entity.LineItem.mmMeasureQuantityStartRelatedLineItem,
@@ -1176,7 +1335,7 @@ public class LineItem {
 		return financialAdjustment;
 	}
 
-	public LineItem setFinancialAdjustment(com.tools20022.repository.entity.Adjustment financialAdjustment) {
+	public LineItem setFinancialAdjustment(Adjustment financialAdjustment) {
 		this.financialAdjustment = Objects.requireNonNull(financialAdjustment);
 		return this;
 	}
@@ -1185,7 +1344,7 @@ public class LineItem {
 		return logisticsCharge == null ? logisticsCharge = new ArrayList<>() : logisticsCharge;
 	}
 
-	public LineItem setLogisticsCharge(List<com.tools20022.repository.entity.Charges> logisticsCharge) {
+	public LineItem setLogisticsCharge(List<Charges> logisticsCharge) {
 		this.logisticsCharge = Objects.requireNonNull(logisticsCharge);
 		return this;
 	}
@@ -1212,7 +1371,7 @@ public class LineItem {
 		return invoicedProduct;
 	}
 
-	public LineItem setInvoicedProduct(com.tools20022.repository.entity.Product invoicedProduct) {
+	public LineItem setInvoicedProduct(Product invoicedProduct) {
 		this.invoicedProduct = Objects.requireNonNull(invoicedProduct);
 		return this;
 	}
@@ -1221,7 +1380,7 @@ public class LineItem {
 		return netWeight;
 	}
 
-	public LineItem setNetWeight(com.tools20022.repository.entity.ProductQuantity netWeight) {
+	public LineItem setNetWeight(ProductQuantity netWeight) {
 		this.netWeight = Objects.requireNonNull(netWeight);
 		return this;
 	}
@@ -1230,7 +1389,7 @@ public class LineItem {
 		return billedQuantity == null ? billedQuantity = new ArrayList<>() : billedQuantity;
 	}
 
-	public LineItem setBilledQuantity(List<com.tools20022.repository.entity.ProductQuantity> billedQuantity) {
+	public LineItem setBilledQuantity(List<ProductQuantity> billedQuantity) {
 		this.billedQuantity = Objects.requireNonNull(billedQuantity);
 		return this;
 	}
@@ -1239,7 +1398,7 @@ public class LineItem {
 		return chargeFreeQuantity == null ? chargeFreeQuantity = new ArrayList<>() : chargeFreeQuantity;
 	}
 
-	public LineItem setChargeFreeQuantity(List<com.tools20022.repository.entity.ProductQuantity> chargeFreeQuantity) {
+	public LineItem setChargeFreeQuantity(List<ProductQuantity> chargeFreeQuantity) {
 		this.chargeFreeQuantity = Objects.requireNonNull(chargeFreeQuantity);
 		return this;
 	}
@@ -1248,7 +1407,7 @@ public class LineItem {
 		return measureQuantityStartRelatedLineItem;
 	}
 
-	public LineItem setMeasureQuantityStartRelatedLineItem(com.tools20022.repository.entity.ProductQuantity measureQuantityStartRelatedLineItem) {
+	public LineItem setMeasureQuantityStartRelatedLineItem(ProductQuantity measureQuantityStartRelatedLineItem) {
 		this.measureQuantityStartRelatedLineItem = Objects.requireNonNull(measureQuantityStartRelatedLineItem);
 		return this;
 	}
@@ -1257,7 +1416,7 @@ public class LineItem {
 		return measureQuantityEndRelatedLineItem;
 	}
 
-	public LineItem setMeasureQuantityEndRelatedLineItem(com.tools20022.repository.entity.ProductQuantity measureQuantityEndRelatedLineItem) {
+	public LineItem setMeasureQuantityEndRelatedLineItem(ProductQuantity measureQuantityEndRelatedLineItem) {
 		this.measureQuantityEndRelatedLineItem = Objects.requireNonNull(measureQuantityEndRelatedLineItem);
 		return this;
 	}
@@ -1284,7 +1443,7 @@ public class LineItem {
 		return invoice == null ? Optional.empty() : Optional.of(invoice);
 	}
 
-	public LineItem setInvoice(com.tools20022.repository.entity.Invoice invoice) {
+	public LineItem setInvoice(Invoice invoice) {
 		this.invoice = invoice;
 		return this;
 	}
@@ -1302,7 +1461,7 @@ public class LineItem {
 		return packaging == null ? packaging = new ArrayList<>() : packaging;
 	}
 
-	public LineItem setPackaging(List<com.tools20022.repository.entity.Packaging> packaging) {
+	public LineItem setPackaging(List<Packaging> packaging) {
 		this.packaging = Objects.requireNonNull(packaging);
 		return this;
 	}
@@ -1320,7 +1479,7 @@ public class LineItem {
 		return charges == null ? charges = new ArrayList<>() : charges;
 	}
 
-	public LineItem setCharges(List<com.tools20022.repository.entity.Charges> charges) {
+	public LineItem setCharges(List<Charges> charges) {
 		this.charges = Objects.requireNonNull(charges);
 		return this;
 	}
@@ -1329,7 +1488,7 @@ public class LineItem {
 		return netPriceCharge;
 	}
 
-	public LineItem setNetPriceCharge(com.tools20022.repository.entity.Charges netPriceCharge) {
+	public LineItem setNetPriceCharge(Charges netPriceCharge) {
 		this.netPriceCharge = Objects.requireNonNull(netPriceCharge);
 		return this;
 	}
@@ -1338,7 +1497,7 @@ public class LineItem {
 		return grossPriceQuantity == null ? grossPriceQuantity = new ArrayList<>() : grossPriceQuantity;
 	}
 
-	public LineItem setGrossPriceQuantity(List<com.tools20022.repository.entity.ProductQuantity> grossPriceQuantity) {
+	public LineItem setGrossPriceQuantity(List<ProductQuantity> grossPriceQuantity) {
 		this.grossPriceQuantity = Objects.requireNonNull(grossPriceQuantity);
 		return this;
 	}
@@ -1347,7 +1506,7 @@ public class LineItem {
 		return netPriceQuantity == null ? netPriceQuantity = new ArrayList<>() : netPriceQuantity;
 	}
 
-	public LineItem setNetPriceQuantity(List<com.tools20022.repository.entity.ProductQuantity> netPriceQuantity) {
+	public LineItem setNetPriceQuantity(List<ProductQuantity> netPriceQuantity) {
 		this.netPriceQuantity = Objects.requireNonNull(netPriceQuantity);
 		return this;
 	}
@@ -1356,7 +1515,7 @@ public class LineItem {
 		return grossWeight == null ? grossWeight = new ArrayList<>() : grossWeight;
 	}
 
-	public LineItem setGrossWeight(List<com.tools20022.repository.entity.ProductQuantity> grossWeight) {
+	public LineItem setGrossWeight(List<ProductQuantity> grossWeight) {
 		this.grossWeight = Objects.requireNonNull(grossWeight);
 		return this;
 	}

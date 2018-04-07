@@ -98,7 +98,7 @@ public class AuthorityRequestType1 {
 	 * definition} = "Specifies the requested message name identifier."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageNameIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AuthorityRequestType1, Max35Text> mmMessageNameIdentification = new MMMessageAttribute<AuthorityRequestType1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorityRequestType1.mmObject();
 			isDerived = false;
@@ -109,6 +109,16 @@ public class AuthorityRequestType1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(AuthorityRequestType1 obj) {
+			return obj.getMessageNameIdentification();
+		}
+
+		@Override
+		public void setValue(AuthorityRequestType1 obj, Max35Text value) {
+			obj.setMessageNameIdentification(value);
 		}
 	};
 	@XmlElement(name = "MsgNm")
@@ -140,7 +150,7 @@ public class AuthorityRequestType1 {
 	 * definition} = "Specifies the message name."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AuthorityRequestType1, Optional<Max140Text>> mmMessageName = new MMMessageAttribute<AuthorityRequestType1, Optional<Max140Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorityRequestType1.mmObject();
 			isDerived = false;
@@ -151,6 +161,16 @@ public class AuthorityRequestType1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(AuthorityRequestType1 obj) {
+			return obj.getMessageName();
+		}
+
+		@Override
+		public void setValue(AuthorityRequestType1 obj, Optional<Max140Text> value) {
+			obj.setMessageName(value.orElse(null));
 		}
 	};
 

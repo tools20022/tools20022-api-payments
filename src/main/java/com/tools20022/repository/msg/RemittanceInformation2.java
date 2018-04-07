@@ -107,7 +107,7 @@ public class RemittanceInformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnstructured = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RemittanceInformation2, List<Max140Text>> mmUnstructured = new MMMessageAttribute<RemittanceInformation2, List<Max140Text>>() {
 		{
 			businessComponentTrace_lazy = () -> Document.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceInformation2.mmObject();
@@ -118,6 +118,16 @@ public class RemittanceInformation2 {
 			definition = "Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, eg, commercial invoices in an accounts' receivable system in an unstructured form.";
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public List<Max140Text> getValue(RemittanceInformation2 obj) {
+			return obj.getUnstructured();
+		}
+
+		@Override
+		public void setValue(RemittanceInformation2 obj, List<Max140Text> value) {
+			obj.setUnstructured(value);
 		}
 	};
 

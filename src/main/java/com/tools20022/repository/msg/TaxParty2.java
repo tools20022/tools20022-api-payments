@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.entity.TaxPartyRole;
 import com.tools20022.repository.entity.TaxPayer;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.TaxAuthorisation1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -111,7 +112,7 @@ public class TaxParty2 {
 	 * definition} = "Tax identification number of the debtor."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxParty2, Optional<Max35Text>> mmTaxIdentification = new MMMessageAttribute<TaxParty2, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmTaxIdentificationNumber;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty2.mmObject();
@@ -123,6 +124,16 @@ public class TaxParty2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxParty2 obj) {
+			return obj.getTaxIdentification();
+		}
+
+		@Override
+		public void setValue(TaxParty2 obj, Optional<Max35Text> value) {
+			obj.setTaxIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "RegnId")
@@ -160,7 +171,7 @@ public class TaxParty2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegistrationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxParty2, Optional<Max35Text>> mmRegistrationIdentification = new MMMessageAttribute<TaxParty2, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmTaxIdentificationNumber;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty2.mmObject();
@@ -172,6 +183,16 @@ public class TaxParty2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxParty2 obj) {
+			return obj.getRegistrationIdentification();
+		}
+
+		@Override
+		public void setValue(TaxParty2 obj, Optional<Max35Text> value) {
+			obj.setRegistrationIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TaxTp")
@@ -206,7 +227,7 @@ public class TaxParty2 {
 	 * definition} = "Type of tax payer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxParty2, Optional<Max35Text>> mmTaxType = new MMMessageAttribute<TaxParty2, Optional<Max35Text>>() {
 		{
 			businessComponentTrace_lazy = () -> TaxPayer.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty2.mmObject();
@@ -218,6 +239,16 @@ public class TaxParty2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxParty2 obj) {
+			return obj.getTaxType();
+		}
+
+		@Override
+		public void setValue(TaxParty2 obj, Optional<Max35Text> value) {
+			obj.setTaxType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Authstn")
@@ -251,7 +282,7 @@ public class TaxParty2 {
 	 * definition} = "Details of the authorised tax paying party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAuthorisation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TaxParty2, Optional<TaxAuthorisation1>> mmAuthorisation = new MMMessageAssociationEnd<TaxParty2, Optional<TaxAuthorisation1>>() {
 		{
 			businessComponentTrace_lazy = () -> TaxPartyRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty2.mmObject();
@@ -263,7 +294,17 @@ public class TaxParty2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TaxAuthorisation1.mmObject();
+			type_lazy = () -> TaxAuthorisation1.mmObject();
+		}
+
+		@Override
+		public Optional<TaxAuthorisation1> getValue(TaxParty2 obj) {
+			return obj.getAuthorisation();
+		}
+
+		@Override
+		public void setValue(TaxParty2 obj, Optional<TaxAuthorisation1> value) {
+			obj.setAuthorisation(value.orElse(null));
 		}
 	};
 
@@ -313,7 +354,7 @@ public class TaxParty2 {
 		return authorisation == null ? Optional.empty() : Optional.of(authorisation);
 	}
 
-	public TaxParty2 setAuthorisation(com.tools20022.repository.msg.TaxAuthorisation1 authorisation) {
+	public TaxParty2 setAuthorisation(TaxAuthorisation1 authorisation) {
 		this.authorisation = authorisation;
 		return this;
 	}

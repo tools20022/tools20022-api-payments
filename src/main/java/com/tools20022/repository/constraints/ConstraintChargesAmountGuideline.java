@@ -20,7 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.msg.CreditTransferTransaction25;
+import com.tools20022.repository.msg.CreditTransferTransaction30;
 import com.tools20022.repository.msg.DirectDebitTransactionInformation21;
 
 /**
@@ -36,8 +36,8 @@ public class ConstraintChargesAmountGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25
-	 * CreditTransferTransaction25}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30
+	 * CreditTransferTransaction30}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -51,17 +51,17 @@ public class ConstraintChargesAmountGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCreditTransferTransaction25 = new MMConstraint() {
+	public static final MMConstraint<CreditTransferTransaction30> forCreditTransferTransaction30 = new MMConstraint<CreditTransferTransaction30>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChargesAmountGuideline";
 			definition = "If ChargesInformation is present, then the currency of ChargesInformation/ChargesAmount is recommended to be the same as the currency of InterbankSettlementAmount.";
-			owner_lazy = () -> CreditTransferTransaction25.mmObject();
+			owner_lazy = () -> CreditTransferTransaction30.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction25((CreditTransferTransaction25) obj);
+		public void executeValidator(CreditTransferTransaction30 obj) throws Exception {
+			checkCreditTransferTransaction30(obj);
 		}
 	};
 	/**
@@ -81,21 +81,21 @@ public class ConstraintChargesAmountGuideline {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "If ChargesInformation is present, then the currency of ChargesInformation/ChargesAmount  is recommended to be the same as the currency of InterbankSettlementAmount."
+	 * "If ChargesInformation is present, then the currency of ChargesInformation/ChargesAmount is recommended to be the same as the currency of InterbankSettlementAmount."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forDirectDebitTransactionInformation21 = new MMConstraint() {
+	public static final MMConstraint<DirectDebitTransactionInformation21> forDirectDebitTransactionInformation21 = new MMConstraint<DirectDebitTransactionInformation21>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChargesAmountGuideline";
-			definition = "If ChargesInformation is present, then the currency of ChargesInformation/ChargesAmount  is recommended to be the same as the currency of InterbankSettlementAmount.";
+			definition = "If ChargesInformation is present, then the currency of ChargesInformation/ChargesAmount is recommended to be the same as the currency of InterbankSettlementAmount.";
 			owner_lazy = () -> DirectDebitTransactionInformation21.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkDirectDebitTransactionInformation21((DirectDebitTransactionInformation21) obj);
+		public void executeValidator(DirectDebitTransactionInformation21 obj) throws Exception {
+			checkDirectDebitTransactionInformation21(obj);
 		}
 	};
 
@@ -104,7 +104,7 @@ public class ConstraintChargesAmountGuideline {
 	 * ChargesInformation/ChargesAmount is recommended to be the same as the
 	 * currency of InterbankSettlementAmount.
 	 */
-	public static void checkCreditTransferTransaction25(CreditTransferTransaction25 obj) throws Exception {
+	public static void checkCreditTransferTransaction30(CreditTransferTransaction30 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 

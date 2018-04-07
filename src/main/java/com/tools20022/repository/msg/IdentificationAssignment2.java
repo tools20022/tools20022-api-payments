@@ -28,6 +28,7 @@ import com.tools20022.repository.choice.Party12Choice;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -132,7 +133,7 @@ public class IdentificationAssignment2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationAssignment2, Max35Text> mmMessageIdentification = new MMMessageAttribute<IdentificationAssignment2, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationAssignment2.mmObject();
 			isDerived = false;
@@ -143,6 +144,16 @@ public class IdentificationAssignment2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(IdentificationAssignment2 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(IdentificationAssignment2 obj, Max35Text value) {
+			obj.setMessageIdentification(value);
 		}
 	};
 	@XmlElement(name = "CreDtTm", required = true)
@@ -175,7 +186,7 @@ public class IdentificationAssignment2 {
 	 * "Date and time at which the identification assignment was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationAssignment2, ISODateTime> mmCreationDateTime = new MMMessageAttribute<IdentificationAssignment2, ISODateTime>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationAssignment2.mmObject();
 			isDerived = false;
@@ -186,6 +197,16 @@ public class IdentificationAssignment2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public ISODateTime getValue(IdentificationAssignment2 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(IdentificationAssignment2 obj, ISODateTime value) {
+			obj.setCreationDateTime(value);
 		}
 	};
 	@XmlElement(name = "Cretr")
@@ -216,7 +237,7 @@ public class IdentificationAssignment2 {
 	 * definition} = "Party that created the identification assignment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCreator = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IdentificationAssignment2, Optional<Party12Choice>> mmCreator = new MMMessageAssociationEnd<IdentificationAssignment2, Optional<Party12Choice>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationAssignment2.mmObject();
 			isDerived = false;
@@ -228,6 +249,16 @@ public class IdentificationAssignment2 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> Party12Choice.mmObject();
+		}
+
+		@Override
+		public Optional<Party12Choice> getValue(IdentificationAssignment2 obj) {
+			return obj.getCreator();
+		}
+
+		@Override
+		public void setValue(IdentificationAssignment2 obj, Optional<Party12Choice> value) {
+			obj.setCreator(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "FrstAgt")
@@ -262,7 +293,7 @@ public class IdentificationAssignment2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFirstAgent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationAssignment2, Optional<BranchAndFinancialInstitutionIdentification5>> mmFirstAgent = new MMMessageAttribute<IdentificationAssignment2, Optional<BranchAndFinancialInstitutionIdentification5>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationAssignment2.mmObject();
 			isDerived = false;
@@ -272,7 +303,17 @@ public class IdentificationAssignment2 {
 			definition = "Identifies the first agent in the identification chain, following the payment initiating party.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			complexType_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public Optional<BranchAndFinancialInstitutionIdentification5> getValue(IdentificationAssignment2 obj) {
+			return obj.getFirstAgent();
+		}
+
+		@Override
+		public void setValue(IdentificationAssignment2 obj, Optional<BranchAndFinancialInstitutionIdentification5> value) {
+			obj.setFirstAgent(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Assgnr", required = true)
@@ -305,7 +346,7 @@ public class IdentificationAssignment2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAssigner = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IdentificationAssignment2, Party12Choice> mmAssigner = new MMMessageAssociationEnd<IdentificationAssignment2, Party12Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationAssignment2.mmObject();
 			isDerived = false;
@@ -317,6 +358,16 @@ public class IdentificationAssignment2 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Party12Choice.mmObject();
+		}
+
+		@Override
+		public Party12Choice getValue(IdentificationAssignment2 obj) {
+			return obj.getAssigner();
+		}
+
+		@Override
+		public void setValue(IdentificationAssignment2 obj, Party12Choice value) {
+			obj.setAssigner(value);
 		}
 	};
 	@XmlElement(name = "Assgne", required = true)
@@ -349,7 +400,7 @@ public class IdentificationAssignment2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAssignee = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IdentificationAssignment2, Party12Choice> mmAssignee = new MMMessageAssociationEnd<IdentificationAssignment2, Party12Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationAssignment2.mmObject();
 			isDerived = false;
@@ -361,6 +412,16 @@ public class IdentificationAssignment2 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Party12Choice.mmObject();
+		}
+
+		@Override
+		public Party12Choice getValue(IdentificationAssignment2 obj) {
+			return obj.getAssignee();
+		}
+
+		@Override
+		public void setValue(IdentificationAssignment2 obj, Party12Choice value) {
+			obj.setAssignee(value);
 		}
 	};
 
@@ -411,7 +472,7 @@ public class IdentificationAssignment2 {
 		return firstAgent == null ? Optional.empty() : Optional.of(firstAgent);
 	}
 
-	public IdentificationAssignment2 setFirstAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 firstAgent) {
+	public IdentificationAssignment2 setFirstAgent(BranchAndFinancialInstitutionIdentification5 firstAgent) {
 		this.firstAgent = firstAgent;
 		return this;
 	}

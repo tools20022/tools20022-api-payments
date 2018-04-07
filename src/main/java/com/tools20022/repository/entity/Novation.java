@@ -20,8 +20,8 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.NovationStatusCode;
 import com.tools20022.repository.entity.ObligationFulfilment;
+import com.tools20022.repository.entity.SecuritiesClearing;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -113,7 +113,7 @@ public class Novation extends ObligationFulfilment {
 	 * definition} = "Clearing process to which the novation is related."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesClearing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Novation, Optional<SecuritiesClearing>> mmSecuritiesClearing = new MMBusinessAssociationEnd<Novation, Optional<SecuritiesClearing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Novation.mmObject();
@@ -125,6 +125,16 @@ public class Novation extends ObligationFulfilment {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmNovation;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesClearing> getValue(Novation obj) {
+			return obj.getSecuritiesClearing();
+		}
+
+		@Override
+		public void setValue(Novation obj, Optional<SecuritiesClearing> value) {
+			obj.setSecuritiesClearing(value.orElse(null));
 		}
 	};
 	protected NovationStatusCode novationStatus;
@@ -153,7 +163,7 @@ public class Novation extends ObligationFulfilment {
 	 * definition} = "Provides the novation status for the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNovationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Novation, NovationStatusCode> mmNovationStatus = new MMBusinessAttribute<Novation, NovationStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Novation.mmObject();
@@ -165,12 +175,14 @@ public class Novation extends ObligationFulfilment {
 			simpleType_lazy = () -> NovationStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Novation.class.getMethod("getNovationStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public NovationStatusCode getValue(Novation obj) {
+			return obj.getNovationStatus();
+		}
+
+		@Override
+		public void setValue(Novation obj, NovationStatusCode value) {
+			obj.setNovationStatus(value);
 		}
 	};
 

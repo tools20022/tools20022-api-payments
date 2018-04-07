@@ -18,11 +18,12 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
-import com.tools20022.repository.choice.CancellationStatusReason2Choice;
+import com.tools20022.repository.choice.CancellationStatusReason3Choice;
+import com.tools20022.repository.choice.ModificationStatusReason1Choice;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.InvestigationCase;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.OriginalPaymentInstruction22;
-import java.lang.reflect.Method;
+import com.tools20022.repository.msg.OriginalPaymentInstruction26;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -74,8 +75,11 @@ import java.util.Optional;
  * derivationComponent} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.CancellationStatusReason2Choice
- * CancellationStatusReason2Choice}</li>
+ * {@linkplain com.tools20022.repository.choice.CancellationStatusReason3Choice
+ * CancellationStatusReason3Choice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ModificationStatusReason1Choice
+ * ModificationStatusReason1Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -118,8 +122,8 @@ public class InvestigationResolution {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction22#mmResolvedCase
-	 * OriginalPaymentInstruction22.mmResolvedCase}</li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction26#mmResolvedCase
+	 * OriginalPaymentInstruction26.mmResolvedCase}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -138,9 +142,9 @@ public class InvestigationResolution {
 	 * definition} = "Case for which a resolution is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestigationCase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestigationResolution, Optional<InvestigationCase>> mmInvestigationCase = new MMBusinessAssociationEnd<InvestigationResolution, Optional<InvestigationCase>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(OriginalPaymentInstruction22.mmResolvedCase);
+			derivation_lazy = () -> Arrays.asList(OriginalPaymentInstruction26.mmResolvedCase);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationResolution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -148,9 +152,19 @@ public class InvestigationResolution {
 			definition = "Case for which a resolution is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmInvestigationResolution;
+			opposite_lazy = () -> InvestigationCase.mmInvestigationResolution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
+			type_lazy = () -> InvestigationCase.mmObject();
+		}
+
+		@Override
+		public Optional<InvestigationCase> getValue(InvestigationResolution obj) {
+			return obj.getInvestigationCase();
+		}
+
+		@Override
+		public void setValue(InvestigationResolution obj, Optional<InvestigationCase> value) {
+			obj.setInvestigationCase(value.orElse(null));
 		}
 	};
 	protected Max35Text investigationCaseReference;
@@ -179,7 +193,7 @@ public class InvestigationResolution {
 	 * definition} = "Identifies the case for which a resolution is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInvestigationCaseReference = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestigationResolution, Max35Text> mmInvestigationCaseReference = new MMBusinessAttribute<InvestigationResolution, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationResolution.mmObject();
@@ -191,12 +205,14 @@ public class InvestigationResolution {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestigationResolution.class.getMethod("getInvestigationCaseReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(InvestigationResolution obj) {
+			return obj.getInvestigationCaseReference();
+		}
+
+		@Override
+		public void setValue(InvestigationResolution obj, Max35Text value) {
+			obj.setInvestigationCaseReference(value);
 		}
 	};
 
@@ -207,10 +223,10 @@ public class InvestigationResolution {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationResolution";
 				definition = "Specifies the actions taken as a result of an investigation.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestigationCase.mmInvestigationResolution);
+				associationDomain_lazy = () -> Arrays.asList(InvestigationCase.mmInvestigationResolution);
 				subType_lazy = () -> Arrays.asList(PaymentInvestigationCaseResolution.mmObject(), Reassignment.mmObject(), DuplicateCase.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestigationResolution.mmInvestigationCase, com.tools20022.repository.entity.InvestigationResolution.mmInvestigationCaseReference);
-				derivationComponent_lazy = () -> Arrays.asList(CancellationStatusReason2Choice.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(CancellationStatusReason3Choice.mmObject(), ModificationStatusReason1Choice.mmObject());
 			}
 
 			@Override
@@ -225,7 +241,7 @@ public class InvestigationResolution {
 		return investigationCase == null ? Optional.empty() : Optional.of(investigationCase);
 	}
 
-	public InvestigationResolution setInvestigationCase(com.tools20022.repository.entity.InvestigationCase investigationCase) {
+	public InvestigationResolution setInvestigationCase(InvestigationCase investigationCase) {
 		this.investigationCase = investigationCase;
 		return this;
 	}

@@ -111,7 +111,7 @@ public class PaymentDateRange2 {
 	 * "Unique and unambiguous identification of the payment schedule."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPaymentScheduleIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentDateRange2, Optional<Max35Text>> mmPaymentScheduleIdentification = new MMMessageAttribute<PaymentDateRange2, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentDateRange2.mmObject();
 			isDerived = false;
@@ -122,6 +122,16 @@ public class PaymentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(PaymentDateRange2 obj) {
+			return obj.getPaymentScheduleIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentDateRange2 obj, Optional<Max35Text> value) {
+			obj.setPaymentScheduleIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -161,7 +171,7 @@ public class PaymentDateRange2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentDateRange2, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<PaymentDateRange2, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> PaymentSchedule.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentDateRange2.mmObject();
@@ -173,6 +183,16 @@ public class PaymentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(PaymentDateRange2 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(PaymentDateRange2 obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "XpctdDt")
@@ -209,7 +229,7 @@ public class PaymentDateRange2 {
 	 * definition} = "Expected date whereby the amount must be paid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentDateRange2, Optional<ISODate>> mmExpectedDate = new MMMessageAttribute<PaymentDateRange2, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentSchedule.mmDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentDateRange2.mmObject();
@@ -221,6 +241,16 @@ public class PaymentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(PaymentDateRange2 obj) {
+			return obj.getExpectedDate();
+		}
+
+		@Override
+		public void setValue(PaymentDateRange2 obj, Optional<ISODate> value) {
+			obj.setExpectedDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "DueDt", required = true)
@@ -257,7 +287,7 @@ public class PaymentDateRange2 {
 	 * definition} = "Latest date whereby the amount of money must be paid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentDateRange2, ISODate> mmDueDate = new MMMessageAttribute<PaymentDateRange2, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> PaymentSchedule.mmDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentDateRange2.mmObject();
@@ -269,6 +299,16 @@ public class PaymentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(PaymentDateRange2 obj) {
+			return obj.getDueDate();
+		}
+
+		@Override
+		public void setValue(PaymentDateRange2 obj, ISODate value) {
+			obj.setDueDate(value);
 		}
 	};
 

@@ -19,10 +19,10 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DepositTypeCode;
+import com.tools20022.repository.entity.Interest;
 import com.tools20022.repository.entity.Money;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CashCollateral5;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -114,7 +114,7 @@ public class Deposit extends Money {
 	 * "Specifies whether the deposit is fixed term or call/notice."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDepositType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Deposit, DepositTypeCode> mmDepositType = new MMBusinessAttribute<Deposit, DepositTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmDepositType);
 			isDerived = false;
@@ -127,12 +127,14 @@ public class Deposit extends Money {
 			simpleType_lazy = () -> DepositTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Deposit.class.getMethod("getDepositType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DepositTypeCode getValue(Deposit obj) {
+			return obj.getDepositType();
+		}
+
+		@Override
+		public void setValue(Deposit obj, DepositTypeCode value) {
+			obj.setDepositType(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Interest> interest;
@@ -169,7 +171,7 @@ public class Deposit extends Money {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Deposit, List<Interest>> mmInterest = new MMBusinessAssociationEnd<Deposit, List<Interest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Deposit.mmObject();
@@ -180,6 +182,16 @@ public class Deposit extends Money {
 			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmDeposit;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
+		}
+
+		@Override
+		public List<Interest> getValue(Deposit obj) {
+			return obj.getInterest();
+		}
+
+		@Override
+		public void setValue(Deposit obj, List<Interest> value) {
+			obj.setInterest(value);
 		}
 	};
 

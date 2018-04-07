@@ -107,7 +107,7 @@ public class InterestRate2Choice {
 	 * definition} = "Indicates that the rate is fixed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFixed = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestRate2Choice, PercentageRate> mmFixed = new MMMessageAttribute<InterestRate2Choice, PercentageRate>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmRate;
 			componentContext_lazy = () -> com.tools20022.repository.choice.InterestRate2Choice.mmObject();
@@ -119,6 +119,16 @@ public class InterestRate2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
+		}
+
+		@Override
+		public PercentageRate getValue(InterestRate2Choice obj) {
+			return obj.getFixed();
+		}
+
+		@Override
+		public void setValue(InterestRate2Choice obj, PercentageRate value) {
+			obj.setFixed(value);
 		}
 	};
 	@XmlElement(name = "Fltg", required = true)
@@ -154,7 +164,7 @@ public class InterestRate2Choice {
 	 * definition} = "Provides details about the variable rate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFloating = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InterestRate2Choice, FloatingInterestRate4> mmFloating = new MMMessageAssociationEnd<InterestRate2Choice, FloatingInterestRate4>() {
 		{
 			businessComponentTrace_lazy = () -> VariableInterest.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.choice.InterestRate2Choice.mmObject();
@@ -167,6 +177,16 @@ public class InterestRate2Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> FloatingInterestRate4.mmObject();
+		}
+
+		@Override
+		public FloatingInterestRate4 getValue(InterestRate2Choice obj) {
+			return obj.getFloating();
+		}
+
+		@Override
+		public void setValue(InterestRate2Choice obj, FloatingInterestRate4 value) {
+			obj.setFloating(value);
 		}
 	};
 

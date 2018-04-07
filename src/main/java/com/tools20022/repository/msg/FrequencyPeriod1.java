@@ -101,7 +101,7 @@ public class FrequencyPeriod1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FrequencyPeriod1, Frequency6Code> mmType = new MMMessageAttribute<FrequencyPeriod1, Frequency6Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.FrequencyPeriod1.mmObject();
 			isDerived = false;
@@ -112,6 +112,16 @@ public class FrequencyPeriod1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Frequency6Code.mmObject();
+		}
+
+		@Override
+		public Frequency6Code getValue(FrequencyPeriod1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(FrequencyPeriod1 obj, Frequency6Code value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "CntPerPrd", required = true)
@@ -142,21 +152,31 @@ public class FrequencyPeriod1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Number of instructions to be created and processed during the specified period"
+	 * "Number of instructions to be created and processed during the specified period."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountPerPeriod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FrequencyPeriod1, DecimalNumber> mmCountPerPeriod = new MMMessageAttribute<FrequencyPeriod1, DecimalNumber>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.FrequencyPeriod1.mmObject();
 			isDerived = false;
 			xmlTag = "CntPerPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CountPerPeriod";
-			definition = "Number of instructions to be created and processed during the specified period";
+			definition = "Number of instructions to be created and processed during the specified period.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public DecimalNumber getValue(FrequencyPeriod1 obj) {
+			return obj.getCountPerPeriod();
+		}
+
+		@Override
+		public void setValue(FrequencyPeriod1 obj, DecimalNumber value) {
+			obj.setCountPerPeriod(value);
 		}
 	};
 

@@ -19,8 +19,9 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.entity.ClearingSystem;
+import com.tools20022.repository.entity.DefaultFundContribution;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -109,7 +110,7 @@ public class DefaultFund {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DefaultFund, ActiveCurrencyAndAmount> mmTotalAmount = new MMBusinessAttribute<DefaultFund, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFund.mmObject();
@@ -121,12 +122,14 @@ public class DefaultFund {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DefaultFund.class.getMethod("getTotalAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(DefaultFund obj) {
+			return obj.getTotalAmount();
+		}
+
+		@Override
+		public void setValue(DefaultFund obj, ActiveCurrencyAndAmount value) {
+			obj.setTotalAmount(value);
 		}
 	};
 	protected DefaultFundContribution contribution;
@@ -163,7 +166,7 @@ public class DefaultFund {
 	 * definition} = "Contribution information for a default fund."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmContribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DefaultFund, Optional<DefaultFundContribution>> mmContribution = new MMBusinessAssociationEnd<DefaultFund, Optional<DefaultFundContribution>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFund.mmObject();
@@ -172,9 +175,19 @@ public class DefaultFund {
 			definition = "Contribution information for a default fund.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmDefaultFund;
+			opposite_lazy = () -> DefaultFundContribution.mmDefaultFund;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
+			type_lazy = () -> DefaultFundContribution.mmObject();
+		}
+
+		@Override
+		public Optional<DefaultFundContribution> getValue(DefaultFund obj) {
+			return obj.getContribution();
+		}
+
+		@Override
+		public void setValue(DefaultFund obj, Optional<DefaultFundContribution> value) {
+			obj.setContribution(value.orElse(null));
 		}
 	};
 	protected ClearingSystem clearingSystem;
@@ -212,7 +225,7 @@ public class DefaultFund {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmClearingSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DefaultFund, ClearingSystem> mmClearingSystem = new MMBusinessAssociationEnd<DefaultFund, ClearingSystem>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DefaultFund.mmObject();
@@ -221,9 +234,19 @@ public class DefaultFund {
 			definition = "Clearing system for which assets are posted by participants in the default fund.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmDefaultFund;
+			opposite_lazy = () -> ClearingSystem.mmDefaultFund;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmObject();
+			type_lazy = () -> ClearingSystem.mmObject();
+		}
+
+		@Override
+		public ClearingSystem getValue(DefaultFund obj) {
+			return obj.getClearingSystem();
+		}
+
+		@Override
+		public void setValue(DefaultFund obj, ClearingSystem value) {
+			obj.setClearingSystem(value);
 		}
 	};
 
@@ -234,7 +257,7 @@ public class DefaultFund {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DefaultFund";
 				definition = "Assets posted by participants in a clearing fund that can be used in the event of a default by a participant to compensate non-defaulting participants for losses they suffer due to this default.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ClearingSystem.mmDefaultFund, com.tools20022.repository.entity.DefaultFundContribution.mmDefaultFund);
+				associationDomain_lazy = () -> Arrays.asList(ClearingSystem.mmDefaultFund, DefaultFundContribution.mmDefaultFund);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DefaultFund.mmTotalAmount, com.tools20022.repository.entity.DefaultFund.mmContribution, com.tools20022.repository.entity.DefaultFund.mmClearingSystem);
 			}
 
@@ -259,7 +282,7 @@ public class DefaultFund {
 		return contribution == null ? Optional.empty() : Optional.of(contribution);
 	}
 
-	public DefaultFund setContribution(com.tools20022.repository.entity.DefaultFundContribution contribution) {
+	public DefaultFund setContribution(DefaultFundContribution contribution) {
 		this.contribution = contribution;
 		return this;
 	}
@@ -268,7 +291,7 @@ public class DefaultFund {
 		return clearingSystem;
 	}
 
-	public DefaultFund setClearingSystem(com.tools20022.repository.entity.ClearingSystem clearingSystem) {
+	public DefaultFund setClearingSystem(ClearingSystem clearingSystem) {
 		this.clearingSystem = Objects.requireNonNull(clearingSystem);
 		return this;
 	}

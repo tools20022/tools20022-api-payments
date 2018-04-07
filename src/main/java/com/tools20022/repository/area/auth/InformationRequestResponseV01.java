@@ -27,7 +27,6 @@ import com.tools20022.repository.codeset.StatusResponse1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.ReturnIndicator1;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -45,7 +44,7 @@ import javax.xml.bind.annotation.*;
  * Depending on whether the response can be provided STP within the authorities
  * financial investigations messages, the requested information may be <br>
  * • provided in part or in full within the response message itself, or <br>
- * • only referred to in the response message
+ * • only referred to in the response message.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -92,7 +91,7 @@ import javax.xml.bind.annotation.*;
  * "InformationRequestResponseV01"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "This message is sent by the financial institution to the authorities (police, customs, tax authorities, enforcement authorities) to provide a part or all of the requested information.\r\nThe financial institution previously received a request for financial information in the scope of a financial investigation.\r\n\r\nDepending on whether the response can be provided STP within the authorities financial investigations messages, the requested information may be \r\n•\tprovided in part or in full within the response message itself, or \r\n•\tonly referred to in the response message"
+ * "This message is sent by the financial institution to the authorities (police, customs, tax authorities, enforcement authorities) to provide a part or all of the requested information.\r\nThe financial institution previously received a request for financial information in the scope of a financial investigation.\r\n\r\nDepending on whether the response can be provided STP within the authorities financial investigations messages, the requested information may be \r\n•\tprovided in part or in full within the response message itself, or \r\n•\tonly referred to in the response message."
  * </li>
  * </ul>
  */
@@ -127,7 +126,7 @@ public class InformationRequestResponseV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmResponseIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InformationRequestResponseV01, Max35Text> mmResponseIdentification = new MMMessageBuildingBlock<InformationRequestResponseV01, Max35Text>() {
 		{
 			xmlTag = "RspnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,12 +137,14 @@ public class InformationRequestResponseV01 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationRequestResponseV01.class.getMethod("getResponseIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(InformationRequestResponseV01 obj) {
+			return obj.getResponseIdentification();
+		}
+
+		@Override
+		public void setValue(InformationRequestResponseV01 obj, Max35Text value) {
+			obj.setResponseIdentification(value);
 		}
 	};
 	@XmlElement(name = "InvstgtnId", required = true)
@@ -172,7 +173,7 @@ public class InformationRequestResponseV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmInvestigationIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InformationRequestResponseV01, Max35Text> mmInvestigationIdentification = new MMMessageBuildingBlock<InformationRequestResponseV01, Max35Text>() {
 		{
 			xmlTag = "InvstgtnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,12 +184,14 @@ public class InformationRequestResponseV01 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationRequestResponseV01.class.getMethod("getInvestigationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(InformationRequestResponseV01 obj) {
+			return obj.getInvestigationIdentification();
+		}
+
+		@Override
+		public void setValue(InformationRequestResponseV01 obj, Max35Text value) {
+			obj.setInvestigationIdentification(value);
 		}
 	};
 	@XmlElement(name = "RspnSts", required = true)
@@ -216,7 +219,7 @@ public class InformationRequestResponseV01 {
 	 * definition} = "Provides the status of the response."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmResponseStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InformationRequestResponseV01, StatusResponse1Code> mmResponseStatus = new MMMessageBuildingBlock<InformationRequestResponseV01, StatusResponse1Code>() {
 		{
 			xmlTag = "RspnSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,12 +230,14 @@ public class InformationRequestResponseV01 {
 			simpleType_lazy = () -> StatusResponse1Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationRequestResponseV01.class.getMethod("getResponseStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public StatusResponse1Code getValue(InformationRequestResponseV01 obj) {
+			return obj.getResponseStatus();
+		}
+
+		@Override
+		public void setValue(InformationRequestResponseV01 obj, StatusResponse1Code value) {
+			obj.setResponseStatus(value);
 		}
 	};
 	@XmlElement(name = "SchCrit", required = true)
@@ -262,7 +267,7 @@ public class InformationRequestResponseV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSearchCriteria = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InformationRequestResponseV01, SearchCriteria1Choice> mmSearchCriteria = new MMMessageBuildingBlock<InformationRequestResponseV01, SearchCriteria1Choice>() {
 		{
 			xmlTag = "SchCrit";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -273,12 +278,14 @@ public class InformationRequestResponseV01 {
 			complexType_lazy = () -> SearchCriteria1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationRequestResponseV01.class.getMethod("getSearchCriteria", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SearchCriteria1Choice getValue(InformationRequestResponseV01 obj) {
+			return obj.getSearchCriteria();
+		}
+
+		@Override
+		public void setValue(InformationRequestResponseV01 obj, SearchCriteria1Choice value) {
+			obj.setSearchCriteria(value);
 		}
 	};
 	@XmlElement(name = "RtrInd", required = true)
@@ -307,7 +314,7 @@ public class InformationRequestResponseV01 {
 	 * "Provides the return indicators and the investigation result."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReturnIndicator = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InformationRequestResponseV01, List<ReturnIndicator1>> mmReturnIndicator = new MMMessageBuildingBlock<InformationRequestResponseV01, List<ReturnIndicator1>>() {
 		{
 			xmlTag = "RtrInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -317,12 +324,14 @@ public class InformationRequestResponseV01 {
 			complexType_lazy = () -> ReturnIndicator1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationRequestResponseV01.class.getMethod("getReturnIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<ReturnIndicator1> getValue(InformationRequestResponseV01 obj) {
+			return obj.getReturnIndicator();
+		}
+
+		@Override
+		public void setValue(InformationRequestResponseV01 obj, List<ReturnIndicator1> value) {
+			obj.setReturnIndicator(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -352,7 +361,7 @@ public class InformationRequestResponseV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InformationRequestResponseV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<InformationRequestResponseV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -362,12 +371,14 @@ public class InformationRequestResponseV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationRequestResponseV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(InformationRequestResponseV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(InformationRequestResponseV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -376,7 +387,7 @@ public class InformationRequestResponseV01 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InformationRequestResponseV01";
-				definition = "This message is sent by the financial institution to the authorities (police, customs, tax authorities, enforcement authorities) to provide a part or all of the requested information.\r\nThe financial institution previously received a request for financial information in the scope of a financial investigation.\r\n\r\nDepending on whether the response can be provided STP within the authorities financial investigations messages, the requested information may be \r\n•\tprovided in part or in full within the response message itself, or \r\n•\tonly referred to in the response message";
+				definition = "This message is sent by the financial institution to the authorities (police, customs, tax authorities, enforcement authorities) to provide a part or all of the requested information.\r\nThe financial institution previously received a request for financial information in the scope of a financial investigation.\r\n\r\nDepending on whether the response can be provided STP within the authorities financial investigations messages, the requested information may be \r\n•\tprovided in part or in full within the response message itself, or \r\n•\tonly referred to in the response message.";
 				rootElement = "Document";
 				xmlTag = "InfReqRspn";
 				businessArea_lazy = () -> AuthoritiesLatestVersion.mmObject();

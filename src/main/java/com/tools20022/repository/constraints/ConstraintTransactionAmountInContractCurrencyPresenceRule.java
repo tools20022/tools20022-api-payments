@@ -53,7 +53,7 @@ public class ConstraintTransactionAmountInContractCurrencyPresenceRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forTransactionCertificateContract1 = new MMConstraint() {
+	public static final MMConstraint<TransactionCertificateContract1> forTransactionCertificateContract1 = new MMConstraint<TransactionCertificateContract1>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionAmountInContractCurrencyPresenceRule";
@@ -63,8 +63,8 @@ public class ConstraintTransactionAmountInContractCurrencyPresenceRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkTransactionCertificateContract1((TransactionCertificateContract1) obj);
+		public void executeValidator(TransactionCertificateContract1 obj) throws Exception {
+			checkTransactionCertificateContract1(obj);
 		}
 	};
 

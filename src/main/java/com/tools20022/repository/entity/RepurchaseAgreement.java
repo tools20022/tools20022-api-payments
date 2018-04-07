@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.PaymentObligation;
 import com.tools20022.repository.entity.SecuritiesFinancing;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
@@ -115,7 +116,7 @@ public class RepurchaseAgreement extends SecuritiesFinancing {
 	 * definition} = "Obligation covered by a repurchase agreement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RepurchaseAgreement, com.tools20022.repository.entity.PaymentObligation> mmPaymentObligation = new MMBusinessAssociationEnd<RepurchaseAgreement, com.tools20022.repository.entity.PaymentObligation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RepurchaseAgreement.mmObject();
@@ -127,6 +128,16 @@ public class RepurchaseAgreement extends SecuritiesFinancing {
 			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmRepurchaseAgreement;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.PaymentObligation getValue(RepurchaseAgreement obj) {
+			return obj.getPaymentObligation();
+		}
+
+		@Override
+		public void setValue(RepurchaseAgreement obj, com.tools20022.repository.entity.PaymentObligation value) {
+			obj.setPaymentObligation(value);
 		}
 	};
 

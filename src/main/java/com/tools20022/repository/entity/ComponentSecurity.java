@@ -21,8 +21,9 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ChoiceCode;
 import com.tools20022.repository.datatype.BaseOneRate;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -129,7 +130,7 @@ public class ComponentSecurity {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSeparationPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ComponentSecurity, DateTimePeriod> mmSeparationPeriod = new MMBusinessAssociationEnd<ComponentSecurity, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
@@ -138,9 +139,19 @@ public class ComponentSecurity {
 			definition = "Period during which the related security can (optional) or must (mandatory) be separated.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmComponentSecurity;
+			opposite_lazy = () -> DateTimePeriod.mmComponentSecurity;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(ComponentSecurity obj) {
+			return obj.getSeparationPeriod();
+		}
+
+		@Override
+		public void setValue(ComponentSecurity obj, DateTimePeriod value) {
+			obj.setSeparationPeriod(value);
 		}
 	};
 	protected Security security;
@@ -176,7 +187,7 @@ public class ComponentSecurity {
 	 * definition} = "Security for which a component security is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ComponentSecurity, Optional<Security>> mmSecurity = new MMBusinessAssociationEnd<ComponentSecurity, Optional<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
@@ -185,9 +196,19 @@ public class ComponentSecurity {
 			definition = "Security for which a component security is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmComponentSecurity;
+			opposite_lazy = () -> Security.mmComponentSecurity;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Optional<Security> getValue(ComponentSecurity obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(ComponentSecurity obj, Optional<Security> value) {
+			obj.setSecurity(value.orElse(null));
 		}
 	};
 	protected ChoiceCode separationChoice;
@@ -217,7 +238,7 @@ public class ComponentSecurity {
 	 * " Defines if the separation of the security is optional or mandatory."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSeparationChoice = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ComponentSecurity, ChoiceCode> mmSeparationChoice = new MMBusinessAttribute<ComponentSecurity, ChoiceCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
@@ -229,12 +250,14 @@ public class ComponentSecurity {
 			simpleType_lazy = () -> ChoiceCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ComponentSecurity.class.getMethod("getSeparationChoice", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ChoiceCode getValue(ComponentSecurity obj) {
+			return obj.getSeparationChoice();
+		}
+
+		@Override
+		public void setValue(ComponentSecurity obj, ChoiceCode value) {
+			obj.setSeparationChoice(value);
 		}
 	};
 	protected BaseOneRate quantityNumerator;
@@ -263,7 +286,7 @@ public class ComponentSecurity {
 	 * definition} = "Number of related securities for the exercise."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmQuantityNumerator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ComponentSecurity, BaseOneRate> mmQuantityNumerator = new MMBusinessAttribute<ComponentSecurity, BaseOneRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
@@ -275,12 +298,14 @@ public class ComponentSecurity {
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ComponentSecurity.class.getMethod("getQuantityNumerator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BaseOneRate getValue(ComponentSecurity obj) {
+			return obj.getQuantityNumerator();
+		}
+
+		@Override
+		public void setValue(ComponentSecurity obj, BaseOneRate value) {
+			obj.setQuantityNumerator(value);
 		}
 	};
 	protected BaseOneRate quantityDenominator;
@@ -309,7 +334,7 @@ public class ComponentSecurity {
 	 * definition} = "Number of held securities for the exercise."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmQuantityDenominator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ComponentSecurity, BaseOneRate> mmQuantityDenominator = new MMBusinessAttribute<ComponentSecurity, BaseOneRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
@@ -321,12 +346,14 @@ public class ComponentSecurity {
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ComponentSecurity.class.getMethod("getQuantityDenominator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BaseOneRate getValue(ComponentSecurity obj) {
+			return obj.getQuantityDenominator();
+		}
+
+		@Override
+		public void setValue(ComponentSecurity obj, BaseOneRate value) {
+			obj.setQuantityDenominator(value);
 		}
 	};
 	protected ISODateTime separationDate;
@@ -357,7 +384,7 @@ public class ComponentSecurity {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSeparationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ComponentSecurity, ISODateTime> mmSeparationDate = new MMBusinessAttribute<ComponentSecurity, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
@@ -369,12 +396,14 @@ public class ComponentSecurity {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ComponentSecurity.class.getMethod("getSeparationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(ComponentSecurity obj) {
+			return obj.getSeparationDate();
+		}
+
+		@Override
+		public void setValue(ComponentSecurity obj, ISODateTime value) {
+			obj.setSeparationDate(value);
 		}
 	};
 
@@ -385,7 +414,7 @@ public class ComponentSecurity {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ComponentSecurity";
 				definition = "Security which forms a component of another security, for example, underlying.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmComponentSecurity, com.tools20022.repository.entity.DateTimePeriod.mmComponentSecurity);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmComponentSecurity, DateTimePeriod.mmComponentSecurity);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ComponentSecurity.mmSeparationPeriod, com.tools20022.repository.entity.ComponentSecurity.mmSecurity,
 						com.tools20022.repository.entity.ComponentSecurity.mmSeparationChoice, com.tools20022.repository.entity.ComponentSecurity.mmQuantityNumerator,
 						com.tools20022.repository.entity.ComponentSecurity.mmQuantityDenominator, com.tools20022.repository.entity.ComponentSecurity.mmSeparationDate);
@@ -403,7 +432,7 @@ public class ComponentSecurity {
 		return separationPeriod;
 	}
 
-	public ComponentSecurity setSeparationPeriod(com.tools20022.repository.entity.DateTimePeriod separationPeriod) {
+	public ComponentSecurity setSeparationPeriod(DateTimePeriod separationPeriod) {
 		this.separationPeriod = Objects.requireNonNull(separationPeriod);
 		return this;
 	}
@@ -412,7 +441,7 @@ public class ComponentSecurity {
 		return security == null ? Optional.empty() : Optional.of(security);
 	}
 
-	public ComponentSecurity setSecurity(com.tools20022.repository.entity.Security security) {
+	public ComponentSecurity setSecurity(Security security) {
 		this.security = security;
 		return this;
 	}

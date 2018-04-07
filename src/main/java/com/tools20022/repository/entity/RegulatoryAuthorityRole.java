@@ -21,6 +21,8 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Country;
+import com.tools20022.repository.entity.RegulatoryReport;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.RegulatoryAuthority2;
@@ -124,7 +126,7 @@ public class RegulatoryAuthorityRole extends Role {
 	 * definition} = "Report which was requested by the regulatory authority."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRegulatoryReport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryAuthorityRole, Optional<RegulatoryReport>> mmRegulatoryReport = new MMBusinessAssociationEnd<RegulatoryAuthorityRole, Optional<RegulatoryReport>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryAuthorityRole.mmObject();
@@ -136,6 +138,16 @@ public class RegulatoryAuthorityRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmAuthority;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
+		}
+
+		@Override
+		public Optional<RegulatoryReport> getValue(RegulatoryAuthorityRole obj) {
+			return obj.getRegulatoryReport();
+		}
+
+		@Override
+		public void setValue(RegulatoryAuthorityRole obj, Optional<RegulatoryReport> value) {
+			obj.setRegulatoryReport(value.orElse(null));
 		}
 	};
 	protected Country country;
@@ -171,7 +183,7 @@ public class RegulatoryAuthorityRole extends Role {
 	 * definition} = "Country for which the regulatory authority operates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryAuthorityRole, com.tools20022.repository.entity.Country> mmCountry = new MMBusinessAssociationEnd<RegulatoryAuthorityRole, com.tools20022.repository.entity.Country>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryAuthorityRole.mmObject();
@@ -183,6 +195,16 @@ public class RegulatoryAuthorityRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Country.mmNationalRegulatoryAuthority;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Country getValue(RegulatoryAuthorityRole obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(RegulatoryAuthorityRole obj, com.tools20022.repository.entity.Country value) {
+			obj.setCountry(value);
 		}
 	};
 

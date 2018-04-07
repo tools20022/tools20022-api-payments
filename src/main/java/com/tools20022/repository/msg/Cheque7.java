@@ -29,6 +29,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.NameAndAddress10;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -139,7 +140,7 @@ public class Cheque7 {
 	 * definition} = "Specifies the type of cheque to be issued."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmChequeType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cheque7, Optional<ChequeType2Code>> mmChequeType = new MMMessageAttribute<Cheque7, Optional<ChequeType2Code>>() {
 		{
 			businessElementTrace_lazy = () -> Cheque.mmChequeType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -151,6 +152,16 @@ public class Cheque7 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ChequeType2Code.mmObject();
+		}
+
+		@Override
+		public Optional<ChequeType2Code> getValue(Cheque7 obj) {
+			return obj.getChequeType();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, Optional<ChequeType2Code> value) {
+			obj.setChequeType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ChqNb")
@@ -188,7 +199,7 @@ public class Cheque7 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmChequeNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cheque7, Optional<Max35Text>> mmChequeNumber = new MMMessageAttribute<Cheque7, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> CreditInstrument.mmCreditInstrumentIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -200,6 +211,16 @@ public class Cheque7 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(Cheque7 obj) {
+			return obj.getChequeNumber();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, Optional<Max35Text> value) {
+			obj.setChequeNumber(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ChqFr")
@@ -235,7 +256,7 @@ public class Cheque7 {
 	 * "Identifies the party that ordered the issuance of the cheque."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmChequeFrom = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Cheque7, Optional<NameAndAddress10>> mmChequeFrom = new MMMessageAssociationEnd<Cheque7, Optional<NameAndAddress10>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -247,7 +268,17 @@ public class Cheque7 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NameAndAddress10.mmObject();
+			type_lazy = () -> NameAndAddress10.mmObject();
+		}
+
+		@Override
+		public Optional<NameAndAddress10> getValue(Cheque7 obj) {
+			return obj.getChequeFrom();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, Optional<NameAndAddress10> value) {
+			obj.setChequeFrom(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "DlvryMtd")
@@ -284,7 +315,7 @@ public class Cheque7 {
 	 * "Specifies the delivery method of the cheque by the debtor's agent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDeliveryMethod = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Cheque7, Optional<ChequeDeliveryMethod1Choice>> mmDeliveryMethod = new MMMessageAssociationEnd<Cheque7, Optional<ChequeDeliveryMethod1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> ChequeIssue.mmDeliveryMethod;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -297,6 +328,16 @@ public class Cheque7 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> ChequeDeliveryMethod1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<ChequeDeliveryMethod1Choice> getValue(Cheque7 obj) {
+			return obj.getDeliveryMethod();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, Optional<ChequeDeliveryMethod1Choice> value) {
+			obj.setDeliveryMethod(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "DlvrTo")
@@ -332,7 +373,7 @@ public class Cheque7 {
 	 * "Party to whom the debtor's agent needs to send the cheque."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDeliverTo = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Cheque7, Optional<NameAndAddress10>> mmDeliverTo = new MMMessageAssociationEnd<Cheque7, Optional<NameAndAddress10>>() {
 		{
 			businessElementTrace_lazy = () -> ChequeIssue.mmDeliverTo;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -344,7 +385,17 @@ public class Cheque7 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NameAndAddress10.mmObject();
+			type_lazy = () -> NameAndAddress10.mmObject();
+		}
+
+		@Override
+		public Optional<NameAndAddress10> getValue(Cheque7 obj) {
+			return obj.getDeliverTo();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, Optional<NameAndAddress10> value) {
+			obj.setDeliverTo(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "InstrPrty")
@@ -383,7 +434,7 @@ public class Cheque7 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructionPriority = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cheque7, Optional<Priority2Code>> mmInstructionPriority = new MMMessageAttribute<Cheque7, Optional<Priority2Code>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmPriority;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -395,6 +446,16 @@ public class Cheque7 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Priority2Code.mmObject();
+		}
+
+		@Override
+		public Optional<Priority2Code> getValue(Cheque7 obj) {
+			return obj.getInstructionPriority();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, Optional<Priority2Code> value) {
+			obj.setInstructionPriority(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ChqMtrtyDt")
@@ -432,7 +493,7 @@ public class Cheque7 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmChequeMaturityDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cheque7, Optional<ISODate>> mmChequeMaturityDate = new MMMessageAttribute<Cheque7, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Cheque.mmMaturityDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -444,6 +505,16 @@ public class Cheque7 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(Cheque7 obj) {
+			return obj.getChequeMaturityDate();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, Optional<ISODate> value) {
+			obj.setChequeMaturityDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "FrmsCd")
@@ -481,7 +552,7 @@ public class Cheque7 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFormsCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cheque7, Optional<Max35Text>> mmFormsCode = new MMMessageAttribute<Cheque7, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Cheque.mmFormsCode;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -493,6 +564,16 @@ public class Cheque7 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(Cheque7 obj) {
+			return obj.getFormsCode();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, Optional<Max35Text> value) {
+			obj.setFormsCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "MemoFld")
@@ -530,7 +611,7 @@ public class Cheque7 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMemoField = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cheque7, List<Max35Text>> mmMemoField = new MMMessageAttribute<Cheque7, List<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Cheque.mmMemoField;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -542,6 +623,16 @@ public class Cheque7 {
 			maxOccurs = 2;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public List<Max35Text> getValue(Cheque7 obj) {
+			return obj.getMemoField();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, List<Max35Text> value) {
+			obj.setMemoField(value);
 		}
 	};
 	@XmlElement(name = "RgnlClrZone")
@@ -579,7 +670,7 @@ public class Cheque7 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegionalClearingZone = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cheque7, Optional<Max35Text>> mmRegionalClearingZone = new MMMessageAttribute<Cheque7, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Cheque.mmRegionalClearingZone;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -591,6 +682,16 @@ public class Cheque7 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(Cheque7 obj) {
+			return obj.getRegionalClearingZone();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, Optional<Max35Text> value) {
+			obj.setRegionalClearingZone(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PrtLctn")
@@ -626,7 +727,7 @@ public class Cheque7 {
 	 * definition} = "Specifies the print location of the cheque."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPrintLocation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cheque7, Optional<Max35Text>> mmPrintLocation = new MMMessageAttribute<Cheque7, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> ChequeIssue.mmPrintLocation;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -638,6 +739,16 @@ public class Cheque7 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(Cheque7 obj) {
+			return obj.getPrintLocation();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, Optional<Max35Text> value) {
+			obj.setPrintLocation(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Sgntr")
@@ -674,7 +785,7 @@ public class Cheque7 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSignature = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cheque7, List<Max70Text>> mmSignature = new MMMessageAttribute<Cheque7, List<Max70Text>>() {
 		{
 			businessComponentTrace_lazy = () -> Signature.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.Cheque7.mmObject();
@@ -686,6 +797,16 @@ public class Cheque7 {
 			maxOccurs = 5;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public List<Max70Text> getValue(Cheque7 obj) {
+			return obj.getSignature();
+		}
+
+		@Override
+		public void setValue(Cheque7 obj, List<Max70Text> value) {
+			obj.setSignature(value);
 		}
 	};
 
@@ -729,7 +850,7 @@ public class Cheque7 {
 		return chequeFrom == null ? Optional.empty() : Optional.of(chequeFrom);
 	}
 
-	public Cheque7 setChequeFrom(com.tools20022.repository.msg.NameAndAddress10 chequeFrom) {
+	public Cheque7 setChequeFrom(NameAndAddress10 chequeFrom) {
 		this.chequeFrom = chequeFrom;
 		return this;
 	}
@@ -747,7 +868,7 @@ public class Cheque7 {
 		return deliverTo == null ? Optional.empty() : Optional.of(deliverTo);
 	}
 
-	public Cheque7 setDeliverTo(com.tools20022.repository.msg.NameAndAddress10 deliverTo) {
+	public Cheque7 setDeliverTo(NameAndAddress10 deliverTo) {
 		this.deliverTo = deliverTo;
 		return this;
 	}

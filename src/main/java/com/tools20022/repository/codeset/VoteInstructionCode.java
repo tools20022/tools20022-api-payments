@@ -189,7 +189,7 @@ public class VoteInstructionCode extends MMCode {
 		}
 	};
 	/**
-	 * Participant to a meeting withholds its vote for a meeting resolution .
+	 * Participant to a meeting withholds its vote for a meeting resolution.
 	 * This action is usually taken in order to indicate a strong disagreement
 	 * with a resolution (US market).
 	 * <p>
@@ -209,7 +209,7 @@ public class VoteInstructionCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Participant to a meeting withholds its vote for a meeting resolution . This action is usually taken in order to indicate a strong disagreement with a resolution (US market)."
+	 * "Participant to a meeting withholds its vote for a meeting resolution. This action is usually taken in order to indicate a strong disagreement with a resolution (US market)."
 	 * </li>
 	 * </ul>
 	 */
@@ -217,7 +217,7 @@ public class VoteInstructionCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Withhold";
-			definition = "Participant to a meeting withholds its vote for a meeting resolution . This action is usually taken in order to indicate a strong disagreement with a resolution (US market).";
+			definition = "Participant to a meeting withholds its vote for a meeting resolution. This action is usually taken in order to indicate a strong disagreement with a resolution (US market).";
 			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "WTHH";
 		}
@@ -321,7 +321,7 @@ public class VoteInstructionCode extends MMCode {
 		}
 	};
 	/**
-	 * Indicates a recommendation to take no action
+	 * Indicates a recommendation to take no action.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -338,14 +338,14 @@ public class VoteInstructionCode extends MMCode {
 	 * name} = "NoAction"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Indicates a recommendation to take no action"</li>
+	 * definition} = "Indicates a recommendation to take no action."</li>
 	 * </ul>
 	 */
 	public static final VoteInstructionCode NoAction = new VoteInstructionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoAction";
-			definition = "Indicates a recommendation to take no action";
+			definition = "Indicates a recommendation to take no action.";
 			owner_lazy = () -> com.tools20022.repository.codeset.VoteInstructionCode.mmObject();
 			codeName = "NOAC";
 		}

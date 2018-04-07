@@ -21,8 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -229,7 +229,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReinvestmentFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, EventFrequencyCode> mmReinvestmentFrequency = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, EventFrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -241,12 +241,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> EventFrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getReinvestmentFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public EventFrequencyCode getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getReinvestmentFrequency();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, EventFrequencyCode value) {
+			obj.setReinvestmentFrequency(value);
 		}
 	};
 	protected YesNoIndicator frontEndLoadIndicator;
@@ -277,7 +279,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * "Front end charge on subscription orders for this class can be applied."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFrontEndLoadIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator> mmFrontEndLoadIndicator = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -289,12 +291,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getFrontEndLoadIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getFrontEndLoadIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, YesNoIndicator value) {
+			obj.setFrontEndLoadIndicator(value);
 		}
 	};
 	protected YesNoIndicator backEndLoadIndicator;
@@ -326,7 +330,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBackEndLoadIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator> mmBackEndLoadIndicator = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -338,12 +342,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getBackEndLoadIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getBackEndLoadIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, YesNoIndicator value) {
+			obj.setBackEndLoadIndicator(value);
 		}
 	};
 	protected YesNoIndicator switchingFeeIndicator;
@@ -375,7 +381,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSwitchingFeeIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator> mmSwitchingFeeIndicator = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -387,12 +393,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getSwitchingFeeIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getSwitchingFeeIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, YesNoIndicator value) {
+			obj.setSwitchingFeeIndicator(value);
 		}
 	};
 	protected Max350Text limitedSubscriptionPeriod;
@@ -423,7 +431,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLimitedSubscriptionPeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, Max350Text> mmLimitedSubscriptionPeriod = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -435,12 +443,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getLimitedSubscriptionPeriod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getLimitedSubscriptionPeriod();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, Max350Text value) {
+			obj.setLimitedSubscriptionPeriod(value);
 		}
 	};
 	protected Max350Text limitedRedemptionPeriod;
@@ -471,7 +481,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLimitedRedemptionPeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, Max350Text> mmLimitedRedemptionPeriod = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -483,12 +493,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getLimitedRedemptionPeriod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getLimitedRedemptionPeriod();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, Max350Text value) {
+			obj.setLimitedRedemptionPeriod(value);
 		}
 	};
 	protected Number decimalisation;
@@ -519,7 +531,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDecimalisation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, Number> mmDecimalisation = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -531,12 +543,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getDecimalisation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getDecimalisation();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, Number value) {
+			obj.setDecimalisation(value);
 		}
 	};
 	protected YesNoIndicator holdingTransferableIndicator;
@@ -568,7 +582,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHoldingTransferableIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator> mmHoldingTransferableIndicator = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -580,12 +594,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getHoldingTransferableIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getHoldingTransferableIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, YesNoIndicator value) {
+			obj.setHoldingTransferableIndicator(value);
 		}
 	};
 	protected YesNoIndicator applicationForm;
@@ -615,7 +631,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * definition} = "Physical application form is required."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmApplicationForm = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator> mmApplicationForm = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -627,12 +643,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getApplicationForm", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getApplicationForm();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, YesNoIndicator value) {
+			obj.setApplicationForm(value);
 		}
 	};
 	protected SignatureTypeCode signatureRequired;
@@ -664,7 +682,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSignatureRequired = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, SignatureTypeCode> mmSignatureRequired = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, SignatureTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -676,12 +694,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> SignatureTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getSignatureRequired", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SignatureTypeCode getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getSignatureRequired();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, SignatureTypeCode value) {
+			obj.setSignatureRequired(value);
 		}
 	};
 	protected YesNoIndicator amountIndicator;
@@ -712,7 +732,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * "Indicates whether subscriptions/redemption in amount are allowed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmountIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator> mmAmountIndicator = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -724,12 +744,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getAmountIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getAmountIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, YesNoIndicator value) {
+			obj.setAmountIndicator(value);
 		}
 	};
 	protected YesNoIndicator unitsIndicator;
@@ -761,7 +783,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUnitsIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator> mmUnitsIndicator = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -773,12 +795,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getUnitsIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getUnitsIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, YesNoIndicator value) {
+			obj.setUnitsIndicator(value);
 		}
 	};
 	protected ISODateTime orderCutOffDateTime;
@@ -809,7 +833,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOrderCutOffDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, ISODateTime> mmOrderCutOffDateTime = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -821,12 +845,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getOrderCutOffDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getOrderCutOffDateTime();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, ISODateTime value) {
+			obj.setOrderCutOffDateTime(value);
 		}
 	};
 	protected TimeFrame settlementCycle;
@@ -865,7 +891,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlementCycle = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, TimeFrame> mmSettlementCycle = new MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, TimeFrame>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -874,9 +900,19 @@ public class InvestmentFundClassProcessingCharacteristics {
 			definition = "An agreed number of days after the Trade date (T) used to define standard timeframes e.g T+3 settlement period \r\nWhere T = the date the price is applied to a transaction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmSubscriptionSettlementRelatedFundProcessing;
+			opposite_lazy = () -> TimeFrame.mmSubscriptionSettlementRelatedFundProcessing;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
+			type_lazy = () -> TimeFrame.mmObject();
+		}
+
+		@Override
+		public TimeFrame getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getSettlementCycle();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, TimeFrame value) {
+			obj.setSettlementCycle(value);
 		}
 	};
 	protected InvestmentFundClass fundClass;
@@ -915,7 +951,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFundClass = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, Optional<InvestmentFundClass>> mmFundClass = new MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, Optional<InvestmentFundClass>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -924,9 +960,19 @@ public class InvestmentFundClassProcessingCharacteristics {
 			definition = "Investment fund class for which processing characteristics are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmProcessingCharacteristics;
+			opposite_lazy = () -> InvestmentFundClass.mmProcessingCharacteristics;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
+			type_lazy = () -> InvestmentFundClass.mmObject();
+		}
+
+		@Override
+		public Optional<InvestmentFundClass> getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getFundClass();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, Optional<InvestmentFundClass> value) {
+			obj.setFundClass(value.orElse(null));
 		}
 	};
 	protected HoldingTransferableCode holdingTransferable;
@@ -958,7 +1004,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHoldingTransferable = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, HoldingTransferableCode> mmHoldingTransferable = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, HoldingTransferableCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -970,12 +1016,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> HoldingTransferableCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getHoldingTransferable", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public HoldingTransferableCode getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getHoldingTransferable();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, HoldingTransferableCode value) {
+			obj.setHoldingTransferable(value);
 		}
 	};
 	protected FrequencyCode dealingFrequency;
@@ -1006,7 +1054,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * "Frequency at which the subscriptions and redemptions are done."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDealingFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, FrequencyCode> mmDealingFrequency = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, FrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1018,12 +1066,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getDealingFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getDealingFrequency();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, FrequencyCode value) {
+			obj.setDealingFrequency(value);
 		}
 	};
 	protected Max350Text limitedPeriod;
@@ -1054,7 +1104,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLimitedPeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, Max350Text> mmLimitedPeriod = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1066,15 +1116,17 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getLimitedPeriod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getLimitedPeriod();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, Max350Text value) {
+			obj.setLimitedPeriod(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Account> settlementAccount;
+	protected List<Account> settlementAccount;
 	/**
 	 * 
 	 <p>
@@ -1107,7 +1159,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * definition} = "Account used for settlement of fund transactions."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlementAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, List<Account>> mmSettlementAccount = new MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, List<Account>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1115,9 +1167,19 @@ public class InvestmentFundClassProcessingCharacteristics {
 			name = "SettlementAccount";
 			definition = "Account used for settlement of fund transactions.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmRelatedFundProcessingCharacteristics;
+			opposite_lazy = () -> Account.mmRelatedFundProcessingCharacteristics;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
+			type_lazy = () -> Account.mmObject();
+		}
+
+		@Override
+		public List<Account> getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getSettlementAccount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, List<Account> value) {
+			obj.setSettlementAccount(value);
 		}
 	};
 	protected Country country;
@@ -1153,7 +1215,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * definition} = "Country in which the processing characteristic applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, Country> mmCountry = new MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, Country>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1162,12 +1224,22 @@ public class InvestmentFundClassProcessingCharacteristics {
 			definition = "Country in which the processing characteristic applies.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Country.mmCountryRelatedInvestmentFundProcessing;
+			opposite_lazy = () -> Country.mmCountryRelatedInvestmentFundProcessing;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
+			type_lazy = () -> Country.mmObject();
+		}
+
+		@Override
+		public Country getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, Country value) {
+			obj.setCountry(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ContactPoint> localMarketAnnex;
+	protected List<ContactPoint> localMarketAnnex;
 	/**
 	 * 
 	 <p>
@@ -1203,7 +1275,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLocalMarketAnnex = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, List<ContactPoint>> mmLocalMarketAnnex = new MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, List<ContactPoint>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1211,9 +1283,19 @@ public class InvestmentFundClassProcessingCharacteristics {
 			name = "LocalMarketAnnex";
 			definition = "Context, or geographic environment, in which trading parties may meet in order to negotiate and execute trades among themselves.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmInvestmentFundClassProcessing;
+			opposite_lazy = () -> ContactPoint.mmInvestmentFundClassProcessing;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			type_lazy = () -> ContactPoint.mmObject();
+		}
+
+		@Override
+		public List<ContactPoint> getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getLocalMarketAnnex();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, List<ContactPoint> value) {
+			obj.setLocalMarketAnnex(value);
 		}
 	};
 	protected ISODateTime effectiveDate;
@@ -1243,7 +1325,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * "Date/time as from which the processing characteristics are valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, ISODateTime> mmEffectiveDate = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1255,12 +1337,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getEffectiveDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getEffectiveDate();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, ISODateTime value) {
+			obj.setEffectiveDate(value);
 		}
 	};
 	protected YesNoIndicator subsequentSubscriptionApplicationForm;
@@ -1292,7 +1376,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSubsequentSubscriptionApplicationForm = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator> mmSubsequentSubscriptionApplicationForm = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1304,12 +1388,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getSubsequentSubscriptionApplicationForm", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getSubsequentSubscriptionApplicationForm();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, YesNoIndicator value) {
+			obj.setSubsequentSubscriptionApplicationForm(value);
 		}
 	};
 	protected YesNoIndicator redemptionForm;
@@ -1341,7 +1427,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRedemptionForm = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator> mmRedemptionForm = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1353,12 +1439,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getRedemptionForm", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getRedemptionForm();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, YesNoIndicator value) {
+			obj.setRedemptionForm(value);
 		}
 	};
 	protected CurrencyCode dealingCurrency;
@@ -1388,7 +1476,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * "Currency in which a subscription or redemption is accepted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDealingCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, CurrencyCode> mmDealingCurrency = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1400,12 +1488,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getDealingCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getDealingCurrency();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, CurrencyCode value) {
+			obj.setDealingCurrency(value);
 		}
 	};
 	protected TimeFrame dealingCutOffTimeFrame;
@@ -1443,7 +1533,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * "Specifies the number of days for cut off before or after an activity."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDealingCutOffTimeFrame = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, TimeFrame> mmDealingCutOffTimeFrame = new MMBusinessAssociationEnd<InvestmentFundClassProcessingCharacteristics, TimeFrame>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1452,9 +1542,19 @@ public class InvestmentFundClassProcessingCharacteristics {
 			definition = "Specifies the number of days for cut off before or after an activity.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmRelatedProcessingCharacteristics;
+			opposite_lazy = () -> TimeFrame.mmRelatedProcessingCharacteristics;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
+			type_lazy = () -> TimeFrame.mmObject();
+		}
+
+		@Override
+		public TimeFrame getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getDealingCutOffTimeFrame();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, TimeFrame value) {
+			obj.setDealingCutOffTimeFrame(value);
 		}
 	};
 	protected ActiveCurrencyAndAmount minimumHoldingAmount;
@@ -1486,7 +1586,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumHoldingAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, ActiveCurrencyAndAmount> mmMinimumHoldingAmount = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1498,12 +1598,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMinimumHoldingAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMinimumHoldingAmount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, ActiveCurrencyAndAmount value) {
+			obj.setMinimumHoldingAmount(value);
 		}
 	};
 	protected DecimalNumber maximumRedemptionUnits;
@@ -1535,7 +1637,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumRedemptionUnits = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, DecimalNumber> mmMaximumRedemptionUnits = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, DecimalNumber>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1547,12 +1649,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMaximumRedemptionUnits", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMaximumRedemptionUnits();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, DecimalNumber value) {
+			obj.setMaximumRedemptionUnits(value);
 		}
 	};
 	protected DecimalNumber minimumHoldingUnits;
@@ -1584,7 +1688,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumHoldingUnits = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, DecimalNumber> mmMinimumHoldingUnits = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, DecimalNumber>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1596,12 +1700,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMinimumHoldingUnits", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMinimumHoldingUnits();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, DecimalNumber value) {
+			obj.setMinimumHoldingUnits(value);
 		}
 	};
 	protected CurrencyAndAmount minimumRemainingHoldingAmount;
@@ -1633,7 +1739,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumRemainingHoldingAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, CurrencyAndAmount> mmMinimumRemainingHoldingAmount = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1645,12 +1751,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMinimumRemainingHoldingAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMinimumRemainingHoldingAmount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, CurrencyAndAmount value) {
+			obj.setMinimumRemainingHoldingAmount(value);
 		}
 	};
 	protected PercentageRate maximumRedemptionPercentage;
@@ -1682,7 +1790,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumRedemptionPercentage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, PercentageRate> mmMaximumRedemptionPercentage = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1694,12 +1802,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMaximumRedemptionPercentage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMaximumRedemptionPercentage();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, PercentageRate value) {
+			obj.setMaximumRedemptionPercentage(value);
 		}
 	};
 	protected CurrencyAndAmount maximumRedemptionAmount;
@@ -1731,7 +1841,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumRedemptionAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, CurrencyAndAmount> mmMaximumRedemptionAmount = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1743,12 +1853,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMaximumRedemptionAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMaximumRedemptionAmount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, CurrencyAndAmount value) {
+			obj.setMaximumRedemptionAmount(value);
 		}
 	};
 	protected DecimalNumber minimumInitialSubscriptionUnits;
@@ -1779,7 +1891,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * "Minimum initial number of units/shares that must be purchased."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumInitialSubscriptionUnits = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, DecimalNumber> mmMinimumInitialSubscriptionUnits = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, DecimalNumber>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1791,12 +1903,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMinimumInitialSubscriptionUnits", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMinimumInitialSubscriptionUnits();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, DecimalNumber value) {
+			obj.setMinimumInitialSubscriptionUnits(value);
 		}
 	};
 	protected CurrencyAndAmount minimumSubscriptionAmount;
@@ -1828,7 +1942,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumSubscriptionAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, CurrencyAndAmount> mmMinimumSubscriptionAmount = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1840,12 +1954,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMinimumSubscriptionAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMinimumSubscriptionAmount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, CurrencyAndAmount value) {
+			obj.setMinimumSubscriptionAmount(value);
 		}
 	};
 	protected CurrencyAndAmount minimumInitialSubscriptionAmount;
@@ -1877,7 +1993,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumInitialSubscriptionAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, CurrencyAndAmount> mmMinimumInitialSubscriptionAmount = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1889,12 +2005,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMinimumInitialSubscriptionAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMinimumInitialSubscriptionAmount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, CurrencyAndAmount value) {
+			obj.setMinimumInitialSubscriptionAmount(value);
 		}
 	};
 	protected DecimalNumber minimumSubscriptionUnits;
@@ -1926,7 +2044,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumSubscriptionUnits = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, DecimalNumber> mmMinimumSubscriptionUnits = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, DecimalNumber>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1938,12 +2056,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMinimumSubscriptionUnits", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMinimumSubscriptionUnits();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, DecimalNumber value) {
+			obj.setMinimumSubscriptionUnits(value);
 		}
 	};
 	protected Max70Text minimumHoldingPeriod;
@@ -1974,7 +2094,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumHoldingPeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, Max70Text> mmMinimumHoldingPeriod = new MMBusinessAttribute<InvestmentFundClassProcessingCharacteristics, Max70Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
@@ -1986,12 +2106,14 @@ public class InvestmentFundClassProcessingCharacteristics {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentFundClassProcessingCharacteristics.class.getMethod("getMinimumHoldingPeriod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max70Text getValue(InvestmentFundClassProcessingCharacteristics obj) {
+			return obj.getMinimumHoldingPeriod();
+		}
+
+		@Override
+		public void setValue(InvestmentFundClassProcessingCharacteristics obj, Max70Text value) {
+			obj.setMinimumHoldingPeriod(value);
 		}
 	};
 
@@ -2002,9 +2124,8 @@ public class InvestmentFundClassProcessingCharacteristics {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundClassProcessingCharacteristics";
 				definition = "Processing characteristics linked to the instrument, ie, not to  the market.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundClass.mmProcessingCharacteristics, com.tools20022.repository.entity.Country.mmCountryRelatedInvestmentFundProcessing,
-						com.tools20022.repository.entity.ContactPoint.mmInvestmentFundClassProcessing, com.tools20022.repository.entity.TimeFrame.mmSubscriptionSettlementRelatedFundProcessing,
-						com.tools20022.repository.entity.TimeFrame.mmRelatedProcessingCharacteristics, com.tools20022.repository.entity.Account.mmRelatedFundProcessingCharacteristics);
+				associationDomain_lazy = () -> Arrays.asList(InvestmentFundClass.mmProcessingCharacteristics, Country.mmCountryRelatedInvestmentFundProcessing, ContactPoint.mmInvestmentFundClassProcessing,
+						TimeFrame.mmSubscriptionSettlementRelatedFundProcessing, TimeFrame.mmRelatedProcessingCharacteristics, Account.mmRelatedFundProcessingCharacteristics);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmReinvestmentFrequency,
 						com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmFrontEndLoadIndicator, com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmBackEndLoadIndicator,
 						com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmSwitchingFeeIndicator, com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmLimitedSubscriptionPeriod,
@@ -2157,7 +2278,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 		return settlementCycle;
 	}
 
-	public InvestmentFundClassProcessingCharacteristics setSettlementCycle(com.tools20022.repository.entity.TimeFrame settlementCycle) {
+	public InvestmentFundClassProcessingCharacteristics setSettlementCycle(TimeFrame settlementCycle) {
 		this.settlementCycle = Objects.requireNonNull(settlementCycle);
 		return this;
 	}
@@ -2166,7 +2287,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 		return fundClass == null ? Optional.empty() : Optional.of(fundClass);
 	}
 
-	public InvestmentFundClassProcessingCharacteristics setFundClass(com.tools20022.repository.entity.InvestmentFundClass fundClass) {
+	public InvestmentFundClassProcessingCharacteristics setFundClass(InvestmentFundClass fundClass) {
 		this.fundClass = fundClass;
 		return this;
 	}
@@ -2202,7 +2323,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 		return settlementAccount == null ? settlementAccount = new ArrayList<>() : settlementAccount;
 	}
 
-	public InvestmentFundClassProcessingCharacteristics setSettlementAccount(List<com.tools20022.repository.entity.Account> settlementAccount) {
+	public InvestmentFundClassProcessingCharacteristics setSettlementAccount(List<Account> settlementAccount) {
 		this.settlementAccount = Objects.requireNonNull(settlementAccount);
 		return this;
 	}
@@ -2211,7 +2332,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 		return country;
 	}
 
-	public InvestmentFundClassProcessingCharacteristics setCountry(com.tools20022.repository.entity.Country country) {
+	public InvestmentFundClassProcessingCharacteristics setCountry(Country country) {
 		this.country = Objects.requireNonNull(country);
 		return this;
 	}
@@ -2220,7 +2341,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 		return localMarketAnnex == null ? localMarketAnnex = new ArrayList<>() : localMarketAnnex;
 	}
 
-	public InvestmentFundClassProcessingCharacteristics setLocalMarketAnnex(List<com.tools20022.repository.entity.ContactPoint> localMarketAnnex) {
+	public InvestmentFundClassProcessingCharacteristics setLocalMarketAnnex(List<ContactPoint> localMarketAnnex) {
 		this.localMarketAnnex = Objects.requireNonNull(localMarketAnnex);
 		return this;
 	}
@@ -2265,7 +2386,7 @@ public class InvestmentFundClassProcessingCharacteristics {
 		return dealingCutOffTimeFrame;
 	}
 
-	public InvestmentFundClassProcessingCharacteristics setDealingCutOffTimeFrame(com.tools20022.repository.entity.TimeFrame dealingCutOffTimeFrame) {
+	public InvestmentFundClassProcessingCharacteristics setDealingCutOffTimeFrame(TimeFrame dealingCutOffTimeFrame) {
 		this.dealingCutOffTimeFrame = Objects.requireNonNull(dealingCutOffTimeFrame);
 		return this;
 	}

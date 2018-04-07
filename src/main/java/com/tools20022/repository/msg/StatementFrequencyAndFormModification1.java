@@ -23,6 +23,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.entity.ReportingService;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.StatementFrequencyAndForm1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -103,7 +104,7 @@ public class StatementFrequencyAndFormModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatementFrequencyAndFormModification1, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<StatementFrequencyAndFormModification1, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndFormModification1.mmObject();
 			isDerived = false;
@@ -114,6 +115,16 @@ public class StatementFrequencyAndFormModification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(StatementFrequencyAndFormModification1 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(StatementFrequencyAndFormModification1 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "StmtFrqcyAndForm", required = true)
@@ -152,7 +163,7 @@ public class StatementFrequencyAndFormModification1 {
 	 * "Specifies the statement frequency, format, delivery address."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatementFrequencyAndForm = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatementFrequencyAndFormModification1, StatementFrequencyAndForm1> mmStatementFrequencyAndForm = new MMMessageAttribute<StatementFrequencyAndFormModification1, StatementFrequencyAndForm1>() {
 		{
 			businessComponentTrace_lazy = () -> ReportingService.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndFormModification1.mmObject();
@@ -163,7 +174,17 @@ public class StatementFrequencyAndFormModification1 {
 			definition = "Specifies the statement frequency, format, delivery address.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
+			complexType_lazy = () -> StatementFrequencyAndForm1.mmObject();
+		}
+
+		@Override
+		public StatementFrequencyAndForm1 getValue(StatementFrequencyAndFormModification1 obj) {
+			return obj.getStatementFrequencyAndForm();
+		}
+
+		@Override
+		public void setValue(StatementFrequencyAndFormModification1 obj, StatementFrequencyAndForm1 value) {
+			obj.setStatementFrequencyAndForm(value);
 		}
 	};
 
@@ -195,7 +216,7 @@ public class StatementFrequencyAndFormModification1 {
 		return statementFrequencyAndForm;
 	}
 
-	public StatementFrequencyAndFormModification1 setStatementFrequencyAndForm(com.tools20022.repository.msg.StatementFrequencyAndForm1 statementFrequencyAndForm) {
+	public StatementFrequencyAndFormModification1 setStatementFrequencyAndForm(StatementFrequencyAndForm1 statementFrequencyAndForm) {
 		this.statementFrequencyAndForm = Objects.requireNonNull(statementFrequencyAndForm);
 		return this;
 	}

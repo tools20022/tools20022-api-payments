@@ -22,6 +22,8 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.ObligationFulfilment;
+import com.tools20022.repository.entity.SecuritiesQuantity;
+import com.tools20022.repository.entity.SecuritiesSettlement;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -116,7 +118,7 @@ public class PairOff extends ObligationFulfilment {
 	 * definition} = "Quantity of financial instruments to be paired-off."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPairedOffQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PairOff, SecuritiesQuantity> mmPairedOffQuantity = new MMBusinessAssociationEnd<PairOff, SecuritiesQuantity>() {
 		{
 			isDerived = true;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PairOff.mmObject();
@@ -125,9 +127,19 @@ public class PairOff extends ObligationFulfilment {
 			definition = "Quantity of financial instruments to be paired-off.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmPairoff;
+			opposite_lazy = () -> SecuritiesQuantity.mmPairoff;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(PairOff obj) {
+			return obj.getPairedOffQuantity();
+		}
+
+		@Override
+		public void setValue(PairOff obj, SecuritiesQuantity value) {
+			obj.setPairedOffQuantity(value);
 		}
 	};
 	protected SecuritiesSettlement relatedSecuritiesSettlement;
@@ -165,7 +177,7 @@ public class PairOff extends ObligationFulfilment {
 	 * "Trade settlement process which is the source of the pair off."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PairOff, SecuritiesSettlement> mmRelatedSecuritiesSettlement = new MMBusinessAssociationEnd<PairOff, SecuritiesSettlement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PairOff.mmObject();
@@ -174,9 +186,19 @@ public class PairOff extends ObligationFulfilment {
 			definition = "Trade settlement process which is the source of the pair off.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmPairOff;
+			opposite_lazy = () -> SecuritiesSettlement.mmPairOff;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
+			type_lazy = () -> SecuritiesSettlement.mmObject();
+		}
+
+		@Override
+		public SecuritiesSettlement getValue(PairOff obj) {
+			return obj.getRelatedSecuritiesSettlement();
+		}
+
+		@Override
+		public void setValue(PairOff obj, SecuritiesSettlement value) {
+			obj.setRelatedSecuritiesSettlement(value);
 		}
 	};
 
@@ -187,7 +209,7 @@ public class PairOff extends ObligationFulfilment {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PairOff";
 				definition = "Transaction is paired off and netted against one or more previous transactions.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesQuantity.mmPairoff, com.tools20022.repository.entity.SecuritiesSettlement.mmPairOff);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesQuantity.mmPairoff, SecuritiesSettlement.mmPairOff);
 				superType_lazy = () -> ObligationFulfilment.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PairOff.mmPairedOffQuantity, com.tools20022.repository.entity.PairOff.mmRelatedSecuritiesSettlement);
 			}
@@ -204,7 +226,7 @@ public class PairOff extends ObligationFulfilment {
 		return pairedOffQuantity;
 	}
 
-	public PairOff setPairedOffQuantity(com.tools20022.repository.entity.SecuritiesQuantity pairedOffQuantity) {
+	public PairOff setPairedOffQuantity(SecuritiesQuantity pairedOffQuantity) {
 		this.pairedOffQuantity = Objects.requireNonNull(pairedOffQuantity);
 		return this;
 	}
@@ -213,7 +235,7 @@ public class PairOff extends ObligationFulfilment {
 		return relatedSecuritiesSettlement;
 	}
 
-	public PairOff setRelatedSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement relatedSecuritiesSettlement) {
+	public PairOff setRelatedSecuritiesSettlement(SecuritiesSettlement relatedSecuritiesSettlement) {
 		this.relatedSecuritiesSettlement = Objects.requireNonNull(relatedSecuritiesSettlement);
 		return this;
 	}

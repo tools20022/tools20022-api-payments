@@ -144,7 +144,7 @@ public class ContractDocument1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractDocument1, Max35Text> mmReference = new MMMessageAttribute<ContractDocument1, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDescription;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ContractDocument1.mmObject();
@@ -156,6 +156,16 @@ public class ContractDocument1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ContractDocument1 obj) {
+			return obj.getReference();
+		}
+
+		@Override
+		public void setValue(ContractDocument1 obj, Max35Text value) {
+			obj.setReference(value);
 		}
 	};
 	@XmlElement(name = "SgnOffDt")
@@ -192,7 +202,7 @@ public class ContractDocument1 {
 	 * definition} = "Signoff date of the document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSignOffDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractDocument1, Optional<ISODate>> mmSignOffDate = new MMMessageAttribute<ContractDocument1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDateSigned;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ContractDocument1.mmObject();
@@ -204,6 +214,16 @@ public class ContractDocument1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(ContractDocument1 obj) {
+			return obj.getSignOffDate();
+		}
+
+		@Override
+		public void setValue(ContractDocument1 obj, Optional<ISODate> value) {
+			obj.setSignOffDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Vrsn")
@@ -240,7 +260,7 @@ public class ContractDocument1 {
 	 * definition} = "Identification of the version of the contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractDocument1, Optional<Max6Text>> mmVersion = new MMMessageAttribute<ContractDocument1, Optional<Max6Text>>() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmVersion;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ContractDocument1.mmObject();
@@ -252,6 +272,16 @@ public class ContractDocument1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max6Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max6Text> getValue(ContractDocument1 obj) {
+			return obj.getVersion();
+		}
+
+		@Override
+		public void setValue(ContractDocument1 obj, Optional<Max6Text> value) {
+			obj.setVersion(value.orElse(null));
 		}
 	};
 

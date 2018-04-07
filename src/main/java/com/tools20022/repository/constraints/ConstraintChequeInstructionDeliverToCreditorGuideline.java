@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.msg.PaymentInstruction22;
 import com.tools20022.repository.msg.PaymentInstruction23;
+import com.tools20022.repository.msg.PaymentInstruction24;
 
 /**
  * If CreditTransferTransaction/ChequeInstruction/DeliveryMethod is present and
@@ -53,7 +54,7 @@ public class ConstraintChequeInstructionDeliverToCreditorGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction23 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction23> forPaymentInstruction23 = new MMConstraint<PaymentInstruction23>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChequeInstructionDeliverToCreditorGuideline";
@@ -62,8 +63,8 @@ public class ConstraintChequeInstructionDeliverToCreditorGuideline {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction23((PaymentInstruction23) obj);
+		public void executeValidator(PaymentInstruction23 obj) throws Exception {
+			checkPaymentInstruction23(obj);
 		}
 	};
 	/**
@@ -87,7 +88,7 @@ public class ConstraintChequeInstructionDeliverToCreditorGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction22 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction22> forPaymentInstruction22 = new MMConstraint<PaymentInstruction22>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChequeInstructionDeliverToCreditorGuideline";
@@ -96,8 +97,42 @@ public class ConstraintChequeInstructionDeliverToCreditorGuideline {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction22((PaymentInstruction22) obj);
+		public void executeValidator(PaymentInstruction22 obj) throws Exception {
+			checkPaymentInstruction22(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24
+	 * PaymentInstruction24}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ChequeInstructionDeliverToCreditorGuideline"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If PaymentInformation/CreditTransferTransactionInformation/ChequeInstruction/DeliveryMethod is present and is CRCD (CourierToCreditor), MLCD (MailToCreditor), PUCD (PickUpByCreditor) or RGCD (RegisteredMailToCreditor), then CreditTransferTransactionInformation/ChequeInstruction/DeliverTo may only be present if different from CreditTransferTransactionInformation/Creditor."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<PaymentInstruction24> forPaymentInstruction24 = new MMConstraint<PaymentInstruction24>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ChequeInstructionDeliverToCreditorGuideline";
+			definition = "If PaymentInformation/CreditTransferTransactionInformation/ChequeInstruction/DeliveryMethod is present and is CRCD (CourierToCreditor), MLCD (MailToCreditor), PUCD (PickUpByCreditor) or RGCD (RegisteredMailToCreditor), then CreditTransferTransactionInformation/ChequeInstruction/DeliverTo may only be present if different from CreditTransferTransactionInformation/Creditor.";
+			owner_lazy = () -> PaymentInstruction24.mmObject();
+		}
+
+		@Override
+		public void executeValidator(PaymentInstruction24 obj) throws Exception {
+			checkPaymentInstruction24(obj);
 		}
 	};
 
@@ -122,6 +157,19 @@ public class ConstraintChequeInstructionDeliverToCreditorGuideline {
 	 * CreditTransferTransactionInformation/Creditor.
 	 */
 	public static void checkPaymentInstruction22(PaymentInstruction22 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If PaymentInformation/CreditTransferTransactionInformation/
+	 * ChequeInstruction/DeliveryMethod is present and is CRCD
+	 * (CourierToCreditor), MLCD (MailToCreditor), PUCD (PickUpByCreditor) or
+	 * RGCD (RegisteredMailToCreditor), then
+	 * CreditTransferTransactionInformation/ChequeInstruction/DeliverTo may only
+	 * be present if different from
+	 * CreditTransferTransactionInformation/Creditor.
+	 */
+	public static void checkPaymentInstruction24(PaymentInstruction24 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

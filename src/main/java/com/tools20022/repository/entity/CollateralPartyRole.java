@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Collateral;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -109,7 +110,7 @@ public class CollateralPartyRole extends Role {
 	 * definition} = "Specifies the collateral for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCollateral = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralPartyRole, List<Collateral>> mmCollateral = new MMBusinessAssociationEnd<CollateralPartyRole, List<Collateral>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralPartyRole.mmObject();
@@ -120,6 +121,16 @@ public class CollateralPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmCollateralPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
+		}
+
+		@Override
+		public List<Collateral> getValue(CollateralPartyRole obj) {
+			return obj.getCollateral();
+		}
+
+		@Override
+		public void setValue(CollateralPartyRole obj, List<Collateral> value) {
+			obj.setCollateral(value);
 		}
 	};
 

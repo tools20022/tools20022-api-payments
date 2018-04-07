@@ -21,9 +21,9 @@ import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -98,8 +98,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmPaymentTypeInformation
- * RequestedModification6.mmPaymentTypeInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmPaymentTypeInformation
+ * RequestedModification7.mmPaymentTypeInformation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -113,18 +113,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionDates2
- * TransactionDates2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.OriginalGroupHeader3
- * OriginalGroupHeader3}</li>
- * <li>{@linkplain com.tools20022.repository.msg.OriginalGroupHeader2
- * OriginalGroupHeader2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.OriginalGroupHeader5
- * OriginalGroupHeader5}</li>
- * <li>{@linkplain com.tools20022.repository.msg.OriginalGroupHeader7
- * OriginalGroupHeader7}</li>
- * <li>{@linkplain com.tools20022.repository.msg.OriginalGroupHeader6
- * OriginalGroupHeader6}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionDates3
+ * TransactionDates3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OriginalGroupHeader9
+ * OriginalGroupHeader9}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OriginalGroupHeader13
+ * OriginalGroupHeader13}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OriginalGroupHeader12
+ * OriginalGroupHeader12}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OriginalGroupHeader11
+ * OriginalGroupHeader11}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OriginalGroupHeader10
+ * OriginalGroupHeader10}</li>
  * </ul>
  * </li>
  * <li>
@@ -158,6 +158,14 @@ public class PaymentExecution {
 	 * simpleType} =
 	 * {@linkplain com.tools20022.repository.codeset.DebitCreditCode
 	 * DebitCreditCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
+	 * derivation} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmountAndDirection5#mmCreditDebit
+	 * AmountAndDirection5.mmCreditDebit}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -185,8 +193,9 @@ public class PaymentExecution {
 	 * definition} = "Indicates whether the payment is a debit or a credit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentExecution, DebitCreditCode> mmCreditDebitIndicator = new MMBusinessAttribute<PaymentExecution, DebitCreditCode>() {
 		{
+			derivation_lazy = () -> Arrays.asList(AmountAndDirection5.mmCreditDebit);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
 			semanticMarkup_lazy = () -> Arrays
@@ -204,12 +213,14 @@ public class PaymentExecution {
 			simpleType_lazy = () -> DebitCreditCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentExecution.class.getMethod("getCreditDebitIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DebitCreditCode getValue(PaymentExecution obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(PaymentExecution obj, DebitCreditCode value) {
+			obj.setCreditDebitIndicator(value);
 		}
 	};
 	protected ISODateTime creationDate;
@@ -226,26 +237,11 @@ public class PaymentExecution {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader58#mmCreationDateTime
-	 * GroupHeader58.mmCreationDateTime}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader48#mmCreationDateTime
 	 * GroupHeader48.mmCreationDateTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader55#mmCreationDateTime
 	 * GroupHeader55.mmCreationDateTime}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation3#mmOriginalCreationDateTime
-	 * OriginalGroupInformation3.mmOriginalCreationDateTime}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader56#mmCreationDateTime
-	 * GroupHeader56.mmCreationDateTime}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader3#mmOriginalCreationDateTime
-	 * OriginalGroupHeader3.mmOriginalCreationDateTime}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader52#mmCreationDateTime
-	 * GroupHeader52.mmCreationDateTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader50#mmCreationDateTime
 	 * GroupHeader50.mmCreationDateTime}</li>
@@ -256,9 +252,6 @@ public class PaymentExecution {
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader47#mmCreationDateTime
 	 * GroupHeader47.mmCreationDateTime}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader2#mmOriginalCreationDateTime
-	 * OriginalGroupHeader2.mmOriginalCreationDateTime}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader46#mmCreationDateTime
 	 * GroupHeader46.mmCreationDateTime}</li>
 	 * <li>
@@ -267,9 +260,6 @@ public class PaymentExecution {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader59#mmCreationDateTime
 	 * GroupHeader59.mmCreationDateTime}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader5#mmOriginalCreationDateTime
-	 * OriginalGroupHeader5.mmOriginalCreationDateTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader60#mmCreationDateTime
 	 * GroupHeader60.mmCreationDateTime}</li>
@@ -304,14 +294,38 @@ public class PaymentExecution {
 	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation27#mmOriginalCreationDateTime
 	 * OriginalGroupInformation27.mmOriginalCreationDateTime}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader7#mmOriginalCreationDateTime
-	 * OriginalGroupHeader7.mmOriginalCreationDateTime}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation28#mmOriginalCreationDateTime
 	 * OriginalGroupInformation28.mmOriginalCreationDateTime}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader6#mmOriginalCreationDateTime
-	 * OriginalGroupHeader6.mmOriginalCreationDateTime}</li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader9#mmOriginalCreationDateTime
+	 * OriginalGroupHeader9.mmOriginalCreationDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader13#mmOriginalCreationDateTime
+	 * OriginalGroupHeader13.mmOriginalCreationDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader74#mmCreationDateTime
+	 * GroupHeader74.mmCreationDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader73#mmCreationDateTime
+	 * GroupHeader73.mmCreationDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader12#mmOriginalCreationDateTime
+	 * OriginalGroupHeader12.mmOriginalCreationDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader11#mmOriginalCreationDateTime
+	 * OriginalGroupHeader11.mmOriginalCreationDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader75#mmCreationDateTime
+	 * GroupHeader75.mmCreationDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader76#mmCreationDateTime
+	 * GroupHeader76.mmCreationDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader10#mmOriginalCreationDateTime
+	 * OriginalGroupHeader10.mmOriginalCreationDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation29#mmOriginalCreationDateTime
+	 * OriginalGroupInformation29.mmOriginalCreationDateTime}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -332,14 +346,15 @@ public class PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentExecution, ISODateTime> mmCreationDate = new MMBusinessAttribute<PaymentExecution, ISODateTime>() {
 		{
-			derivation_lazy = () -> Arrays.asList(GroupHeader58.mmCreationDateTime, GroupHeader48.mmCreationDateTime, GroupHeader55.mmCreationDateTime, OriginalGroupInformation3.mmOriginalCreationDateTime, GroupHeader56.mmCreationDateTime,
-					OriginalGroupHeader3.mmOriginalCreationDateTime, GroupHeader52.mmCreationDateTime, GroupHeader50.mmCreationDateTime, GroupHeader53.mmCreationDateTime, GroupHeader47.mmCreationDateTime,
-					OriginalGroupHeader2.mmOriginalCreationDateTime, GroupHeader46.mmCreationDateTime, GroupHeader45.mmCreationDateTime, GroupHeader59.mmCreationDateTime, OriginalGroupHeader5.mmOriginalCreationDateTime,
-					GroupHeader60.mmCreationDateTime, GroupHeader63.mmCreationDateTime, GroupHeader62.mmCreationDateTime, GroupHeader70.mmCreationDateTime, OriginalNotification10.mmOriginalCreationDateTime,
-					OriginalNotification9.mmOriginalCreationDateTime, GroupHeader72.mmCreationDateTime, GroupHeader71.mmCreationDateTime, OriginalMessage2.mmOriginalCreationDateTime, OriginalMessage3.mmOriginalCreationDateTime,
-					OriginalGroupInformation27.mmOriginalCreationDateTime, OriginalGroupHeader7.mmOriginalCreationDateTime, OriginalGroupInformation28.mmOriginalCreationDateTime, OriginalGroupHeader6.mmOriginalCreationDateTime);
+			derivation_lazy = () -> Arrays.asList(GroupHeader48.mmCreationDateTime, GroupHeader55.mmCreationDateTime, GroupHeader50.mmCreationDateTime, GroupHeader53.mmCreationDateTime, GroupHeader47.mmCreationDateTime,
+					GroupHeader46.mmCreationDateTime, GroupHeader45.mmCreationDateTime, GroupHeader59.mmCreationDateTime, GroupHeader60.mmCreationDateTime, GroupHeader63.mmCreationDateTime, GroupHeader62.mmCreationDateTime,
+					GroupHeader70.mmCreationDateTime, OriginalNotification10.mmOriginalCreationDateTime, OriginalNotification9.mmOriginalCreationDateTime, GroupHeader72.mmCreationDateTime, GroupHeader71.mmCreationDateTime,
+					OriginalMessage2.mmOriginalCreationDateTime, OriginalMessage3.mmOriginalCreationDateTime, OriginalGroupInformation27.mmOriginalCreationDateTime, OriginalGroupInformation28.mmOriginalCreationDateTime,
+					OriginalGroupHeader9.mmOriginalCreationDateTime, OriginalGroupHeader13.mmOriginalCreationDateTime, GroupHeader74.mmCreationDateTime, GroupHeader73.mmCreationDateTime, OriginalGroupHeader12.mmOriginalCreationDateTime,
+					OriginalGroupHeader11.mmOriginalCreationDateTime, GroupHeader75.mmCreationDateTime, GroupHeader76.mmCreationDateTime, OriginalGroupHeader10.mmOriginalCreationDateTime,
+					OriginalGroupInformation29.mmOriginalCreationDateTime);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -350,12 +365,14 @@ public class PaymentExecution {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentExecution.class.getMethod("getCreationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(PaymentExecution obj) {
+			return obj.getCreationDate();
+		}
+
+		@Override
+		public void setValue(PaymentExecution obj, ISODateTime value) {
+			obj.setCreationDate(value);
 		}
 	};
 	protected ISODateTime acceptanceDateTime;
@@ -372,23 +389,23 @@ public class PaymentExecution {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionDates2#mmAcceptanceDateTime
-	 * TransactionDates2.mmAcceptanceDateTime}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmAcceptanceDateTime
-	 * CreditTransferTransaction25.mmAcceptanceDateTime}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction73#mmAcceptanceDateTime
-	 * PaymentTransaction73.mmAcceptanceDateTime}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction80#mmAcceptanceDateTime
-	 * PaymentTransaction80.mmAcceptanceDateTime}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction83#mmAcceptanceDateTime
 	 * PaymentTransaction83.mmAcceptanceDateTime}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction82#mmAcceptanceDateTime
-	 * PaymentTransaction82.mmAcceptanceDateTime}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction91#mmAcceptanceDateTime
+	 * PaymentTransaction91.mmAcceptanceDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionDates3#mmAcceptanceDateTime
+	 * TransactionDates3.mmAcceptanceDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmAcceptanceDateTime
+	 * CreditTransferTransaction30.mmAcceptanceDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction94#mmAcceptanceDateTime
+	 * PaymentTransaction94.mmAcceptanceDateTime}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction92#mmAcceptanceDateTime
+	 * PaymentTransaction92.mmAcceptanceDateTime}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -409,10 +426,10 @@ public class PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAcceptanceDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentExecution, ISODateTime> mmAcceptanceDateTime = new MMBusinessAttribute<PaymentExecution, ISODateTime>() {
 		{
-			derivation_lazy = () -> Arrays.asList(TransactionDates2.mmAcceptanceDateTime, CreditTransferTransaction25.mmAcceptanceDateTime, PaymentTransaction73.mmAcceptanceDateTime, PaymentTransaction80.mmAcceptanceDateTime,
-					PaymentTransaction83.mmAcceptanceDateTime, PaymentTransaction82.mmAcceptanceDateTime);
+			derivation_lazy = () -> Arrays.asList(PaymentTransaction83.mmAcceptanceDateTime, PaymentTransaction91.mmAcceptanceDateTime, TransactionDates3.mmAcceptanceDateTime, CreditTransferTransaction30.mmAcceptanceDateTime,
+					PaymentTransaction94.mmAcceptanceDateTime, PaymentTransaction92.mmAcceptanceDateTime);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -423,15 +440,17 @@ public class PaymentExecution {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentExecution.class.getMethod("getAcceptanceDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(PaymentExecution obj) {
+			return obj.getAcceptanceDateTime();
+		}
+
+		@Override
+		public void setValue(PaymentExecution obj, ISODateTime value) {
+			obj.setAcceptanceDateTime(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Payment> payment;
+	protected List<Payment> payment;
 	/**
 	 * 
 	 <p>
@@ -458,17 +477,17 @@ public class PaymentExecution {
 	 * {@linkplain com.tools20022.repository.msg.OriginalNotificationReference7#mmOriginalItemAndStatus
 	 * OriginalNotificationReference7.mmOriginalItemAndStatus}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction73#mmOriginalGroupInformation
-	 * PaymentTransaction73.mmOriginalGroupInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.UnderlyingTransaction20#mmTransactionInformation
+	 * UnderlyingTransaction20.mmTransactionInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction80#mmOriginalGroupInformation
-	 * PaymentTransaction80.mmOriginalGroupInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.UnderlyingTransaction19#mmTransactionInformationAndStatus
+	 * UnderlyingTransaction19.mmTransactionInformationAndStatus}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.UnderlyingTransaction16#mmTransactionInformation
-	 * UnderlyingTransaction16.mmTransactionInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction91#mmOriginalGroupInformation
+	 * PaymentTransaction91.mmOriginalGroupInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.UnderlyingTransaction17#mmTransactionInformationAndStatus
-	 * UnderlyingTransaction17.mmTransactionInformationAndStatus}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction94#mmOriginalGroupInformation
+	 * PaymentTransaction94.mmOriginalGroupInformation}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -489,22 +508,32 @@ public class PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentExecution, List<Payment>> mmPayment = new MMBusinessAssociationEnd<PaymentExecution, List<Payment>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(OriginalNotificationReference8.mmOriginalItem, OriginalNotificationReference7.mmOriginalItemAndStatus, PaymentTransaction73.mmOriginalGroupInformation,
-					PaymentTransaction80.mmOriginalGroupInformation, UnderlyingTransaction16.mmTransactionInformation, UnderlyingTransaction17.mmTransactionInformationAndStatus);
+			derivation_lazy = () -> Arrays.asList(OriginalNotificationReference8.mmOriginalItem, OriginalNotificationReference7.mmOriginalItemAndStatus, UnderlyingTransaction20.mmTransactionInformation,
+					UnderlyingTransaction19.mmTransactionInformationAndStatus, PaymentTransaction91.mmOriginalGroupInformation, PaymentTransaction94.mmOriginalGroupInformation);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Specifies the end to end payment which is at the origin of the payment instruction.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Payment.mmPaymentExecution;
+			opposite_lazy = () -> Payment.mmPaymentExecution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Payment.mmObject();
+			type_lazy = () -> Payment.mmObject();
+		}
+
+		@Override
+		public List<Payment> getValue(PaymentExecution obj) {
+			return obj.getPayment();
+		}
+
+		@Override
+		public void setValue(PaymentExecution obj, List<Payment> value) {
+			obj.setPayment(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.PaymentProcessing> processingInstructions;
+	protected List<PaymentProcessing> processingInstructions;
 	/**
 	 * 
 	 <p>
@@ -532,14 +561,8 @@ public class PaymentExecution {
 	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction9#mmPaymentTypeInformation
 	 * CreditTransferTransaction9.mmPaymentTypeInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmPaymentTypeInformation
-	 * CreditTransferTransaction23.mmPaymentTypeInformation}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader70#mmPaymentTypeInformation
 	 * GroupHeader70.mmPaymentTypeInformation}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmPaymentTypeInformation
-	 * CreditTransferTransaction25.mmPaymentTypeInformation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction26#mmPaymentTypeInformation
 	 * CreditTransferTransaction26.mmPaymentTypeInformation}</li>
@@ -556,17 +579,29 @@ public class PaymentExecution {
 	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction22#mmPaymentTypeInformation
 	 * PaymentInstruction22.mmPaymentTypeInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmPaymentTypeInformation
-	 * OriginalTransactionReference24.mmPaymentTypeInformation}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInformation7#mmPaymentTypeInformation
 	 * OriginalPaymentInformation7.mmPaymentTypeInformation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference26#mmPaymentTypeInformation
 	 * OriginalTransactionReference26.mmPaymentTypeInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmPaymentTypeInformation
-	 * PaymentComplementaryInformation6.mmPaymentTypeInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24#mmPaymentTypeInformation
+	 * PaymentInstruction24.mmPaymentTypeInformation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction27#mmPaymentTypeInformation
+	 * CreditTransferTransaction27.mmPaymentTypeInformation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmPaymentTypeInformation
+	 * PaymentComplementaryInformation7.mmPaymentTypeInformation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmPaymentTypeInformation
+	 * CreditTransferTransaction31.mmPaymentTypeInformation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmPaymentTypeInformation
+	 * OriginalTransactionReference27.mmPaymentTypeInformation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmPaymentTypeInformation
+	 * CreditTransferTransaction30.mmPaymentTypeInformation}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -587,21 +622,32 @@ public class PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProcessingInstructions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentExecution, List<PaymentProcessing>> mmProcessingInstructions = new MMBusinessAssociationEnd<PaymentExecution, List<PaymentProcessing>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(GroupHeader50.mmPaymentTypeInformation, CreditTransferTransaction9.mmPaymentTypeInformation, CreditTransferTransaction23.mmPaymentTypeInformation, GroupHeader70.mmPaymentTypeInformation,
-					CreditTransferTransaction25.mmPaymentTypeInformation, CreditTransferTransaction26.mmPaymentTypeInformation, CreditTransferTransaction22.mmPaymentTypeInformation, PaymentInstruction21.mmPaymentTypeInformation,
-					PaymentInstruction23.mmPaymentTypeInformation, PaymentInstruction22.mmPaymentTypeInformation, OriginalTransactionReference24.mmPaymentTypeInformation, OriginalPaymentInformation7.mmPaymentTypeInformation,
-					OriginalTransactionReference26.mmPaymentTypeInformation, PaymentComplementaryInformation6.mmPaymentTypeInformation);
+			derivation_lazy = () -> Arrays.asList(GroupHeader50.mmPaymentTypeInformation, CreditTransferTransaction9.mmPaymentTypeInformation, GroupHeader70.mmPaymentTypeInformation, CreditTransferTransaction26.mmPaymentTypeInformation,
+					CreditTransferTransaction22.mmPaymentTypeInformation, PaymentInstruction21.mmPaymentTypeInformation, PaymentInstruction23.mmPaymentTypeInformation, PaymentInstruction22.mmPaymentTypeInformation,
+					OriginalPaymentInformation7.mmPaymentTypeInformation, OriginalTransactionReference26.mmPaymentTypeInformation, PaymentInstruction24.mmPaymentTypeInformation, CreditTransferTransaction27.mmPaymentTypeInformation,
+					PaymentComplementaryInformation7.mmPaymentTypeInformation, CreditTransferTransaction31.mmPaymentTypeInformation, OriginalTransactionReference27.mmPaymentTypeInformation,
+					CreditTransferTransaction30.mmPaymentTypeInformation);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProcessingInstructions";
 			definition = "Specifies how the payment must be processed, for instance through which specific clearing channel.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.mmPaymentExecution;
+			opposite_lazy = () -> PaymentProcessing.mmPaymentExecution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.mmObject();
+			type_lazy = () -> PaymentProcessing.mmObject();
+		}
+
+		@Override
+		public List<PaymentProcessing> getValue(PaymentExecution obj) {
+			return obj.getProcessingInstructions();
+		}
+
+		@Override
+		public void setValue(PaymentExecution obj, List<PaymentProcessing> value) {
+			obj.setProcessingInstructions(value);
 		}
 	};
 	protected ISODateTime requestedExecutionDate;
@@ -630,17 +676,20 @@ public class PaymentExecution {
 	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInformation7#mmRequestedExecutionDate
 	 * OriginalPaymentInformation7.mmRequestedExecutionDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorrectivePaymentInitiation2#mmRequestedExecutionDate
-	 * CorrectivePaymentInitiation2.mmRequestedExecutionDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24#mmRequestedExecutionDate
+	 * PaymentInstruction24.mmRequestedExecutionDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentInstruction3#mmRequestedExecutionDate
-	 * UnderlyingPaymentInstruction3.mmRequestedExecutionDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmRequestedExecutionDate
+	 * PaymentComplementaryInformation7.mmRequestedExecutionDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmRequestedExecutionDate
-	 * PaymentComplementaryInformation6.mmRequestedExecutionDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmRequestedCollectionDate
+	 * PaymentComplementaryInformation7.mmRequestedCollectionDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmRequestedCollectionDate
-	 * PaymentComplementaryInformation6.mmRequestedCollectionDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentInstruction4#mmRequestedExecutionDate
+	 * UnderlyingPaymentInstruction4.mmRequestedExecutionDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorrectivePaymentInitiation3#mmRequestedExecutionDate
+	 * CorrectivePaymentInitiation3.mmRequestedExecutionDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -661,11 +710,11 @@ public class PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedExecutionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentExecution, ISODateTime> mmRequestedExecutionDate = new MMBusinessAttribute<PaymentExecution, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentInstruction21.mmRequestedCollectionDate, PaymentInstruction23.mmRequestedExecutionDate, PaymentInstruction22.mmRequestedExecutionDate,
-					OriginalPaymentInformation7.mmRequestedExecutionDate, CorrectivePaymentInitiation2.mmRequestedExecutionDate, UnderlyingPaymentInstruction3.mmRequestedExecutionDate,
-					PaymentComplementaryInformation6.mmRequestedExecutionDate, PaymentComplementaryInformation6.mmRequestedCollectionDate);
+					OriginalPaymentInformation7.mmRequestedExecutionDate, PaymentInstruction24.mmRequestedExecutionDate, PaymentComplementaryInformation7.mmRequestedExecutionDate, PaymentComplementaryInformation7.mmRequestedCollectionDate,
+					UnderlyingPaymentInstruction4.mmRequestedExecutionDate, CorrectivePaymentInitiation3.mmRequestedExecutionDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -676,12 +725,14 @@ public class PaymentExecution {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentExecution.class.getMethod("getRequestedExecutionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(PaymentExecution obj) {
+			return obj.getRequestedExecutionDate();
+		}
+
+		@Override
+		public void setValue(PaymentExecution obj, ISODateTime value) {
+			obj.setRequestedExecutionDate(value);
 		}
 	};
 	protected PaymentInvestigationCase relatedInvestigationCase;
@@ -707,11 +758,11 @@ public class PaymentExecution {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader5#mmResolvedCase
-	 * OriginalGroupHeader5.mmResolvedCase}</li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader9#mmResolvedCase
+	 * OriginalGroupHeader9.mmResolvedCase}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader6#mmCase
-	 * OriginalGroupHeader6.mmCase}</li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader10#mmCase
+	 * OriginalGroupHeader10.mmCase}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -730,9 +781,9 @@ public class PaymentExecution {
 	 * definition} = "Investigation case assigned to the payment execution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInvestigationCase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentExecution, Optional<PaymentInvestigationCase>> mmRelatedInvestigationCase = new MMBusinessAssociationEnd<PaymentExecution, Optional<PaymentInvestigationCase>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(OriginalGroupHeader5.mmResolvedCase, OriginalGroupHeader6.mmCase);
+			derivation_lazy = () -> Arrays.asList(OriginalGroupHeader9.mmResolvedCase, OriginalGroupHeader10.mmCase);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -740,9 +791,19 @@ public class PaymentExecution {
 			definition = "Investigation case assigned to the payment execution.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmUnderlyingInstruction;
+			opposite_lazy = () -> PaymentInvestigationCase.mmUnderlyingInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
+			type_lazy = () -> PaymentInvestigationCase.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentInvestigationCase> getValue(PaymentExecution obj) {
+			return obj.getRelatedInvestigationCase();
+		}
+
+		@Override
+		public void setValue(PaymentExecution obj, Optional<PaymentInvestigationCase> value) {
+			obj.setRelatedInvestigationCase(value.orElse(null));
 		}
 	};
 	protected PaymentInvestigationCaseResolution relatedInvestigationCaseResolution;
@@ -782,7 +843,7 @@ public class PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInvestigationCaseResolution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentExecution, Optional<PaymentInvestigationCaseResolution>> mmRelatedInvestigationCaseResolution = new MMBusinessAssociationEnd<PaymentExecution, Optional<PaymentInvestigationCaseResolution>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
@@ -791,9 +852,19 @@ public class PaymentExecution {
 			definition = "Payment investigation case resolution which is the source of the corrected payment execution.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmPaymentExecutionCorrection;
+			opposite_lazy = () -> PaymentInvestigationCaseResolution.mmPaymentExecutionCorrection;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmObject();
+			type_lazy = () -> PaymentInvestigationCaseResolution.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentInvestigationCaseResolution> getValue(PaymentExecution obj) {
+			return obj.getRelatedInvestigationCaseResolution();
+		}
+
+		@Override
+		public void setValue(PaymentExecution obj, Optional<PaymentInvestigationCaseResolution> value) {
+			obj.setRelatedInvestigationCaseResolution(value.orElse(null));
 		}
 	};
 	protected PaymentInstruction next;
@@ -832,7 +903,7 @@ public class PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNext = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentExecution, Optional<PaymentInstruction>> mmNext = new MMBusinessAssociationEnd<PaymentExecution, Optional<PaymentInstruction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
@@ -841,12 +912,22 @@ public class PaymentExecution {
 			definition = "Specifies the next payment instruction in the payment end-to-end chain.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmPrevious;
+			opposite_lazy = () -> PaymentInstruction.mmPrevious;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmObject();
+			type_lazy = () -> PaymentInstruction.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentInstruction> getValue(PaymentExecution obj) {
+			return obj.getNext();
+		}
+
+		@Override
+		public void setValue(PaymentExecution obj, Optional<PaymentInstruction> value) {
+			obj.setNext(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange;
+	protected List<CurrencyExchange> currencyExchange;
 	/**
 	 * 
 	 <p>
@@ -881,7 +962,7 @@ public class PaymentExecution {
 	 * "Rate used to transform the original amount into the credited amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentExecution, List<CurrencyExchange>> mmCurrencyExchange = new MMBusinessAssociationEnd<PaymentExecution, List<CurrencyExchange>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
@@ -889,9 +970,19 @@ public class PaymentExecution {
 			name = "CurrencyExchange";
 			definition = "Rate used to transform the original amount into the credited amount.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmPaymentExecution;
+			opposite_lazy = () -> CurrencyExchange.mmPaymentExecution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
+			type_lazy = () -> CurrencyExchange.mmObject();
+		}
+
+		@Override
+		public List<CurrencyExchange> getValue(PaymentExecution obj) {
+			return obj.getCurrencyExchange();
+		}
+
+		@Override
+		public void setValue(PaymentExecution obj, List<CurrencyExchange> value) {
+			obj.setCurrencyExchange(value);
 		}
 	};
 
@@ -902,17 +993,16 @@ public class PaymentExecution {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentExecution";
 				definition = "Process required for executing an end to end payment. It consists of a payment initiation which may be followed by a series of instructions.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Payment.mmPaymentExecution, com.tools20022.repository.entity.PaymentInstruction.mmPrevious,
-						com.tools20022.repository.entity.PaymentProcessing.mmPaymentExecution, com.tools20022.repository.entity.CurrencyExchange.mmPaymentExecution,
-						com.tools20022.repository.entity.PaymentInvestigationCase.mmUnderlyingInstruction, com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmPaymentExecutionCorrection);
-				derivationElement_lazy = () -> Arrays.asList(RequestedModification6.mmPaymentTypeInformation);
-				subType_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentInstruction.mmObject());
+				associationDomain_lazy = () -> Arrays.asList(Payment.mmPaymentExecution, PaymentInstruction.mmPrevious, PaymentProcessing.mmPaymentExecution, CurrencyExchange.mmPaymentExecution,
+						PaymentInvestigationCase.mmUnderlyingInstruction, PaymentInvestigationCaseResolution.mmPaymentExecutionCorrection);
+				derivationElement_lazy = () -> Arrays.asList(RequestedModification7.mmPaymentTypeInformation);
+				subType_lazy = () -> Arrays.asList(PaymentInstruction.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentExecution.mmCreditDebitIndicator, com.tools20022.repository.entity.PaymentExecution.mmCreationDate,
 						com.tools20022.repository.entity.PaymentExecution.mmAcceptanceDateTime, com.tools20022.repository.entity.PaymentExecution.mmPayment, com.tools20022.repository.entity.PaymentExecution.mmProcessingInstructions,
 						com.tools20022.repository.entity.PaymentExecution.mmRequestedExecutionDate, com.tools20022.repository.entity.PaymentExecution.mmRelatedInvestigationCase,
 						com.tools20022.repository.entity.PaymentExecution.mmRelatedInvestigationCaseResolution, com.tools20022.repository.entity.PaymentExecution.mmNext, com.tools20022.repository.entity.PaymentExecution.mmCurrencyExchange);
-				derivationComponent_lazy = () -> Arrays.asList(TransactionDates2.mmObject(), OriginalGroupHeader3.mmObject(), OriginalGroupHeader2.mmObject(), OriginalGroupHeader5.mmObject(), OriginalGroupHeader7.mmObject(),
-						OriginalGroupHeader6.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(TransactionDates3.mmObject(), OriginalGroupHeader9.mmObject(), OriginalGroupHeader13.mmObject(), OriginalGroupHeader12.mmObject(), OriginalGroupHeader11.mmObject(),
+						OriginalGroupHeader10.mmObject());
 			}
 
 			@Override
@@ -954,7 +1044,7 @@ public class PaymentExecution {
 		return payment == null ? payment = new ArrayList<>() : payment;
 	}
 
-	public PaymentExecution setPayment(List<com.tools20022.repository.entity.Payment> payment) {
+	public PaymentExecution setPayment(List<Payment> payment) {
 		this.payment = Objects.requireNonNull(payment);
 		return this;
 	}
@@ -963,7 +1053,7 @@ public class PaymentExecution {
 		return processingInstructions == null ? processingInstructions = new ArrayList<>() : processingInstructions;
 	}
 
-	public PaymentExecution setProcessingInstructions(List<com.tools20022.repository.entity.PaymentProcessing> processingInstructions) {
+	public PaymentExecution setProcessingInstructions(List<PaymentProcessing> processingInstructions) {
 		this.processingInstructions = Objects.requireNonNull(processingInstructions);
 		return this;
 	}
@@ -981,7 +1071,7 @@ public class PaymentExecution {
 		return relatedInvestigationCase == null ? Optional.empty() : Optional.of(relatedInvestigationCase);
 	}
 
-	public PaymentExecution setRelatedInvestigationCase(com.tools20022.repository.entity.PaymentInvestigationCase relatedInvestigationCase) {
+	public PaymentExecution setRelatedInvestigationCase(PaymentInvestigationCase relatedInvestigationCase) {
 		this.relatedInvestigationCase = relatedInvestigationCase;
 		return this;
 	}
@@ -990,7 +1080,7 @@ public class PaymentExecution {
 		return relatedInvestigationCaseResolution == null ? Optional.empty() : Optional.of(relatedInvestigationCaseResolution);
 	}
 
-	public PaymentExecution setRelatedInvestigationCaseResolution(com.tools20022.repository.entity.PaymentInvestigationCaseResolution relatedInvestigationCaseResolution) {
+	public PaymentExecution setRelatedInvestigationCaseResolution(PaymentInvestigationCaseResolution relatedInvestigationCaseResolution) {
 		this.relatedInvestigationCaseResolution = relatedInvestigationCaseResolution;
 		return this;
 	}
@@ -999,7 +1089,7 @@ public class PaymentExecution {
 		return next == null ? Optional.empty() : Optional.of(next);
 	}
 
-	public PaymentExecution setNext(com.tools20022.repository.entity.PaymentInstruction next) {
+	public PaymentExecution setNext(PaymentInstruction next) {
 		this.next = next;
 		return this;
 	}
@@ -1008,7 +1098,7 @@ public class PaymentExecution {
 		return currencyExchange == null ? currencyExchange = new ArrayList<>() : currencyExchange;
 	}
 
-	public PaymentExecution setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
+	public PaymentExecution setCurrencyExchange(List<CurrencyExchange> currencyExchange) {
 		this.currencyExchange = Objects.requireNonNull(currencyExchange);
 		return this;
 	}

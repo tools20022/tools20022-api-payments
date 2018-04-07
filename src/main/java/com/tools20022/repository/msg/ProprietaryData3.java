@@ -22,8 +22,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.other.SkipProcessing;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Date;
+import java.util.function.Supplier;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -51,13 +54,21 @@ import javax.xml.bind.annotation.XmlType;
  * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
- * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRemovalDate
+ * removalDate} = September 9, 2017</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "ProprietaryData3"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "Container for proprietary information. Business content of this element is not specified."
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.ProprietaryData6
+ * ProprietaryData6}</li>
+ * </ul>
  * </li>
  * </ul>
  */
@@ -94,9 +105,16 @@ public class ProprietaryData3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Proprietary content."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.ProprietaryData6#mmAny
+	 * ProprietaryData6.mmAny}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAny = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProprietaryData3, SkipProcessing> mmAny = new MMMessageAttribute<ProprietaryData3, SkipProcessing>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryData3.mmObject();
 			isDerived = false;
@@ -104,9 +122,20 @@ public class ProprietaryData3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Any";
 			definition = "Proprietary content.";
+			nextVersions_lazy = () -> Arrays.asList(ProprietaryData6.mmAny);
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> SkipProcessing.mmObject();
+		}
+
+		@Override
+		public SkipProcessing getValue(ProprietaryData3 obj) {
+			return obj.getAny();
+		}
+
+		@Override
+		public void setValue(ProprietaryData3 obj, SkipProcessing value) {
+			obj.setAny(value);
 		}
 	};
 
@@ -115,9 +144,17 @@ public class ProprietaryData3 {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProprietaryData3.mmAny);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
-				registrationStatus = MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.OBSOLETE;
+				removalDate = ((Supplier<Date>) (() -> {
+					try {
+						return DateFormat.getDateInstance(java.text.DateFormat.LONG).parse("September 9, 2017");
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+				})).get();
 				name = "ProprietaryData3";
 				definition = "Container for proprietary information. Business content of this element is not specified.";
+				nextVersions_lazy = () -> Arrays.asList(ProprietaryData6.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

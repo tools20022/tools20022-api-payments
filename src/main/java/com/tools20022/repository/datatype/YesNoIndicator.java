@@ -21,6 +21,10 @@ import com.tools20022.metamodel.MMIndicator;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * Indicates a "Yes" or "No" type of answer for an element.
@@ -46,9 +50,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Indicates a \"Yes\" or \"No\" type of answer for an element."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class YesNoIndicator {
 
 	final static private AtomicReference<MMIndicator> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
+	protected Boolean value;
 
 	final static public MMIndicator mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIndicator() {
@@ -62,5 +70,25 @@ public class YesNoIndicator {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public YesNoIndicator() {
+	}
+
+	public YesNoIndicator(Boolean value) {
+		this.value = value;
+	}
+
+	public Boolean getValue() {
+		return value;
+	}
+
+	public void setValue(Boolean value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value == null ? null : value.toString();
 	}
 }

@@ -19,9 +19,9 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.entity.Commission;
 import com.tools20022.repository.entity.TradePartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -106,7 +106,7 @@ public class Broker extends TradePartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRemunerationAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Broker, ActiveCurrencyAndAmount> mmRemunerationAmount = new MMBusinessAttribute<Broker, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Broker.mmObject();
@@ -118,12 +118,14 @@ public class Broker extends TradePartyRole {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Broker.class.getMethod("getRemunerationAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(Broker obj) {
+			return obj.getRemunerationAmount();
+		}
+
+		@Override
+		public void setValue(Broker obj, ActiveCurrencyAndAmount value) {
+			obj.setRemunerationAmount(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Commission> commission;
@@ -159,7 +161,7 @@ public class Broker extends TradePartyRole {
 	 * definition} = "Amount of money paid to a broker as a commission."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Broker, List<Commission>> mmCommission = new MMBusinessAssociationEnd<Broker, List<Commission>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Broker.mmObject();
@@ -170,6 +172,16 @@ public class Broker extends TradePartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.Commission.mmBroker;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
+		}
+
+		@Override
+		public List<Commission> getValue(Broker obj) {
+			return obj.getCommission();
+		}
+
+		@Override
+		public void setValue(Broker obj, List<Commission> value) {
+			obj.setCommission(value);
 		}
 	};
 

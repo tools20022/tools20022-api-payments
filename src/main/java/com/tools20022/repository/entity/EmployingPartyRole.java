@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Person;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -75,7 +76,7 @@ import java.util.Objects;
 public class EmployingPartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Person> employee;
+	protected List<Person> employee;
 	/**
 	 * 
 	 <p>
@@ -108,7 +109,7 @@ public class EmployingPartyRole extends Role {
 	 * definition} = "Identifies the employee of a party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEmployee = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<EmployingPartyRole, List<Person>> mmEmployee = new MMBusinessAssociationEnd<EmployingPartyRole, List<Person>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.EmployingPartyRole.mmObject();
@@ -116,9 +117,19 @@ public class EmployingPartyRole extends Role {
 			name = "Employee";
 			definition = "Identifies the employee of a party.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Person.mmEmployingParty;
+			opposite_lazy = () -> Person.mmEmployingParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
+			type_lazy = () -> Person.mmObject();
+		}
+
+		@Override
+		public List<Person> getValue(EmployingPartyRole obj) {
+			return obj.getEmployee();
+		}
+
+		@Override
+		public void setValue(EmployingPartyRole obj, List<Person> value) {
+			obj.setEmployee(value);
 		}
 	};
 
@@ -129,7 +140,7 @@ public class EmployingPartyRole extends Role {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EmployingPartyRole";
 				definition = "Organisation represented by a person, or for which a person works.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Person.mmEmployingParty);
+				associationDomain_lazy = () -> Arrays.asList(Person.mmEmployingParty);
 				superType_lazy = () -> Role.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.EmployingPartyRole.mmEmployee);
 			}
@@ -146,7 +157,7 @@ public class EmployingPartyRole extends Role {
 		return employee == null ? employee = new ArrayList<>() : employee;
 	}
 
-	public EmployingPartyRole setEmployee(List<com.tools20022.repository.entity.Person> employee) {
+	public EmployingPartyRole setEmployee(List<Person> employee) {
 		this.employee = Objects.requireNonNull(employee);
 		return this;
 	}

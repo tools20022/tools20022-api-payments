@@ -170,15 +170,14 @@ public class RegistrationCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "You or your party set the  instruction in a hold/frozen/preadvice mode."
-	 * </li>
+	 * "You or your party set the instruction in a hold/frozen/preadvice mode."</li>
 	 * </ul>
 	 */
 	public static final RegistrationCode PartyHold = new RegistrationCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyHold";
-			definition = "You or your party set the  instruction in a hold/frozen/preadvice mode.";
+			definition = "You or your party set the instruction in a hold/frozen/preadvice mode.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RegistrationCode.mmObject();
 			codeName = "PTYH";
 		}
@@ -203,7 +202,7 @@ public class RegistrationCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Central securities depository sets the  instruction in a hold/frozen/preadvice mode."
+	 * "Central securities depository sets the instruction in a hold/frozen/preadvice mode."
 	 * </li>
 	 * </ul>
 	 */
@@ -211,7 +210,7 @@ public class RegistrationCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSDHold";
-			definition = "Central securities depository sets the  instruction in a hold/frozen/preadvice mode.";
+			definition = "Central securities depository sets the instruction in a hold/frozen/preadvice mode.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RegistrationCode.mmObject();
 			codeName = "CSDH";
 		}

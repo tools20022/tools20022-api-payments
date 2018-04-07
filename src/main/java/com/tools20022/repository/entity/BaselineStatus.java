@@ -19,9 +19,9 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.BaselineStatusCode;
+import com.tools20022.repository.entity.CommercialTrade;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -101,7 +101,7 @@ public class BaselineStatus extends Status {
 	 * definition} = "Specifies the status of the processing of a baseline."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BaselineStatus, BaselineStatusCode> mmStatus = new MMBusinessAttribute<BaselineStatus, BaselineStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BaselineStatus.mmObject();
@@ -113,12 +113,14 @@ public class BaselineStatus extends Status {
 			simpleType_lazy = () -> BaselineStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BaselineStatus.class.getMethod("getStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BaselineStatusCode getValue(BaselineStatus obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(BaselineStatus obj, BaselineStatusCode value) {
+			obj.setStatus(value);
 		}
 	};
 	protected CommercialTrade commercialTrade;
@@ -155,7 +157,7 @@ public class BaselineStatus extends Status {
 	 * definition} = "Commercial trade for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCommercialTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BaselineStatus, com.tools20022.repository.entity.CommercialTrade> mmCommercialTrade = new MMBusinessAssociationEnd<BaselineStatus, com.tools20022.repository.entity.CommercialTrade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BaselineStatus.mmObject();
@@ -167,6 +169,16 @@ public class BaselineStatus extends Status {
 			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmTransactionStatus;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.CommercialTrade getValue(BaselineStatus obj) {
+			return obj.getCommercialTrade();
+		}
+
+		@Override
+		public void setValue(BaselineStatus obj, com.tools20022.repository.entity.CommercialTrade value) {
+			obj.setCommercialTrade(value);
 		}
 	};
 

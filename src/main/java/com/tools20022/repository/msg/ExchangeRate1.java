@@ -117,7 +117,7 @@ public class ExchangeRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnitCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ExchangeRate1, Optional<ActiveOrHistoricCurrencyCode>> mmUnitCurrency = new MMMessageAttribute<ExchangeRate1, Optional<ActiveOrHistoricCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmUnitCurrency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ExchangeRate1.mmObject();
@@ -129,6 +129,16 @@ public class ExchangeRate1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyCode> getValue(ExchangeRate1 obj) {
+			return obj.getUnitCurrency();
+		}
+
+		@Override
+		public void setValue(ExchangeRate1 obj, Optional<ActiveOrHistoricCurrencyCode> value) {
+			obj.setUnitCurrency(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "XchgRate")
@@ -166,7 +176,7 @@ public class ExchangeRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExchangeRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ExchangeRate1, Optional<BaseOneRate>> mmExchangeRate = new MMMessageAttribute<ExchangeRate1, Optional<BaseOneRate>>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmExchangeRate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ExchangeRate1.mmObject();
@@ -178,6 +188,16 @@ public class ExchangeRate1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> BaseOneRate.mmObject();
+		}
+
+		@Override
+		public Optional<BaseOneRate> getValue(ExchangeRate1 obj) {
+			return obj.getExchangeRate();
+		}
+
+		@Override
+		public void setValue(ExchangeRate1 obj, Optional<BaseOneRate> value) {
+			obj.setExchangeRate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "RateTp")
@@ -215,7 +235,7 @@ public class ExchangeRate1 {
 	 * "Specifies the type used to complete the currency exchange."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRateType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ExchangeRate1, Optional<ExchangeRateType1Code>> mmRateType = new MMMessageAttribute<ExchangeRate1, Optional<ExchangeRateType1Code>>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmRateType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ExchangeRate1.mmObject();
@@ -227,6 +247,16 @@ public class ExchangeRate1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ExchangeRateType1Code.mmObject();
+		}
+
+		@Override
+		public Optional<ExchangeRateType1Code> getValue(ExchangeRate1 obj) {
+			return obj.getRateType();
+		}
+
+		@Override
+		public void setValue(ExchangeRate1 obj, Optional<ExchangeRateType1Code> value) {
+			obj.setRateType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CtrctId")
@@ -264,7 +294,7 @@ public class ExchangeRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmContractIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ExchangeRate1, Optional<Max35Text>> mmContractIdentification = new MMMessageAttribute<ExchangeRate1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> TradeIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ExchangeRate1.mmObject();
@@ -276,6 +306,16 @@ public class ExchangeRate1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(ExchangeRate1 obj) {
+			return obj.getContractIdentification();
+		}
+
+		@Override
+		public void setValue(ExchangeRate1 obj, Optional<Max35Text> value) {
+			obj.setContractIdentification(value.orElse(null));
 		}
 	};
 

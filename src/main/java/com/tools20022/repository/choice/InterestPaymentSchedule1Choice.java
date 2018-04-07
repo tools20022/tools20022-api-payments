@@ -103,7 +103,7 @@ public class InterestPaymentSchedule1Choice {
 	 * "Specifies an expected date and a due date for the interest payment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDateRange = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InterestPaymentSchedule1Choice, InterestPaymentDateRange1> mmDateRange = new MMMessageAssociationEnd<InterestPaymentSchedule1Choice, InterestPaymentDateRange1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.InterestPaymentSchedule1Choice.mmObject();
 			isDerived = false;
@@ -115,6 +115,16 @@ public class InterestPaymentSchedule1Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> InterestPaymentDateRange1.mmObject();
+		}
+
+		@Override
+		public InterestPaymentDateRange1 getValue(InterestPaymentSchedule1Choice obj) {
+			return obj.getDateRange();
+		}
+
+		@Override
+		public void setValue(InterestPaymentSchedule1Choice obj, InterestPaymentDateRange1 value) {
+			obj.setDateRange(value);
 		}
 	};
 	@XmlElement(name = "SubSchdl", required = true)
@@ -148,7 +158,7 @@ public class InterestPaymentSchedule1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSubSchedule = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InterestPaymentSchedule1Choice, List<InterestPaymentDateRange2>> mmSubSchedule = new MMMessageAssociationEnd<InterestPaymentSchedule1Choice, List<InterestPaymentDateRange2>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.InterestPaymentSchedule1Choice.mmObject();
 			isDerived = false;
@@ -159,6 +169,16 @@ public class InterestPaymentSchedule1Choice {
 			minOccurs = 2;
 			isComposite = true;
 			type_lazy = () -> InterestPaymentDateRange2.mmObject();
+		}
+
+		@Override
+		public List<InterestPaymentDateRange2> getValue(InterestPaymentSchedule1Choice obj) {
+			return obj.getSubSchedule();
+		}
+
+		@Override
+		public void setValue(InterestPaymentSchedule1Choice obj, List<InterestPaymentDateRange2> value) {
+			obj.setSubSchedule(value);
 		}
 	};
 

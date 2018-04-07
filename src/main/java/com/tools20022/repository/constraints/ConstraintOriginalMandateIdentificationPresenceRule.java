@@ -55,7 +55,7 @@ public class ConstraintOriginalMandateIdentificationPresenceRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forMandateAcceptance5 = new MMConstraint() {
+	public static final MMConstraint<MandateAcceptance5> forMandateAcceptance5 = new MMConstraint<MandateAcceptance5>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalMandateIdentificationPresenceRule";
@@ -65,8 +65,8 @@ public class ConstraintOriginalMandateIdentificationPresenceRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkMandateAcceptance5((MandateAcceptance5) obj);
+		public void executeValidator(MandateAcceptance5 obj) throws Exception {
+			checkMandateAcceptance5(obj);
 		}
 	};
 

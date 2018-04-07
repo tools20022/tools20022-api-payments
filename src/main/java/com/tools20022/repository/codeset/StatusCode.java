@@ -185,7 +185,7 @@ public class StatusCode extends MMCode {
 		}
 	};
 	/**
-	 * Instruction has been accepted and is validated for further processing
+	 * Instruction has been accepted and is validated for further processing.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -202,14 +202,14 @@ public class StatusCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Instruction has been accepted and is validated for further processing"</li>
+	 * "Instruction has been accepted and is validated for further processing."</li>
 	 * </ul>
 	 */
 	public static final StatusCode Accepted = new StatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Accepted";
-			definition = "Instruction has been accepted and is validated for further processing";
+			definition = "Instruction has been accepted and is validated for further processing.";
 			owner_lazy = () -> com.tools20022.repository.codeset.StatusCode.mmObject();
 			codeName = "PACK";
 		}

@@ -624,7 +624,7 @@ public class CalculationTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "First order (linear) sensitivity to changes in implied volatility of an underlying security.  Sometimes called kappa or tau."
+	 * "First order (linear) sensitivity to changes in implied volatility of an underlying security. Sometimes called kappa or tau."
 	 * </li>
 	 * </ul>
 	 */
@@ -632,7 +632,7 @@ public class CalculationTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Vega";
-			definition = "First order (linear) sensitivity to changes in implied volatility of an underlying security.  Sometimes called kappa or tau.";
+			definition = "First order (linear) sensitivity to changes in implied volatility of an underlying security. Sometimes called kappa or tau.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CalculationTypeCode.mmObject();
 			codeName = "VEGA";
 		}
@@ -1145,7 +1145,7 @@ public class CalculationTypeCode extends MMCode {
 	};
 	/**
 	 * A measure of a corporation's profitability that reveals how much profit a
-	 * company generates with the money shareholders have invested. 
+	 * company generates with the money shareholders have invested. .
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1163,7 +1163,7 @@ public class CalculationTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "A measure of a corporation's profitability that reveals how much profit a company generates with the money shareholders have invested. "
+	 * "A measure of a corporation's profitability that reveals how much profit a company generates with the money shareholders have invested. ."
 	 * </li>
 	 * </ul>
 	 */
@@ -1171,7 +1171,7 @@ public class CalculationTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReturnOnEquity";
-			definition = "A measure of a corporation's profitability that reveals how much profit a company generates with the money shareholders have invested. ";
+			definition = "A measure of a corporation's profitability that reveals how much profit a company generates with the money shareholders have invested. .";
 			owner_lazy = () -> com.tools20022.repository.codeset.CalculationTypeCode.mmObject();
 			codeName = "RTOE";
 		}
@@ -2258,7 +2258,7 @@ public class CalculationTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "The yield of a security calculated by using its book value instead of the current market price.  This term is typically used in the US domestic market."
+	 * "The yield of a security calculated by using its book value instead of the current market price. This term is typically used in the US domestic market."
 	 * </li>
 	 * </ul>
 	 */
@@ -2266,7 +2266,7 @@ public class CalculationTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Book";
-			definition = "The yield of a security calculated by using its book value instead of the current market price.  This term is typically used in the US domestic market.";
+			definition = "The yield of a security calculated by using its book value instead of the current market price. This term is typically used in the US domestic market.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CalculationTypeCode.mmObject();
 			codeName = "BOOK";
 		}
@@ -2685,7 +2685,7 @@ public class CalculationTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "The yield assuming only mandatory sinks are taken.  This results in a lower paydown of debt; the yield is then calculated to the final payment date."
+	 * "The yield assuming only mandatory sinks are taken. This results in a lower paydown of debt; the yield is then calculated to the final payment date."
 	 * </li>
 	 * </ul>
 	 */
@@ -2693,7 +2693,7 @@ public class CalculationTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LongestAverageLife";
-			definition = "The yield assuming only mandatory sinks are taken.  This results in a lower paydown of debt; the yield is then calculated to the final payment date.";
+			definition = "The yield assuming only mandatory sinks are taken. This results in a lower paydown of debt; the yield is then calculated to the final payment date.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CalculationTypeCode.mmObject();
 			codeName = "LGAL";
 		}
@@ -3011,7 +3011,7 @@ public class CalculationTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "The after tax yield grossed up by the maximum federal tax rate of 39.6%.  For comparison to taxable yields."
+	 * "The after tax yield grossed up by the maximum federal tax rate of 39.6%. For comparison to taxable yields."
 	 * </li>
 	 * </ul>
 	 */
@@ -3019,7 +3019,7 @@ public class CalculationTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TaxEquivalent";
-			definition = "The after tax yield grossed up by the maximum federal tax rate of 39.6%.  For comparison to taxable yields.";
+			definition = "The after tax yield grossed up by the maximum federal tax rate of 39.6%. For comparison to taxable yields.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CalculationTypeCode.mmObject();
 			codeName = "TXQV";
 		}

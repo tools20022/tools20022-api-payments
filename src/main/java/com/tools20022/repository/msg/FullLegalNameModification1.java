@@ -103,7 +103,7 @@ public class FullLegalNameModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FullLegalNameModification1, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<FullLegalNameModification1, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.FullLegalNameModification1.mmObject();
 			isDerived = false;
@@ -114,6 +114,16 @@ public class FullLegalNameModification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(FullLegalNameModification1 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(FullLegalNameModification1 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "FullLglNm", required = true)
@@ -152,7 +162,7 @@ public class FullLegalNameModification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFullLegalName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FullLegalNameModification1, Max350Text> mmFullLegalName = new MMMessageAttribute<FullLegalNameModification1, Max350Text>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationName.mmLegalName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.FullLegalNameModification1.mmObject();
@@ -164,6 +174,16 @@ public class FullLegalNameModification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
+		}
+
+		@Override
+		public Max350Text getValue(FullLegalNameModification1 obj) {
+			return obj.getFullLegalName();
+		}
+
+		@Override
+		public void setValue(FullLegalNameModification1 obj, Max350Text value) {
+			obj.setFullLegalName(value);
 		}
 	};
 

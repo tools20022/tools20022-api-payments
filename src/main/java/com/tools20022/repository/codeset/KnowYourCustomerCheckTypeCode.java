@@ -154,7 +154,7 @@ public class KnowYourCustomerCheckTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Enhanced check, typically carried out on accounts that are considered high risk. "
+	 * "Enhanced check, typically carried out on accounts that are considered high risk."
 	 * </li>
 	 * </ul>
 	 */
@@ -162,7 +162,7 @@ public class KnowYourCustomerCheckTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Enhanced";
-			definition = "Enhanced check, typically carried out on accounts that are considered high risk. ";
+			definition = "Enhanced check, typically carried out on accounts that are considered high risk.";
 			owner_lazy = () -> com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode.mmObject();
 			codeName = "ENHA";
 		}

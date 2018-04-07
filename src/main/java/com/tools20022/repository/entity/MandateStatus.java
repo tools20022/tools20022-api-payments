@@ -21,10 +21,10 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ExternalCode;
 import com.tools20022.repository.codeset.ExternalMandateReason1Code;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.AcceptanceResult6;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -126,7 +126,7 @@ public class MandateStatus extends Status {
 	 * "Indicates whether the mandate request was accepted or rejected."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAccepted = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MandateStatus, YesNoIndicator> mmAccepted = new MMBusinessAttribute<MandateStatus, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcceptanceResult6.mmAccepted);
 			isDerived = false;
@@ -139,12 +139,14 @@ public class MandateStatus extends Status {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateStatus.class.getMethod("getAccepted", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(MandateStatus obj) {
+			return obj.getAccepted();
+		}
+
+		@Override
+		public void setValue(MandateStatus obj, YesNoIndicator value) {
+			obj.setAccepted(value);
 		}
 	};
 	protected ExternalCode rejectReason;
@@ -182,7 +184,7 @@ public class MandateStatus extends Status {
 	 * "Specifies the reason for the rejection of a mandate request."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRejectReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MandateStatus, ExternalCode> mmRejectReason = new MMBusinessAttribute<MandateStatus, ExternalCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcceptanceResult6.mmRejectReason);
 			isDerived = false;
@@ -195,12 +197,14 @@ public class MandateStatus extends Status {
 			simpleType_lazy = () -> ExternalCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateStatus.class.getMethod("getRejectReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExternalCode getValue(MandateStatus obj) {
+			return obj.getRejectReason();
+		}
+
+		@Override
+		public void setValue(MandateStatus obj, ExternalCode value) {
+			obj.setRejectReason(value);
 		}
 	};
 	protected Mandate mandate;
@@ -236,7 +240,7 @@ public class MandateStatus extends Status {
 	 * definition} = "Mandate for which a status applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMandate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MandateStatus, Optional<Mandate>> mmMandate = new MMBusinessAssociationEnd<MandateStatus, Optional<Mandate>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
@@ -248,6 +252,16 @@ public class MandateStatus extends Status {
 			opposite_lazy = () -> com.tools20022.repository.entity.Mandate.mmMandateStatus;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Mandate.mmObject();
+		}
+
+		@Override
+		public Optional<Mandate> getValue(MandateStatus obj) {
+			return obj.getMandate();
+		}
+
+		@Override
+		public void setValue(MandateStatus obj, Optional<Mandate> value) {
+			obj.setMandate(value.orElse(null));
 		}
 	};
 	protected ExternalMandateReason1Code mandateReason;
@@ -278,7 +292,7 @@ public class MandateStatus extends Status {
 	 * "Specifies the reason for the request or status of a mandate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMandateReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MandateStatus, ExternalMandateReason1Code> mmMandateReason = new MMBusinessAttribute<MandateStatus, ExternalMandateReason1Code>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
@@ -290,12 +304,14 @@ public class MandateStatus extends Status {
 			simpleType_lazy = () -> ExternalMandateReason1Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateStatus.class.getMethod("getMandateReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExternalMandateReason1Code getValue(MandateStatus obj) {
+			return obj.getMandateReason();
+		}
+
+		@Override
+		public void setValue(MandateStatus obj, ExternalMandateReason1Code value) {
+			obj.setMandateReason(value);
 		}
 	};
 

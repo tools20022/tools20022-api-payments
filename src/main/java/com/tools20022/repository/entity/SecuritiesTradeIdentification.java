@@ -19,11 +19,11 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.SecuritiesTrade;
 import com.tools20022.repository.entity.TradeIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.References3;
 import com.tools20022.repository.msg.TransactionReferences3;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -168,7 +168,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentifiedTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTradeIdentification, SecuritiesTrade> mmIdentifiedTrade = new MMBusinessAssociationEnd<SecuritiesTradeIdentification, SecuritiesTrade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -177,9 +177,19 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			definition = "Trade for which one or more identifications are provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmSecuritiesTradeRelatedIdentifications;
+			opposite_lazy = () -> SecuritiesTrade.mmSecuritiesTradeRelatedIdentifications;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
+			type_lazy = () -> SecuritiesTrade.mmObject();
+		}
+
+		@Override
+		public SecuritiesTrade getValue(SecuritiesTradeIdentification obj) {
+			return obj.getIdentifiedTrade();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, SecuritiesTrade value) {
+			obj.setIdentifiedTrade(value);
 		}
 	};
 	protected Max35Text marketInfrastructureTransactionIdentification;
@@ -218,7 +228,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMarketInfrastructureTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmMarketInfrastructureTransactionIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionReferences3.mmMarketInfrastructureTransactionIdentification);
 			isDerived = false;
@@ -231,12 +241,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getMarketInfrastructureTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getMarketInfrastructureTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setMarketInfrastructureTransactionIdentification(value);
 		}
 	};
 	protected Max35Text processorTransactionIdentification;
@@ -267,7 +279,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProcessorTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmProcessorTransactionIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -279,12 +291,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getProcessorTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getProcessorTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setProcessorTransactionIdentification(value);
 		}
 	};
 	protected Max35Text poolIdentification;
@@ -313,7 +327,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * definition} = "Collective reference identifying a set of messages."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPoolIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmPoolIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -325,12 +339,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getPoolIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getPoolIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setPoolIdentification(value);
 		}
 	};
 	protected Max35Text collateralTransactionIdentification;
@@ -359,7 +375,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * definition} = "Unambiguous identification of a collateral transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCollateralTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmCollateralTransactionIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -371,12 +387,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getCollateralTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getCollateralTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setCollateralTransactionIdentification(value);
 		}
 	};
 	protected Max35Text clientTripartyCollateralTransactionIdentification;
@@ -407,7 +425,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClientTripartyCollateralTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmClientTripartyCollateralTransactionIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -419,12 +437,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getClientTripartyCollateralTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getClientTripartyCollateralTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setClientTripartyCollateralTransactionIdentification(value);
 		}
 	};
 	protected Max35Text tripartyAgentCollateralTransactionIdentification;
@@ -455,7 +475,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTripartyAgentCollateralTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmTripartyAgentCollateralTransactionIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -467,12 +487,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getTripartyAgentCollateralTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getTripartyAgentCollateralTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setTripartyAgentCollateralTransactionIdentification(value);
 		}
 	};
 	protected Max35Text basketIdentification;
@@ -501,7 +523,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * definition} = "Identification of a basket trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBasketIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmBasketIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -513,12 +535,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getBasketIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getBasketIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setBasketIdentification(value);
 		}
 	};
 	protected Max35Text programIdentification;
@@ -547,7 +571,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * definition} = "Program reference which identifies a program trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProgramIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmProgramIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -559,12 +583,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getProgramIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getProgramIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setProgramIdentification(value);
 		}
 	};
 	protected Max35Text blockIdentification;
@@ -595,7 +621,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBlockIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmBlockIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -607,12 +633,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getBlockIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getBlockIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setBlockIdentification(value);
 		}
 	};
 	protected Max35Text allocationIdentification;
@@ -641,7 +669,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * definition} = "Identification at the allocation level."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAllocationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmAllocationIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -653,12 +681,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getAllocationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getAllocationIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setAllocationIdentification(value);
 		}
 	};
 	protected Max35Text complianceIdentification;
@@ -689,7 +719,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmComplianceIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmComplianceIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -701,12 +731,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getComplianceIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getComplianceIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setComplianceIdentification(value);
 		}
 	};
 	protected Max35Text cSDTransactionIdentification;
@@ -737,7 +769,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCSDTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmCSDTransactionIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -749,12 +781,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getCSDTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getCSDTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setCSDTransactionIdentification(value);
 		}
 	};
 	protected Max35Text centralCounterpartyTransactionIdentification;
@@ -785,7 +819,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCentralCounterpartyTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmCentralCounterpartyTransactionIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -797,12 +831,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getCentralCounterpartyTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getCentralCounterpartyTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setCentralCounterpartyTransactionIdentification(value);
 		}
 	};
 	protected Max35Text cancellationRequestIdentification;
@@ -833,7 +869,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancellationRequestIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text> mmCancellationRequestIdentification = new MMBusinessAttribute<SecuritiesTradeIdentification, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
@@ -845,12 +881,14 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeIdentification.class.getMethod("getCancellationRequestIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesTradeIdentification obj) {
+			return obj.getCancellationRequestIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeIdentification obj, Max35Text value) {
+			obj.setCancellationRequestIdentification(value);
 		}
 	};
 
@@ -861,7 +899,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTradeIdentification";
 				definition = "Specifies the different identifications associated with a securities transaction.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTrade.mmSecuritiesTradeRelatedIdentifications);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesTrade.mmSecuritiesTradeRelatedIdentifications);
 				superType_lazy = () -> TradeIdentification.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTradeIdentification.mmIdentifiedTrade,
 						com.tools20022.repository.entity.SecuritiesTradeIdentification.mmMarketInfrastructureTransactionIdentification, com.tools20022.repository.entity.SecuritiesTradeIdentification.mmProcessorTransactionIdentification,
@@ -887,7 +925,7 @@ public class SecuritiesTradeIdentification extends TradeIdentification {
 		return identifiedTrade;
 	}
 
-	public SecuritiesTradeIdentification setIdentifiedTrade(com.tools20022.repository.entity.SecuritiesTrade identifiedTrade) {
+	public SecuritiesTradeIdentification setIdentifiedTrade(SecuritiesTrade identifiedTrade) {
 		this.identifiedTrade = Objects.requireNonNull(identifiedTrade);
 		return this;
 	}

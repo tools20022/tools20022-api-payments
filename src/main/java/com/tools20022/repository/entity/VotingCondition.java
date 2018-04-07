@@ -23,8 +23,10 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.ContactPoint;
+import com.tools20022.repository.entity.IncentivePremium;
+import com.tools20022.repository.entity.Meeting;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -133,7 +135,7 @@ public class VotingCondition {
 	 * definition} = "Number of holdings required for a vote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSecuritiesQuantityRequiredToVote = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VotingCondition, DecimalNumber> mmSecuritiesQuantityRequiredToVote = new MMBusinessAttribute<VotingCondition, DecimalNumber>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -145,12 +147,14 @@ public class VotingCondition {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VotingCondition.class.getMethod("getSecuritiesQuantityRequiredToVote", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(VotingCondition obj) {
+			return obj.getSecuritiesQuantityRequiredToVote();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, DecimalNumber value) {
+			obj.setSecuritiesQuantityRequiredToVote(value);
 		}
 	};
 	protected YesNoIndicator partialVoteAllowed;
@@ -182,7 +186,7 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPartialVoteAllowed = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VotingCondition, YesNoIndicator> mmPartialVoteAllowed = new MMBusinessAttribute<VotingCondition, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -194,12 +198,14 @@ public class VotingCondition {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VotingCondition.class.getMethod("getPartialVoteAllowed", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(VotingCondition obj) {
+			return obj.getPartialVoteAllowed();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, YesNoIndicator value) {
+			obj.setPartialVoteAllowed(value);
 		}
 	};
 	protected YesNoIndicator splitVoteAllowed;
@@ -231,7 +237,7 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSplitVoteAllowed = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VotingCondition, YesNoIndicator> mmSplitVoteAllowed = new MMBusinessAttribute<VotingCondition, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -243,15 +249,17 @@ public class VotingCondition {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VotingCondition.class.getMethod("getSplitVoteAllowed", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(VotingCondition obj) {
+			return obj.getSplitVoteAllowed();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, YesNoIndicator value) {
+			obj.setSplitVoteAllowed(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ContactPoint> voteLocation;
+	protected List<ContactPoint> voteLocation;
 	/**
 	 * 
 	 <p>
@@ -287,7 +295,7 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVoteLocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VotingCondition, List<ContactPoint>> mmVoteLocation = new MMBusinessAssociationEnd<VotingCondition, List<ContactPoint>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -295,9 +303,19 @@ public class VotingCondition {
 			name = "VoteLocation";
 			definition = "Electronic address, e-mail or website where a voting ballot can be obtained and/or where a security holder can vote.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmContactPointForVote;
+			opposite_lazy = () -> ContactPoint.mmContactPointForVote;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			type_lazy = () -> ContactPoint.mmObject();
+		}
+
+		@Override
+		public List<ContactPoint> getValue(VotingCondition obj) {
+			return obj.getVoteLocation();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, List<ContactPoint> value) {
+			obj.setVoteLocation(value);
 		}
 	};
 	protected YesNoIndicator beneficialOwnerDisclosure;
@@ -329,7 +347,7 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBeneficialOwnerDisclosure = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VotingCondition, YesNoIndicator> mmBeneficialOwnerDisclosure = new MMBusinessAttribute<VotingCondition, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -341,12 +359,14 @@ public class VotingCondition {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VotingCondition.class.getMethod("getBeneficialOwnerDisclosure", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(VotingCondition obj) {
+			return obj.getBeneficialOwnerDisclosure();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, YesNoIndicator value) {
+			obj.setBeneficialOwnerDisclosure(value);
 		}
 	};
 	protected IncentivePremium incentivePremium;
@@ -378,7 +398,7 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIncentivePremium = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VotingCondition, IncentivePremium> mmIncentivePremium = new MMBusinessAttribute<VotingCondition, IncentivePremium>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -387,15 +407,17 @@ public class VotingCondition {
 			definition = "Cash premium made available if the securities holder consents or participates to an event.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
+			complexType_lazy = () -> IncentivePremium.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VotingCondition.class.getMethod("getIncentivePremium", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IncentivePremium getValue(VotingCondition obj) {
+			return obj.getIncentivePremium();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, IncentivePremium value) {
+			obj.setIncentivePremium(value);
 		}
 	};
 	protected VoteInstructionCode voteInstructionType;
@@ -425,7 +447,7 @@ public class VotingCondition {
 	 * definition} = "Identifies the possible types of voting instructions."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVoteInstructionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VotingCondition, VoteInstructionCode> mmVoteInstructionType = new MMBusinessAttribute<VotingCondition, VoteInstructionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -437,12 +459,14 @@ public class VotingCondition {
 			simpleType_lazy = () -> VoteInstructionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VotingCondition.class.getMethod("getVoteInstructionType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public VoteInstructionCode getValue(VotingCondition obj) {
+			return obj.getVoteInstructionType();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, VoteInstructionCode value) {
+			obj.setVoteInstructionType(value);
 		}
 	};
 	protected YesNoIndicator standingVotingInstruction;
@@ -474,7 +498,7 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStandingVotingInstruction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VotingCondition, YesNoIndicator> mmStandingVotingInstruction = new MMBusinessAttribute<VotingCondition, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -486,12 +510,14 @@ public class VotingCondition {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VotingCondition.class.getMethod("getStandingVotingInstruction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(VotingCondition obj) {
+			return obj.getStandingVotingInstruction();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, YesNoIndicator value) {
+			obj.setStandingVotingInstruction(value);
 		}
 	};
 	protected CurrencyAndAmount votingPremiumAmount;
@@ -523,7 +549,7 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVotingPremiumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VotingCondition, CurrencyAndAmount> mmVotingPremiumAmount = new MMBusinessAttribute<VotingCondition, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -535,12 +561,14 @@ public class VotingCondition {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VotingCondition.class.getMethod("getVotingPremiumAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(VotingCondition obj) {
+			return obj.getVotingPremiumAmount();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, CurrencyAndAmount value) {
+			obj.setVotingPremiumAmount(value);
 		}
 	};
 	protected PercentageRate votingPremiumRate;
@@ -572,7 +600,7 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVotingPremiumRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VotingCondition, PercentageRate> mmVotingPremiumRate = new MMBusinessAttribute<VotingCondition, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -584,12 +612,14 @@ public class VotingCondition {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VotingCondition.class.getMethod("getVotingPremiumRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(VotingCondition obj) {
+			return obj.getVotingPremiumRate();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, PercentageRate value) {
+			obj.setVotingPremiumRate(value);
 		}
 	};
 	protected Meeting meeting;
@@ -625,7 +655,7 @@ public class VotingCondition {
 	 * definition} = "Meeting for which voting conditions are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VotingCondition, Optional<Meeting>> mmMeeting = new MMBusinessAssociationEnd<VotingCondition, Optional<Meeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -634,9 +664,19 @@ public class VotingCondition {
 			definition = "Meeting for which voting conditions are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmVotingCondition;
+			opposite_lazy = () -> Meeting.mmVotingCondition;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
+			type_lazy = () -> Meeting.mmObject();
+		}
+
+		@Override
+		public Optional<Meeting> getValue(VotingCondition obj) {
+			return obj.getMeeting();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, Optional<Meeting> value) {
+			obj.setMeeting(value.orElse(null));
 		}
 	};
 	protected YesNoIndicator previousInstructionInvalidity;
@@ -668,7 +708,7 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPreviousInstructionInvalidity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VotingCondition, YesNoIndicator> mmPreviousInstructionInvalidity = new MMBusinessAttribute<VotingCondition, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
@@ -680,12 +720,14 @@ public class VotingCondition {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VotingCondition.class.getMethod("getPreviousInstructionInvalidity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(VotingCondition obj) {
+			return obj.getPreviousInstructionInvalidity();
+		}
+
+		@Override
+		public void setValue(VotingCondition obj, YesNoIndicator value) {
+			obj.setPreviousInstructionInvalidity(value);
 		}
 	};
 
@@ -696,7 +738,7 @@ public class VotingCondition {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VotingCondition";
 				definition = "Specifies the different voting types, channels and premium.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ContactPoint.mmContactPointForVote, com.tools20022.repository.entity.Meeting.mmVotingCondition);
+				associationDomain_lazy = () -> Arrays.asList(ContactPoint.mmContactPointForVote, Meeting.mmVotingCondition);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.VotingCondition.mmSecuritiesQuantityRequiredToVote, com.tools20022.repository.entity.VotingCondition.mmPartialVoteAllowed,
 						com.tools20022.repository.entity.VotingCondition.mmSplitVoteAllowed, com.tools20022.repository.entity.VotingCondition.mmVoteLocation, com.tools20022.repository.entity.VotingCondition.mmBeneficialOwnerDisclosure,
 						com.tools20022.repository.entity.VotingCondition.mmIncentivePremium, com.tools20022.repository.entity.VotingCondition.mmVoteInstructionType,
@@ -743,7 +785,7 @@ public class VotingCondition {
 		return voteLocation == null ? voteLocation = new ArrayList<>() : voteLocation;
 	}
 
-	public VotingCondition setVoteLocation(List<com.tools20022.repository.entity.ContactPoint> voteLocation) {
+	public VotingCondition setVoteLocation(List<ContactPoint> voteLocation) {
 		this.voteLocation = Objects.requireNonNull(voteLocation);
 		return this;
 	}
@@ -761,7 +803,7 @@ public class VotingCondition {
 		return incentivePremium;
 	}
 
-	public VotingCondition setIncentivePremium(com.tools20022.repository.entity.IncentivePremium incentivePremium) {
+	public VotingCondition setIncentivePremium(IncentivePremium incentivePremium) {
 		this.incentivePremium = Objects.requireNonNull(incentivePremium);
 		return this;
 	}
@@ -806,7 +848,7 @@ public class VotingCondition {
 		return meeting == null ? Optional.empty() : Optional.of(meeting);
 	}
 
-	public VotingCondition setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+	public VotingCondition setMeeting(Meeting meeting) {
 		this.meeting = meeting;
 		return this;
 	}

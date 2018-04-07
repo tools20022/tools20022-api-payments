@@ -24,9 +24,10 @@ import com.tools20022.repository.codeset.CashClearingSystemCode;
 import com.tools20022.repository.codeset.CashSettlementSystemCode;
 import com.tools20022.repository.codeset.CashSystemTypeCode;
 import com.tools20022.repository.entity.ClearingSystem;
+import com.tools20022.repository.entity.SettlementInstructionSystemRole;
+import com.tools20022.repository.entity.TransactionAdministrator;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ClearingSystemMemberIdentification2;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -150,7 +151,7 @@ public class CashClearingSystem extends ClearingSystem {
 	 * definition} = "Information used to identify a cash clearing system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashClearingSystem, CashClearingSystemCode> mmIdentification = new MMBusinessAttribute<CashClearingSystem, CashClearingSystemCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ClearingSystemIdentification3Choice.mmCode, ClearingSystemIdentification3Choice.mmProprietary, ClearingSystemIdentification2Choice.mmCode, ClearingSystemIdentification2Choice.mmProprietary,
 					ClearingSystemMemberIdentification2.mmClearingSystemIdentification);
@@ -164,12 +165,14 @@ public class CashClearingSystem extends ClearingSystem {
 			simpleType_lazy = () -> CashClearingSystemCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashClearingSystem.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CashClearingSystemCode getValue(CashClearingSystem obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(CashClearingSystem obj, CashClearingSystemCode value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.TransactionAdministrator> transactionAdministrator;
@@ -209,7 +212,7 @@ public class CashClearingSystem extends ClearingSystem {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTransactionAdministrator = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashClearingSystem, List<TransactionAdministrator>> mmTransactionAdministrator = new MMBusinessAssociationEnd<CashClearingSystem, List<TransactionAdministrator>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
@@ -220,6 +223,16 @@ public class CashClearingSystem extends ClearingSystem {
 			opposite_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmCashClearingSystem;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TransactionAdministrator.mmObject();
+		}
+
+		@Override
+		public List<TransactionAdministrator> getValue(CashClearingSystem obj) {
+			return obj.getTransactionAdministrator();
+		}
+
+		@Override
+		public void setValue(CashClearingSystem obj, List<TransactionAdministrator> value) {
+			obj.setTransactionAdministrator(value);
 		}
 	};
 	protected SettlementInstructionSystemRole systemRole;
@@ -257,7 +270,7 @@ public class CashClearingSystem extends ClearingSystem {
 	 * definition} = "Specifies the role played by the cash clearing system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystemRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashClearingSystem, Optional<SettlementInstructionSystemRole>> mmSystemRole = new MMBusinessAssociationEnd<CashClearingSystem, Optional<SettlementInstructionSystemRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
@@ -266,9 +279,19 @@ public class CashClearingSystem extends ClearingSystem {
 			definition = "Specifies the role played by the cash clearing system.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SettlementInstructionSystemRole.mmSystem;
+			opposite_lazy = () -> SettlementInstructionSystemRole.mmSystem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SettlementInstructionSystemRole.mmObject();
+			type_lazy = () -> SettlementInstructionSystemRole.mmObject();
+		}
+
+		@Override
+		public Optional<SettlementInstructionSystemRole> getValue(CashClearingSystem obj) {
+			return obj.getSystemRole();
+		}
+
+		@Override
+		public void setValue(CashClearingSystem obj, Optional<SettlementInstructionSystemRole> value) {
+			obj.setSystemRole(value.orElse(null));
 		}
 	};
 	protected CashSystemTypeCode type;
@@ -299,7 +322,7 @@ public class CashClearingSystem extends ClearingSystem {
 	 * "Specifies the category of cash clearing system, eg, cheque clearing."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashClearingSystem, CashSystemTypeCode> mmType = new MMBusinessAttribute<CashClearingSystem, CashSystemTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
@@ -311,12 +334,14 @@ public class CashClearingSystem extends ClearingSystem {
 			simpleType_lazy = () -> CashSystemTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashClearingSystem.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CashSystemTypeCode getValue(CashClearingSystem obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(CashClearingSystem obj, CashSystemTypeCode value) {
+			obj.setType(value);
 		}
 	};
 	protected CashSettlementSystemCode cashSettlementSystem;
@@ -346,7 +371,7 @@ public class CashClearingSystem extends ClearingSystem {
 	 * definition} = "Specifies the cash settlement system used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCashSettlementSystem = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashClearingSystem, CashSettlementSystemCode> mmCashSettlementSystem = new MMBusinessAttribute<CashClearingSystem, CashSettlementSystemCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
@@ -358,12 +383,14 @@ public class CashClearingSystem extends ClearingSystem {
 			simpleType_lazy = () -> CashSettlementSystemCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashClearingSystem.class.getMethod("getCashSettlementSystem", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CashSettlementSystemCode getValue(CashClearingSystem obj) {
+			return obj.getCashSettlementSystem();
+		}
+
+		@Override
+		public void setValue(CashClearingSystem obj, CashSettlementSystemCode value) {
+			obj.setCashSettlementSystem(value);
 		}
 	};
 
@@ -374,7 +401,7 @@ public class CashClearingSystem extends ClearingSystem {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashClearingSystem";
 				definition = "Clearing system that processes only cash transfers.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TransactionAdministrator.mmCashClearingSystem, com.tools20022.repository.entity.SettlementInstructionSystemRole.mmSystem);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TransactionAdministrator.mmCashClearingSystem, SettlementInstructionSystemRole.mmSystem);
 				superType_lazy = () -> ClearingSystem.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashClearingSystem.mmIdentification, com.tools20022.repository.entity.CashClearingSystem.mmTransactionAdministrator,
 						com.tools20022.repository.entity.CashClearingSystem.mmSystemRole, com.tools20022.repository.entity.CashClearingSystem.mmType, com.tools20022.repository.entity.CashClearingSystem.mmCashSettlementSystem);
@@ -411,7 +438,7 @@ public class CashClearingSystem extends ClearingSystem {
 		return systemRole == null ? Optional.empty() : Optional.of(systemRole);
 	}
 
-	public CashClearingSystem setSystemRole(com.tools20022.repository.entity.SettlementInstructionSystemRole systemRole) {
+	public CashClearingSystem setSystemRole(SettlementInstructionSystemRole systemRole) {
 		this.systemRole = systemRole;
 		return this;
 	}

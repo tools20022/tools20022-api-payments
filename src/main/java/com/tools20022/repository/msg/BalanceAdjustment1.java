@@ -30,6 +30,7 @@ import com.tools20022.repository.entity.CashBalance;
 import com.tools20022.repository.entity.DateTimePeriod;
 import com.tools20022.repository.entity.Entry;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection34;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -129,7 +130,7 @@ public class BalanceAdjustment1 {
 	 * definition} = "Identifies the type of adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceAdjustment1, BalanceAdjustmentType1Code> mmType = new MMMessageAttribute<BalanceAdjustment1, BalanceAdjustmentType1Code>() {
 		{
 			businessElementTrace_lazy = () -> CashBalance.mmBalanceAdjustmentCode;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceAdjustment1.mmObject();
@@ -141,6 +142,16 @@ public class BalanceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> BalanceAdjustmentType1Code.mmObject();
+		}
+
+		@Override
+		public BalanceAdjustmentType1Code getValue(BalanceAdjustment1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(BalanceAdjustment1 obj, BalanceAdjustmentType1Code value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "Desc", required = true)
@@ -173,7 +184,7 @@ public class BalanceAdjustment1 {
 	 * "Free-form description and clarification of the adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceAdjustment1, Max105Text> mmDescription = new MMMessageAttribute<BalanceAdjustment1, Max105Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceAdjustment1.mmObject();
 			isDerived = false;
@@ -184,6 +195,16 @@ public class BalanceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max105Text.mmObject();
+		}
+
+		@Override
+		public Max105Text getValue(BalanceAdjustment1 obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(BalanceAdjustment1 obj, Max105Text value) {
+			obj.setDescription(value);
 		}
 	};
 	@XmlElement(name = "BalAmt", required = true)
@@ -221,7 +242,7 @@ public class BalanceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBalanceAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BalanceAdjustment1, AmountAndDirection34> mmBalanceAmount = new MMMessageAssociationEnd<BalanceAdjustment1, AmountAndDirection34>() {
 		{
 			businessElementTrace_lazy = () -> CashBalance.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceAdjustment1.mmObject();
@@ -233,7 +254,17 @@ public class BalanceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection34 getValue(BalanceAdjustment1 obj) {
+			return obj.getBalanceAmount();
+		}
+
+		@Override
+		public void setValue(BalanceAdjustment1 obj, AmountAndDirection34 value) {
+			obj.setBalanceAmount(value);
 		}
 	};
 	@XmlElement(name = "AvrgAmt")
@@ -271,7 +302,7 @@ public class BalanceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAverageAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BalanceAdjustment1, Optional<AmountAndDirection34>> mmAverageAmount = new MMMessageAssociationEnd<BalanceAdjustment1, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> CashBalance.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceAdjustment1.mmObject();
@@ -283,7 +314,17 @@ public class BalanceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BalanceAdjustment1 obj) {
+			return obj.getAverageAmount();
+		}
+
+		@Override
+		public void setValue(BalanceAdjustment1 obj, Optional<AmountAndDirection34> value) {
+			obj.setAverageAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ErrDt")
@@ -316,7 +357,7 @@ public class BalanceAdjustment1 {
 	 * "Date on which the error occurred in the underlying cash account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmErrorDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceAdjustment1, Optional<ISODate>> mmErrorDate = new MMMessageAttribute<BalanceAdjustment1, Optional<ISODate>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceAdjustment1.mmObject();
 			isDerived = false;
@@ -327,6 +368,16 @@ public class BalanceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(BalanceAdjustment1 obj) {
+			return obj.getErrorDate();
+		}
+
+		@Override
+		public void setValue(BalanceAdjustment1 obj, Optional<ISODate> value) {
+			obj.setErrorDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PstngDt", required = true)
@@ -365,7 +416,7 @@ public class BalanceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPostingDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceAdjustment1, ISODate> mmPostingDate = new MMMessageAttribute<BalanceAdjustment1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Entry.mmEntryDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceAdjustment1.mmObject();
@@ -377,6 +428,16 @@ public class BalanceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(BalanceAdjustment1 obj) {
+			return obj.getPostingDate();
+		}
+
+		@Override
+		public void setValue(BalanceAdjustment1 obj, ISODate value) {
+			obj.setPostingDate(value);
 		}
 	};
 	@XmlElement(name = "Days")
@@ -415,7 +476,7 @@ public class BalanceAdjustment1 {
 	 * "Number of days within the period to which the adjustment applies."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDays = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceAdjustment1, Optional<DecimalNumber>> mmDays = new MMMessageAttribute<BalanceAdjustment1, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmNumberOfDays;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceAdjustment1.mmObject();
@@ -427,6 +488,16 @@ public class BalanceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(BalanceAdjustment1 obj) {
+			return obj.getDays();
+		}
+
+		@Override
+		public void setValue(BalanceAdjustment1 obj, Optional<DecimalNumber> value) {
+			obj.setDays(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "EarngsAdjstmntAmt")
@@ -464,7 +535,7 @@ public class BalanceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEarningsAdjustmentAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BalanceAdjustment1, Optional<AmountAndDirection34>> mmEarningsAdjustmentAmount = new MMMessageAssociationEnd<BalanceAdjustment1, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmAdjustment;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceAdjustment1.mmObject();
@@ -476,7 +547,17 @@ public class BalanceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BalanceAdjustment1 obj) {
+			return obj.getEarningsAdjustmentAmount();
+		}
+
+		@Override
+		public void setValue(BalanceAdjustment1 obj, Optional<AmountAndDirection34> value) {
+			obj.setEarningsAdjustmentAmount(value.orElse(null));
 		}
 	};
 
@@ -518,7 +599,7 @@ public class BalanceAdjustment1 {
 		return balanceAmount;
 	}
 
-	public BalanceAdjustment1 setBalanceAmount(com.tools20022.repository.msg.AmountAndDirection34 balanceAmount) {
+	public BalanceAdjustment1 setBalanceAmount(AmountAndDirection34 balanceAmount) {
 		this.balanceAmount = Objects.requireNonNull(balanceAmount);
 		return this;
 	}
@@ -527,7 +608,7 @@ public class BalanceAdjustment1 {
 		return averageAmount == null ? Optional.empty() : Optional.of(averageAmount);
 	}
 
-	public BalanceAdjustment1 setAverageAmount(com.tools20022.repository.msg.AmountAndDirection34 averageAmount) {
+	public BalanceAdjustment1 setAverageAmount(AmountAndDirection34 averageAmount) {
 		this.averageAmount = averageAmount;
 		return this;
 	}
@@ -563,7 +644,7 @@ public class BalanceAdjustment1 {
 		return earningsAdjustmentAmount == null ? Optional.empty() : Optional.of(earningsAdjustmentAmount);
 	}
 
-	public BalanceAdjustment1 setEarningsAdjustmentAmount(com.tools20022.repository.msg.AmountAndDirection34 earningsAdjustmentAmount) {
+	public BalanceAdjustment1 setEarningsAdjustmentAmount(AmountAndDirection34 earningsAdjustmentAmount) {
 		this.earningsAdjustmentAmount = earningsAdjustmentAmount;
 		return this;
 	}

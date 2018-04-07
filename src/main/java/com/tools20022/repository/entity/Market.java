@@ -19,8 +19,11 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.GeographicalEnvironmentCode;
+import com.tools20022.repository.entity.Country;
+import com.tools20022.repository.entity.Jurisdiction;
+import com.tools20022.repository.entity.PartyIdentificationInformation;
+import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -123,7 +126,7 @@ public class Market {
 	 * definition} = "Trade executed in a market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Market, Trade> mmTrade = new MMBusinessAssociationEnd<Market, Trade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Market.mmObject();
@@ -132,9 +135,19 @@ public class Market {
 			definition = "Trade executed in a market.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmMarket;
+			opposite_lazy = () -> Trade.mmMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
+			type_lazy = () -> Trade.mmObject();
+		}
+
+		@Override
+		public Trade getValue(Market obj) {
+			return obj.getTrade();
+		}
+
+		@Override
+		public void setValue(Market obj, Trade value) {
+			obj.setTrade(value);
 		}
 	};
 	protected Jurisdiction jurisdiction;
@@ -172,7 +185,7 @@ public class Market {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmJurisdiction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Market, Jurisdiction> mmJurisdiction = new MMBusinessAssociationEnd<Market, Jurisdiction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Market.mmObject();
@@ -181,9 +194,19 @@ public class Market {
 			definition = "Jurisdiction of the governing law for the trades on this market, for example, City of NY, County of NY, State of NY, regulatory SEC.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmRelatedMarket;
+			opposite_lazy = () -> Jurisdiction.mmRelatedMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
+			type_lazy = () -> Jurisdiction.mmObject();
+		}
+
+		@Override
+		public Jurisdiction getValue(Market obj) {
+			return obj.getJurisdiction();
+		}
+
+		@Override
+		public void setValue(Market obj, Jurisdiction value) {
+			obj.setJurisdiction(value);
 		}
 	};
 	protected Country country;
@@ -218,7 +241,7 @@ public class Market {
 	 * definition} = "Country in which a market operates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Market, Country> mmCountry = new MMBusinessAssociationEnd<Market, Country>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Market.mmObject();
@@ -227,9 +250,19 @@ public class Market {
 			definition = "Country in which a market operates.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Country.mmMarket;
+			opposite_lazy = () -> Country.mmMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
+			type_lazy = () -> Country.mmObject();
+		}
+
+		@Override
+		public Country getValue(Market obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(Market obj, Country value) {
+			obj.setCountry(value);
 		}
 	};
 	protected GeographicalEnvironmentCode geographicalEnvironment;
@@ -260,7 +293,7 @@ public class Market {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGeographicalEnvironment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Market, GeographicalEnvironmentCode> mmGeographicalEnvironment = new MMBusinessAttribute<Market, GeographicalEnvironmentCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Market.mmObject();
@@ -272,12 +305,14 @@ public class Market {
 			simpleType_lazy = () -> GeographicalEnvironmentCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Market.class.getMethod("getGeographicalEnvironment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GeographicalEnvironmentCode getValue(Market obj) {
+			return obj.getGeographicalEnvironment();
+		}
+
+		@Override
+		public void setValue(Market obj, GeographicalEnvironmentCode value) {
+			obj.setGeographicalEnvironment(value);
 		}
 	};
 	protected PartyIdentificationInformation identification;
@@ -306,7 +341,7 @@ public class Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "Identification"</li>
 	 * <li>
@@ -314,18 +349,28 @@ public class Market {
 	 * definition} = "Identifies the market by name, id and/or code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Market, PartyIdentificationInformation> mmIdentification = new MMBusinessAssociationEnd<Market, PartyIdentificationInformation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Market.mmObject();
-			registrationStatus = MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Identifies the market by name, id and/or code.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmIdentifiedMarket;
+			opposite_lazy = () -> PartyIdentificationInformation.mmIdentifiedMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
+			type_lazy = () -> PartyIdentificationInformation.mmObject();
+		}
+
+		@Override
+		public PartyIdentificationInformation getValue(Market obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Market obj, PartyIdentificationInformation value) {
+			obj.setIdentification(value);
 		}
 	};
 
@@ -336,8 +381,7 @@ public class Market {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Market";
 				definition = "Context or geographic environment in which trading parties execute trades.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.mmMarket, com.tools20022.repository.entity.PartyIdentificationInformation.mmIdentifiedMarket,
-						com.tools20022.repository.entity.Trade.mmMarket, com.tools20022.repository.entity.Jurisdiction.mmRelatedMarket);
+				associationDomain_lazy = () -> Arrays.asList(Country.mmMarket, PartyIdentificationInformation.mmIdentifiedMarket, Trade.mmMarket, Jurisdiction.mmRelatedMarket);
 				subType_lazy = () -> Arrays.asList(TradingMarket.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Market.mmTrade, com.tools20022.repository.entity.Market.mmJurisdiction, com.tools20022.repository.entity.Market.mmCountry,
 						com.tools20022.repository.entity.Market.mmGeographicalEnvironment, com.tools20022.repository.entity.Market.mmIdentification);
@@ -355,7 +399,7 @@ public class Market {
 		return trade;
 	}
 
-	public Market setTrade(com.tools20022.repository.entity.Trade trade) {
+	public Market setTrade(Trade trade) {
 		this.trade = Objects.requireNonNull(trade);
 		return this;
 	}
@@ -364,7 +408,7 @@ public class Market {
 		return jurisdiction;
 	}
 
-	public Market setJurisdiction(com.tools20022.repository.entity.Jurisdiction jurisdiction) {
+	public Market setJurisdiction(Jurisdiction jurisdiction) {
 		this.jurisdiction = Objects.requireNonNull(jurisdiction);
 		return this;
 	}
@@ -373,7 +417,7 @@ public class Market {
 		return country;
 	}
 
-	public Market setCountry(com.tools20022.repository.entity.Country country) {
+	public Market setCountry(Country country) {
 		this.country = Objects.requireNonNull(country);
 		return this;
 	}
@@ -391,7 +435,7 @@ public class Market {
 		return identification;
 	}
 
-	public Market setIdentification(com.tools20022.repository.entity.PartyIdentificationInformation identification) {
+	public Market setIdentification(PartyIdentificationInformation identification) {
 		this.identification = Objects.requireNonNull(identification);
 		return this;
 	}

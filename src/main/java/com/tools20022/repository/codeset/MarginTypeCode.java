@@ -70,6 +70,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#IncreaseCoverageAmount
  * MarginTypeCode.IncreaseCoverageAmount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#LiquidityRiskMargin
+ * MarginTypeCode.LiquidityRiskMargin}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#BasisRiskMargin
+ * MarginTypeCode.BasisRiskMargin}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#WrongWayRiskMargin
+ * MarginTypeCode.WrongWayRiskMargin}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#SovereignRiskMargin
+ * MarginTypeCode.SovereignRiskMargin}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#MarketRiskMargin
+ * MarginTypeCode.MarketRiskMargin}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#CreditRiskAdditionalMargin
+ * MarginTypeCode.CreditRiskAdditionalMargin}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#ContingentVariationMargin
+ * MarginTypeCode.ContingentVariationMargin}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#SponsorRiskMargin
+ * MarginTypeCode.SponsorRiskMargin}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#JumpToDefaultRequirement
+ * MarginTypeCode.JumpToDefaultRequirement}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginTypeCode#DiscretionaryRiskAddOn
+ * MarginTypeCode.DiscretionaryRiskAddOn}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.MarginTypeCode#Other
+ * MarginTypeCode.Other}</li>
  * </ul>
  * </li>
  * <li>
@@ -469,6 +501,381 @@ public class MarginTypeCode extends MMCode {
 			codeName = "INCA";
 		}
 	};
+	/**
+	 * Margin called to cover differences in the assumed liquidation cost of a
+	 * portfolio of financial instruments when estimating potential future
+	 * exposure relative. For instance, where the potential future exposure is
+	 * estimated using mid-prices but fails to consider the necessity to pay a
+	 * bid-ask spread, or the additional cost of liquidation that may arise when
+	 * liquidating a large portfolio.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "LIRM"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "LiquidityRiskMargin"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Margin called to cover differences in the assumed liquidation cost of a portfolio of financial instruments when estimating potential future exposure relative. For instance, where the potential future exposure is estimated using mid-prices but fails to consider the necessity to pay a bid-ask spread, or the additional cost of liquidation that may arise when liquidating a large portfolio."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode LiquidityRiskMargin = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "LiquidityRiskMargin";
+			definition = "Margin called to cover differences in the assumed liquidation cost of a portfolio of financial instruments when estimating potential future exposure relative. For instance, where the potential future exposure is estimated using mid-prices but fails to consider the necessity to pay a bid-ask spread, or the additional cost of liquidation that may arise when liquidating a large portfolio.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "LIRM";
+		}
+	};
+	/**
+	 * Margin requirement to cover the risk of a breakdown in the assumed
+	 * relationship between two financial instruments or risk factors when
+	 * calculating the margin requirement for a portfolio of financial
+	 * instruments.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "BARM"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "BasisRiskMargin"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Margin requirement to cover the risk of a breakdown in the assumed relationship between two financial instruments or risk factors when calculating the margin requirement for a portfolio of financial instruments."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode BasisRiskMargin = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "BasisRiskMargin";
+			definition = "Margin requirement to cover the risk of a breakdown in the assumed relationship between two financial instruments or risk factors when calculating the margin requirement for a portfolio of financial instruments.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "BARM";
+		}
+	};
+	/**
+	 * Margin called to cover additional current or potential future exposures
+	 * that may arise due to a connection between the credit quality of the
+	 * counterparty and the movement in a set of risk factors of a financial
+	 * instruments or portfolio of financial instruments.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "WWRM"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "WrongWayRiskMargin"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Margin called to cover additional current or potential future exposures that may arise due to a connection between the credit quality of the counterparty and the movement in a set of risk factors of a financial instruments or portfolio of financial instruments."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode WrongWayRiskMargin = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "WrongWayRiskMargin";
+			definition = "Margin called to cover additional current or potential future exposures that may arise due to a connection between the credit quality of the counterparty and the movement in a set of risk factors of a financial instruments or portfolio of financial instruments.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "WWRM";
+		}
+	};
+	/**
+	 * Margin to cover the risk of a credit event relating to a sovereign
+	 * issuer.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "SORM"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "SovereignRiskMargin"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Margin to cover the risk of a credit event relating to a sovereign issuer."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode SovereignRiskMargin = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "SovereignRiskMargin";
+			definition = "Margin to cover the risk of a credit event relating to a sovereign issuer.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "SORM";
+		}
+	};
+	/**
+	 * Margin called to cover potential future exposures caused by volatility in
+	 * the underlying risk factors of a set of financial instruments.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "MARM"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "MarketRiskMargin"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Margin called to cover potential future exposures caused by volatility in the underlying risk factors of a set of financial instruments."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode MarketRiskMargin = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "MarketRiskMargin";
+			definition = "Margin called to cover potential future exposures caused by volatility in the underlying risk factors of a set of financial instruments.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "MARM";
+		}
+	};
+	/**
+	 * Margin called to cover an increase in the probability of default by a
+	 * counterparty in relation to an OTC derivative or cleared transaction. The
+	 * calculation of such margin is typically independent of any changes in
+	 * current or potential future exposure.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "CRAM"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "CreditRiskAdditionalMargin"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Margin called to cover an increase in the probability of default by a counterparty in relation to an OTC derivative or cleared transaction. The calculation of such margin is typically independent of any changes in current or potential future exposure."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode CreditRiskAdditionalMargin = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "CreditRiskAdditionalMargin";
+			definition = "Margin called to cover an increase in the probability of default by a counterparty in relation to an OTC derivative or cleared transaction. The calculation of such margin is typically independent of any changes in current or potential future exposure.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "CRAM";
+		}
+	};
+	/**
+	 * Margin called, by a central counterparty, to cover current exposures for
+	 * a portfolio of financial instruments where collateral called against such
+	 * current exposures is held by the central counterparty and returned to the
+	 * poster of such collateral at the delivery of the financial instrument.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "CVMA"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ContingentVariationMargin"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Margin called, by a central counterparty, to cover current exposures for a portfolio of financial instruments where collateral called against such current exposures is held by the central counterparty and returned to the poster of such collateral at the delivery of the financial instrument."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode ContingentVariationMargin = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ContingentVariationMargin";
+			definition = "Margin called, by a central counterparty, to cover current exposures for a portfolio of financial instruments where collateral called against such current exposures is held by the central counterparty and returned to the poster of such collateral at the delivery of the financial instrument.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "CVMA";
+		}
+	};
+	/**
+	 * Margin to cover risks relating to a sponsored clearing member. That is
+	 * were a third party carries out a number of obligations under the rulebook
+	 * of the central counterparty on behalf of a clearing member but doing so
+	 * creates additional risks for the central counterparty with respect to the
+	 * clearing member.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "SPMA"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "SponsorRiskMargin"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Margin to cover risks relating to a sponsored clearing member. That is were a third party carries out a number of obligations under the rulebook of the central counterparty on behalf of a clearing member but doing so creates additional risks for the central counterparty with respect to the clearing member."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode SponsorRiskMargin = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "SponsorRiskMargin";
+			definition = "Margin to cover risks relating to a sponsored clearing member. That is were a third party carries out a number of obligations under the rulebook of the central counterparty on behalf of a clearing member but doing so creates additional risks for the central counterparty with respect to the clearing member.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "SPMA";
+		}
+	};
+	/**
+	 * Margin called to cover a potential increase in current exposure due to
+	 * the revaluation of a financial instrument, where such revaluation is
+	 * caused by a sharp discontinuous increase in the probability of default of
+	 * the financial instrument or major risk factor of such financial
+	 * instrument.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "JTDR"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "JumpToDefaultRequirement"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Margin called to cover a potential increase in current exposure due to the revaluation of a financial instrument, where such revaluation is caused by a sharp discontinuous increase in the probability of default of the financial instrument or major risk factor of such financial instrument."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode JumpToDefaultRequirement = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "JumpToDefaultRequirement";
+			definition = "Margin called to cover a potential increase in current exposure due to the revaluation of a financial instrument, where such revaluation is caused by a sharp discontinuous increase in the probability of default of the financial instrument or major risk factor of such financial instrument.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "JTDR";
+		}
+	};
+	/**
+	 * Margin set called at the discretion of the caller.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "DRAO"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "DiscretionaryRiskAddOn"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Margin set called at the discretion of the caller."</li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode DiscretionaryRiskAddOn = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "DiscretionaryRiskAddOn";
+			definition = "Margin set called at the discretion of the caller.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "DRAO";
+		}
+	};
+	/**
+	 * Margin not categorised by any other margin type code.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MarginTypeCode
+	 * MarginTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "OTHR"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Other"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Margin not categorised by any other margin type code."</li>
+	 * </ul>
+	 */
+	public static final MarginTypeCode Other = new MarginTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Other";
+			definition = "Margin not categorised by any other margin type code.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MarginTypeCode.mmObject();
+			codeName = "OTHR";
+		}
+	};
 	final static private LinkedHashMap<String, MarginTypeCode> codesByName = new LinkedHashMap<>();
 
 	protected MarginTypeCode() {
@@ -485,7 +892,11 @@ public class MarginTypeCode extends MMCode {
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MarginTypeCode.SettlementRiskMargin, com.tools20022.repository.codeset.MarginTypeCode.AdditionalDefaultFundMargin,
 						com.tools20022.repository.codeset.MarginTypeCode.ShortChargeMargin, com.tools20022.repository.codeset.MarginTypeCode.CouponMargin, com.tools20022.repository.codeset.MarginTypeCode.UpfrontMargin,
 						com.tools20022.repository.codeset.MarginTypeCode.CreditEventMargin, com.tools20022.repository.codeset.MarginTypeCode.InitialDeposit, com.tools20022.repository.codeset.MarginTypeCode.NegociationMargin,
-						com.tools20022.repository.codeset.MarginTypeCode.InitialMargin, com.tools20022.repository.codeset.MarginTypeCode.VariationMargin, com.tools20022.repository.codeset.MarginTypeCode.IncreaseCoverageAmount);
+						com.tools20022.repository.codeset.MarginTypeCode.InitialMargin, com.tools20022.repository.codeset.MarginTypeCode.VariationMargin, com.tools20022.repository.codeset.MarginTypeCode.IncreaseCoverageAmount,
+						com.tools20022.repository.codeset.MarginTypeCode.LiquidityRiskMargin, com.tools20022.repository.codeset.MarginTypeCode.BasisRiskMargin, com.tools20022.repository.codeset.MarginTypeCode.WrongWayRiskMargin,
+						com.tools20022.repository.codeset.MarginTypeCode.SovereignRiskMargin, com.tools20022.repository.codeset.MarginTypeCode.MarketRiskMargin, com.tools20022.repository.codeset.MarginTypeCode.CreditRiskAdditionalMargin,
+						com.tools20022.repository.codeset.MarginTypeCode.ContingentVariationMargin, com.tools20022.repository.codeset.MarginTypeCode.SponsorRiskMargin,
+						com.tools20022.repository.codeset.MarginTypeCode.JumpToDefaultRequirement, com.tools20022.repository.codeset.MarginTypeCode.DiscretionaryRiskAddOn, com.tools20022.repository.codeset.MarginTypeCode.Other);
 			}
 		});
 		return mmObject_lazy.get();
@@ -503,6 +914,17 @@ public class MarginTypeCode extends MMCode {
 		codesByName.put(InitialMargin.getCodeName().get(), InitialMargin);
 		codesByName.put(VariationMargin.getCodeName().get(), VariationMargin);
 		codesByName.put(IncreaseCoverageAmount.getCodeName().get(), IncreaseCoverageAmount);
+		codesByName.put(LiquidityRiskMargin.getCodeName().get(), LiquidityRiskMargin);
+		codesByName.put(BasisRiskMargin.getCodeName().get(), BasisRiskMargin);
+		codesByName.put(WrongWayRiskMargin.getCodeName().get(), WrongWayRiskMargin);
+		codesByName.put(SovereignRiskMargin.getCodeName().get(), SovereignRiskMargin);
+		codesByName.put(MarketRiskMargin.getCodeName().get(), MarketRiskMargin);
+		codesByName.put(CreditRiskAdditionalMargin.getCodeName().get(), CreditRiskAdditionalMargin);
+		codesByName.put(ContingentVariationMargin.getCodeName().get(), ContingentVariationMargin);
+		codesByName.put(SponsorRiskMargin.getCodeName().get(), SponsorRiskMargin);
+		codesByName.put(JumpToDefaultRequirement.getCodeName().get(), JumpToDefaultRequirement);
+		codesByName.put(DiscretionaryRiskAddOn.getCodeName().get(), DiscretionaryRiskAddOn);
+		codesByName.put(Other.getCodeName().get(), Other);
 	}
 
 	public static MarginTypeCode valueOf(String codeName) {

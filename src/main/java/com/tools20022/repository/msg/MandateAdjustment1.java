@@ -112,7 +112,7 @@ public class MandateAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDateAdjustmentRuleIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateAdjustment1, TrueFalseIndicator> mmDateAdjustmentRuleIndicator = new MMMessageAttribute<MandateAdjustment1, TrueFalseIndicator>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAdjustment1.mmObject();
 			isDerived = false;
@@ -123,6 +123,16 @@ public class MandateAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public TrueFalseIndicator getValue(MandateAdjustment1 obj) {
+			return obj.getDateAdjustmentRuleIndicator();
+		}
+
+		@Override
+		public void setValue(MandateAdjustment1 obj, TrueFalseIndicator value) {
+			obj.setDateAdjustmentRuleIndicator(value);
 		}
 	};
 	@XmlElement(name = "Ctgy")
@@ -158,7 +168,7 @@ public class MandateAdjustment1 {
 	 * definition} = "Defines the category of adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCategory = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MandateAdjustment1, Optional<Frequency37Choice>> mmCategory = new MMMessageAssociationEnd<MandateAdjustment1, Optional<Frequency37Choice>>() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmFrequency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAdjustment1.mmObject();
@@ -171,6 +181,16 @@ public class MandateAdjustment1 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> Frequency37Choice.mmObject();
+		}
+
+		@Override
+		public Optional<Frequency37Choice> getValue(MandateAdjustment1 obj) {
+			return obj.getCategory();
+		}
+
+		@Override
+		public void setValue(MandateAdjustment1 obj, Optional<Frequency37Choice> value) {
+			obj.setCategory(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt")
@@ -210,7 +230,7 @@ public class MandateAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateAdjustment1, Optional<ActiveCurrencyAndAmount>> mmAmount = new MMMessageAttribute<MandateAdjustment1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmCollectionAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAdjustment1.mmObject();
@@ -222,6 +242,16 @@ public class MandateAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(MandateAdjustment1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(MandateAdjustment1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rate")
@@ -261,7 +291,7 @@ public class MandateAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateAdjustment1, Optional<PercentageRate>> mmRate = new MMMessageAttribute<MandateAdjustment1, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> Mandate.mmRate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateAdjustment1.mmObject();
@@ -273,6 +303,16 @@ public class MandateAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
+		}
+
+		@Override
+		public Optional<PercentageRate> getValue(MandateAdjustment1 obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(MandateAdjustment1 obj, Optional<PercentageRate> value) {
+			obj.setRate(value.orElse(null));
 		}
 	};
 

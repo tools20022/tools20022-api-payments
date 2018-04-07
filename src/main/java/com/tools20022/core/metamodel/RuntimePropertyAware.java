@@ -1,14 +1,12 @@
 package com.tools20022.core.metamodel;
 
-import java.lang.reflect.Method;
-
-public interface RuntimePropertyAware {
+public interface RuntimePropertyAware<T,V> {
 	
-	default Method getGetterMethod()  {
+	default V getValue(T obj )  {
 		throw new RuntimeException("Should override in concrate classes!");
 	}
 	
-	default Method getSetterMethod()  {
+	default void setValue(T obj, V value)  {
 		throw new RuntimeException("Should override in concrate classes!");
 	};
 	

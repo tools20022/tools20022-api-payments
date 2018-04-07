@@ -100,7 +100,7 @@ public class ReportingSource1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportingSource1Choice, ExternalReportingSource1Code> mmCode = new MMMessageAttribute<ReportingSource1Choice, ExternalReportingSource1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.ReportingSource1Choice.mmObject();
 			isDerived = false;
@@ -111,6 +111,16 @@ public class ReportingSource1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalReportingSource1Code.mmObject();
+		}
+
+		@Override
+		public ExternalReportingSource1Code getValue(ReportingSource1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ReportingSource1Choice obj, ExternalReportingSource1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -142,7 +152,7 @@ public class ReportingSource1Choice {
 	 * definition} = "Reporting source, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportingSource1Choice, Max35Text> mmProprietary = new MMMessageAttribute<ReportingSource1Choice, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.ReportingSource1Choice.mmObject();
 			isDerived = false;
@@ -153,6 +163,16 @@ public class ReportingSource1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ReportingSource1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ReportingSource1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

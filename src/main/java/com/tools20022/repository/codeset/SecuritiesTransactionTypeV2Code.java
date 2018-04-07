@@ -165,6 +165,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code#ExchangeTradedFunds
  * SecuritiesTransactionTypeV2Code.ExchangeTradedFunds}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code#SwitchFrom
+ * SecuritiesTransactionTypeV2Code.SwitchFrom}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code#SwitchTo
+ * SecuritiesTransactionTypeV2Code.SwitchTo}</li>
  * </ul>
  * </li>
  * <li>
@@ -579,8 +585,8 @@ public class SecuritiesTransactionTypeV2Code extends MMCode {
 		}
 	};
 	/**
-	 * Relates to the issue of medium and short term paper (CP, CD, MTN, notes
-	 * ...) under a program and without syndication arrangement.
+	 * Relates to the issue of medium and short term paper (CP, CD, MTN, notes.)
+	 * under a program and without syndication arrangement.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -598,7 +604,7 @@ public class SecuritiesTransactionTypeV2Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Relates to the issue of medium and short term paper (CP, CD, MTN, notes ...) under a program and without syndication arrangement."
+	 * "Relates to the issue of medium and short term paper (CP, CD, MTN, notes.) under a program and without syndication arrangement."
 	 * </li>
 	 * </ul>
 	 */
@@ -606,7 +612,7 @@ public class SecuritiesTransactionTypeV2Code extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonSyndicated";
-			definition = "Relates to the issue of medium and short term paper (CP, CD, MTN, notes ...) under a program and without syndication arrangement.";
+			definition = "Relates to the issue of medium and short term paper (CP, CD, MTN, notes.) under a program and without syndication arrangement.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.mmObject();
 			codeName = "NSYN";
 		}
@@ -1549,6 +1555,72 @@ public class SecuritiesTransactionTypeV2Code extends MMCode {
 			codeName = "ETFT";
 		}
 	};
+	/**
+	 * Transaction is a change of an investment from one sub-fund to another
+	 * sub-fund (redemption-leg).
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code
+	 * SecuritiesTransactionTypeV2Code}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "SWIF"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "SwitchFrom"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Transaction is a change of an investment from one sub-fund to another sub-fund (redemption-leg)."
+	 * </li>
+	 * </ul>
+	 */
+	public static final SecuritiesTransactionTypeV2Code SwitchFrom = new SecuritiesTransactionTypeV2Code() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "SwitchFrom";
+			definition = "Transaction is a change of an investment from one sub-fund to another sub-fund (redemption-leg).";
+			owner_lazy = () -> com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.mmObject();
+			codeName = "SWIF";
+		}
+	};
+	/**
+	 * Transaction is a change of an investment from one sub-fund to another
+	 * sub-fund (subscription-leg).
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code
+	 * SecuritiesTransactionTypeV2Code}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "SWIT"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "SwitchTo"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Transaction is a change of an investment from one sub-fund to another sub-fund (subscription-leg)."
+	 * </li>
+	 * </ul>
+	 */
+	public static final SecuritiesTransactionTypeV2Code SwitchTo = new SecuritiesTransactionTypeV2Code() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "SwitchTo";
+			definition = "Transaction is a change of an investment from one sub-fund to another sub-fund (subscription-leg).";
+			owner_lazy = () -> com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.mmObject();
+			codeName = "SWIT";
+		}
+	};
 	final static private LinkedHashMap<String, SecuritiesTransactionTypeV2Code> codesByName = new LinkedHashMap<>();
 
 	protected SecuritiesTransactionTypeV2Code() {
@@ -1583,7 +1655,8 @@ public class SecuritiesTransactionTypeV2Code extends MMCode {
 						com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.TripartyReverseRepo, com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.Turnaround,
 						com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.PreAdvice, com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.AutoCollateralisation,
 						com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.MarketClaim, com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.CorporateAction,
-						com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.ExchangeTradedFunds);
+						com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.ExchangeTradedFunds, com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.SwitchFrom,
+						com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code.SwitchTo);
 			}
 		});
 		return mmObject_lazy.get();
@@ -1633,6 +1706,8 @@ public class SecuritiesTransactionTypeV2Code extends MMCode {
 		codesByName.put(MarketClaim.getCodeName().get(), MarketClaim);
 		codesByName.put(CorporateAction.getCodeName().get(), CorporateAction);
 		codesByName.put(ExchangeTradedFunds.getCodeName().get(), ExchangeTradedFunds);
+		codesByName.put(SwitchFrom.getCodeName().get(), SwitchFrom);
+		codesByName.put(SwitchTo.getCodeName().get(), SwitchTo);
 	}
 
 	public static SecuritiesTransactionTypeV2Code valueOf(String codeName) {

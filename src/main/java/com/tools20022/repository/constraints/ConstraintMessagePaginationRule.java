@@ -48,7 +48,7 @@ public class ConstraintMessagePaginationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forReportHeader3 = new MMConstraint() {
+	public static final MMConstraint<ReportHeader3> forReportHeader3 = new MMConstraint<ReportHeader3>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessagePaginationRule";
@@ -57,8 +57,8 @@ public class ConstraintMessagePaginationRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkReportHeader3((ReportHeader3) obj);
+		public void executeValidator(ReportHeader3 obj) throws Exception {
+			checkReportHeader3(obj);
 		}
 	};
 

@@ -131,7 +131,7 @@ public class TransactionCertificateContract1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContractReference = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TransactionCertificateContract1, Optional<ContractRegistrationReference1Choice>> mmContractReference = new MMMessageAssociationEnd<TransactionCertificateContract1, Optional<ContractRegistrationReference1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
@@ -144,6 +144,16 @@ public class TransactionCertificateContract1 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> ContractRegistrationReference1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<ContractRegistrationReference1Choice> getValue(TransactionCertificateContract1 obj) {
+			return obj.getContractReference();
+		}
+
+		@Override
+		public void setValue(TransactionCertificateContract1 obj, Optional<ContractRegistrationReference1Choice> value) {
+			obj.setContractReference(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TxAmtInCtrctCcy")
@@ -183,7 +193,7 @@ public class TransactionCertificateContract1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionAmountInContractCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionCertificateContract1, Optional<ActiveCurrencyAndAmount>> mmTransactionAmountInContractCurrency = new MMMessageAttribute<TransactionCertificateContract1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
@@ -195,6 +205,16 @@ public class TransactionCertificateContract1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(TransactionCertificateContract1 obj) {
+			return obj.getTransactionAmountInContractCurrency();
+		}
+
+		@Override
+		public void setValue(TransactionCertificateContract1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setTransactionAmountInContractCurrency(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "XpctdShipmntDt")
@@ -231,7 +251,7 @@ public class TransactionCertificateContract1 {
 	 * definition} = "Expected shipment date as per registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedShipmentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionCertificateContract1, Optional<ISODate>> mmExpectedShipmentDate = new MMMessageAttribute<TransactionCertificateContract1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> ShipmentDateRange.mmShipmentDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
@@ -243,6 +263,16 @@ public class TransactionCertificateContract1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(TransactionCertificateContract1 obj) {
+			return obj.getExpectedShipmentDate();
+		}
+
+		@Override
+		public void setValue(TransactionCertificateContract1 obj, Optional<ISODate> value) {
+			obj.setExpectedShipmentDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "XpctdAdvncPmtRtrDt")
@@ -281,7 +311,7 @@ public class TransactionCertificateContract1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedAdvancePaymentReturnDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionCertificateContract1, Optional<ISODate>> mmExpectedAdvancePaymentReturnDate = new MMMessageAttribute<TransactionCertificateContract1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPaymentDueDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
@@ -293,6 +323,16 @@ public class TransactionCertificateContract1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(TransactionCertificateContract1 obj) {
+			return obj.getExpectedAdvancePaymentReturnDate();
+		}
+
+		@Override
+		public void setValue(TransactionCertificateContract1 obj, Optional<ISODate> value) {
+			obj.setExpectedAdvancePaymentReturnDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -324,7 +364,7 @@ public class TransactionCertificateContract1 {
 	 * definition} = "Further details on the transaction certificate contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionCertificateContract1, Optional<Max1025Text>> mmAdditionalInformation = new MMMessageAttribute<TransactionCertificateContract1, Optional<Max1025Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionCertificateContract1.mmObject();
 			isDerived = false;
@@ -335,6 +375,16 @@ public class TransactionCertificateContract1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max1025Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max1025Text> getValue(TransactionCertificateContract1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(TransactionCertificateContract1 obj, Optional<Max1025Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 

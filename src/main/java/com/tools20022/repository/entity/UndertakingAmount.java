@@ -20,8 +20,10 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.AmountTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.Interest;
+import com.tools20022.repository.entity.Tolerance;
+import com.tools20022.repository.entity.Undertaking;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -124,7 +126,7 @@ public class UndertakingAmount {
 	 * definition} = "Undertaking for which an amount is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<UndertakingAmount, Undertaking> mmUndertaking = new MMBusinessAssociationEnd<UndertakingAmount, Undertaking>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
@@ -133,9 +135,19 @@ public class UndertakingAmount {
 			definition = "Undertaking for which an amount is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.mmUndertakingAmount;
+			opposite_lazy = () -> Undertaking.mmUndertakingAmount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
+			type_lazy = () -> Undertaking.mmObject();
+		}
+
+		@Override
+		public Undertaking getValue(UndertakingAmount obj) {
+			return obj.getUndertaking();
+		}
+
+		@Override
+		public void setValue(UndertakingAmount obj, Undertaking value) {
+			obj.setUndertaking(value);
 		}
 	};
 	protected CurrencyAndAmount amount;
@@ -165,7 +177,7 @@ public class UndertakingAmount {
 	 * definition} = "Amount of the undertaking."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<UndertakingAmount, CurrencyAndAmount> mmAmount = new MMBusinessAttribute<UndertakingAmount, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
@@ -177,12 +189,14 @@ public class UndertakingAmount {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return UndertakingAmount.class.getMethod("getAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(UndertakingAmount obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(UndertakingAmount obj, CurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	protected Tolerance tolerance;
@@ -221,7 +235,7 @@ public class UndertakingAmount {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTolerance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<UndertakingAmount, Tolerance> mmTolerance = new MMBusinessAssociationEnd<UndertakingAmount, Tolerance>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
@@ -230,9 +244,19 @@ public class UndertakingAmount {
 			definition = "Percentage (original or updated in case of amendment) by which the amount claimed under the undertaking may vary.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tolerance.mmRelatedUndertakingAmount;
+			opposite_lazy = () -> Tolerance.mmRelatedUndertakingAmount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
+			type_lazy = () -> Tolerance.mmObject();
+		}
+
+		@Override
+		public Tolerance getValue(UndertakingAmount obj) {
+			return obj.getTolerance();
+		}
+
+		@Override
+		public void setValue(UndertakingAmount obj, Tolerance value) {
+			obj.setTolerance(value);
 		}
 	};
 	protected CurrencyAndAmount balanceAmount;
@@ -264,7 +288,7 @@ public class UndertakingAmount {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBalanceAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<UndertakingAmount, CurrencyAndAmount> mmBalanceAmount = new MMBusinessAttribute<UndertakingAmount, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
@@ -276,12 +300,14 @@ public class UndertakingAmount {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return UndertakingAmount.class.getMethod("getBalanceAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(UndertakingAmount obj) {
+			return obj.getBalanceAmount();
+		}
+
+		@Override
+		public void setValue(UndertakingAmount obj, CurrencyAndAmount value) {
+			obj.setBalanceAmount(value);
 		}
 	};
 	protected AmountTypeCode type;
@@ -313,7 +339,7 @@ public class UndertakingAmount {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<UndertakingAmount, AmountTypeCode> mmType = new MMBusinessAttribute<UndertakingAmount, AmountTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
@@ -325,12 +351,14 @@ public class UndertakingAmount {
 			simpleType_lazy = () -> AmountTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return UndertakingAmount.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AmountTypeCode getValue(UndertakingAmount obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(UndertakingAmount obj, AmountTypeCode value) {
+			obj.setType(value);
 		}
 	};
 	protected Interest interest;
@@ -366,7 +394,7 @@ public class UndertakingAmount {
 	 * definition} = "Interest associated with the undertaking amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<UndertakingAmount, Interest> mmInterest = new MMBusinessAssociationEnd<UndertakingAmount, Interest>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
@@ -375,9 +403,19 @@ public class UndertakingAmount {
 			definition = "Interest associated with the undertaking amount.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmRelatedUndertakingAmount;
+			opposite_lazy = () -> Interest.mmRelatedUndertakingAmount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
+			type_lazy = () -> Interest.mmObject();
+		}
+
+		@Override
+		public Interest getValue(UndertakingAmount obj) {
+			return obj.getInterest();
+		}
+
+		@Override
+		public void setValue(UndertakingAmount obj, Interest value) {
+			obj.setInterest(value);
 		}
 	};
 
@@ -388,8 +426,7 @@ public class UndertakingAmount {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UndertakingAmount";
 				definition = "Amount of an undertaking such as a guarantee or standby letter of credit.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Interest.mmRelatedUndertakingAmount, com.tools20022.repository.entity.Undertaking.mmUndertakingAmount,
-						com.tools20022.repository.entity.Tolerance.mmRelatedUndertakingAmount);
+				associationDomain_lazy = () -> Arrays.asList(Interest.mmRelatedUndertakingAmount, Undertaking.mmUndertakingAmount, Tolerance.mmRelatedUndertakingAmount);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.UndertakingAmount.mmUndertaking, com.tools20022.repository.entity.UndertakingAmount.mmAmount,
 						com.tools20022.repository.entity.UndertakingAmount.mmTolerance, com.tools20022.repository.entity.UndertakingAmount.mmBalanceAmount, com.tools20022.repository.entity.UndertakingAmount.mmType,
 						com.tools20022.repository.entity.UndertakingAmount.mmInterest);
@@ -407,7 +444,7 @@ public class UndertakingAmount {
 		return undertaking;
 	}
 
-	public UndertakingAmount setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
+	public UndertakingAmount setUndertaking(Undertaking undertaking) {
 		this.undertaking = Objects.requireNonNull(undertaking);
 		return this;
 	}
@@ -425,7 +462,7 @@ public class UndertakingAmount {
 		return tolerance;
 	}
 
-	public UndertakingAmount setTolerance(com.tools20022.repository.entity.Tolerance tolerance) {
+	public UndertakingAmount setTolerance(Tolerance tolerance) {
 		this.tolerance = Objects.requireNonNull(tolerance);
 		return this;
 	}
@@ -452,7 +489,7 @@ public class UndertakingAmount {
 		return interest;
 	}
 
-	public UndertakingAmount setInterest(com.tools20022.repository.entity.Interest interest) {
+	public UndertakingAmount setInterest(Interest interest) {
 		this.interest = Objects.requireNonNull(interest);
 		return this;
 	}

@@ -107,7 +107,7 @@ public class Limit2 {
 	 * "Minimum transaction amount to be reported in the requested message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Limit2, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<Limit2, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Limit.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Limit2.mmObject();
@@ -119,6 +119,16 @@ public class Limit2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(Limit2 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(Limit2 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "CdtDbtInd", required = true)
@@ -157,7 +167,7 @@ public class Limit2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Limit2, FloorLimitType1Code> mmCreditDebitIndicator = new MMMessageAttribute<Limit2, FloorLimitType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Limit.mmCreditDebitIndicator;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Limit2.mmObject();
@@ -169,6 +179,16 @@ public class Limit2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> FloorLimitType1Code.mmObject();
+		}
+
+		@Override
+		public FloorLimitType1Code getValue(Limit2 obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(Limit2 obj, FloorLimitType1Code value) {
+			obj.setCreditDebitIndicator(value);
 		}
 	};
 

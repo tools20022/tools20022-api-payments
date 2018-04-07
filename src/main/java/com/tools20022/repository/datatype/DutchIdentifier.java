@@ -19,13 +19,13 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.datatype.DutchIdentifier.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * Identifier for Dutch securities.
@@ -56,10 +56,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * definition} = "Identifier for Dutch securities."</li>
  * </ul>
  */
-@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class DutchIdentifier {
 
 	final static private AtomicReference<MMIdentifierSet> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
 	protected String value;
 
 	final static public MMIdentifierSet mmObject() {
@@ -76,24 +78,23 @@ public class DutchIdentifier {
 		return mmObject_lazy.get();
 	}
 
+	public DutchIdentifier() {
+	}
+
 	public DutchIdentifier(String value) {
+		this.value = value;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
 		this.value = value;
 	}
 
 	@Override
 	public String toString() {
-		return value;
-	}
-
-	protected static class InternalXmlAdapter extends XmlAdapter<String, DutchIdentifier> {
-		@Override
-		public DutchIdentifier unmarshal(String value) {
-			return new DutchIdentifier(value);
-		}
-
-		@Override
-		public String marshal(DutchIdentifier typedData) {
-			return typedData.value;
-		}
+		return value == null ? null : value.toString();
 	}
 }

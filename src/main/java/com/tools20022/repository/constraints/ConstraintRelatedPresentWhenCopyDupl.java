@@ -55,7 +55,7 @@ public class ConstraintRelatedPresentWhenCopyDupl {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forBusinessApplicationHeaderV01 = new MMConstraint() {
+	public static final MMConstraint<BusinessApplicationHeaderV01> for_head_BusinessApplicationHeaderV01 = new MMConstraint<BusinessApplicationHeaderV01>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedPresentWhenCopyDupl";
@@ -65,8 +65,8 @@ public class ConstraintRelatedPresentWhenCopyDupl {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkBusinessApplicationHeaderV01((BusinessApplicationHeaderV01) obj);
+		public void executeValidator(BusinessApplicationHeaderV01 obj) throws Exception {
+			check_head_BusinessApplicationHeaderV01(obj);
 		}
 	};
 
@@ -76,7 +76,7 @@ public class ConstraintRelatedPresentWhenCopyDupl {
 	 * <br>
 	 * If CopyDuplicate is present, then Related MUST be present.
 	 */
-	public static void checkBusinessApplicationHeaderV01(BusinessApplicationHeaderV01 obj) throws Exception {
+	public static void check_head_BusinessApplicationHeaderV01(BusinessApplicationHeaderV01 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

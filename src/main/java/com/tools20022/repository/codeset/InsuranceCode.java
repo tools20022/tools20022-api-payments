@@ -70,7 +70,7 @@ public class InsuranceCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Life insurance
+	 * Life insurance.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -87,14 +87,14 @@ public class InsuranceCode extends MMCode {
 	 * name} = "LifeInsurance"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Life insurance"</li>
+	 * definition} = "Life insurance."</li>
 	 * </ul>
 	 */
 	public static final InsuranceCode LifeInsurance = new InsuranceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LifeInsurance";
-			definition = "Life insurance";
+			definition = "Life insurance.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InsuranceCode.mmObject();
 			codeName = "LIFE";
 		}

@@ -25,7 +25,6 @@ import com.tools20022.repository.area.PaymentsClearingandSettlementLatestVersion
 import com.tools20022.repository.msg.CreditTransferTransaction9;
 import com.tools20022.repository.msg.GroupHeader63;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -79,8 +78,8 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forFinancialInstitutionDirectDebitV02
- * ConstraintSupplementaryDataRule.forFinancialInstitutionDirectDebitV02}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#for_pacs_FinancialInstitutionDirectDebitV02
+ * ConstraintSupplementaryDataRule.for_pacs_FinancialInstitutionDirectDebitV02}</li>
  * </ul>
  * </li>
  * <li>
@@ -91,7 +90,7 @@ import javax.xml.bind.annotation.*;
  * "FinancialInstitutionDirectDebitV02"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Scope:\r\nThe FinancialInstitutionDirectDebit message is sent by an exchange or clearing house, or a financial institution, directly or through another agent, to the DebtorAgent.  It is used to instruct the DebtorAgent to move funds from one or more debtor(s) account(s) to one or more creditor(s), where both debtor and creditor are financial institutions.\r\n\r\nUsage:\r\nThe FinancialInstitutionDirectDebit message is exchanged between agents and can contain one or more financial institution direct debit instruction(s) for one or more creditor(s). The FinancialInstitutionDirectDebit message can be used in domestic and cross-border scenarios.\r\n"
+ * "Scope:\r\nThe FinancialInstitutionDirectDebit message is sent by an exchange or clearing house, or a financial institution, directly or through another agent, to the DebtorAgent. It is used to instruct the DebtorAgent to move funds from one or more debtor(s) account(s) to one or more creditor(s), where both debtor and creditor are financial institutions.\r\n\r\nUsage:\r\nThe FinancialInstitutionDirectDebit message is exchanged between agents and can contain one or more financial institution direct debit instruction(s) for one or more creditor(s). The FinancialInstitutionDirectDebit message can be used in domestic and cross-border scenarios.\r\n"
  * </li>
  * </ul>
  */
@@ -126,7 +125,7 @@ public class FinancialInstitutionDirectDebitV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstitutionDirectDebitV02, GroupHeader63> mmGroupHeader = new MMMessageBuildingBlock<FinancialInstitutionDirectDebitV02, GroupHeader63>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -137,12 +136,14 @@ public class FinancialInstitutionDirectDebitV02 {
 			complexType_lazy = () -> GroupHeader63.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstitutionDirectDebitV02.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader63 getValue(FinancialInstitutionDirectDebitV02 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionDirectDebitV02 obj, GroupHeader63 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "CdtInstr", required = true)
@@ -172,7 +173,7 @@ public class FinancialInstitutionDirectDebitV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCreditInstruction = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstitutionDirectDebitV02, List<CreditTransferTransaction9>> mmCreditInstruction = new MMMessageBuildingBlock<FinancialInstitutionDirectDebitV02, List<CreditTransferTransaction9>>() {
 		{
 			xmlTag = "CdtInstr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,12 +183,14 @@ public class FinancialInstitutionDirectDebitV02 {
 			complexType_lazy = () -> CreditTransferTransaction9.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstitutionDirectDebitV02.class.getMethod("getCreditInstruction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<CreditTransferTransaction9> getValue(FinancialInstitutionDirectDebitV02 obj) {
+			return obj.getCreditInstruction();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionDirectDebitV02 obj, List<CreditTransferTransaction9> value) {
+			obj.setCreditInstruction(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -217,7 +220,7 @@ public class FinancialInstitutionDirectDebitV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstitutionDirectDebitV02, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<FinancialInstitutionDirectDebitV02, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,22 +230,24 @@ public class FinancialInstitutionDirectDebitV02 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstitutionDirectDebitV02.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(FinancialInstitutionDirectDebitV02 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionDirectDebitV02 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forFinancialInstitutionDirectDebitV02);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.for_pacs_FinancialInstitutionDirectDebitV02);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstitutionDirectDebitV02";
-				definition = "Scope:\r\nThe FinancialInstitutionDirectDebit message is sent by an exchange or clearing house, or a financial institution, directly or through another agent, to the DebtorAgent.  It is used to instruct the DebtorAgent to move funds from one or more debtor(s) account(s) to one or more creditor(s), where both debtor and creditor are financial institutions.\r\n\r\nUsage:\r\nThe FinancialInstitutionDirectDebit message is exchanged between agents and can contain one or more financial institution direct debit instruction(s) for one or more creditor(s). The FinancialInstitutionDirectDebit message can be used in domestic and cross-border scenarios.\r\n";
+				definition = "Scope:\r\nThe FinancialInstitutionDirectDebit message is sent by an exchange or clearing house, or a financial institution, directly or through another agent, to the DebtorAgent. It is used to instruct the DebtorAgent to move funds from one or more debtor(s) account(s) to one or more creditor(s), where both debtor and creditor are financial institutions.\r\n\r\nUsage:\r\nThe FinancialInstitutionDirectDebit message is exchanged between agents and can contain one or more financial institution direct debit instruction(s) for one or more creditor(s). The FinancialInstitutionDirectDebit message can be used in domestic and cross-border scenarios.\r\n";
 				rootElement = "Document";
 				xmlTag = "FIDrctDbt";
 				businessArea_lazy = () -> PaymentsClearingandSettlementLatestVersion.mmObject();

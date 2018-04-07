@@ -25,8 +25,11 @@ import com.tools20022.repository.datatype.Max16Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.SecuritiesOrder;
+import com.tools20022.repository.entity.SecuritiesPegOrderInstruction;
+import com.tools20022.repository.entity.SecuritiesPricing;
+import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -194,7 +197,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMinimumQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderParameters, SecuritiesQuantity> mmMinimumQuantity = new MMBusinessAssociationEnd<SecuritiesOrderParameters, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -204,9 +207,19 @@ public class SecuritiesOrderParameters {
 			definition = "Minimum quantity of financial instrument to be bought or sold if the entire order cannot be executed.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumQuantityOrderParameters;
+			opposite_lazy = () -> SecuritiesQuantity.mmMinimumQuantityOrderParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(SecuritiesOrderParameters obj) {
+			return obj.getMinimumQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, SecuritiesQuantity value) {
+			obj.setMinimumQuantity(value);
 		}
 	};
 	protected SecuritiesQuantity matchIncrement;
@@ -245,7 +258,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMatchIncrement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderParameters, SecuritiesQuantity> mmMatchIncrement = new MMBusinessAssociationEnd<SecuritiesOrderParameters, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -254,9 +267,19 @@ public class SecuritiesOrderParameters {
 			definition = "Allows orders to specify a minimum quantity that applies to every execution. (one execution could be for multiple counter-orders). The order may still fill against smaller orders, but the cumulative quantity of the execution must be in multiples of the MatchIncrement.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMatchIncrementOrderParameters;
+			opposite_lazy = () -> SecuritiesQuantity.mmMatchIncrementOrderParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(SecuritiesOrderParameters obj) {
+			return obj.getMatchIncrement();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, SecuritiesQuantity value) {
+			obj.setMatchIncrement(value);
 		}
 	};
 	protected SecuritiesPegOrderInstruction pegInstructions;
@@ -294,7 +317,7 @@ public class SecuritiesOrderParameters {
 	 * definition} = "Additional instructions if the order is pegged."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPegInstructions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderParameters, SecuritiesPegOrderInstruction> mmPegInstructions = new MMBusinessAssociationEnd<SecuritiesOrderParameters, SecuritiesPegOrderInstruction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -303,9 +326,19 @@ public class SecuritiesOrderParameters {
 			definition = "Additional instructions if the order is pegged.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmOrder;
+			opposite_lazy = () -> SecuritiesPegOrderInstruction.mmOrder;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
+			type_lazy = () -> SecuritiesPegOrderInstruction.mmObject();
+		}
+
+		@Override
+		public SecuritiesPegOrderInstruction getValue(SecuritiesOrderParameters obj) {
+			return obj.getPegInstructions();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, SecuritiesPegOrderInstruction value) {
+			obj.setPegInstructions(value);
 		}
 	};
 	protected SecuritiesPricing previousClosingPrice;
@@ -342,7 +375,7 @@ public class SecuritiesOrderParameters {
 	 * definition} = "Previous closing price of security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPreviousClosingPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderParameters, SecuritiesPricing> mmPreviousClosingPrice = new MMBusinessAssociationEnd<SecuritiesOrderParameters, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -351,9 +384,19 @@ public class SecuritiesOrderParameters {
 			definition = "Previous closing price of security.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmRelatedOrder;
+			opposite_lazy = () -> SecuritiesPricing.mmRelatedOrder;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(SecuritiesOrderParameters obj) {
+			return obj.getPreviousClosingPrice();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, SecuritiesPricing value) {
+			obj.setPreviousClosingPrice(value);
 		}
 	};
 	protected AutoRoutingCode autoRouting;
@@ -387,7 +430,7 @@ public class SecuritiesOrderParameters {
 	 * "Indicates whether an automatic routing system is involved."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAutoRouting = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, AutoRoutingCode> mmAutoRouting = new MMBusinessAttribute<SecuritiesOrderParameters, AutoRoutingCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -400,12 +443,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> AutoRoutingCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getAutoRouting", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AutoRoutingCode getValue(SecuritiesOrderParameters obj) {
+			return obj.getAutoRouting();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, AutoRoutingCode value) {
+			obj.setAutoRouting(value);
 		}
 	};
 	protected IncomePreferenceCode corporateActionOptionIndicator;
@@ -440,7 +485,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCorporateActionOptionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, IncomePreferenceCode> mmCorporateActionOptionIndicator = new MMBusinessAttribute<SecuritiesOrderParameters, IncomePreferenceCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -453,12 +498,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> IncomePreferenceCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getCorporateActionOptionIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IncomePreferenceCode getValue(SecuritiesOrderParameters obj) {
+			return obj.getCorporateActionOptionIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, IncomePreferenceCode value) {
+			obj.setCorporateActionOptionIndicator(value);
 		}
 	};
 	protected ExecutionTimeLimitCode executionTimeLimit;
@@ -491,7 +538,7 @@ public class SecuritiesOrderParameters {
 	 * definition} = "Indicates from/until when an order must be executed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExecutionTimeLimit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, ExecutionTimeLimitCode> mmExecutionTimeLimit = new MMBusinessAttribute<SecuritiesOrderParameters, ExecutionTimeLimitCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -504,12 +551,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> ExecutionTimeLimitCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getExecutionTimeLimit", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExecutionTimeLimitCode getValue(SecuritiesOrderParameters obj) {
+			return obj.getExecutionTimeLimit();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, ExecutionTimeLimitCode value) {
+			obj.setExecutionTimeLimit(value);
 		}
 	};
 	protected Max16Text preAllocationConditionIndicator;
@@ -541,7 +590,7 @@ public class SecuritiesOrderParameters {
 	 * definition} = "Indicates the conditions that apply to a pre-allocation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPreAllocationConditionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, Max16Text> mmPreAllocationConditionIndicator = new MMBusinessAttribute<SecuritiesOrderParameters, Max16Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -554,12 +603,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> Max16Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getPreAllocationConditionIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max16Text getValue(SecuritiesOrderParameters obj) {
+			return obj.getPreAllocationConditionIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, Max16Text value) {
+			obj.setPreAllocationConditionIndicator(value);
 		}
 	};
 	protected PriorityCode priorityIndicator;
@@ -591,7 +642,7 @@ public class SecuritiesOrderParameters {
 	 * definition} = "Indicates the execution priority of the trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPriorityIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, PriorityCode> mmPriorityIndicator = new MMBusinessAttribute<SecuritiesOrderParameters, PriorityCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -604,12 +655,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> PriorityCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getPriorityIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PriorityCode getValue(SecuritiesOrderParameters obj) {
+			return obj.getPriorityIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, PriorityCode value) {
+			obj.setPriorityIndicator(value);
 		}
 	};
 	protected CurrencyCode requestedDealCurrency;
@@ -638,7 +691,7 @@ public class SecuritiesOrderParameters {
 	 * definition} = "Currency in which a trade should be executed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedDealCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, CurrencyCode> mmRequestedDealCurrency = new MMBusinessAttribute<SecuritiesOrderParameters, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -650,12 +703,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getRequestedDealCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(SecuritiesOrderParameters obj) {
+			return obj.getRequestedDealCurrency();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, CurrencyCode value) {
+			obj.setRequestedDealCurrency(value);
 		}
 	};
 	protected TradingFloorOrderHandlingCode orderHandlingInstruction;
@@ -686,7 +741,7 @@ public class SecuritiesOrderParameters {
 	 * "Specifies instructions for order handling on the broker trading floor."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOrderHandlingInstruction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, TradingFloorOrderHandlingCode> mmOrderHandlingInstruction = new MMBusinessAttribute<SecuritiesOrderParameters, TradingFloorOrderHandlingCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -698,12 +753,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> TradingFloorOrderHandlingCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getOrderHandlingInstruction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TradingFloorOrderHandlingCode getValue(SecuritiesOrderParameters obj) {
+			return obj.getOrderHandlingInstruction();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, TradingFloorOrderHandlingCode value) {
+			obj.setOrderHandlingInstruction(value);
 		}
 	};
 	protected YesNoIndicator stockLocateRequired;
@@ -738,7 +795,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStockLocateRequired = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, YesNoIndicator> mmStockLocateRequired = new MMBusinessAttribute<SecuritiesOrderParameters, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -751,12 +808,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getStockLocateRequired", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderParameters obj) {
+			return obj.getStockLocateRequired();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, YesNoIndicator value) {
+			obj.setStockLocateRequired(value);
 		}
 	};
 	protected YesNoIndicator workingIndicator;
@@ -791,7 +850,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmWorkingIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, YesNoIndicator> mmWorkingIndicator = new MMBusinessAttribute<SecuritiesOrderParameters, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -804,12 +863,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getWorkingIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderParameters obj) {
+			return obj.getWorkingIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, YesNoIndicator value) {
+			obj.setWorkingIndicator(value);
 		}
 	};
 	protected BookPriorityIndicatorCode bookPriorityIndicator;
@@ -844,7 +905,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBookPriorityIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, BookPriorityIndicatorCode> mmBookPriorityIndicator = new MMBusinessAttribute<SecuritiesOrderParameters, BookPriorityIndicatorCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -857,12 +918,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> BookPriorityIndicatorCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getBookPriorityIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BookPriorityIndicatorCode getValue(SecuritiesOrderParameters obj) {
+			return obj.getBookPriorityIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, BookPriorityIndicatorCode value) {
+			obj.setBookPriorityIndicator(value);
 		}
 	};
 	protected Number maxPriceLevels;
@@ -893,7 +956,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaxPriceLevels = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, Number> mmMaxPriceLevels = new MMBusinessAttribute<SecuritiesOrderParameters, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -905,12 +968,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getMaxPriceLevels", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(SecuritiesOrderParameters obj) {
+			return obj.getMaxPriceLevels();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, Number value) {
+			obj.setMaxPriceLevels(value);
 		}
 	};
 	protected YesNoIndicator preTradeAnonymity;
@@ -942,7 +1007,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPreTradeAnonymity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, YesNoIndicator> mmPreTradeAnonymity = new MMBusinessAttribute<SecuritiesOrderParameters, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -954,12 +1019,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getPreTradeAnonymity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderParameters obj) {
+			return obj.getPreTradeAnonymity();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, YesNoIndicator value) {
+			obj.setPreTradeAnonymity(value);
 		}
 	};
 	protected GoodTillBookingInstructionCode goodTillBooking;
@@ -991,7 +1058,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGoodTillBooking = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, GoodTillBookingInstructionCode> mmGoodTillBooking = new MMBusinessAttribute<SecuritiesOrderParameters, GoodTillBookingInstructionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -1003,12 +1070,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> GoodTillBookingInstructionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getGoodTillBooking", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GoodTillBookingInstructionCode getValue(SecuritiesOrderParameters obj) {
+			return obj.getGoodTillBooking();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, GoodTillBookingInstructionCode value) {
+			obj.setGoodTillBooking(value);
 		}
 	};
 	protected YesNoIndicator manualOrderIndicator;
@@ -1040,7 +1109,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmManualOrderIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, YesNoIndicator> mmManualOrderIndicator = new MMBusinessAttribute<SecuritiesOrderParameters, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -1052,12 +1121,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getManualOrderIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderParameters obj) {
+			return obj.getManualOrderIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, YesNoIndicator value) {
+			obj.setManualOrderIndicator(value);
 		}
 	};
 	protected YesNoIndicator directedOrder;
@@ -1089,7 +1160,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDirectedOrder = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, YesNoIndicator> mmDirectedOrder = new MMBusinessAttribute<SecuritiesOrderParameters, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -1101,12 +1172,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getDirectedOrder", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderParameters obj) {
+			return obj.getDirectedOrder();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, YesNoIndicator value) {
+			obj.setDirectedOrder(value);
 		}
 	};
 	protected Max35Text receivedDepartment;
@@ -1136,7 +1209,7 @@ public class SecuritiesOrderParameters {
 	 * "Identifies the Broker / Dealer Department that first took the order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReceivedDepartment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, Max35Text> mmReceivedDepartment = new MMBusinessAttribute<SecuritiesOrderParameters, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -1148,12 +1221,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getReceivedDepartment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesOrderParameters obj) {
+			return obj.getReceivedDepartment();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, Max35Text value) {
+			obj.setReceivedDepartment(value);
 		}
 	};
 	protected CustomerHandlingInstructionsCode customerHandlingInstruction;
@@ -1185,7 +1260,7 @@ public class SecuritiesOrderParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCustomerHandlingInstruction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, CustomerHandlingInstructionsCode> mmCustomerHandlingInstruction = new MMBusinessAttribute<SecuritiesOrderParameters, CustomerHandlingInstructionsCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -1197,12 +1272,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> CustomerHandlingInstructionsCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getCustomerHandlingInstruction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CustomerHandlingInstructionsCode getValue(SecuritiesOrderParameters obj) {
+			return obj.getCustomerHandlingInstruction();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, CustomerHandlingInstructionsCode value) {
+			obj.setCustomerHandlingInstruction(value);
 		}
 	};
 	protected CommissionTypeV2Code processCode;
@@ -1232,7 +1309,7 @@ public class SecuritiesOrderParameters {
 	 * definition} = "Used to identify soft trades at order entry."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProcessCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderParameters, CommissionTypeV2Code> mmProcessCode = new MMBusinessAttribute<SecuritiesOrderParameters, CommissionTypeV2Code>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -1244,12 +1321,14 @@ public class SecuritiesOrderParameters {
 			simpleType_lazy = () -> CommissionTypeV2Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderParameters.class.getMethod("getProcessCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CommissionTypeV2Code getValue(SecuritiesOrderParameters obj) {
+			return obj.getProcessCode();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, CommissionTypeV2Code value) {
+			obj.setProcessCode(value);
 		}
 	};
 	protected SecuritiesOrder relatedSecuritiesOrder;
@@ -1286,7 +1365,7 @@ public class SecuritiesOrderParameters {
 	 * definition} = "Securities order for which parameters are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecuritiesOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderParameters, Optional<SecuritiesOrder>> mmRelatedSecuritiesOrder = new MMBusinessAssociationEnd<SecuritiesOrderParameters, Optional<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderParameters.mmObject();
@@ -1295,9 +1374,19 @@ public class SecuritiesOrderParameters {
 			definition = "Securities order for which parameters are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmOrderExecutionParameters;
+			opposite_lazy = () -> SecuritiesOrder.mmOrderExecutionParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesOrder> getValue(SecuritiesOrderParameters obj) {
+			return obj.getRelatedSecuritiesOrder();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderParameters obj, Optional<SecuritiesOrder> value) {
+			obj.setRelatedSecuritiesOrder(value.orElse(null));
 		}
 	};
 
@@ -1308,9 +1397,8 @@ public class SecuritiesOrderParameters {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesOrderParameters";
 				definition = "Parameters of the transfer of a financial instrument.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmRelatedOrder, com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumQuantityOrderParameters,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmMatchIncrementOrderParameters, com.tools20022.repository.entity.SecuritiesOrder.mmOrderExecutionParameters,
-						com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmOrder);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmRelatedOrder, SecuritiesQuantity.mmMinimumQuantityOrderParameters, SecuritiesQuantity.mmMatchIncrementOrderParameters,
+						SecuritiesOrder.mmOrderExecutionParameters, SecuritiesPegOrderInstruction.mmOrder);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrderParameters.mmMinimumQuantity, com.tools20022.repository.entity.SecuritiesOrderParameters.mmMatchIncrement,
 						com.tools20022.repository.entity.SecuritiesOrderParameters.mmPegInstructions, com.tools20022.repository.entity.SecuritiesOrderParameters.mmPreviousClosingPrice,
 						com.tools20022.repository.entity.SecuritiesOrderParameters.mmAutoRouting, com.tools20022.repository.entity.SecuritiesOrderParameters.mmCorporateActionOptionIndicator,
@@ -1337,7 +1425,7 @@ public class SecuritiesOrderParameters {
 		return minimumQuantity;
 	}
 
-	public SecuritiesOrderParameters setMinimumQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumQuantity) {
+	public SecuritiesOrderParameters setMinimumQuantity(SecuritiesQuantity minimumQuantity) {
 		this.minimumQuantity = Objects.requireNonNull(minimumQuantity);
 		return this;
 	}
@@ -1346,7 +1434,7 @@ public class SecuritiesOrderParameters {
 		return matchIncrement;
 	}
 
-	public SecuritiesOrderParameters setMatchIncrement(com.tools20022.repository.entity.SecuritiesQuantity matchIncrement) {
+	public SecuritiesOrderParameters setMatchIncrement(SecuritiesQuantity matchIncrement) {
 		this.matchIncrement = Objects.requireNonNull(matchIncrement);
 		return this;
 	}
@@ -1355,7 +1443,7 @@ public class SecuritiesOrderParameters {
 		return pegInstructions;
 	}
 
-	public SecuritiesOrderParameters setPegInstructions(com.tools20022.repository.entity.SecuritiesPegOrderInstruction pegInstructions) {
+	public SecuritiesOrderParameters setPegInstructions(SecuritiesPegOrderInstruction pegInstructions) {
 		this.pegInstructions = Objects.requireNonNull(pegInstructions);
 		return this;
 	}
@@ -1364,7 +1452,7 @@ public class SecuritiesOrderParameters {
 		return previousClosingPrice;
 	}
 
-	public SecuritiesOrderParameters setPreviousClosingPrice(com.tools20022.repository.entity.SecuritiesPricing previousClosingPrice) {
+	public SecuritiesOrderParameters setPreviousClosingPrice(SecuritiesPricing previousClosingPrice) {
 		this.previousClosingPrice = Objects.requireNonNull(previousClosingPrice);
 		return this;
 	}
@@ -1535,7 +1623,7 @@ public class SecuritiesOrderParameters {
 		return relatedSecuritiesOrder == null ? Optional.empty() : Optional.of(relatedSecuritiesOrder);
 	}
 
-	public SecuritiesOrderParameters setRelatedSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder relatedSecuritiesOrder) {
+	public SecuritiesOrderParameters setRelatedSecuritiesOrder(SecuritiesOrder relatedSecuritiesOrder) {
 		this.relatedSecuritiesOrder = relatedSecuritiesOrder;
 		return this;
 	}

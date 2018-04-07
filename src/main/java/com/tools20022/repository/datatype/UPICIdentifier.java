@@ -19,13 +19,13 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.datatype.UPICIdentifier.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * Universal Payment Identification Code (UPIC). Identifier used by the New York
@@ -61,14 +61,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "UPICIdentifier"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Universal Payment Identification Code (UPIC).  Identifier used by the New York Clearing House to mask confidential data, such as bank accounts and bank routing numbers. UPIC numbers remain with business customers, regardless of banking relationship changes."
+ * "Universal Payment Identification Code (UPIC). Identifier used by the New York Clearing House to mask confidential data, such as bank accounts and bank routing numbers. UPIC numbers remain with business customers, regardless of banking relationship changes."
  * </li>
  * </ul>
  */
-@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class UPICIdentifier {
 
 	final static private AtomicReference<MMIdentifierSet> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
 	protected String value;
 
 	final static public MMIdentifierSet mmObject() {
@@ -78,7 +80,7 @@ public class UPICIdentifier {
 				example = Arrays.asList("12345678");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UPICIdentifier";
-				definition = "Universal Payment Identification Code (UPIC).  Identifier used by the New York Clearing House to mask confidential data, such as bank accounts and bank routing numbers. UPIC numbers remain with business customers, regardless of banking relationship changes.";
+				definition = "Universal Payment Identification Code (UPIC). Identifier used by the New York Clearing House to mask confidential data, such as bank accounts and bank routing numbers. UPIC numbers remain with business customers, regardless of banking relationship changes.";
 				identificationScheme = "The Clearing House (formerly The New York Clearing House); Universal Payment Identification Code";
 				pattern = "[0-9]{8,17}";
 			}
@@ -86,24 +88,23 @@ public class UPICIdentifier {
 		return mmObject_lazy.get();
 	}
 
+	public UPICIdentifier() {
+	}
+
 	public UPICIdentifier(String value) {
+		this.value = value;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
 		this.value = value;
 	}
 
 	@Override
 	public String toString() {
-		return value;
-	}
-
-	protected static class InternalXmlAdapter extends XmlAdapter<String, UPICIdentifier> {
-		@Override
-		public UPICIdentifier unmarshal(String value) {
-			return new UPICIdentifier(value);
-		}
-
-		@Override
-		public String marshal(UPICIdentifier typedData) {
-			return typedData.value;
-		}
+		return value == null ? null : value.toString();
 	}
 }

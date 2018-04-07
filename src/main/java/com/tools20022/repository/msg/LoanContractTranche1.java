@@ -114,7 +114,7 @@ public class LoanContractTranche1 {
 	 * definition} = "Unique sequence number of the tranche."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTrancheNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContractTranche1, Number> mmTrancheNumber = new MMMessageAttribute<LoanContractTranche1, Number>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
 			isDerived = false;
@@ -125,6 +125,16 @@ public class LoanContractTranche1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
+		}
+
+		@Override
+		public Number getValue(LoanContractTranche1 obj) {
+			return obj.getTrancheNumber();
+		}
+
+		@Override
+		public void setValue(LoanContractTranche1 obj, Number value) {
+			obj.setTrancheNumber(value);
 		}
 	};
 	@XmlElement(name = "XpctdDt", required = true)
@@ -161,7 +171,7 @@ public class LoanContractTranche1 {
 	 * definition} = "Expected tranche payment date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContractTranche1, ISODate> mmExpectedDate = new MMMessageAttribute<LoanContractTranche1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Asset.mmMaturityDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
@@ -173,6 +183,16 @@ public class LoanContractTranche1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(LoanContractTranche1 obj) {
+			return obj.getExpectedDate();
+		}
+
+		@Override
+		public void setValue(LoanContractTranche1 obj, ISODate value) {
+			obj.setExpectedDate(value);
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -210,7 +230,7 @@ public class LoanContractTranche1 {
 	 * definition} = "Amount of the tranche as defined in the loan contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContractTranche1, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<LoanContractTranche1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> PaymentTerms.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
@@ -222,6 +242,16 @@ public class LoanContractTranche1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(LoanContractTranche1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(LoanContractTranche1 obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "DueDt")
@@ -258,7 +288,7 @@ public class LoanContractTranche1 {
 	 * definition} = "Loan tranche due date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContractTranche1, Optional<ISODate>> mmDueDate = new MMMessageAttribute<LoanContractTranche1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Asset.mmMaturityDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
@@ -270,6 +300,16 @@ public class LoanContractTranche1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(LoanContractTranche1 obj) {
+			return obj.getDueDate();
+		}
+
+		@Override
+		public void setValue(LoanContractTranche1 obj, Optional<ISODate> value) {
+			obj.setDueDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "DrtnCd")
@@ -302,7 +342,7 @@ public class LoanContractTranche1 {
 	 * definition} = "Loan tranche duration in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDurationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContractTranche1, Optional<Exact1NumericText>> mmDurationCode = new MMMessageAttribute<LoanContractTranche1, Optional<Exact1NumericText>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
 			isDerived = false;
@@ -313,6 +353,16 @@ public class LoanContractTranche1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact1NumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Exact1NumericText> getValue(LoanContractTranche1 obj) {
+			return obj.getDurationCode();
+		}
+
+		@Override
+		public void setValue(LoanContractTranche1 obj, Optional<Exact1NumericText> value) {
+			obj.setDurationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "LastTrchInd")
@@ -346,7 +396,7 @@ public class LoanContractTranche1 {
 	 * "Indicates whether this tranche is the last tranche of the full report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLastTrancheIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LoanContractTranche1, Optional<YesNoIndicator>> mmLastTrancheIndicator = new MMMessageAttribute<LoanContractTranche1, Optional<YesNoIndicator>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.LoanContractTranche1.mmObject();
 			isDerived = false;
@@ -357,6 +407,16 @@ public class LoanContractTranche1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(LoanContractTranche1 obj) {
+			return obj.getLastTrancheIndicator();
+		}
+
+		@Override
+		public void setValue(LoanContractTranche1 obj, Optional<YesNoIndicator> value) {
+			obj.setLastTrancheIndicator(value.orElse(null));
 		}
 	};
 

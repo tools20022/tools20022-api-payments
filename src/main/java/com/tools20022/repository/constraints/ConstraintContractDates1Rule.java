@@ -49,7 +49,7 @@ public class ConstraintContractDates1Rule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forAccountReport15 = new MMConstraint() {
+	public static final MMConstraint<AccountReport15> forAccountReport15 = new MMConstraint<AccountReport15>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContractDates1Rule ";
@@ -58,8 +58,8 @@ public class ConstraintContractDates1Rule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkAccountReport15((AccountReport15) obj);
+		public void executeValidator(AccountReport15 obj) throws Exception {
+			checkAccountReport15(obj);
 		}
 	};
 

@@ -18,11 +18,11 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
+import com.tools20022.repository.codeset.CreditQualityCode;
 import com.tools20022.repository.codeset.MoneyLaunderingCheckCode;
-import com.tools20022.repository.entity.RolePlayer;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -60,6 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * Party.mmLocation}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Party#mmCloseLinkSecurity
  * Party.mmCloseLinkSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Party#mmCreditQuality
+ * Party.mmCreditQuality}</li>
  * </ul>
  * </li>
  * <li>
@@ -175,6 +177,9 @@ public class Party extends RolePlayer {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PartyIdentification77#mmContactDetails
 	 * PartyIdentification77.mmContactDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentification125#mmContactDetails
+	 * PartyIdentification125.mmContactDetails}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -193,10 +198,10 @@ public class Party extends RolePlayer {
 	 * "Number, physical or virtual address, used for communication."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmContactPoint = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, List<ContactPoint>> mmContactPoint = new MMBusinessAssociationEnd<Party, List<ContactPoint>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PartyIdentification43.mmContactDetails, PartyIdentification40.mmContactDetails, PartyIdentification42.mmContactDetails, ContactDetails3.mmPreferredMethod,
-					PartyIdentification58.mmContactDetails, AccountTax1.mmNonResidenceCountry, PartyIdentification77.mmContactDetails);
+					PartyIdentification58.mmContactDetails, AccountTax1.mmNonResidenceCountry, PartyIdentification77.mmContactDetails, PartyIdentification125.mmContactDetails);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -207,8 +212,18 @@ public class Party extends RolePlayer {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
 		}
+
+		@Override
+		public List<ContactPoint> getValue(Party obj) {
+			return obj.getContactPoint();
+		}
+
+		@Override
+		public void setValue(Party obj, List<ContactPoint> value) {
+			obj.setContactPoint(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.PartyIdentificationInformation> identification;
+	protected List<PartyIdentificationInformation> identification;
 	/**
 	 * 
 	 <p>
@@ -265,24 +280,6 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.PartyAndCertificate3#mmParty
 	 * PartyAndCertificate3.mmParty}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmInitiatingParty
-	 * TransactionParties3.mmInitiatingParty}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmDebtor
-	 * TransactionParties3.mmDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmUltimateDebtor
-	 * TransactionParties3.mmUltimateDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmCreditor
-	 * TransactionParties3.mmCreditor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmUltimateCreditor
-	 * TransactionParties3.mmUltimateCreditor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmTradingParty
-	 * TransactionParties3.mmTradingParty}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GroupHeader48#mmInitiatingParty
 	 * GroupHeader48.mmInitiatingParty}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Cheque7#mmChequeFrom
@@ -299,15 +296,6 @@ public class Party extends RolePlayer {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction4#mmThirdReimbursementAgent
 	 * SettlementInstruction4.mmThirdReimbursementAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader56#mmInitiatingParty
-	 * GroupHeader56.mmInitiatingParty}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentReversalReason7#mmOriginator
-	 * PaymentReversalReason7.mmOriginator}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GroupHeader52#mmInitiatingParty
-	 * GroupHeader52.mmInitiatingParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation9#mmOriginator
 	 * StatusReasonInformation9.mmOriginator}</li>
@@ -330,12 +318,6 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.IdentificationInformation2#mmParty
 	 * IdentificationInformation2.mmParty}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReportingRequest3#mmAccountOwner
-	 * ReportingRequest3.mmAccountOwner}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CancellationStatusReason2#mmOriginator
-	 * CancellationStatusReason2.mmOriginator}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation15#mmUltimateDebtor
 	 * DirectDebitTransactionInformation15.mmUltimateDebtor}</li>
 	 * <li>
@@ -357,21 +339,6 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.TradeParty2#mmPartyIdentification
 	 * TradeParty2.mmPartyIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmUltimateDebtor
-	 * CreditTransferTransaction23.mmUltimateDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmDebtor
-	 * CreditTransferTransaction23.mmDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmDebtorAgent
-	 * CreditTransferTransaction23.mmDebtorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmCreditor
-	 * CreditTransferTransaction23.mmCreditor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmUltimateCreditor
-	 * CreditTransferTransaction23.mmUltimateCreditor}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AccountNotification13#mmAccountOwner
 	 * AccountNotification13.mmAccountOwner}</li>
 	 * <li>
@@ -381,47 +348,11 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.AccountNotification13#mmDebtor
 	 * AccountNotification13.mmDebtor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmUltimateDebtor
-	 * CreditTransferTransaction25.mmUltimateDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmInitiatingParty
-	 * CreditTransferTransaction25.mmInitiatingParty}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmDebtor
-	 * CreditTransferTransaction25.mmDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmDebtorAgent
-	 * CreditTransferTransaction25.mmDebtorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmCreditor
-	 * CreditTransferTransaction25.mmCreditor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmUltimateCreditor
-	 * CreditTransferTransaction25.mmUltimateCreditor}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalNotificationReference8#mmAccountOwner
 	 * OriginalNotificationReference8.mmAccountOwner}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalNotificationReference8#mmDebtor
 	 * OriginalNotificationReference8.mmDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmUltimateDebtor
-	 * CreditTransferTransaction24.mmUltimateDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmInitiatingParty
-	 * CreditTransferTransaction24.mmInitiatingParty}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmDebtor
-	 * CreditTransferTransaction24.mmDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmDebtorAgent
-	 * CreditTransferTransaction24.mmDebtorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmCreditor
-	 * CreditTransferTransaction24.mmCreditor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24#mmUltimateCreditor
-	 * CreditTransferTransaction24.mmUltimateCreditor}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction26#mmUltimateDebtor
 	 * CreditTransferTransaction26.mmUltimateDebtor}</li>
@@ -461,6 +392,11 @@ public class Party extends RolePlayer {
 	 * <li>{@linkplain com.tools20022.repository.msg.NotificationItem6#mmDebtor
 	 * NotificationItem6.mmDebtor}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Organisation20#mmMainMandateHolder
+	 * Organisation20.mmMainMandateHolder}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Organisation20#mmSender
+	 * Organisation20.mmSender}</li>
+	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction21#mmCreditor
 	 * PaymentInstruction21.mmCreditor}</li>
 	 * <li>
@@ -488,9 +424,6 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation21#mmUltimateDebtor
 	 * DirectDebitTransactionInformation21.mmUltimateDebtor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentCancellationReason3#mmOriginator
-	 * PaymentCancellationReason3.mmOriginator}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.Mandate10#mmCreditorSchemeIdentification
 	 * Mandate10.mmCreditorSchemeIdentification}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Mandate10#mmCreditor
@@ -502,12 +435,6 @@ public class Party extends RolePlayer {
 	 * Mandate10.mmDebtor}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Mandate10#mmUltimateDebtor
 	 * Mandate10.mmUltimateDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmDebtor
-	 * RequestedModification6.mmDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmCreditor
-	 * RequestedModification6.mmCreditor}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction23#mmDebtor
 	 * PaymentInstruction23.mmDebtor}</li>
@@ -532,27 +459,6 @@ public class Party extends RolePlayer {
 	 * Mandate9.mmDebtor}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Mandate9#mmUltimateDebtor
 	 * Mandate9.mmUltimateDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmCreditorSchemeIdentification
-	 * OriginalTransactionReference24.mmCreditorSchemeIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmUltimateDebtor
-	 * OriginalTransactionReference24.mmUltimateDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmDebtor
-	 * OriginalTransactionReference24.mmDebtor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmDebtorAgent
-	 * OriginalTransactionReference24.mmDebtorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmCreditorAgent
-	 * OriginalTransactionReference24.mmCreditorAgent}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmCreditor
-	 * OriginalTransactionReference24.mmCreditor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference24#mmUltimateCreditor
-	 * OriginalTransactionReference24.mmUltimateCreditor}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInformation7#mmDebtor
 	 * OriginalPaymentInformation7.mmDebtor}</li>
@@ -617,26 +523,211 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails11#mmOriginalDebtor
 	 * AmendmentInformationDetails11.mmOriginalDebtor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction79#mmAssigner
-	 * PaymentTransaction79.mmAssigner}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24#mmDebtor
+	 * PaymentInstruction24.mmDebtor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction79#mmAssignee
-	 * PaymentTransaction79.mmAssignee}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24#mmUltimateDebtor
+	 * PaymentInstruction24.mmUltimateDebtor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmUltimateDebtor
-	 * PaymentComplementaryInformation6.mmUltimateDebtor}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction27#mmUltimateDebtor
+	 * CreditTransferTransaction27.mmUltimateDebtor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmDebtor
-	 * PaymentComplementaryInformation6.mmDebtor}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction27#mmCreditor
+	 * CreditTransferTransaction27.mmCreditor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmCreditorAgent
-	 * PaymentComplementaryInformation6.mmCreditorAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction27#mmUltimateCreditor
+	 * CreditTransferTransaction27.mmUltimateCreditor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmCreditor
-	 * PaymentComplementaryInformation6.mmCreditor}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmUltimateDebtor
+	 * PaymentComplementaryInformation7.mmUltimateDebtor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6#mmUltimateCreditor
-	 * PaymentComplementaryInformation6.mmUltimateCreditor}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmDebtor
+	 * PaymentComplementaryInformation7.mmDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmCreditorAgent
+	 * PaymentComplementaryInformation7.mmCreditorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmCreditor
+	 * PaymentComplementaryInformation7.mmCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7#mmUltimateCreditor
+	 * PaymentComplementaryInformation7.mmUltimateCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmUltimateDebtor
+	 * CreditTransferTransaction31.mmUltimateDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmDebtor
+	 * CreditTransferTransaction31.mmDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmDebtorAgent
+	 * CreditTransferTransaction31.mmDebtorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmCreditor
+	 * CreditTransferTransaction31.mmCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmUltimateCreditor
+	 * CreditTransferTransaction31.mmUltimateCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmDebtor
+	 * RequestedModification7.mmDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmCreditor
+	 * RequestedModification7.mmCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReportingRequest4#mmAccountOwner
+	 * ReportingRequest4.mmAccountOwner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction90#mmAssigner
+	 * PaymentTransaction90.mmAssigner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction90#mmAssignee
+	 * PaymentTransaction90.mmAssignee}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties4#mmInitiatingParty
+	 * TransactionParties4.mmInitiatingParty}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties4#mmDebtor
+	 * TransactionParties4.mmDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties4#mmUltimateDebtor
+	 * TransactionParties4.mmUltimateDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties4#mmCreditor
+	 * TransactionParties4.mmCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties4#mmUltimateCreditor
+	 * TransactionParties4.mmUltimateCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties4#mmTradingParty
+	 * TransactionParties4.mmTradingParty}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction85#mmAssigner
+	 * PaymentTransaction85.mmAssigner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction85#mmAssignee
+	 * PaymentTransaction85.mmAssignee}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmCreditorSchemeIdentification
+	 * OriginalTransactionReference27.mmCreditorSchemeIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmUltimateDebtor
+	 * OriginalTransactionReference27.mmUltimateDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmDebtor
+	 * OriginalTransactionReference27.mmDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmDebtorAgent
+	 * OriginalTransactionReference27.mmDebtorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmCreditorAgent
+	 * OriginalTransactionReference27.mmCreditorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmCreditor
+	 * OriginalTransactionReference27.mmCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalTransactionReference27#mmUltimateCreditor
+	 * OriginalTransactionReference27.mmUltimateCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CancellationStatusReason3#mmOriginator
+	 * CancellationStatusReason3.mmOriginator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ModificationStatusReason1#mmOriginator
+	 * ModificationStatusReason1.mmOriginator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmUltimateDebtor
+	 * TransactionParties5.mmUltimateDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmDebtor
+	 * TransactionParties5.mmDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmInitiatingParty
+	 * TransactionParties5.mmInitiatingParty}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmDebtorAgent
+	 * TransactionParties5.mmDebtorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmCreditor
+	 * TransactionParties5.mmCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionParties5#mmUltimateCreditor
+	 * TransactionParties5.mmUltimateCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmUltimateDebtor
+	 * CreditTransferTransaction32.mmUltimateDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmInitiatingParty
+	 * CreditTransferTransaction32.mmInitiatingParty}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmDebtor
+	 * CreditTransferTransaction32.mmDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmDebtorAgent
+	 * CreditTransferTransaction32.mmDebtorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmCreditor
+	 * CreditTransferTransaction32.mmCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32#mmUltimateCreditor
+	 * CreditTransferTransaction32.mmUltimateCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmUltimateDebtor
+	 * CreditTransferTransaction30.mmUltimateDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmInitiatingParty
+	 * CreditTransferTransaction30.mmInitiatingParty}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmDebtor
+	 * CreditTransferTransaction30.mmDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmDebtorAgent
+	 * CreditTransferTransaction30.mmDebtorAgent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmCreditor
+	 * CreditTransferTransaction30.mmCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30#mmUltimateCreditor
+	 * CreditTransferTransaction30.mmUltimateCreditor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation14#mmInvoicer
+	 * StructuredRemittanceInformation14.mmInvoicer}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CashAccount36#mmOwner
+	 * CashAccount36.mmOwner}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Case4#mmCreator
+	 * Case4.mmCreator}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CaseAssignment4#mmAssigner
+	 * CaseAssignment4.mmAssigner}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CaseAssignment4#mmAssignee
+	 * CaseAssignment4.mmAssignee}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader74#mmInitiatingParty
+	 * GroupHeader74.mmInitiatingParty}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentCancellationReason4#mmOriginator
+	 * PaymentCancellationReason4.mmOriginator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GroupHeader75#mmInitiatingParty
+	 * GroupHeader75.mmInitiatingParty}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation15#mmInvoicer
+	 * StructuredRemittanceInformation15.mmInvoicer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TaxInformation7#mmUltimateDebtor
+	 * TaxInformation7.mmUltimateDebtor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Garnishment2#mmGarnishmentAdministrator
+	 * Garnishment2.mmGarnishmentAdministrator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation11#mmOriginator
+	 * StatusReasonInformation11.mmOriginator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentReversalReason8#mmOriginator
+	 * PaymentReversalReason8.mmOriginator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalCreditorSchemeIdentification
+	 * AmendmentInformationDetails12.mmOriginalCreditorSchemeIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalDebtor
+	 * AmendmentInformationDetails12.mmOriginalDebtor}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -654,45 +745,61 @@ public class Party extends RolePlayer {
 	 * definition} = "Specific identification assigned to a party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, List<PartyIdentificationInformation>> mmIdentification = new MMBusinessAssociationEnd<Party, List<PartyIdentificationInformation>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccount25.mmOwner, PartyAndSignature2.mmParty, Organisation12.mmRepresentativeOfficer, Organisation12.mmTreasuryManager, Organisation12.mmMainMandateHolder,
 					Organisation12.mmLegalRepresentative, OrganisationModification1.mmRepresentativeOfficer, OrganisationModification1.mmTreasuryManager, OrganisationModification1.mmMainMandateHolder,
-					OrganisationModification1.mmLegalRepresentative, PartyAndCertificate2.mmParty, PartyAndCertificate3.mmParty, TransactionParties3.mmInitiatingParty, TransactionParties3.mmDebtor, TransactionParties3.mmUltimateDebtor,
-					TransactionParties3.mmCreditor, TransactionParties3.mmUltimateCreditor, TransactionParties3.mmTradingParty, GroupHeader48.mmInitiatingParty, Cheque7.mmChequeFrom, GroupHeader55.mmInitiatingParty,
-					CaseAssignment3.mmAssigner, CaseAssignment3.mmAssignee, Case3.mmCreator, SettlementInstruction4.mmThirdReimbursementAgent, GroupHeader56.mmInitiatingParty, PaymentReversalReason7.mmOriginator,
-					GroupHeader52.mmInitiatingParty, StatusReasonInformation9.mmOriginator, GroupHeader47.mmInitiatingParty, MandateAmendmentReason1.mmOriginator, PaymentCancellationReason1.mmOriginator, GroupHeader46.mmInitiatingParty,
-					GroupHeader45.mmInitiatingParty, IdentificationInformation2.mmParty, ReportingRequest3.mmAccountOwner, CancellationStatusReason2.mmOriginator, DirectDebitTransactionInformation15.mmUltimateDebtor,
-					DirectDebitTransactionInformation15.mmDebtor, GroupHeader62.mmInitiatingParty, Garnishment1.mmGarnishmentAdministrator, TransactionReferences4.mmCreditorSchemeIdentification, TaxInformation4.mmUltimateDebtor,
-					TradeParty2.mmPartyIdentification, CreditTransferTransaction23.mmUltimateDebtor, CreditTransferTransaction23.mmDebtor, CreditTransferTransaction23.mmDebtorAgent, CreditTransferTransaction23.mmCreditor,
-					CreditTransferTransaction23.mmUltimateCreditor, AccountNotification13.mmAccountOwner, AccountNotification13.mmAccountServicer, AccountNotification13.mmDebtor, CreditTransferTransaction25.mmUltimateDebtor,
-					CreditTransferTransaction25.mmInitiatingParty, CreditTransferTransaction25.mmDebtor, CreditTransferTransaction25.mmDebtorAgent, CreditTransferTransaction25.mmCreditor, CreditTransferTransaction25.mmUltimateCreditor,
-					OriginalNotificationReference8.mmAccountOwner, OriginalNotificationReference8.mmDebtor, CreditTransferTransaction24.mmUltimateDebtor, CreditTransferTransaction24.mmInitiatingParty, CreditTransferTransaction24.mmDebtor,
-					CreditTransferTransaction24.mmDebtorAgent, CreditTransferTransaction24.mmCreditor, CreditTransferTransaction24.mmUltimateCreditor, CreditTransferTransaction26.mmUltimateDebtor, CreditTransferTransaction26.mmCreditor,
+					OrganisationModification1.mmLegalRepresentative, PartyAndCertificate2.mmParty, PartyAndCertificate3.mmParty, GroupHeader48.mmInitiatingParty, Cheque7.mmChequeFrom, GroupHeader55.mmInitiatingParty,
+					CaseAssignment3.mmAssigner, CaseAssignment3.mmAssignee, Case3.mmCreator, SettlementInstruction4.mmThirdReimbursementAgent, StatusReasonInformation9.mmOriginator, GroupHeader47.mmInitiatingParty,
+					MandateAmendmentReason1.mmOriginator, PaymentCancellationReason1.mmOriginator, GroupHeader46.mmInitiatingParty, GroupHeader45.mmInitiatingParty, IdentificationInformation2.mmParty,
+					DirectDebitTransactionInformation15.mmUltimateDebtor, DirectDebitTransactionInformation15.mmDebtor, GroupHeader62.mmInitiatingParty, Garnishment1.mmGarnishmentAdministrator,
+					TransactionReferences4.mmCreditorSchemeIdentification, TaxInformation4.mmUltimateDebtor, TradeParty2.mmPartyIdentification, AccountNotification13.mmAccountOwner, AccountNotification13.mmAccountServicer,
+					AccountNotification13.mmDebtor, OriginalNotificationReference8.mmAccountOwner, OriginalNotificationReference8.mmDebtor, CreditTransferTransaction26.mmUltimateDebtor, CreditTransferTransaction26.mmCreditor,
 					CreditTransferTransaction26.mmUltimateCreditor, StructuredRemittanceInformation13.mmInvoicer, OriginalItemReference4.mmAccountOwner, OriginalItemReference4.mmDebtor, CreditTransferTransaction22.mmUltimateDebtor,
 					CreditTransferTransaction22.mmCreditor, CreditTransferTransaction22.mmUltimateCreditor, OriginalNotificationReference7.mmAccountOwner, OriginalNotificationReference7.mmDebtor, NotificationItem6.mmAccountOwner,
-					NotificationItem6.mmDebtor, PaymentInstruction21.mmCreditor, PaymentInstruction21.mmCreditorAgent, PaymentInstruction21.mmUltimateCreditor, PaymentInstruction21.mmCreditorSchemeIdentification,
-					DirectDebitTransactionInformation21.mmCreditor, DirectDebitTransactionInformation21.mmUltimateCreditor, DirectDebitTransactionInformation21.mmInitiatingParty, DirectDebitTransactionInformation21.mmDebtor,
-					DirectDebitTransactionInformation21.mmUltimateDebtor, PaymentCancellationReason3.mmOriginator, Mandate10.mmCreditorSchemeIdentification, Mandate10.mmCreditor, Mandate10.mmUltimateCreditor, Mandate10.mmDebtor,
-					Mandate10.mmUltimateDebtor, RequestedModification6.mmDebtor, RequestedModification6.mmCreditor, PaymentInstruction23.mmDebtor, PaymentInstruction23.mmUltimateDebtor, PaymentInstruction22.mmDebtor,
-					PaymentInstruction22.mmUltimateDebtor, Mandate9.mmCreditorSchemeIdentification, Mandate9.mmCreditor, Mandate9.mmUltimateCreditor, Mandate9.mmDebtor, Mandate9.mmUltimateDebtor,
-					OriginalTransactionReference24.mmCreditorSchemeIdentification, OriginalTransactionReference24.mmUltimateDebtor, OriginalTransactionReference24.mmDebtor, OriginalTransactionReference24.mmDebtorAgent,
-					OriginalTransactionReference24.mmCreditorAgent, OriginalTransactionReference24.mmCreditor, OriginalTransactionReference24.mmUltimateCreditor, OriginalPaymentInformation7.mmDebtor, OriginalPaymentInformation7.mmCreditor,
+					NotificationItem6.mmDebtor, Organisation20.mmMainMandateHolder, Organisation20.mmSender, PaymentInstruction21.mmCreditor, PaymentInstruction21.mmCreditorAgent, PaymentInstruction21.mmUltimateCreditor,
+					PaymentInstruction21.mmCreditorSchemeIdentification, DirectDebitTransactionInformation21.mmCreditor, DirectDebitTransactionInformation21.mmUltimateCreditor, DirectDebitTransactionInformation21.mmInitiatingParty,
+					DirectDebitTransactionInformation21.mmDebtor, DirectDebitTransactionInformation21.mmUltimateDebtor, Mandate10.mmCreditorSchemeIdentification, Mandate10.mmCreditor, Mandate10.mmUltimateCreditor, Mandate10.mmDebtor,
+					Mandate10.mmUltimateDebtor, PaymentInstruction23.mmDebtor, PaymentInstruction23.mmUltimateDebtor, PaymentInstruction22.mmDebtor, PaymentInstruction22.mmUltimateDebtor, Mandate9.mmCreditorSchemeIdentification,
+					Mandate9.mmCreditor, Mandate9.mmUltimateCreditor, Mandate9.mmDebtor, Mandate9.mmUltimateDebtor, OriginalPaymentInformation7.mmDebtor, OriginalPaymentInformation7.mmCreditor,
 					OriginalTransactionReference26.mmUltimateDebtor, OriginalTransactionReference26.mmDebtor, OriginalTransactionReference26.mmCreditorAgent, OriginalTransactionReference26.mmCreditor,
 					OriginalTransactionReference26.mmUltimateCreditor, Mandate11.mmCreditorSchemeIdentification, Mandate11.mmCreditor, Mandate11.mmUltimateCreditor, Mandate11.mmDebtor, Mandate11.mmUltimateDebtor,
 					DirectDebitTransactionInformation22.mmUltimateCreditor, DirectDebitTransactionInformation22.mmDebtor, DirectDebitTransactionInformation22.mmUltimateDebtor, DirectDebitTransaction9.mmCreditorSchemeIdentification,
 					Mandate8.mmCreditorSchemeIdentification, Mandate8.mmCreditor, Mandate8.mmUltimateCreditor, Mandate8.mmDebtor, Mandate8.mmUltimateDebtor, AmendmentInformationDetails11.mmOriginalCreditorSchemeIdentification,
-					AmendmentInformationDetails11.mmOriginalDebtor, PaymentTransaction79.mmAssigner, PaymentTransaction79.mmAssignee, PaymentComplementaryInformation6.mmUltimateDebtor, PaymentComplementaryInformation6.mmDebtor,
-					PaymentComplementaryInformation6.mmCreditorAgent, PaymentComplementaryInformation6.mmCreditor, PaymentComplementaryInformation6.mmUltimateCreditor);
+					AmendmentInformationDetails11.mmOriginalDebtor, PaymentInstruction24.mmDebtor, PaymentInstruction24.mmUltimateDebtor, CreditTransferTransaction27.mmUltimateDebtor, CreditTransferTransaction27.mmCreditor,
+					CreditTransferTransaction27.mmUltimateCreditor, PaymentComplementaryInformation7.mmUltimateDebtor, PaymentComplementaryInformation7.mmDebtor, PaymentComplementaryInformation7.mmCreditorAgent,
+					PaymentComplementaryInformation7.mmCreditor, PaymentComplementaryInformation7.mmUltimateCreditor, CreditTransferTransaction31.mmUltimateDebtor, CreditTransferTransaction31.mmDebtor,
+					CreditTransferTransaction31.mmDebtorAgent, CreditTransferTransaction31.mmCreditor, CreditTransferTransaction31.mmUltimateCreditor, RequestedModification7.mmDebtor, RequestedModification7.mmCreditor,
+					ReportingRequest4.mmAccountOwner, PaymentTransaction90.mmAssigner, PaymentTransaction90.mmAssignee, TransactionParties4.mmInitiatingParty, TransactionParties4.mmDebtor, TransactionParties4.mmUltimateDebtor,
+					TransactionParties4.mmCreditor, TransactionParties4.mmUltimateCreditor, TransactionParties4.mmTradingParty, PaymentTransaction85.mmAssigner, PaymentTransaction85.mmAssignee,
+					OriginalTransactionReference27.mmCreditorSchemeIdentification, OriginalTransactionReference27.mmUltimateDebtor, OriginalTransactionReference27.mmDebtor, OriginalTransactionReference27.mmDebtorAgent,
+					OriginalTransactionReference27.mmCreditorAgent, OriginalTransactionReference27.mmCreditor, OriginalTransactionReference27.mmUltimateCreditor, CancellationStatusReason3.mmOriginator,
+					ModificationStatusReason1.mmOriginator, TransactionParties5.mmUltimateDebtor, TransactionParties5.mmDebtor, TransactionParties5.mmInitiatingParty, TransactionParties5.mmDebtorAgent, TransactionParties5.mmCreditor,
+					TransactionParties5.mmUltimateCreditor, CreditTransferTransaction32.mmUltimateDebtor, CreditTransferTransaction32.mmInitiatingParty, CreditTransferTransaction32.mmDebtor, CreditTransferTransaction32.mmDebtorAgent,
+					CreditTransferTransaction32.mmCreditor, CreditTransferTransaction32.mmUltimateCreditor, CreditTransferTransaction30.mmUltimateDebtor, CreditTransferTransaction30.mmInitiatingParty, CreditTransferTransaction30.mmDebtor,
+					CreditTransferTransaction30.mmDebtorAgent, CreditTransferTransaction30.mmCreditor, CreditTransferTransaction30.mmUltimateCreditor, StructuredRemittanceInformation14.mmInvoicer, CashAccount36.mmOwner, Case4.mmCreator,
+					CaseAssignment4.mmAssigner, CaseAssignment4.mmAssignee, GroupHeader74.mmInitiatingParty, PaymentCancellationReason4.mmOriginator, GroupHeader75.mmInitiatingParty, StructuredRemittanceInformation15.mmInvoicer,
+					TaxInformation7.mmUltimateDebtor, Garnishment2.mmGarnishmentAdministrator, StatusReasonInformation11.mmOriginator, PaymentReversalReason8.mmOriginator,
+					AmendmentInformationDetails12.mmOriginalCreditorSchemeIdentification, AmendmentInformationDetails12.mmOriginalDebtor);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Specific identification assigned to a party.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmIdentifiedParty;
+			opposite_lazy = () -> PartyIdentificationInformation.mmIdentifiedParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
+			type_lazy = () -> PartyIdentificationInformation.mmObject();
+		}
+
+		@Override
+		public List<PartyIdentificationInformation> getValue(Party obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Party obj, List<PartyIdentificationInformation> value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected MoneyLaunderingCheckCode moneyLaunderingCheck;
@@ -723,7 +830,7 @@ public class Party extends RolePlayer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMoneyLaunderingCheck = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Party, MoneyLaunderingCheckCode> mmMoneyLaunderingCheck = new MMBusinessAttribute<Party, MoneyLaunderingCheckCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -735,12 +842,14 @@ public class Party extends RolePlayer {
 			simpleType_lazy = () -> MoneyLaunderingCheckCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Party.class.getMethod("getMoneyLaunderingCheck", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MoneyLaunderingCheckCode getValue(Party obj) {
+			return obj.getMoneyLaunderingCheck();
+		}
+
+		@Override
+		public void setValue(Party obj, MoneyLaunderingCheckCode value) {
+			obj.setMoneyLaunderingCheck(value);
 		}
 	};
 	protected Tax taxationConditions;
@@ -777,7 +886,7 @@ public class Party extends RolePlayer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTaxationConditions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, Tax> mmTaxationConditions = new MMBusinessAssociationEnd<Party, Tax>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -786,9 +895,19 @@ public class Party extends RolePlayer {
 			definition = "Taxation parameters which apply to an individual person or to an organisation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmTaxableParty;
+			opposite_lazy = () -> Tax.mmTaxableParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
+			type_lazy = () -> Tax.mmObject();
+		}
+
+		@Override
+		public Tax getValue(Party obj) {
+			return obj.getTaxationConditions();
+		}
+
+		@Override
+		public void setValue(Party obj, Tax value) {
+			obj.setTaxationConditions(value);
 		}
 	};
 	protected Location domicile;
@@ -825,7 +944,7 @@ public class Party extends RolePlayer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDomicile = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, com.tools20022.repository.entity.Location> mmDomicile = new MMBusinessAssociationEnd<Party, com.tools20022.repository.entity.Location>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -837,6 +956,16 @@ public class Party extends RolePlayer {
 			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmDomiciledParty;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Location getValue(Party obj) {
+			return obj.getDomicile();
+		}
+
+		@Override
+		public void setValue(Party obj, com.tools20022.repository.entity.Location value) {
+			obj.setDomicile(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Location> residence;
@@ -873,7 +1002,7 @@ public class Party extends RolePlayer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmResidence = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, List<Location>> mmResidence = new MMBusinessAssociationEnd<Party, List<Location>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -884,6 +1013,16 @@ public class Party extends RolePlayer {
 			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmParty;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+		}
+
+		@Override
+		public List<Location> getValue(Party obj) {
+			return obj.getResidence();
+		}
+
+		@Override
+		public void setValue(Party obj, List<Location> value) {
+			obj.setResidence(value);
 		}
 	};
 	protected PowerOfAttorney powerOfAttorney;
@@ -919,7 +1058,7 @@ public class Party extends RolePlayer {
 	 * definition} = "Power of attorney which is held by the party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPowerOfAttorney = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, Optional<PowerOfAttorney>> mmPowerOfAttorney = new MMBusinessAssociationEnd<Party, Optional<PowerOfAttorney>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -931,6 +1070,16 @@ public class Party extends RolePlayer {
 			opposite_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmAuthorisedParty;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
+		}
+
+		@Override
+		public Optional<PowerOfAttorney> getValue(Party obj) {
+			return obj.getPowerOfAttorney();
+		}
+
+		@Override
+		public void setValue(Party obj, Optional<PowerOfAttorney> value) {
+			obj.setPowerOfAttorney(value.orElse(null));
 		}
 	};
 	protected Location location;
@@ -965,7 +1114,7 @@ public class Party extends RolePlayer {
 	 * definition} = "Location of the taxable party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, com.tools20022.repository.entity.Location> mmLocation = new MMBusinessAssociationEnd<Party, com.tools20022.repository.entity.Location>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -977,6 +1126,16 @@ public class Party extends RolePlayer {
 			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmTaxableParty;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Location getValue(Party obj) {
+			return obj.getLocation();
+		}
+
+		@Override
+		public void setValue(Party obj, com.tools20022.repository.entity.Location value) {
+			obj.setLocation(value);
 		}
 	};
 	protected Security closeLinkSecurity;
@@ -1012,7 +1171,7 @@ public class Party extends RolePlayer {
 	 * "Security for which a close link with a party is identified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCloseLinkSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, Security> mmCloseLinkSecurity = new MMBusinessAssociationEnd<Party, Security>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -1021,9 +1180,67 @@ public class Party extends RolePlayer {
 			definition = "Security for which a close link with a party is identified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmCloseLink;
+			opposite_lazy = () -> Security.mmCloseLink;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Security getValue(Party obj) {
+			return obj.getCloseLinkSecurity();
+		}
+
+		@Override
+		public void setValue(Party obj, Security value) {
+			obj.setCloseLinkSecurity(value);
+		}
+	};
+	protected CreditQualityCode creditQuality;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
+	 * simpleType} =
+	 * {@linkplain com.tools20022.repository.codeset.CreditQualityCode
+	 * CreditQualityCode}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} = {@linkplain com.tools20022.repository.entity.Party
+	 * Party}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "CreditQuality"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Credit quality for the clearing member."</li>
+	 * </ul>
+	 */
+	public static final MMBusinessAttribute<Party, CreditQualityCode> mmCreditQuality = new MMBusinessAttribute<Party, CreditQualityCode>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "CreditQuality";
+			definition = "Credit quality for the clearing member.";
+			maxOccurs = 1;
+			minOccurs = 1;
+			simpleType_lazy = () -> CreditQualityCode.mmObject();
+		}
+
+		@Override
+		public CreditQualityCode getValue(Party obj) {
+			return obj.getCreditQuality();
+		}
+
+		@Override
+		public void setValue(Party obj, CreditQualityCode value) {
+			obj.setCreditQuality(value);
 		}
 	};
 
@@ -1034,15 +1251,16 @@ public class Party extends RolePlayer {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Party";
 				definition = "Entity involved in an activity.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmCloseLink, com.tools20022.repository.entity.ContactPoint.mmRelatedParty,
-						com.tools20022.repository.entity.PartyIdentificationInformation.mmIdentifiedParty, com.tools20022.repository.entity.Location.mmDomiciledParty, com.tools20022.repository.entity.Location.mmParty,
-						com.tools20022.repository.entity.Location.mmTaxableParty, com.tools20022.repository.entity.Tax.mmTaxableParty, com.tools20022.repository.entity.PowerOfAttorney.mmAuthorisedParty);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmCloseLink, com.tools20022.repository.entity.ContactPoint.mmRelatedParty, PartyIdentificationInformation.mmIdentifiedParty,
+						com.tools20022.repository.entity.Location.mmDomiciledParty, com.tools20022.repository.entity.Location.mmParty, com.tools20022.repository.entity.Location.mmTaxableParty, Tax.mmTaxableParty,
+						com.tools20022.repository.entity.PowerOfAttorney.mmAuthorisedParty);
 				derivationElement_lazy = () -> Arrays.asList(PartyAndAuthorisation1.mmPartyOrGroup, PartyAndAuthorisation3.mmPartyOrGroup);
 				subType_lazy = () -> Arrays.asList(Organisation.mmObject(), Person.mmObject());
 				superType_lazy = () -> RolePlayer.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Party.mmContactPoint, com.tools20022.repository.entity.Party.mmIdentification, com.tools20022.repository.entity.Party.mmMoneyLaunderingCheck,
 						com.tools20022.repository.entity.Party.mmTaxationConditions, com.tools20022.repository.entity.Party.mmDomicile, com.tools20022.repository.entity.Party.mmResidence,
-						com.tools20022.repository.entity.Party.mmPowerOfAttorney, com.tools20022.repository.entity.Party.mmLocation, com.tools20022.repository.entity.Party.mmCloseLinkSecurity);
+						com.tools20022.repository.entity.Party.mmPowerOfAttorney, com.tools20022.repository.entity.Party.mmLocation, com.tools20022.repository.entity.Party.mmCloseLinkSecurity,
+						com.tools20022.repository.entity.Party.mmCreditQuality);
 				derivationComponent_lazy = () -> Arrays.asList(PartyAndAuthorisation1.mmObject(), PartyAndAuthorisation3.mmObject());
 			}
 
@@ -1067,7 +1285,7 @@ public class Party extends RolePlayer {
 		return identification == null ? identification = new ArrayList<>() : identification;
 	}
 
-	public Party setIdentification(List<com.tools20022.repository.entity.PartyIdentificationInformation> identification) {
+	public Party setIdentification(List<PartyIdentificationInformation> identification) {
 		this.identification = Objects.requireNonNull(identification);
 		return this;
 	}
@@ -1085,7 +1303,7 @@ public class Party extends RolePlayer {
 		return taxationConditions;
 	}
 
-	public Party setTaxationConditions(com.tools20022.repository.entity.Tax taxationConditions) {
+	public Party setTaxationConditions(Tax taxationConditions) {
 		this.taxationConditions = Objects.requireNonNull(taxationConditions);
 		return this;
 	}
@@ -1130,8 +1348,17 @@ public class Party extends RolePlayer {
 		return closeLinkSecurity;
 	}
 
-	public Party setCloseLinkSecurity(com.tools20022.repository.entity.Security closeLinkSecurity) {
+	public Party setCloseLinkSecurity(Security closeLinkSecurity) {
 		this.closeLinkSecurity = Objects.requireNonNull(closeLinkSecurity);
+		return this;
+	}
+
+	public CreditQualityCode getCreditQuality() {
+		return creditQuality;
+	}
+
+	public Party setCreditQuality(CreditQualityCode creditQuality) {
+		this.creditQuality = Objects.requireNonNull(creditQuality);
 		return this;
 	}
 }

@@ -49,7 +49,7 @@ public class ConstraintOrganisationIdentificationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOrganisation14 = new MMConstraint() {
+	public static final MMConstraint<Organisation14> forOrganisation14 = new MMConstraint<Organisation14>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OrganisationIdentificationRule";
@@ -58,8 +58,8 @@ public class ConstraintOrganisationIdentificationRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOrganisation14((Organisation14) obj);
+		public void executeValidator(Organisation14 obj) throws Exception {
+			checkOrganisation14(obj);
 		}
 	};
 

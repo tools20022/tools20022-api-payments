@@ -18,12 +18,15 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
+import com.tools20022.repository.choice.ClaimNonReceipt1Choice;
+import com.tools20022.repository.choice.ClaimNonReceiptRejectReason1Choice;
 import com.tools20022.repository.codeset.CaseStatusCode;
+import com.tools20022.repository.entity.InvestigationCase;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.CancellationStatusReason2;
+import com.tools20022.repository.msg.CancellationStatusReason3;
 import com.tools20022.repository.msg.CaseStatus2;
-import java.lang.reflect.Method;
+import com.tools20022.repository.msg.ModificationStatusReason1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -61,12 +64,29 @@ import java.util.Optional;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ClaimNonReceipt1Choice#mmAccepted
+ * ClaimNonReceipt1Choice.mmAccepted}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ClaimNonReceipt1Choice#mmRejected
+ * ClaimNonReceipt1Choice.mmRejected}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.CaseStatus2 CaseStatus2}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CancellationStatusReason2
- * CancellationStatusReason2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CancellationStatusReason3
+ * CancellationStatusReason3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ModificationStatusReason1
+ * ModificationStatusReason1}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ClaimNonReceiptRejectReason1Choice
+ * ClaimNonReceiptRejectReason1Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -121,7 +141,7 @@ public class InvestigationCaseStatus extends Status {
 	 * definition} = "Status of the case."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCaseStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestigationCaseStatus, CaseStatusCode> mmCaseStatus = new MMBusinessAttribute<InvestigationCaseStatus, CaseStatusCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CaseStatus2.mmCaseStatus);
 			isDerived = false;
@@ -134,12 +154,14 @@ public class InvestigationCaseStatus extends Status {
 			simpleType_lazy = () -> CaseStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestigationCaseStatus.class.getMethod("getCaseStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CaseStatusCode getValue(InvestigationCaseStatus obj) {
+			return obj.getCaseStatus();
+		}
+
+		@Override
+		public void setValue(InvestigationCaseStatus obj, CaseStatusCode value) {
+			obj.setCaseStatus(value);
 		}
 	};
 	protected InvestigationCase investigationCase;
@@ -176,7 +198,7 @@ public class InvestigationCaseStatus extends Status {
 	 * definition} = "Case for which a status is reported."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestigationCase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestigationCaseStatus, Optional<InvestigationCase>> mmInvestigationCase = new MMBusinessAssociationEnd<InvestigationCaseStatus, Optional<InvestigationCase>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCaseStatus.mmObject();
@@ -189,6 +211,16 @@ public class InvestigationCaseStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 		}
+
+		@Override
+		public Optional<InvestigationCase> getValue(InvestigationCaseStatus obj) {
+			return obj.getInvestigationCase();
+		}
+
+		@Override
+		public void setValue(InvestigationCaseStatus obj, Optional<InvestigationCase> value) {
+			obj.setInvestigationCase(value.orElse(null));
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -199,9 +231,10 @@ public class InvestigationCaseStatus extends Status {
 				name = "InvestigationCaseStatus";
 				definition = "Status of an investigation case.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestigationCase.mmStatus);
+				derivationElement_lazy = () -> Arrays.asList(ClaimNonReceipt1Choice.mmAccepted, ClaimNonReceipt1Choice.mmRejected);
 				superType_lazy = () -> Status.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestigationCaseStatus.mmCaseStatus, com.tools20022.repository.entity.InvestigationCaseStatus.mmInvestigationCase);
-				derivationComponent_lazy = () -> Arrays.asList(CaseStatus2.mmObject(), CancellationStatusReason2.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(CaseStatus2.mmObject(), CancellationStatusReason3.mmObject(), ModificationStatusReason1.mmObject(), ClaimNonReceiptRejectReason1Choice.mmObject());
 			}
 
 			@Override

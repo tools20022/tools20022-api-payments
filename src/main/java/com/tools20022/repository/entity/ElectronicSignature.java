@@ -21,9 +21,12 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.SecurityCertificate;
 import com.tools20022.repository.entity.Signature;
+import com.tools20022.repository.entity.Undertaking;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.MandateRelatedInformation11;
+import com.tools20022.repository.msg.MandateRelatedInformation12;
 import com.tools20022.repository.msg.PartyAndSignature2;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -75,6 +78,9 @@ import java.util.Objects;
  * <li>
  * {@linkplain com.tools20022.repository.msg.MandateRelatedInformation11#mmElectronicSignature
  * MandateRelatedInformation11.mmElectronicSignature}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.MandateRelatedInformation12#mmElectronicSignature
+ * MandateRelatedInformation12.mmElectronicSignature}</li>
  * </ul>
  * </li>
  * <li>
@@ -137,7 +143,7 @@ public class ElectronicSignature extends Signature {
 	 * definition} = "Undertaking for which a signature is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ElectronicSignature, com.tools20022.repository.entity.Undertaking> mmUndertaking = new MMBusinessAssociationEnd<ElectronicSignature, com.tools20022.repository.entity.Undertaking>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicSignature.mmObject();
@@ -150,8 +156,18 @@ public class ElectronicSignature extends Signature {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Undertaking getValue(ElectronicSignature obj) {
+			return obj.getUndertaking();
+		}
+
+		@Override
+		public void setValue(ElectronicSignature obj, com.tools20022.repository.entity.Undertaking value) {
+			obj.setUndertaking(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.SecurityCertificate> relatedSecurityCertificate;
+	protected List<SecurityCertificate> relatedSecurityCertificate;
 	/**
 	 * 
 	 <p>
@@ -185,7 +201,7 @@ public class ElectronicSignature extends Signature {
 	 * definition} = "Certificate linked to a digital signature."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecurityCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ElectronicSignature, List<SecurityCertificate>> mmRelatedSecurityCertificate = new MMBusinessAssociationEnd<ElectronicSignature, List<SecurityCertificate>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicSignature.mmObject();
@@ -193,9 +209,19 @@ public class ElectronicSignature extends Signature {
 			name = "RelatedSecurityCertificate";
 			definition = "Certificate linked to a digital signature.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmElectronicSignature;
+			opposite_lazy = () -> SecurityCertificate.mmElectronicSignature;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
+			type_lazy = () -> SecurityCertificate.mmObject();
+		}
+
+		@Override
+		public List<SecurityCertificate> getValue(ElectronicSignature obj) {
+			return obj.getRelatedSecurityCertificate();
+		}
+
+		@Override
+		public void setValue(ElectronicSignature obj, List<SecurityCertificate> value) {
+			obj.setRelatedSecurityCertificate(value);
 		}
 	};
 
@@ -206,8 +232,8 @@ public class ElectronicSignature extends Signature {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ElectronicSignature";
 				definition = "Additional security provisions, such as a digital signature.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Undertaking.mmElectronicSignature, com.tools20022.repository.entity.SecurityCertificate.mmElectronicSignature);
-				derivationElement_lazy = () -> Arrays.asList(PartyAndSignature2.mmSignature, MandateRelatedInformation11.mmElectronicSignature);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Undertaking.mmElectronicSignature, SecurityCertificate.mmElectronicSignature);
+				derivationElement_lazy = () -> Arrays.asList(PartyAndSignature2.mmSignature, MandateRelatedInformation11.mmElectronicSignature, MandateRelatedInformation12.mmElectronicSignature);
 				superType_lazy = () -> Signature.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ElectronicSignature.mmUndertaking, com.tools20022.repository.entity.ElectronicSignature.mmRelatedSecurityCertificate);
 				derivationComponent_lazy = () -> Arrays.asList(PartyAndSignature2.mmObject());
@@ -234,7 +260,7 @@ public class ElectronicSignature extends Signature {
 		return relatedSecurityCertificate == null ? relatedSecurityCertificate = new ArrayList<>() : relatedSecurityCertificate;
 	}
 
-	public ElectronicSignature setRelatedSecurityCertificate(List<com.tools20022.repository.entity.SecurityCertificate> relatedSecurityCertificate) {
+	public ElectronicSignature setRelatedSecurityCertificate(List<SecurityCertificate> relatedSecurityCertificate) {
 		this.relatedSecurityCertificate = Objects.requireNonNull(relatedSecurityCertificate);
 		return this;
 	}

@@ -27,6 +27,7 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.entity.Organisation;
 import com.tools20022.repository.entity.OrganisationName;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.OrganisationIdentification8;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -133,7 +134,7 @@ public class Organisation14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFullLegalName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Organisation14, Optional<Max350Text>> mmFullLegalName = new MMMessageAttribute<Organisation14, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationName.mmLegalName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Organisation14.mmObject();
@@ -145,6 +146,16 @@ public class Organisation14 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max350Text> getValue(Organisation14 obj) {
+			return obj.getFullLegalName();
+		}
+
+		@Override
+		public void setValue(Organisation14 obj, Optional<Max350Text> value) {
+			obj.setFullLegalName(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgId", required = true)
@@ -181,7 +192,7 @@ public class Organisation14 {
 	 * "Unique and unambiguous way of identifying an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOrganisationIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Organisation14, OrganisationIdentification8> mmOrganisationIdentification = new MMMessageAssociationEnd<Organisation14, OrganisationIdentification8>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.Organisation14.mmObject();
@@ -193,7 +204,17 @@ public class Organisation14 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OrganisationIdentification8.mmObject();
+			type_lazy = () -> OrganisationIdentification8.mmObject();
+		}
+
+		@Override
+		public OrganisationIdentification8 getValue(Organisation14 obj) {
+			return obj.getOrganisationIdentification();
+		}
+
+		@Override
+		public void setValue(Organisation14 obj, OrganisationIdentification8 value) {
+			obj.setOrganisationIdentification(value);
 		}
 	};
 
@@ -227,7 +248,7 @@ public class Organisation14 {
 		return organisationIdentification;
 	}
 
-	public Organisation14 setOrganisationIdentification(com.tools20022.repository.msg.OrganisationIdentification8 organisationIdentification) {
+	public Organisation14 setOrganisationIdentification(OrganisationIdentification8 organisationIdentification) {
 		this.organisationIdentification = Objects.requireNonNull(organisationIdentification);
 		return this;
 	}

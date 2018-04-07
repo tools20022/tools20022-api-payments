@@ -21,8 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -113,7 +113,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class InstructionForMeeting {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.VoteInstructionRequest> voteInstruction;
+	protected List<VoteInstructionRequest> voteInstruction;
 	/**
 	 * 
 	 <p>
@@ -148,7 +148,7 @@ public class InstructionForMeeting {
 	 * definition} = "Request to cast detailed voting instructions."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVoteInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InstructionForMeeting, List<VoteInstructionRequest>> mmVoteInstruction = new MMBusinessAssociationEnd<InstructionForMeeting, List<VoteInstructionRequest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
@@ -156,9 +156,19 @@ public class InstructionForMeeting {
 			name = "VoteInstruction";
 			definition = "Request to cast detailed voting instructions.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmMeetingInstruction;
+			opposite_lazy = () -> VoteInstructionRequest.mmMeetingInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
+			type_lazy = () -> VoteInstructionRequest.mmObject();
+		}
+
+		@Override
+		public List<VoteInstructionRequest> getValue(InstructionForMeeting obj) {
+			return obj.getVoteInstruction();
+		}
+
+		@Override
+		public void setValue(InstructionForMeeting obj, List<VoteInstructionRequest> value) {
+			obj.setVoteInstruction(value);
 		}
 	};
 	protected ISODateTime requestedExecutionDate;
@@ -187,7 +197,7 @@ public class InstructionForMeeting {
 	 * definition} = "Date at which the instruction must be executed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedExecutionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InstructionForMeeting, ISODateTime> mmRequestedExecutionDate = new MMBusinessAttribute<InstructionForMeeting, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
@@ -199,12 +209,14 @@ public class InstructionForMeeting {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InstructionForMeeting.class.getMethod("getRequestedExecutionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(InstructionForMeeting obj) {
+			return obj.getRequestedExecutionDate();
+		}
+
+		@Override
+		public void setValue(InstructionForMeeting obj, ISODateTime value) {
+			obj.setRequestedExecutionDate(value);
 		}
 	};
 	protected MeetingServicing relatedServicing;
@@ -243,7 +255,7 @@ public class InstructionForMeeting {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InstructionForMeeting, Optional<MeetingServicing>> mmRelatedServicing = new MMBusinessAssociationEnd<InstructionForMeeting, Optional<MeetingServicing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
@@ -252,12 +264,22 @@ public class InstructionForMeeting {
 			definition = "Meeting servicing process which comprises the management of meeting instructions.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmMeetingInstruction;
+			opposite_lazy = () -> MeetingServicing.mmMeetingInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
+			type_lazy = () -> MeetingServicing.mmObject();
+		}
+
+		@Override
+		public Optional<MeetingServicing> getValue(InstructionForMeeting obj) {
+			return obj.getRelatedServicing();
+		}
+
+		@Override
+		public void setValue(InstructionForMeeting obj, Optional<MeetingServicing> value) {
+			obj.setRelatedServicing(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.MeetingAttendance> meetingAttendance;
+	protected List<MeetingAttendance> meetingAttendance;
 	/**
 	 * 
 	 <p>
@@ -293,7 +315,7 @@ public class InstructionForMeeting {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeetingAttendance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InstructionForMeeting, List<MeetingAttendance>> mmMeetingAttendance = new MMBusinessAssociationEnd<InstructionForMeeting, List<MeetingAttendance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
@@ -301,12 +323,22 @@ public class InstructionForMeeting {
 			name = "MeetingAttendance";
 			definition = "Instruction containing the information on the participation of the security holder or of its assigned representative.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmRelatedMeeting;
+			opposite_lazy = () -> MeetingAttendance.mmRelatedMeeting;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmObject();
+			type_lazy = () -> MeetingAttendance.mmObject();
+		}
+
+		@Override
+		public List<MeetingAttendance> getValue(InstructionForMeeting obj) {
+			return obj.getMeetingAttendance();
+		}
+
+		@Override
+		public void setValue(InstructionForMeeting obj, List<MeetingAttendance> value) {
+			obj.setMeetingAttendance(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ProxyAppointment> proxyAppointment;
+	protected List<ProxyAppointment> proxyAppointment;
 	/**
 	 * 
 	 <p>
@@ -341,7 +373,7 @@ public class InstructionForMeeting {
 	 * "Request to assign a proxy for participation to the meeting."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProxyAppointment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InstructionForMeeting, List<ProxyAppointment>> mmProxyAppointment = new MMBusinessAssociationEnd<InstructionForMeeting, List<ProxyAppointment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
@@ -349,9 +381,19 @@ public class InstructionForMeeting {
 			name = "ProxyAppointment";
 			definition = "Request to assign a proxy for participation to the meeting.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmRelatedMeetingInstruction;
+			opposite_lazy = () -> ProxyAppointment.mmRelatedMeetingInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
+			type_lazy = () -> ProxyAppointment.mmObject();
+		}
+
+		@Override
+		public List<ProxyAppointment> getValue(InstructionForMeeting obj) {
+			return obj.getProxyAppointment();
+		}
+
+		@Override
+		public void setValue(InstructionForMeeting obj, List<ProxyAppointment> value) {
+			obj.setProxyAppointment(value);
 		}
 	};
 	protected Max35Text meetingIdentification;
@@ -382,7 +424,7 @@ public class InstructionForMeeting {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMeetingIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InstructionForMeeting, Max35Text> mmMeetingIdentification = new MMBusinessAttribute<InstructionForMeeting, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
@@ -394,12 +436,14 @@ public class InstructionForMeeting {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InstructionForMeeting.class.getMethod("getMeetingIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(InstructionForMeeting obj) {
+			return obj.getMeetingIdentification();
+		}
+
+		@Override
+		public void setValue(InstructionForMeeting obj, Max35Text value) {
+			obj.setMeetingIdentification(value);
 		}
 	};
 	protected YesNoIndicator securitiesRegistration;
@@ -429,7 +473,7 @@ public class InstructionForMeeting {
 	 * definition} = "Request to register the securities for the meeting."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSecuritiesRegistration = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InstructionForMeeting, YesNoIndicator> mmSecuritiesRegistration = new MMBusinessAttribute<InstructionForMeeting, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
@@ -441,12 +485,14 @@ public class InstructionForMeeting {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InstructionForMeeting.class.getMethod("getSecuritiesRegistration", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InstructionForMeeting obj) {
+			return obj.getSecuritiesRegistration();
+		}
+
+		@Override
+		public void setValue(InstructionForMeeting obj, YesNoIndicator value) {
+			obj.setSecuritiesRegistration(value);
 		}
 	};
 	protected YesNoIndicator blockingSecurities;
@@ -476,7 +522,7 @@ public class InstructionForMeeting {
 	 * definition} = "Request to block the securities"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBlockingSecurities = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InstructionForMeeting, YesNoIndicator> mmBlockingSecurities = new MMBusinessAttribute<InstructionForMeeting, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
@@ -488,12 +534,14 @@ public class InstructionForMeeting {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InstructionForMeeting.class.getMethod("getBlockingSecurities", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InstructionForMeeting obj) {
+			return obj.getBlockingSecurities();
+		}
+
+		@Override
+		public void setValue(InstructionForMeeting obj, YesNoIndicator value) {
+			obj.setBlockingSecurities(value);
 		}
 	};
 	protected YesNoIndicator participationRegistration;
@@ -523,7 +571,7 @@ public class InstructionForMeeting {
 	 * definition} = "Request to register for participation to the meeting."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmParticipationRegistration = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InstructionForMeeting, YesNoIndicator> mmParticipationRegistration = new MMBusinessAttribute<InstructionForMeeting, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
@@ -535,12 +583,14 @@ public class InstructionForMeeting {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InstructionForMeeting.class.getMethod("getParticipationRegistration", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InstructionForMeeting obj) {
+			return obj.getParticipationRegistration();
+		}
+
+		@Override
+		public void setValue(InstructionForMeeting obj, YesNoIndicator value) {
+			obj.setParticipationRegistration(value);
 		}
 	};
 	protected SecuritiesAccount safekeepingAccount;
@@ -578,7 +628,7 @@ public class InstructionForMeeting {
 	 * "Account and balance for which the instruction is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSafekeepingAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InstructionForMeeting, SecuritiesAccount> mmSafekeepingAccount = new MMBusinessAssociationEnd<InstructionForMeeting, SecuritiesAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
@@ -587,9 +637,19 @@ public class InstructionForMeeting {
 			definition = "Account and balance for which the instruction is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmRelatedMeetingInstruction;
+			opposite_lazy = () -> SecuritiesAccount.mmRelatedMeetingInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
+			type_lazy = () -> SecuritiesAccount.mmObject();
+		}
+
+		@Override
+		public SecuritiesAccount getValue(InstructionForMeeting obj) {
+			return obj.getSafekeepingAccount();
+		}
+
+		@Override
+		public void setValue(InstructionForMeeting obj, SecuritiesAccount value) {
+			obj.setSafekeepingAccount(value);
 		}
 	};
 
@@ -600,9 +660,8 @@ public class InstructionForMeeting {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InstructionForMeeting";
 				definition = "Identifies the position of the instructing party and the actions that it wants to take in relation with the meeting.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.mmRelatedMeetingInstruction, com.tools20022.repository.entity.ProxyAppointment.mmRelatedMeetingInstruction,
-						com.tools20022.repository.entity.VoteInstructionRequest.mmMeetingInstruction, com.tools20022.repository.entity.MeetingAttendance.mmRelatedMeeting,
-						com.tools20022.repository.entity.MeetingServicing.mmMeetingInstruction);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesAccount.mmRelatedMeetingInstruction, ProxyAppointment.mmRelatedMeetingInstruction, VoteInstructionRequest.mmMeetingInstruction, MeetingAttendance.mmRelatedMeeting,
+						MeetingServicing.mmMeetingInstruction);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InstructionForMeeting.mmVoteInstruction, com.tools20022.repository.entity.InstructionForMeeting.mmRequestedExecutionDate,
 						com.tools20022.repository.entity.InstructionForMeeting.mmRelatedServicing, com.tools20022.repository.entity.InstructionForMeeting.mmMeetingAttendance,
 						com.tools20022.repository.entity.InstructionForMeeting.mmProxyAppointment, com.tools20022.repository.entity.InstructionForMeeting.mmMeetingIdentification,
@@ -622,7 +681,7 @@ public class InstructionForMeeting {
 		return voteInstruction == null ? voteInstruction = new ArrayList<>() : voteInstruction;
 	}
 
-	public InstructionForMeeting setVoteInstruction(List<com.tools20022.repository.entity.VoteInstructionRequest> voteInstruction) {
+	public InstructionForMeeting setVoteInstruction(List<VoteInstructionRequest> voteInstruction) {
 		this.voteInstruction = Objects.requireNonNull(voteInstruction);
 		return this;
 	}
@@ -640,7 +699,7 @@ public class InstructionForMeeting {
 		return relatedServicing == null ? Optional.empty() : Optional.of(relatedServicing);
 	}
 
-	public InstructionForMeeting setRelatedServicing(com.tools20022.repository.entity.MeetingServicing relatedServicing) {
+	public InstructionForMeeting setRelatedServicing(MeetingServicing relatedServicing) {
 		this.relatedServicing = relatedServicing;
 		return this;
 	}
@@ -649,7 +708,7 @@ public class InstructionForMeeting {
 		return meetingAttendance == null ? meetingAttendance = new ArrayList<>() : meetingAttendance;
 	}
 
-	public InstructionForMeeting setMeetingAttendance(List<com.tools20022.repository.entity.MeetingAttendance> meetingAttendance) {
+	public InstructionForMeeting setMeetingAttendance(List<MeetingAttendance> meetingAttendance) {
 		this.meetingAttendance = Objects.requireNonNull(meetingAttendance);
 		return this;
 	}
@@ -658,7 +717,7 @@ public class InstructionForMeeting {
 		return proxyAppointment == null ? proxyAppointment = new ArrayList<>() : proxyAppointment;
 	}
 
-	public InstructionForMeeting setProxyAppointment(List<com.tools20022.repository.entity.ProxyAppointment> proxyAppointment) {
+	public InstructionForMeeting setProxyAppointment(List<ProxyAppointment> proxyAppointment) {
 		this.proxyAppointment = Objects.requireNonNull(proxyAppointment);
 		return this;
 	}
@@ -703,7 +762,7 @@ public class InstructionForMeeting {
 		return safekeepingAccount;
 	}
 
-	public InstructionForMeeting setSafekeepingAccount(com.tools20022.repository.entity.SecuritiesAccount safekeepingAccount) {
+	public InstructionForMeeting setSafekeepingAccount(SecuritiesAccount safekeepingAccount) {
 		this.safekeepingAccount = Objects.requireNonNull(safekeepingAccount);
 		return this;
 	}

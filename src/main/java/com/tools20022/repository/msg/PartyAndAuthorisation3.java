@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.BankOperation;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.SignatureCondition;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Authorisation2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -116,7 +117,7 @@ public class PartyAndAuthorisation3 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyAndAuthorisation3, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<PartyAndAuthorisation3, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndAuthorisation3.mmObject();
 			isDerived = false;
@@ -127,6 +128,16 @@ public class PartyAndAuthorisation3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(PartyAndAuthorisation3 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(PartyAndAuthorisation3 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PtyOrGrp", required = true)
@@ -161,7 +172,7 @@ public class PartyAndAuthorisation3 {
 	 * definition} = "Specifies a party or a group of parties."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPartyOrGroup = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PartyAndAuthorisation3, PartyOrGroup1Choice> mmPartyOrGroup = new MMMessageAssociationEnd<PartyAndAuthorisation3, PartyOrGroup1Choice>() {
 		{
 			businessComponentTrace_lazy = () -> Party.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndAuthorisation3.mmObject();
@@ -174,6 +185,16 @@ public class PartyAndAuthorisation3 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> PartyOrGroup1Choice.mmObject();
+		}
+
+		@Override
+		public PartyOrGroup1Choice getValue(PartyAndAuthorisation3 obj) {
+			return obj.getPartyOrGroup();
+		}
+
+		@Override
+		public void setValue(PartyAndAuthorisation3 obj, PartyOrGroup1Choice value) {
+			obj.setPartyOrGroup(value);
 		}
 	};
 	@XmlElement(name = "SgntrOrdr")
@@ -211,7 +232,7 @@ public class PartyAndAuthorisation3 {
 	 * definition} = "Order in which the mandate holder has to sign."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSignatureOrder = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyAndAuthorisation3, Optional<Max15PlusSignedNumericText>> mmSignatureOrder = new MMMessageAttribute<PartyAndAuthorisation3, Optional<Max15PlusSignedNumericText>>() {
 		{
 			businessElementTrace_lazy = () -> SignatureCondition.mmSignatureOrder;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndAuthorisation3.mmObject();
@@ -223,6 +244,16 @@ public class PartyAndAuthorisation3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max15PlusSignedNumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Max15PlusSignedNumericText> getValue(PartyAndAuthorisation3 obj) {
+			return obj.getSignatureOrder();
+		}
+
+		@Override
+		public void setValue(PartyAndAuthorisation3 obj, Optional<Max15PlusSignedNumericText> value) {
+			obj.setSignatureOrder(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Authstn", required = true)
@@ -258,7 +289,7 @@ public class PartyAndAuthorisation3 {
 	 * definition} = "Authorisation granted to a mandate holder."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAuthorisation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PartyAndAuthorisation3, Authorisation2> mmAuthorisation = new MMMessageAssociationEnd<PartyAndAuthorisation3, Authorisation2>() {
 		{
 			businessElementTrace_lazy = () -> BankOperation.mmOperationThreshold;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PartyAndAuthorisation3.mmObject();
@@ -270,7 +301,17 @@ public class PartyAndAuthorisation3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Authorisation2.mmObject();
+			type_lazy = () -> Authorisation2.mmObject();
+		}
+
+		@Override
+		public Authorisation2 getValue(PartyAndAuthorisation3 obj) {
+			return obj.getAuthorisation();
+		}
+
+		@Override
+		public void setValue(PartyAndAuthorisation3 obj, Authorisation2 value) {
+			obj.setAuthorisation(value);
 		}
 	};
 
@@ -321,7 +362,7 @@ public class PartyAndAuthorisation3 {
 		return authorisation;
 	}
 
-	public PartyAndAuthorisation3 setAuthorisation(com.tools20022.repository.msg.Authorisation2 authorisation) {
+	public PartyAndAuthorisation3 setAuthorisation(Authorisation2 authorisation) {
 		this.authorisation = Objects.requireNonNull(authorisation);
 		return this;
 	}

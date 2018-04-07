@@ -24,6 +24,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection34;
+import com.tools20022.repository.msg.BillingServicesAmount1;
+import com.tools20022.repository.msg.BillingServicesAmount2;
+import com.tools20022.repository.msg.BillingServicesTax1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -109,7 +113,7 @@ public class BillingMethod1 {
 	 * "Amount of the original charge expressed in the host currency."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmServiceChargeHostAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingMethod1, AmountAndDirection34> mmServiceChargeHostAmount = new MMMessageAssociationEnd<BillingMethod1, AmountAndDirection34>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingMethod1.mmObject();
@@ -121,7 +125,17 @@ public class BillingMethod1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection34 getValue(BillingMethod1 obj) {
+			return obj.getServiceChargeHostAmount();
+		}
+
+		@Override
+		public void setValue(BillingMethod1 obj, AmountAndDirection34 value) {
+			obj.setServiceChargeHostAmount(value);
 		}
 	};
 	@XmlElement(name = "SvcTax", required = true)
@@ -160,7 +174,7 @@ public class BillingMethod1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmServiceTax = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingMethod1, BillingServicesAmount1> mmServiceTax = new MMMessageAttribute<BillingMethod1, BillingServicesAmount1>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingMethod1.mmObject();
@@ -171,7 +185,17 @@ public class BillingMethod1 {
 			definition = "Provides for the regional taxes on the service. Up to three regional taxes may be defined for the same service.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount1.mmObject();
+			complexType_lazy = () -> BillingServicesAmount1.mmObject();
+		}
+
+		@Override
+		public BillingServicesAmount1 getValue(BillingMethod1 obj) {
+			return obj.getServiceTax();
+		}
+
+		@Override
+		public void setValue(BillingMethod1 obj, BillingServicesAmount1 value) {
+			obj.setServiceTax(value);
 		}
 	};
 	@XmlElement(name = "TtlChrg", required = true)
@@ -209,7 +233,7 @@ public class BillingMethod1 {
 	 * "Specifies the total charge for a service (including taxes)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalCharge = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingMethod1, BillingServicesAmount2> mmTotalCharge = new MMMessageAttribute<BillingMethod1, BillingServicesAmount2>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingMethod1.mmObject();
@@ -220,11 +244,21 @@ public class BillingMethod1 {
 			definition = "Specifies the total charge for a service (including taxes).";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount2.mmObject();
+			complexType_lazy = () -> BillingServicesAmount2.mmObject();
+		}
+
+		@Override
+		public BillingServicesAmount2 getValue(BillingMethod1 obj) {
+			return obj.getTotalCharge();
+		}
+
+		@Override
+		public void setValue(BillingMethod1 obj, BillingServicesAmount2 value) {
+			obj.setTotalCharge(value);
 		}
 	};
 	@XmlElement(name = "TaxId", required = true)
-	protected List<com.tools20022.repository.msg.BillingServicesTax1> taxIdentification;
+	protected List<BillingServicesTax1> taxIdentification;
 	/**
 	 * 
 	 <p>
@@ -258,7 +292,7 @@ public class BillingMethod1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingMethod1, List<BillingServicesTax1>> mmTaxIdentification = new MMMessageAttribute<BillingMethod1, List<BillingServicesTax1>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRecord;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingMethod1.mmObject();
@@ -269,7 +303,17 @@ public class BillingMethod1 {
 			definition = "Provides for the specific tax identification within the same tax region. \r\n\r\nUsage: This element allows for a maximum of three regional taxes on the same service.";
 			maxOccurs = 3;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.BillingServicesTax1.mmObject();
+			complexType_lazy = () -> BillingServicesTax1.mmObject();
+		}
+
+		@Override
+		public List<BillingServicesTax1> getValue(BillingMethod1 obj) {
+			return obj.getTaxIdentification();
+		}
+
+		@Override
+		public void setValue(BillingMethod1 obj, List<BillingServicesTax1> value) {
+			obj.setTaxIdentification(value);
 		}
 	};
 
@@ -292,7 +336,7 @@ public class BillingMethod1 {
 		return serviceChargeHostAmount;
 	}
 
-	public BillingMethod1 setServiceChargeHostAmount(com.tools20022.repository.msg.AmountAndDirection34 serviceChargeHostAmount) {
+	public BillingMethod1 setServiceChargeHostAmount(AmountAndDirection34 serviceChargeHostAmount) {
 		this.serviceChargeHostAmount = Objects.requireNonNull(serviceChargeHostAmount);
 		return this;
 	}
@@ -301,7 +345,7 @@ public class BillingMethod1 {
 		return serviceTax;
 	}
 
-	public BillingMethod1 setServiceTax(com.tools20022.repository.msg.BillingServicesAmount1 serviceTax) {
+	public BillingMethod1 setServiceTax(BillingServicesAmount1 serviceTax) {
 		this.serviceTax = Objects.requireNonNull(serviceTax);
 		return this;
 	}
@@ -310,7 +354,7 @@ public class BillingMethod1 {
 		return totalCharge;
 	}
 
-	public BillingMethod1 setTotalCharge(com.tools20022.repository.msg.BillingServicesAmount2 totalCharge) {
+	public BillingMethod1 setTotalCharge(BillingServicesAmount2 totalCharge) {
 		this.totalCharge = Objects.requireNonNull(totalCharge);
 		return this;
 	}
@@ -319,7 +363,7 @@ public class BillingMethod1 {
 		return taxIdentification == null ? taxIdentification = new ArrayList<>() : taxIdentification;
 	}
 
-	public BillingMethod1 setTaxIdentification(List<com.tools20022.repository.msg.BillingServicesTax1> taxIdentification) {
+	public BillingMethod1 setTaxIdentification(List<BillingServicesTax1> taxIdentification) {
 		this.taxIdentification = Objects.requireNonNull(taxIdentification);
 		return this;
 	}

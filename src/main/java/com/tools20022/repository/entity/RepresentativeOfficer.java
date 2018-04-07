@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.AccountPartyRole;
+import com.tools20022.repository.entity.Organisation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -113,7 +114,7 @@ public class RepresentativeOfficer extends AccountPartyRole {
 	 * "Organisation which is represented by the representative officer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrganisation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RepresentativeOfficer, com.tools20022.repository.entity.Organisation> mmOrganisation = new MMBusinessAssociationEnd<RepresentativeOfficer, com.tools20022.repository.entity.Organisation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RepresentativeOfficer.mmObject();
@@ -125,6 +126,16 @@ public class RepresentativeOfficer extends AccountPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmRepresentativeOfficer;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Organisation getValue(RepresentativeOfficer obj) {
+			return obj.getOrganisation();
+		}
+
+		@Override
+		public void setValue(RepresentativeOfficer obj, com.tools20022.repository.entity.Organisation value) {
+			obj.setOrganisation(value);
 		}
 	};
 

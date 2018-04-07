@@ -23,6 +23,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.msg.PaymentInstruction21;
 import com.tools20022.repository.msg.PaymentInstruction22;
 import com.tools20022.repository.msg.PaymentInstruction23;
+import com.tools20022.repository.msg.PaymentInstruction24;
 
 /**
  * If ChargeBearer is present, then
@@ -58,7 +59,7 @@ public class ConstraintChargeBearerRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction21 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction21> forPaymentInstruction21 = new MMConstraint<PaymentInstruction21>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChargeBearerRule";
@@ -68,8 +69,8 @@ public class ConstraintChargeBearerRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction21((PaymentInstruction21) obj);
+		public void executeValidator(PaymentInstruction21 obj) throws Exception {
+			checkPaymentInstruction21(obj);
 		}
 	};
 	/**
@@ -89,21 +90,21 @@ public class ConstraintChargeBearerRule {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "If ChargeBearer is present, then CreditTransferTransaction/ChargeBearer is not allowed.\r\nIf CreditTransferTransaction/ChargeBearer is present, then ChargeBearer  is not allowed.\r\nCreditTransferTransaction/ChargeBearer and ChargeBearer may both be absent."
+	 * "If ChargeBearer is present, then CreditTransferTransaction/ChargeBearer is not allowed.\r\nIf CreditTransferTransaction/ChargeBearer is present, then ChargeBearer is not allowed.\r\nCreditTransferTransaction/ChargeBearer and ChargeBearer may both be absent."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction23 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction23> forPaymentInstruction23 = new MMConstraint<PaymentInstruction23>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChargeBearerRule";
-			definition = "If ChargeBearer is present, then CreditTransferTransaction/ChargeBearer is not allowed.\r\nIf CreditTransferTransaction/ChargeBearer is present, then ChargeBearer  is not allowed.\r\nCreditTransferTransaction/ChargeBearer and ChargeBearer may both be absent.";
+			definition = "If ChargeBearer is present, then CreditTransferTransaction/ChargeBearer is not allowed.\r\nIf CreditTransferTransaction/ChargeBearer is present, then ChargeBearer is not allowed.\r\nCreditTransferTransaction/ChargeBearer and ChargeBearer may both be absent.";
 			owner_lazy = () -> PaymentInstruction23.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction23((PaymentInstruction23) obj);
+		public void executeValidator(PaymentInstruction23 obj) throws Exception {
+			checkPaymentInstruction23(obj);
 		}
 	};
 	/**
@@ -131,7 +132,7 @@ public class ConstraintChargeBearerRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction22 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction22> forPaymentInstruction22 = new MMConstraint<PaymentInstruction22>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChargeBearerRule";
@@ -141,8 +142,47 @@ public class ConstraintChargeBearerRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction22((PaymentInstruction22) obj);
+		public void executeValidator(PaymentInstruction22 obj) throws Exception {
+			checkPaymentInstruction22(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24
+	 * PaymentInstruction24}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;SimpleRule xsi:type=\"SimpleRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/ChargeBearer&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/CreditTransferTransactionInformation[*]/ChargeBearer&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;/SimpleRule&gt;&lt;/RuleDefinition&gt;\n"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ChargeBearerRule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If ChargeBearer is present, then CreditTransferTransactionInformation/ChargeBearer is not allowed.\nIf CreditTransferTransactionInformation/ChargeBearer is present, then ChargeBearer is not allowed.\nCreditTransferTransactionInformation/ChargeBearer and ChargeBearer may both be absent."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<PaymentInstruction24> forPaymentInstruction24 = new MMConstraint<PaymentInstruction24>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ChargeBearerRule";
+			definition = "If ChargeBearer is present, then CreditTransferTransactionInformation/ChargeBearer is not allowed.\nIf CreditTransferTransactionInformation/ChargeBearer is present, then ChargeBearer is not allowed.\nCreditTransferTransactionInformation/ChargeBearer and ChargeBearer may both be absent.";
+			owner_lazy = () -> PaymentInstruction24.mmObject();
+			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><SimpleRule xsi:type=\"SimpleRule\"><mustBe><connector>OR</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/ChargeBearer</leftOperand></BooleanRule><BooleanRule xsi:type=\"Absence\"><leftOperand>/CreditTransferTransactionInformation[*]/ChargeBearer</leftOperand></BooleanRule></mustBe></SimpleRule></RuleDefinition>\n";
+		}
+
+		@Override
+		public void executeValidator(PaymentInstruction24 obj) throws Exception {
+			checkPaymentInstruction24(obj);
 		}
 	};
 
@@ -179,6 +219,18 @@ public class ConstraintChargeBearerRule {
 	 * both be absent.
 	 */
 	public static void checkPaymentInstruction22(PaymentInstruction22 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If ChargeBearer is present, then
+	 * CreditTransferTransactionInformation/ChargeBearer is not allowed. If
+	 * CreditTransferTransactionInformation/ChargeBearer is present, then
+	 * ChargeBearer is not allowed.
+	 * CreditTransferTransactionInformation/ChargeBearer and ChargeBearer may
+	 * both be absent.
+	 */
+	public static void checkPaymentInstruction24(PaymentInstruction24 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

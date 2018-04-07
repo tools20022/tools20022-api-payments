@@ -25,6 +25,7 @@ import com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.datatype.Max4AlphaNumericText;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyAndCertificate3;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -111,7 +112,7 @@ public class Group2 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Group2, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<Group2, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.Group2.mmObject();
 			isDerived = false;
@@ -122,6 +123,16 @@ public class Group2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(Group2 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(Group2 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "GrpId", required = true)
@@ -153,7 +164,7 @@ public class Group2 {
 	 * definition} = "Specifies the identification of the group."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGroupIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Group2, Max4AlphaNumericText> mmGroupIdentification = new MMMessageAttribute<Group2, Max4AlphaNumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.Group2.mmObject();
 			isDerived = false;
@@ -165,9 +176,19 @@ public class Group2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max4AlphaNumericText.mmObject();
 		}
+
+		@Override
+		public Max4AlphaNumericText getValue(Group2 obj) {
+			return obj.getGroupIdentification();
+		}
+
+		@Override
+		public void setValue(Group2 obj, Max4AlphaNumericText value) {
+			obj.setGroupIdentification(value);
+		}
 	};
 	@XmlElement(name = "Pty", required = true)
-	protected List<com.tools20022.repository.msg.PartyAndCertificate3> party;
+	protected List<PartyAndCertificate3> party;
 	/**
 	 * 
 	 <p>
@@ -195,7 +216,7 @@ public class Group2 {
 	 * definition} = "Specifies a party and related certificate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmParty = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Group2, List<PartyAndCertificate3>> mmParty = new MMMessageAttribute<Group2, List<PartyAndCertificate3>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.Group2.mmObject();
 			isDerived = false;
@@ -204,7 +225,17 @@ public class Group2 {
 			name = "Party";
 			definition = "Specifies a party and related certificate.";
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyAndCertificate3.mmObject();
+			complexType_lazy = () -> PartyAndCertificate3.mmObject();
+		}
+
+		@Override
+		public List<PartyAndCertificate3> getValue(Group2 obj) {
+			return obj.getParty();
+		}
+
+		@Override
+		public void setValue(Group2 obj, List<PartyAndCertificate3> value) {
+			obj.setParty(value);
 		}
 	};
 
@@ -245,7 +276,7 @@ public class Group2 {
 		return party == null ? party = new ArrayList<>() : party;
 	}
 
-	public Group2 setParty(List<com.tools20022.repository.msg.PartyAndCertificate3> party) {
+	public Group2 setParty(List<PartyAndCertificate3> party) {
 		this.party = Objects.requireNonNull(party);
 		return this;
 	}

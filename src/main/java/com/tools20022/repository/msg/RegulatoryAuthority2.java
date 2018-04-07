@@ -108,7 +108,7 @@ public class RegulatoryAuthority2 {
 	 * "Name of the entity requiring the regulatory reporting information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegulatoryAuthority2, Optional<Max140Text>> mmName = new MMMessageAttribute<RegulatoryAuthority2, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegulatoryAuthority2.mmObject();
@@ -120,6 +120,16 @@ public class RegulatoryAuthority2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(RegulatoryAuthority2 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(RegulatoryAuthority2 obj, Optional<Max140Text> value) {
+			obj.setName(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Ctry")
@@ -158,7 +168,7 @@ public class RegulatoryAuthority2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegulatoryAuthority2, Optional<CountryCode>> mmCountry = new MMMessageAttribute<RegulatoryAuthority2, Optional<CountryCode>>() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegulatoryAuthority2.mmObject();
@@ -170,6 +180,16 @@ public class RegulatoryAuthority2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
+		}
+
+		@Override
+		public Optional<CountryCode> getValue(RegulatoryAuthority2 obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(RegulatoryAuthority2 obj, Optional<CountryCode> value) {
+			obj.setCountry(value.orElse(null));
 		}
 	};
 

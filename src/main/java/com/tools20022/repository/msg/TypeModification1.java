@@ -98,7 +98,7 @@ public class TypeModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TypeModification1, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<TypeModification1, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.TypeModification1.mmObject();
 			isDerived = false;
@@ -109,6 +109,16 @@ public class TypeModification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(TypeModification1 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(TypeModification1 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Tp", required = true)
@@ -141,7 +151,7 @@ public class TypeModification1 {
 	 * definition} = "Type of the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TypeModification1, CashAccountType2Choice> mmType = new MMMessageAttribute<TypeModification1, CashAccountType2Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.TypeModification1.mmObject();
 			isDerived = false;
@@ -152,6 +162,16 @@ public class TypeModification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> CashAccountType2Choice.mmObject();
+		}
+
+		@Override
+		public CashAccountType2Choice getValue(TypeModification1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(TypeModification1 obj, CashAccountType2Choice value) {
+			obj.setType(value);
 		}
 	};
 

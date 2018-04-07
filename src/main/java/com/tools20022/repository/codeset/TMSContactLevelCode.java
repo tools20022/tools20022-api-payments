@@ -176,7 +176,7 @@ public class TMSContactLevelCode extends MMCode {
 		}
 	};
 	/**
-	 * After the end of the customer session
+	 * After the end of the customer session.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -193,14 +193,14 @@ public class TMSContactLevelCode extends MMCode {
 	 * name} = "EndCustomerSession"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "After the end of the customer session"</li>
+	 * definition} = "After the end of the customer session."</li>
 	 * </ul>
 	 */
 	public static final TMSContactLevelCode EndCustomerSession = new TMSContactLevelCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndCustomerSession";
-			definition = "After the end of the customer session";
+			definition = "After the end of the customer session.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TMSContactLevelCode.mmObject();
 			codeName = "ENCS";
 		}

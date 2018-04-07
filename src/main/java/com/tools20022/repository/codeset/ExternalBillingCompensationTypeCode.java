@@ -36,6 +36,14 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
+ * =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ExternalBillingCompensationType1Code
+ * ExternalBillingCompensationType1Code}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -76,6 +84,7 @@ public class ExternalBillingCompensationTypeCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalBillingCompensationTypeCode";
 				definition = "Defines the type of billing compensation to be applied, as published in an external billing compensation type code list.\r\nExternal code sets can be downloaded from www.iso20022.org.";
+				derivation_lazy = () -> Arrays.asList(ExternalBillingCompensationType1Code.mmObject());
 				minLength = 1;
 				maxLength = 4;
 			}

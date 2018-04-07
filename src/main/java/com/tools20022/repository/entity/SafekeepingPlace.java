@@ -19,9 +19,8 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SafekeepingPlaceCode;
-import com.tools20022.repository.entity.SecuritiesPartyRole;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -123,7 +122,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * definition} = "Place of safekeeping."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSafekeepingPlaceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SafekeepingPlace, SafekeepingPlaceCode> mmSafekeepingPlaceType = new MMBusinessAttribute<SafekeepingPlace, SafekeepingPlaceCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -135,12 +134,14 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			simpleType_lazy = () -> SafekeepingPlaceCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SafekeepingPlace.class.getMethod("getSafekeepingPlaceType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SafekeepingPlaceCode getValue(SafekeepingPlace obj) {
+			return obj.getSafekeepingPlaceType();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, SafekeepingPlaceCode value) {
+			obj.setSafekeepingPlaceType(value);
 		}
 	};
 	protected Country country;
@@ -177,7 +178,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * "Country where the financial instruments are/will be safekept."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.Country> mmCountry = new MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.Country>() {
 		{
 			isDerived = true;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -189,6 +190,16 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.Country.mmCountryForSafekeepingPlace;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Country getValue(SafekeepingPlace obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, com.tools20022.repository.entity.Country value) {
+			obj.setCountry(value);
 		}
 	};
 	protected SecuritiesAccount relatedSecuritiesAccount;
@@ -227,7 +238,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecuritiesAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesAccount> mmRelatedSecuritiesAccount = new MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -239,6 +250,16 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmSafekeepingPlace;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesAccount getValue(SafekeepingPlace obj) {
+			return obj.getRelatedSecuritiesAccount();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, com.tools20022.repository.entity.SecuritiesAccount value) {
+			obj.setRelatedSecuritiesAccount(value);
 		}
 	};
 	protected SecuritiesBalance securitiesBalance;
@@ -275,7 +296,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * definition} = "Balance which is held at a safekeeping place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, Optional<SecuritiesBalance>> mmSecuritiesBalance = new MMBusinessAssociationEnd<SafekeepingPlace, Optional<SecuritiesBalance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -287,6 +308,16 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmSafekeepingPlace;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesBalance> getValue(SafekeepingPlace obj) {
+			return obj.getSecuritiesBalance();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, Optional<SecuritiesBalance> value) {
+			obj.setSecuritiesBalance(value.orElse(null));
 		}
 	};
 	protected SecuritiesSettlement securitiesSettlement;
@@ -325,7 +356,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * "Specifies the settlement operation which uses the safekeeping place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesSettlement> mmSecuritiesSettlement = new MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesSettlement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -337,6 +368,16 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmRequestedSafekeepingPlace;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesSettlement getValue(SafekeepingPlace obj) {
+			return obj.getSecuritiesSettlement();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, com.tools20022.repository.entity.SecuritiesSettlement value) {
+			obj.setSecuritiesSettlement(value);
 		}
 	};
 

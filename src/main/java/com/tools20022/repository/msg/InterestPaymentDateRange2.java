@@ -116,7 +116,7 @@ public class InterestPaymentDateRange2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterestScheduleIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestPaymentDateRange2, Optional<Max35Text>> mmInterestScheduleIdentification = new MMMessageAttribute<InterestPaymentDateRange2, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange2.mmObject();
 			isDerived = false;
@@ -127,6 +127,16 @@ public class InterestPaymentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(InterestPaymentDateRange2 obj) {
+			return obj.getInterestScheduleIdentification();
+		}
+
+		@Override
+		public void setValue(InterestPaymentDateRange2 obj, Optional<Max35Text> value) {
+			obj.setInterestScheduleIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -164,7 +174,7 @@ public class InterestPaymentDateRange2 {
 	 * definition} = "Interest amount that must be paid at due date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestPaymentDateRange2, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<InterestPaymentDateRange2, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> PaymentTerms.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange2.mmObject();
@@ -176,6 +186,16 @@ public class InterestPaymentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(InterestPaymentDateRange2 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(InterestPaymentDateRange2 obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "DueDt", required = true)
@@ -212,7 +232,7 @@ public class InterestPaymentDateRange2 {
 	 * definition} = "Latest date whereby the interest must be paid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestPaymentDateRange2, ISODate> mmDueDate = new MMMessageAttribute<InterestPaymentDateRange2, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Obligation.mmRequestedSettlementDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange2.mmObject();
@@ -224,6 +244,16 @@ public class InterestPaymentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(InterestPaymentDateRange2 obj) {
+			return obj.getDueDate();
+		}
+
+		@Override
+		public void setValue(InterestPaymentDateRange2 obj, ISODate value) {
+			obj.setDueDate(value);
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -255,7 +285,7 @@ public class InterestPaymentDateRange2 {
 	 * definition} = "Further details on the interest payments."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestPaymentDateRange2, Optional<Max1025Text>> mmAdditionalInformation = new MMMessageAttribute<InterestPaymentDateRange2, Optional<Max1025Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange2.mmObject();
 			isDerived = false;
@@ -266,6 +296,16 @@ public class InterestPaymentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max1025Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max1025Text> getValue(InterestPaymentDateRange2 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(InterestPaymentDateRange2 obj, Optional<Max1025Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 

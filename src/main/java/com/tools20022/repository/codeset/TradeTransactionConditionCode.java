@@ -550,7 +550,7 @@ public class TradeTransactionConditionCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Indicates whether the trade is executed  with a special cum \ndividend, ie, buying after the ex date and getting the dividend."
+	 * "Indicates whether the trade is executed with a special cum \ndividend, ie, buying after the ex date and getting the dividend."
 	 * </li>
 	 * </ul>
 	 */
@@ -558,7 +558,7 @@ public class TradeTransactionConditionCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpecialCumDividend";
-			definition = "Indicates whether the trade is executed  with a special cum \ndividend, ie, buying after the ex date and getting the dividend.";
+			definition = "Indicates whether the trade is executed with a special cum \ndividend, ie, buying after the ex date and getting the dividend.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TradeTransactionConditionCode.mmObject();
 			codeName = "SPCU";
 		}
@@ -583,7 +583,7 @@ public class TradeTransactionConditionCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Indicates whether the trade is executed  with a special ex \ndividend, ie, selling before the ex date without the coupon."
+	 * "Indicates whether the trade is executed with a special ex \ndividend, ie, selling before the ex date without the coupon."
 	 * </li>
 	 * </ul>
 	 */
@@ -591,7 +591,7 @@ public class TradeTransactionConditionCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpecialExDividend";
-			definition = "Indicates whether the trade is executed  with a special ex \ndividend, ie, selling before the ex date without the coupon.";
+			definition = "Indicates whether the trade is executed with a special ex \ndividend, ie, selling before the ex date without the coupon.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TradeTransactionConditionCode.mmObject();
 			codeName = "SPEX";
 		}
@@ -828,7 +828,7 @@ public class TradeTransactionConditionCode extends MMCode {
 	};
 	/**
 	 * Indicates that cross trades are allowed whereby buy and sell orders are
-	 * offset without recording the trade on the exchange
+	 * offset without recording the trade on the exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -846,7 +846,7 @@ public class TradeTransactionConditionCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Indicates that cross trades are allowed whereby buy and sell orders are offset without recording the trade on the exchange"
+	 * "Indicates that cross trades are allowed whereby buy and sell orders are offset without recording the trade on the exchange."
 	 * </li>
 	 * </ul>
 	 */
@@ -854,7 +854,7 @@ public class TradeTransactionConditionCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CrossTrade";
-			definition = "Indicates that cross trades are allowed whereby buy and sell orders are offset without recording the trade on the exchange";
+			definition = "Indicates that cross trades are allowed whereby buy and sell orders are offset without recording the trade on the exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TradeTransactionConditionCode.mmObject();
 			codeName = "CRST";
 		}
@@ -1121,7 +1121,7 @@ public class TradeTransactionConditionCode extends MMCode {
 		}
 	};
 	/**
-	 * Result of option when set. (UK specific)
+	 * Result of option when set. (UK specific).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1138,14 +1138,14 @@ public class TradeTransactionConditionCode extends MMCode {
 	 * name} = "ResultOption"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Result of option when set. (UK specific)"</li>
+	 * definition} = "Result of option when set. (UK specific)."</li>
 	 * </ul>
 	 */
 	public static final TradeTransactionConditionCode ResultOption = new TradeTransactionConditionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResultOption";
-			definition = "Result of option when set. (UK specific)";
+			definition = "Result of option when set. (UK specific).";
 			owner_lazy = () -> com.tools20022.repository.codeset.TradeTransactionConditionCode.mmObject();
 			codeName = "BCRO";
 		}

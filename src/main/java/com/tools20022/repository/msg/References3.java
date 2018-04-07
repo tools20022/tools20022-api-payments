@@ -28,6 +28,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.entity.SecuritiesTradeIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.MessageIdentification1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -133,7 +134,7 @@ public class References3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMessageIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<References3, MessageIdentification1> mmMessageIdentification = new MMMessageAssociationEnd<References3, MessageIdentification1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References3.mmObject();
 			isDerived = false;
@@ -144,7 +145,17 @@ public class References3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
+			type_lazy = () -> MessageIdentification1.mmObject();
+		}
+
+		@Override
+		public MessageIdentification1 getValue(References3 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(References3 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
 	@XmlElement(name = "ReqToBeCmpltdId", required = true)
@@ -175,7 +186,7 @@ public class References3 {
 	 * "Identification of the request message that has to be completed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRequestToBeCompletedIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<References3, MessageIdentification1> mmRequestToBeCompletedIdentification = new MMMessageAssociationEnd<References3, MessageIdentification1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References3.mmObject();
 			isDerived = false;
@@ -186,7 +197,17 @@ public class References3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
+			type_lazy = () -> MessageIdentification1.mmObject();
+		}
+
+		@Override
+		public MessageIdentification1 getValue(References3 obj) {
+			return obj.getRequestToBeCompletedIdentification();
+		}
+
+		@Override
+		public void setValue(References3 obj, MessageIdentification1 value) {
+			obj.setRequestToBeCompletedIdentification(value);
 		}
 	};
 	@XmlElement(name = "PrcId", required = true)
@@ -218,7 +239,7 @@ public class References3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProcessIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<References3, MessageIdentification1> mmProcessIdentification = new MMMessageAssociationEnd<References3, MessageIdentification1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References3.mmObject();
 			isDerived = false;
@@ -229,7 +250,17 @@ public class References3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
+			type_lazy = () -> MessageIdentification1.mmObject();
+		}
+
+		@Override
+		public MessageIdentification1 getValue(References3 obj) {
+			return obj.getProcessIdentification();
+		}
+
+		@Override
+		public void setValue(References3 obj, MessageIdentification1 value) {
+			obj.setProcessIdentification(value);
 		}
 	};
 	@XmlElement(name = "ReqRsn", required = true)
@@ -260,7 +291,7 @@ public class References3 {
 	 * definition} = "Reason of the request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References3, List<Max35Text>> mmRequestReason = new MMMessageAttribute<References3, List<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References3.mmObject();
 			isDerived = false;
@@ -270,6 +301,16 @@ public class References3 {
 			definition = "Reason of the request.";
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public List<Max35Text> getValue(References3 obj) {
+			return obj.getRequestReason();
+		}
+
+		@Override
+		public void setValue(References3 obj, List<Max35Text> value) {
+			obj.setRequestReason(value);
 		}
 	};
 	@XmlElement(name = "AttchdDocNm")
@@ -301,7 +342,7 @@ public class References3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttachedDocumentName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References3, List<Max70Text>> mmAttachedDocumentName = new MMMessageAttribute<References3, List<Max70Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.References3.mmObject();
 			isDerived = false;
@@ -311,6 +352,16 @@ public class References3 {
 			definition = "File name of a document logically related to the request.";
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public List<Max70Text> getValue(References3 obj) {
+			return obj.getAttachedDocumentName();
+		}
+
+		@Override
+		public void setValue(References3 obj, List<Max70Text> value) {
+			obj.setAttachedDocumentName(value);
 		}
 	};
 
@@ -334,7 +385,7 @@ public class References3 {
 		return messageIdentification;
 	}
 
-	public References3 setMessageIdentification(com.tools20022.repository.msg.MessageIdentification1 messageIdentification) {
+	public References3 setMessageIdentification(MessageIdentification1 messageIdentification) {
 		this.messageIdentification = Objects.requireNonNull(messageIdentification);
 		return this;
 	}
@@ -343,7 +394,7 @@ public class References3 {
 		return requestToBeCompletedIdentification;
 	}
 
-	public References3 setRequestToBeCompletedIdentification(com.tools20022.repository.msg.MessageIdentification1 requestToBeCompletedIdentification) {
+	public References3 setRequestToBeCompletedIdentification(MessageIdentification1 requestToBeCompletedIdentification) {
 		this.requestToBeCompletedIdentification = Objects.requireNonNull(requestToBeCompletedIdentification);
 		return this;
 	}
@@ -352,7 +403,7 @@ public class References3 {
 		return processIdentification;
 	}
 
-	public References3 setProcessIdentification(com.tools20022.repository.msg.MessageIdentification1 processIdentification) {
+	public References3 setProcessIdentification(MessageIdentification1 processIdentification) {
 		this.processIdentification = Objects.requireNonNull(processIdentification);
 		return this;
 	}

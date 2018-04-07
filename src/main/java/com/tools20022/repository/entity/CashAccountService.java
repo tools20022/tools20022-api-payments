@@ -22,10 +22,9 @@ import com.tools20022.repository.codeset.BillingChargeMethodCode;
 import com.tools20022.repository.codeset.BillingCurrencyTypeCode;
 import com.tools20022.repository.codeset.CompensationMethodCode;
 import com.tools20022.repository.codeset.ServicePaymentMethodCode;
-import com.tools20022.repository.entity.AccountService;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -148,6 +147,8 @@ import java.util.Objects;
  * </li>
  * <li>{@linkplain com.tools20022.repository.entity.DebitCreditFacility
  * DebitCreditFacility}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AccountSwitching
+ * AccountSwitching}</li>
  * </ul>
  * </li>
  * <li>
@@ -174,6 +175,8 @@ import java.util.Objects;
  * BillingServiceParameters3}</li>
  * <li>{@linkplain com.tools20022.repository.msg.BillingService2
  * BillingService2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DirectDebitInstructionDetails1
+ * DirectDebitInstructionDetails1}</li>
  * </ul>
  * </li>
  * <li>
@@ -239,7 +242,7 @@ public class CashAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccountMandate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashAccountService, List<CashAccountMandate>> mmCashAccountMandate = new MMBusinessAssociationEnd<CashAccountService, List<CashAccountMandate>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountReport15.mmMandate);
 			isDerived = false;
@@ -251,6 +254,16 @@ public class CashAccountService extends AccountService {
 			opposite_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmServices;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmObject();
+		}
+
+		@Override
+		public List<CashAccountMandate> getValue(CashAccountService obj) {
+			return obj.getCashAccountMandate();
+		}
+
+		@Override
+		public void setValue(CashAccountService obj, List<CashAccountMandate> value) {
+			obj.setCashAccountMandate(value);
 		}
 	};
 	protected CompensationMethodCode compensationMethod;
@@ -290,7 +303,7 @@ public class CashAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCompensationMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashAccountService, CompensationMethodCode> mmCompensationMethod = new MMBusinessAttribute<CashAccountService, CompensationMethodCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccountCharacteristics2.mmCompensationMethod);
 			isDerived = false;
@@ -303,12 +316,14 @@ public class CashAccountService extends AccountService {
 			simpleType_lazy = () -> CompensationMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashAccountService.class.getMethod("getCompensationMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CompensationMethodCode getValue(CashAccountService obj) {
+			return obj.getCompensationMethod();
+		}
+
+		@Override
+		public void setValue(CashAccountService obj, CompensationMethodCode value) {
+			obj.setCompensationMethod(value);
 		}
 	};
 	protected BillingCurrencyTypeCode billingCurrency;
@@ -350,7 +365,7 @@ public class CashAccountService extends AccountService {
 	 * "Currency used for billing the services related to the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBillingCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashAccountService, BillingCurrencyTypeCode> mmBillingCurrency = new MMBusinessAttribute<CashAccountService, BillingCurrencyTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingBalance1.mmCurrencyType, BillingCompensation1.mmCurrencyType);
 			isDerived = false;
@@ -363,12 +378,14 @@ public class CashAccountService extends AccountService {
 			simpleType_lazy = () -> BillingCurrencyTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashAccountService.class.getMethod("getBillingCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BillingCurrencyTypeCode getValue(CashAccountService obj) {
+			return obj.getBillingCurrency();
+		}
+
+		@Override
+		public void setValue(CashAccountService obj, BillingCurrencyTypeCode value) {
+			obj.setBillingCurrency(value);
 		}
 	};
 	protected BillingChargeMethodCode billingChargeMethod;
@@ -405,7 +422,7 @@ public class CashAccountService extends AccountService {
 	 * definition} = "Defines how the billing charge is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBillingChargeMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashAccountService, BillingChargeMethodCode> mmBillingChargeMethod = new MMBusinessAttribute<CashAccountService, BillingChargeMethodCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingPrice1.mmMethod);
 			isDerived = false;
@@ -418,12 +435,14 @@ public class CashAccountService extends AccountService {
 			simpleType_lazy = () -> BillingChargeMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashAccountService.class.getMethod("getBillingChargeMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BillingChargeMethodCode getValue(CashAccountService obj) {
+			return obj.getBillingChargeMethod();
+		}
+
+		@Override
+		public void setValue(CashAccountService obj, BillingChargeMethodCode value) {
+			obj.setBillingChargeMethod(value);
 		}
 	};
 	protected ServicePaymentMethodCode paymentMethod;
@@ -462,7 +481,7 @@ public class CashAccountService extends AccountService {
 	 * "Specifies the different payment methods for an account service."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPaymentMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashAccountService, ServicePaymentMethodCode> mmPaymentMethod = new MMBusinessAttribute<CashAccountService, ServicePaymentMethodCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingService2.mmPaymentMethod);
 			isDerived = false;
@@ -475,12 +494,14 @@ public class CashAccountService extends AccountService {
 			simpleType_lazy = () -> ServicePaymentMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashAccountService.class.getMethod("getPaymentMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ServicePaymentMethodCode getValue(CashAccountService obj) {
+			return obj.getPaymentMethod();
+		}
+
+		@Override
+		public void setValue(CashAccountService obj, ServicePaymentMethodCode value) {
+			obj.setPaymentMethod(value);
 		}
 	};
 	protected CashAccountContract cashAccountContract;
@@ -519,7 +540,7 @@ public class CashAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccountContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashAccountService, com.tools20022.repository.entity.CashAccountContract> mmCashAccountContract = new MMBusinessAssociationEnd<CashAccountService, com.tools20022.repository.entity.CashAccountContract>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmObject();
@@ -531,6 +552,16 @@ public class CashAccountService extends AccountService {
 			opposite_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmServices;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.CashAccountContract getValue(CashAccountService obj) {
+			return obj.getCashAccountContract();
+		}
+
+		@Override
+		public void setValue(CashAccountService obj, com.tools20022.repository.entity.CashAccountContract value) {
+			obj.setCashAccountContract(value);
 		}
 	};
 	protected GenericIdentification identification;
@@ -568,7 +599,7 @@ public class CashAccountService extends AccountService {
 	 * definition} = "Identifies the bank operation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashAccountService, GenericIdentification> mmIdentification = new MMBusinessAssociationEnd<CashAccountService, GenericIdentification>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmObject();
@@ -577,9 +608,19 @@ public class CashAccountService extends AccountService {
 			definition = "Identifies the bank operation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmRelatedCashAccountService;
+			opposite_lazy = () -> GenericIdentification.mmRelatedCashAccountService;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
+			type_lazy = () -> GenericIdentification.mmObject();
+		}
+
+		@Override
+		public GenericIdentification getValue(CashAccountService obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(CashAccountService obj, GenericIdentification value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected CashAccount cashAccount;
@@ -618,7 +659,7 @@ public class CashAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashAccountService, com.tools20022.repository.entity.CashAccount> mmCashAccount = new MMBusinessAssociationEnd<CashAccountService, com.tools20022.repository.entity.CashAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmObject();
@@ -631,6 +672,16 @@ public class CashAccountService extends AccountService {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.CashAccount getValue(CashAccountService obj) {
+			return obj.getCashAccount();
+		}
+
+		@Override
+		public void setValue(CashAccountService obj, com.tools20022.repository.entity.CashAccount value) {
+			obj.setCashAccount(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -640,20 +691,20 @@ public class CashAccountService extends AccountService {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccountService";
 				definition = "Services linked to an account which are available to the account owner or to the holder of a mandate. The exercise of these services may be submitted to a limit.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmRelatedCashAccountService, com.tools20022.repository.entity.CashAccount.mmCashAccountService,
+				associationDomain_lazy = () -> Arrays.asList(GenericIdentification.mmRelatedCashAccountService, com.tools20022.repository.entity.CashAccount.mmCashAccountService,
 						com.tools20022.repository.entity.CashAccountContract.mmServices, com.tools20022.repository.entity.CashAccountMandate.mmServices);
 				derivationElement_lazy = () -> Arrays.asList(BillingMethod1.mmServiceTax, BillingMethod1.mmTotalCharge, BillingMethod2.mmServiceTax, BillingServiceIdentification2.mmIdentification,
 						BillingServiceIdentification2.mmSubService, BillingServiceParameters2.mmBankService, TaxCalculation1.mmTaxableServiceChargeConversion, BillingMethod4.mmServiceDetail, BillingServiceAdjustment1.mmSubService,
 						BillingServiceIdentification3.mmSubService, BillingServiceParameters3.mmBankService, BillingService2.mmServiceDetail, BillingStatement2.mmCompensation, BillingStatement2.mmService,
 						BillingStatement2.mmServiceAdjustment);
-				subType_lazy = () -> Arrays.asList(CashManagementService.mmObject(), BankOperation.mmObject(), DebitCreditFacility.mmObject());
+				subType_lazy = () -> Arrays.asList(CashManagementService.mmObject(), BankOperation.mmObject(), DebitCreditFacility.mmObject(), AccountSwitching.mmObject());
 				superType_lazy = () -> AccountService.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccountService.mmCashAccountMandate, com.tools20022.repository.entity.CashAccountService.mmCompensationMethod,
 						com.tools20022.repository.entity.CashAccountService.mmBillingCurrency, com.tools20022.repository.entity.CashAccountService.mmBillingChargeMethod, com.tools20022.repository.entity.CashAccountService.mmPaymentMethod,
 						com.tools20022.repository.entity.CashAccountService.mmCashAccountContract, com.tools20022.repository.entity.CashAccountService.mmIdentification, com.tools20022.repository.entity.CashAccountService.mmCashAccount);
 				derivationComponent_lazy = () -> Arrays.asList(BillingCompensation1.mmObject(), BillingServicesAmount1.mmObject(), BillingServicesAmount2.mmObject(), BillingServiceIdentification2.mmObject(),
 						BillingServiceParameters2.mmObject(), BillingServicesAmount3.mmObject(), BillingServiceAdjustment1.mmObject(), BillingServiceIdentification3.mmObject(), BillingServiceParameters3.mmObject(),
-						BillingService2.mmObject());
+						BillingService2.mmObject(), DirectDebitInstructionDetails1.mmObject());
 			}
 
 			@Override
@@ -722,7 +773,7 @@ public class CashAccountService extends AccountService {
 		return identification;
 	}
 
-	public CashAccountService setIdentification(com.tools20022.repository.entity.GenericIdentification identification) {
+	public CashAccountService setIdentification(GenericIdentification identification) {
 		this.identification = Objects.requireNonNull(identification);
 		return this;
 	}

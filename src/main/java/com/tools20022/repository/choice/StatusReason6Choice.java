@@ -107,7 +107,7 @@ public class StatusReason6Choice {
 	 * "Reason for the status, as published in an external reason code list."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatusReason6Choice, ExternalStatusReason1Code> mmCode = new MMMessageAttribute<StatusReason6Choice, ExternalStatusReason1Code>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
 			componentContext_lazy = () -> com.tools20022.repository.choice.StatusReason6Choice.mmObject();
@@ -119,6 +119,16 @@ public class StatusReason6Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalStatusReason1Code.mmObject();
+		}
+
+		@Override
+		public ExternalStatusReason1Code getValue(StatusReason6Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(StatusReason6Choice obj, ExternalStatusReason1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -155,7 +165,7 @@ public class StatusReason6Choice {
 	 * definition} = "Reason for the status, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatusReason6Choice, Max35Text> mmProprietary = new MMMessageAttribute<StatusReason6Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
 			componentContext_lazy = () -> com.tools20022.repository.choice.StatusReason6Choice.mmObject();
@@ -167,6 +177,16 @@ public class StatusReason6Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(StatusReason6Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(StatusReason6Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

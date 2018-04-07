@@ -111,7 +111,7 @@ public class ChequeDeliveryMethod1Choice {
 	 * "Specifies the delivery method of the cheque by the debtor's agent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ChequeDeliveryMethod1Choice, ChequeDelivery1Code> mmCode = new MMMessageAttribute<ChequeDeliveryMethod1Choice, ChequeDelivery1Code>() {
 		{
 			businessElementTrace_lazy = () -> ChequeIssue.mmDeliveryMethod;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ChequeDeliveryMethod1Choice.mmObject();
@@ -123,6 +123,16 @@ public class ChequeDeliveryMethod1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ChequeDelivery1Code.mmObject();
+		}
+
+		@Override
+		public ChequeDelivery1Code getValue(ChequeDeliveryMethod1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ChequeDeliveryMethod1Choice obj, ChequeDelivery1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -161,7 +171,7 @@ public class ChequeDeliveryMethod1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ChequeDeliveryMethod1Choice, Max35Text> mmProprietary = new MMMessageAttribute<ChequeDeliveryMethod1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> ChequeIssue.mmDeliveryMethod;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ChequeDeliveryMethod1Choice.mmObject();
@@ -173,6 +183,16 @@ public class ChequeDeliveryMethod1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ChequeDeliveryMethod1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ChequeDeliveryMethod1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

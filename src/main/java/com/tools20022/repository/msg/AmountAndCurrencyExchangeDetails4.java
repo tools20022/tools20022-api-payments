@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.CashEntry;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CurrencyExchange5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -108,7 +109,7 @@ public class AmountAndCurrencyExchangeDetails4 {
 	 * definition} = "Specifies the type of amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountAndCurrencyExchangeDetails4, Max35Text> mmType = new MMMessageAttribute<AmountAndCurrencyExchangeDetails4, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails4.mmObject();
 			isDerived = false;
@@ -119,6 +120,16 @@ public class AmountAndCurrencyExchangeDetails4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(AmountAndCurrencyExchangeDetails4 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(AmountAndCurrencyExchangeDetails4 obj, Max35Text value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -158,7 +169,7 @@ public class AmountAndCurrencyExchangeDetails4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountAndCurrencyExchangeDetails4, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<AmountAndCurrencyExchangeDetails4, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CashEntry.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails4.mmObject();
@@ -170,6 +181,16 @@ public class AmountAndCurrencyExchangeDetails4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(AmountAndCurrencyExchangeDetails4 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(AmountAndCurrencyExchangeDetails4 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "CcyXchg")
@@ -206,7 +227,7 @@ public class AmountAndCurrencyExchangeDetails4 {
 	 * "Set of elements used to provide details on the currency exchange."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCurrencyExchange = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmountAndCurrencyExchangeDetails4, Optional<CurrencyExchange5>> mmCurrencyExchange = new MMMessageAssociationEnd<AmountAndCurrencyExchangeDetails4, Optional<CurrencyExchange5>>() {
 		{
 			businessElementTrace_lazy = () -> CashEntry.mmCurrencyExchange;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails4.mmObject();
@@ -218,7 +239,17 @@ public class AmountAndCurrencyExchangeDetails4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CurrencyExchange5.mmObject();
+			type_lazy = () -> CurrencyExchange5.mmObject();
+		}
+
+		@Override
+		public Optional<CurrencyExchange5> getValue(AmountAndCurrencyExchangeDetails4 obj) {
+			return obj.getCurrencyExchange();
+		}
+
+		@Override
+		public void setValue(AmountAndCurrencyExchangeDetails4 obj, Optional<CurrencyExchange5> value) {
+			obj.setCurrencyExchange(value.orElse(null));
 		}
 	};
 
@@ -259,7 +290,7 @@ public class AmountAndCurrencyExchangeDetails4 {
 		return currencyExchange == null ? Optional.empty() : Optional.of(currencyExchange);
 	}
 
-	public AmountAndCurrencyExchangeDetails4 setCurrencyExchange(com.tools20022.repository.msg.CurrencyExchange5 currencyExchange) {
+	public AmountAndCurrencyExchangeDetails4 setCurrencyExchange(CurrencyExchange5 currencyExchange) {
 		this.currencyExchange = currencyExchange;
 		return this;
 	}

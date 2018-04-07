@@ -24,9 +24,9 @@ import com.tools20022.repository.other.SignatureEnvelope;
 
 /**
  * The XML Signature namespace ("http://www.w3.org/2000/09/xmldsig#") allows for
- * different XML elements to be root elements . This means the user has to
- * choose amongst these global elements which one to use as the root element.
- * Only the XML element Signature is allowed.
+ * different XML elements to be root elements. This means the user has to choose
+ * amongst these global elements which one to use as the root element. Only the
+ * XML element Signature is allowed.
  */
 public class ConstraintOnlySignatureElement {
 
@@ -47,27 +47,27 @@ public class ConstraintOnlySignatureElement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "The XML Signature namespace (\"http://www.w3.org/2000/09/xmldsig#\") allows for different XML elements to be root elements . This means the user has to choose amongst these global elements which one to use as the root element. Only the XML element Signature is allowed."
+	 * "The XML Signature namespace (\"http://www.w3.org/2000/09/xmldsig#\") allows for different XML elements to be root elements. This means the user has to choose amongst these global elements which one to use as the root element. Only the XML element Signature is allowed."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forSignatureEnvelope = new MMConstraint() {
+	public static final MMConstraint<SignatureEnvelope> forSignatureEnvelope = new MMConstraint<SignatureEnvelope>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OnlySignatureElement";
-			definition = "The XML Signature namespace (\"http://www.w3.org/2000/09/xmldsig#\") allows for different XML elements to be root elements . This means the user has to choose amongst these global elements which one to use as the root element. Only the XML element Signature is allowed.";
+			definition = "The XML Signature namespace (\"http://www.w3.org/2000/09/xmldsig#\") allows for different XML elements to be root elements. This means the user has to choose amongst these global elements which one to use as the root element. Only the XML element Signature is allowed.";
 			owner_lazy = () -> SignatureEnvelope.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkSignatureEnvelope((SignatureEnvelope) obj);
+		public void executeValidator(SignatureEnvelope obj) throws Exception {
+			checkSignatureEnvelope(obj);
 		}
 	};
 
 	/**
 	 * The XML Signature namespace ("http://www.w3.org/2000/09/xmldsig#") allows
-	 * for different XML elements to be root elements . This means the user has
+	 * for different XML elements to be root elements. This means the user has
 	 * to choose amongst these global elements which one to use as the root
 	 * element. Only the XML element Signature is allowed.
 	 */

@@ -25,7 +25,6 @@ import com.tools20022.repository.area.CashManagementLatestVersion;
 import com.tools20022.repository.msg.Case3;
 import com.tools20022.repository.msg.CaseAssignment3;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -137,7 +136,7 @@ public class CancelCaseAssignmentV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAssignment = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CancelCaseAssignmentV03, CaseAssignment3> mmAssignment = new MMMessageBuildingBlock<CancelCaseAssignmentV03, CaseAssignment3>() {
 		{
 			xmlTag = "Assgnmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -148,12 +147,14 @@ public class CancelCaseAssignmentV03 {
 			complexType_lazy = () -> CaseAssignment3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CancelCaseAssignmentV03.class.getMethod("getAssignment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CaseAssignment3 getValue(CancelCaseAssignmentV03 obj) {
+			return obj.getAssignment();
+		}
+
+		@Override
+		public void setValue(CancelCaseAssignmentV03 obj, CaseAssignment3 value) {
+			obj.setAssignment(value);
 		}
 	};
 	@XmlElement(name = "Case", required = true)
@@ -179,7 +180,7 @@ public class CancelCaseAssignmentV03 {
 	 * definition} = "Identifies the investigation case."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCase = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CancelCaseAssignmentV03, Case3> mmCase = new MMMessageBuildingBlock<CancelCaseAssignmentV03, Case3>() {
 		{
 			xmlTag = "Case";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -190,12 +191,14 @@ public class CancelCaseAssignmentV03 {
 			complexType_lazy = () -> Case3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CancelCaseAssignmentV03.class.getMethod("getCase", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Case3 getValue(CancelCaseAssignmentV03 obj) {
+			return obj.getCase();
+		}
+
+		@Override
+		public void setValue(CancelCaseAssignmentV03 obj, Case3 value) {
+			obj.setCase(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -225,7 +228,7 @@ public class CancelCaseAssignmentV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CancelCaseAssignmentV03, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CancelCaseAssignmentV03, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -235,12 +238,14 @@ public class CancelCaseAssignmentV03 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CancelCaseAssignmentV03.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CancelCaseAssignmentV03 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CancelCaseAssignmentV03 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

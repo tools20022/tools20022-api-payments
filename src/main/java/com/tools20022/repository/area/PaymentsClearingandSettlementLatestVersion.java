@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Messages that support the clearing and settlement processes for payment
- * transactions between financial institutions
+ * transactions between financial institutions.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -36,27 +36,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageDefinition} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV06
- * FinancialInstitutionCreditTransferV06}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV06
- * FIToFICustomerCreditTransferV06}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionDirectDebitV02
  * FinancialInstitutionDirectDebitV02}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV01
- * FIToFIPaymentStatusRequestV01}</li>
- * <li>{@linkplain com.tools20022.repository.area.pacs.PaymentReturnV07
- * PaymentReturnV07}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV08
- * FIToFIPaymentStatusReportV08}</li>
- * <li>{@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentReversalV07
- * FIToFIPaymentReversalV07}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerDirectDebitV07
  * FIToFICustomerDirectDebitV07}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV07
+ * FIToFICustomerCreditTransferV07}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV07
+ * FinancialInstitutionCreditTransferV07}</li>
+ * <li>{@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentReversalV08
+ * FIToFIPaymentReversalV08}</li>
+ * <li>{@linkplain com.tools20022.repository.area.pacs.PaymentReturnV08
+ * PaymentReturnV08}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV09
+ * FIToFIPaymentStatusReportV09}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV02
+ * FIToFIPaymentStatusRequestV02}</li>
  * </ul>
  * </li>
  * <li>
@@ -72,7 +72,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Payments Clearing and Settlement - Latest version - master"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Messages that support the clearing and settlement processes for payment transactions between financial institutions "
+ * "Messages that support the clearing and settlement processes for payment transactions between financial institutions."
  * </li>
  * </ul>
  */
@@ -86,10 +86,10 @@ public class PaymentsClearingandSettlementLatestVersion {
 				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Payments Clearing and Settlement - Latest version - master";
-				definition = "Messages that support the clearing and settlement processes for payment transactions between financial institutions ";
-				messageDefinition_lazy = () -> Arrays.asList(FinancialInstitutionCreditTransferV06.mmObject(), FIToFICustomerCreditTransferV06.mmObject(), FinancialInstitutionDirectDebitV02.mmObject(),
-						FIToFIPaymentStatusRequestV01.mmObject(), PaymentReturnV07.mmObject(), FIToFIPaymentStatusReportV08.mmObject(), FIToFIPaymentReversalV07.mmObject(), FIToFICustomerDirectDebitV07.mmObject());
+				definition = "Messages that support the clearing and settlement processes for payment transactions between financial institutions.";
 				code = "pacs";
+				messageDefinition_lazy = () -> Arrays.asList(FinancialInstitutionDirectDebitV02.mmObject(), FIToFICustomerDirectDebitV07.mmObject(), FIToFICustomerCreditTransferV07.mmObject(),
+						FinancialInstitutionCreditTransferV07.mmObject(), FIToFIPaymentReversalV08.mmObject(), PaymentReturnV08.mmObject(), FIToFIPaymentStatusReportV09.mmObject(), FIToFIPaymentStatusRequestV02.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

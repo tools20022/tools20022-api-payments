@@ -20,12 +20,12 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV08;
-import com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV01;
+import com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV09;
+import com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV02;
 
 /**
- * If OriginalGroupInformation is absent, then <br>
- * TransactionInformation[*]/OriginalGroupInformation must be present.
+ * If OriginalGroupInformationAndStatus is absent, then <br>
+ * TransactionInformationAndStatus[*]/OriginalGroupInformation must be present.
  */
 public class ConstraintOriginalGroupInformationAbsenceRule {
 
@@ -35,47 +35,8 @@ public class ConstraintOriginalGroupInformationAbsenceRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV01
-	 * FIToFIPaymentStatusRequestV01}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
-	 * expression} =
-	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/TransactionInformation[*]/OriginalGroupInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/OriginalGroupInformation[*]&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
-	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "OriginalGroupInformationAbsenceRule"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "If OriginalGroupInformation is absent, then \r\nTransactionInformation[*]/OriginalGroupInformation must be present."
-	 * </li>
-	 * </ul>
-	 */
-	public static final MMConstraint forFIToFIPaymentStatusRequestV01 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "OriginalGroupInformationAbsenceRule";
-			definition = "If OriginalGroupInformation is absent, then \r\nTransactionInformation[*]/OriginalGroupInformation must be present.";
-			owner_lazy = () -> FIToFIPaymentStatusRequestV01.mmObject();
-			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/TransactionInformation[*]/OriginalGroupInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/OriginalGroupInformation[*]</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFIToFIPaymentStatusRequestV01((FIToFIPaymentStatusRequestV01) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV08
-	 * FIToFIPaymentStatusReportV08}</li>
+	 * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV09
+	 * FIToFIPaymentStatusReportV09}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/TransactionInformationAndStatus[*]/OriginalGroupInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/OriginalGroupInformationAndStatus[*]&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
@@ -93,35 +54,74 @@ public class ConstraintOriginalGroupInformationAbsenceRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forFIToFIPaymentStatusReportV08 = new MMConstraint() {
+	public static final MMConstraint<FIToFIPaymentStatusReportV09> for_pacs_FIToFIPaymentStatusReportV09 = new MMConstraint<FIToFIPaymentStatusReportV09>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalGroupInformationAbsenceRule";
 			definition = "If OriginalGroupInformationAndStatus is absent, then \r\nTransactionInformationAndStatus[*]/OriginalGroupInformation must be present.";
-			owner_lazy = () -> FIToFIPaymentStatusReportV08.mmObject();
+			owner_lazy = () -> FIToFIPaymentStatusReportV09.mmObject();
 			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/TransactionInformationAndStatus[*]/OriginalGroupInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/OriginalGroupInformationAndStatus[*]</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFIToFIPaymentStatusReportV08((FIToFIPaymentStatusReportV08) obj);
+		public void executeValidator(FIToFIPaymentStatusReportV09 obj) throws Exception {
+			check_pacs_FIToFIPaymentStatusReportV09(obj);
 		}
 	};
-
 	/**
-	 * If OriginalGroupInformation is absent, then <br>
-	 * TransactionInformation[*]/OriginalGroupInformation must be present.
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV02
+	 * FIToFIPaymentStatusRequestV02}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/TransactionInformation[*]/OriginalGroupInformation&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/OriginalGroupInformation[*]&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "OriginalGroupInformationAbsenceRule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If OriginalGroupInformation is absent, then \r\nTransactionInformation[*]/OriginalGroupInformation must be present."
+	 * </li>
+	 * </ul>
 	 */
-	public static void checkFIToFIPaymentStatusRequestV01(FIToFIPaymentStatusRequestV01 obj) throws Exception {
-		throw new NotImplementedConstraintException();
-	}
+	public static final MMConstraint<FIToFIPaymentStatusRequestV02> for_pacs_FIToFIPaymentStatusRequestV02 = new MMConstraint<FIToFIPaymentStatusRequestV02>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "OriginalGroupInformationAbsenceRule";
+			definition = "If OriginalGroupInformation is absent, then \r\nTransactionInformation[*]/OriginalGroupInformation must be present.";
+			owner_lazy = () -> FIToFIPaymentStatusRequestV02.mmObject();
+			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/TransactionInformation[*]/OriginalGroupInformation</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/OriginalGroupInformation[*]</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
+		}
+
+		@Override
+		public void executeValidator(FIToFIPaymentStatusRequestV02 obj) throws Exception {
+			check_pacs_FIToFIPaymentStatusRequestV02(obj);
+		}
+	};
 
 	/**
 	 * If OriginalGroupInformationAndStatus is absent, then <br>
 	 * TransactionInformationAndStatus[*]/OriginalGroupInformation must be
 	 * present.
 	 */
-	public static void checkFIToFIPaymentStatusReportV08(FIToFIPaymentStatusReportV08 obj) throws Exception {
+	public static void check_pacs_FIToFIPaymentStatusReportV09(FIToFIPaymentStatusReportV09 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If OriginalGroupInformation is absent, then <br>
+	 * TransactionInformation[*]/OriginalGroupInformation must be present.
+	 */
+	public static void check_pacs_FIToFIPaymentStatusRequestV02(FIToFIPaymentStatusRequestV02 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

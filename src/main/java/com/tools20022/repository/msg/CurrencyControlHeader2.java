@@ -28,6 +28,8 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max15NumericText;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
+import com.tools20022.repository.msg.PartyIdentification77;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -131,7 +133,7 @@ public class CurrencyControlHeader2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlHeader2, Max35Text> mmMessageIdentification = new MMMessageAttribute<CurrencyControlHeader2, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlHeader2.mmObject();
 			isDerived = false;
@@ -142,6 +144,16 @@ public class CurrencyControlHeader2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(CurrencyControlHeader2 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(CurrencyControlHeader2 obj, Max35Text value) {
+			obj.setMessageIdentification(value);
 		}
 	};
 	@XmlElement(name = "CreDtTm", required = true)
@@ -173,7 +185,7 @@ public class CurrencyControlHeader2 {
 	 * definition} = "Date and time at which the message was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlHeader2, ISODateTime> mmCreationDateTime = new MMMessageAttribute<CurrencyControlHeader2, ISODateTime>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlHeader2.mmObject();
 			isDerived = false;
@@ -184,6 +196,16 @@ public class CurrencyControlHeader2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public ISODateTime getValue(CurrencyControlHeader2 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(CurrencyControlHeader2 obj, ISODateTime value) {
+			obj.setCreationDateTime(value);
 		}
 	};
 	@XmlElement(name = "NbOfItms", required = true)
@@ -216,7 +238,7 @@ public class CurrencyControlHeader2 {
 	 * definition} = "Number of individual items contained in the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfItems = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlHeader2, Max15NumericText> mmNumberOfItems = new MMMessageAttribute<CurrencyControlHeader2, Max15NumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlHeader2.mmObject();
 			isDerived = false;
@@ -227,6 +249,16 @@ public class CurrencyControlHeader2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
+		}
+
+		@Override
+		public Max15NumericText getValue(CurrencyControlHeader2 obj) {
+			return obj.getNumberOfItems();
+		}
+
+		@Override
+		public void setValue(CurrencyControlHeader2 obj, Max15NumericText value) {
+			obj.setNumberOfItems(value);
 		}
 	};
 	@XmlElement(name = "RcvgPty", required = true)
@@ -257,7 +289,7 @@ public class CurrencyControlHeader2 {
 	 * definition} = "Party that receives the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReceivingParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlHeader2, PartyIdentification77> mmReceivingParty = new MMMessageAssociationEnd<CurrencyControlHeader2, PartyIdentification77>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlHeader2.mmObject();
 			isDerived = false;
@@ -268,7 +300,17 @@ public class CurrencyControlHeader2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification77.mmObject();
+			type_lazy = () -> PartyIdentification77.mmObject();
+		}
+
+		@Override
+		public PartyIdentification77 getValue(CurrencyControlHeader2 obj) {
+			return obj.getReceivingParty();
+		}
+
+		@Override
+		public void setValue(CurrencyControlHeader2 obj, PartyIdentification77 value) {
+			obj.setReceivingParty(value);
 		}
 	};
 	@XmlElement(name = "RegnAgt", required = true)
@@ -300,7 +342,7 @@ public class CurrencyControlHeader2 {
 	 * definition} = "Agent which sends the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRegistrationAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlHeader2, BranchAndFinancialInstitutionIdentification5> mmRegistrationAgent = new MMMessageAssociationEnd<CurrencyControlHeader2, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlHeader2.mmObject();
 			isDerived = false;
@@ -311,7 +353,17 @@ public class CurrencyControlHeader2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(CurrencyControlHeader2 obj) {
+			return obj.getRegistrationAgent();
+		}
+
+		@Override
+		public void setValue(CurrencyControlHeader2 obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setRegistrationAgent(value);
 		}
 	};
 
@@ -361,7 +413,7 @@ public class CurrencyControlHeader2 {
 		return receivingParty;
 	}
 
-	public CurrencyControlHeader2 setReceivingParty(com.tools20022.repository.msg.PartyIdentification77 receivingParty) {
+	public CurrencyControlHeader2 setReceivingParty(PartyIdentification77 receivingParty) {
 		this.receivingParty = Objects.requireNonNull(receivingParty);
 		return this;
 	}
@@ -370,7 +422,7 @@ public class CurrencyControlHeader2 {
 		return registrationAgent;
 	}
 
-	public CurrencyControlHeader2 setRegistrationAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 registrationAgent) {
+	public CurrencyControlHeader2 setRegistrationAgent(BranchAndFinancialInstitutionIdentification5 registrationAgent) {
 		this.registrationAgent = Objects.requireNonNull(registrationAgent);
 		return this;
 	}

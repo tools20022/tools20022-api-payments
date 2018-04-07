@@ -19,8 +19,9 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.AttendanceCard;
+import com.tools20022.repository.entity.InstructionForMeeting;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -116,7 +117,7 @@ public class MeetingAttendance {
 	 * definition} = "Specifies details linked to the attendance card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAttendanceCard = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingAttendance, AttendanceCard> mmAttendanceCard = new MMBusinessAssociationEnd<MeetingAttendance, AttendanceCard>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmObject();
@@ -125,9 +126,19 @@ public class MeetingAttendance {
 			definition = "Specifies details linked to the attendance card.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmMeetingAttendance;
+			opposite_lazy = () -> AttendanceCard.mmMeetingAttendance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AttendanceCard.mmObject();
+			type_lazy = () -> AttendanceCard.mmObject();
+		}
+
+		@Override
+		public AttendanceCard getValue(MeetingAttendance obj) {
+			return obj.getAttendanceCard();
+		}
+
+		@Override
+		public void setValue(MeetingAttendance obj, AttendanceCard value) {
+			obj.setAttendanceCard(value);
 		}
 	};
 	protected PercentageRate percentageOfVotingRights;
@@ -159,7 +170,7 @@ public class MeetingAttendance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPercentageOfVotingRights = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MeetingAttendance, PercentageRate> mmPercentageOfVotingRights = new MMBusinessAttribute<MeetingAttendance, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmObject();
@@ -171,12 +182,14 @@ public class MeetingAttendance {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingAttendance.class.getMethod("getPercentageOfVotingRights", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(MeetingAttendance obj) {
+			return obj.getPercentageOfVotingRights();
+		}
+
+		@Override
+		public void setValue(MeetingAttendance obj, PercentageRate value) {
+			obj.setPercentageOfVotingRights(value);
 		}
 	};
 	protected InstructionForMeeting relatedMeeting;
@@ -215,7 +228,7 @@ public class MeetingAttendance {
 	 * "Instruction in which the meeting attendance conditions are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingAttendance, Optional<InstructionForMeeting>> mmRelatedMeeting = new MMBusinessAssociationEnd<MeetingAttendance, Optional<InstructionForMeeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingAttendance.mmObject();
@@ -224,9 +237,19 @@ public class MeetingAttendance {
 			definition = "Instruction in which the meeting attendance conditions are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmMeetingAttendance;
+			opposite_lazy = () -> InstructionForMeeting.mmMeetingAttendance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
+			type_lazy = () -> InstructionForMeeting.mmObject();
+		}
+
+		@Override
+		public Optional<InstructionForMeeting> getValue(MeetingAttendance obj) {
+			return obj.getRelatedMeeting();
+		}
+
+		@Override
+		public void setValue(MeetingAttendance obj, Optional<InstructionForMeeting> value) {
+			obj.setRelatedMeeting(value.orElse(null));
 		}
 	};
 
@@ -237,7 +260,7 @@ public class MeetingAttendance {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingAttendance";
 				definition = "Information on the participation of the security holder or of its assigned representative.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InstructionForMeeting.mmMeetingAttendance, com.tools20022.repository.entity.AttendanceCard.mmMeetingAttendance);
+				associationDomain_lazy = () -> Arrays.asList(InstructionForMeeting.mmMeetingAttendance, AttendanceCard.mmMeetingAttendance);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingAttendance.mmAttendanceCard, com.tools20022.repository.entity.MeetingAttendance.mmPercentageOfVotingRights,
 						com.tools20022.repository.entity.MeetingAttendance.mmRelatedMeeting);
 			}
@@ -254,7 +277,7 @@ public class MeetingAttendance {
 		return attendanceCard;
 	}
 
-	public MeetingAttendance setAttendanceCard(com.tools20022.repository.entity.AttendanceCard attendanceCard) {
+	public MeetingAttendance setAttendanceCard(AttendanceCard attendanceCard) {
 		this.attendanceCard = Objects.requireNonNull(attendanceCard);
 		return this;
 	}
@@ -272,7 +295,7 @@ public class MeetingAttendance {
 		return relatedMeeting == null ? Optional.empty() : Optional.of(relatedMeeting);
 	}
 
-	public MeetingAttendance setRelatedMeeting(com.tools20022.repository.entity.InstructionForMeeting relatedMeeting) {
+	public MeetingAttendance setRelatedMeeting(InstructionForMeeting relatedMeeting) {
 		this.relatedMeeting = relatedMeeting;
 		return this;
 	}

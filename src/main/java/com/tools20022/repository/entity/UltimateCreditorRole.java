@@ -21,7 +21,7 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.PaymentObligationPartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.RequestedModification6;
+import com.tools20022.repository.msg.RequestedModification7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -43,8 +43,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmUltimateCreditor
- * RequestedModification6.mmUltimateCreditor}</li>
+ * {@linkplain com.tools20022.repository.msg.RequestedModification7#mmUltimateCreditor
+ * RequestedModification7.mmUltimateCreditor}</li>
  * </ul>
  * </li>
  * <li>
@@ -73,7 +73,7 @@ public class UltimateCreditorRole extends PaymentObligationPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UltimateCreditorRole";
 				definition = "Ultimate party to which an amount of money is due.";
-				derivationElement_lazy = () -> Arrays.asList(RequestedModification6.mmUltimateCreditor);
+				derivationElement_lazy = () -> Arrays.asList(RequestedModification7.mmUltimateCreditor);
 				superType_lazy = () -> PaymentObligationPartyRole.mmObject();
 			}
 

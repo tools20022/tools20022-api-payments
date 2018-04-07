@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SecuritiesSettlementPartyRole;
+import com.tools20022.repository.entity.TradingMarket;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -109,7 +110,7 @@ public class PlaceOfSettlement extends SecuritiesSettlementPartyRole {
 	 * definition} = "Identifies the market for the settlement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlementMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PlaceOfSettlement, TradingMarket> mmSettlementMarket = new MMBusinessAssociationEnd<PlaceOfSettlement, TradingMarket>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PlaceOfSettlement.mmObject();
@@ -118,9 +119,19 @@ public class PlaceOfSettlement extends SecuritiesSettlementPartyRole {
 			definition = "Identifies the market for the settlement.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmRelatedPlaceOfSettlement;
+			opposite_lazy = () -> TradingMarket.mmRelatedPlaceOfSettlement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
+			type_lazy = () -> TradingMarket.mmObject();
+		}
+
+		@Override
+		public TradingMarket getValue(PlaceOfSettlement obj) {
+			return obj.getSettlementMarket();
+		}
+
+		@Override
+		public void setValue(PlaceOfSettlement obj, TradingMarket value) {
+			obj.setSettlementMarket(value);
 		}
 	};
 
@@ -131,7 +142,7 @@ public class PlaceOfSettlement extends SecuritiesSettlementPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PlaceOfSettlement";
 				definition = "Place where settlement of securities occurs.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradingMarket.mmRelatedPlaceOfSettlement);
+				associationDomain_lazy = () -> Arrays.asList(TradingMarket.mmRelatedPlaceOfSettlement);
 				superType_lazy = () -> SecuritiesSettlementPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PlaceOfSettlement.mmSettlementMarket);
 			}
@@ -148,7 +159,7 @@ public class PlaceOfSettlement extends SecuritiesSettlementPartyRole {
 		return settlementMarket;
 	}
 
-	public PlaceOfSettlement setSettlementMarket(com.tools20022.repository.entity.TradingMarket settlementMarket) {
+	public PlaceOfSettlement setSettlementMarket(TradingMarket settlementMarket) {
 		this.settlementMarket = Objects.requireNonNull(settlementMarket);
 		return this;
 	}

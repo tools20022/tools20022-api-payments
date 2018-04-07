@@ -107,7 +107,7 @@ public class CashAccountType2Choice {
 	 * definition} = "Account type, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccountType2Choice, ExternalCashAccountType1Code> mmCode = new MMMessageAttribute<CashAccountType2Choice, ExternalCashAccountType1Code>() {
 		{
 			businessElementTrace_lazy = () -> CashAccount.mmCashAccountType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.CashAccountType2Choice.mmObject();
@@ -119,6 +119,16 @@ public class CashAccountType2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalCashAccountType1Code.mmObject();
+		}
+
+		@Override
+		public ExternalCashAccountType1Code getValue(CashAccountType2Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(CashAccountType2Choice obj, ExternalCashAccountType1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -155,7 +165,7 @@ public class CashAccountType2Choice {
 	 * definition} = "Nature or use of the account in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccountType2Choice, Max35Text> mmProprietary = new MMMessageAttribute<CashAccountType2Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> CashAccount.mmCashAccountType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.CashAccountType2Choice.mmObject();
@@ -167,6 +177,16 @@ public class CashAccountType2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(CashAccountType2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CashAccountType2Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

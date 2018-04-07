@@ -113,7 +113,7 @@ public class GenericPersonIdentification1 {
 	 * definition} = "Unique and unambiguous identification of a person."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericPersonIdentification1, Max35Text> mmIdentification = new MMMessageAttribute<GenericPersonIdentification1, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericPersonIdentification1.mmObject();
@@ -125,6 +125,16 @@ public class GenericPersonIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(GenericPersonIdentification1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(GenericPersonIdentification1 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "SchmeNm")
@@ -161,7 +171,7 @@ public class GenericPersonIdentification1 {
 	 * definition} = "Name of the identification scheme."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSchemeName = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<GenericPersonIdentification1, Optional<PersonIdentificationSchemeName1Choice>> mmSchemeName = new MMMessageAssociationEnd<GenericPersonIdentification1, Optional<PersonIdentificationSchemeName1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmScheme;
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericPersonIdentification1.mmObject();
@@ -174,6 +184,16 @@ public class GenericPersonIdentification1 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> PersonIdentificationSchemeName1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<PersonIdentificationSchemeName1Choice> getValue(GenericPersonIdentification1 obj) {
+			return obj.getSchemeName();
+		}
+
+		@Override
+		public void setValue(GenericPersonIdentification1 obj, Optional<PersonIdentificationSchemeName1Choice> value) {
+			obj.setSchemeName(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Issr")
@@ -210,7 +230,7 @@ public class GenericPersonIdentification1 {
 	 * definition} = "Entity that assigns the identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericPersonIdentification1, Optional<Max35Text>> mmIssuer = new MMMessageAttribute<GenericPersonIdentification1, Optional<Max35Text>>() {
 		{
 			businessComponentTrace_lazy = () -> IdentificationIssuerRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericPersonIdentification1.mmObject();
@@ -222,6 +242,16 @@ public class GenericPersonIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(GenericPersonIdentification1 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(GenericPersonIdentification1 obj, Optional<Max35Text> value) {
+			obj.setIssuer(value.orElse(null));
 		}
 	};
 

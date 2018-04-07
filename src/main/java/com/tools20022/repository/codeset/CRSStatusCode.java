@@ -182,7 +182,7 @@ public class CRSStatusCode extends MMCode {
 		}
 	};
 	/**
-	 * Account holder type is a financial institution such as a depositary , a
+	 * Account holder type is a financial institution such as a depositary, a
 	 * custodial institution or a specified insurance company.
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -201,7 +201,7 @@ public class CRSStatusCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Account holder type is a financial institution such as a depositary , a custodial institution or a specified insurance company."
+	 * "Account holder type is a financial institution such as a depositary, a custodial institution or a specified insurance company."
 	 * </li>
 	 * </ul>
 	 */
@@ -209,7 +209,7 @@ public class CRSStatusCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CRS104";
-			definition = "Account holder type is a financial institution such as a depositary , a custodial institution or a specified insurance company.";
+			definition = "Account holder type is a financial institution such as a depositary, a custodial institution or a specified insurance company.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CRSStatusCode.mmObject();
 			codeName = "C104";
 		}

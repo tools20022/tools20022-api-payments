@@ -22,6 +22,8 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -81,7 +83,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class RolePlayer {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Role> role;
+	protected List<Role> role;
 	/**
 	 * 
 	 <p>
@@ -115,7 +117,7 @@ public class RolePlayer {
 	 * definition} = "Role of the entity in the activity."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RolePlayer, List<Role>> mmRole = new MMBusinessAssociationEnd<RolePlayer, List<Role>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
@@ -124,9 +126,19 @@ public class RolePlayer {
 			name = "Role";
 			definition = "Role of the entity in the activity.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Role.mmPlayer;
+			opposite_lazy = () -> Role.mmPlayer;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
+			type_lazy = () -> Role.mmObject();
+		}
+
+		@Override
+		public List<Role> getValue(RolePlayer obj) {
+			return obj.getRole();
+		}
+
+		@Override
+		public void setValue(RolePlayer obj, List<Role> value) {
+			obj.setRole(value);
 		}
 	};
 	protected DateTimePeriod validityPeriod;
@@ -162,7 +174,7 @@ public class RolePlayer {
 	 * definition} = "Specifies the period during which a role player is valid"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RolePlayer, Optional<DateTimePeriod>> mmValidityPeriod = new MMBusinessAssociationEnd<RolePlayer, Optional<DateTimePeriod>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
@@ -171,9 +183,19 @@ public class RolePlayer {
 			definition = "Specifies the period during which a role player is valid";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedRolePlayer;
+			opposite_lazy = () -> DateTimePeriod.mmRelatedRolePlayer;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public Optional<DateTimePeriod> getValue(RolePlayer obj) {
+			return obj.getValidityPeriod();
+		}
+
+		@Override
+		public void setValue(RolePlayer obj, Optional<DateTimePeriod> value) {
+			obj.setValidityPeriod(value.orElse(null));
 		}
 	};
 
@@ -184,7 +206,7 @@ public class RolePlayer {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RolePlayer";
 				definition = "Type of entity that plays a specific role in a specific context.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Role.mmPlayer, com.tools20022.repository.entity.DateTimePeriod.mmRelatedRolePlayer);
+				associationDomain_lazy = () -> Arrays.asList(Role.mmPlayer, DateTimePeriod.mmRelatedRolePlayer);
 				subType_lazy = () -> Arrays.asList(Party.mmObject(), System.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RolePlayer.mmRole, com.tools20022.repository.entity.RolePlayer.mmValidityPeriod);
 			}
@@ -201,7 +223,7 @@ public class RolePlayer {
 		return role == null ? role = new ArrayList<>() : role;
 	}
 
-	public RolePlayer setRole(List<com.tools20022.repository.entity.Role> role) {
+	public RolePlayer setRole(List<Role> role) {
 		this.role = Objects.requireNonNull(role);
 		return this;
 	}
@@ -210,7 +232,7 @@ public class RolePlayer {
 		return validityPeriod == null ? Optional.empty() : Optional.of(validityPeriod);
 	}
 
-	public RolePlayer setValidityPeriod(com.tools20022.repository.entity.DateTimePeriod validityPeriod) {
+	public RolePlayer setValidityPeriod(DateTimePeriod validityPeriod) {
 		this.validityPeriod = validityPeriod;
 		return this;
 	}

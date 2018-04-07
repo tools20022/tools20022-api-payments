@@ -111,7 +111,7 @@ public class CardSecurityInformation1 {
 	 * "Card security code (CSC) management associated with the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCSCManagement = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardSecurityInformation1, CSCManagement1Code> mmCSCManagement = new MMMessageAttribute<CardSecurityInformation1, CSCManagement1Code>() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmSecurityCodeManagement;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CardSecurityInformation1.mmObject();
@@ -123,6 +123,16 @@ public class CardSecurityInformation1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CSCManagement1Code.mmObject();
+		}
+
+		@Override
+		public CSCManagement1Code getValue(CardSecurityInformation1 obj) {
+			return obj.getCSCManagement();
+		}
+
+		@Override
+		public void setValue(CardSecurityInformation1 obj, CSCManagement1Code value) {
+			obj.setCSCManagement(value);
 		}
 	};
 	@XmlElement(name = "CSCVal")
@@ -160,7 +170,7 @@ public class CardSecurityInformation1 {
 	 * definition} = "Card security code (CSC)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCSCValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardSecurityInformation1, Optional<Min3Max4NumericText>> mmCSCValue = new MMMessageAttribute<CardSecurityInformation1, Optional<Min3Max4NumericText>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmSecurityCode;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CardSecurityInformation1.mmObject();
@@ -172,6 +182,16 @@ public class CardSecurityInformation1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Min3Max4NumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Min3Max4NumericText> getValue(CardSecurityInformation1 obj) {
+			return obj.getCSCValue();
+		}
+
+		@Override
+		public void setValue(CardSecurityInformation1 obj, Optional<Min3Max4NumericText> value) {
+			obj.setCSCValue(value.orElse(null));
 		}
 	};
 

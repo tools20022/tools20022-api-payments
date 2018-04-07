@@ -113,7 +113,7 @@ public class IdentificationSource3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationSource3Choice, ExternalFinancialInstrumentIdentificationType1Code> mmCode = new MMMessageAttribute<IdentificationSource3Choice, ExternalFinancialInstrumentIdentificationType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmCode;
 			componentContext_lazy = () -> com.tools20022.repository.choice.IdentificationSource3Choice.mmObject();
@@ -125,6 +125,16 @@ public class IdentificationSource3Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalFinancialInstrumentIdentificationType1Code.mmObject();
+		}
+
+		@Override
+		public ExternalFinancialInstrumentIdentificationType1Code getValue(IdentificationSource3Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(IdentificationSource3Choice obj, ExternalFinancialInstrumentIdentificationType1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -163,7 +173,7 @@ public class IdentificationSource3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationSource3Choice, Max35Text> mmProprietary = new MMMessageAttribute<IdentificationSource3Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> com.tools20022.repository.choice.IdentificationSource3Choice.mmObject();
@@ -175,6 +185,16 @@ public class IdentificationSource3Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(IdentificationSource3Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(IdentificationSource3Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

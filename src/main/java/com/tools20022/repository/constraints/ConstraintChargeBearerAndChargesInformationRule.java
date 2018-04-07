@@ -20,7 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.msg.CreditTransferTransaction25;
+import com.tools20022.repository.msg.CreditTransferTransaction30;
 
 /**
  * If ChargeBearer contains DEBT, then ChargesInformation may be present to
@@ -38,8 +38,8 @@ public class ConstraintChargeBearerAndChargesInformationRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25
-	 * CreditTransferTransaction25}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30
+	 * CreditTransferTransaction30}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/ChargesInformation[1]&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"EqualToValue\"&gt;&lt;leftOperand&gt;/ChargeBearer&lt;/leftOperand&gt;&lt;rightOperand&gt;BorneByCreditor&lt;/rightOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -57,18 +57,18 @@ public class ConstraintChargeBearerAndChargesInformationRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCreditTransferTransaction25 = new MMConstraint() {
+	public static final MMConstraint<CreditTransferTransaction30> forCreditTransferTransaction30 = new MMConstraint<CreditTransferTransaction30>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChargeBearerAndChargesInformationRule";
 			definition = "If ChargeBearer contains DEBT, then ChargesInformation may be present to communicate charges that have been added for (the) InstructedAgent(s).\nIf ChargeBearer contains CRED, then at least one occurrence of ChargesInformation must be present to communicate charges that have been deducted from the InstructedAmount by (the) InstructingAgent(s).\nIf ChargeBearer contains SHAR or SLEV, then ChargesInformation is optional.";
-			owner_lazy = () -> CreditTransferTransaction25.mmObject();
+			owner_lazy = () -> CreditTransferTransaction30.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/ChargesInformation[1]</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"EqualToValue\"><leftOperand>/ChargeBearer</leftOperand><rightOperand>BorneByCreditor</rightOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction25((CreditTransferTransaction25) obj);
+		public void executeValidator(CreditTransferTransaction30 obj) throws Exception {
+			checkCreditTransferTransaction30(obj);
 		}
 	};
 
@@ -80,7 +80,7 @@ public class ConstraintChargeBearerAndChargesInformationRule {
 	 * deducted from the InstructedAmount by (the) InstructingAgent(s). If
 	 * ChargeBearer contains SHAR or SLEV, then ChargesInformation is optional.
 	 */
-	public static void checkCreditTransferTransaction25(CreditTransferTransaction25 obj) throws Exception {
+	public static void checkCreditTransferTransaction30(CreditTransferTransaction30 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

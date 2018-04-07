@@ -23,6 +23,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PostalAddress6;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -101,7 +102,7 @@ public class AddressModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AddressModification1, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<AddressModification1, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AddressModification1.mmObject();
 			isDerived = false;
@@ -112,6 +113,16 @@ public class AddressModification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(AddressModification1 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(AddressModification1 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Adr", required = true)
@@ -148,7 +159,7 @@ public class AddressModification1 {
 	 * definition} = "Postal address."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AddressModification1, PostalAddress6> mmAddress = new MMMessageAttribute<AddressModification1, PostalAddress6>() {
 		{
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.AddressModification1.mmObject();
@@ -159,7 +170,17 @@ public class AddressModification1 {
 			definition = "Postal address.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.PostalAddress6.mmObject();
+			complexType_lazy = () -> PostalAddress6.mmObject();
+		}
+
+		@Override
+		public PostalAddress6 getValue(AddressModification1 obj) {
+			return obj.getAddress();
+		}
+
+		@Override
+		public void setValue(AddressModification1 obj, PostalAddress6 value) {
+			obj.setAddress(value);
 		}
 	};
 
@@ -190,7 +211,7 @@ public class AddressModification1 {
 		return address;
 	}
 
-	public AddressModification1 setAddress(com.tools20022.repository.msg.PostalAddress6 address) {
+	public AddressModification1 setAddress(PostalAddress6 address) {
 		this.address = Objects.requireNonNull(address);
 		return this;
 	}

@@ -25,7 +25,6 @@ import com.tools20022.repository.area.PaymentsRemittanceAdviceLatestVersion;
 import com.tools20022.repository.msg.GroupHeader62;
 import com.tools20022.repository.msg.RemittanceLocation3;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -108,7 +107,7 @@ public class RemittanceLocationAdviceV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<RemittanceLocationAdviceV01, GroupHeader62> mmGroupHeader = new MMMessageBuildingBlock<RemittanceLocationAdviceV01, GroupHeader62>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,12 +118,14 @@ public class RemittanceLocationAdviceV01 {
 			complexType_lazy = () -> GroupHeader62.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RemittanceLocationAdviceV01.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader62 getValue(RemittanceLocationAdviceV01 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(RemittanceLocationAdviceV01 obj, GroupHeader62 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "RmtLctn", required = true)
@@ -150,26 +151,28 @@ public class RemittanceLocationAdviceV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Provides information related to location and/or delivery of the remittance information.  This information is used to enable the matching of an entry with the items that the associated payment is intended to settle."
+	 * "Provides information related to location and/or delivery of the remittance information. This information is used to enable the matching of an entry with the items that the associated payment is intended to settle."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRemittanceLocation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<RemittanceLocationAdviceV01, List<RemittanceLocation3>> mmRemittanceLocation = new MMMessageBuildingBlock<RemittanceLocationAdviceV01, List<RemittanceLocation3>>() {
 		{
 			xmlTag = "RmtLctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RemittanceLocation";
-			definition = "Provides information related to location and/or delivery of the remittance information.  This information is used to enable the matching of an entry with the items that the associated payment is intended to settle.";
+			definition = "Provides information related to location and/or delivery of the remittance information. This information is used to enable the matching of an entry with the items that the associated payment is intended to settle.";
 			minOccurs = 1;
 			complexType_lazy = () -> RemittanceLocation3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RemittanceLocationAdviceV01.class.getMethod("getRemittanceLocation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<RemittanceLocation3> getValue(RemittanceLocationAdviceV01 obj) {
+			return obj.getRemittanceLocation();
+		}
+
+		@Override
+		public void setValue(RemittanceLocationAdviceV01 obj, List<RemittanceLocation3> value) {
+			obj.setRemittanceLocation(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -195,26 +198,28 @@ public class RemittanceLocationAdviceV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information that cannot be  captured in the structured elements and/or any other specific block."
+	 * "Additional information that cannot be captured in the structured elements and/or any other specific block."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<RemittanceLocationAdviceV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<RemittanceLocationAdviceV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
-			definition = "Additional information that cannot be  captured in the structured elements and/or any other specific block.";
+			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RemittanceLocationAdviceV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(RemittanceLocationAdviceV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(RemittanceLocationAdviceV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

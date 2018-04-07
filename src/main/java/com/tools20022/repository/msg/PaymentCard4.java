@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Exact3NumericText;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.entity.PaymentCard;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericIdentification1;
+import com.tools20022.repository.msg.PlainCardData1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -111,7 +113,7 @@ public class PaymentCard4 {
 	 * "Sensitive data associated with the card performing the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPlainCardData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PaymentCard4, Optional<PlainCardData1>> mmPlainCardData = new MMMessageAssociationEnd<PaymentCard4, Optional<PlainCardData1>>() {
 		{
 			businessComponentTrace_lazy = () -> PaymentCard.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCard4.mmObject();
@@ -123,7 +125,17 @@ public class PaymentCard4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PlainCardData1.mmObject();
+			type_lazy = () -> PlainCardData1.mmObject();
+		}
+
+		@Override
+		public Optional<PlainCardData1> getValue(PaymentCard4 obj) {
+			return obj.getPlainCardData();
+		}
+
+		@Override
+		public void setValue(PaymentCard4 obj, Optional<PlainCardData1> value) {
+			obj.setPlainCardData(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CardCtryCd")
@@ -160,7 +172,7 @@ public class PaymentCard4 {
 	 * definition} = "Country code assigned to the card by the card issuer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCardCountryCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentCard4, Optional<Exact3NumericText>> mmCardCountryCode = new MMMessageAttribute<PaymentCard4, Optional<Exact3NumericText>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmCardCountryCode;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCard4.mmObject();
@@ -172,6 +184,16 @@ public class PaymentCard4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Exact3NumericText> getValue(PaymentCard4 obj) {
+			return obj.getCardCountryCode();
+		}
+
+		@Override
+		public void setValue(PaymentCard4 obj, Optional<Exact3NumericText> value) {
+			obj.setCardCountryCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CardBrnd")
@@ -208,7 +230,7 @@ public class PaymentCard4 {
 	 * definition} = "Brand name of the card."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCardBrand = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentCard4, Optional<GenericIdentification1>> mmCardBrand = new MMMessageAttribute<PaymentCard4, Optional<GenericIdentification1>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmCardBrand;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCard4.mmObject();
@@ -219,7 +241,17 @@ public class PaymentCard4 {
 			definition = "Brand name of the card.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.GenericIdentification1.mmObject();
+			complexType_lazy = () -> GenericIdentification1.mmObject();
+		}
+
+		@Override
+		public Optional<GenericIdentification1> getValue(PaymentCard4 obj) {
+			return obj.getCardBrand();
+		}
+
+		@Override
+		public void setValue(PaymentCard4 obj, Optional<GenericIdentification1> value) {
+			obj.setCardBrand(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlCardData")
@@ -250,7 +282,7 @@ public class PaymentCard4 {
 	 * definition} = "Additional card issuer specific data."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalCardData = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentCard4, Optional<Max70Text>> mmAdditionalCardData = new MMMessageAttribute<PaymentCard4, Optional<Max70Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCard4.mmObject();
 			isDerived = false;
@@ -261,6 +293,16 @@ public class PaymentCard4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max70Text> getValue(PaymentCard4 obj) {
+			return obj.getAdditionalCardData();
+		}
+
+		@Override
+		public void setValue(PaymentCard4 obj, Optional<Max70Text> value) {
+			obj.setAdditionalCardData(value.orElse(null));
 		}
 	};
 
@@ -283,7 +325,7 @@ public class PaymentCard4 {
 		return plainCardData == null ? Optional.empty() : Optional.of(plainCardData);
 	}
 
-	public PaymentCard4 setPlainCardData(com.tools20022.repository.msg.PlainCardData1 plainCardData) {
+	public PaymentCard4 setPlainCardData(PlainCardData1 plainCardData) {
 		this.plainCardData = plainCardData;
 		return this;
 	}
@@ -301,7 +343,7 @@ public class PaymentCard4 {
 		return cardBrand == null ? Optional.empty() : Optional.of(cardBrand);
 	}
 
-	public PaymentCard4 setCardBrand(com.tools20022.repository.msg.GenericIdentification1 cardBrand) {
+	public PaymentCard4 setCardBrand(GenericIdentification1 cardBrand) {
 		this.cardBrand = cardBrand;
 		return this;
 	}

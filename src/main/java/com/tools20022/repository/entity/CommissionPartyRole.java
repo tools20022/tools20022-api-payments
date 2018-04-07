@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Commission;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -111,7 +112,7 @@ public class CommissionPartyRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CommissionPartyRole, List<Commission>> mmCommission = new MMBusinessAssociationEnd<CommissionPartyRole, List<Commission>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionPartyRole.mmObject();
@@ -122,6 +123,16 @@ public class CommissionPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Commission.mmCommissionPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
+		}
+
+		@Override
+		public List<Commission> getValue(CommissionPartyRole obj) {
+			return obj.getCommission();
+		}
+
+		@Override
+		public void setValue(CommissionPartyRole obj, List<Commission> value) {
+			obj.setCommission(value);
 		}
 	};
 

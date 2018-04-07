@@ -54,22 +54,22 @@ public class ConstraintInstructionForDebtorAgentRule {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "If InstructionForDebtorAgent is present, then CreditTransferTransactionInformation/InstructionForDebtorAgent  is not allowed.\r\nIf CreditTransferTransactionInformation/InstructionForDebtorAgent is present, then InstructionForDebtorAgent is not allowed.\r\nCreditTransferTransactionInformation/InstructionForDebtorAgent and InstructionForDebtorAgent may both be absent."
+	 * "If InstructionForDebtorAgent is present, then CreditTransferTransactionInformation/InstructionForDebtorAgent is not allowed.\r\nIf CreditTransferTransactionInformation/InstructionForDebtorAgent is present, then InstructionForDebtorAgent is not allowed.\r\nCreditTransferTransactionInformation/InstructionForDebtorAgent and InstructionForDebtorAgent may both be absent."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction22 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction22> forPaymentInstruction22 = new MMConstraint<PaymentInstruction22>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InstructionForDebtorAgentRule";
-			definition = "If InstructionForDebtorAgent is present, then CreditTransferTransactionInformation/InstructionForDebtorAgent  is not allowed.\r\nIf CreditTransferTransactionInformation/InstructionForDebtorAgent is present, then InstructionForDebtorAgent is not allowed.\r\nCreditTransferTransactionInformation/InstructionForDebtorAgent and InstructionForDebtorAgent may both be absent.";
+			definition = "If InstructionForDebtorAgent is present, then CreditTransferTransactionInformation/InstructionForDebtorAgent is not allowed.\r\nIf CreditTransferTransactionInformation/InstructionForDebtorAgent is present, then InstructionForDebtorAgent is not allowed.\r\nCreditTransferTransactionInformation/InstructionForDebtorAgent and InstructionForDebtorAgent may both be absent.";
 			owner_lazy = () -> PaymentInstruction22.mmObject();
 			expression = "<RuleDefinition><SimpleRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"SimpleRule\"><mustBe><connector>OR</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/InstructionForDebtorAgent</leftOperand></BooleanRule><BooleanRule xsi:type=\"Absence\"><leftOperand>/CreditTransferTransactionInformation[*]/InstructionForDebtorAgent</leftOperand></BooleanRule></mustBe></SimpleRule></RuleDefinition>";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction22((PaymentInstruction22) obj);
+		public void executeValidator(PaymentInstruction22 obj) throws Exception {
+			checkPaymentInstruction22(obj);
 		}
 	};
 

@@ -20,8 +20,10 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Resolution;
+import com.tools20022.repository.entity.VoteInstructionRequest;
+import com.tools20022.repository.entity.VoteResult;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -131,7 +133,7 @@ public class Vote {
 	 * definition} = "Request which contains the vote instructions."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVoteRequest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Vote, Optional<VoteInstructionRequest>> mmVoteRequest = new MMBusinessAssociationEnd<Vote, Optional<VoteInstructionRequest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -140,9 +142,19 @@ public class Vote {
 			definition = "Request which contains the vote instructions.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmVotePerResolution;
+			opposite_lazy = () -> VoteInstructionRequest.mmVotePerResolution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
+			type_lazy = () -> VoteInstructionRequest.mmObject();
+		}
+
+		@Override
+		public Optional<VoteInstructionRequest> getValue(Vote obj) {
+			return obj.getVoteRequest();
+		}
+
+		@Override
+		public void setValue(Vote obj, Optional<VoteInstructionRequest> value) {
+			obj.setVoteRequest(value.orElse(null));
 		}
 	};
 	protected Number for_;
@@ -170,7 +182,7 @@ public class Vote {
 	 * definition} = "Number of votes in favour of one resolution"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFor = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, Number> mmFor = new MMBusinessAttribute<Vote, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -182,12 +194,14 @@ public class Vote {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getFor", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Vote obj) {
+			return obj.getFor();
+		}
+
+		@Override
+		public void setValue(Vote obj, Number value) {
+			obj.setFor(value);
 		}
 	};
 	protected Number against;
@@ -215,7 +229,7 @@ public class Vote {
 	 * definition} = "Number of votes against one resolution"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAgainst = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, Number> mmAgainst = new MMBusinessAttribute<Vote, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -227,12 +241,14 @@ public class Vote {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getAgainst", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Vote obj) {
+			return obj.getAgainst();
+		}
+
+		@Override
+		public void setValue(Vote obj, Number value) {
+			obj.setAgainst(value);
 		}
 	};
 	protected Number abstain;
@@ -260,7 +276,7 @@ public class Vote {
 	 * definition} = "Number of votes declared abstained for one resolution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAbstain = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, Number> mmAbstain = new MMBusinessAttribute<Vote, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -272,12 +288,14 @@ public class Vote {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getAbstain", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Vote obj) {
+			return obj.getAbstain();
+		}
+
+		@Override
+		public void setValue(Vote obj, Number value) {
+			obj.setAbstain(value);
 		}
 	};
 	protected Number withhold;
@@ -305,7 +323,7 @@ public class Vote {
 	 * definition} = "Number of votes withheld for one resolution"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmWithhold = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, Number> mmWithhold = new MMBusinessAttribute<Vote, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -317,12 +335,14 @@ public class Vote {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getWithhold", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Vote obj) {
+			return obj.getWithhold();
+		}
+
+		@Override
+		public void setValue(Vote obj, Number value) {
+			obj.setWithhold(value);
 		}
 	};
 	protected Number withManagement;
@@ -351,7 +371,7 @@ public class Vote {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmWithManagement = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, Number> mmWithManagement = new MMBusinessAttribute<Vote, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -363,12 +383,14 @@ public class Vote {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getWithManagement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Vote obj) {
+			return obj.getWithManagement();
+		}
+
+		@Override
+		public void setValue(Vote obj, Number value) {
+			obj.setWithManagement(value);
 		}
 	};
 	protected Number againstManagement;
@@ -397,7 +419,7 @@ public class Vote {
 	 * "Number of votes against the voting recommendation of the management."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAgainstManagement = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, Number> mmAgainstManagement = new MMBusinessAttribute<Vote, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -409,15 +431,17 @@ public class Vote {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getAgainstManagement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Vote obj) {
+			return obj.getAgainstManagement();
+		}
+
+		@Override
+		public void setValue(Vote obj, Number value) {
+			obj.setAgainstManagement(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Resolution> resolution;
+	protected List<Resolution> resolution;
 	/**
 	 * 
 	 <p>
@@ -450,7 +474,7 @@ public class Vote {
 	 * definition} = "Specifies the agenda item on which a vote is/was cast."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmResolution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Vote, List<Resolution>> mmResolution = new MMBusinessAssociationEnd<Vote, List<Resolution>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -458,9 +482,19 @@ public class Vote {
 			name = "Resolution";
 			definition = "Specifies the agenda item on which a vote is/was cast.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Resolution.mmCastVotes;
+			opposite_lazy = () -> Resolution.mmCastVotes;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
+			type_lazy = () -> Resolution.mmObject();
+		}
+
+		@Override
+		public List<Resolution> getValue(Vote obj) {
+			return obj.getResolution();
+		}
+
+		@Override
+		public void setValue(Vote obj, List<Resolution> value) {
+			obj.setResolution(value);
 		}
 	};
 	protected Number noAction;
@@ -488,7 +522,7 @@ public class Vote {
 	 * definition} = "Number of votes for which no action has been taken."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNoAction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, Number> mmNoAction = new MMBusinessAttribute<Vote, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -500,12 +534,14 @@ public class Vote {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getNoAction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Vote obj) {
+			return obj.getNoAction();
+		}
+
+		@Override
+		public void setValue(Vote obj, Number value) {
+			obj.setNoAction(value);
 		}
 	};
 	protected VoteResult result;
@@ -542,7 +578,7 @@ public class Vote {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmResult = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Vote, Optional<VoteResult>> mmResult = new MMBusinessAssociationEnd<Vote, Optional<VoteResult>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -551,9 +587,19 @@ public class Vote {
 			definition = "Information on the vote result for a specific resolution.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.VoteResult.mmVote;
+			opposite_lazy = () -> VoteResult.mmVote;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
+			type_lazy = () -> VoteResult.mmObject();
+		}
+
+		@Override
+		public Optional<VoteResult> getValue(Vote obj) {
+			return obj.getResult();
+		}
+
+		@Override
+		public void setValue(Vote obj, Optional<VoteResult> value) {
+			obj.setResult(value.orElse(null));
 		}
 	};
 	protected Number twoYears;
@@ -583,7 +629,7 @@ public class Vote {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTwoYears = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, Number> mmTwoYears = new MMBusinessAttribute<Vote, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -595,12 +641,14 @@ public class Vote {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getTwoYears", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Vote obj) {
+			return obj.getTwoYears();
+		}
+
+		@Override
+		public void setValue(Vote obj, Number value) {
+			obj.setTwoYears(value);
 		}
 	};
 	protected Number oneYear;
@@ -630,7 +678,7 @@ public class Vote {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOneYear = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, Number> mmOneYear = new MMBusinessAttribute<Vote, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -642,12 +690,14 @@ public class Vote {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getOneYear", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Vote obj) {
+			return obj.getOneYear();
+		}
+
+		@Override
+		public void setValue(Vote obj, Number value) {
+			obj.setOneYear(value);
 		}
 	};
 	protected YesNoIndicator withdrawn;
@@ -676,7 +726,7 @@ public class Vote {
 	 * definition} = "Resolution withdrawn at the meeting."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmWithdrawn = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, YesNoIndicator> mmWithdrawn = new MMBusinessAttribute<Vote, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -688,12 +738,14 @@ public class Vote {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getWithdrawn", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Vote obj) {
+			return obj.getWithdrawn();
+		}
+
+		@Override
+		public void setValue(Vote obj, YesNoIndicator value) {
+			obj.setWithdrawn(value);
 		}
 	};
 	protected Number threeYears;
@@ -723,7 +775,7 @@ public class Vote {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmThreeYears = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Vote, Number> mmThreeYears = new MMBusinessAttribute<Vote, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
@@ -735,12 +787,14 @@ public class Vote {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Vote.class.getMethod("getThreeYears", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Vote obj) {
+			return obj.getThreeYears();
+		}
+
+		@Override
+		public void setValue(Vote obj, Number value) {
+			obj.setThreeYears(value);
 		}
 	};
 
@@ -751,8 +805,7 @@ public class Vote {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Vote";
 				definition = "Number of votes assigned to each voting option.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Resolution.mmCastVotes, com.tools20022.repository.entity.VoteInstructionRequest.mmVotePerResolution,
-						com.tools20022.repository.entity.VoteResult.mmVote);
+				associationDomain_lazy = () -> Arrays.asList(Resolution.mmCastVotes, VoteInstructionRequest.mmVotePerResolution, VoteResult.mmVote);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Vote.mmVoteRequest, com.tools20022.repository.entity.Vote.mmFor, com.tools20022.repository.entity.Vote.mmAgainst,
 						com.tools20022.repository.entity.Vote.mmAbstain, com.tools20022.repository.entity.Vote.mmWithhold, com.tools20022.repository.entity.Vote.mmWithManagement, com.tools20022.repository.entity.Vote.mmAgainstManagement,
 						com.tools20022.repository.entity.Vote.mmResolution, com.tools20022.repository.entity.Vote.mmNoAction, com.tools20022.repository.entity.Vote.mmResult, com.tools20022.repository.entity.Vote.mmTwoYears,
@@ -771,7 +824,7 @@ public class Vote {
 		return voteRequest == null ? Optional.empty() : Optional.of(voteRequest);
 	}
 
-	public Vote setVoteRequest(com.tools20022.repository.entity.VoteInstructionRequest voteRequest) {
+	public Vote setVoteRequest(VoteInstructionRequest voteRequest) {
 		this.voteRequest = voteRequest;
 		return this;
 	}
@@ -834,7 +887,7 @@ public class Vote {
 		return resolution == null ? resolution = new ArrayList<>() : resolution;
 	}
 
-	public Vote setResolution(List<com.tools20022.repository.entity.Resolution> resolution) {
+	public Vote setResolution(List<Resolution> resolution) {
 		this.resolution = Objects.requireNonNull(resolution);
 		return this;
 	}
@@ -852,7 +905,7 @@ public class Vote {
 		return result == null ? Optional.empty() : Optional.of(result);
 	}
 
-	public Vote setResult(com.tools20022.repository.entity.VoteResult result) {
+	public Vote setResult(VoteResult result) {
 		this.result = result;
 		return this;
 	}

@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies whether the financial instrument is to be physically delivered or
- * is a dematerilized transfer.
+ * is a dematerialised transfer.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -70,7 +70,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "PhysicalTransferTypeCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specifies whether the financial instrument is to be physically delivered or is a dematerilized transfer."
+ * "Specifies whether the financial instrument is to be physically delivered or is a dematerialised transfer."
  * </li>
  * </ul>
  */
@@ -211,7 +211,7 @@ public class PhysicalTransferTypeCode extends MMCode {
 				example = Arrays.asList("PHYS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PhysicalTransferTypeCode";
-				definition = "Specifies whether the financial instrument is to be physically delivered or is a dematerilized transfer.";
+				definition = "Specifies whether the financial instrument is to be physically delivered or is a dematerialised transfer.";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PhysicalTransferTypeCode.Physical, com.tools20022.repository.codeset.PhysicalTransferTypeCode.Dematerialised,
 						com.tools20022.repository.codeset.PhysicalTransferTypeCode.Cash, com.tools20022.repository.codeset.PhysicalTransferTypeCode.Optional);
 			}

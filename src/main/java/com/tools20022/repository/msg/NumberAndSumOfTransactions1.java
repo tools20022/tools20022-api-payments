@@ -98,7 +98,7 @@ public class NumberAndSumOfTransactions1 {
 	 * definition} = "Number of individual entries included in the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfEntries = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberAndSumOfTransactions1, Optional<Max15NumericText>> mmNumberOfEntries = new MMMessageAttribute<NumberAndSumOfTransactions1, Optional<Max15NumericText>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.NumberAndSumOfTransactions1.mmObject();
 			isDerived = false;
@@ -109,6 +109,16 @@ public class NumberAndSumOfTransactions1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Max15NumericText> getValue(NumberAndSumOfTransactions1 obj) {
+			return obj.getNumberOfEntries();
+		}
+
+		@Override
+		public void setValue(NumberAndSumOfTransactions1 obj, Optional<Max15NumericText> value) {
+			obj.setNumberOfEntries(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Sum")
@@ -141,7 +151,7 @@ public class NumberAndSumOfTransactions1 {
 	 * definition} = "Total of all individual entries included in the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSum = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberAndSumOfTransactions1, Optional<DecimalNumber>> mmSum = new MMMessageAttribute<NumberAndSumOfTransactions1, Optional<DecimalNumber>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.NumberAndSumOfTransactions1.mmObject();
 			isDerived = false;
@@ -152,6 +162,16 @@ public class NumberAndSumOfTransactions1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(NumberAndSumOfTransactions1 obj) {
+			return obj.getSum();
+		}
+
+		@Override
+		public void setValue(NumberAndSumOfTransactions1 obj, Optional<DecimalNumber> value) {
+			obj.setSum(value.orElse(null));
 		}
 	};
 

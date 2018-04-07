@@ -50,7 +50,7 @@ public class ConstraintDomainOrProprietaryRule {
 	 * definition} = "Either Proprietary or Domain or both must be present."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forBankTransactionCodeStructure4 = new MMConstraint() {
+	public static final MMConstraint<BankTransactionCodeStructure4> forBankTransactionCodeStructure4 = new MMConstraint<BankTransactionCodeStructure4>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DomainOrProprietaryRule";
@@ -60,8 +60,8 @@ public class ConstraintDomainOrProprietaryRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkBankTransactionCodeStructure4((BankTransactionCodeStructure4) obj);
+		public void executeValidator(BankTransactionCodeStructure4 obj) throws Exception {
+			checkBankTransactionCodeStructure4(obj);
 		}
 	};
 

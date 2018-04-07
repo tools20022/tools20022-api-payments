@@ -27,13 +27,13 @@ import java.util.function.Function;
  * 
  * @see MMMessageBuildingBlock#checkMessageBuildingBlockHasExactlyOneType
  */
-public class DeriveMMMessageBuildingBlock_xmlMemberType implements Function<MMMessageBuildingBlock, MMLogicalType> {
+public class DeriveMMMessageBuildingBlock_xmlMemberType implements Function<MMMessageBuildingBlock<?,?>, MMLogicalType> {
 
 	/**
 	 * Direct reference to the type of a MessageElement or MessageBuildingBlock
 	 */
 	@Override
-	public MMLogicalType apply(MMMessageBuildingBlock mmBean) {
+	public MMLogicalType apply(MMMessageBuildingBlock<?,?> mmBean) {
 		if (mmBean.getSimpleType().isPresent())
 			return mmBean.getSimpleType().get();
 		else if (mmBean.getComplexType().isPresent())

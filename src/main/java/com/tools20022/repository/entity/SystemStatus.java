@@ -22,8 +22,9 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.MemberStatusCode;
 import com.tools20022.repository.codeset.SystemStatusCode;
 import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.entity.System;
+import com.tools20022.repository.entity.SystemMemberRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -122,7 +123,7 @@ public class SystemStatus extends Status {
 	 * definition} = "Current status of a system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SystemStatus, SystemStatusCode> mmStatus = new MMBusinessAttribute<SystemStatus, SystemStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemStatus.mmObject();
@@ -141,12 +142,14 @@ public class SystemStatus extends Status {
 			simpleType_lazy = () -> SystemStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SystemStatus.class.getMethod("getStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SystemStatusCode getValue(SystemStatus obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(SystemStatus obj, SystemStatusCode value) {
+			obj.setStatus(value);
 		}
 	};
 	protected MemberStatusCode memberStatus;
@@ -175,7 +178,7 @@ public class SystemStatus extends Status {
 	 * definition} = "Status of a member in a system, eg, enabled or deleted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMemberStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SystemStatus, MemberStatusCode> mmMemberStatus = new MMBusinessAttribute<SystemStatus, MemberStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemStatus.mmObject();
@@ -187,12 +190,14 @@ public class SystemStatus extends Status {
 			simpleType_lazy = () -> MemberStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SystemStatus.class.getMethod("getMemberStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MemberStatusCode getValue(SystemStatus obj) {
+			return obj.getMemberStatus();
+		}
+
+		@Override
+		public void setValue(SystemStatus obj, MemberStatusCode value) {
+			obj.setMemberStatus(value);
 		}
 	};
 	protected System system;
@@ -226,7 +231,7 @@ public class SystemStatus extends Status {
 	 * definition} = "System for which a status is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SystemStatus, com.tools20022.repository.entity.System> mmSystem = new MMBusinessAssociationEnd<SystemStatus, com.tools20022.repository.entity.System>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemStatus.mmObject();
@@ -238,6 +243,16 @@ public class SystemStatus extends Status {
 			opposite_lazy = () -> com.tools20022.repository.entity.System.mmStatus;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.System getValue(SystemStatus obj) {
+			return obj.getSystem();
+		}
+
+		@Override
+		public void setValue(SystemStatus obj, com.tools20022.repository.entity.System value) {
+			obj.setSystem(value);
 		}
 	};
 	protected SystemMemberRole systemMemberRole;
@@ -274,7 +289,7 @@ public class SystemStatus extends Status {
 	 * "System member role for which a member status is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystemMemberRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SystemStatus, Optional<SystemMemberRole>> mmSystemMemberRole = new MMBusinessAssociationEnd<SystemStatus, Optional<SystemMemberRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemStatus.mmObject();
@@ -286,6 +301,16 @@ public class SystemStatus extends Status {
 			opposite_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmMemberStatus;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmObject();
+		}
+
+		@Override
+		public Optional<SystemMemberRole> getValue(SystemStatus obj) {
+			return obj.getSystemMemberRole();
+		}
+
+		@Override
+		public void setValue(SystemStatus obj, Optional<SystemMemberRole> value) {
+			obj.setSystemMemberRole(value.orElse(null));
 		}
 	};
 

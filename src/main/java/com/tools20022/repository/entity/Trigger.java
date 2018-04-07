@@ -20,8 +20,8 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.AutomaticVariation;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -107,7 +107,7 @@ public class Trigger {
 	 * definition} = "Variation which was triggered by the event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAutomaticVariation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Trigger, AutomaticVariation> mmAutomaticVariation = new MMBusinessAssociationEnd<Trigger, AutomaticVariation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
@@ -116,9 +116,19 @@ public class Trigger {
 			definition = "Variation which was triggered by the event.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmTrigger;
+			opposite_lazy = () -> AutomaticVariation.mmTrigger;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
+			type_lazy = () -> AutomaticVariation.mmObject();
+		}
+
+		@Override
+		public AutomaticVariation getValue(Trigger obj) {
+			return obj.getAutomaticVariation();
+		}
+
+		@Override
+		public void setValue(Trigger obj, AutomaticVariation value) {
+			obj.setAutomaticVariation(value);
 		}
 	};
 	protected ISODate triggerDate;
@@ -146,7 +156,7 @@ public class Trigger {
 	 * definition} = "Date on which the variation comes into effect."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTriggerDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Trigger, ISODate> mmTriggerDate = new MMBusinessAttribute<Trigger, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
@@ -158,12 +168,14 @@ public class Trigger {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Trigger.class.getMethod("getTriggerDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(Trigger obj) {
+			return obj.getTriggerDate();
+		}
+
+		@Override
+		public void setValue(Trigger obj, ISODate value) {
+			obj.setTriggerDate(value);
 		}
 	};
 	protected Max35Text triggerEvent;
@@ -191,7 +203,7 @@ public class Trigger {
 	 * definition} = "Event that causes the variation to come into effect."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTriggerEvent = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Trigger, Max35Text> mmTriggerEvent = new MMBusinessAttribute<Trigger, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
@@ -203,12 +215,14 @@ public class Trigger {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Trigger.class.getMethod("getTriggerEvent", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Trigger obj) {
+			return obj.getTriggerEvent();
+		}
+
+		@Override
+		public void setValue(Trigger obj, Max35Text value) {
+			obj.setTriggerEvent(value);
 		}
 	};
 
@@ -219,7 +233,7 @@ public class Trigger {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Trigger";
 				definition = "Trigger that causes the variation to come into effect.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AutomaticVariation.mmTrigger);
+				associationDomain_lazy = () -> Arrays.asList(AutomaticVariation.mmTrigger);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trigger.mmAutomaticVariation, com.tools20022.repository.entity.Trigger.mmTriggerDate, com.tools20022.repository.entity.Trigger.mmTriggerEvent);
 			}
 
@@ -235,7 +249,7 @@ public class Trigger {
 		return automaticVariation;
 	}
 
-	public Trigger setAutomaticVariation(com.tools20022.repository.entity.AutomaticVariation automaticVariation) {
+	public Trigger setAutomaticVariation(AutomaticVariation automaticVariation) {
 		this.automaticVariation = Objects.requireNonNull(automaticVariation);
 		return this;
 	}

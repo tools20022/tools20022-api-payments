@@ -36,44 +36,6 @@ public class ConstraintIntermediaryAgentAndDebtorAgentRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.AccountNotification13
-	 * AccountNotification13}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
-	 * expression} =
-	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/DebtorAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/IntermediaryAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
-	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "IntermediaryAgentAndDebtorAgentRule"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "If IntermediaryAgent is present then DebtorAgent must be present."</li>
-	 * </ul>
-	 */
-	public static final MMConstraint forAccountNotification13 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "IntermediaryAgentAndDebtorAgentRule";
-			definition = "If IntermediaryAgent is present then DebtorAgent must be present.";
-			owner_lazy = () -> AccountNotification13.mmObject();
-			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>OR</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/DebtorAgent</leftOperand></BooleanRule></mustBe><onCondition><connector>OR</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/IntermediaryAgent</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkAccountNotification13((AccountNotification13) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
 	 * {@linkplain com.tools20022.repository.msg.OriginalNotificationReference8
 	 * OriginalNotificationReference8}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
@@ -92,7 +54,7 @@ public class ConstraintIntermediaryAgentAndDebtorAgentRule {
 	 * "If IntermediaryAgent is present then DebtorAgent must be present."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOriginalNotificationReference8 = new MMConstraint() {
+	public static final MMConstraint<OriginalNotificationReference8> forOriginalNotificationReference8 = new MMConstraint<OriginalNotificationReference8>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IntermediaryAgentAndDebtorAgentRule";
@@ -102,46 +64,8 @@ public class ConstraintIntermediaryAgentAndDebtorAgentRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalNotificationReference8((OriginalNotificationReference8) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalNotificationReference7
-	 * OriginalNotificationReference7}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
-	 * expression} =
-	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/DebtorAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/IntermediaryAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
-	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "IntermediaryAgentAndDebtorAgentRule"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "If IntermediaryAgent is present then DebtorAgent must be present."</li>
-	 * </ul>
-	 */
-	public static final MMConstraint forOriginalNotificationReference7 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "IntermediaryAgentAndDebtorAgentRule";
-			definition = "If IntermediaryAgent is present then DebtorAgent must be present.";
-			owner_lazy = () -> OriginalNotificationReference7.mmObject();
-			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>OR</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/DebtorAgent</leftOperand></BooleanRule></mustBe><onCondition><connector>OR</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/IntermediaryAgent</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalNotificationReference7((OriginalNotificationReference7) obj);
+		public void executeValidator(OriginalNotificationReference8 obj) throws Exception {
+			checkOriginalNotificationReference8(obj);
 		}
 	};
 	/**
@@ -168,7 +92,7 @@ public class ConstraintIntermediaryAgentAndDebtorAgentRule {
 	 * "If IntermediaryAgent is present then DebtorAgent must be present."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forNotificationItem6 = new MMConstraint() {
+	public static final MMConstraint<NotificationItem6> forNotificationItem6 = new MMConstraint<NotificationItem6>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IntermediaryAgentAndDebtorAgentRule";
@@ -178,17 +102,86 @@ public class ConstraintIntermediaryAgentAndDebtorAgentRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkNotificationItem6((NotificationItem6) obj);
+		public void executeValidator(NotificationItem6 obj) throws Exception {
+			checkNotificationItem6(obj);
 		}
 	};
-
 	/**
-	 * If IntermediaryAgent is present then DebtorAgent must be present.
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.AccountNotification13
+	 * AccountNotification13}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/DebtorAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/IntermediaryAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "IntermediaryAgentAndDebtorAgentRule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If IntermediaryAgent is present then DebtorAgent must be present."</li>
+	 * </ul>
 	 */
-	public static void checkAccountNotification13(AccountNotification13 obj) throws Exception {
-		throw new NotImplementedConstraintException();
-	}
+	public static final MMConstraint<AccountNotification13> forAccountNotification13 = new MMConstraint<AccountNotification13>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "IntermediaryAgentAndDebtorAgentRule";
+			definition = "If IntermediaryAgent is present then DebtorAgent must be present.";
+			owner_lazy = () -> AccountNotification13.mmObject();
+			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>OR</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/DebtorAgent</leftOperand></BooleanRule></mustBe><onCondition><connector>OR</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/IntermediaryAgent</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
+		}
+
+		@Override
+		public void executeValidator(AccountNotification13 obj) throws Exception {
+			checkAccountNotification13(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.OriginalNotificationReference7
+	 * OriginalNotificationReference7}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/DebtorAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/IntermediaryAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "IntermediaryAgentAndDebtorAgentRule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If IntermediaryAgent is present then DebtorAgent must be present."</li>
+	 * </ul>
+	 */
+	public static final MMConstraint<OriginalNotificationReference7> forOriginalNotificationReference7 = new MMConstraint<OriginalNotificationReference7>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "IntermediaryAgentAndDebtorAgentRule";
+			definition = "If IntermediaryAgent is present then DebtorAgent must be present.";
+			owner_lazy = () -> OriginalNotificationReference7.mmObject();
+			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>OR</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/DebtorAgent</leftOperand></BooleanRule></mustBe><onCondition><connector>OR</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/IntermediaryAgent</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
+		}
+
+		@Override
+		public void executeValidator(OriginalNotificationReference7 obj) throws Exception {
+			checkOriginalNotificationReference7(obj);
+		}
+	};
 
 	/**
 	 * If IntermediaryAgent is present then DebtorAgent must be present.
@@ -200,14 +193,21 @@ public class ConstraintIntermediaryAgentAndDebtorAgentRule {
 	/**
 	 * If IntermediaryAgent is present then DebtorAgent must be present.
 	 */
-	public static void checkOriginalNotificationReference7(OriginalNotificationReference7 obj) throws Exception {
+	public static void checkNotificationItem6(NotificationItem6 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
 	/**
 	 * If IntermediaryAgent is present then DebtorAgent must be present.
 	 */
-	public static void checkNotificationItem6(NotificationItem6 obj) throws Exception {
+	public static void checkAccountNotification13(AccountNotification13 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If IntermediaryAgent is present then DebtorAgent must be present.
+	 */
+	public static void checkOriginalNotificationReference7(OriginalNotificationReference7 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

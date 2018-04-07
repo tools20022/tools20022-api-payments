@@ -50,7 +50,7 @@ public class ConstraintAmountOrShareRule {
 	 * definition} = "Amount must be present or Share must be present."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forSyndicatedLoan1 = new MMConstraint() {
+	public static final MMConstraint<SyndicatedLoan1> forSyndicatedLoan1 = new MMConstraint<SyndicatedLoan1>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AmountOrShareRule";
@@ -60,8 +60,8 @@ public class ConstraintAmountOrShareRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkSyndicatedLoan1((SyndicatedLoan1) obj);
+		public void executeValidator(SyndicatedLoan1 obj) throws Exception {
+			checkSyndicatedLoan1(obj);
 		}
 	};
 

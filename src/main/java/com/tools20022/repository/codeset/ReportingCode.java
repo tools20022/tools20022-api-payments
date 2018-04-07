@@ -74,7 +74,7 @@ public class ReportingCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Trade details are to be reported to a stock exchange
+	 * Trade details are to be reported to a stock exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -94,7 +94,7 @@ public class ReportingCode extends MMCode {
 	 * name} = "StockExchange"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Trade details are to be reported to a stock exchange"</li>
+	 * definition} = "Trade details are to be reported to a stock exchange."</li>
 	 * </ul>
 	 */
 	public static final ReportingCode StockExchange = new ReportingCode() {
@@ -102,7 +102,7 @@ public class ReportingCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::RPOR//EXCH"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StockExchange";
-			definition = "Trade details are to be reported to a stock exchange";
+			definition = "Trade details are to be reported to a stock exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.ReportingCode.mmObject();
 			codeName = "STEX";
 		}

@@ -109,7 +109,7 @@ public class ContractRegistrationStatementCriteria1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionJournal = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractRegistrationStatementCriteria1, Optional<TrueFalseIndicator>> mmTransactionJournal = new MMMessageAttribute<ContractRegistrationStatementCriteria1, Optional<TrueFalseIndicator>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmObject();
 			isDerived = false;
@@ -120,6 +120,16 @@ public class ContractRegistrationStatementCriteria1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(ContractRegistrationStatementCriteria1 obj) {
+			return obj.getTransactionJournal();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationStatementCriteria1 obj, Optional<TrueFalseIndicator> value) {
+			obj.setTransactionJournal(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "SpprtgDocJrnl")
@@ -154,7 +164,7 @@ public class ContractRegistrationStatementCriteria1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSupportingDocumentJournal = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractRegistrationStatementCriteria1, Optional<TrueFalseIndicator>> mmSupportingDocumentJournal = new MMMessageAttribute<ContractRegistrationStatementCriteria1, Optional<TrueFalseIndicator>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmObject();
 			isDerived = false;
@@ -165,6 +175,16 @@ public class ContractRegistrationStatementCriteria1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(ContractRegistrationStatementCriteria1 obj) {
+			return obj.getSupportingDocumentJournal();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationStatementCriteria1 obj, Optional<TrueFalseIndicator> value) {
+			obj.setSupportingDocumentJournal(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlSpprtgDocJrnl")
@@ -199,7 +219,7 @@ public class ContractRegistrationStatementCriteria1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalSupportingDocumentJournal = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractRegistrationStatementCriteria1, Optional<TrueFalseIndicator>> mmAdditionalSupportingDocumentJournal = new MMMessageAttribute<ContractRegistrationStatementCriteria1, Optional<TrueFalseIndicator>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmObject();
 			isDerived = false;
@@ -210,6 +230,16 @@ public class ContractRegistrationStatementCriteria1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(ContractRegistrationStatementCriteria1 obj) {
+			return obj.getAdditionalSupportingDocumentJournal();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationStatementCriteria1 obj, Optional<TrueFalseIndicator> value) {
+			obj.setAdditionalSupportingDocumentJournal(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "RgltryRuleVldtn")
@@ -244,7 +274,7 @@ public class ContractRegistrationStatementCriteria1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegulatoryRuleValidation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractRegistrationStatementCriteria1, Optional<TrueFalseIndicator>> mmRegulatoryRuleValidation = new MMMessageAttribute<ContractRegistrationStatementCriteria1, Optional<TrueFalseIndicator>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ContractRegistrationStatementCriteria1.mmObject();
 			isDerived = false;
@@ -255,6 +285,16 @@ public class ContractRegistrationStatementCriteria1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(ContractRegistrationStatementCriteria1 obj) {
+			return obj.getRegulatoryRuleValidation();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationStatementCriteria1 obj, Optional<TrueFalseIndicator> value) {
+			obj.setRegulatoryRuleValidation(value.orElse(null));
 		}
 	};
 

@@ -403,7 +403,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 	};
 	/**
 	 * Relates to a consent within a corporate action event other than a Consent
-	 * event (:22F::CAEV//CONS).
+	 * event (: 22F:: CAEV//CONS).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -421,7 +421,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Relates to a consent within a corporate action event other than a Consent event (:22F::CAEV//CONS)."
+	 * "Relates to a consent within a corporate action event other than a Consent event (: 22F:: CAEV//CONS)."
 	 * </li>
 	 * </ul>
 	 */
@@ -429,7 +429,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Consent";
-			definition = "Relates to a consent within a corporate action event other than a Consent event (:22F::CAEV//CONS).";
+			definition = "Relates to a consent within a corporate action event other than a Consent event (: 22F:: CAEV//CONS).";
 			owner_lazy = () -> com.tools20022.repository.codeset.AdditionalBusinessProcessCode.mmObject();
 			codeName = "CONS";
 		}
@@ -527,7 +527,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event. "
+	 * "Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event."
 	 * </li>
 	 * </ul>
 	 */
@@ -535,7 +535,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartialPreFunding";
-			definition = "Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event. ";
+			definition = "Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event.";
 			owner_lazy = () -> com.tools20022.repository.codeset.AdditionalBusinessProcessCode.mmObject();
 			codeName = "PPRE";
 		}

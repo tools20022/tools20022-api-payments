@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.AssetClassification;
 import com.tools20022.repository.entity.PortfolioStrategy;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ import java.util.Objects;
 public class AssetClassStrategy extends PortfolioStrategy {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.AssetClassification> assetClass;
+	protected List<AssetClassification> assetClass;
 	/**
 	 * 
 	 <p>
@@ -110,7 +111,7 @@ public class AssetClassStrategy extends PortfolioStrategy {
 	 * definition} = "Strategy based on asset classes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssetClass = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetClassStrategy, List<AssetClassification>> mmAssetClass = new MMBusinessAssociationEnd<AssetClassStrategy, List<AssetClassification>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassStrategy.mmObject();
@@ -118,9 +119,19 @@ public class AssetClassStrategy extends PortfolioStrategy {
 			name = "AssetClass";
 			definition = "Strategy based on asset classes.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmStrategy;
+			opposite_lazy = () -> AssetClassification.mmStrategy;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
+			type_lazy = () -> AssetClassification.mmObject();
+		}
+
+		@Override
+		public List<AssetClassification> getValue(AssetClassStrategy obj) {
+			return obj.getAssetClass();
+		}
+
+		@Override
+		public void setValue(AssetClassStrategy obj, List<AssetClassification> value) {
+			obj.setAssetClass(value);
 		}
 	};
 
@@ -131,7 +142,7 @@ public class AssetClassStrategy extends PortfolioStrategy {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassStrategy";
 				definition = "Strategy is asset class based.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AssetClassification.mmStrategy);
+				associationDomain_lazy = () -> Arrays.asList(AssetClassification.mmStrategy);
 				superType_lazy = () -> PortfolioStrategy.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AssetClassStrategy.mmAssetClass);
 			}
@@ -148,7 +159,7 @@ public class AssetClassStrategy extends PortfolioStrategy {
 		return assetClass == null ? assetClass = new ArrayList<>() : assetClass;
 	}
 
-	public AssetClassStrategy setAssetClass(List<com.tools20022.repository.entity.AssetClassification> assetClass) {
+	public AssetClassStrategy setAssetClass(List<AssetClassification> assetClass) {
 		this.assetClass = Objects.requireNonNull(assetClass);
 		return this;
 	}

@@ -30,6 +30,10 @@ import com.tools20022.repository.entity.PaymentStatus;
 import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
+import com.tools20022.repository.msg.OriginalMessage3;
+import com.tools20022.repository.msg.TradeParty2;
+import com.tools20022.repository.msg.ValidationStatusReason1;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -135,7 +139,7 @@ public class CurrencyControlGroupStatus1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalReferences = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlGroupStatus1, OriginalMessage3> mmOriginalReferences = new MMMessageAssociationEnd<CurrencyControlGroupStatus1, OriginalMessage3>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmPaymentExecution;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlGroupStatus1.mmObject();
@@ -147,7 +151,17 @@ public class CurrencyControlGroupStatus1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OriginalMessage3.mmObject();
+			type_lazy = () -> OriginalMessage3.mmObject();
+		}
+
+		@Override
+		public OriginalMessage3 getValue(CurrencyControlGroupStatus1 obj) {
+			return obj.getOriginalReferences();
+		}
+
+		@Override
+		public void setValue(CurrencyControlGroupStatus1 obj, OriginalMessage3 value) {
+			obj.setOriginalReferences(value);
 		}
 	};
 	@XmlElement(name = "RptgPty", required = true)
@@ -183,7 +197,7 @@ public class CurrencyControlGroupStatus1 {
 	 * definition} = "Party registering the currency control contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReportingParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlGroupStatus1, TradeParty2> mmReportingParty = new MMMessageAssociationEnd<CurrencyControlGroupStatus1, TradeParty2>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmReportingParty;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlGroupStatus1.mmObject();
@@ -195,7 +209,17 @@ public class CurrencyControlGroupStatus1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TradeParty2.mmObject();
+			type_lazy = () -> TradeParty2.mmObject();
+		}
+
+		@Override
+		public TradeParty2 getValue(CurrencyControlGroupStatus1 obj) {
+			return obj.getReportingParty();
+		}
+
+		@Override
+		public void setValue(CurrencyControlGroupStatus1 obj, TradeParty2 value) {
+			obj.setReportingParty(value);
 		}
 	};
 	@XmlElement(name = "RegnAgt", required = true)
@@ -232,7 +256,7 @@ public class CurrencyControlGroupStatus1 {
 	 * definition} = "Agent which registers the currency control contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRegistrationAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlGroupStatus1, BranchAndFinancialInstitutionIdentification5> mmRegistrationAgent = new MMMessageAssociationEnd<CurrencyControlGroupStatus1, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmRegistrationAgent;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlGroupStatus1.mmObject();
@@ -244,7 +268,17 @@ public class CurrencyControlGroupStatus1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(CurrencyControlGroupStatus1 obj) {
+			return obj.getRegistrationAgent();
+		}
+
+		@Override
+		public void setValue(CurrencyControlGroupStatus1 obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setRegistrationAgent(value);
 		}
 	};
 	@XmlElement(name = "RptgPrd")
@@ -277,7 +311,7 @@ public class CurrencyControlGroupStatus1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReportingPeriod = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlGroupStatus1, Optional<Period4Choice>> mmReportingPeriod = new MMMessageAssociationEnd<CurrencyControlGroupStatus1, Optional<Period4Choice>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlGroupStatus1.mmObject();
 			isDerived = false;
@@ -289,6 +323,16 @@ public class CurrencyControlGroupStatus1 {
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> Period4Choice.mmObject();
+		}
+
+		@Override
+		public Optional<Period4Choice> getValue(CurrencyControlGroupStatus1 obj) {
+			return obj.getReportingPeriod();
+		}
+
+		@Override
+		public void setValue(CurrencyControlGroupStatus1 obj, Optional<Period4Choice> value) {
+			obj.setReportingPeriod(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Sts")
@@ -326,7 +370,7 @@ public class CurrencyControlGroupStatus1 {
 	 * definition} = "Provides the status for the full report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlGroupStatus1, Optional<StatisticalReportingStatus1Code>> mmStatus = new MMMessageAttribute<CurrencyControlGroupStatus1, Optional<StatisticalReportingStatus1Code>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDescription;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlGroupStatus1.mmObject();
@@ -339,9 +383,19 @@ public class CurrencyControlGroupStatus1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> StatisticalReportingStatus1Code.mmObject();
 		}
+
+		@Override
+		public Optional<StatisticalReportingStatus1Code> getValue(CurrencyControlGroupStatus1 obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(CurrencyControlGroupStatus1 obj, Optional<StatisticalReportingStatus1Code> value) {
+			obj.setStatus(value.orElse(null));
+		}
 	};
 	@XmlElement(name = "StsRsn")
-	protected List<com.tools20022.repository.msg.ValidationStatusReason1> statusReason;
+	protected List<ValidationStatusReason1> statusReason;
 	/**
 	 * 
 	 <p>
@@ -374,7 +428,7 @@ public class CurrencyControlGroupStatus1 {
 	 * definition} = "Provides detailed information on the status reason."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmStatusReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlGroupStatus1, List<ValidationStatusReason1>> mmStatusReason = new MMMessageAssociationEnd<CurrencyControlGroupStatus1, List<ValidationStatusReason1>>() {
 		{
 			businessComponentTrace_lazy = () -> PaymentStatus.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlGroupStatus1.mmObject();
@@ -385,7 +439,17 @@ public class CurrencyControlGroupStatus1 {
 			definition = "Provides detailed information on the status reason.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ValidationStatusReason1.mmObject();
+			type_lazy = () -> ValidationStatusReason1.mmObject();
+		}
+
+		@Override
+		public List<ValidationStatusReason1> getValue(CurrencyControlGroupStatus1 obj) {
+			return obj.getStatusReason();
+		}
+
+		@Override
+		public void setValue(CurrencyControlGroupStatus1 obj, List<ValidationStatusReason1> value) {
+			obj.setStatusReason(value);
 		}
 	};
 	@XmlElement(name = "StsDtTm")
@@ -422,7 +486,7 @@ public class CurrencyControlGroupStatus1 {
 	 * definition} = "Provides the date and time when the status was issued."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatusDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlGroupStatus1, Optional<ISODateTime>> mmStatusDateTime = new MMMessageAttribute<CurrencyControlGroupStatus1, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDateTime;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlGroupStatus1.mmObject();
@@ -434,6 +498,16 @@ public class CurrencyControlGroupStatus1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public Optional<ISODateTime> getValue(CurrencyControlGroupStatus1 obj) {
+			return obj.getStatusDateTime();
+		}
+
+		@Override
+		public void setValue(CurrencyControlGroupStatus1 obj, Optional<ISODateTime> value) {
+			obj.setStatusDateTime(value.orElse(null));
 		}
 	};
 
@@ -459,7 +533,7 @@ public class CurrencyControlGroupStatus1 {
 		return originalReferences;
 	}
 
-	public CurrencyControlGroupStatus1 setOriginalReferences(com.tools20022.repository.msg.OriginalMessage3 originalReferences) {
+	public CurrencyControlGroupStatus1 setOriginalReferences(OriginalMessage3 originalReferences) {
 		this.originalReferences = Objects.requireNonNull(originalReferences);
 		return this;
 	}
@@ -468,7 +542,7 @@ public class CurrencyControlGroupStatus1 {
 		return reportingParty;
 	}
 
-	public CurrencyControlGroupStatus1 setReportingParty(com.tools20022.repository.msg.TradeParty2 reportingParty) {
+	public CurrencyControlGroupStatus1 setReportingParty(TradeParty2 reportingParty) {
 		this.reportingParty = Objects.requireNonNull(reportingParty);
 		return this;
 	}
@@ -477,7 +551,7 @@ public class CurrencyControlGroupStatus1 {
 		return registrationAgent;
 	}
 
-	public CurrencyControlGroupStatus1 setRegistrationAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 registrationAgent) {
+	public CurrencyControlGroupStatus1 setRegistrationAgent(BranchAndFinancialInstitutionIdentification5 registrationAgent) {
 		this.registrationAgent = Objects.requireNonNull(registrationAgent);
 		return this;
 	}
@@ -504,7 +578,7 @@ public class CurrencyControlGroupStatus1 {
 		return statusReason == null ? statusReason = new ArrayList<>() : statusReason;
 	}
 
-	public CurrencyControlGroupStatus1 setStatusReason(List<com.tools20022.repository.msg.ValidationStatusReason1> statusReason) {
+	public CurrencyControlGroupStatus1 setStatusReason(List<ValidationStatusReason1> statusReason) {
 		this.statusReason = Objects.requireNonNull(statusReason);
 		return this;
 	}

@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.Party12Choice;
 import com.tools20022.repository.choice.Party28Choice;
+import com.tools20022.repository.choice.Party35Choice;
 import com.tools20022.repository.entity.Organisation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
@@ -46,6 +47,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * Party12Choice.mmAgent}</li>
  * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#mmAgent
  * Party28Choice.mmAgent}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party35Choice#mmAgent
+ * Party35Choice.mmAgent}</li>
  * </ul>
  * </li>
  * <li>
@@ -75,7 +78,7 @@ public class FinancialInstitution extends Organisation {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstitution";
 				definition = "Organisation established primarily to provide financial services.";
-				derivationElement_lazy = () -> Arrays.asList(Party12Choice.mmAgent, Party28Choice.mmAgent);
+				derivationElement_lazy = () -> Arrays.asList(Party12Choice.mmAgent, Party28Choice.mmAgent, Party35Choice.mmAgent);
 				superType_lazy = () -> Organisation.mmObject();
 			}
 

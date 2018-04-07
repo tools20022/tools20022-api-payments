@@ -107,7 +107,7 @@ public class CreditorReferenceType2 {
 	 * definition} = "Coded or proprietary format creditor reference type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCodeOrProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CreditorReferenceType2, CreditorReferenceType1Choice> mmCodeOrProprietary = new MMMessageAssociationEnd<CreditorReferenceType2, CreditorReferenceType1Choice>() {
 		{
 			businessComponentTrace_lazy = () -> Document.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.CreditorReferenceType2.mmObject();
@@ -120,6 +120,16 @@ public class CreditorReferenceType2 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> CreditorReferenceType1Choice.mmObject();
+		}
+
+		@Override
+		public CreditorReferenceType1Choice getValue(CreditorReferenceType2 obj) {
+			return obj.getCodeOrProprietary();
+		}
+
+		@Override
+		public void setValue(CreditorReferenceType2 obj, CreditorReferenceType1Choice value) {
+			obj.setCodeOrProprietary(value);
 		}
 	};
 	@XmlElement(name = "Issr")
@@ -156,7 +166,7 @@ public class CreditorReferenceType2 {
 	 * definition} = "Entity that assigns the credit reference type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CreditorReferenceType2, Optional<Max35Text>> mmIssuer = new MMMessageAttribute<CreditorReferenceType2, Optional<Max35Text>>() {
 		{
 			businessComponentTrace_lazy = () -> DocumentIssuer.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.CreditorReferenceType2.mmObject();
@@ -168,6 +178,16 @@ public class CreditorReferenceType2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(CreditorReferenceType2 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(CreditorReferenceType2 obj, Optional<Max35Text> value) {
+			obj.setIssuer(value.orElse(null));
 		}
 	};
 

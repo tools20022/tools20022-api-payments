@@ -25,7 +25,6 @@ import com.tools20022.repository.area.PaymentsInitiationLatestVersion;
 import com.tools20022.repository.msg.GroupHeader47;
 import com.tools20022.repository.msg.MandateAmendment5;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -94,8 +93,8 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forMandateAmendmentRequestV05
- * ConstraintSupplementaryDataRule.forMandateAmendmentRequestV05}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#for_pain_MandateAmendmentRequestV05
+ * ConstraintSupplementaryDataRule.for_pain_MandateAmendmentRequestV05}</li>
  * </ul>
  * </li>
  * <li>
@@ -141,7 +140,7 @@ public class MandateAmendmentRequestV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateAmendmentRequestV05, GroupHeader47> mmGroupHeader = new MMMessageBuildingBlock<MandateAmendmentRequestV05, GroupHeader47>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -152,12 +151,14 @@ public class MandateAmendmentRequestV05 {
 			complexType_lazy = () -> GroupHeader47.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateAmendmentRequestV05.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader47 getValue(MandateAmendmentRequestV05 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(MandateAmendmentRequestV05 obj, GroupHeader47 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "UndrlygAmdmntDtls", required = true)
@@ -186,7 +187,7 @@ public class MandateAmendmentRequestV05 {
 	 * "Set of elements used to provide details on the amendment request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmUnderlyingAmendmentDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateAmendmentRequestV05, List<MandateAmendment5>> mmUnderlyingAmendmentDetails = new MMMessageBuildingBlock<MandateAmendmentRequestV05, List<MandateAmendment5>>() {
 		{
 			xmlTag = "UndrlygAmdmntDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -196,12 +197,14 @@ public class MandateAmendmentRequestV05 {
 			complexType_lazy = () -> MandateAmendment5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateAmendmentRequestV05.class.getMethod("getUnderlyingAmendmentDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<MandateAmendment5> getValue(MandateAmendmentRequestV05 obj) {
+			return obj.getUnderlyingAmendmentDetails();
+		}
+
+		@Override
+		public void setValue(MandateAmendmentRequestV05 obj, List<MandateAmendment5> value) {
+			obj.setUnderlyingAmendmentDetails(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -231,7 +234,7 @@ public class MandateAmendmentRequestV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateAmendmentRequestV05, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MandateAmendmentRequestV05, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -241,19 +244,21 @@ public class MandateAmendmentRequestV05 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateAmendmentRequestV05.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MandateAmendmentRequestV05 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MandateAmendmentRequestV05 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forMandateAmendmentRequestV05);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.for_pain_MandateAmendmentRequestV05);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateAmendmentRequestV05";
 				definition = "Scope\r\nThe MandateAmendmentRequest message is sent by the initiator of the request to his agent and/or counterparty. The initiator can both be the debtor or the creditor (or where appropriate the debtor agent).\r\nThe MandateAmendmentRequest message is forwarded by the agent of the initiator to the agent of the counterparty.\r\nA MandateAmendmentRequest message is used to request the amendment of specific information in an existing mandate. The MandateAmendmentRequest message must reflect the new data of the element(s) to be amended and at a minimum a unique reference to the existing mandate. If accepted, this MandateAmendmentRequest message together with the MandateAcceptanceReport message confirming the acceptance will be considered as a valid amendment on an existing mandate, agreed upon by all parties. The amended mandate will from then on be considered the valid mandate.\r\nUsage\r\nThe MandateAmendmentRequest message can contain one or more request(s) to amend a specific mandate.\r\nThe messages can be exchanged between creditor and creditor agent or debtor and debtor agent and between creditor agent and debtor agent.\r\nThe message can also be used by an initiating party that has authority to send the message on behalf of the creditor or debtor.\r\nThe MandateAmendmentRequest message can be used in domestic and cross-border scenarios.\r\nIf all elements in the existing Mandate need to be amended or the underlying contract is different, then the MandateAmendmentRequest message should not be used. The existing Mandate has to be cancelled and a new Mandate has to be initiated.";

@@ -97,7 +97,7 @@ public class PartyOrGroup1Choice {
 	 * definition} = "Specifies the identification of a group of parties."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGroupIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyOrGroup1Choice, Max4AlphaNumericText> mmGroupIdentification = new MMMessageAttribute<PartyOrGroup1Choice, Max4AlphaNumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.PartyOrGroup1Choice.mmObject();
 			isDerived = false;
@@ -108,6 +108,16 @@ public class PartyOrGroup1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max4AlphaNumericText.mmObject();
+		}
+
+		@Override
+		public Max4AlphaNumericText getValue(PartyOrGroup1Choice obj) {
+			return obj.getGroupIdentification();
+		}
+
+		@Override
+		public void setValue(PartyOrGroup1Choice obj, Max4AlphaNumericText value) {
+			obj.setGroupIdentification(value);
 		}
 	};
 	@XmlElement(name = "Pty", required = true)
@@ -140,7 +150,7 @@ public class PartyOrGroup1Choice {
 	 * definition} = "Specifies a party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmParty = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyOrGroup1Choice, PartyAndCertificate2> mmParty = new MMMessageAttribute<PartyOrGroup1Choice, PartyAndCertificate2>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.PartyOrGroup1Choice.mmObject();
 			isDerived = false;
@@ -151,6 +161,16 @@ public class PartyOrGroup1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> PartyAndCertificate2.mmObject();
+		}
+
+		@Override
+		public PartyAndCertificate2 getValue(PartyOrGroup1Choice obj) {
+			return obj.getParty();
+		}
+
+		@Override
+		public void setValue(PartyOrGroup1Choice obj, PartyAndCertificate2 value) {
+			obj.setParty(value);
 		}
 	};
 

@@ -57,7 +57,7 @@ public class ConstraintUltimateCreditorRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction21 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction21> forPaymentInstruction21 = new MMConstraint<PaymentInstruction21>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateCreditorRule";
@@ -67,8 +67,8 @@ public class ConstraintUltimateCreditorRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction21((PaymentInstruction21) obj);
+		public void executeValidator(PaymentInstruction21 obj) throws Exception {
+			checkPaymentInstruction21(obj);
 		}
 	};
 

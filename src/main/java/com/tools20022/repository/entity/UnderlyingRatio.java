@@ -21,6 +21,8 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.SecuritiesConversion;
+import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -85,7 +87,7 @@ import java.util.Objects;
 public class UnderlyingRatio {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.SecuritiesConversion> securitiesConversion;
+	protected List<SecuritiesConversion> securitiesConversion;
 	/**
 	 * 
 	 <p>
@@ -120,7 +122,7 @@ public class UnderlyingRatio {
 	 * definition} = "Other parameters used to convert securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesConversion = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<UnderlyingRatio, List<SecuritiesConversion>> mmSecuritiesConversion = new MMBusinessAssociationEnd<UnderlyingRatio, List<SecuritiesConversion>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmObject();
@@ -128,9 +130,19 @@ public class UnderlyingRatio {
 			name = "SecuritiesConversion";
 			definition = "Other parameters used to convert securities.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmRatio;
+			opposite_lazy = () -> SecuritiesConversion.mmRatio;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
+			type_lazy = () -> SecuritiesConversion.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesConversion> getValue(UnderlyingRatio obj) {
+			return obj.getSecuritiesConversion();
+		}
+
+		@Override
+		public void setValue(UnderlyingRatio obj, List<SecuritiesConversion> value) {
+			obj.setSecuritiesConversion(value);
 		}
 	};
 	protected SecuritiesQuantity underlyingQuantityDenominator;
@@ -167,7 +179,7 @@ public class UnderlyingRatio {
 	 * definition} = "Number of held securities for the exercise."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUnderlyingQuantityDenominator = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<UnderlyingRatio, SecuritiesQuantity> mmUnderlyingQuantityDenominator = new MMBusinessAssociationEnd<UnderlyingRatio, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmObject();
@@ -176,9 +188,19 @@ public class UnderlyingRatio {
 			definition = "Number of held securities for the exercise.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmDenominatorRatio;
+			opposite_lazy = () -> SecuritiesQuantity.mmDenominatorRatio;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(UnderlyingRatio obj) {
+			return obj.getUnderlyingQuantityDenominator();
+		}
+
+		@Override
+		public void setValue(UnderlyingRatio obj, SecuritiesQuantity value) {
+			obj.setUnderlyingQuantityDenominator(value);
 		}
 	};
 	protected SecuritiesQuantity underlyingQuantityNumerator;
@@ -215,7 +237,7 @@ public class UnderlyingRatio {
 	 * definition} = "Number of related securities for the exercise."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUnderlyingQuantityNumerator = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<UnderlyingRatio, SecuritiesQuantity> mmUnderlyingQuantityNumerator = new MMBusinessAssociationEnd<UnderlyingRatio, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmObject();
@@ -224,9 +246,19 @@ public class UnderlyingRatio {
 			definition = "Number of related securities for the exercise.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmNumeratorRatio;
+			opposite_lazy = () -> SecuritiesQuantity.mmNumeratorRatio;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(UnderlyingRatio obj) {
+			return obj.getUnderlyingQuantityNumerator();
+		}
+
+		@Override
+		public void setValue(UnderlyingRatio obj, SecuritiesQuantity value) {
+			obj.setUnderlyingQuantityNumerator(value);
 		}
 	};
 
@@ -237,8 +269,7 @@ public class UnderlyingRatio {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingRatio";
 				definition = "Related financial instrument into which the security can be converted.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesQuantity.mmDenominatorRatio, com.tools20022.repository.entity.SecuritiesQuantity.mmNumeratorRatio,
-						com.tools20022.repository.entity.SecuritiesConversion.mmRatio);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesQuantity.mmDenominatorRatio, SecuritiesQuantity.mmNumeratorRatio, SecuritiesConversion.mmRatio);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.UnderlyingRatio.mmSecuritiesConversion, com.tools20022.repository.entity.UnderlyingRatio.mmUnderlyingQuantityDenominator,
 						com.tools20022.repository.entity.UnderlyingRatio.mmUnderlyingQuantityNumerator);
 			}
@@ -255,7 +286,7 @@ public class UnderlyingRatio {
 		return securitiesConversion == null ? securitiesConversion = new ArrayList<>() : securitiesConversion;
 	}
 
-	public UnderlyingRatio setSecuritiesConversion(List<com.tools20022.repository.entity.SecuritiesConversion> securitiesConversion) {
+	public UnderlyingRatio setSecuritiesConversion(List<SecuritiesConversion> securitiesConversion) {
 		this.securitiesConversion = Objects.requireNonNull(securitiesConversion);
 		return this;
 	}
@@ -264,7 +295,7 @@ public class UnderlyingRatio {
 		return underlyingQuantityDenominator;
 	}
 
-	public UnderlyingRatio setUnderlyingQuantityDenominator(com.tools20022.repository.entity.SecuritiesQuantity underlyingQuantityDenominator) {
+	public UnderlyingRatio setUnderlyingQuantityDenominator(SecuritiesQuantity underlyingQuantityDenominator) {
 		this.underlyingQuantityDenominator = Objects.requireNonNull(underlyingQuantityDenominator);
 		return this;
 	}
@@ -273,7 +304,7 @@ public class UnderlyingRatio {
 		return underlyingQuantityNumerator;
 	}
 
-	public UnderlyingRatio setUnderlyingQuantityNumerator(com.tools20022.repository.entity.SecuritiesQuantity underlyingQuantityNumerator) {
+	public UnderlyingRatio setUnderlyingQuantityNumerator(SecuritiesQuantity underlyingQuantityNumerator) {
 		this.underlyingQuantityNumerator = Objects.requireNonNull(underlyingQuantityNumerator);
 		return this;
 	}

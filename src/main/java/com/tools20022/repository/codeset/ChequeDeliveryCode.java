@@ -321,7 +321,7 @@ public class ChequeDeliveryCode extends MMCode {
 		}
 	};
 	/**
-	 * Cheque will be picked up by the creditor
+	 * Cheque will be picked up by the creditor.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -338,14 +338,14 @@ public class ChequeDeliveryCode extends MMCode {
 	 * name} = "PickUpByCreditor"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Cheque will be picked up by the creditor"</li>
+	 * definition} = "Cheque will be picked up by the creditor."</li>
 	 * </ul>
 	 */
 	public static final ChequeDeliveryCode PickUpByCreditor = new ChequeDeliveryCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PickUpByCreditor";
-			definition = "Cheque will be picked up by the creditor";
+			definition = "Cheque will be picked up by the creditor.";
 			owner_lazy = () -> com.tools20022.repository.codeset.ChequeDeliveryCode.mmObject();
 			codeName = "PUCD";
 		}
@@ -381,7 +381,7 @@ public class ChequeDeliveryCode extends MMCode {
 		}
 	};
 	/**
-	 * Cheque is to be sent through registered mail services to debtor
+	 * Cheque is to be sent through registered mail services to debtor.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -399,14 +399,14 @@ public class ChequeDeliveryCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Cheque is to be sent through registered mail services to debtor"</li>
+	 * "Cheque is to be sent through registered mail services to debtor."</li>
 	 * </ul>
 	 */
 	public static final ChequeDeliveryCode RegisteredMailToDebtor = new ChequeDeliveryCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegisteredMailToDebtor";
-			definition = "Cheque is to be sent through registered mail services to debtor";
+			definition = "Cheque is to be sent through registered mail services to debtor.";
 			owner_lazy = () -> com.tools20022.repository.codeset.ChequeDeliveryCode.mmObject();
 			codeName = "RGDB";
 		}

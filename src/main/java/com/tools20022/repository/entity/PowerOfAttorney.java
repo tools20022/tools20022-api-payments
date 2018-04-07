@@ -22,6 +22,9 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Mandate;
+import com.tools20022.repository.entity.Party;
+import com.tools20022.repository.entity.PowerOfAttorneyRequirements;
+import com.tools20022.repository.entity.SecuritiesAccount;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -118,7 +121,7 @@ public class PowerOfAttorney extends Mandate {
 	 * definition} = "Party which is the holder of the power of attorney."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAuthorisedParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PowerOfAttorney, Party> mmAuthorisedParty = new MMBusinessAssociationEnd<PowerOfAttorney, Party>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
@@ -127,9 +130,19 @@ public class PowerOfAttorney extends Mandate {
 			definition = "Party which is the holder of the power of attorney.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Party.mmPowerOfAttorney;
+			opposite_lazy = () -> Party.mmPowerOfAttorney;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
+			type_lazy = () -> Party.mmObject();
+		}
+
+		@Override
+		public Party getValue(PowerOfAttorney obj) {
+			return obj.getAuthorisedParty();
+		}
+
+		@Override
+		public void setValue(PowerOfAttorney obj, Party value) {
+			obj.setAuthorisedParty(value);
 		}
 	};
 	protected PowerOfAttorneyRequirements powerOfAttorneyRequirements;
@@ -168,7 +181,7 @@ public class PowerOfAttorney extends Mandate {
 	 * "Describes the requirements relative to the power of attorney."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPowerOfAttorneyRequirements = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PowerOfAttorney, com.tools20022.repository.entity.PowerOfAttorneyRequirements> mmPowerOfAttorneyRequirements = new MMBusinessAssociationEnd<PowerOfAttorney, com.tools20022.repository.entity.PowerOfAttorneyRequirements>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
@@ -180,6 +193,16 @@ public class PowerOfAttorney extends Mandate {
 			opposite_lazy = () -> com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmPowerOfAttorney;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.PowerOfAttorneyRequirements getValue(PowerOfAttorney obj) {
+			return obj.getPowerOfAttorneyRequirements();
+		}
+
+		@Override
+		public void setValue(PowerOfAttorney obj, com.tools20022.repository.entity.PowerOfAttorneyRequirements value) {
+			obj.setPowerOfAttorneyRequirements(value);
 		}
 	};
 	protected SecuritiesAccount authorisedAccount;
@@ -218,7 +241,7 @@ public class PowerOfAttorney extends Mandate {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAuthorisedAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PowerOfAttorney, SecuritiesAccount> mmAuthorisedAccount = new MMBusinessAssociationEnd<PowerOfAttorney, SecuritiesAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
@@ -227,9 +250,19 @@ public class PowerOfAttorney extends Mandate {
 			definition = "Specifies the securities account on which the power of attorney applies.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmRelatedPowerOfAttorney;
+			opposite_lazy = () -> SecuritiesAccount.mmRelatedPowerOfAttorney;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
+			type_lazy = () -> SecuritiesAccount.mmObject();
+		}
+
+		@Override
+		public SecuritiesAccount getValue(PowerOfAttorney obj) {
+			return obj.getAuthorisedAccount();
+		}
+
+		@Override
+		public void setValue(PowerOfAttorney obj, SecuritiesAccount value) {
+			obj.setAuthorisedAccount(value);
 		}
 	};
 
@@ -240,8 +273,7 @@ public class PowerOfAttorney extends Mandate {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PowerOfAttorney";
 				definition = "Document that transfers specific rights from a party to another party.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Party.mmPowerOfAttorney, com.tools20022.repository.entity.SecuritiesAccount.mmRelatedPowerOfAttorney,
-						com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmPowerOfAttorney);
+				associationDomain_lazy = () -> Arrays.asList(Party.mmPowerOfAttorney, SecuritiesAccount.mmRelatedPowerOfAttorney, com.tools20022.repository.entity.PowerOfAttorneyRequirements.mmPowerOfAttorney);
 				superType_lazy = () -> Mandate.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PowerOfAttorney.mmAuthorisedParty, com.tools20022.repository.entity.PowerOfAttorney.mmPowerOfAttorneyRequirements,
 						com.tools20022.repository.entity.PowerOfAttorney.mmAuthorisedAccount);
@@ -259,7 +291,7 @@ public class PowerOfAttorney extends Mandate {
 		return authorisedParty;
 	}
 
-	public PowerOfAttorney setAuthorisedParty(com.tools20022.repository.entity.Party authorisedParty) {
+	public PowerOfAttorney setAuthorisedParty(Party authorisedParty) {
 		this.authorisedParty = Objects.requireNonNull(authorisedParty);
 		return this;
 	}
@@ -277,7 +309,7 @@ public class PowerOfAttorney extends Mandate {
 		return authorisedAccount;
 	}
 
-	public PowerOfAttorney setAuthorisedAccount(com.tools20022.repository.entity.SecuritiesAccount authorisedAccount) {
+	public PowerOfAttorney setAuthorisedAccount(SecuritiesAccount authorisedAccount) {
 		this.authorisedAccount = Objects.requireNonNull(authorisedAccount);
 		return this;
 	}

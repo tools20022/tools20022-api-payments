@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Organisation;
 import com.tools20022.repository.entity.PaymentIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -119,7 +120,7 @@ public class PaymentIdentification4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentIdentification4, Optional<Max35Text>> mmInstructionIdentification = new MMMessageAttribute<PaymentIdentification4, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmInstructionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification4.mmObject();
@@ -131,6 +132,16 @@ public class PaymentIdentification4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(PaymentIdentification4 obj) {
+			return obj.getInstructionIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification4 obj, Optional<Max35Text> value) {
+			obj.setInstructionIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "EndToEndId", required = true)
@@ -169,7 +180,7 @@ public class PaymentIdentification4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEndToEndIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentIdentification4, Max35Text> mmEndToEndIdentification = new MMMessageAttribute<PaymentIdentification4, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmEndToEndIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification4.mmObject();
@@ -181,6 +192,16 @@ public class PaymentIdentification4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(PaymentIdentification4 obj) {
+			return obj.getEndToEndIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification4 obj, Max35Text value) {
+			obj.setEndToEndIdentification(value);
 		}
 	};
 	@XmlElement(name = "TxId", required = true)
@@ -219,7 +240,7 @@ public class PaymentIdentification4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentIdentification4, Max35Text> mmTransactionIdentification = new MMMessageAttribute<PaymentIdentification4, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmTransactionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification4.mmObject();
@@ -231,6 +252,16 @@ public class PaymentIdentification4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(PaymentIdentification4 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification4 obj, Max35Text value) {
+			obj.setTransactionIdentification(value);
 		}
 	};
 	@XmlElement(name = "ClrSysRef")
@@ -269,7 +300,7 @@ public class PaymentIdentification4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClearingSystemReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentIdentification4, Optional<Max35Text>> mmClearingSystemReference = new MMMessageAttribute<PaymentIdentification4, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmClearingSystemReference;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification4.mmObject();
@@ -281,6 +312,16 @@ public class PaymentIdentification4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(PaymentIdentification4 obj) {
+			return obj.getClearingSystemReference();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification4 obj, Optional<Max35Text> value) {
+			obj.setClearingSystemReference(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "FrstAgt")
@@ -319,7 +360,7 @@ public class PaymentIdentification4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFirstAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PaymentIdentification4, Optional<BranchAndFinancialInstitutionIdentification5>> mmFirstAgent = new MMMessageAssociationEnd<PaymentIdentification4, Optional<BranchAndFinancialInstitutionIdentification5>>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentIdentification4.mmObject();
@@ -331,7 +372,17 @@ public class PaymentIdentification4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public Optional<BranchAndFinancialInstitutionIdentification5> getValue(PaymentIdentification4 obj) {
+			return obj.getFirstAgent();
+		}
+
+		@Override
+		public void setValue(PaymentIdentification4 obj, Optional<BranchAndFinancialInstitutionIdentification5> value) {
+			obj.setFirstAgent(value.orElse(null));
 		}
 	};
 
@@ -391,7 +442,7 @@ public class PaymentIdentification4 {
 		return firstAgent == null ? Optional.empty() : Optional.of(firstAgent);
 	}
 
-	public PaymentIdentification4 setFirstAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 firstAgent) {
+	public PaymentIdentification4 setFirstAgent(BranchAndFinancialInstitutionIdentification5 firstAgent) {
 		this.firstAgent = firstAgent;
 		return this;
 	}

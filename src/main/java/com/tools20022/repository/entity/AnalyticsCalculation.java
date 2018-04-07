@@ -21,8 +21,10 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CalculationTypeCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.AnalyticsValue;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.SecuritiesPricing;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -127,7 +129,7 @@ public class AnalyticsCalculation {
 	 * definition} = "Pricing for which an analytics calculation is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AnalyticsCalculation, Optional<SecuritiesPricing>> mmSecuritiesPricing = new MMBusinessAssociationEnd<AnalyticsCalculation, Optional<SecuritiesPricing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
@@ -136,9 +138,19 @@ public class AnalyticsCalculation {
 			definition = "Pricing for which an analytics calculation is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmAnalyticsCalculation;
+			opposite_lazy = () -> SecuritiesPricing.mmAnalyticsCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesPricing> getValue(AnalyticsCalculation obj) {
+			return obj.getSecuritiesPricing();
+		}
+
+		@Override
+		public void setValue(AnalyticsCalculation obj, Optional<SecuritiesPricing> value) {
+			obj.setSecuritiesPricing(value.orElse(null));
 		}
 	};
 	protected AnalyticsValue value;
@@ -175,7 +187,7 @@ public class AnalyticsCalculation {
 	 * definition} = "Result of the defined analytics calculation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmValue = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AnalyticsCalculation, AnalyticsValue> mmValue = new MMBusinessAssociationEnd<AnalyticsCalculation, AnalyticsValue>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
@@ -184,9 +196,19 @@ public class AnalyticsCalculation {
 			definition = "Result of the defined analytics calculation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmAnalyticsCalculation;
+			opposite_lazy = () -> AnalyticsValue.mmAnalyticsCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
+			type_lazy = () -> AnalyticsValue.mmObject();
+		}
+
+		@Override
+		public AnalyticsValue getValue(AnalyticsCalculation obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(AnalyticsCalculation obj, AnalyticsValue value) {
+			obj.setValue(value);
 		}
 	};
 	protected CalculationTypeCode calculationType;
@@ -216,7 +238,7 @@ public class AnalyticsCalculation {
 	 * definition} = "Specifies the type of calculation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCalculationType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AnalyticsCalculation, CalculationTypeCode> mmCalculationType = new MMBusinessAttribute<AnalyticsCalculation, CalculationTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
@@ -228,12 +250,14 @@ public class AnalyticsCalculation {
 			simpleType_lazy = () -> CalculationTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AnalyticsCalculation.class.getMethod("getCalculationType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CalculationTypeCode getValue(AnalyticsCalculation obj) {
+			return obj.getCalculationType();
+		}
+
+		@Override
+		public void setValue(AnalyticsCalculation obj, CalculationTypeCode value) {
+			obj.setCalculationType(value);
 		}
 	};
 	protected ISODateTime valueDate;
@@ -264,7 +288,7 @@ public class AnalyticsCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AnalyticsCalculation, ISODateTime> mmValueDate = new MMBusinessAttribute<AnalyticsCalculation, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
@@ -276,12 +300,14 @@ public class AnalyticsCalculation {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AnalyticsCalculation.class.getMethod("getValueDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(AnalyticsCalculation obj) {
+			return obj.getValueDate();
+		}
+
+		@Override
+		public void setValue(AnalyticsCalculation obj, ISODateTime value) {
+			obj.setValueDate(value);
 		}
 	};
 	protected DateTimePeriod valuePeriod;
@@ -311,7 +337,7 @@ public class AnalyticsCalculation {
 	 * definition} = "Period on which the calculation is based."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValuePeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AnalyticsCalculation, DateTimePeriod> mmValuePeriod = new MMBusinessAttribute<AnalyticsCalculation, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
@@ -320,15 +346,17 @@ public class AnalyticsCalculation {
 			definition = "Period on which the calculation is based.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			complexType_lazy = () -> DateTimePeriod.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AnalyticsCalculation.class.getMethod("getValuePeriod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DateTimePeriod getValue(AnalyticsCalculation obj) {
+			return obj.getValuePeriod();
+		}
+
+		@Override
+		public void setValue(AnalyticsCalculation obj, DateTimePeriod value) {
+			obj.setValuePeriod(value);
 		}
 	};
 	protected PercentageRate estimatedInterestRate;
@@ -360,7 +388,7 @@ public class AnalyticsCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEstimatedInterestRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AnalyticsCalculation, PercentageRate> mmEstimatedInterestRate = new MMBusinessAttribute<AnalyticsCalculation, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
@@ -372,12 +400,14 @@ public class AnalyticsCalculation {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AnalyticsCalculation.class.getMethod("getEstimatedInterestRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(AnalyticsCalculation obj) {
+			return obj.getEstimatedInterestRate();
+		}
+
+		@Override
+		public void setValue(AnalyticsCalculation obj, PercentageRate value) {
+			obj.setEstimatedInterestRate(value);
 		}
 	};
 	protected ISODateTime variableRateValueDate;
@@ -406,7 +436,7 @@ public class AnalyticsCalculation {
 	 * definition} = "Date/time as of which the variable rate is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVariableRateValueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AnalyticsCalculation, ISODateTime> mmVariableRateValueDate = new MMBusinessAttribute<AnalyticsCalculation, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
@@ -418,12 +448,14 @@ public class AnalyticsCalculation {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AnalyticsCalculation.class.getMethod("getVariableRateValueDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(AnalyticsCalculation obj) {
+			return obj.getVariableRateValueDate();
+		}
+
+		@Override
+		public void setValue(AnalyticsCalculation obj, ISODateTime value) {
+			obj.setVariableRateValueDate(value);
 		}
 	};
 
@@ -434,7 +466,7 @@ public class AnalyticsCalculation {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AnalyticsCalculation";
 				definition = "Characteristics related to the analytics.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmAnalyticsCalculation, com.tools20022.repository.entity.AnalyticsValue.mmAnalyticsCalculation);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmAnalyticsCalculation, AnalyticsValue.mmAnalyticsCalculation);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AnalyticsCalculation.mmSecuritiesPricing, com.tools20022.repository.entity.AnalyticsCalculation.mmValue,
 						com.tools20022.repository.entity.AnalyticsCalculation.mmCalculationType, com.tools20022.repository.entity.AnalyticsCalculation.mmValueDate, com.tools20022.repository.entity.AnalyticsCalculation.mmValuePeriod,
 						com.tools20022.repository.entity.AnalyticsCalculation.mmEstimatedInterestRate, com.tools20022.repository.entity.AnalyticsCalculation.mmVariableRateValueDate);
@@ -452,7 +484,7 @@ public class AnalyticsCalculation {
 		return securitiesPricing == null ? Optional.empty() : Optional.of(securitiesPricing);
 	}
 
-	public AnalyticsCalculation setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+	public AnalyticsCalculation setSecuritiesPricing(SecuritiesPricing securitiesPricing) {
 		this.securitiesPricing = securitiesPricing;
 		return this;
 	}
@@ -461,7 +493,7 @@ public class AnalyticsCalculation {
 		return value;
 	}
 
-	public AnalyticsCalculation setValue(com.tools20022.repository.entity.AnalyticsValue value) {
+	public AnalyticsCalculation setValue(AnalyticsValue value) {
 		this.value = Objects.requireNonNull(value);
 		return this;
 	}
@@ -488,7 +520,7 @@ public class AnalyticsCalculation {
 		return valuePeriod;
 	}
 
-	public AnalyticsCalculation setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
+	public AnalyticsCalculation setValuePeriod(DateTimePeriod valuePeriod) {
 		this.valuePeriod = Objects.requireNonNull(valuePeriod);
 		return this;
 	}

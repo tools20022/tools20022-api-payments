@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Option;
 import com.tools20022.repository.entity.SecuritiesTrade;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
@@ -111,7 +112,7 @@ public class SecuritiesOptionTrade extends SecuritiesTrade {
 	 * definition} = "Specifies the different parameters of the option."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOption = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOptionTrade, com.tools20022.repository.entity.Option> mmOption = new MMBusinessAssociationEnd<SecuritiesOptionTrade, com.tools20022.repository.entity.Option>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOptionTrade.mmObject();
@@ -123,6 +124,16 @@ public class SecuritiesOptionTrade extends SecuritiesTrade {
 			opposite_lazy = () -> com.tools20022.repository.entity.Option.mmSecuritiesOptionTrade;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Option getValue(SecuritiesOptionTrade obj) {
+			return obj.getOption();
+		}
+
+		@Override
+		public void setValue(SecuritiesOptionTrade obj, com.tools20022.repository.entity.Option value) {
+			obj.setOption(value);
 		}
 	};
 

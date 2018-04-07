@@ -101,7 +101,7 @@ public class BinaryFile1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMIMEType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BinaryFile1, Optional<Max35Text>> mmMIMEType = new MMMessageAttribute<BinaryFile1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BinaryFile1.mmObject();
 			isDerived = false;
@@ -112,6 +112,16 @@ public class BinaryFile1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(BinaryFile1 obj) {
+			return obj.getMIMEType();
+		}
+
+		@Override
+		public void setValue(BinaryFile1 obj, Optional<Max35Text> value) {
+			obj.setMIMEType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "NcodgTp")
@@ -144,7 +154,7 @@ public class BinaryFile1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEncodingType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BinaryFile1, Optional<Max35Text>> mmEncodingType = new MMMessageAttribute<BinaryFile1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BinaryFile1.mmObject();
 			isDerived = false;
@@ -155,6 +165,16 @@ public class BinaryFile1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(BinaryFile1 obj) {
+			return obj.getEncodingType();
+		}
+
+		@Override
+		public void setValue(BinaryFile1 obj, Optional<Max35Text> value) {
+			obj.setEncodingType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CharSet")
@@ -187,7 +207,7 @@ public class BinaryFile1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCharacterSet = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BinaryFile1, Optional<Max35Text>> mmCharacterSet = new MMMessageAttribute<BinaryFile1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BinaryFile1.mmObject();
 			isDerived = false;
@@ -198,6 +218,16 @@ public class BinaryFile1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(BinaryFile1 obj) {
+			return obj.getCharacterSet();
+		}
+
+		@Override
+		public void setValue(BinaryFile1 obj, Optional<Max35Text> value) {
+			obj.setCharacterSet(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "InclBinryObjct")
@@ -229,7 +259,7 @@ public class BinaryFile1 {
 	 * definition} = "Binary object included in this attached binary file."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIncludedBinaryObject = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BinaryFile1, Optional<Max100KBinary>> mmIncludedBinaryObject = new MMMessageAttribute<BinaryFile1, Optional<Max100KBinary>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BinaryFile1.mmObject();
 			isDerived = false;
@@ -240,6 +270,16 @@ public class BinaryFile1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max100KBinary.mmObject();
+		}
+
+		@Override
+		public Optional<Max100KBinary> getValue(BinaryFile1 obj) {
+			return obj.getIncludedBinaryObject();
+		}
+
+		@Override
+		public void setValue(BinaryFile1 obj, Optional<Max100KBinary> value) {
+			obj.setIncludedBinaryObject(value.orElse(null));
 		}
 	};
 

@@ -104,9 +104,14 @@ public class DocumentLineType1Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Line identification type in a coded form."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.choice.ReferredDocumentType1Choice#mmCode
+	 * ReferredDocumentType1Choice.mmCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentLineType1Choice, ExternalDocumentLineType1Code> mmCode = new MMMessageAttribute<DocumentLineType1Choice, ExternalDocumentLineType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.DocumentLineType1Choice.mmObject();
@@ -115,9 +120,20 @@ public class DocumentLineType1Choice {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Line identification type in a coded form.";
+			previousVersion_lazy = () -> ReferredDocumentType1Choice.mmCode;
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalDocumentLineType1Code.mmObject();
+		}
+
+		@Override
+		public ExternalDocumentLineType1Code getValue(DocumentLineType1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(DocumentLineType1Choice obj, ExternalDocumentLineType1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -153,9 +169,14 @@ public class DocumentLineType1Choice {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Proprietary identification of the type of the remittance document."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.choice.ReferredDocumentType1Choice#mmProprietary
+	 * ReferredDocumentType1Choice.mmProprietary}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentLineType1Choice, Max35Text> mmProprietary = new MMMessageAttribute<DocumentLineType1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.DocumentLineType1Choice.mmObject();
@@ -164,9 +185,20 @@ public class DocumentLineType1Choice {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Proprietary identification of the type of the remittance document.";
+			previousVersion_lazy = () -> ReferredDocumentType1Choice.mmProprietary;
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(DocumentLineType1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(DocumentLineType1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

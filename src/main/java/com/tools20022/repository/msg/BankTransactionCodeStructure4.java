@@ -22,6 +22,8 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.BankTransaction;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BankTransactionCodeStructure5;
+import com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -120,7 +122,7 @@ public class BankTransactionCodeStructure4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDomain = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BankTransactionCodeStructure4, Optional<BankTransactionCodeStructure5>> mmDomain = new MMMessageAssociationEnd<BankTransactionCodeStructure4, Optional<BankTransactionCodeStructure5>>() {
 		{
 			businessComponentTrace_lazy = () -> BankTransaction.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BankTransactionCodeStructure4.mmObject();
@@ -132,7 +134,17 @@ public class BankTransactionCodeStructure4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BankTransactionCodeStructure5.mmObject();
+			type_lazy = () -> BankTransactionCodeStructure5.mmObject();
+		}
+
+		@Override
+		public Optional<BankTransactionCodeStructure5> getValue(BankTransactionCodeStructure4 obj) {
+			return obj.getDomain();
+		}
+
+		@Override
+		public void setValue(BankTransactionCodeStructure4 obj, Optional<BankTransactionCodeStructure5> value) {
+			obj.setDomain(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Prtry")
@@ -170,7 +182,7 @@ public class BankTransactionCodeStructure4 {
 	 * "Bank transaction code in a proprietary form, as defined by the issuer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BankTransactionCodeStructure4, Optional<ProprietaryBankTransactionCodeStructure1>> mmProprietary = new MMMessageAssociationEnd<BankTransactionCodeStructure4, Optional<ProprietaryBankTransactionCodeStructure1>>() {
 		{
 			businessElementTrace_lazy = () -> BankTransaction.mmProprietaryIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BankTransactionCodeStructure4.mmObject();
@@ -182,7 +194,17 @@ public class BankTransactionCodeStructure4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1.mmObject();
+			type_lazy = () -> ProprietaryBankTransactionCodeStructure1.mmObject();
+		}
+
+		@Override
+		public Optional<ProprietaryBankTransactionCodeStructure1> getValue(BankTransactionCodeStructure4 obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(BankTransactionCodeStructure4 obj, Optional<ProprietaryBankTransactionCodeStructure1> value) {
+			obj.setProprietary(value.orElse(null));
 		}
 	};
 
@@ -206,7 +228,7 @@ public class BankTransactionCodeStructure4 {
 		return domain == null ? Optional.empty() : Optional.of(domain);
 	}
 
-	public BankTransactionCodeStructure4 setDomain(com.tools20022.repository.msg.BankTransactionCodeStructure5 domain) {
+	public BankTransactionCodeStructure4 setDomain(BankTransactionCodeStructure5 domain) {
 		this.domain = domain;
 		return this;
 	}
@@ -215,7 +237,7 @@ public class BankTransactionCodeStructure4 {
 		return proprietary == null ? Optional.empty() : Optional.of(proprietary);
 	}
 
-	public BankTransactionCodeStructure4 setProprietary(com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1 proprietary) {
+	public BankTransactionCodeStructure4 setProprietary(ProprietaryBankTransactionCodeStructure1 proprietary) {
 		this.proprietary = proprietary;
 		return this;
 	}

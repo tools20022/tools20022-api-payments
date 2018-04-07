@@ -181,7 +181,7 @@ public class ChequeTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Cheque made payable to a named recipient 'or order'.  The payee can either deposit the cheque in an account or endorse it to a third party."
+	 * "Cheque made payable to a named recipient 'or order'. The payee can either deposit the cheque in an account or endorse it to a third party."
 	 * </li>
 	 * </ul>
 	 */
@@ -189,7 +189,7 @@ public class ChequeTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderCheque";
-			definition = "Cheque made payable to a named recipient 'or order'.  The payee can either deposit the cheque in an account or endorse it to a third party.";
+			definition = "Cheque made payable to a named recipient 'or order'. The payee can either deposit the cheque in an account or endorse it to a third party.";
 			owner_lazy = () -> com.tools20022.repository.codeset.ChequeTypeCode.mmObject();
 			codeName = "ORCQ";
 		}

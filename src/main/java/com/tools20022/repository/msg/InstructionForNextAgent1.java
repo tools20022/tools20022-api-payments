@@ -70,6 +70,13 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Further information related to the processing of the payment instruction that may need to be acted upon by an other agent. The instruction may relate to a level of service, or may be an instruction that has to be executed by the creditor's agent, or may be information required by the other agent."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.InstructionForAssignee1
+ * InstructionForAssignee1}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -112,9 +119,17 @@ public class InstructionForNextAgent1 {
 	 * definition} =
 	 * "Coded information related to the processing of the payment instruction, provided by the initiating party, and intended for the next agent in the payment chain."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InstructionForAssignee1#mmCode
+	 * InstructionForAssignee1.mmCode}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InstructionForNextAgent1, Optional<Instruction4Code>> mmCode = new MMMessageAttribute<InstructionForNextAgent1, Optional<Instruction4Code>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentInstruction.mmInstructionForNextAgent;
 			componentContext_lazy = () -> com.tools20022.repository.msg.InstructionForNextAgent1.mmObject();
@@ -123,9 +138,20 @@ public class InstructionForNextAgent1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Coded information related to the processing of the payment instruction, provided by the initiating party, and intended for the next agent in the payment chain.";
+			nextVersions_lazy = () -> Arrays.asList(InstructionForAssignee1.mmCode);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Instruction4Code.mmObject();
+		}
+
+		@Override
+		public Optional<Instruction4Code> getValue(InstructionForNextAgent1 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(InstructionForNextAgent1 obj, Optional<Instruction4Code> value) {
+			obj.setCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "InstrInf")
@@ -157,9 +183,17 @@ public class InstructionForNextAgent1 {
 	 * definition} =
 	 * "Further information complementing the coded instruction or instruction to the next agent that is bilaterally agreed or specific to a user community."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InstructionForAssignee1#mmInstructionInformation
+	 * InstructionForAssignee1.mmInstructionInformation}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructionInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InstructionForNextAgent1, Optional<Max140Text>> mmInstructionInformation = new MMMessageAttribute<InstructionForNextAgent1, Optional<Max140Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.InstructionForNextAgent1.mmObject();
 			isDerived = false;
@@ -167,9 +201,20 @@ public class InstructionForNextAgent1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InstructionInformation";
 			definition = "Further information complementing the coded instruction or instruction to the next agent that is bilaterally agreed or specific to a user community.";
+			nextVersions_lazy = () -> Arrays.asList(InstructionForAssignee1.mmInstructionInformation);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(InstructionForNextAgent1 obj) {
+			return obj.getInstructionInformation();
+		}
+
+		@Override
+		public void setValue(InstructionForNextAgent1 obj, Optional<Max140Text> value) {
+			obj.setInstructionInformation(value.orElse(null));
 		}
 	};
 
@@ -182,6 +227,7 @@ public class InstructionForNextAgent1 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InstructionForNextAgent1";
 				definition = "Further information related to the processing of the payment instruction that may need to be acted upon by an other agent. The instruction may relate to a level of service, or may be an instruction that has to be executed by the creditor's agent, or may be information required by the other agent.";
+				nextVersions_lazy = () -> Arrays.asList(InstructionForAssignee1.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

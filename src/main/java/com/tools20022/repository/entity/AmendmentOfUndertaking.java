@@ -22,8 +22,8 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Undertaking;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -114,7 +114,7 @@ public class AmendmentOfUndertaking {
 	 * definition} = "Date the amendment is issued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDateOfIssuance = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AmendmentOfUndertaking, ISODateTime> mmDateOfIssuance = new MMBusinessAttribute<AmendmentOfUndertaking, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
@@ -126,12 +126,14 @@ public class AmendmentOfUndertaking {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AmendmentOfUndertaking.class.getMethod("getDateOfIssuance", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(AmendmentOfUndertaking obj) {
+			return obj.getDateOfIssuance();
+		}
+
+		@Override
+		public void setValue(AmendmentOfUndertaking obj, ISODateTime value) {
+			obj.setDateOfIssuance(value);
 		}
 	};
 	protected CurrencyAndAmount changeOfAmount;
@@ -163,7 +165,7 @@ public class AmendmentOfUndertaking {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmChangeOfAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AmendmentOfUndertaking, CurrencyAndAmount> mmChangeOfAmount = new MMBusinessAttribute<AmendmentOfUndertaking, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
@@ -175,12 +177,14 @@ public class AmendmentOfUndertaking {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AmendmentOfUndertaking.class.getMethod("getChangeOfAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AmendmentOfUndertaking obj) {
+			return obj.getChangeOfAmount();
+		}
+
+		@Override
+		public void setValue(AmendmentOfUndertaking obj, CurrencyAndAmount value) {
+			obj.setChangeOfAmount(value);
 		}
 	};
 	protected Undertaking undertaking;
@@ -217,7 +221,7 @@ public class AmendmentOfUndertaking {
 	 * definition} = "Contents of an UndertakingAmendmentResponse message."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AmendmentOfUndertaking, Undertaking> mmUndertaking = new MMBusinessAssociationEnd<AmendmentOfUndertaking, Undertaking>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
@@ -226,9 +230,19 @@ public class AmendmentOfUndertaking {
 			definition = "Contents of an UndertakingAmendmentResponse message.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.mmUndertakingAmendment;
+			opposite_lazy = () -> Undertaking.mmUndertakingAmendment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
+			type_lazy = () -> Undertaking.mmObject();
+		}
+
+		@Override
+		public Undertaking getValue(AmendmentOfUndertaking obj) {
+			return obj.getUndertaking();
+		}
+
+		@Override
+		public void setValue(AmendmentOfUndertaking obj, Undertaking value) {
+			obj.setUndertaking(value);
 		}
 	};
 	protected YesNoIndicator beneficiaryConsentRequestIndicator;
@@ -260,7 +274,7 @@ public class AmendmentOfUndertaking {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBeneficiaryConsentRequestIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AmendmentOfUndertaking, YesNoIndicator> mmBeneficiaryConsentRequestIndicator = new MMBusinessAttribute<AmendmentOfUndertaking, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
@@ -272,12 +286,14 @@ public class AmendmentOfUndertaking {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AmendmentOfUndertaking.class.getMethod("getBeneficiaryConsentRequestIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(AmendmentOfUndertaking obj) {
+			return obj.getBeneficiaryConsentRequestIndicator();
+		}
+
+		@Override
+		public void setValue(AmendmentOfUndertaking obj, YesNoIndicator value) {
+			obj.setBeneficiaryConsentRequestIndicator(value);
 		}
 	};
 	protected Max35Text amendmentIdentification;
@@ -306,7 +322,7 @@ public class AmendmentOfUndertaking {
 	 * definition} = "Identification of the amendment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmendmentIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AmendmentOfUndertaking, Max35Text> mmAmendmentIdentification = new MMBusinessAttribute<AmendmentOfUndertaking, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmendmentOfUndertaking.mmObject();
@@ -318,12 +334,14 @@ public class AmendmentOfUndertaking {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AmendmentOfUndertaking.class.getMethod("getAmendmentIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(AmendmentOfUndertaking obj) {
+			return obj.getAmendmentIdentification();
+		}
+
+		@Override
+		public void setValue(AmendmentOfUndertaking obj, Max35Text value) {
+			obj.setAmendmentIdentification(value);
 		}
 	};
 
@@ -334,7 +352,7 @@ public class AmendmentOfUndertaking {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmendmentOfUndertaking";
 				definition = "Modification of an undertaking such as an guarantee or standby letter of credit.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Undertaking.mmUndertakingAmendment);
+				associationDomain_lazy = () -> Arrays.asList(Undertaking.mmUndertakingAmendment);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AmendmentOfUndertaking.mmDateOfIssuance, com.tools20022.repository.entity.AmendmentOfUndertaking.mmChangeOfAmount,
 						com.tools20022.repository.entity.AmendmentOfUndertaking.mmUndertaking, com.tools20022.repository.entity.AmendmentOfUndertaking.mmBeneficiaryConsentRequestIndicator,
 						com.tools20022.repository.entity.AmendmentOfUndertaking.mmAmendmentIdentification);
@@ -370,7 +388,7 @@ public class AmendmentOfUndertaking {
 		return undertaking;
 	}
 
-	public AmendmentOfUndertaking setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
+	public AmendmentOfUndertaking setUndertaking(Undertaking undertaking) {
 		this.undertaking = Objects.requireNonNull(undertaking);
 		return this;
 	}

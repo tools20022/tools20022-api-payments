@@ -25,7 +25,6 @@ import com.tools20022.repository.area.PaymentsInitiationLatestVersion;
 import com.tools20022.repository.msg.GroupHeader47;
 import com.tools20022.repository.msg.MandateCancellation5;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -86,8 +85,8 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forMandateCancellationRequestV05
- * ConstraintSupplementaryDataRule.forMandateCancellationRequestV05}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#for_pain_MandateCancellationRequestV05
+ * ConstraintSupplementaryDataRule.for_pain_MandateCancellationRequestV05}</li>
  * </ul>
  * </li>
  * <li>
@@ -133,7 +132,7 @@ public class MandateCancellationRequestV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateCancellationRequestV05, GroupHeader47> mmGroupHeader = new MMMessageBuildingBlock<MandateCancellationRequestV05, GroupHeader47>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -144,12 +143,14 @@ public class MandateCancellationRequestV05 {
 			complexType_lazy = () -> GroupHeader47.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateCancellationRequestV05.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader47 getValue(MandateCancellationRequestV05 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(MandateCancellationRequestV05 obj, GroupHeader47 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "UndrlygCxlDtls", required = true)
@@ -178,7 +179,7 @@ public class MandateCancellationRequestV05 {
 	 * "Set of elements used to provide details on the cancellation request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmUnderlyingCancellationDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateCancellationRequestV05, List<MandateCancellation5>> mmUnderlyingCancellationDetails = new MMMessageBuildingBlock<MandateCancellationRequestV05, List<MandateCancellation5>>() {
 		{
 			xmlTag = "UndrlygCxlDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -188,12 +189,14 @@ public class MandateCancellationRequestV05 {
 			complexType_lazy = () -> MandateCancellation5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateCancellationRequestV05.class.getMethod("getUnderlyingCancellationDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<MandateCancellation5> getValue(MandateCancellationRequestV05 obj) {
+			return obj.getUnderlyingCancellationDetails();
+		}
+
+		@Override
+		public void setValue(MandateCancellationRequestV05 obj, List<MandateCancellation5> value) {
+			obj.setUnderlyingCancellationDetails(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -223,7 +226,7 @@ public class MandateCancellationRequestV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateCancellationRequestV05, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MandateCancellationRequestV05, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -233,19 +236,21 @@ public class MandateCancellationRequestV05 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateCancellationRequestV05.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MandateCancellationRequestV05 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MandateCancellationRequestV05 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forMandateCancellationRequestV05);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.for_pain_MandateCancellationRequestV05);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateCancellationRequestV05";
 				definition = "Scope\r\nThe MandateCancellationRequest message is sent by the initiator of the request to his agent. The initiator can either be the debtor or the creditor.\r\nThe MandateCancellationRequest message is forwarded by the agent of the initiator to the agent of the counterparty.\r\nA MandateCancellationRequest message is used to request the cancellation of an existing mandate. If accepted, this MandateCancellationRequest message together with the MandateAcceptanceReport message confirming the acceptance will be considered a valid cancellation of an existing mandate, agreed upon by all parties.\r\nUsage\r\nThe MandateCancellationRequest message can contain one or more request(s) to cancel a specific mandate.\r\nThe messages can be exchanged between creditor and creditor agent or debtor and debtor agent and between creditor agent and debtor agent.\r\nThe message can also be used by an initiating party that has authority to send the message on behalf of the creditor or debtor.\r\nThe MandateCancellationRequest message can be used in domestic and cross-border scenarios.";

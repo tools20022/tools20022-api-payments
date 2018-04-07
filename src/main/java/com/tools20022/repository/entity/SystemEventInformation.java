@@ -20,8 +20,8 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SystemEventTypeCode;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -109,7 +109,7 @@ public class SystemEventInformation {
 	 * definition} = "Nature of the event that has occurred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SystemEventInformation, SystemEventTypeCode> mmType = new MMBusinessAttribute<SystemEventInformation, SystemEventTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
@@ -121,12 +121,14 @@ public class SystemEventInformation {
 			simpleType_lazy = () -> SystemEventTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SystemEventInformation.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SystemEventTypeCode getValue(SystemEventInformation obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(SystemEventInformation obj, SystemEventTypeCode value) {
+			obj.setType(value);
 		}
 	};
 	protected ISODateTime time;
@@ -155,7 +157,7 @@ public class SystemEventInformation {
 	 * definition} = "Date and time at which the event occurred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SystemEventInformation, ISODateTime> mmTime = new MMBusinessAttribute<SystemEventInformation, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
@@ -167,12 +169,14 @@ public class SystemEventInformation {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SystemEventInformation.class.getMethod("getTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SystemEventInformation obj) {
+			return obj.getTime();
+		}
+
+		@Override
+		public void setValue(SystemEventInformation obj, ISODateTime value) {
+			obj.setTime(value);
 		}
 	};
 	protected System system;
@@ -207,7 +211,7 @@ public class SystemEventInformation {
 	 * definition} = "System for which event information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SystemEventInformation, Optional<System>> mmSystem = new MMBusinessAssociationEnd<SystemEventInformation, Optional<System>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
@@ -216,9 +220,19 @@ public class SystemEventInformation {
 			definition = "System for which event information is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.System.mmEvent;
+			opposite_lazy = () -> System.mmEvent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
+			type_lazy = () -> System.mmObject();
+		}
+
+		@Override
+		public Optional<System> getValue(SystemEventInformation obj) {
+			return obj.getSystem();
+		}
+
+		@Override
+		public void setValue(SystemEventInformation obj, Optional<System> value) {
+			obj.setSystem(value.orElse(null));
 		}
 	};
 
@@ -229,7 +243,7 @@ public class SystemEventInformation {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemEventInformation";
 				definition = "Detailed information about an event occurring on a system, whether planned, for example, cut-off time for a specific type of eligible transfer, or unplanned, for example, an unsolicited failure, as stipulated in the specifications of the system.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.System.mmEvent);
+				associationDomain_lazy = () -> Arrays.asList(System.mmEvent);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemEventInformation.mmType, com.tools20022.repository.entity.SystemEventInformation.mmTime,
 						com.tools20022.repository.entity.SystemEventInformation.mmSystem);
 			}
@@ -264,7 +278,7 @@ public class SystemEventInformation {
 		return system == null ? Optional.empty() : Optional.of(system);
 	}
 
-	public SystemEventInformation setSystem(com.tools20022.repository.entity.System system) {
+	public SystemEventInformation setSystem(System system) {
 		this.system = system;
 		return this;
 	}

@@ -117,14 +117,14 @@ public class DemandStatusCode extends MMCode {
 	 * name} = "Extend"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Extend undertaking expiry date. "</li>
+	 * definition} = "Extend undertaking expiry date."</li>
 	 * </ul>
 	 */
 	public static final DemandStatusCode Extend = new DemandStatusCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Extend";
-			definition = "Extend undertaking expiry date. ";
+			definition = "Extend undertaking expiry date.";
 			owner_lazy = () -> com.tools20022.repository.codeset.DemandStatusCode.mmObject();
 			codeName = "EXTD";
 		}

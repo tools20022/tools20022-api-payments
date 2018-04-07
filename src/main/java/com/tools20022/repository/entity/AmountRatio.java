@@ -19,8 +19,8 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.entity.SecuritiesPricing;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -106,7 +106,7 @@ public class AmountRatio {
 	 * definition} = "Pricing which uses the ratio as format."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AmountRatio, SecuritiesPricing> mmSecuritiesPricing = new MMBusinessAssociationEnd<AmountRatio, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
@@ -115,9 +115,19 @@ public class AmountRatio {
 			definition = "Pricing which uses the ratio as format.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmAmountPricePerAmount;
+			opposite_lazy = () -> SecuritiesPricing.mmAmountPricePerAmount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(AmountRatio obj) {
+			return obj.getSecuritiesPricing();
+		}
+
+		@Override
+		public void setValue(AmountRatio obj, SecuritiesPricing value) {
+			obj.setSecuritiesPricing(value);
 		}
 	};
 	protected ActiveCurrencyAndAmount amount1;
@@ -146,7 +156,7 @@ public class AmountRatio {
 	 * definition} = "Numerator of the quotient of amounts."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount1 = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AmountRatio, ActiveCurrencyAndAmount> mmAmount1 = new MMBusinessAttribute<AmountRatio, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
@@ -158,12 +168,14 @@ public class AmountRatio {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AmountRatio.class.getMethod("getAmount1", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(AmountRatio obj) {
+			return obj.getAmount1();
+		}
+
+		@Override
+		public void setValue(AmountRatio obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount1(value);
 		}
 	};
 	protected ActiveCurrencyAndAmount amount2;
@@ -192,7 +204,7 @@ public class AmountRatio {
 	 * definition} = "Denominator of the quotient of amounts"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount2 = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AmountRatio, ActiveCurrencyAndAmount> mmAmount2 = new MMBusinessAttribute<AmountRatio, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
@@ -204,12 +216,14 @@ public class AmountRatio {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AmountRatio.class.getMethod("getAmount2", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(AmountRatio obj) {
+			return obj.getAmount2();
+		}
+
+		@Override
+		public void setValue(AmountRatio obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount2(value);
 		}
 	};
 
@@ -220,7 +234,7 @@ public class AmountRatio {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountRatio";
 				definition = "Ratio expressed as a quotient of amounts.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmAmountPricePerAmount);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmAmountPricePerAmount);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AmountRatio.mmSecuritiesPricing, com.tools20022.repository.entity.AmountRatio.mmAmount1, com.tools20022.repository.entity.AmountRatio.mmAmount2);
 			}
 
@@ -236,7 +250,7 @@ public class AmountRatio {
 		return securitiesPricing;
 	}
 
-	public AmountRatio setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+	public AmountRatio setSecuritiesPricing(SecuritiesPricing securitiesPricing) {
 		this.securitiesPricing = Objects.requireNonNull(securitiesPricing);
 		return this;
 	}

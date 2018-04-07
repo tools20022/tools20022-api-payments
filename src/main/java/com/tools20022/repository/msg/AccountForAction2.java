@@ -128,7 +128,7 @@ public class AccountForAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountForAction2, AccountIdentification4Choice> mmIdentification = new MMMessageAttribute<AccountForAction2, AccountIdentification4Choice>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountForAction2.mmObject();
@@ -140,6 +140,16 @@ public class AccountForAction2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> AccountIdentification4Choice.mmObject();
+		}
+
+		@Override
+		public AccountIdentification4Choice getValue(AccountForAction2 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(AccountForAction2 obj, AccountIdentification4Choice value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "Nm")
@@ -178,7 +188,7 @@ public class AccountForAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountForAction2, Optional<Max70Text>> mmName = new MMMessageAttribute<AccountForAction2, Optional<Max70Text>>() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountForAction2.mmObject();
@@ -190,6 +200,16 @@ public class AccountForAction2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max70Text> getValue(AccountForAction2 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(AccountForAction2 obj, Optional<Max70Text> value) {
+			obj.setName(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Ccy", required = true)
@@ -227,7 +247,7 @@ public class AccountForAction2 {
 	 * definition} = "Medium of exchange of value."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountForAction2, ActiveCurrencyCode> mmCurrency = new MMMessageAttribute<AccountForAction2, ActiveCurrencyCode>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmBaseCurrency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountForAction2.mmObject();
@@ -239,6 +259,16 @@ public class AccountForAction2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyCode getValue(AccountForAction2 obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(AccountForAction2 obj, ActiveCurrencyCode value) {
+			obj.setCurrency(value);
 		}
 	};
 

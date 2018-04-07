@@ -25,7 +25,6 @@ import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -109,7 +108,7 @@ public class InformationRequestStatusChangeNotificationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOriginalBusinessQuery = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InformationRequestStatusChangeNotificationV01, Max35Text> mmOriginalBusinessQuery = new MMMessageBuildingBlock<InformationRequestStatusChangeNotificationV01, Max35Text>() {
 		{
 			xmlTag = "OrgnlBizQry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,12 +119,14 @@ public class InformationRequestStatusChangeNotificationV01 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationRequestStatusChangeNotificationV01.class.getMethod("getOriginalBusinessQuery", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(InformationRequestStatusChangeNotificationV01 obj) {
+			return obj.getOriginalBusinessQuery();
+		}
+
+		@Override
+		public void setValue(InformationRequestStatusChangeNotificationV01 obj, Max35Text value) {
+			obj.setOriginalBusinessQuery(value);
 		}
 	};
 	@XmlElement(name = "CnfdtltySts", required = true)
@@ -154,7 +155,7 @@ public class InformationRequestStatusChangeNotificationV01 {
 	 * "Specifies the confidentiality status of the investigation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmConfidentialityStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InformationRequestStatusChangeNotificationV01, YesNoIndicator> mmConfidentialityStatus = new MMMessageBuildingBlock<InformationRequestStatusChangeNotificationV01, YesNoIndicator>() {
 		{
 			xmlTag = "CnfdtltySts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,12 +166,14 @@ public class InformationRequestStatusChangeNotificationV01 {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationRequestStatusChangeNotificationV01.class.getMethod("getConfidentialityStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InformationRequestStatusChangeNotificationV01 obj) {
+			return obj.getConfidentialityStatus();
+		}
+
+		@Override
+		public void setValue(InformationRequestStatusChangeNotificationV01 obj, YesNoIndicator value) {
+			obj.setConfidentialityStatus(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -200,7 +203,7 @@ public class InformationRequestStatusChangeNotificationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InformationRequestStatusChangeNotificationV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<InformationRequestStatusChangeNotificationV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -210,12 +213,14 @@ public class InformationRequestStatusChangeNotificationV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InformationRequestStatusChangeNotificationV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(InformationRequestStatusChangeNotificationV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(InformationRequestStatusChangeNotificationV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

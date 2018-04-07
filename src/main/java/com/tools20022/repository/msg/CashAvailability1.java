@@ -114,7 +114,7 @@ public class CashAvailability1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CashAvailability1, CashAvailabilityDate1Choice> mmDate = new MMMessageAssociationEnd<CashAvailability1, CashAvailabilityDate1Choice>() {
 		{
 			businessElementTrace_lazy = () -> CashAvailability.mmDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CashAvailability1.mmObject();
@@ -127,6 +127,16 @@ public class CashAvailability1 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> CashAvailabilityDate1Choice.mmObject();
+		}
+
+		@Override
+		public CashAvailabilityDate1Choice getValue(CashAvailability1 obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(CashAvailability1 obj, CashAvailabilityDate1Choice value) {
+			obj.setDate(value);
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -164,7 +174,7 @@ public class CashAvailability1 {
 	 * definition} = "Identifies the available amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAvailability1, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<CashAvailability1, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CashAvailability.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CashAvailability1.mmObject();
@@ -176,6 +186,16 @@ public class CashAvailability1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(CashAvailability1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(CashAvailability1 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "CdtDbtInd", required = true)
@@ -215,7 +235,7 @@ public class CashAvailability1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAvailability1, CreditDebitCode> mmCreditDebitIndicator = new MMMessageAttribute<CashAvailability1, CreditDebitCode>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmCreditDebitIndicator;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CashAvailability1.mmObject();
@@ -227,6 +247,16 @@ public class CashAvailability1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CreditDebitCode.mmObject();
+		}
+
+		@Override
+		public CreditDebitCode getValue(CashAvailability1 obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(CashAvailability1 obj, CreditDebitCode value) {
+			obj.setCreditDebitIndicator(value);
 		}
 	};
 

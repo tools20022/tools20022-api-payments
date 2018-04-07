@@ -35,6 +35,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ExternalRePresentmentReasonCode
+ * ExternalRePresentmentReasonCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -68,6 +71,7 @@ public class ExternalRePresentmentReason1Code extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExternalRePresentmentReason1Code";
 				definition = "Specifies the external representment reason code in the format of character string with a maximum length of 4 characters. The list of valid codes is an external code list published separately.";
+				trace_lazy = () -> ExternalRePresentmentReasonCode.mmObject();
 				minLength = 1;
 				maxLength = 4;
 			}

@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CorporateActionPartyRole;
+import com.tools20022.repository.entity.Meeting;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -117,7 +118,7 @@ public class MeetingPartyRole extends CorporateActionPartyRole {
 	 * definition} = "Specifies the meeting for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingPartyRole, List<Meeting>> mmMeeting = new MMBusinessAssociationEnd<MeetingPartyRole, List<Meeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingPartyRole.mmObject();
@@ -128,6 +129,16 @@ public class MeetingPartyRole extends CorporateActionPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
+		}
+
+		@Override
+		public List<Meeting> getValue(MeetingPartyRole obj) {
+			return obj.getMeeting();
+		}
+
+		@Override
+		public void setValue(MeetingPartyRole obj, List<Meeting> value) {
+			obj.setMeeting(value);
 		}
 	};
 

@@ -739,7 +739,7 @@ public class PaymentPurposeCode extends MMCode {
 	};
 	/**
 	 * Transaction is related to a payment of commercial credit or debit.
-	 * (formerly CommercialCredit)
+	 * (formerly CommercialCredit).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -757,7 +757,7 @@ public class PaymentPurposeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Transaction is related to a payment of commercial credit or debit. (formerly CommercialCredit)"
+	 * "Transaction is related to a payment of commercial credit or debit. (formerly CommercialCredit)."
 	 * </li>
 	 * </ul>
 	 */
@@ -765,7 +765,7 @@ public class PaymentPurposeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommercialPayment";
-			definition = "Transaction is related to a payment of commercial credit or debit. (formerly CommercialCredit)";
+			definition = "Transaction is related to a payment of commercial credit or debit. (formerly CommercialCredit).";
 			owner_lazy = () -> com.tools20022.repository.codeset.PaymentPurposeCode.mmObject();
 			codeName = "COMC";
 		}
@@ -3149,7 +3149,7 @@ public class PaymentPurposeCode extends MMCode {
 		}
 	};
 	/**
-	 * Transaction is related to payment terms specifications
+	 * Transaction is related to payment terms specifications.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -3166,14 +3166,14 @@ public class PaymentPurposeCode extends MMCode {
 	 * name} = "PaymentTerms"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Transaction is related to payment terms specifications"</li>
+	 * definition} = "Transaction is related to payment terms specifications."</li>
 	 * </ul>
 	 */
 	public static final PaymentPurposeCode PaymentTerms = new PaymentPurposeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentTerms";
-			definition = "Transaction is related to payment terms specifications";
+			definition = "Transaction is related to payment terms specifications.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PaymentPurposeCode.mmObject();
 			codeName = "PTSP";
 		}

@@ -23,9 +23,10 @@ import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max15NumericText;
+import com.tools20022.repository.entity.CashBalance;
+import com.tools20022.repository.entity.CashEntry;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CashAvailability1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -135,7 +136,7 @@ public class CashAvailability {
 	 * definition} = "Cash balance for which the availability is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashAvailability, CashBalance> mmCashBalance = new MMBusinessAssociationEnd<CashAvailability, CashBalance>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
@@ -144,9 +145,19 @@ public class CashAvailability {
 			definition = "Cash balance for which the availability is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashBalance.mmAvailability;
+			opposite_lazy = () -> CashBalance.mmAvailability;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashBalance.mmObject();
+			type_lazy = () -> CashBalance.mmObject();
+		}
+
+		@Override
+		public CashBalance getValue(CashAvailability obj) {
+			return obj.getCashBalance();
+		}
+
+		@Override
+		public void setValue(CashAvailability obj, CashBalance value) {
+			obj.setCashBalance(value);
 		}
 	};
 	protected ISODate date;
@@ -185,7 +196,7 @@ public class CashAvailability {
 	 * definition} = "Identifies the availability date."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashAvailability, ISODate> mmDate = new MMBusinessAttribute<CashAvailability, ISODate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAvailabilityDate1Choice.mmActualDate, CashAvailability1.mmDate);
 			isDerived = false;
@@ -198,12 +209,14 @@ public class CashAvailability {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashAvailability.class.getMethod("getDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(CashAvailability obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(CashAvailability obj, ISODate value) {
+			obj.setDate(value);
 		}
 	};
 	protected Max15NumericText numberOfDays;
@@ -242,7 +255,7 @@ public class CashAvailability {
 	 * "Indicates the number of float days attached to the balance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumberOfDays = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashAvailability, Max15NumericText> mmNumberOfDays = new MMBusinessAttribute<CashAvailability, Max15NumericText>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAvailabilityDate1Choice.mmNumberOfDays);
 			isDerived = false;
@@ -255,12 +268,14 @@ public class CashAvailability {
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashAvailability.class.getMethod("getNumberOfDays", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max15NumericText getValue(CashAvailability obj) {
+			return obj.getNumberOfDays();
+		}
+
+		@Override
+		public void setValue(CashAvailability obj, Max15NumericText value) {
+			obj.setNumberOfDays(value);
 		}
 	};
 	protected CurrencyAndAmount amount;
@@ -297,7 +312,7 @@ public class CashAvailability {
 	 * definition} = "Available amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashAvailability, CurrencyAndAmount> mmAmount = new MMBusinessAttribute<CashAvailability, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAvailability1.mmAmount);
 			isDerived = false;
@@ -310,12 +325,14 @@ public class CashAvailability {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashAvailability.class.getMethod("getAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CashAvailability obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(CashAvailability obj, CurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	protected CashEntry cashEntry;
@@ -354,7 +371,7 @@ public class CashAvailability {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashAvailability, CashEntry> mmCashEntry = new MMBusinessAssociationEnd<CashAvailability, CashEntry>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
@@ -363,9 +380,19 @@ public class CashAvailability {
 			definition = "Specifies the cash entry for which the availability information is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashEntry.mmAvailability;
+			opposite_lazy = () -> CashEntry.mmAvailability;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
+			type_lazy = () -> CashEntry.mmObject();
+		}
+
+		@Override
+		public CashEntry getValue(CashAvailability obj) {
+			return obj.getCashEntry();
+		}
+
+		@Override
+		public void setValue(CashAvailability obj, CashEntry value) {
+			obj.setCashEntry(value);
 		}
 	};
 	protected DebitCreditCode creditDebitIndicator;
@@ -397,7 +424,7 @@ public class CashAvailability {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashAvailability, DebitCreditCode> mmCreditDebitIndicator = new MMBusinessAttribute<CashAvailability, DebitCreditCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAvailability.mmObject();
@@ -409,12 +436,14 @@ public class CashAvailability {
 			simpleType_lazy = () -> DebitCreditCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashAvailability.class.getMethod("getCreditDebitIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DebitCreditCode getValue(CashAvailability obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(CashAvailability obj, DebitCreditCode value) {
+			obj.setCreditDebitIndicator(value);
 		}
 	};
 
@@ -425,7 +454,7 @@ public class CashAvailability {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAvailability";
 				definition = "Indicates when the amount of money will become available, ie can be accessed and start generating interest.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashEntry.mmAvailability, com.tools20022.repository.entity.CashBalance.mmAvailability);
+				associationDomain_lazy = () -> Arrays.asList(CashEntry.mmAvailability, CashBalance.mmAvailability);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAvailability.mmCashBalance, com.tools20022.repository.entity.CashAvailability.mmDate, com.tools20022.repository.entity.CashAvailability.mmNumberOfDays,
 						com.tools20022.repository.entity.CashAvailability.mmAmount, com.tools20022.repository.entity.CashAvailability.mmCashEntry, com.tools20022.repository.entity.CashAvailability.mmCreditDebitIndicator);
 				derivationComponent_lazy = () -> Arrays.asList(CashAvailabilityDate1Choice.mmObject(), CashAvailability1.mmObject());
@@ -443,7 +472,7 @@ public class CashAvailability {
 		return cashBalance;
 	}
 
-	public CashAvailability setCashBalance(com.tools20022.repository.entity.CashBalance cashBalance) {
+	public CashAvailability setCashBalance(CashBalance cashBalance) {
 		this.cashBalance = Objects.requireNonNull(cashBalance);
 		return this;
 	}
@@ -479,7 +508,7 @@ public class CashAvailability {
 		return cashEntry;
 	}
 
-	public CashAvailability setCashEntry(com.tools20022.repository.entity.CashEntry cashEntry) {
+	public CashAvailability setCashEntry(CashEntry cashEntry) {
 		this.cashEntry = Objects.requireNonNull(cashEntry);
 		return this;
 	}

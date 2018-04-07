@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Authentication;
 import com.tools20022.repository.entity.CardPaymentPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.PaymentContext3;
@@ -119,7 +120,7 @@ public class CardholderRole extends CardPaymentPartyRole {
 	 * definition} = "Data related to the authentication of the cardholder."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAuthentication = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CardholderRole, List<Authentication>> mmAuthentication = new MMBusinessAssociationEnd<CardholderRole, List<Authentication>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmAuthenticationMethod);
 			isDerived = false;
@@ -131,6 +132,16 @@ public class CardholderRole extends CardPaymentPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.Authentication.mmCardholder;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
+		}
+
+		@Override
+		public List<Authentication> getValue(CardholderRole obj) {
+			return obj.getAuthentication();
+		}
+
+		@Override
+		public void setValue(CardholderRole obj, List<Authentication> value) {
+			obj.setAuthentication(value);
 		}
 	};
 

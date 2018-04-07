@@ -62,14 +62,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * PaymentCancellationRejectionCode.InsufficientFunds}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
- * =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentCancellationRejection2Code
- * PaymentCancellationRejection2Code}</li>
- * </ul>
- * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -365,7 +357,6 @@ public class PaymentCancellationRejectionCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCancellationRejectionCode";
 				definition = "Returned when a request for cancellation cannot be executed.";
-				derivation_lazy = () -> Arrays.asList(PaymentCancellationRejection2Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentCancellationRejectionCode.LegalDecision, com.tools20022.repository.codeset.PaymentCancellationRejectionCode.AgentDecision,
 						com.tools20022.repository.codeset.PaymentCancellationRejectionCode.CustomerDecision, com.tools20022.repository.codeset.PaymentCancellationRejectionCode.AlreadyReturned,
 						com.tools20022.repository.codeset.PaymentCancellationRejectionCode.NoAnswerFromCustomer, com.tools20022.repository.codeset.PaymentCancellationRejectionCode.NoOriginalTransactionReceived,

@@ -102,7 +102,7 @@ public class FrequencyAndMoment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FrequencyAndMoment1, Frequency6Code> mmType = new MMMessageAttribute<FrequencyAndMoment1, Frequency6Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.FrequencyAndMoment1.mmObject();
 			isDerived = false;
@@ -113,6 +113,16 @@ public class FrequencyAndMoment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Frequency6Code.mmObject();
+		}
+
+		@Override
+		public Frequency6Code getValue(FrequencyAndMoment1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(FrequencyAndMoment1 obj, Frequency6Code value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "PtInTm", required = true)
@@ -147,7 +157,7 @@ public class FrequencyAndMoment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPointInTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FrequencyAndMoment1, Exact2NumericText> mmPointInTime = new MMMessageAttribute<FrequencyAndMoment1, Exact2NumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.FrequencyAndMoment1.mmObject();
 			isDerived = false;
@@ -158,6 +168,16 @@ public class FrequencyAndMoment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact2NumericText.mmObject();
+		}
+
+		@Override
+		public Exact2NumericText getValue(FrequencyAndMoment1 obj) {
+			return obj.getPointInTime();
+		}
+
+		@Override
+		public void setValue(FrequencyAndMoment1 obj, Exact2NumericText value) {
+			obj.setPointInTime(value);
 		}
 	};
 

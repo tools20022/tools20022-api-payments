@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CorporateActionOption;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -77,7 +78,7 @@ import java.util.Objects;
 public class ChoiceCorporateAction {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.CorporateActionOption> corporateActionOptionDefinition;
+	protected List<CorporateActionOption> corporateActionOptionDefinition;
 	/**
 	 * 
 	 <p>
@@ -112,7 +113,7 @@ public class ChoiceCorporateAction {
 	 * definition} = "Definition of the option of a corporate event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateActionOptionDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ChoiceCorporateAction, List<CorporateActionOption>> mmCorporateActionOptionDefinition = new MMBusinessAssociationEnd<ChoiceCorporateAction, List<CorporateActionOption>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ChoiceCorporateAction.mmObject();
@@ -120,9 +121,19 @@ public class ChoiceCorporateAction {
 			name = "CorporateActionOptionDefinition";
 			definition = "Definition of the option of a corporate event.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmRelatedChoiceCorporateAction;
+			opposite_lazy = () -> CorporateActionOption.mmRelatedChoiceCorporateAction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
+			type_lazy = () -> CorporateActionOption.mmObject();
+		}
+
+		@Override
+		public List<CorporateActionOption> getValue(ChoiceCorporateAction obj) {
+			return obj.getCorporateActionOptionDefinition();
+		}
+
+		@Override
+		public void setValue(ChoiceCorporateAction obj, List<CorporateActionOption> value) {
+			obj.setCorporateActionOptionDefinition(value);
 		}
 	};
 
@@ -133,7 +144,7 @@ public class ChoiceCorporateAction {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChoiceCorporateAction";
 				definition = "Mandatory with choice corporate action event that involves a choice on behalf of the owner of the securities. The shareholders are given a chance to choose among several options.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionOption.mmRelatedChoiceCorporateAction);
+				associationDomain_lazy = () -> Arrays.asList(CorporateActionOption.mmRelatedChoiceCorporateAction);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ChoiceCorporateAction.mmCorporateActionOptionDefinition);
 			}
 
@@ -149,7 +160,7 @@ public class ChoiceCorporateAction {
 		return corporateActionOptionDefinition == null ? corporateActionOptionDefinition = new ArrayList<>() : corporateActionOptionDefinition;
 	}
 
-	public ChoiceCorporateAction setCorporateActionOptionDefinition(List<com.tools20022.repository.entity.CorporateActionOption> corporateActionOptionDefinition) {
+	public ChoiceCorporateAction setCorporateActionOptionDefinition(List<CorporateActionOption> corporateActionOptionDefinition) {
 		this.corporateActionOptionDefinition = Objects.requireNonNull(corporateActionOptionDefinition);
 		return this;
 	}

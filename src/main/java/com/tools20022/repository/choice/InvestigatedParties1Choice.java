@@ -101,7 +101,7 @@ public class InvestigatedParties1Choice {
 	 * definition} = "Specifies the investigated parties as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestigatedParties1Choice, InvestigatedParties1Code> mmCode = new MMMessageAttribute<InvestigatedParties1Choice, InvestigatedParties1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.InvestigatedParties1Choice.mmObject();
 			isDerived = false;
@@ -112,6 +112,16 @@ public class InvestigatedParties1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> InvestigatedParties1Code.mmObject();
+		}
+
+		@Override
+		public InvestigatedParties1Code getValue(InvestigatedParties1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(InvestigatedParties1Choice obj, InvestigatedParties1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -144,7 +154,7 @@ public class InvestigatedParties1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestigatedParties1Choice, Max35Text> mmProprietary = new MMMessageAttribute<InvestigatedParties1Choice, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.InvestigatedParties1Choice.mmObject();
 			isDerived = false;
@@ -155,6 +165,16 @@ public class InvestigatedParties1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(InvestigatedParties1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(InvestigatedParties1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

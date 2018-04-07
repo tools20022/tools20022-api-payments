@@ -101,7 +101,7 @@ public class BillingRate1 {
 	 * definition} = "Defines the type of rate or factor."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingRate1, BillingRateIdentification1Choice> mmIdentification = new MMMessageAssociationEnd<BillingRate1, BillingRateIdentification1Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingRate1.mmObject();
 			isDerived = false;
@@ -113,6 +113,16 @@ public class BillingRate1 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> BillingRateIdentification1Choice.mmObject();
+		}
+
+		@Override
+		public BillingRateIdentification1Choice getValue(BillingRate1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(BillingRate1 obj, BillingRateIdentification1Choice value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "Val", required = true)
@@ -145,7 +155,7 @@ public class BillingRate1 {
 	 * "Value of the rate or factor identified in the rate identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingRate1, PercentageRate> mmValue = new MMMessageAttribute<BillingRate1, PercentageRate>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingRate1.mmObject();
 			isDerived = false;
@@ -156,6 +166,16 @@ public class BillingRate1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
+		}
+
+		@Override
+		public PercentageRate getValue(BillingRate1 obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(BillingRate1 obj, PercentageRate value) {
+			obj.setValue(value);
 		}
 	};
 	@XmlElement(name = "DaysInPrd")
@@ -188,7 +208,7 @@ public class BillingRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDaysInPeriod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingRate1, Optional<Number>> mmDaysInPeriod = new MMMessageAttribute<BillingRate1, Optional<Number>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingRate1.mmObject();
 			isDerived = false;
@@ -199,6 +219,16 @@ public class BillingRate1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
+		}
+
+		@Override
+		public Optional<Number> getValue(BillingRate1 obj) {
+			return obj.getDaysInPeriod();
+		}
+
+		@Override
+		public void setValue(BillingRate1 obj, Optional<Number> value) {
+			obj.setDaysInPeriod(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "DaysInYr")
@@ -231,7 +261,7 @@ public class BillingRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDaysInYear = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingRate1, Optional<Number>> mmDaysInYear = new MMMessageAttribute<BillingRate1, Optional<Number>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingRate1.mmObject();
 			isDerived = false;
@@ -242,6 +272,16 @@ public class BillingRate1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
+		}
+
+		@Override
+		public Optional<Number> getValue(BillingRate1 obj) {
+			return obj.getDaysInYear();
+		}
+
+		@Override
+		public void setValue(BillingRate1 obj, Optional<Number> value) {
+			obj.setDaysInYear(value.orElse(null));
 		}
 	};
 

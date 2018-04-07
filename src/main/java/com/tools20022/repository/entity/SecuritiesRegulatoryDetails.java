@@ -21,8 +21,8 @@ import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.OrderClassificationCode;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.SecuritiesOrder;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -109,7 +109,7 @@ public class SecuritiesRegulatoryDetails {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOrderRestrictions = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesRegulatoryDetails, OrderClassificationCode> mmOrderRestrictions = new MMBusinessAttribute<SecuritiesRegulatoryDetails, OrderClassificationCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmObject();
@@ -121,12 +121,14 @@ public class SecuritiesRegulatoryDetails {
 			simpleType_lazy = () -> OrderClassificationCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesRegulatoryDetails.class.getMethod("getOrderRestrictions", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OrderClassificationCode getValue(SecuritiesRegulatoryDetails obj) {
+			return obj.getOrderRestrictions();
+		}
+
+		@Override
+		public void setValue(SecuritiesRegulatoryDetails obj, OrderClassificationCode value) {
+			obj.setOrderRestrictions(value);
 		}
 	};
 	protected YesNoIndicator brokerSolicitedTrade;
@@ -161,7 +163,7 @@ public class SecuritiesRegulatoryDetails {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBrokerSolicitedTrade = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesRegulatoryDetails, YesNoIndicator> mmBrokerSolicitedTrade = new MMBusinessAttribute<SecuritiesRegulatoryDetails, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmObject();
@@ -174,12 +176,14 @@ public class SecuritiesRegulatoryDetails {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesRegulatoryDetails.class.getMethod("getBrokerSolicitedTrade", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesRegulatoryDetails obj) {
+			return obj.getBrokerSolicitedTrade();
+		}
+
+		@Override
+		public void setValue(SecuritiesRegulatoryDetails obj, YesNoIndicator value) {
+			obj.setBrokerSolicitedTrade(value);
 		}
 	};
 	protected SecuritiesOrder relatedOrder;
@@ -216,7 +220,7 @@ public class SecuritiesRegulatoryDetails {
 	 * definition} = "Order for which legal parameters are provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesRegulatoryDetails, Optional<SecuritiesOrder>> mmRelatedOrder = new MMBusinessAssociationEnd<SecuritiesRegulatoryDetails, Optional<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmObject();
@@ -225,9 +229,19 @@ public class SecuritiesRegulatoryDetails {
 			definition = "Order for which legal parameters are provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmLegalParameters;
+			opposite_lazy = () -> SecuritiesOrder.mmLegalParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesOrder> getValue(SecuritiesRegulatoryDetails obj) {
+			return obj.getRelatedOrder();
+		}
+
+		@Override
+		public void setValue(SecuritiesRegulatoryDetails obj, Optional<SecuritiesOrder> value) {
+			obj.setRelatedOrder(value.orElse(null));
 		}
 	};
 
@@ -238,7 +252,7 @@ public class SecuritiesRegulatoryDetails {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesRegulatoryDetails";
 				definition = "Information related to order and required for regulatory purposes.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrder.mmLegalParameters);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesOrder.mmLegalParameters);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmOrderRestrictions, com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmBrokerSolicitedTrade,
 						com.tools20022.repository.entity.SecuritiesRegulatoryDetails.mmRelatedOrder);
 			}
@@ -273,7 +287,7 @@ public class SecuritiesRegulatoryDetails {
 		return relatedOrder == null ? Optional.empty() : Optional.of(relatedOrder);
 	}
 
-	public SecuritiesRegulatoryDetails setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+	public SecuritiesRegulatoryDetails setRelatedOrder(SecuritiesOrder relatedOrder) {
 		this.relatedOrder = relatedOrder;
 		return this;
 	}

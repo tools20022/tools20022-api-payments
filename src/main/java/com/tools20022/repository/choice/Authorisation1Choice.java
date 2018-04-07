@@ -100,7 +100,7 @@ public class Authorisation1Choice {
 	 * definition} = "Specifies the authorisation, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Authorisation1Choice, Authorisation1Code> mmCode = new MMMessageAttribute<Authorisation1Choice, Authorisation1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.Authorisation1Choice.mmObject();
 			isDerived = false;
@@ -111,6 +111,16 @@ public class Authorisation1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Authorisation1Code.mmObject();
+		}
+
+		@Override
+		public Authorisation1Code getValue(Authorisation1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(Authorisation1Choice obj, Authorisation1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -142,7 +152,7 @@ public class Authorisation1Choice {
 	 * definition} = "Specifies the authorisation, in a free text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Authorisation1Choice, Max128Text> mmProprietary = new MMMessageAttribute<Authorisation1Choice, Max128Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.Authorisation1Choice.mmObject();
 			isDerived = false;
@@ -153,6 +163,16 @@ public class Authorisation1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max128Text.mmObject();
+		}
+
+		@Override
+		public Max128Text getValue(Authorisation1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(Authorisation1Choice obj, Max128Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

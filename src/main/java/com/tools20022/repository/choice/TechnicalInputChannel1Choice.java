@@ -100,7 +100,7 @@ public class TechnicalInputChannel1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TechnicalInputChannel1Choice, ExternalTechnicalInputChannel1Code> mmCode = new MMMessageAttribute<TechnicalInputChannel1Choice, ExternalTechnicalInputChannel1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.TechnicalInputChannel1Choice.mmObject();
 			isDerived = false;
@@ -111,6 +111,16 @@ public class TechnicalInputChannel1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalTechnicalInputChannel1Code.mmObject();
+		}
+
+		@Override
+		public ExternalTechnicalInputChannel1Code getValue(TechnicalInputChannel1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(TechnicalInputChannel1Choice obj, ExternalTechnicalInputChannel1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -144,7 +154,7 @@ public class TechnicalInputChannel1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TechnicalInputChannel1Choice, Max35Text> mmProprietary = new MMMessageAttribute<TechnicalInputChannel1Choice, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.TechnicalInputChannel1Choice.mmObject();
 			isDerived = false;
@@ -155,6 +165,16 @@ public class TechnicalInputChannel1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(TechnicalInputChannel1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(TechnicalInputChannel1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

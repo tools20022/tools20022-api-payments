@@ -77,7 +77,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "ServicePaymentMethod1Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Defines the  method for the payment of the services charge."</li>
+ * definition} = "Defines the method for the payment of the services charge."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -240,7 +240,7 @@ public class ServicePaymentMethod1Code extends MMCode {
 				example = Arrays.asList("BCMP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServicePaymentMethod1Code";
-				definition = "Defines the  method for the payment of the services charge.";
+				definition = "Defines the method for the payment of the services charge.";
 				trace_lazy = () -> ServicePaymentMethodCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ServicePaymentMethod1Code.BalanceCompensable, com.tools20022.repository.codeset.ServicePaymentMethod1Code.HardCharge,
 						com.tools20022.repository.codeset.ServicePaymentMethod1Code.PreviouslyCharged, com.tools20022.repository.codeset.ServicePaymentMethod1Code.InvoicedSeparately,

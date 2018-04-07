@@ -110,7 +110,7 @@ public class DueDate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DueDate1, Optional<ISODate>> mmDueDate = new MMMessageAttribute<DueDate1, Optional<ISODate>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.DueDate1.mmObject();
 			isDerived = false;
@@ -121,6 +121,16 @@ public class DueDate1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(DueDate1 obj) {
+			return obj.getDueDate();
+		}
+
+		@Override
+		public void setValue(DueDate1 obj, Optional<ISODate> value) {
+			obj.setDueDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -153,7 +163,7 @@ public class DueDate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DueDate1, Optional<Max140Text>> mmAdditionalInformation = new MMMessageAttribute<DueDate1, Optional<Max140Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.DueDate1.mmObject();
 			isDerived = false;
@@ -164,6 +174,16 @@ public class DueDate1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(DueDate1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(DueDate1 obj, Optional<Max140Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 

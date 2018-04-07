@@ -104,6 +104,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentTypeCode#TMSProtocolParameters
  * POIComponentTypeCode.TMSProtocolParameters}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.POIComponentTypeCode#SaleToPOIProtocolParameters
+ * POIComponentTypeCode.SaleToPOIProtocolParameters}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.POIComponentTypeCode#SaleComponent
+ * POIComponentTypeCode.SaleComponent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -189,7 +195,7 @@ public class POIComponentTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "EMV application kernel  (EMV is the chip card specifications initially defined by Eurocard, Mastercard and Visa)."
+	 * "EMV application kernel (EMV is the chip card specifications initially defined by Eurocard, Mastercard and Visa)."
 	 * </li>
 	 * </ul>
 	 */
@@ -197,7 +203,7 @@ public class POIComponentTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EMVKernel";
-			definition = "EMV application kernel  (EMV is the chip card specifications initially defined by Eurocard, Mastercard and Visa).";
+			definition = "EMV application kernel (EMV is the chip card specifications initially defined by Eurocard, Mastercard and Visa).";
 			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentTypeCode.mmObject();
 			codeName = "EMVK";
 		}
@@ -853,6 +859,66 @@ public class POIComponentTypeCode extends MMCode {
 			codeName = "TMSP";
 		}
 	};
+	/**
+	 * Parameters related to the Sale to POI protocol.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.POIComponentTypeCode
+	 * POIComponentTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "SAPR"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "SaleToPOIProtocolParameters"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Parameters related to the Sale to POI protocol."</li>
+	 * </ul>
+	 */
+	public static final POIComponentTypeCode SaleToPOIProtocolParameters = new POIComponentTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "SaleToPOIProtocolParameters";
+			definition = "Parameters related to the Sale to POI protocol.";
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentTypeCode.mmObject();
+			codeName = "SAPR";
+		}
+	};
+	/**
+	 * Component of the Sale system.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.POIComponentTypeCode
+	 * POIComponentTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "SACP"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "SaleComponent"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Component of the Sale system."</li>
+	 * </ul>
+	 */
+	public static final POIComponentTypeCode SaleComponent = new POIComponentTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "SaleComponent";
+			definition = "Component of the Sale system.";
+			owner_lazy = () -> com.tools20022.repository.codeset.POIComponentTypeCode.mmObject();
+			codeName = "SACP";
+		}
+	};
 	final static private LinkedHashMap<String, POIComponentTypeCode> codesByName = new LinkedHashMap<>();
 
 	protected POIComponentTypeCode() {
@@ -876,7 +942,8 @@ public class POIComponentTypeCode extends MMCode {
 						com.tools20022.repository.codeset.POIComponentTypeCode.OperatingSystem, com.tools20022.repository.codeset.POIComponentTypeCode.PaymentApplication,
 						com.tools20022.repository.codeset.POIComponentTypeCode.SecurityParameters, com.tools20022.repository.codeset.POIComponentTypeCode.Server, com.tools20022.repository.codeset.POIComponentTypeCode.Terminal,
 						com.tools20022.repository.codeset.POIComponentTypeCode.TerminalParameters, com.tools20022.repository.codeset.POIComponentTypeCode.CertificateParameters,
-						com.tools20022.repository.codeset.POIComponentTypeCode.TMSProtocolParameters);
+						com.tools20022.repository.codeset.POIComponentTypeCode.TMSProtocolParameters, com.tools20022.repository.codeset.POIComponentTypeCode.SaleToPOIProtocolParameters,
+						com.tools20022.repository.codeset.POIComponentTypeCode.SaleComponent);
 			}
 		});
 		return mmObject_lazy.get();
@@ -906,6 +973,8 @@ public class POIComponentTypeCode extends MMCode {
 		codesByName.put(TerminalParameters.getCodeName().get(), TerminalParameters);
 		codesByName.put(CertificateParameters.getCodeName().get(), CertificateParameters);
 		codesByName.put(TMSProtocolParameters.getCodeName().get(), TMSProtocolParameters);
+		codesByName.put(SaleToPOIProtocolParameters.getCodeName().get(), SaleToPOIProtocolParameters);
+		codesByName.put(SaleComponent.getCodeName().get(), SaleComponent);
 	}
 
 	public static POIComponentTypeCode valueOf(String codeName) {

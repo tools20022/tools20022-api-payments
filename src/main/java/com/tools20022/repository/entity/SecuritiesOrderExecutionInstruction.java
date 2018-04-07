@@ -22,8 +22,9 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.StayOnSideTypeCode;
 import com.tools20022.repository.datatype.AllOrNoneIndicator;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Discretion;
+import com.tools20022.repository.entity.SecuritiesOrder;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -214,7 +215,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAllOrNone = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, AllOrNoneIndicator> mmAllOrNone = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, AllOrNoneIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -227,12 +228,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> AllOrNoneIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getAllOrNone", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AllOrNoneIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getAllOrNone();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, AllOrNoneIndicator value) {
+			obj.setAllOrNone(value);
 		}
 	};
 	protected YesNoIndicator callFirst;
@@ -267,7 +270,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCallFirst = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmCallFirst = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -280,12 +283,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getCallFirst", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getCallFirst();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setCallFirst(value);
 		}
 	};
 	protected YesNoIndicator cross;
@@ -318,7 +323,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * definition} = "Allow crossing of an order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCross = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmCross = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -331,12 +336,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getCross", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getCross();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setCross(value);
 		}
 	};
 	protected YesNoIndicator customerDisplay;
@@ -371,7 +378,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCustomerDisplay = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmCustomerDisplay = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -384,12 +391,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getCustomerDisplay", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getCustomerDisplay();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setCustomerDisplay(value);
 		}
 	};
 	protected YesNoIndicator hold;
@@ -424,7 +433,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHold = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmHold = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -437,12 +446,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getHold", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getHold();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setHold(value);
 		}
 	};
 	protected YesNoIndicator increase;
@@ -477,7 +488,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIncrease = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmIncrease = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -490,12 +501,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getIncrease", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getIncrease();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setIncrease(value);
 		}
 	};
 	protected YesNoIndicator institutionsOnly;
@@ -530,7 +543,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInstitutionsOnly = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmInstitutionsOnly = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -543,12 +556,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getInstitutionsOnly", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getInstitutionsOnly();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setInstitutionsOnly(value);
 		}
 	};
 	protected YesNoIndicator nonNegotiable;
@@ -583,7 +598,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNonNegotiable = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmNonNegotiable = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -596,12 +611,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getNonNegotiable", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getNonNegotiable();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setNonNegotiable(value);
 		}
 	};
 	protected YesNoIndicator overTheDay;
@@ -636,7 +653,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOverTheDay = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmOverTheDay = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -649,12 +666,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getOverTheDay", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getOverTheDay();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setOverTheDay(value);
 		}
 	};
 	protected YesNoIndicator participateDontInitiate;
@@ -689,7 +708,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmParticipateDontInitiate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmParticipateDontInitiate = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -702,12 +721,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getParticipateDontInitiate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getParticipateDontInitiate();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setParticipateDontInitiate(value);
 		}
 	};
 	protected YesNoIndicator percentOfVolume;
@@ -742,7 +763,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPercentOfVolume = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmPercentOfVolume = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -755,12 +776,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getPercentOfVolume", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getPercentOfVolume();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setPercentOfVolume(value);
 		}
 	};
 	protected YesNoIndicator scale;
@@ -792,7 +815,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmScale = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmScale = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -804,12 +827,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getScale", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getScale();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setScale(value);
 		}
 	};
 	protected StayOnSideTypeCode stayOnSide;
@@ -844,7 +869,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStayOnSide = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, StayOnSideTypeCode> mmStayOnSide = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, StayOnSideTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -857,12 +882,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> StayOnSideTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getStayOnSide", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public StayOnSideTypeCode getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getStayOnSide();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, StayOnSideTypeCode value) {
+			obj.setStayOnSide(value);
 		}
 	};
 	protected YesNoIndicator work;
@@ -895,7 +922,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * definition} = "Make the order active until notified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmWork = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmWork = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -908,12 +935,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getWork", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getWork();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setWork(value);
 		}
 	};
 	protected YesNoIndicator goAlong;
@@ -948,7 +977,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGoAlong = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmGoAlong = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -961,12 +990,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getGoAlong", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getGoAlong();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setGoAlong(value);
 		}
 	};
 	protected YesNoIndicator tryScale;
@@ -1001,7 +1032,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTryScale = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmTryScale = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1014,12 +1045,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getTryScale", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getTryScale();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setTryScale(value);
 		}
 	};
 	protected YesNoIndicator doNotReduce;
@@ -1054,7 +1087,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDoNotReduce = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmDoNotReduce = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1067,12 +1100,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getDoNotReduce", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getDoNotReduce();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setDoNotReduce(value);
 		}
 	};
 	protected YesNoIndicator cancelOnSystemFailure;
@@ -1107,7 +1142,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancelOnSystemFailure = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmCancelOnSystemFailure = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1120,12 +1155,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getCancelOnSystemFailure", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getCancelOnSystemFailure();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setCancelOnSystemFailure(value);
 		}
 	};
 	protected YesNoIndicator cancelOnTradingHalt;
@@ -1160,7 +1197,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancelOnTradingHalt = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmCancelOnTradingHalt = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1173,12 +1210,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getCancelOnTradingHalt", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getCancelOnTradingHalt();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setCancelOnTradingHalt(value);
 		}
 	};
 	protected YesNoIndicator tradeAlong;
@@ -1213,7 +1252,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradeAlong = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmTradeAlong = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1226,12 +1265,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getTradeAlong", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getTradeAlong();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setTradeAlong(value);
 		}
 	};
 	protected YesNoIndicator strictLimit;
@@ -1263,7 +1304,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStrictLimit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmStrictLimit = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1275,12 +1316,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getStrictLimit", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getStrictLimit();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setStrictLimit(value);
 		}
 	};
 	protected YesNoIndicator ignorePriceValidityChecks;
@@ -1312,7 +1355,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIgnorePriceValidityChecks = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmIgnorePriceValidityChecks = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1324,12 +1367,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getIgnorePriceValidityChecks", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getIgnorePriceValidityChecks();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setIgnorePriceValidityChecks(value);
 		}
 	};
 	protected YesNoIndicator reinstateOnSystemFailure;
@@ -1361,7 +1406,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReinstateOnSystemFailure = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmReinstateOnSystemFailure = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1373,12 +1418,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getReinstateOnSystemFailure", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getReinstateOnSystemFailure();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setReinstateOnSystemFailure(value);
 		}
 	};
 	protected YesNoIndicator reinstateOnTradingHalt;
@@ -1410,7 +1457,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReinstateOnTradingHalt = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmReinstateOnTradingHalt = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1422,12 +1469,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getReinstateOnTradingHalt", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getReinstateOnTradingHalt();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setReinstateOnTradingHalt(value);
 		}
 	};
 	protected YesNoIndicator cancelIfNotBest;
@@ -1459,7 +1508,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancelIfNotBest = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmCancelIfNotBest = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1471,12 +1520,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getCancelIfNotBest", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getCancelIfNotBest();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setCancelIfNotBest(value);
 		}
 	};
 	protected YesNoIndicator externalRoutingAllowed;
@@ -1508,7 +1559,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExternalRoutingAllowed = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmExternalRoutingAllowed = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1520,12 +1571,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getExternalRoutingAllowed", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getExternalRoutingAllowed();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setExternalRoutingAllowed(value);
 		}
 	};
 	protected YesNoIndicator externalRoutingNotAllowed;
@@ -1557,7 +1610,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExternalRoutingNotAllowed = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmExternalRoutingNotAllowed = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1569,12 +1622,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getExternalRoutingNotAllowed", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getExternalRoutingNotAllowed();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setExternalRoutingNotAllowed(value);
 		}
 	};
 	protected YesNoIndicator imbalanceOnly;
@@ -1606,7 +1661,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmImbalanceOnly = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmImbalanceOnly = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1618,12 +1673,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getImbalanceOnly", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getImbalanceOnly();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setImbalanceOnly(value);
 		}
 	};
 	protected YesNoIndicator intermarketSweep;
@@ -1655,7 +1712,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIntermarketSweep = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmIntermarketSweep = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1667,12 +1724,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getIntermarketSweep", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getIntermarketSweep();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setIntermarketSweep(value);
 		}
 	};
 	protected YesNoIndicator netting;
@@ -1704,7 +1763,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNetting = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmNetting = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1716,12 +1775,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getNetting", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getNetting();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setNetting(value);
 		}
 	};
 	protected SecuritiesOrder relatedOrder;
@@ -1758,7 +1819,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * definition} = "Order which is executed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderExecutionInstruction, Optional<SecuritiesOrder>> mmRelatedOrder = new MMBusinessAssociationEnd<SecuritiesOrderExecutionInstruction, Optional<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1767,9 +1828,19 @@ public class SecuritiesOrderExecutionInstruction {
 			definition = "Order which is executed.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmExecutionInstructions;
+			opposite_lazy = () -> SecuritiesOrder.mmExecutionInstructions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesOrder> getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getRelatedOrder();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, Optional<SecuritiesOrder> value) {
+			obj.setRelatedOrder(value.orElse(null));
 		}
 	};
 	protected YesNoIndicator foreignExchangeNetting;
@@ -1804,7 +1875,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmForeignExchangeNetting = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmForeignExchangeNetting = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1817,12 +1888,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getForeignExchangeNetting", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getForeignExchangeNetting();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setForeignExchangeNetting(value);
 		}
 	};
 	protected YesNoIndicator strictScale;
@@ -1857,7 +1930,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStrictScale = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmStrictScale = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1870,12 +1943,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getStrictScale", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getStrictScale();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setStrictScale(value);
 		}
 	};
 	protected YesNoIndicator suspend;
@@ -1910,7 +1985,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSuspend = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmSuspend = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1923,12 +1998,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getSuspend", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getSuspend();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setSuspend(value);
 		}
 	};
 	protected YesNoIndicator tryToStop;
@@ -1963,7 +2040,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTryToStop = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator> mmTryToStop = new MMBusinessAttribute<SecuritiesOrderExecutionInstruction, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -1976,12 +2053,14 @@ public class SecuritiesOrderExecutionInstruction {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderExecutionInstruction.class.getMethod("getTryToStop", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getTryToStop();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, YesNoIndicator value) {
+			obj.setTryToStop(value);
 		}
 	};
 	protected Discretion orderPriceStrategy;
@@ -2018,7 +2097,7 @@ public class SecuritiesOrderExecutionInstruction {
 	 * definition} = "Strategy used to obtain the order price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrderPriceStrategy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderExecutionInstruction, Discretion> mmOrderPriceStrategy = new MMBusinessAssociationEnd<SecuritiesOrderExecutionInstruction, Discretion>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
@@ -2027,9 +2106,19 @@ public class SecuritiesOrderExecutionInstruction {
 			definition = "Strategy used to obtain the order price.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Discretion.mmRelatedOrderExecution;
+			opposite_lazy = () -> Discretion.mmRelatedOrderExecution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
+			type_lazy = () -> Discretion.mmObject();
+		}
+
+		@Override
+		public Discretion getValue(SecuritiesOrderExecutionInstruction obj) {
+			return obj.getOrderPriceStrategy();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderExecutionInstruction obj, Discretion value) {
+			obj.setOrderPriceStrategy(value);
 		}
 	};
 
@@ -2040,7 +2129,7 @@ public class SecuritiesOrderExecutionInstruction {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesOrderExecutionInstruction";
 				definition = "Identifies the instructions for order handling";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrder.mmExecutionInstructions, com.tools20022.repository.entity.Discretion.mmRelatedOrderExecution);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesOrder.mmExecutionInstructions, Discretion.mmRelatedOrderExecution);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmAllOrNone, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmCallFirst,
 						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmCross, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmCustomerDisplay,
 						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmHold, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmIncrease,
@@ -2343,7 +2432,7 @@ public class SecuritiesOrderExecutionInstruction {
 		return relatedOrder == null ? Optional.empty() : Optional.of(relatedOrder);
 	}
 
-	public SecuritiesOrderExecutionInstruction setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+	public SecuritiesOrderExecutionInstruction setRelatedOrder(SecuritiesOrder relatedOrder) {
 		this.relatedOrder = relatedOrder;
 		return this;
 	}
@@ -2388,7 +2477,7 @@ public class SecuritiesOrderExecutionInstruction {
 		return orderPriceStrategy;
 	}
 
-	public SecuritiesOrderExecutionInstruction setOrderPriceStrategy(com.tools20022.repository.entity.Discretion orderPriceStrategy) {
+	public SecuritiesOrderExecutionInstruction setOrderPriceStrategy(Discretion orderPriceStrategy) {
 		this.orderPriceStrategy = Objects.requireNonNull(orderPriceStrategy);
 		return this;
 	}

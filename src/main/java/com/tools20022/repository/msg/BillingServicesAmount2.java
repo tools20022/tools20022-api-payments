@@ -24,6 +24,7 @@ import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.entity.Product;
 import com.tools20022.repository.entity.Service;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection34;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -111,7 +112,7 @@ public class BillingServicesAmount2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmHostAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServicesAmount2, AmountAndDirection34> mmHostAmount = new MMMessageAssociationEnd<BillingServicesAmount2, AmountAndDirection34>() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount2.mmObject();
@@ -123,7 +124,17 @@ public class BillingServicesAmount2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection34 getValue(BillingServicesAmount2 obj) {
+			return obj.getHostAmount();
+		}
+
+		@Override
+		public void setValue(BillingServicesAmount2 obj, AmountAndDirection34 value) {
+			obj.setHostAmount(value);
 		}
 	};
 	@XmlElement(name = "SttlmAmt")
@@ -161,7 +172,7 @@ public class BillingServicesAmount2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSettlementAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServicesAmount2, Optional<AmountAndDirection34>> mmSettlementAmount = new MMMessageAssociationEnd<BillingServicesAmount2, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount2.mmObject();
@@ -173,7 +184,17 @@ public class BillingServicesAmount2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingServicesAmount2 obj) {
+			return obj.getSettlementAmount();
+		}
+
+		@Override
+		public void setValue(BillingServicesAmount2 obj, Optional<AmountAndDirection34> value) {
+			obj.setSettlementAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PricgAmt")
@@ -211,7 +232,7 @@ public class BillingServicesAmount2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPricingAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServicesAmount2, Optional<AmountAndDirection34>> mmPricingAmount = new MMMessageAssociationEnd<BillingServicesAmount2, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesAmount2.mmObject();
@@ -223,7 +244,17 @@ public class BillingServicesAmount2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingServicesAmount2 obj) {
+			return obj.getPricingAmount();
+		}
+
+		@Override
+		public void setValue(BillingServicesAmount2 obj, Optional<AmountAndDirection34> value) {
+			obj.setPricingAmount(value.orElse(null));
 		}
 	};
 
@@ -246,7 +277,7 @@ public class BillingServicesAmount2 {
 		return hostAmount;
 	}
 
-	public BillingServicesAmount2 setHostAmount(com.tools20022.repository.msg.AmountAndDirection34 hostAmount) {
+	public BillingServicesAmount2 setHostAmount(AmountAndDirection34 hostAmount) {
 		this.hostAmount = Objects.requireNonNull(hostAmount);
 		return this;
 	}
@@ -255,7 +286,7 @@ public class BillingServicesAmount2 {
 		return settlementAmount == null ? Optional.empty() : Optional.of(settlementAmount);
 	}
 
-	public BillingServicesAmount2 setSettlementAmount(com.tools20022.repository.msg.AmountAndDirection34 settlementAmount) {
+	public BillingServicesAmount2 setSettlementAmount(AmountAndDirection34 settlementAmount) {
 		this.settlementAmount = settlementAmount;
 		return this;
 	}
@@ -264,7 +295,7 @@ public class BillingServicesAmount2 {
 		return pricingAmount == null ? Optional.empty() : Optional.of(pricingAmount);
 	}
 
-	public BillingServicesAmount2 setPricingAmount(com.tools20022.repository.msg.AmountAndDirection34 pricingAmount) {
+	public BillingServicesAmount2 setPricingAmount(AmountAndDirection34 pricingAmount) {
 		this.pricingAmount = pricingAmount;
 		return this;
 	}

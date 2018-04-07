@@ -24,6 +24,8 @@ import com.tools20022.repository.area.pain.MandateCopyRequestV01;
 import com.tools20022.repository.choice.MandateStatus1Choice;
 import com.tools20022.repository.choice.OriginalMandate4Choice;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.OriginalMessageInformation1;
+import com.tools20022.repository.msg.SupplementaryData1;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -110,7 +112,7 @@ public class MandateCopy1 {
 	 * definition} = "Provides information on the original message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalMessageInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MandateCopy1, Optional<OriginalMessageInformation1>> mmOriginalMessageInformation = new MMMessageAssociationEnd<MandateCopy1, Optional<OriginalMessageInformation1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateCopy1.mmObject();
 			isDerived = false;
@@ -121,7 +123,17 @@ public class MandateCopy1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OriginalMessageInformation1.mmObject();
+			type_lazy = () -> OriginalMessageInformation1.mmObject();
+		}
+
+		@Override
+		public Optional<OriginalMessageInformation1> getValue(MandateCopy1 obj) {
+			return obj.getOriginalMessageInformation();
+		}
+
+		@Override
+		public void setValue(MandateCopy1 obj, Optional<OriginalMessageInformation1> value) {
+			obj.setOriginalMessageInformation(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlMndt", required = true)
@@ -152,7 +164,7 @@ public class MandateCopy1 {
 	 * definition} = "Provides the original mandate data."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalMandate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MandateCopy1, OriginalMandate4Choice> mmOriginalMandate = new MMMessageAssociationEnd<MandateCopy1, OriginalMandate4Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateCopy1.mmObject();
 			isDerived = false;
@@ -164,6 +176,16 @@ public class MandateCopy1 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> OriginalMandate4Choice.mmObject();
+		}
+
+		@Override
+		public OriginalMandate4Choice getValue(MandateCopy1 obj) {
+			return obj.getOriginalMandate();
+		}
+
+		@Override
+		public void setValue(MandateCopy1 obj, OriginalMandate4Choice value) {
+			obj.setOriginalMandate(value);
 		}
 	};
 	@XmlElement(name = "MndtSts")
@@ -194,7 +216,7 @@ public class MandateCopy1 {
 	 * definition} = "Indicates the status of the mandate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMandateStatus = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MandateCopy1, Optional<MandateStatus1Choice>> mmMandateStatus = new MMMessageAssociationEnd<MandateCopy1, Optional<MandateStatus1Choice>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateCopy1.mmObject();
 			isDerived = false;
@@ -207,9 +229,19 @@ public class MandateCopy1 {
 			isComposite = true;
 			type_lazy = () -> MandateStatus1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<MandateStatus1Choice> getValue(MandateCopy1 obj) {
+			return obj.getMandateStatus();
+		}
+
+		@Override
+		public void setValue(MandateCopy1 obj, Optional<MandateStatus1Choice> value) {
+			obj.setMandateStatus(value.orElse(null));
+		}
 	};
 	@XmlElement(name = "SplmtryData")
-	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
+	protected List<SupplementaryData1> supplementaryData;
 	/**
 	 * 
 	 <p>
@@ -237,7 +269,7 @@ public class MandateCopy1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MandateCopy1, List<SupplementaryData1>> mmSupplementaryData = new MMMessageAssociationEnd<MandateCopy1, List<SupplementaryData1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MandateCopy1.mmObject();
 			isDerived = false;
@@ -247,7 +279,17 @@ public class MandateCopy1 {
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
+			type_lazy = () -> SupplementaryData1.mmObject();
+		}
+
+		@Override
+		public List<SupplementaryData1> getValue(MandateCopy1 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MandateCopy1 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -270,7 +312,7 @@ public class MandateCopy1 {
 		return originalMessageInformation == null ? Optional.empty() : Optional.of(originalMessageInformation);
 	}
 
-	public MandateCopy1 setOriginalMessageInformation(com.tools20022.repository.msg.OriginalMessageInformation1 originalMessageInformation) {
+	public MandateCopy1 setOriginalMessageInformation(OriginalMessageInformation1 originalMessageInformation) {
 		this.originalMessageInformation = originalMessageInformation;
 		return this;
 	}
@@ -297,7 +339,7 @@ public class MandateCopy1 {
 		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public MandateCopy1 setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+	public MandateCopy1 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
 		this.supplementaryData = Objects.requireNonNull(supplementaryData);
 		return this;
 	}

@@ -20,7 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV06;
+import com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV07;
 
 /**
  * GroupHeader/NumberOfTransactions must equal the number of occurrences of
@@ -34,8 +34,8 @@ public class ConstraintNumberOfTransactionsAndCreditTransfersRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV06
-	 * FIToFICustomerCreditTransferV06}</li>
+	 * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV07
+	 * FIToFICustomerCreditTransferV07}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;SimpleRule xsi:type=\"SimpleRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"EqualToValue\"&gt;&lt;leftOperand&gt;/GroupHeader/NumberOfTransactions&lt;/leftOperand&gt;&lt;rightOperand&gt;number of occurrences of CreditTransferTransactionInformation&lt;/rightOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;/SimpleRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -53,18 +53,18 @@ public class ConstraintNumberOfTransactionsAndCreditTransfersRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forFIToFICustomerCreditTransferV06 = new MMConstraint() {
+	public static final MMConstraint<FIToFICustomerCreditTransferV07> for_pacs_FIToFICustomerCreditTransferV07 = new MMConstraint<FIToFICustomerCreditTransferV07>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumberOfTransactionsAndCreditTransfersRule";
 			definition = "GroupHeader/NumberOfTransactions must equal the number of occurrences of CreditTransferTransactionInformation.";
-			owner_lazy = () -> FIToFICustomerCreditTransferV06.mmObject();
+			owner_lazy = () -> FIToFICustomerCreditTransferV07.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><SimpleRule xsi:type=\"SimpleRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"EqualToValue\"><leftOperand>/GroupHeader/NumberOfTransactions</leftOperand><rightOperand>number of occurrences of CreditTransferTransactionInformation</rightOperand></BooleanRule></mustBe></SimpleRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFIToFICustomerCreditTransferV06((FIToFICustomerCreditTransferV06) obj);
+		public void executeValidator(FIToFICustomerCreditTransferV07 obj) throws Exception {
+			check_pacs_FIToFICustomerCreditTransferV07(obj);
 		}
 	};
 
@@ -72,7 +72,7 @@ public class ConstraintNumberOfTransactionsAndCreditTransfersRule {
 	 * GroupHeader/NumberOfTransactions must equal the number of occurrences of
 	 * CreditTransferTransactionInformation.
 	 */
-	public static void checkFIToFICustomerCreditTransferV06(FIToFICustomerCreditTransferV06 obj) throws Exception {
+	public static void check_pacs_FIToFICustomerCreditTransferV07(FIToFICustomerCreditTransferV07 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

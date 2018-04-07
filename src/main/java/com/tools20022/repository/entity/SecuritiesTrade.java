@@ -24,9 +24,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
-import com.tools20022.repository.entity.Trade;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -177,7 +176,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesTrade extends Trade {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.SecuritiesTradeIdentification> securitiesTradeRelatedIdentifications;
+	protected List<SecuritiesTradeIdentification> securitiesTradeRelatedIdentifications;
 	/**
 	 * 
 	 <p>
@@ -214,7 +213,7 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesTradeRelatedIdentifications = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesTradeIdentification>> mmSecuritiesTradeRelatedIdentifications = new MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesTradeIdentification>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -222,9 +221,19 @@ public class SecuritiesTrade extends Trade {
 			name = "SecuritiesTradeRelatedIdentifications";
 			definition = "Specifies the different identifications associated with a securities trade.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmIdentifiedTrade;
+			opposite_lazy = () -> SecuritiesTradeIdentification.mmIdentifiedTrade;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
+			type_lazy = () -> SecuritiesTradeIdentification.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesTradeIdentification> getValue(SecuritiesTrade obj) {
+			return obj.getSecuritiesTradeRelatedIdentifications();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, List<SecuritiesTradeIdentification> value) {
+			obj.setSecuritiesTradeRelatedIdentifications(value);
 		}
 	};
 	protected CurrencyAndAmount tradeAmount;
@@ -259,7 +268,7 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradeAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTrade, CurrencyAndAmount> mmTradeAmount = new MMBusinessAttribute<SecuritiesTrade, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -272,12 +281,14 @@ public class SecuritiesTrade extends Trade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTrade.class.getMethod("getTradeAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesTrade obj) {
+			return obj.getTradeAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, CurrencyAndAmount value) {
+			obj.setTradeAmount(value);
 		}
 	};
 	protected OpeningClosingCode openingClosingIndicator;
@@ -312,7 +323,7 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOpeningClosingIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTrade, OpeningClosingCode> mmOpeningClosingIndicator = new MMBusinessAttribute<SecuritiesTrade, OpeningClosingCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -325,12 +336,14 @@ public class SecuritiesTrade extends Trade {
 			simpleType_lazy = () -> OpeningClosingCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTrade.class.getMethod("getOpeningClosingIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OpeningClosingCode getValue(SecuritiesTrade obj) {
+			return obj.getOpeningClosingIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, OpeningClosingCode value) {
+			obj.setOpeningClosingIndicator(value);
 		}
 	};
 	protected TradeTransactionConditionCode tradeTransactionCondition;
@@ -365,7 +378,7 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradeTransactionCondition = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTrade, TradeTransactionConditionCode> mmTradeTransactionCondition = new MMBusinessAttribute<SecuritiesTrade, TradeTransactionConditionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -378,12 +391,14 @@ public class SecuritiesTrade extends Trade {
 			simpleType_lazy = () -> TradeTransactionConditionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTrade.class.getMethod("getTradeTransactionCondition", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TradeTransactionConditionCode getValue(SecuritiesTrade obj) {
+			return obj.getTradeTransactionCondition();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, TradeTransactionConditionCode value) {
+			obj.setTradeTransactionCondition(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesTradeStatus> securitiesTradeStatus;
@@ -421,7 +436,7 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Specifies the status of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesTradeStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesTradeStatus>> mmSecuritiesTradeStatus = new MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesTradeStatus>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -432,6 +447,16 @@ public class SecuritiesTrade extends Trade {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmSecuritiesTrade;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesTradeStatus> getValue(SecuritiesTrade obj) {
+			return obj.getSecuritiesTradeStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, List<SecuritiesTradeStatus> value) {
+			obj.setSecuritiesTradeStatus(value);
 		}
 	};
 	protected TransactionActivityCode activity;
@@ -462,7 +487,7 @@ public class SecuritiesTrade extends Trade {
 	 * "Specifies the type of activity to which the trade relates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmActivity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTrade, TransactionActivityCode> mmActivity = new MMBusinessAttribute<SecuritiesTrade, TransactionActivityCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -474,15 +499,17 @@ public class SecuritiesTrade extends Trade {
 			simpleType_lazy = () -> TransactionActivityCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTrade.class.getMethod("getActivity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TransactionActivityCode getValue(SecuritiesTrade obj) {
+			return obj.getActivity();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, TransactionActivityCode value) {
+			obj.setActivity(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesQuantity> tradeQuantity;
+	protected List<SecuritiesQuantity> tradeQuantity;
 	/**
 	 * 
 	 <p>
@@ -518,7 +545,7 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradeQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesQuantity>> mmTradeQuantity = new MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesQuantity>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -526,9 +553,19 @@ public class SecuritiesTrade extends Trade {
 			name = "TradeQuantity";
 			definition = "Specifies the total quantity of a financial instrument involved in a trade. It is derived from the ordered quantity or from the quantity specified in a leg of a financing agreement.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmTrade;
+			opposite_lazy = () -> SecuritiesQuantity.mmTrade;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesQuantity> getValue(SecuritiesTrade obj) {
+			return obj.getTradeQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, List<SecuritiesQuantity> value) {
+			obj.setTradeQuantity(value);
 		}
 	};
 	protected ISODateTime tradeOriginationDate;
@@ -562,7 +599,7 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradeOriginationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTrade, ISODateTime> mmTradeOriginationDate = new MMBusinessAttribute<SecuritiesTrade, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -575,12 +612,14 @@ public class SecuritiesTrade extends Trade {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTrade.class.getMethod("getTradeOriginationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SecuritiesTrade obj) {
+			return obj.getTradeOriginationDate();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, ISODateTime value) {
+			obj.setTradeOriginationDate(value);
 		}
 	};
 	protected ClearingFeeTypeCode clearingFeeType;
@@ -614,7 +653,7 @@ public class SecuritiesTrade extends Trade {
 	 * "Indicates the type of fee for trade executions at an exchange."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClearingFeeType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTrade, ClearingFeeTypeCode> mmClearingFeeType = new MMBusinessAttribute<SecuritiesTrade, ClearingFeeTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -627,12 +666,14 @@ public class SecuritiesTrade extends Trade {
 			simpleType_lazy = () -> ClearingFeeTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTrade.class.getMethod("getClearingFeeType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ClearingFeeTypeCode getValue(SecuritiesTrade obj) {
+			return obj.getClearingFeeType();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, ClearingFeeTypeCode value) {
+			obj.setClearingFeeType(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Security> security;
@@ -668,7 +709,7 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Security involved in a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, List<Security>> mmSecurity = new MMBusinessAssociationEnd<SecuritiesTrade, List<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -680,8 +721,18 @@ public class SecuritiesTrade extends Trade {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 		}
+
+		@Override
+		public List<Security> getValue(SecuritiesTrade obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, List<Security> value) {
+			obj.setSecurity(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesPricing> tradePrice;
+	protected List<SecuritiesPricing> tradePrice;
 	/**
 	 * 
 	 <p>
@@ -717,7 +768,7 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradePrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesPricing>> mmTradePrice = new MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesPricing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -725,12 +776,22 @@ public class SecuritiesTrade extends Trade {
 			name = "TradePrice";
 			definition = "Specifies the executed trade price which is derived from the different deal prices.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmSecuritiesTrade;
+			opposite_lazy = () -> SecuritiesPricing.mmSecuritiesTrade;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesPricing> getValue(SecuritiesTrade obj) {
+			return obj.getTradePrice();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, List<SecuritiesPricing> value) {
+			obj.setTradePrice(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesTradePartyRole> partyRole;
+	protected List<SecuritiesTradePartyRole> partyRole;
 	/**
 	 * 
 	 <p>
@@ -767,7 +828,7 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesTradePartyRole>> mmPartyRole = new MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesTradePartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -775,9 +836,19 @@ public class SecuritiesTrade extends Trade {
 			name = "PartyRole";
 			definition = "Specifies each role linked to a securities trade and played by a party at that step in a securities transaction flow.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradePartyRole.mmSecuritiesTrade;
+			opposite_lazy = () -> SecuritiesTradePartyRole.mmSecuritiesTrade;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradePartyRole.mmObject();
+			type_lazy = () -> SecuritiesTradePartyRole.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesTradePartyRole> getValue(SecuritiesTrade obj) {
+			return obj.getPartyRole();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, List<SecuritiesTradePartyRole> value) {
+			obj.setPartyRole(value);
 		}
 	};
 	protected SecuritiesFinancing securitiesFinancingClosingData;
@@ -814,7 +885,7 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Financing process for which a closing leg is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesFinancingClosingData = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, Optional<SecuritiesFinancing>> mmSecuritiesFinancingClosingData = new MMBusinessAssociationEnd<SecuritiesTrade, Optional<SecuritiesFinancing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -823,12 +894,22 @@ public class SecuritiesTrade extends Trade {
 			definition = "Financing process for which a closing leg is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmClosingLegExecution;
+			opposite_lazy = () -> SecuritiesFinancing.mmClosingLegExecution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
+			type_lazy = () -> SecuritiesFinancing.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesFinancing> getValue(SecuritiesTrade obj) {
+			return obj.getSecuritiesFinancingClosingData();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, Optional<SecuritiesFinancing> value) {
+			obj.setSecuritiesFinancingClosingData(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesTradeExecution> tradingExecution;
+	protected List<SecuritiesTradeExecution> tradingExecution;
 	/**
 	 * 
 	 <p>
@@ -864,7 +945,7 @@ public class SecuritiesTrade extends Trade {
 	 * "The realisation of the trade over one or more transactions."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradingExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesTradeExecution>> mmTradingExecution = new MMBusinessAssociationEnd<SecuritiesTrade, List<SecuritiesTradeExecution>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -872,12 +953,22 @@ public class SecuritiesTrade extends Trade {
 			name = "TradingExecution";
 			definition = "The realisation of the trade over one or more transactions.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmRelatedTrade;
+			opposite_lazy = () -> SecuritiesTradeExecution.mmRelatedTrade;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
+			type_lazy = () -> SecuritiesTradeExecution.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesTradeExecution> getValue(SecuritiesTrade obj) {
+			return obj.getTradingExecution();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, List<SecuritiesTradeExecution> value) {
+			obj.setTradingExecution(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Allocation> tradeAllocation;
+	protected List<Allocation> tradeAllocation;
 	/**
 	 * 
 	 <p>
@@ -911,7 +1002,7 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Information about the allocation of the trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradeAllocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, List<Allocation>> mmTradeAllocation = new MMBusinessAssociationEnd<SecuritiesTrade, List<Allocation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -919,9 +1010,19 @@ public class SecuritiesTrade extends Trade {
 			name = "TradeAllocation";
 			definition = "Information about the allocation of the trade.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Allocation.mmSecuritiesTrade;
+			opposite_lazy = () -> Allocation.mmSecuritiesTrade;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
+			type_lazy = () -> Allocation.mmObject();
+		}
+
+		@Override
+		public List<Allocation> getValue(SecuritiesTrade obj) {
+			return obj.getTradeAllocation();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, List<Allocation> value) {
+			obj.setTradeAllocation(value);
 		}
 	};
 	protected SecuritiesOrder relatedOrder;
@@ -958,7 +1059,7 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Order which is executed by a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, Optional<SecuritiesOrder>> mmRelatedOrder = new MMBusinessAssociationEnd<SecuritiesTrade, Optional<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -967,9 +1068,19 @@ public class SecuritiesTrade extends Trade {
 			definition = "Order which is executed by a trade.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmOrderExecution;
+			opposite_lazy = () -> SecuritiesOrder.mmOrderExecution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesOrder> getValue(SecuritiesTrade obj) {
+			return obj.getRelatedOrder();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, Optional<SecuritiesOrder> value) {
+			obj.setRelatedOrder(value.orElse(null));
 		}
 	};
 	protected SecuritiesFinancing securitiesFinancingOpeningData;
@@ -1006,7 +1117,7 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Financing process for which an opening leg is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesFinancingOpeningData = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTrade, Optional<SecuritiesFinancing>> mmSecuritiesFinancingOpeningData = new MMBusinessAssociationEnd<SecuritiesTrade, Optional<SecuritiesFinancing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -1015,9 +1126,19 @@ public class SecuritiesTrade extends Trade {
 			definition = "Financing process for which an opening leg is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmOpeningLegExecution;
+			opposite_lazy = () -> SecuritiesFinancing.mmOpeningLegExecution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
+			type_lazy = () -> SecuritiesFinancing.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesFinancing> getValue(SecuritiesTrade obj) {
+			return obj.getSecuritiesFinancingOpeningData();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, Optional<SecuritiesFinancing> value) {
+			obj.setSecuritiesFinancingOpeningData(value.orElse(null));
 		}
 	};
 	protected TradeTypeCode transactionType;
@@ -1051,7 +1172,7 @@ public class SecuritiesTrade extends Trade {
 	 * "Indicates the type of transaction of which the order is a component."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransactionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTrade, TradeTypeCode> mmTransactionType = new MMBusinessAttribute<SecuritiesTrade, TradeTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -1064,12 +1185,14 @@ public class SecuritiesTrade extends Trade {
 			simpleType_lazy = () -> TradeTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTrade.class.getMethod("getTransactionType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TradeTypeCode getValue(SecuritiesTrade obj) {
+			return obj.getTransactionType();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, TradeTypeCode value) {
+			obj.setTransactionType(value);
 		}
 	};
 	protected LegalFrameworkCode legalFramework;
@@ -1099,7 +1222,7 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Legal framework of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLegalFramework = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTrade, LegalFrameworkCode> mmLegalFramework = new MMBusinessAttribute<SecuritiesTrade, LegalFrameworkCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -1111,12 +1234,14 @@ public class SecuritiesTrade extends Trade {
 			simpleType_lazy = () -> LegalFrameworkCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTrade.class.getMethod("getLegalFramework", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LegalFrameworkCode getValue(SecuritiesTrade obj) {
+			return obj.getLegalFramework();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, LegalFrameworkCode value) {
+			obj.setLegalFramework(value);
 		}
 	};
 	protected SecuritiesTransactionTypeV2Code securitiesTransactionType;
@@ -1149,7 +1274,7 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Underlying information about the settlement transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSecuritiesTransactionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTrade, SecuritiesTransactionTypeV2Code> mmSecuritiesTransactionType = new MMBusinessAttribute<SecuritiesTrade, SecuritiesTransactionTypeV2Code>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
@@ -1162,12 +1287,14 @@ public class SecuritiesTrade extends Trade {
 			simpleType_lazy = () -> SecuritiesTransactionTypeV2Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTrade.class.getMethod("getSecuritiesTransactionType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesTransactionTypeV2Code getValue(SecuritiesTrade obj) {
+			return obj.getSecuritiesTransactionType();
+		}
+
+		@Override
+		public void setValue(SecuritiesTrade obj, SecuritiesTransactionTypeV2Code value) {
+			obj.setSecuritiesTransactionType(value);
 		}
 	};
 
@@ -1179,12 +1306,10 @@ public class SecuritiesTrade extends Trade {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTrade";
 				definition = "Specifies trades linked to securities operations such as the exchange of securities, the lending of securities and the transactions related to investment funds.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmSecuritiesTrade, com.tools20022.repository.entity.SecuritiesPricing.mmSecuritiesTrade,
-						com.tools20022.repository.entity.SecuritiesTradeIdentification.mmIdentifiedTrade, com.tools20022.repository.entity.SecuritiesQuantity.mmTrade,
-						com.tools20022.repository.entity.SecuritiesTradeExecution.mmRelatedTrade, com.tools20022.repository.entity.SecuritiesTradeStatus.mmSecuritiesTrade,
-						com.tools20022.repository.entity.SecuritiesFinancing.mmClosingLegExecution, com.tools20022.repository.entity.SecuritiesFinancing.mmOpeningLegExecution,
-						com.tools20022.repository.entity.SecuritiesOrder.mmOrderExecution, com.tools20022.repository.entity.SecuritiesTradePartyRole.mmSecuritiesTrade, com.tools20022.repository.entity.Allocation.mmSecuritiesTrade);
-				subType_lazy = () -> Arrays.asList(InvestmentFundTransaction.mmObject(), com.tools20022.repository.entity.SecuritiesFinancing.mmObject(), SecuritiesOptionTrade.mmObject());
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmSecuritiesTrade, SecuritiesPricing.mmSecuritiesTrade, SecuritiesTradeIdentification.mmIdentifiedTrade, SecuritiesQuantity.mmTrade,
+						SecuritiesTradeExecution.mmRelatedTrade, com.tools20022.repository.entity.SecuritiesTradeStatus.mmSecuritiesTrade, SecuritiesFinancing.mmClosingLegExecution, SecuritiesFinancing.mmOpeningLegExecution,
+						SecuritiesOrder.mmOrderExecution, SecuritiesTradePartyRole.mmSecuritiesTrade, Allocation.mmSecuritiesTrade);
+				subType_lazy = () -> Arrays.asList(InvestmentFundTransaction.mmObject(), SecuritiesFinancing.mmObject(), SecuritiesOptionTrade.mmObject());
 				superType_lazy = () -> Trade.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTrade.mmSecuritiesTradeRelatedIdentifications, com.tools20022.repository.entity.SecuritiesTrade.mmTradeAmount,
 						com.tools20022.repository.entity.SecuritiesTrade.mmOpeningClosingIndicator, com.tools20022.repository.entity.SecuritiesTrade.mmTradeTransactionCondition,
@@ -1208,7 +1333,7 @@ public class SecuritiesTrade extends Trade {
 		return securitiesTradeRelatedIdentifications == null ? securitiesTradeRelatedIdentifications = new ArrayList<>() : securitiesTradeRelatedIdentifications;
 	}
 
-	public SecuritiesTrade setSecuritiesTradeRelatedIdentifications(List<com.tools20022.repository.entity.SecuritiesTradeIdentification> securitiesTradeRelatedIdentifications) {
+	public SecuritiesTrade setSecuritiesTradeRelatedIdentifications(List<SecuritiesTradeIdentification> securitiesTradeRelatedIdentifications) {
 		this.securitiesTradeRelatedIdentifications = Objects.requireNonNull(securitiesTradeRelatedIdentifications);
 		return this;
 	}
@@ -1262,7 +1387,7 @@ public class SecuritiesTrade extends Trade {
 		return tradeQuantity == null ? tradeQuantity = new ArrayList<>() : tradeQuantity;
 	}
 
-	public SecuritiesTrade setTradeQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> tradeQuantity) {
+	public SecuritiesTrade setTradeQuantity(List<SecuritiesQuantity> tradeQuantity) {
 		this.tradeQuantity = Objects.requireNonNull(tradeQuantity);
 		return this;
 	}
@@ -1298,7 +1423,7 @@ public class SecuritiesTrade extends Trade {
 		return tradePrice == null ? tradePrice = new ArrayList<>() : tradePrice;
 	}
 
-	public SecuritiesTrade setTradePrice(List<com.tools20022.repository.entity.SecuritiesPricing> tradePrice) {
+	public SecuritiesTrade setTradePrice(List<SecuritiesPricing> tradePrice) {
 		this.tradePrice = Objects.requireNonNull(tradePrice);
 		return this;
 	}
@@ -1307,7 +1432,7 @@ public class SecuritiesTrade extends Trade {
 		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public SecuritiesTrade setPartyRole(List<com.tools20022.repository.entity.SecuritiesTradePartyRole> partyRole) {
+	public SecuritiesTrade setPartyRole(List<SecuritiesTradePartyRole> partyRole) {
 		this.partyRole = Objects.requireNonNull(partyRole);
 		return this;
 	}
@@ -1316,7 +1441,7 @@ public class SecuritiesTrade extends Trade {
 		return securitiesFinancingClosingData == null ? Optional.empty() : Optional.of(securitiesFinancingClosingData);
 	}
 
-	public SecuritiesTrade setSecuritiesFinancingClosingData(com.tools20022.repository.entity.SecuritiesFinancing securitiesFinancingClosingData) {
+	public SecuritiesTrade setSecuritiesFinancingClosingData(SecuritiesFinancing securitiesFinancingClosingData) {
 		this.securitiesFinancingClosingData = securitiesFinancingClosingData;
 		return this;
 	}
@@ -1325,7 +1450,7 @@ public class SecuritiesTrade extends Trade {
 		return tradingExecution == null ? tradingExecution = new ArrayList<>() : tradingExecution;
 	}
 
-	public SecuritiesTrade setTradingExecution(List<com.tools20022.repository.entity.SecuritiesTradeExecution> tradingExecution) {
+	public SecuritiesTrade setTradingExecution(List<SecuritiesTradeExecution> tradingExecution) {
 		this.tradingExecution = Objects.requireNonNull(tradingExecution);
 		return this;
 	}
@@ -1334,7 +1459,7 @@ public class SecuritiesTrade extends Trade {
 		return tradeAllocation == null ? tradeAllocation = new ArrayList<>() : tradeAllocation;
 	}
 
-	public SecuritiesTrade setTradeAllocation(List<com.tools20022.repository.entity.Allocation> tradeAllocation) {
+	public SecuritiesTrade setTradeAllocation(List<Allocation> tradeAllocation) {
 		this.tradeAllocation = Objects.requireNonNull(tradeAllocation);
 		return this;
 	}
@@ -1343,7 +1468,7 @@ public class SecuritiesTrade extends Trade {
 		return relatedOrder == null ? Optional.empty() : Optional.of(relatedOrder);
 	}
 
-	public SecuritiesTrade setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+	public SecuritiesTrade setRelatedOrder(SecuritiesOrder relatedOrder) {
 		this.relatedOrder = relatedOrder;
 		return this;
 	}
@@ -1352,7 +1477,7 @@ public class SecuritiesTrade extends Trade {
 		return securitiesFinancingOpeningData == null ? Optional.empty() : Optional.of(securitiesFinancingOpeningData);
 	}
 
-	public SecuritiesTrade setSecuritiesFinancingOpeningData(com.tools20022.repository.entity.SecuritiesFinancing securitiesFinancingOpeningData) {
+	public SecuritiesTrade setSecuritiesFinancingOpeningData(SecuritiesFinancing securitiesFinancingOpeningData) {
 		this.securitiesFinancingOpeningData = securitiesFinancingOpeningData;
 		return this;
 	}

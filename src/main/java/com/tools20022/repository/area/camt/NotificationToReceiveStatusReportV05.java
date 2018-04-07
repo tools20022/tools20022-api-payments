@@ -25,7 +25,6 @@ import com.tools20022.repository.area.CashManagementLatestVersion;
 import com.tools20022.repository.msg.GroupHeader60;
 import com.tools20022.repository.msg.OriginalNotification9;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -117,7 +116,7 @@ public class NotificationToReceiveStatusReportV05 {
 	 * "Set of elements used to provide further details on the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationToReceiveStatusReportV05, GroupHeader60> mmGroupHeader = new MMMessageBuildingBlock<NotificationToReceiveStatusReportV05, GroupHeader60>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,12 +127,14 @@ public class NotificationToReceiveStatusReportV05 {
 			complexType_lazy = () -> GroupHeader60.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationToReceiveStatusReportV05.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader60 getValue(NotificationToReceiveStatusReportV05 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(NotificationToReceiveStatusReportV05 obj, GroupHeader60 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "OrgnlNtfctnAndSts", required = true)
@@ -163,7 +164,7 @@ public class NotificationToReceiveStatusReportV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOriginalNotificationAndStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationToReceiveStatusReportV05, OriginalNotification9> mmOriginalNotificationAndStatus = new MMMessageBuildingBlock<NotificationToReceiveStatusReportV05, OriginalNotification9>() {
 		{
 			xmlTag = "OrgnlNtfctnAndSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,12 +175,14 @@ public class NotificationToReceiveStatusReportV05 {
 			complexType_lazy = () -> OriginalNotification9.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationToReceiveStatusReportV05.class.getMethod("getOriginalNotificationAndStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OriginalNotification9 getValue(NotificationToReceiveStatusReportV05 obj) {
+			return obj.getOriginalNotificationAndStatus();
+		}
+
+		@Override
+		public void setValue(NotificationToReceiveStatusReportV05 obj, OriginalNotification9 value) {
+			obj.setOriginalNotificationAndStatus(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -209,7 +212,7 @@ public class NotificationToReceiveStatusReportV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationToReceiveStatusReportV05, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<NotificationToReceiveStatusReportV05, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,12 +222,14 @@ public class NotificationToReceiveStatusReportV05 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationToReceiveStatusReportV05.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(NotificationToReceiveStatusReportV05 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(NotificationToReceiveStatusReportV05 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.entity.Transport;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -107,7 +108,7 @@ public class TransportPartyRole extends Role {
 	 * "Identifies the transport process for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTransport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TransportPartyRole, Optional<Transport>> mmTransport = new MMBusinessAssociationEnd<TransportPartyRole, Optional<Transport>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TransportPartyRole.mmObject();
@@ -119,6 +120,16 @@ public class TransportPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Transport.mmPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
+		}
+
+		@Override
+		public Optional<Transport> getValue(TransportPartyRole obj) {
+			return obj.getTransport();
+		}
+
+		@Override
+		public void setValue(TransportPartyRole obj, Optional<Transport> value) {
+			obj.setTransport(value.orElse(null));
 		}
 	};
 

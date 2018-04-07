@@ -22,6 +22,9 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.BasicSecuritiesRegistration;
+import com.tools20022.repository.entity.GenericIdentification;
+import com.tools20022.repository.entity.PhysicalDelivery;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -123,7 +126,7 @@ public class SecuritiesCertificate {
 	 * definition} = "Identifier of a certificate assigned by the issuer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNumber = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesCertificate, GenericIdentification> mmNumber = new MMBusinessAssociationEnd<SecuritiesCertificate, GenericIdentification>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
@@ -133,9 +136,19 @@ public class SecuritiesCertificate {
 			definition = "Identifier of a certificate assigned by the issuer.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentificationForSecuritiesCertificate;
+			opposite_lazy = () -> GenericIdentification.mmIdentificationForSecuritiesCertificate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
+			type_lazy = () -> GenericIdentification.mmObject();
+		}
+
+		@Override
+		public GenericIdentification getValue(SecuritiesCertificate obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(SecuritiesCertificate obj, GenericIdentification value) {
+			obj.setNumber(value);
 		}
 	};
 	protected BasicSecuritiesRegistration basicRegistration;
@@ -174,7 +187,7 @@ public class SecuritiesCertificate {
 	 * "Registration process which requires a securities certificate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBasicRegistration = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesCertificate, Optional<BasicSecuritiesRegistration>> mmBasicRegistration = new MMBusinessAssociationEnd<SecuritiesCertificate, Optional<BasicSecuritiesRegistration>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
@@ -183,9 +196,19 @@ public class SecuritiesCertificate {
 			definition = "Registration process which requires a securities certificate.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSecuritiesCertificate;
+			opposite_lazy = () -> BasicSecuritiesRegistration.mmSecuritiesCertificate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
+			type_lazy = () -> BasicSecuritiesRegistration.mmObject();
+		}
+
+		@Override
+		public Optional<BasicSecuritiesRegistration> getValue(SecuritiesCertificate obj) {
+			return obj.getBasicRegistration();
+		}
+
+		@Override
+		public void setValue(SecuritiesCertificate obj, Optional<BasicSecuritiesRegistration> value) {
+			obj.setBasicRegistration(value.orElse(null));
 		}
 	};
 	protected PhysicalDelivery relatedDelivery;
@@ -223,7 +246,7 @@ public class SecuritiesCertificate {
 	 * "Delivery parameters which specify the certificate parameters."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedDelivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesCertificate, Optional<PhysicalDelivery>> mmRelatedDelivery = new MMBusinessAssociationEnd<SecuritiesCertificate, Optional<PhysicalDelivery>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
@@ -232,9 +255,19 @@ public class SecuritiesCertificate {
 			definition = "Delivery parameters which specify the certificate parameters.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmIssuedCertificateNumber;
+			opposite_lazy = () -> PhysicalDelivery.mmIssuedCertificateNumber;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
+			type_lazy = () -> PhysicalDelivery.mmObject();
+		}
+
+		@Override
+		public Optional<PhysicalDelivery> getValue(SecuritiesCertificate obj) {
+			return obj.getRelatedDelivery();
+		}
+
+		@Override
+		public void setValue(SecuritiesCertificate obj, Optional<PhysicalDelivery> value) {
+			obj.setRelatedDelivery(value.orElse(null));
 		}
 	};
 
@@ -245,8 +278,7 @@ public class SecuritiesCertificate {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesCertificate";
 				definition = "Physical representation of a security.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentificationForSecuritiesCertificate, com.tools20022.repository.entity.PhysicalDelivery.mmIssuedCertificateNumber,
-						com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSecuritiesCertificate);
+				associationDomain_lazy = () -> Arrays.asList(GenericIdentification.mmIdentificationForSecuritiesCertificate, PhysicalDelivery.mmIssuedCertificateNumber, BasicSecuritiesRegistration.mmSecuritiesCertificate);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesCertificate.mmNumber, com.tools20022.repository.entity.SecuritiesCertificate.mmBasicRegistration,
 						com.tools20022.repository.entity.SecuritiesCertificate.mmRelatedDelivery);
 			}
@@ -263,7 +295,7 @@ public class SecuritiesCertificate {
 		return number;
 	}
 
-	public SecuritiesCertificate setNumber(com.tools20022.repository.entity.GenericIdentification number) {
+	public SecuritiesCertificate setNumber(GenericIdentification number) {
 		this.number = Objects.requireNonNull(number);
 		return this;
 	}
@@ -272,7 +304,7 @@ public class SecuritiesCertificate {
 		return basicRegistration == null ? Optional.empty() : Optional.of(basicRegistration);
 	}
 
-	public SecuritiesCertificate setBasicRegistration(com.tools20022.repository.entity.BasicSecuritiesRegistration basicRegistration) {
+	public SecuritiesCertificate setBasicRegistration(BasicSecuritiesRegistration basicRegistration) {
 		this.basicRegistration = basicRegistration;
 		return this;
 	}
@@ -281,7 +313,7 @@ public class SecuritiesCertificate {
 		return relatedDelivery == null ? Optional.empty() : Optional.of(relatedDelivery);
 	}
 
-	public SecuritiesCertificate setRelatedDelivery(com.tools20022.repository.entity.PhysicalDelivery relatedDelivery) {
+	public SecuritiesCertificate setRelatedDelivery(PhysicalDelivery relatedDelivery) {
 		this.relatedDelivery = relatedDelivery;
 		return this;
 	}

@@ -193,7 +193,7 @@ public class PaymentTimeCode extends MMCode {
 		}
 	};
 	/**
-	 * Code for payment at end of period after end of month of delivery
+	 * Code for payment at end of period after end of month of delivery.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -211,14 +211,14 @@ public class PaymentTimeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Code for payment at end of period after end of month of delivery"</li>
+	 * "Code for payment at end of period after end of month of delivery."</li>
 	 * </ul>
 	 */
 	public static final PaymentTimeCode EndOfPeriodAfterEndOfDeliveryMonth = new PaymentTimeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfPeriodAfterEndOfDeliveryMonth";
-			definition = "Code for payment at end of period after end of month of delivery";
+			definition = "Code for payment at end of period after end of month of delivery.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PaymentTimeCode.mmObject();
 			codeName = "PRMD";
 		}

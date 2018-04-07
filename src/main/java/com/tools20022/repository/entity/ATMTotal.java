@@ -21,8 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.ImpliedCurrencyAndAmount;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.entity.CardPayment;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -110,7 +110,7 @@ public class ATMTotal {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmATMBalance = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ATMTotal, ImpliedCurrencyAndAmount> mmATMBalance = new MMBusinessAttribute<ATMTotal, ImpliedCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
@@ -122,12 +122,14 @@ public class ATMTotal {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMTotal.class.getMethod("getATMBalance", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ImpliedCurrencyAndAmount getValue(ATMTotal obj) {
+			return obj.getATMBalance();
+		}
+
+		@Override
+		public void setValue(ATMTotal obj, ImpliedCurrencyAndAmount value) {
+			obj.setATMBalance(value);
 		}
 	};
 	protected CurrencyCode currency;
@@ -155,7 +157,7 @@ public class ATMTotal {
 	 * definition} = "Currency of the totals."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ATMTotal, CurrencyCode> mmCurrency = new MMBusinessAttribute<ATMTotal, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
@@ -167,12 +169,14 @@ public class ATMTotal {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMTotal.class.getMethod("getCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(ATMTotal obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(ATMTotal obj, CurrencyCode value) {
+			obj.setCurrency(value);
 		}
 	};
 	protected Number aTMCurrentNumber;
@@ -201,7 +205,7 @@ public class ATMTotal {
 	 * "Total number of units for non-valued media, excluding reject cassette."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmATMCurrentNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ATMTotal, Number> mmATMCurrentNumber = new MMBusinessAttribute<ATMTotal, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
@@ -213,12 +217,14 @@ public class ATMTotal {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMTotal.class.getMethod("getATMCurrentNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(ATMTotal obj) {
+			return obj.getATMCurrentNumber();
+		}
+
+		@Override
+		public void setValue(ATMTotal obj, Number value) {
+			obj.setATMCurrentNumber(value);
 		}
 	};
 	protected Number aTMBalanceNumber;
@@ -247,7 +253,7 @@ public class ATMTotal {
 	 * "Total number of units for non-valued media, including reject cassette."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmATMBalanceNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ATMTotal, Number> mmATMBalanceNumber = new MMBusinessAttribute<ATMTotal, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
@@ -259,12 +265,14 @@ public class ATMTotal {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMTotal.class.getMethod("getATMBalanceNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(ATMTotal obj) {
+			return obj.getATMBalanceNumber();
+		}
+
+		@Override
+		public void setValue(ATMTotal obj, Number value) {
+			obj.setATMBalanceNumber(value);
 		}
 	};
 	protected ImpliedCurrencyAndAmount aTMCurrent;
@@ -293,7 +301,7 @@ public class ATMTotal {
 	 * definition} = "Available amount for dispense in the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmATMCurrent = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ATMTotal, ImpliedCurrencyAndAmount> mmATMCurrent = new MMBusinessAttribute<ATMTotal, ImpliedCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
@@ -305,15 +313,17 @@ public class ATMTotal {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMTotal.class.getMethod("getATMCurrent", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ImpliedCurrencyAndAmount getValue(ATMTotal obj) {
+			return obj.getATMCurrent();
+		}
+
+		@Override
+		public void setValue(ATMTotal obj, ImpliedCurrencyAndAmount value) {
+			obj.setATMCurrent(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CardPayment> relatedCardPayment;
+	protected List<CardPayment> relatedCardPayment;
 	/**
 	 * 
 	 <p>
@@ -347,7 +357,7 @@ public class ATMTotal {
 	 * "Related payments representing the current totals of the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCardPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ATMTotal, List<CardPayment>> mmRelatedCardPayment = new MMBusinessAssociationEnd<ATMTotal, List<CardPayment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
@@ -355,9 +365,19 @@ public class ATMTotal {
 			name = "RelatedCardPayment";
 			definition = "Related payments representing the current totals of the ATM.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPayment.mmATMTotal;
+			opposite_lazy = () -> CardPayment.mmATMTotal;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
+			type_lazy = () -> CardPayment.mmObject();
+		}
+
+		@Override
+		public List<CardPayment> getValue(ATMTotal obj) {
+			return obj.getRelatedCardPayment();
+		}
+
+		@Override
+		public void setValue(ATMTotal obj, List<CardPayment> value) {
+			obj.setRelatedCardPayment(value);
 		}
 	};
 
@@ -368,7 +388,7 @@ public class ATMTotal {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMTotal";
 				definition = "Current totals of the ATM.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPayment.mmATMTotal);
+				associationDomain_lazy = () -> Arrays.asList(CardPayment.mmATMTotal);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ATMTotal.mmATMBalance, com.tools20022.repository.entity.ATMTotal.mmCurrency, com.tools20022.repository.entity.ATMTotal.mmATMCurrentNumber,
 						com.tools20022.repository.entity.ATMTotal.mmATMBalanceNumber, com.tools20022.repository.entity.ATMTotal.mmATMCurrent, com.tools20022.repository.entity.ATMTotal.mmRelatedCardPayment);
 			}
@@ -430,7 +450,7 @@ public class ATMTotal {
 		return relatedCardPayment == null ? relatedCardPayment = new ArrayList<>() : relatedCardPayment;
 	}
 
-	public ATMTotal setRelatedCardPayment(List<com.tools20022.repository.entity.CardPayment> relatedCardPayment) {
+	public ATMTotal setRelatedCardPayment(List<CardPayment> relatedCardPayment) {
 		this.relatedCardPayment = Objects.requireNonNull(relatedCardPayment);
 		return this;
 	}

@@ -29,6 +29,7 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max15NumericText;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -133,7 +134,7 @@ public class CurrencyControlHeader3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlHeader3, Max35Text> mmMessageIdentification = new MMMessageAttribute<CurrencyControlHeader3, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlHeader3.mmObject();
 			isDerived = false;
@@ -144,6 +145,16 @@ public class CurrencyControlHeader3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(CurrencyControlHeader3 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(CurrencyControlHeader3 obj, Max35Text value) {
+			obj.setMessageIdentification(value);
 		}
 	};
 	@XmlElement(name = "CreDtTm", required = true)
@@ -175,7 +186,7 @@ public class CurrencyControlHeader3 {
 	 * definition} = "Date and time at which the message was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlHeader3, ISODateTime> mmCreationDateTime = new MMMessageAttribute<CurrencyControlHeader3, ISODateTime>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlHeader3.mmObject();
 			isDerived = false;
@@ -186,6 +197,16 @@ public class CurrencyControlHeader3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public ISODateTime getValue(CurrencyControlHeader3 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(CurrencyControlHeader3 obj, ISODateTime value) {
+			obj.setCreationDateTime(value);
 		}
 	};
 	@XmlElement(name = "NbOfItms", required = true)
@@ -218,7 +239,7 @@ public class CurrencyControlHeader3 {
 	 * definition} = "Number of individual items contained in the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfItems = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlHeader3, Max15NumericText> mmNumberOfItems = new MMMessageAttribute<CurrencyControlHeader3, Max15NumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlHeader3.mmObject();
 			isDerived = false;
@@ -229,6 +250,16 @@ public class CurrencyControlHeader3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
+		}
+
+		@Override
+		public Max15NumericText getValue(CurrencyControlHeader3 obj) {
+			return obj.getNumberOfItems();
+		}
+
+		@Override
+		public void setValue(CurrencyControlHeader3 obj, Max15NumericText value) {
+			obj.setNumberOfItems(value);
 		}
 	};
 	@XmlElement(name = "InitgPty", required = true)
@@ -259,7 +290,7 @@ public class CurrencyControlHeader3 {
 	 * definition} = "Party that initiates the instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInitiatingParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlHeader3, Party28Choice> mmInitiatingParty = new MMMessageAssociationEnd<CurrencyControlHeader3, Party28Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlHeader3.mmObject();
 			isDerived = false;
@@ -271,6 +302,16 @@ public class CurrencyControlHeader3 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Party28Choice.mmObject();
+		}
+
+		@Override
+		public Party28Choice getValue(CurrencyControlHeader3 obj) {
+			return obj.getInitiatingParty();
+		}
+
+		@Override
+		public void setValue(CurrencyControlHeader3 obj, Party28Choice value) {
+			obj.setInitiatingParty(value);
 		}
 	};
 	@XmlElement(name = "FwdgAgt")
@@ -302,7 +343,7 @@ public class CurrencyControlHeader3 {
 	 * definition} = "Agent which forwards the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmForwardingAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlHeader3, Optional<BranchAndFinancialInstitutionIdentification5>> mmForwardingAgent = new MMMessageAssociationEnd<CurrencyControlHeader3, Optional<BranchAndFinancialInstitutionIdentification5>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlHeader3.mmObject();
 			isDerived = false;
@@ -313,7 +354,17 @@ public class CurrencyControlHeader3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public Optional<BranchAndFinancialInstitutionIdentification5> getValue(CurrencyControlHeader3 obj) {
+			return obj.getForwardingAgent();
+		}
+
+		@Override
+		public void setValue(CurrencyControlHeader3 obj, Optional<BranchAndFinancialInstitutionIdentification5> value) {
+			obj.setForwardingAgent(value.orElse(null));
 		}
 	};
 
@@ -372,7 +423,7 @@ public class CurrencyControlHeader3 {
 		return forwardingAgent == null ? Optional.empty() : Optional.of(forwardingAgent);
 	}
 
-	public CurrencyControlHeader3 setForwardingAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 forwardingAgent) {
+	public CurrencyControlHeader3 setForwardingAgent(BranchAndFinancialInstitutionIdentification5 forwardingAgent) {
 		this.forwardingAgent = forwardingAgent;
 		return this;
 	}

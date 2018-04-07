@@ -124,7 +124,7 @@ public class SearchCriteria1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SearchCriteria1Choice, AccountAndParties1> mmAccount = new MMMessageAttribute<SearchCriteria1Choice, AccountAndParties1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.SearchCriteria1Choice.mmObject();
 			isDerived = false;
@@ -135,6 +135,16 @@ public class SearchCriteria1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> AccountAndParties1.mmObject();
+		}
+
+		@Override
+		public AccountAndParties1 getValue(SearchCriteria1Choice obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(SearchCriteria1Choice obj, AccountAndParties1 value) {
+			obj.setAccount(value);
 		}
 	};
 	@XmlElement(name = "CstmrId", required = true)
@@ -169,7 +179,7 @@ public class SearchCriteria1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCustomerIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SearchCriteria1Choice, CustomerIdentification1> mmCustomerIdentification = new MMMessageAttribute<SearchCriteria1Choice, CustomerIdentification1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.SearchCriteria1Choice.mmObject();
 			isDerived = false;
@@ -180,6 +190,16 @@ public class SearchCriteria1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> CustomerIdentification1.mmObject();
+		}
+
+		@Override
+		public CustomerIdentification1 getValue(SearchCriteria1Choice obj) {
+			return obj.getCustomerIdentification();
+		}
+
+		@Override
+		public void setValue(SearchCriteria1Choice obj, CustomerIdentification1 value) {
+			obj.setCustomerIdentification(value);
 		}
 	};
 	@XmlElement(name = "PmtInstrm", required = true)
@@ -214,7 +234,7 @@ public class SearchCriteria1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPaymentInstrument = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SearchCriteria1Choice, PaymentInstrumentType1> mmPaymentInstrument = new MMMessageAttribute<SearchCriteria1Choice, PaymentInstrumentType1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.SearchCriteria1Choice.mmObject();
 			isDerived = false;
@@ -225,6 +245,16 @@ public class SearchCriteria1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> PaymentInstrumentType1.mmObject();
+		}
+
+		@Override
+		public PaymentInstrumentType1 getValue(SearchCriteria1Choice obj) {
+			return obj.getPaymentInstrument();
+		}
+
+		@Override
+		public void setValue(SearchCriteria1Choice obj, PaymentInstrumentType1 value) {
+			obj.setPaymentInstrument(value);
 		}
 	};
 	@XmlElement(name = "OrgnlTxNb", required = true)
@@ -256,7 +286,7 @@ public class SearchCriteria1Choice {
 	 * definition} = "Specifies the original transaction number."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalTransactionNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SearchCriteria1Choice, List<RequestType1>> mmOriginalTransactionNumber = new MMMessageAttribute<SearchCriteria1Choice, List<RequestType1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.SearchCriteria1Choice.mmObject();
 			isDerived = false;
@@ -266,6 +296,16 @@ public class SearchCriteria1Choice {
 			definition = "Specifies the original transaction number.";
 			minOccurs = 1;
 			complexType_lazy = () -> RequestType1.mmObject();
+		}
+
+		@Override
+		public List<RequestType1> getValue(SearchCriteria1Choice obj) {
+			return obj.getOriginalTransactionNumber();
+		}
+
+		@Override
+		public void setValue(SearchCriteria1Choice obj, List<RequestType1> value) {
+			obj.setOriginalTransactionNumber(value);
 		}
 	};
 

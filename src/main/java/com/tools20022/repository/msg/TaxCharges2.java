@@ -106,11 +106,11 @@ public class TaxCharges2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Unique reference to unambiguously identify the nature of the tax levied, such as Value Added Tax (VAT)"
+	 * "Unique reference to unambiguously identify the nature of the tax levied, such as Value Added Tax (VAT)."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxCharges2, Optional<Max35Text>> mmIdentification = new MMMessageAttribute<TaxCharges2, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxCharges2.mmObject();
@@ -118,10 +118,20 @@ public class TaxCharges2 {
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
-			definition = "Unique reference to unambiguously identify the nature of the tax levied, such as Value Added Tax (VAT)";
+			definition = "Unique reference to unambiguously identify the nature of the tax levied, such as Value Added Tax (VAT).";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxCharges2 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(TaxCharges2 obj, Optional<Max35Text> value) {
+			obj.setIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rate")
@@ -157,7 +167,7 @@ public class TaxCharges2 {
 	 * definition} = "Rate used to calculate the tax."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxCharges2, Optional<PercentageRate>> mmRate = new MMMessageAttribute<TaxCharges2, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxCharges2.mmObject();
@@ -169,6 +179,16 @@ public class TaxCharges2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
+		}
+
+		@Override
+		public Optional<PercentageRate> getValue(TaxCharges2 obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(TaxCharges2 obj, Optional<PercentageRate> value) {
+			obj.setRate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt")
@@ -205,7 +225,7 @@ public class TaxCharges2 {
 	 * "Amount of money resulting from the calculation of the tax."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxCharges2, Optional<ActiveOrHistoricCurrencyAndAmount>> mmAmount = new MMMessageAttribute<TaxCharges2, Optional<ActiveOrHistoricCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxCharges2.mmObject();
@@ -217,6 +237,16 @@ public class TaxCharges2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyAndAmount> getValue(TaxCharges2 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(TaxCharges2 obj, Optional<ActiveOrHistoricCurrencyAndAmount> value) {
+			obj.setAmount(value.orElse(null));
 		}
 	};
 

@@ -2233,7 +2233,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * Counterparty has not sent an instructon to receive. Check with
+	 * Counterparty has not sent an instruction to receive. Check with
 	 * counterparty.
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -2252,7 +2252,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Counterparty has not sent an instructon to receive. Check with counterparty."
+	 * "Counterparty has not sent an instruction to receive. Check with counterparty."
 	 * </li>
 	 * </ul>
 	 */
@@ -2260,7 +2260,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AwaitingCounterpartyReceipt";
-			definition = "Counterparty has not sent an instructon to receive. Check with counterparty.";
+			definition = "Counterparty has not sent an instruction to receive. Check with counterparty.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PendingSettlementStatusReasonCode.mmObject();
 			codeName = "CYIN";
 		}

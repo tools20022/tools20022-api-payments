@@ -28,15 +28,17 @@ import com.tools20022.metamodel.MMBusinessElementType;
  * 
  * @see MMBusinessAttribute#checkBusinessAttributeHasExactlyOneType
  */
-public class DeriveMMBusinessAttribute_businessElementType implements Function<MMBusinessAttribute, MMBusinessElementType> {
+public class DeriveMMBusinessAttribute_businessElementType implements Function<MMBusinessAttribute<?,?>, MMBusinessElementType> {
 
 	/**
 	 * Derived direct reference to the type of the BusinessElement.
 	 */
 	@Override
-	public MMBusinessElementType apply(MMBusinessAttribute mmBean) {
-		if( mmBean.getSimpleType().isPresent()) 
+	public MMBusinessElementType apply(MMBusinessAttribute<?,?> mmBean) {
+		if( mmBean.getSimpleType().isPresent()) {
 			return mmBean.getSimpleType().get();
+		}
+			
 		else if ( mmBean.getComplexType().isPresent()) 
 			return mmBean.getComplexType().get();
 		else

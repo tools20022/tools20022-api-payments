@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SettlementPartyRole;
+import com.tools20022.repository.entity.StandingSettlementInstruction;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -78,7 +79,7 @@ import java.util.Objects;
 public class SSIDatabaseProvider extends SettlementPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.StandingSettlementInstruction> standingSettlementDatabase;
+	protected List<StandingSettlementInstruction> standingSettlementDatabase;
 	/**
 	 * 
 	 <p>
@@ -114,7 +115,7 @@ public class SSIDatabaseProvider extends SettlementPartyRole {
 	 * "Settlement instruction database information which is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStandingSettlementDatabase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SSIDatabaseProvider, List<StandingSettlementInstruction>> mmStandingSettlementDatabase = new MMBusinessAssociationEnd<SSIDatabaseProvider, List<StandingSettlementInstruction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SSIDatabaseProvider.mmObject();
@@ -122,9 +123,19 @@ public class SSIDatabaseProvider extends SettlementPartyRole {
 			name = "StandingSettlementDatabase";
 			definition = "Settlement instruction database information which is provided.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmSSIDatabaseProvider;
+			opposite_lazy = () -> StandingSettlementInstruction.mmSSIDatabaseProvider;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
+			type_lazy = () -> StandingSettlementInstruction.mmObject();
+		}
+
+		@Override
+		public List<StandingSettlementInstruction> getValue(SSIDatabaseProvider obj) {
+			return obj.getStandingSettlementDatabase();
+		}
+
+		@Override
+		public void setValue(SSIDatabaseProvider obj, List<StandingSettlementInstruction> value) {
+			obj.setStandingSettlementDatabase(value);
 		}
 	};
 
@@ -135,7 +146,7 @@ public class SSIDatabaseProvider extends SettlementPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SSIDatabaseProvider";
 				definition = "Provider of a standing settlement instruction (SSI) database.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.StandingSettlementInstruction.mmSSIDatabaseProvider);
+				associationDomain_lazy = () -> Arrays.asList(StandingSettlementInstruction.mmSSIDatabaseProvider);
 				superType_lazy = () -> SettlementPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SSIDatabaseProvider.mmStandingSettlementDatabase);
 			}
@@ -152,7 +163,7 @@ public class SSIDatabaseProvider extends SettlementPartyRole {
 		return standingSettlementDatabase == null ? standingSettlementDatabase = new ArrayList<>() : standingSettlementDatabase;
 	}
 
-	public SSIDatabaseProvider setStandingSettlementDatabase(List<com.tools20022.repository.entity.StandingSettlementInstruction> standingSettlementDatabase) {
+	public SSIDatabaseProvider setStandingSettlementDatabase(List<StandingSettlementInstruction> standingSettlementDatabase) {
 		this.standingSettlementDatabase = Objects.requireNonNull(standingSettlementDatabase);
 		return this;
 	}

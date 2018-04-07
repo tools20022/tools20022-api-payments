@@ -78,7 +78,7 @@ public class BookingUnitCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Each partial execution is a bookable unit
+	 * Each partial execution is a bookable unit.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -98,7 +98,7 @@ public class BookingUnitCode extends MMCode {
 	 * name} = "EachPartial"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Each partial execution is a bookable unit"</li>
+	 * definition} = "Each partial execution is a bookable unit."</li>
 	 * </ul>
 	 */
 	public static final BookingUnitCode EachPartial = new BookingUnitCode() {
@@ -106,7 +106,7 @@ public class BookingUnitCode extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "590 value 0"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EachPartial";
-			definition = "Each partial execution is a bookable unit";
+			definition = "Each partial execution is a bookable unit.";
 			owner_lazy = () -> com.tools20022.repository.codeset.BookingUnitCode.mmObject();
 			codeName = "EACP";
 		}

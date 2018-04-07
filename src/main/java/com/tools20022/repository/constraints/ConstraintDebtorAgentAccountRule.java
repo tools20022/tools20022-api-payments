@@ -20,8 +20,8 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.msg.CreditTransferTransaction23;
-import com.tools20022.repository.msg.PaymentComplementaryInformation6;
+import com.tools20022.repository.msg.CreditTransferTransaction31;
+import com.tools20022.repository.msg.PaymentComplementaryInformation7;
 
 /**
  * If DebtorAgentAccount is present, then DebtorAgent must be present.
@@ -34,8 +34,8 @@ public class ConstraintDebtorAgentAccountRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23
-	 * CreditTransferTransaction23}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation7
+	 * PaymentComplementaryInformation7}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/DebtorAgentAccount&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/DebtorAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -52,18 +52,18 @@ public class ConstraintDebtorAgentAccountRule {
 	 * "If DebtorAgentAccount is present, then DebtorAgent must be present."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCreditTransferTransaction23 = new MMConstraint() {
+	public static final MMConstraint<PaymentComplementaryInformation7> forPaymentComplementaryInformation7 = new MMConstraint<PaymentComplementaryInformation7>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DebtorAgentAccountRule";
 			definition = "If DebtorAgentAccount is present, then DebtorAgent must be present.";
-			owner_lazy = () -> CreditTransferTransaction23.mmObject();
+			owner_lazy = () -> PaymentComplementaryInformation7.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/DebtorAgentAccount</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/DebtorAgent</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction23((CreditTransferTransaction23) obj);
+		public void executeValidator(PaymentComplementaryInformation7 obj) throws Exception {
+			checkPaymentComplementaryInformation7(obj);
 		}
 	};
 	/**
@@ -72,8 +72,8 @@ public class ConstraintDebtorAgentAccountRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.PaymentComplementaryInformation6
-	 * PaymentComplementaryInformation6}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31
+	 * CreditTransferTransaction31}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/DebtorAgentAccount&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/DebtorAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -90,32 +90,32 @@ public class ConstraintDebtorAgentAccountRule {
 	 * "If DebtorAgentAccount is present, then DebtorAgent must be present."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentComplementaryInformation6 = new MMConstraint() {
+	public static final MMConstraint<CreditTransferTransaction31> forCreditTransferTransaction31 = new MMConstraint<CreditTransferTransaction31>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DebtorAgentAccountRule";
 			definition = "If DebtorAgentAccount is present, then DebtorAgent must be present.";
-			owner_lazy = () -> PaymentComplementaryInformation6.mmObject();
+			owner_lazy = () -> CreditTransferTransaction31.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/DebtorAgentAccount</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/DebtorAgent</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentComplementaryInformation6((PaymentComplementaryInformation6) obj);
+		public void executeValidator(CreditTransferTransaction31 obj) throws Exception {
+			checkCreditTransferTransaction31(obj);
 		}
 	};
 
 	/**
 	 * If DebtorAgentAccount is present, then DebtorAgent must be present.
 	 */
-	public static void checkCreditTransferTransaction23(CreditTransferTransaction23 obj) throws Exception {
+	public static void checkPaymentComplementaryInformation7(PaymentComplementaryInformation7 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
 	/**
 	 * If DebtorAgentAccount is present, then DebtorAgent must be present.
 	 */
-	public static void checkPaymentComplementaryInformation6(PaymentComplementaryInformation6 obj) throws Exception {
+	public static void checkCreditTransferTransaction31(CreditTransferTransaction31 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

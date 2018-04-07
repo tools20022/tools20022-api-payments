@@ -25,50 +25,11 @@ import com.tools20022.repository.msg.OriginalNotificationReference7;
 import com.tools20022.repository.msg.OriginalNotificationReference8;
 
 /**
- * If TotalAmount is present, then all occurrences of Item/Amount must have the
- * same currency as the currency of TotalAmount.
+ * If TotalAmount is present, then all occurrences of OriginalItem/Amount must
+ * have the same currency as the currency of TotalAmount.
  */
 public class ConstraintTotalAmountAndAmount1Rule {
 
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.AccountNotification13
-	 * AccountNotification13}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
-	 * expression} =
-	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"EqualToNode\"&gt;&lt;leftOperand&gt;/Item[*]/Amount/@Currency&lt;/leftOperand&gt;&lt;rightOperand&gt;/TotalAmount/@Currency&lt;/rightOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/TotalAmount&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
-	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "TotalAmountAndAmount1Rule"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "If TotalAmount is present, then all occurrences of Item/Amount must have the same currency as the currency of TotalAmount."
-	 * </li>
-	 * </ul>
-	 */
-	public static final MMConstraint forAccountNotification13 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "TotalAmountAndAmount1Rule";
-			definition = "If TotalAmount is present, then all occurrences of Item/Amount must have the same currency as the currency of TotalAmount.";
-			owner_lazy = () -> AccountNotification13.mmObject();
-			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"EqualToNode\"><leftOperand>/Item[*]/Amount/@Currency</leftOperand><rightOperand>/TotalAmount/@Currency</rightOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/TotalAmount</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkAccountNotification13((AccountNotification13) obj);
-		}
-	};
 	/**
 	 * 
 	 <p>
@@ -94,7 +55,7 @@ public class ConstraintTotalAmountAndAmount1Rule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOriginalNotificationReference8 = new MMConstraint() {
+	public static final MMConstraint<OriginalNotificationReference8> forOriginalNotificationReference8 = new MMConstraint<OriginalNotificationReference8>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalAmountAndAmount1Rule";
@@ -104,8 +65,47 @@ public class ConstraintTotalAmountAndAmount1Rule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalNotificationReference8((OriginalNotificationReference8) obj);
+		public void executeValidator(OriginalNotificationReference8 obj) throws Exception {
+			checkOriginalNotificationReference8(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.AccountNotification13
+	 * AccountNotification13}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition&gt;&lt;ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"EqualToNode\"&gt;&lt;leftOperand&gt;/Item[*]/Amount/@Currency&lt;/leftOperand&gt;&lt;rightOperand&gt;/TotalAmount/@Currency&lt;/rightOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/TotalAmount&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "TotalAmountAndAmount1Rule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If TotalAmount is present, then all occurrences of Item/Amount must have the same currency as the currency of TotalAmount."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<AccountNotification13> forAccountNotification13 = new MMConstraint<AccountNotification13>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "TotalAmountAndAmount1Rule";
+			definition = "If TotalAmount is present, then all occurrences of Item/Amount must have the same currency as the currency of TotalAmount.";
+			owner_lazy = () -> AccountNotification13.mmObject();
+			expression = "<RuleDefinition><ComplexRule xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"EqualToNode\"><leftOperand>/Item[*]/Amount/@Currency</leftOperand><rightOperand>/TotalAmount/@Currency</rightOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/TotalAmount</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>";
+		}
+
+		@Override
+		public void executeValidator(AccountNotification13 obj) throws Exception {
+			checkAccountNotification13(obj);
 		}
 	};
 	/**
@@ -133,7 +133,7 @@ public class ConstraintTotalAmountAndAmount1Rule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOriginalNotificationReference7 = new MMConstraint() {
+	public static final MMConstraint<OriginalNotificationReference7> forOriginalNotificationReference7 = new MMConstraint<OriginalNotificationReference7>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalAmountAndAmount1Rule";
@@ -143,24 +143,24 @@ public class ConstraintTotalAmountAndAmount1Rule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalNotificationReference7((OriginalNotificationReference7) obj);
+		public void executeValidator(OriginalNotificationReference7 obj) throws Exception {
+			checkOriginalNotificationReference7(obj);
 		}
 	};
-
-	/**
-	 * If TotalAmount is present, then all occurrences of Item/Amount must have
-	 * the same currency as the currency of TotalAmount.
-	 */
-	public static void checkAccountNotification13(AccountNotification13 obj) throws Exception {
-		throw new NotImplementedConstraintException();
-	}
 
 	/**
 	 * If TotalAmount is present, then all occurrences of OriginalItem/Amount
 	 * must have the same currency as the currency of TotalAmount.
 	 */
 	public static void checkOriginalNotificationReference8(OriginalNotificationReference8 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If TotalAmount is present, then all occurrences of Item/Amount must have
+	 * the same currency as the currency of TotalAmount.
+	 */
+	public static void checkAccountNotification13(AccountNotification13 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 

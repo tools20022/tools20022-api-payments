@@ -112,7 +112,7 @@ public class ShipmentDateRange2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSubQuantityValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ShipmentDateRange2, DecimalNumber> mmSubQuantityValue = new MMMessageAttribute<ShipmentDateRange2, DecimalNumber>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ShipmentDateRange2.mmObject();
 			isDerived = false;
@@ -123,6 +123,16 @@ public class ShipmentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public DecimalNumber getValue(ShipmentDateRange2 obj) {
+			return obj.getSubQuantityValue();
+		}
+
+		@Override
+		public void setValue(ShipmentDateRange2 obj, DecimalNumber value) {
+			obj.setSubQuantityValue(value);
 		}
 	};
 	@XmlElement(name = "EarlstShipmntDt")
@@ -159,7 +169,7 @@ public class ShipmentDateRange2 {
 	 * definition} = "Earliest date whereby the goods must be shipped."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEarliestShipmentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ShipmentDateRange2, Optional<ISODate>> mmEarliestShipmentDate = new MMMessageAttribute<ShipmentDateRange2, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> ShipmentDateRange.mmEarliestShipmentDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ShipmentDateRange2.mmObject();
@@ -171,6 +181,16 @@ public class ShipmentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(ShipmentDateRange2 obj) {
+			return obj.getEarliestShipmentDate();
+		}
+
+		@Override
+		public void setValue(ShipmentDateRange2 obj, Optional<ISODate> value) {
+			obj.setEarliestShipmentDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "LatstShipmntDt")
@@ -207,7 +227,7 @@ public class ShipmentDateRange2 {
 	 * definition} = "Latest date whereby the goods must be shipped."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLatestShipmentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ShipmentDateRange2, Optional<ISODate>> mmLatestShipmentDate = new MMMessageAttribute<ShipmentDateRange2, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> ShipmentDateRange.mmLatestShipmentDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ShipmentDateRange2.mmObject();
@@ -219,6 +239,16 @@ public class ShipmentDateRange2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(ShipmentDateRange2 obj) {
+			return obj.getLatestShipmentDate();
+		}
+
+		@Override
+		public void setValue(ShipmentDateRange2 obj, Optional<ISODate> value) {
+			obj.setLatestShipmentDate(value.orElse(null));
 		}
 	};
 

@@ -24,10 +24,9 @@ import com.tools20022.repository.codeset.AddressTypeCode;
 import com.tools20022.repository.datatype.Max16Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
-import com.tools20022.repository.entity.ContactPoint;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -175,6 +174,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.repository.msg.NameAndAddress10#mmAddress
  * NameAndAddress10.mmAddress}</li>
  * <li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceLocation2#mmRemittanceLocationPostalAddress
+ * RemittanceLocation2.mmRemittanceLocationPostalAddress}</li>
+ * <li>
  * {@linkplain com.tools20022.repository.msg.PartyIdentification42#mmPostalAddress
  * PartyIdentification42.mmPostalAddress}</li>
  * <li>
@@ -186,6 +188,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.msg.PartyIdentification77#mmPostalAddress
  * PartyIdentification77.mmPostalAddress}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.Organisation20#mmBusinessAddress
+ * Organisation20.mmBusinessAddress}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.Organisation20#mmOperationalAddress
+ * Organisation20.mmOperationalAddress}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Organisation20#mmLegalAddress
+ * Organisation20.mmLegalAddress}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification125#mmPostalAddress
+ * PartyIdentification125.mmPostalAddress}</li>
  * </ul>
  * </li>
  * <li>
@@ -260,7 +273,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Specifies the type of address."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAddressType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, AddressTypeCode> mmAddressType = new MMBusinessAttribute<PostalAddress, AddressTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmAddressType, PostalAddress11.mmAddressType, PostalAddress19.mmAddressType);
 			isDerived = false;
@@ -273,12 +286,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> AddressTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getAddressType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AddressTypeCode getValue(PostalAddress obj) {
+			return obj.getAddressType();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, AddressTypeCode value) {
+			obj.setAddressType(value);
 		}
 	};
 	protected Max35Text streetName;
@@ -324,7 +339,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Name of a street or thoroughfare."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStreetName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmStreetName = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmStreetName, PostalAddress11.mmStreetName, PostalAddress19.mmStreetName);
 			isDerived = false;
@@ -338,12 +353,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getStreetName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getStreetName();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setStreetName(value);
 		}
 	};
 	protected Max35Text streetBuildingIdentification;
@@ -387,7 +404,7 @@ public class PostalAddress extends ContactPoint {
 	 * "Number that identifies the position of a building on a street."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStreetBuildingIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmStreetBuildingIdentification = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmBuildingNumber, PostalAddress11.mmBuildingNumber, PostalAddress19.mmBuildingNumber);
 			isDerived = false;
@@ -400,12 +417,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getStreetBuildingIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getStreetBuildingIdentification();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setStreetBuildingIdentification(value);
 		}
 	};
 	protected Max16Text postCodeIdentification;
@@ -447,7 +466,7 @@ public class PostalAddress extends ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPostCodeIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max16Text> mmPostCodeIdentification = new MMBusinessAttribute<PostalAddress, Max16Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmPostCode, PostalAddress11.mmPostCode, PostalAddress19.mmPostCode);
 			isDerived = false;
@@ -460,12 +479,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max16Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getPostCodeIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max16Text getValue(PostalAddress obj) {
+			return obj.getPostCodeIdentification();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max16Text value) {
+			obj.setPostCodeIdentification(value);
 		}
 	};
 	protected Max35Text townName;
@@ -490,6 +511,9 @@ public class PostalAddress extends ContactPoint {
 	 * PostalAddress11.mmTownName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress19#mmTownName
 	 * PostalAddress19.mmTownName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth1#mmCityOfBirth
+	 * DateAndPlaceOfBirth1.mmCityOfBirth}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -510,9 +534,9 @@ public class PostalAddress extends ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTownName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmTownName = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmTownName, DateAndPlaceOfBirth.mmCityOfBirth, PostalAddress11.mmTownName, PostalAddress19.mmTownName);
+			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmTownName, DateAndPlaceOfBirth.mmCityOfBirth, PostalAddress11.mmTownName, PostalAddress19.mmTownName, DateAndPlaceOfBirth1.mmCityOfBirth);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -523,12 +547,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getTownName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getTownName();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setTownName(value);
 		}
 	};
 	protected Max35Text state;
@@ -572,7 +598,7 @@ public class PostalAddress extends ContactPoint {
 	 * "Organised political community or area forming a part of a federation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmState = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmState = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmCountrySubDivision, PostalAddress11.mmCountrySubDivision, PostalAddress19.mmCountrySubDivision);
 			isDerived = false;
@@ -585,12 +611,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getState", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getState();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setState(value);
 		}
 	};
 	protected Max35Text buildingName;
@@ -627,7 +655,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Name of the building or house."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBuildingName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmBuildingName = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress11.mmBuildingName);
 			isDerived = false;
@@ -640,12 +668,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getBuildingName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getBuildingName();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setBuildingName(value);
 		}
 	};
 	protected Max16Text floor;
@@ -681,7 +711,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Floor or storey within a building."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFloor = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max16Text> mmFloor = new MMBusinessAttribute<PostalAddress, Max16Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress11.mmFloor);
 			isDerived = false;
@@ -694,12 +724,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max16Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getFloor", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max16Text getValue(PostalAddress obj) {
+			return obj.getFloor();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max16Text value) {
+			obj.setFloor(value);
 		}
 	};
 	protected Max35Text districtName;
@@ -736,7 +768,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Name of a district, ie, a part of a town or region."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDistrictName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmDistrictName = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress19.mmDistrictName);
 			isDerived = false;
@@ -749,12 +781,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getDistrictName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getDistrictName();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setDistrictName(value);
 		}
 	};
 	protected Max35Text regionIdentification;
@@ -793,7 +827,7 @@ public class PostalAddress extends ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRegionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmRegionIdentification = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ResidenceLocation1Choice.mmArea);
 			isDerived = false;
@@ -806,12 +840,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getRegionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getRegionIdentification();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setRegionIdentification(value);
 		}
 	};
 	protected Max35Text countyIdentification;
@@ -848,7 +884,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Identifier of a county."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCountyIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmCountyIdentification = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress19.mmTownLocationName);
 			isDerived = false;
@@ -861,12 +897,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getCountyIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getCountyIdentification();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setCountyIdentification(value);
 		}
 	};
 	protected Max16Text postOfficeBox;
@@ -904,7 +942,7 @@ public class PostalAddress extends ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPostOfficeBox = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max16Text> mmPostOfficeBox = new MMBusinessAttribute<PostalAddress, Max16Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress11.mmPostBox);
 			isDerived = false;
@@ -917,12 +955,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max16Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getPostOfficeBox", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max16Text getValue(PostalAddress obj) {
+			return obj.getPostOfficeBox();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max16Text value) {
+			obj.setPostOfficeBox(value);
 		}
 	};
 	protected Max35Text province;
@@ -941,6 +981,12 @@ public class PostalAddress extends ContactPoint {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth#mmProvinceOfBirth
 	 * DateAndPlaceOfBirth.mmProvinceOfBirth}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.IndividualPerson19#mmProvinceOfBirth
+	 * IndividualPerson19.mmProvinceOfBirth}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth1#mmProvinceOfBirth
+	 * DateAndPlaceOfBirth1.mmProvinceOfBirth}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -961,9 +1007,9 @@ public class PostalAddress extends ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProvince = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmProvince = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(DateAndPlaceOfBirth.mmProvinceOfBirth);
+			derivation_lazy = () -> Arrays.asList(DateAndPlaceOfBirth.mmProvinceOfBirth, IndividualPerson19.mmProvinceOfBirth, DateAndPlaceOfBirth1.mmProvinceOfBirth);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -974,12 +1020,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getProvince", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getProvince();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setProvince(value);
 		}
 	};
 	protected Max70Text department;
@@ -1023,7 +1071,7 @@ public class PostalAddress extends ContactPoint {
 	 * "Identification of a division of a large organisation or building."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDepartment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max70Text> mmDepartment = new MMBusinessAttribute<PostalAddress, Max70Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmDepartment, PostalAddress11.mmDepartment, PostalAddress19.mmDepartment);
 			isDerived = false;
@@ -1036,12 +1084,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getDepartment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max70Text getValue(PostalAddress obj) {
+			return obj.getDepartment();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max70Text value) {
+			obj.setDepartment(value);
 		}
 	};
 	protected Max70Text subDepartment;
@@ -1085,7 +1135,7 @@ public class PostalAddress extends ContactPoint {
 	 * "Identification of a sub-division of a large organisation or building."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSubDepartment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max70Text> mmSubDepartment = new MMBusinessAttribute<PostalAddress, Max70Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmSubDepartment, PostalAddress11.mmSubDepartment, PostalAddress19.mmSubDepartment);
 			isDerived = false;
@@ -1098,12 +1148,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getSubDepartment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max70Text getValue(PostalAddress obj) {
+			return obj.getSubDepartment();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max70Text value) {
+			obj.setSubDepartment(value);
 		}
 	};
 	protected Location location;
@@ -1139,7 +1191,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Specifies a place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PostalAddress, com.tools20022.repository.entity.Location> mmLocation = new MMBusinessAssociationEnd<PostalAddress, com.tools20022.repository.entity.Location>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1151,6 +1203,16 @@ public class PostalAddress extends ContactPoint {
 			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmAddress;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.Location getValue(PostalAddress obj) {
+			return obj.getLocation();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, com.tools20022.repository.entity.Location value) {
+			obj.setLocation(value);
 		}
 	};
 	protected ChequeIssue chequeIssue;
@@ -1188,7 +1250,7 @@ public class PostalAddress extends ContactPoint {
 	 * "Cheque issue information for which a delivery address is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmChequeIssue = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PostalAddress, com.tools20022.repository.entity.ChequeIssue> mmChequeIssue = new MMBusinessAssociationEnd<PostalAddress, com.tools20022.repository.entity.ChequeIssue>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1200,6 +1262,16 @@ public class PostalAddress extends ContactPoint {
 			opposite_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmDeliverTo;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.ChequeIssue getValue(PostalAddress obj) {
+			return obj.getChequeIssue();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, com.tools20022.repository.entity.ChequeIssue value) {
+			obj.setChequeIssue(value);
 		}
 	};
 	protected Country country;
@@ -1246,7 +1318,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Country of the address."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PostalAddress, com.tools20022.repository.entity.Country> mmCountry = new MMBusinessAssociationEnd<PostalAddress, com.tools20022.repository.entity.Country>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionCertificate1.mmBankAccountDomiciliationCountry, ShipmentAttribute1.mmCountryOfCounterParty);
 			isDerived = false;
@@ -1260,8 +1332,18 @@ public class PostalAddress extends ContactPoint {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Country getValue(PostalAddress obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, com.tools20022.repository.entity.Country value) {
+			obj.setCountry(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod;
+	protected List<DateTimePeriod> validityPeriod;
 	/**
 	 * 
 	 <p>
@@ -1296,7 +1378,7 @@ public class PostalAddress extends ContactPoint {
 	 * "Specifies the period during which a postal address is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PostalAddress, List<DateTimePeriod>> mmValidityPeriod = new MMBusinessAssociationEnd<PostalAddress, List<DateTimePeriod>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1304,9 +1386,19 @@ public class PostalAddress extends ContactPoint {
 			name = "ValidityPeriod";
 			definition = "Specifies the period during which a postal address is valid.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedPostalAddress;
+			opposite_lazy = () -> DateTimePeriod.mmRelatedPostalAddress;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public List<DateTimePeriod> getValue(PostalAddress obj) {
+			return obj.getValidityPeriod();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, List<DateTimePeriod> value) {
+			obj.setValidityPeriod(value);
 		}
 	};
 	protected Max35Text suiteIdentification;
@@ -1335,7 +1427,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Identification of a suite or apartment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSuiteIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmSuiteIdentification = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1347,12 +1439,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getSuiteIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getSuiteIdentification();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setSuiteIdentification(value);
 		}
 	};
 	protected Max35Text buildingIdentification;
@@ -1383,7 +1477,7 @@ public class PostalAddress extends ContactPoint {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBuildingIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmBuildingIdentification = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1395,12 +1489,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getBuildingIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getBuildingIdentification();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setBuildingIdentification(value);
 		}
 	};
 	protected Max35Text mailDeliverySubLocation;
@@ -1430,7 +1526,7 @@ public class PostalAddress extends ContactPoint {
 	 * "Specific place to deliver mail within a pre-defined postal address."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMailDeliverySubLocation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmMailDeliverySubLocation = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1442,12 +1538,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getMailDeliverySubLocation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getMailDeliverySubLocation();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setMailDeliverySubLocation(value);
 		}
 	};
 	protected Max35Text block;
@@ -1476,7 +1574,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Area of land bounded by streets."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBlock = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmBlock = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1488,12 +1586,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getBlock", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getBlock();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setBlock(value);
 		}
 	};
 	protected Max35Text lot;
@@ -1522,7 +1622,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Identification of an allotment of land."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLot = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmLot = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1534,12 +1634,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getLot", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getLot();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setLot(value);
 		}
 	};
 	protected Max35Text districtSubDivisionIdentification;
@@ -1568,7 +1670,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Identification of a sub-division of a district."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDistrictSubDivisionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmDistrictSubDivisionIdentification = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1580,12 +1682,14 @@ public class PostalAddress extends ContactPoint {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PostalAddress.class.getMethod("getDistrictSubDivisionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PostalAddress obj) {
+			return obj.getDistrictSubDivisionIdentification();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Max35Text value) {
+			obj.setDistrictSubDivisionIdentification(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.MailingInstructions> mailingInstructions;
@@ -1622,7 +1726,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Specifies the characteristics of an address."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMailingInstructions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PostalAddress, List<MailingInstructions>> mmMailingInstructions = new MMBusinessAssociationEnd<PostalAddress, List<MailingInstructions>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1633,6 +1737,16 @@ public class PostalAddress extends ContactPoint {
 			opposite_lazy = () -> com.tools20022.repository.entity.MailingInstructions.mmRelatedPostalAddress;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MailingInstructions.mmObject();
+		}
+
+		@Override
+		public List<MailingInstructions> getValue(PostalAddress obj) {
+			return obj.getMailingInstructions();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, List<MailingInstructions> value) {
+			obj.setMailingInstructions(value);
 		}
 	};
 	protected PhysicalDelivery physicalDelivery;
@@ -1669,7 +1783,7 @@ public class PostalAddress extends ContactPoint {
 	 * definition} = "Physical delivery information related to an address."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPhysicalDelivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PostalAddress, Optional<PhysicalDelivery>> mmPhysicalDelivery = new MMBusinessAssociationEnd<PostalAddress, Optional<PhysicalDelivery>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
@@ -1682,6 +1796,16 @@ public class PostalAddress extends ContactPoint {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 		}
+
+		@Override
+		public Optional<PhysicalDelivery> getValue(PostalAddress obj) {
+			return obj.getPhysicalDelivery();
+		}
+
+		@Override
+		public void setValue(PostalAddress obj, Optional<PhysicalDelivery> value) {
+			obj.setPhysicalDelivery(value.orElse(null));
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -1691,13 +1815,13 @@ public class PostalAddress extends ContactPoint {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PostalAddress";
 				definition = "Information that locates and identifies a specific address.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.mmPostalAddressSpecification, com.tools20022.repository.entity.Location.mmAddress,
-						com.tools20022.repository.entity.DateTimePeriod.mmRelatedPostalAddress, com.tools20022.repository.entity.MailingInstructions.mmRelatedPostalAddress, com.tools20022.repository.entity.ChequeIssue.mmDeliverTo,
-						com.tools20022.repository.entity.PhysicalDelivery.mmAddress);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.mmPostalAddressSpecification, com.tools20022.repository.entity.Location.mmAddress, DateTimePeriod.mmRelatedPostalAddress,
+						com.tools20022.repository.entity.MailingInstructions.mmRelatedPostalAddress, com.tools20022.repository.entity.ChequeIssue.mmDeliverTo, com.tools20022.repository.entity.PhysicalDelivery.mmAddress);
 				derivationElement_lazy = () -> Arrays.asList(FinancialInstitutionIdentification8.mmPostalAddress, BranchData2.mmPostalAddress, PartyIdentification43.mmPostalAddress, PartyIdentification40.mmPostalAddress,
 						Organisation12.mmBusinessAddress, Organisation12.mmLegalAddress, Organisation12.mmBillingAddress, AddressModification1.mmAddress, OrganisationModification1.mmBusinessAddress,
-						OrganisationModification1.mmLegalAddress, OrganisationModification1.mmBillingAddress, NameAndAddress10.mmAddress, PartyIdentification42.mmPostalAddress, PartyIdentification58.mmPostalAddress,
-						RemittanceLocationDetails1.mmPostalAddress, PartyIdentification77.mmPostalAddress);
+						OrganisationModification1.mmLegalAddress, OrganisationModification1.mmBillingAddress, NameAndAddress10.mmAddress, RemittanceLocation2.mmRemittanceLocationPostalAddress, PartyIdentification42.mmPostalAddress,
+						PartyIdentification58.mmPostalAddress, RemittanceLocationDetails1.mmPostalAddress, PartyIdentification77.mmPostalAddress, Organisation20.mmBusinessAddress, Organisation20.mmOperationalAddress,
+						Organisation20.mmLegalAddress, PartyIdentification125.mmPostalAddress);
 				superType_lazy = () -> ContactPoint.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PostalAddress.mmAddressType, com.tools20022.repository.entity.PostalAddress.mmStreetName,
 						com.tools20022.repository.entity.PostalAddress.mmStreetBuildingIdentification, com.tools20022.repository.entity.PostalAddress.mmPostCodeIdentification, com.tools20022.repository.entity.PostalAddress.mmTownName,
@@ -1886,7 +2010,7 @@ public class PostalAddress extends ContactPoint {
 		return validityPeriod == null ? validityPeriod = new ArrayList<>() : validityPeriod;
 	}
 
-	public PostalAddress setValidityPeriod(List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod) {
+	public PostalAddress setValidityPeriod(List<DateTimePeriod> validityPeriod) {
 		this.validityPeriod = Objects.requireNonNull(validityPeriod);
 		return this;
 	}

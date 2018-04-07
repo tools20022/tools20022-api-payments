@@ -832,7 +832,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 	 * Exchange of holdings for other securities and/or cash. The exchange can
 	 * be either mandatory or voluntary involving the exchange of outstanding
 	 * securities for different securities and/or cash. For example
-	 * "exchange offer", "capital reorganisation" or "funds separation" .
+	 * "exchange offer", "capital reorganisation" or "funds separation".
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -853,7 +853,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Exchange of holdings for other securities and/or cash. The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example \"exchange offer\", \"capital reorganisation\" or \"funds separation\" ."
+	 * "Exchange of holdings for other securities and/or cash. The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example \"exchange offer\", \"capital reorganisation\" or \"funds separation\"."
 	 * </li>
 	 * </ul>
 	 */
@@ -862,7 +862,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//EXOF"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Exchange";
-			definition = "Exchange of holdings for other securities and/or cash. The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example \"exchange offer\", \"capital reorganisation\" or \"funds separation\" .";
+			definition = "Exchange of holdings for other securities and/or cash. The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example \"exchange offer\", \"capital reorganisation\" or \"funds separation\".";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventTypeV3Code.mmObject();
 			codeName = "EXOF";
 		}
@@ -1181,7 +1181,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 	};
 	/**
 	 * Separation of components that comprise a security, eg, usually units
-	 * comprised of warrants and bond or warrants and equity . Units may be
+	 * comprised of warrants and bond or warrants and equity. Units may be
 	 * broken up at the request of the security holder or based on market
 	 * convention.
 	 * <p>
@@ -1201,7 +1201,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Separation of components that comprise a security, eg, usually units comprised of warrants and bond or warrants and equity . Units may be broken up at the request of the security holder or based on market convention."
+	 * "Separation of components that comprise a security, eg, usually units comprised of warrants and bond or warrants and equity. Units may be broken up at the request of the security holder or based on market convention."
 	 * </li>
 	 * </ul>
 	 */
@@ -1209,7 +1209,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Detachment";
-			definition = "Separation of components that comprise a security, eg, usually units comprised of warrants and bond or warrants and equity . Units may be broken up at the request of the security holder or based on market convention.";
+			definition = "Separation of components that comprise a security, eg, usually units comprised of warrants and bond or warrants and equity. Units may be broken up at the request of the security holder or based on market convention.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventTypeV3Code.mmObject();
 			codeName = "DETI";
 		}
@@ -1441,7 +1441,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Procedure that aims to obtain consent of holder  to a proposal by the issuer or a third party intended to progress an event to the next stage. This procedure is not required to be linked to the organisation of a formal meeting. For example, consent to approve a plan of reorganisation for a bankruptcy proceeding."
+	 * "Procedure that aims to obtain consent of holder to a proposal by the issuer or a third party intended to progress an event to the next stage. This procedure is not required to be linked to the organisation of a formal meeting. For example, consent to approve a plan of reorganisation for a bankruptcy proceeding."
 	 * </li>
 	 * </ul>
 	 */
@@ -1449,7 +1449,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Consent";
-			definition = "Procedure that aims to obtain consent of holder  to a proposal by the issuer or a third party intended to progress an event to the next stage. This procedure is not required to be linked to the organisation of a formal meeting. For example, consent to approve a plan of reorganisation for a bankruptcy proceeding.";
+			definition = "Procedure that aims to obtain consent of holder to a proposal by the issuer or a third party intended to progress an event to the next stage. This procedure is not required to be linked to the organisation of a formal meeting. For example, consent to approve a plan of reorganisation for a bankruptcy proceeding.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventTypeV3Code.mmObject();
 			codeName = "CONS";
 		}
@@ -1728,7 +1728,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 	};
 	/**
 	 * Increase in the face value of a single security. The number of
-	 * circulating securities remains unchanged .
+	 * circulating securities remains unchanged.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1746,7 +1746,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Increase in the face value of a single security. The number of circulating securities remains unchanged ."
+	 * "Increase in the face value of a single security. The number of circulating securities remains unchanged."
 	 * </li>
 	 * </ul>
 	 */
@@ -1754,7 +1754,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncreaseInValue";
-			definition = "Increase in the face value of a single security. The number of circulating securities remains unchanged .";
+			definition = "Increase in the face value of a single security. The number of circulating securities remains unchanged.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventTypeV3Code.mmObject();
 			codeName = "INCR";
 		}
@@ -1931,7 +1931,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 		}
 	};
 	/**
-	 * Odd Lot Sale/Purchase . Sale or purchase of odd-lots to/from the issuing
+	 * Odd Lot Sale/Purchase. Sale or purchase of odd-lots to/from the issuing
 	 * company, initiated either by the holder of the security or through an
 	 * offer made by the issuer.
 	 * <p>
@@ -1951,7 +1951,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Odd Lot Sale/Purchase . Sale or purchase of odd-lots to/from the issuing company, initiated either by the holder of the security or through an offer made by the issuer."
+	 * "Odd Lot Sale/Purchase. Sale or purchase of odd-lots to/from the issuing company, initiated either by the holder of the security or through an offer made by the issuer."
 	 * </li>
 	 * </ul>
 	 */
@@ -1959,7 +1959,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OddLotSalePurchase";
-			definition = "Odd Lot Sale/Purchase . Sale or purchase of odd-lots to/from the issuing company, initiated either by the holder of the security or through an offer made by the issuer.";
+			definition = "Odd Lot Sale/Purchase. Sale or purchase of odd-lots to/from the issuing company, initiated either by the holder of the security or through an offer made by the issuer.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventTypeV3Code.mmObject();
 			codeName = "ODLT";
 		}
@@ -2030,7 +2030,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 	/**
 	 * Occurs when securities with different characteristics, eg, shares with
 	 * different entitlements to dividend or voting rights, become identical in
-	 * all respects, eg , pari-passu or assimilation. May be scheduled in
+	 * all respects, eg, pari-passu or assimilation. May be scheduled in
 	 * advance, eg, shares resulting from a bonus may become fungible after a
 	 * pre-set period of time, or may result from outside events, eg, merger,
 	 * reorganisation, issue of supplementary tranches, etc.
@@ -2051,7 +2051,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Occurs when securities with different characteristics, eg, shares with different entitlements to dividend or voting rights, become identical in all respects, eg , pari-passu or assimilation. May be scheduled in advance, eg, shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, eg, merger, reorganisation, issue of supplementary tranches, etc."
+	 * "Occurs when securities with different characteristics, eg, shares with different entitlements to dividend or voting rights, become identical in all respects, eg, pari-passu or assimilation. May be scheduled in advance, eg, shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, eg, merger, reorganisation, issue of supplementary tranches, etc."
 	 * </li>
 	 * </ul>
 	 */
@@ -2059,7 +2059,7 @@ public class CorporateActionEventTypeV3Code extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PariPassu";
-			definition = "Occurs when securities with different characteristics, eg, shares with different entitlements to dividend or voting rights, become identical in all respects, eg , pari-passu or assimilation. May be scheduled in advance, eg, shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, eg, merger, reorganisation, issue of supplementary tranches, etc.";
+			definition = "Occurs when securities with different characteristics, eg, shares with different entitlements to dividend or voting rights, become identical in all respects, eg, pari-passu or assimilation. May be scheduled in advance, eg, shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, eg, merger, reorganisation, issue of supplementary tranches, etc.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventTypeV3Code.mmObject();
 			codeName = "PARI";
 		}

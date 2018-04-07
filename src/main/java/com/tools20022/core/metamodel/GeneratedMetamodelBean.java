@@ -4,7 +4,9 @@ import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 
 public interface GeneratedMetamodelBean {
 	
-	MetamodelType<? extends GeneratedMetamodelBean> getMetamodel();
+	default MetamodelType<? extends GeneratedMetamodelBean> getMetamodel() {
+		return null; // XXX
+	}
 
 	GeneratedMetamodelBean getContainer();
 

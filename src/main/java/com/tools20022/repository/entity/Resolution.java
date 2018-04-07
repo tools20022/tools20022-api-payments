@@ -23,8 +23,9 @@ import com.tools20022.repository.codeset.VoteInstructionCode;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Meeting;
+import com.tools20022.repository.entity.Vote;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -128,7 +129,7 @@ public class Resolution {
 	 * "Numbering of the resolution as specified by the issuer or  its agent."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIssuerLabel = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Resolution, Max35Text> mmIssuerLabel = new MMBusinessAttribute<Resolution, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -140,12 +141,14 @@ public class Resolution {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Resolution.class.getMethod("getIssuerLabel", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Resolution obj) {
+			return obj.getIssuerLabel();
+		}
+
+		@Override
+		public void setValue(Resolution obj, Max35Text value) {
+			obj.setIssuerLabel(value);
 		}
 	};
 	protected Max350Text description;
@@ -173,7 +176,7 @@ public class Resolution {
 	 * definition} = "Free text description of the resolution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Resolution, Max350Text> mmDescription = new MMBusinessAttribute<Resolution, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -185,12 +188,14 @@ public class Resolution {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Resolution.class.getMethod("getDescription", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(Resolution obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(Resolution obj, Max350Text value) {
+			obj.setDescription(value);
 		}
 	};
 	protected Max350Text title;
@@ -218,7 +223,7 @@ public class Resolution {
 	 * definition} = "Abbreviated description of the resolution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTitle = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Resolution, Max350Text> mmTitle = new MMBusinessAttribute<Resolution, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -230,12 +235,14 @@ public class Resolution {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Resolution.class.getMethod("getTitle", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(Resolution obj) {
+			return obj.getTitle();
+		}
+
+		@Override
+		public void setValue(Resolution obj, Max350Text value) {
+			obj.setTitle(value);
 		}
 	};
 	protected ResolutionTypeCode type;
@@ -265,7 +272,7 @@ public class Resolution {
 	 * "Indicates whether a resolution is ordinary, extraordinary or special."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Resolution, ResolutionTypeCode> mmType = new MMBusinessAttribute<Resolution, ResolutionTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -277,12 +284,14 @@ public class Resolution {
 			simpleType_lazy = () -> ResolutionTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Resolution.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ResolutionTypeCode getValue(Resolution obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Resolution obj, ResolutionTypeCode value) {
+			obj.setType(value);
 		}
 	};
 	protected YesNoIndicator forInformationOnly;
@@ -313,7 +322,7 @@ public class Resolution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmForInformationOnly = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Resolution, YesNoIndicator> mmForInformationOnly = new MMBusinessAttribute<Resolution, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -325,12 +334,14 @@ public class Resolution {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Resolution.class.getMethod("getForInformationOnly", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Resolution obj) {
+			return obj.getForInformationOnly();
+		}
+
+		@Override
+		public void setValue(Resolution obj, YesNoIndicator value) {
+			obj.setForInformationOnly(value);
 		}
 	};
 	protected YesNoIndicator submittedBySecurityHolder;
@@ -361,7 +372,7 @@ public class Resolution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSubmittedBySecurityHolder = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Resolution, YesNoIndicator> mmSubmittedBySecurityHolder = new MMBusinessAttribute<Resolution, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -373,12 +384,14 @@ public class Resolution {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Resolution.class.getMethod("getSubmittedBySecurityHolder", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Resolution obj) {
+			return obj.getSubmittedBySecurityHolder();
+		}
+
+		@Override
+		public void setValue(Resolution obj, YesNoIndicator value) {
+			obj.setSubmittedBySecurityHolder(value);
 		}
 	};
 	protected VoteInstructionCode managementRecommendation;
@@ -409,7 +422,7 @@ public class Resolution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmManagementRecommendation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Resolution, VoteInstructionCode> mmManagementRecommendation = new MMBusinessAttribute<Resolution, VoteInstructionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -421,12 +434,14 @@ public class Resolution {
 			simpleType_lazy = () -> VoteInstructionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Resolution.class.getMethod("getManagementRecommendation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public VoteInstructionCode getValue(Resolution obj) {
+			return obj.getManagementRecommendation();
+		}
+
+		@Override
+		public void setValue(Resolution obj, VoteInstructionCode value) {
+			obj.setManagementRecommendation(value);
 		}
 	};
 	protected VoteInstructionCode notifyingPartyRecommendation;
@@ -457,7 +472,7 @@ public class Resolution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNotifyingPartyRecommendation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Resolution, VoteInstructionCode> mmNotifyingPartyRecommendation = new MMBusinessAttribute<Resolution, VoteInstructionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -469,12 +484,14 @@ public class Resolution {
 			simpleType_lazy = () -> VoteInstructionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Resolution.class.getMethod("getNotifyingPartyRecommendation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public VoteInstructionCode getValue(Resolution obj) {
+			return obj.getNotifyingPartyRecommendation();
+		}
+
+		@Override
+		public void setValue(Resolution obj, VoteInstructionCode value) {
+			obj.setNotifyingPartyRecommendation(value);
 		}
 	};
 	protected Vote castVotes;
@@ -511,7 +528,7 @@ public class Resolution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCastVotes = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Resolution, Vote> mmCastVotes = new MMBusinessAssociationEnd<Resolution, Vote>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -520,9 +537,19 @@ public class Resolution {
 			definition = "Specifies whether a resolution is accepted or not and details the number of votes and their status.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Vote.mmResolution;
+			opposite_lazy = () -> Vote.mmResolution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
+			type_lazy = () -> Vote.mmObject();
+		}
+
+		@Override
+		public Vote getValue(Resolution obj) {
+			return obj.getCastVotes();
+		}
+
+		@Override
+		public void setValue(Resolution obj, Vote value) {
+			obj.setCastVotes(value);
 		}
 	};
 	protected Meeting meeting;
@@ -557,7 +584,7 @@ public class Resolution {
 	 * definition} = "Meeting for which an agenda item is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Resolution, Optional<Meeting>> mmMeeting = new MMBusinessAssociationEnd<Resolution, Optional<Meeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -566,9 +593,19 @@ public class Resolution {
 			definition = "Meeting for which an agenda item is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmAgendaItem;
+			opposite_lazy = () -> Meeting.mmAgendaItem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
+			type_lazy = () -> Meeting.mmObject();
+		}
+
+		@Override
+		public Optional<Meeting> getValue(Resolution obj) {
+			return obj.getMeeting();
+		}
+
+		@Override
+		public void setValue(Resolution obj, Optional<Meeting> value) {
+			obj.setMeeting(value.orElse(null));
 		}
 	};
 	protected VoteInstructionCode voteOptions;
@@ -599,7 +636,7 @@ public class Resolution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVoteOptions = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Resolution, VoteInstructionCode> mmVoteOptions = new MMBusinessAttribute<Resolution, VoteInstructionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Resolution.mmObject();
@@ -611,12 +648,14 @@ public class Resolution {
 			simpleType_lazy = () -> VoteInstructionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Resolution.class.getMethod("getVoteOptions", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public VoteInstructionCode getValue(Resolution obj) {
+			return obj.getVoteOptions();
+		}
+
+		@Override
+		public void setValue(Resolution obj, VoteInstructionCode value) {
+			obj.setVoteOptions(value);
 		}
 	};
 
@@ -627,7 +666,7 @@ public class Resolution {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Resolution";
 				definition = "Specifies an item in the agenda of the meeting. Some resolutions are submitted to the vote of the security holders, some are presented for information only.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.mmAgendaItem, com.tools20022.repository.entity.Vote.mmResolution);
+				associationDomain_lazy = () -> Arrays.asList(Meeting.mmAgendaItem, Vote.mmResolution);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Resolution.mmIssuerLabel, com.tools20022.repository.entity.Resolution.mmDescription, com.tools20022.repository.entity.Resolution.mmTitle,
 						com.tools20022.repository.entity.Resolution.mmType, com.tools20022.repository.entity.Resolution.mmForInformationOnly, com.tools20022.repository.entity.Resolution.mmSubmittedBySecurityHolder,
 						com.tools20022.repository.entity.Resolution.mmManagementRecommendation, com.tools20022.repository.entity.Resolution.mmNotifyingPartyRecommendation, com.tools20022.repository.entity.Resolution.mmCastVotes,
@@ -718,7 +757,7 @@ public class Resolution {
 		return castVotes;
 	}
 
-	public Resolution setCastVotes(com.tools20022.repository.entity.Vote castVotes) {
+	public Resolution setCastVotes(Vote castVotes) {
 		this.castVotes = Objects.requireNonNull(castVotes);
 		return this;
 	}
@@ -727,7 +766,7 @@ public class Resolution {
 		return meeting == null ? Optional.empty() : Optional.of(meeting);
 	}
 
-	public Resolution setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+	public Resolution setMeeting(Meeting meeting) {
 		this.meeting = meeting;
 		return this;
 	}

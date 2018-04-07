@@ -143,7 +143,7 @@ public class FundLegalFormCode extends MMCode {
 		}
 	};
 	/**
-	 * The fund is constituted as a company . It issues shares and the investors
+	 * The fund is constituted as a company. It issues shares and the investors
 	 * are the shareholders. The fund is run by a management company which may
 	 * or may not delegate to third agens certain investment and/or
 	 * administration tasks.
@@ -164,7 +164,7 @@ public class FundLegalFormCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "The fund is constituted as a company . It issues shares and the investors are the shareholders. The fund is run by a management company which may or may not delegate to third agens certain investment and/or administration tasks."
+	 * "The fund is constituted as a company. It issues shares and the investors are the shareholders. The fund is run by a management company which may or may not delegate to third agens certain investment and/or administration tasks."
 	 * </li>
 	 * </ul>
 	 */
@@ -172,7 +172,7 @@ public class FundLegalFormCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Corporate";
-			definition = "The fund is constituted as a company . It issues shares and the investors are the shareholders. The fund is run by a management company which may or may not delegate to third agens certain investment and/or administration tasks.";
+			definition = "The fund is constituted as a company. It issues shares and the investors are the shareholders. The fund is run by a management company which may or may not delegate to third agens certain investment and/or administration tasks.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FundLegalFormCode.mmObject();
 			codeName = "CORP";
 		}

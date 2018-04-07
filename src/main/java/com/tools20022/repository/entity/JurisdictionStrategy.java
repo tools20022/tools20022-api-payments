@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Jurisdiction;
 import com.tools20022.repository.entity.PortfolioStrategy;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -112,7 +113,7 @@ public class JurisdictionStrategy extends PortfolioStrategy {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmJurisdiction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<JurisdictionStrategy, List<Jurisdiction>> mmJurisdiction = new MMBusinessAssociationEnd<JurisdictionStrategy, List<Jurisdiction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.JurisdictionStrategy.mmObject();
@@ -123,6 +124,16 @@ public class JurisdictionStrategy extends PortfolioStrategy {
 			opposite_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmAssociatedStrategy;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
+		}
+
+		@Override
+		public List<Jurisdiction> getValue(JurisdictionStrategy obj) {
+			return obj.getJurisdiction();
+		}
+
+		@Override
+		public void setValue(JurisdictionStrategy obj, List<Jurisdiction> value) {
+			obj.setJurisdiction(value);
 		}
 	};
 

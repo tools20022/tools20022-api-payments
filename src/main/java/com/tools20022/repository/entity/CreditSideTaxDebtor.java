@@ -23,6 +23,8 @@ import com.tools20022.repository.entity.TaxPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.TaxInformation3;
 import com.tools20022.repository.msg.TaxInformation4;
+import com.tools20022.repository.msg.TaxInformation6;
+import com.tools20022.repository.msg.TaxInformation7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -46,6 +48,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * TaxInformation3.mmCreditor}</li>
  * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#mmCreditor
  * TaxInformation4.mmCreditor}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxInformation6#mmCreditor
+ * TaxInformation6.mmCreditor}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxInformation7#mmCreditor
+ * TaxInformation7.mmCreditor}</li>
  * </ul>
  * </li>
  * <li>
@@ -75,7 +81,7 @@ public class CreditSideTaxDebtor extends TaxPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditSideTaxDebtor";
 				definition = "Party on the credit side of the transaction to which the tax applies.";
-				derivationElement_lazy = () -> Arrays.asList(TaxInformation3.mmCreditor, TaxInformation4.mmCreditor);
+				derivationElement_lazy = () -> Arrays.asList(TaxInformation3.mmCreditor, TaxInformation4.mmCreditor, TaxInformation6.mmCreditor, TaxInformation7.mmCreditor);
 				superType_lazy = () -> TaxPartyRole.mmObject();
 			}
 

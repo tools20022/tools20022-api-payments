@@ -21,7 +21,7 @@ import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.camt.UnableToApplyV05;
+import com.tools20022.repository.area.camt.UnableToApplyV06;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.UnableToApplyV05#mmJustification
- * UnableToApplyV05.mmJustification}</li>
+ * {@linkplain com.tools20022.repository.area.camt.UnableToApplyV06#mmJustification
+ * UnableToApplyV06.mmJustification}</li>
  * </ul>
  * </li>
  * <li>
@@ -118,7 +118,7 @@ public class UnableToApplyJustification3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAnyInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnableToApplyJustification3Choice, YesNoIndicator> mmAnyInformation = new MMMessageAttribute<UnableToApplyJustification3Choice, YesNoIndicator>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.UnableToApplyJustification3Choice.mmObject();
 			isDerived = false;
@@ -129,6 +129,16 @@ public class UnableToApplyJustification3Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		@Override
+		public YesNoIndicator getValue(UnableToApplyJustification3Choice obj) {
+			return obj.getAnyInformation();
+		}
+
+		@Override
+		public void setValue(UnableToApplyJustification3Choice obj, YesNoIndicator value) {
+			obj.setAnyInformation(value);
 		}
 	};
 	@XmlElement(name = "MssngOrIncrrctInf", required = true)
@@ -162,7 +172,7 @@ public class UnableToApplyJustification3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMissingOrIncorrectInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<UnableToApplyJustification3Choice, MissingOrIncorrectInformation3> mmMissingOrIncorrectInformation = new MMMessageAssociationEnd<UnableToApplyJustification3Choice, MissingOrIncorrectInformation3>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.UnableToApplyJustification3Choice.mmObject();
 			isDerived = false;
@@ -174,6 +184,16 @@ public class UnableToApplyJustification3Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> MissingOrIncorrectInformation3.mmObject();
+		}
+
+		@Override
+		public MissingOrIncorrectInformation3 getValue(UnableToApplyJustification3Choice obj) {
+			return obj.getMissingOrIncorrectInformation();
+		}
+
+		@Override
+		public void setValue(UnableToApplyJustification3Choice obj, MissingOrIncorrectInformation3 value) {
+			obj.setMissingOrIncorrectInformation(value);
 		}
 	};
 	@XmlElement(name = "PssblDplctInstr", required = true)
@@ -208,7 +228,7 @@ public class UnableToApplyJustification3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPossibleDuplicateInstruction = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnableToApplyJustification3Choice, TrueFalseIndicator> mmPossibleDuplicateInstruction = new MMMessageAttribute<UnableToApplyJustification3Choice, TrueFalseIndicator>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.UnableToApplyJustification3Choice.mmObject();
 			isDerived = false;
@@ -220,6 +240,16 @@ public class UnableToApplyJustification3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		@Override
+		public TrueFalseIndicator getValue(UnableToApplyJustification3Choice obj) {
+			return obj.getPossibleDuplicateInstruction();
+		}
+
+		@Override
+		public void setValue(UnableToApplyJustification3Choice obj, TrueFalseIndicator value) {
+			obj.setPossibleDuplicateInstruction(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
@@ -227,7 +257,7 @@ public class UnableToApplyJustification3Choice {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.UnableToApplyJustification3Choice.mmAnyInformation,
 						com.tools20022.repository.choice.UnableToApplyJustification3Choice.mmMissingOrIncorrectInformation, com.tools20022.repository.choice.UnableToApplyJustification3Choice.mmPossibleDuplicateInstruction);
-				messageBuildingBlock_lazy = () -> Arrays.asList(UnableToApplyV05.mmJustification);
+				messageBuildingBlock_lazy = () -> Arrays.asList(UnableToApplyV06.mmJustification);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnableToApplyJustification3Choice";

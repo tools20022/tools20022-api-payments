@@ -25,6 +25,7 @@ import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.entity.PartyName;
 import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PostalAddress6;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -104,11 +105,11 @@ public class NameAndAddress10 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Name by which a party is known and is usually used to identify that identity."
+	 * "Name by which a party is known and is usually used to identify that party."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NameAndAddress10, Max140Text> mmName = new MMMessageAttribute<NameAndAddress10, Max140Text>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.NameAndAddress10.mmObject();
@@ -116,10 +117,20 @@ public class NameAndAddress10 {
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
-			definition = "Name by which a party is known and is usually used to identify that identity.";
+			definition = "Name by which a party is known and is usually used to identify that party.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Max140Text getValue(NameAndAddress10 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(NameAndAddress10 obj, Max140Text value) {
+			obj.setName(value);
 		}
 	};
 	@XmlElement(name = "Adr", required = true)
@@ -156,7 +167,7 @@ public class NameAndAddress10 {
 	 * definition} = "Postal address of a party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NameAndAddress10, PostalAddress6> mmAddress = new MMMessageAttribute<NameAndAddress10, PostalAddress6>() {
 		{
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.NameAndAddress10.mmObject();
@@ -167,7 +178,17 @@ public class NameAndAddress10 {
 			definition = "Postal address of a party.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.PostalAddress6.mmObject();
+			complexType_lazy = () -> PostalAddress6.mmObject();
+		}
+
+		@Override
+		public PostalAddress6 getValue(NameAndAddress10 obj) {
+			return obj.getAddress();
+		}
+
+		@Override
+		public void setValue(NameAndAddress10 obj, PostalAddress6 value) {
+			obj.setAddress(value);
 		}
 	};
 
@@ -198,7 +219,7 @@ public class NameAndAddress10 {
 		return address;
 	}
 
-	public NameAndAddress10 setAddress(com.tools20022.repository.msg.PostalAddress6 address) {
+	public NameAndAddress10 setAddress(PostalAddress6 address) {
 		this.address = Objects.requireNonNull(address);
 		return this;
 	}

@@ -118,7 +118,7 @@ public class PointOfInteractionComponent1 {
 	 * definition} = "Type of component belonging to a POI Terminal."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPOIComponentType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PointOfInteractionComponent1, POIComponentType1Code> mmPOIComponentType = new MMMessageAttribute<PointOfInteractionComponent1, POIComponentType1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.PointOfInteractionComponent1.mmObject();
 			isDerived = false;
@@ -129,6 +129,16 @@ public class PointOfInteractionComponent1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> POIComponentType1Code.mmObject();
+		}
+
+		@Override
+		public POIComponentType1Code getValue(PointOfInteractionComponent1 obj) {
+			return obj.getPOIComponentType();
+		}
+
+		@Override
+		public void setValue(PointOfInteractionComponent1 obj, POIComponentType1Code value) {
+			obj.setPOIComponentType(value);
 		}
 	};
 	@XmlElement(name = "ManfctrId")
@@ -167,7 +177,7 @@ public class PointOfInteractionComponent1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmManufacturerIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PointOfInteractionComponent1, Optional<Max35Text>> mmManufacturerIdentification = new MMMessageAttribute<PointOfInteractionComponent1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PointOfInteractionComponent1.mmObject();
@@ -179,6 +189,16 @@ public class PointOfInteractionComponent1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(PointOfInteractionComponent1 obj) {
+			return obj.getManufacturerIdentification();
+		}
+
+		@Override
+		public void setValue(PointOfInteractionComponent1 obj, Optional<Max35Text> value) {
+			obj.setManufacturerIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Mdl")
@@ -216,7 +236,7 @@ public class PointOfInteractionComponent1 {
 	 * "Identification of a model of POI component for a given manufacturer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModel = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PointOfInteractionComponent1, Optional<Max35Text>> mmModel = new MMMessageAttribute<PointOfInteractionComponent1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> SystemIdentification.mmModel;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PointOfInteractionComponent1.mmObject();
@@ -228,6 +248,16 @@ public class PointOfInteractionComponent1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(PointOfInteractionComponent1 obj) {
+			return obj.getModel();
+		}
+
+		@Override
+		public void setValue(PointOfInteractionComponent1 obj, Optional<Max35Text> value) {
+			obj.setModel(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "VrsnNb")
@@ -259,7 +289,7 @@ public class PointOfInteractionComponent1 {
 	 * definition} = "Version of component belonging to a given model."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVersionNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PointOfInteractionComponent1, Optional<Max16Text>> mmVersionNumber = new MMMessageAttribute<PointOfInteractionComponent1, Optional<Max16Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.PointOfInteractionComponent1.mmObject();
 			isDerived = false;
@@ -270,6 +300,16 @@ public class PointOfInteractionComponent1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max16Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max16Text> getValue(PointOfInteractionComponent1 obj) {
+			return obj.getVersionNumber();
+		}
+
+		@Override
+		public void setValue(PointOfInteractionComponent1 obj, Optional<Max16Text> value) {
+			obj.setVersionNumber(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "SrlNb")
@@ -306,7 +346,7 @@ public class PointOfInteractionComponent1 {
 	 * definition} = "Serial number of a component."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSerialNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PointOfInteractionComponent1, Optional<Max35Text>> mmSerialNumber = new MMMessageAttribute<PointOfInteractionComponent1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> SystemIdentification.mmSerialNumber;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PointOfInteractionComponent1.mmObject();
@@ -318,6 +358,16 @@ public class PointOfInteractionComponent1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(PointOfInteractionComponent1 obj) {
+			return obj.getSerialNumber();
+		}
+
+		@Override
+		public void setValue(PointOfInteractionComponent1 obj, Optional<Max35Text> value) {
+			obj.setSerialNumber(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ApprvlNb")
@@ -356,7 +406,7 @@ public class PointOfInteractionComponent1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmApprovalNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PointOfInteractionComponent1, List<Max70Text>> mmApprovalNumber = new MMMessageAttribute<PointOfInteractionComponent1, List<Max70Text>>() {
 		{
 			businessElementTrace_lazy = () -> SystemIdentification.mmApprovalNumber;
 			componentContext_lazy = () -> com.tools20022.repository.msg.PointOfInteractionComponent1.mmObject();
@@ -367,6 +417,16 @@ public class PointOfInteractionComponent1 {
 			definition = "Unique approval number for a component, delivered by a certification body.\r\nUsage: More than one approval number could be present, when assigned by different bodies. The certification body identification must be provided within the approval number (for example at the beginning of the value).";
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public List<Max70Text> getValue(PointOfInteractionComponent1 obj) {
+			return obj.getApprovalNumber();
+		}
+
+		@Override
+		public void setValue(PointOfInteractionComponent1 obj, List<Max70Text> value) {
+			obj.setApprovalNumber(value);
 		}
 	};
 

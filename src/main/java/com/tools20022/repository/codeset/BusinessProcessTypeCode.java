@@ -108,7 +108,7 @@ public class BusinessProcessTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies the processing of a transaction in a  central matching utility model."
+	 * "Specifies the processing of a transaction in a central matching utility model."
 	 * </li>
 	 * </ul>
 	 */
@@ -116,7 +116,7 @@ public class BusinessProcessTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TripartiteCentralMatching";
-			definition = "Specifies the processing of a transaction in a  central matching utility model.";
+			definition = "Specifies the processing of a transaction in a central matching utility model.";
 			owner_lazy = () -> com.tools20022.repository.codeset.BusinessProcessTypeCode.mmObject();
 			codeName = "ISUP";
 		}

@@ -51,6 +51,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#Privilege
  * LegalRestrictionsCode.Privilege}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#USLegal144A
+ * LegalRestrictionsCode.USLegal144A}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#NoRestrictions
+ * LegalRestrictionsCode.NoRestrictions}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#Restrictions
+ * LegalRestrictionsCode.Restrictions}</li>
  * </ul>
  * </li>
  * <li>
@@ -244,6 +253,104 @@ public class LegalRestrictionsCode extends MMCode {
 			codeName = "PRIV";
 		}
 	};
+	/**
+	 * Ownership or transfer of an unregistered security issued, pursuant to US
+	 * legal restrictions 144A.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode
+	 * LegalRestrictionsCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "USLE"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "USLegal144A"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Ownership or transfer of an unregistered security issued, pursuant to US legal restrictions 144A."
+	 * </li>
+	 * </ul>
+	 */
+	public static final LegalRestrictionsCode USLegal144A = new LegalRestrictionsCode() {
+		{
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "USLegal144A";
+			definition = "Ownership or transfer of an unregistered security issued, pursuant to US legal restrictions 144A.";
+			owner_lazy = () -> com.tools20022.repository.codeset.LegalRestrictionsCode.mmObject();
+			codeName = "USLE";
+		}
+	};
+	/**
+	 * Ownership or transfer of a security that is not subject to restrictions.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode
+	 * LegalRestrictionsCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "NORE"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "NoRestrictions"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Ownership or transfer of a security that is not subject to restrictions."
+	 * </li>
+	 * </ul>
+	 */
+	public static final LegalRestrictionsCode NoRestrictions = new LegalRestrictionsCode() {
+		{
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "NoRestrictions";
+			definition = "Ownership or transfer of a security that is not subject to restrictions.";
+			owner_lazy = () -> com.tools20022.repository.codeset.LegalRestrictionsCode.mmObject();
+			codeName = "NORE";
+		}
+	};
+	/**
+	 * Ownership or transfer of a security that is subject to restrictions, and
+	 * not pursuant to 144A.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode
+	 * LegalRestrictionsCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "REST"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Restrictions"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Ownership or transfer of a security that is subject to restrictions, and not pursuant to 144A."
+	 * </li>
+	 * </ul>
+	 */
+	public static final LegalRestrictionsCode Restrictions = new LegalRestrictionsCode() {
+		{
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "Restrictions";
+			definition = "Ownership or transfer of a security that is subject to restrictions, and not pursuant to 144A.";
+			owner_lazy = () -> com.tools20022.repository.codeset.LegalRestrictionsCode.mmObject();
+			codeName = "REST";
+		}
+	};
 	final static private LinkedHashMap<String, LegalRestrictionsCode> codesByName = new LinkedHashMap<>();
 
 	protected LegalRestrictionsCode() {
@@ -258,7 +365,8 @@ public class LegalRestrictionsCode extends MMCode {
 				name = "LegalRestrictionsCode";
 				definition = "Specifies the regulatory restrictions applicable to a security.";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.LegalRestrictionsCode.JurisdictionOwnership, com.tools20022.repository.codeset.LegalRestrictionsCode.PrivatePlacements,
-						com.tools20022.repository.codeset.LegalRestrictionsCode.AccreditedInvestor, com.tools20022.repository.codeset.LegalRestrictionsCode.Margin, com.tools20022.repository.codeset.LegalRestrictionsCode.Privilege);
+						com.tools20022.repository.codeset.LegalRestrictionsCode.AccreditedInvestor, com.tools20022.repository.codeset.LegalRestrictionsCode.Margin, com.tools20022.repository.codeset.LegalRestrictionsCode.Privilege,
+						com.tools20022.repository.codeset.LegalRestrictionsCode.USLegal144A, com.tools20022.repository.codeset.LegalRestrictionsCode.NoRestrictions, com.tools20022.repository.codeset.LegalRestrictionsCode.Restrictions);
 			}
 		});
 		return mmObject_lazy.get();
@@ -270,6 +378,9 @@ public class LegalRestrictionsCode extends MMCode {
 		codesByName.put(AccreditedInvestor.getCodeName().get(), AccreditedInvestor);
 		codesByName.put(Margin.getCodeName().get(), Margin);
 		codesByName.put(Privilege.getCodeName().get(), Privilege);
+		codesByName.put(USLegal144A.getCodeName().get(), USLegal144A);
+		codesByName.put(NoRestrictions.getCodeName().get(), NoRestrictions);
+		codesByName.put(Restrictions.getCodeName().get(), Restrictions);
 	}
 
 	public static LegalRestrictionsCode valueOf(String codeName) {

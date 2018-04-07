@@ -106,7 +106,7 @@ public class ChargeType3Choice {
 	 * definition} = "Charge type, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ChargeType3Choice, ExternalChargeType1Code> mmCode = new MMMessageAttribute<ChargeType3Choice, ExternalChargeType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Charges.mmChargeType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ChargeType3Choice.mmObject();
@@ -118,6 +118,16 @@ public class ChargeType3Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalChargeType1Code.mmObject();
+		}
+
+		@Override
+		public ExternalChargeType1Code getValue(ChargeType3Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ChargeType3Choice obj, ExternalChargeType1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -154,7 +164,7 @@ public class ChargeType3Choice {
 	 * "Type of charge in a proprietary form, as defined by the issuer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ChargeType3Choice, GenericIdentification3> mmProprietary = new MMMessageAssociationEnd<ChargeType3Choice, GenericIdentification3>() {
 		{
 			businessElementTrace_lazy = () -> Charges.mmChargeType;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ChargeType3Choice.mmObject();
@@ -167,6 +177,16 @@ public class ChargeType3Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> GenericIdentification3.mmObject();
+		}
+
+		@Override
+		public GenericIdentification3 getValue(ChargeType3Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ChargeType3Choice obj, GenericIdentification3 value) {
+			obj.setProprietary(value);
 		}
 	};
 

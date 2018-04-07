@@ -22,8 +22,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SettlementDateCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.ListTrading;
+import com.tools20022.repository.entity.SecuritiesAccount;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -126,7 +126,7 @@ public class DisclosedListTrading extends ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDisclosedListTradingAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DisclosedListTrading, SecuritiesAccount> mmDisclosedListTradingAccount = new MMBusinessAssociationEnd<DisclosedListTrading, SecuritiesAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
@@ -135,9 +135,19 @@ public class DisclosedListTrading extends ListTrading {
 			definition = "Securities account used for the trade of a disclosed list of securities, eg, in basket or program trading.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmDisclosedListTrading;
+			opposite_lazy = () -> SecuritiesAccount.mmDisclosedListTrading;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
+			type_lazy = () -> SecuritiesAccount.mmObject();
+		}
+
+		@Override
+		public SecuritiesAccount getValue(DisclosedListTrading obj) {
+			return obj.getDisclosedListTradingAccount();
+		}
+
+		@Override
+		public void setValue(DisclosedListTrading obj, SecuritiesAccount value) {
+			obj.setDisclosedListTradingAccount(value);
 		}
 	};
 	protected CurrencyAndAmount buyAmount;
@@ -172,7 +182,7 @@ public class DisclosedListTrading extends ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBuyAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DisclosedListTrading, CurrencyAndAmount> mmBuyAmount = new MMBusinessAttribute<DisclosedListTrading, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
@@ -185,12 +195,14 @@ public class DisclosedListTrading extends ListTrading {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DisclosedListTrading.class.getMethod("getBuyAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(DisclosedListTrading obj) {
+			return obj.getBuyAmount();
+		}
+
+		@Override
+		public void setValue(DisclosedListTrading obj, CurrencyAndAmount value) {
+			obj.setBuyAmount(value);
 		}
 	};
 	protected CurrencyAndAmount sellAmount;
@@ -225,7 +237,7 @@ public class DisclosedListTrading extends ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSellAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DisclosedListTrading, CurrencyAndAmount> mmSellAmount = new MMBusinessAttribute<DisclosedListTrading, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
@@ -238,12 +250,14 @@ public class DisclosedListTrading extends ListTrading {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DisclosedListTrading.class.getMethod("getSellAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(DisclosedListTrading obj) {
+			return obj.getSellAmount();
+		}
+
+		@Override
+		public void setValue(DisclosedListTrading obj, CurrencyAndAmount value) {
+			obj.setSellAmount(value);
 		}
 	};
 	protected SettlementDateCode requestedSettlementDateCode;
@@ -277,7 +291,7 @@ public class DisclosedListTrading extends ListTrading {
 	 * "Requested date of trade settlement in coded form (eg, trade date +1)."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedSettlementDateCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DisclosedListTrading, SettlementDateCode> mmRequestedSettlementDateCode = new MMBusinessAttribute<DisclosedListTrading, SettlementDateCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
@@ -290,12 +304,14 @@ public class DisclosedListTrading extends ListTrading {
 			simpleType_lazy = () -> SettlementDateCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DisclosedListTrading.class.getMethod("getRequestedSettlementDateCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SettlementDateCode getValue(DisclosedListTrading obj) {
+			return obj.getRequestedSettlementDateCode();
+		}
+
+		@Override
+		public void setValue(DisclosedListTrading obj, SettlementDateCode value) {
+			obj.setRequestedSettlementDateCode(value);
 		}
 	};
 
@@ -306,7 +322,7 @@ public class DisclosedListTrading extends ListTrading {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DisclosedListTrading";
 				definition = "List trading by which the buy-side details the exact stocks and sizes to be traded and the sell-side offers the buy-side a two-way price, to buy or to sell the indicated stocks. All sell-side firms see all of the stocks and quantities in the portfolio during the bidding phase regardless of whether or not they win the business.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.mmDisclosedListTrading);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesAccount.mmDisclosedListTrading);
 				superType_lazy = () -> ListTrading.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DisclosedListTrading.mmDisclosedListTradingAccount, com.tools20022.repository.entity.DisclosedListTrading.mmBuyAmount,
 						com.tools20022.repository.entity.DisclosedListTrading.mmSellAmount, com.tools20022.repository.entity.DisclosedListTrading.mmRequestedSettlementDateCode);
@@ -324,7 +340,7 @@ public class DisclosedListTrading extends ListTrading {
 		return disclosedListTradingAccount;
 	}
 
-	public DisclosedListTrading setDisclosedListTradingAccount(com.tools20022.repository.entity.SecuritiesAccount disclosedListTradingAccount) {
+	public DisclosedListTrading setDisclosedListTradingAccount(SecuritiesAccount disclosedListTradingAccount) {
 		this.disclosedListTradingAccount = Objects.requireNonNull(disclosedListTradingAccount);
 		return this;
 	}

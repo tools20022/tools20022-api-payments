@@ -26,44 +26,10 @@ import com.tools20022.repository.msg.OriginalNotificationReference8;
 
 /**
  * If TotalAmount is present, then it must equal the sum of all occurrences of
- * Item/Amount.
+ * OriginalItem/Amount.
  */
 public class ConstraintTotalAmountAndAmount2Rule {
 
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.AccountNotification13
-	 * AccountNotification13}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "TotalAmountAndAmount2Rule"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "If TotalAmount is present, then it must equal the sum of all occurrences of Item/Amount."
-	 * </li>
-	 * </ul>
-	 */
-	public static final MMConstraint forAccountNotification13 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "TotalAmountAndAmount2Rule";
-			definition = "If TotalAmount is present, then it must equal the sum of all occurrences of Item/Amount.";
-			owner_lazy = () -> AccountNotification13.mmObject();
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkAccountNotification13((AccountNotification13) obj);
-		}
-	};
 	/**
 	 * 
 	 <p>
@@ -85,7 +51,7 @@ public class ConstraintTotalAmountAndAmount2Rule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOriginalNotificationReference8 = new MMConstraint() {
+	public static final MMConstraint<OriginalNotificationReference8> forOriginalNotificationReference8 = new MMConstraint<OriginalNotificationReference8>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalAmountAndAmount2Rule";
@@ -94,8 +60,42 @@ public class ConstraintTotalAmountAndAmount2Rule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalNotificationReference8((OriginalNotificationReference8) obj);
+		public void executeValidator(OriginalNotificationReference8 obj) throws Exception {
+			checkOriginalNotificationReference8(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.AccountNotification13
+	 * AccountNotification13}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "TotalAmountAndAmount2Rule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If TotalAmount is present, then it must equal the sum of all occurrences of Item/Amount."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<AccountNotification13> forAccountNotification13 = new MMConstraint<AccountNotification13>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "TotalAmountAndAmount2Rule";
+			definition = "If TotalAmount is present, then it must equal the sum of all occurrences of Item/Amount.";
+			owner_lazy = () -> AccountNotification13.mmObject();
+		}
+
+		@Override
+		public void executeValidator(AccountNotification13 obj) throws Exception {
+			checkAccountNotification13(obj);
 		}
 	};
 	/**
@@ -119,7 +119,7 @@ public class ConstraintTotalAmountAndAmount2Rule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOriginalNotificationReference7 = new MMConstraint() {
+	public static final MMConstraint<OriginalNotificationReference7> forOriginalNotificationReference7 = new MMConstraint<OriginalNotificationReference7>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalAmountAndAmount2Rule";
@@ -128,24 +128,24 @@ public class ConstraintTotalAmountAndAmount2Rule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalNotificationReference7((OriginalNotificationReference7) obj);
+		public void executeValidator(OriginalNotificationReference7 obj) throws Exception {
+			checkOriginalNotificationReference7(obj);
 		}
 	};
-
-	/**
-	 * If TotalAmount is present, then it must equal the sum of all occurrences
-	 * of Item/Amount.
-	 */
-	public static void checkAccountNotification13(AccountNotification13 obj) throws Exception {
-		throw new NotImplementedConstraintException();
-	}
 
 	/**
 	 * If TotalAmount is present, then it must equal the sum of all occurrences
 	 * of OriginalItem/Amount.
 	 */
 	public static void checkOriginalNotificationReference8(OriginalNotificationReference8 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If TotalAmount is present, then it must equal the sum of all occurrences
+	 * of Item/Amount.
+	 */
+	public static void checkAccountNotification13(AccountNotification13 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 

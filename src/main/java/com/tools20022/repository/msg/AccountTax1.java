@@ -107,7 +107,7 @@ public class AccountTax1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCalculationMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountTax1, BillingTaxCalculationMethod1Code> mmCalculationMethod = new MMMessageAttribute<AccountTax1, BillingTaxCalculationMethod1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountTax1.mmObject();
 			isDerived = false;
@@ -118,6 +118,16 @@ public class AccountTax1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> BillingTaxCalculationMethod1Code.mmObject();
+		}
+
+		@Override
+		public BillingTaxCalculationMethod1Code getValue(AccountTax1 obj) {
+			return obj.getCalculationMethod();
+		}
+
+		@Override
+		public void setValue(AccountTax1 obj, BillingTaxCalculationMethod1Code value) {
+			obj.setCalculationMethod(value);
 		}
 	};
 	@XmlElement(name = "Rgn")
@@ -153,7 +163,7 @@ public class AccountTax1 {
 	 * definition} = "Identifies the tax region in which the account resides."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountTax1, Optional<Max40Text>> mmRegion = new MMMessageAttribute<AccountTax1, Optional<Max40Text>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAdministrationZone;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountTax1.mmObject();
@@ -165,6 +175,16 @@ public class AccountTax1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max40Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max40Text> getValue(AccountTax1 obj) {
+			return obj.getRegion();
+		}
+
+		@Override
+		public void setValue(AccountTax1 obj, Optional<Max40Text> value) {
+			obj.setRegion(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "NonResCtry")
@@ -203,7 +223,7 @@ public class AccountTax1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNonResidenceCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountTax1, Optional<ResidenceLocation1Choice>> mmNonResidenceCountry = new MMMessageAttribute<AccountTax1, Optional<ResidenceLocation1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmContactPoint;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AccountTax1.mmObject();
@@ -215,6 +235,16 @@ public class AccountTax1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> ResidenceLocation1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<ResidenceLocation1Choice> getValue(AccountTax1 obj) {
+			return obj.getNonResidenceCountry();
+		}
+
+		@Override
+		public void setValue(AccountTax1 obj, Optional<ResidenceLocation1Choice> value) {
+			obj.setNonResidenceCountry(value.orElse(null));
 		}
 	};
 

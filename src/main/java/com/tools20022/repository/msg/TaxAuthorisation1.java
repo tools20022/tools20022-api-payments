@@ -107,7 +107,7 @@ public class TaxAuthorisation1 {
 	 * "Title or position of debtor or the debtor's authorised representative."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTitle = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxAuthorisation1, Optional<Max35Text>> mmTitle = new MMMessageAttribute<TaxAuthorisation1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Person.mmBusinessFunctionTitle;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxAuthorisation1.mmObject();
@@ -119,6 +119,16 @@ public class TaxAuthorisation1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxAuthorisation1 obj) {
+			return obj.getTitle();
+		}
+
+		@Override
+		public void setValue(TaxAuthorisation1 obj, Optional<Max35Text> value) {
+			obj.setTitle(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Nm")
@@ -156,7 +166,7 @@ public class TaxAuthorisation1 {
 	 * "Name of the debtor or the debtor's authorised representative."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxAuthorisation1, Optional<Max140Text>> mmName = new MMMessageAttribute<TaxAuthorisation1, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxAuthorisation1.mmObject();
@@ -168,6 +178,16 @@ public class TaxAuthorisation1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(TaxAuthorisation1 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(TaxAuthorisation1 obj, Optional<Max140Text> value) {
+			obj.setName(value.orElse(null));
 		}
 	};
 

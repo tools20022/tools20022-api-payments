@@ -24,50 +24,11 @@ import com.tools20022.repository.msg.SettlementInstruction3;
 import com.tools20022.repository.msg.SettlementInstruction4;
 
 /**
- * If InstructingReimbursementAgentAccount is present, then
+ * If InstructingReimbursementAgentAcount is present, then
  * InstructingReimbursementAgent must be present.
  */
 public class ConstraintInstructingReimbursementAgentAccountRule {
 
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction4
-	 * SettlementInstruction4}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
-	 * expression} =
-	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/InstructingReimbursementAgentAccount&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/InstructingReimbursementAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
-	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "InstructingReimbursementAgentAccountRule"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "If InstructingReimbursementAgentAccount is present, then InstructingReimbursementAgent must be present."
-	 * </li>
-	 * </ul>
-	 */
-	public static final MMConstraint forSettlementInstruction4 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "InstructingReimbursementAgentAccountRule";
-			definition = "If InstructingReimbursementAgentAccount is present, then InstructingReimbursementAgent must be present.";
-			owner_lazy = () -> SettlementInstruction4.mmObject();
-			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/InstructingReimbursementAgentAccount</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/InstructingReimbursementAgent</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkSettlementInstruction4((SettlementInstruction4) obj);
-		}
-	};
 	/**
 	 * 
 	 <p>
@@ -93,7 +54,7 @@ public class ConstraintInstructingReimbursementAgentAccountRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forSettlementInstruction3 = new MMConstraint() {
+	public static final MMConstraint<SettlementInstruction3> forSettlementInstruction3 = new MMConstraint<SettlementInstruction3>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InstructingReimbursementAgentAccountRule";
@@ -103,24 +64,63 @@ public class ConstraintInstructingReimbursementAgentAccountRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkSettlementInstruction3((SettlementInstruction3) obj);
+		public void executeValidator(SettlementInstruction3 obj) throws Exception {
+			checkSettlementInstruction3(obj);
 		}
 	};
-
 	/**
-	 * If InstructingReimbursementAgentAccount is present, then
-	 * InstructingReimbursementAgent must be present.
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction4
+	 * SettlementInstruction4}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/InstructingReimbursementAgentAccount&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/InstructingReimbursementAgent&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "InstructingReimbursementAgentAccountRule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If InstructingReimbursementAgentAccount is present, then InstructingReimbursementAgent must be present."
+	 * </li>
+	 * </ul>
 	 */
-	public static void checkSettlementInstruction4(SettlementInstruction4 obj) throws Exception {
-		throw new NotImplementedConstraintException();
-	}
+	public static final MMConstraint<SettlementInstruction4> forSettlementInstruction4 = new MMConstraint<SettlementInstruction4>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "InstructingReimbursementAgentAccountRule";
+			definition = "If InstructingReimbursementAgentAccount is present, then InstructingReimbursementAgent must be present.";
+			owner_lazy = () -> SettlementInstruction4.mmObject();
+			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/InstructingReimbursementAgentAccount</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/InstructingReimbursementAgent</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
+		}
+
+		@Override
+		public void executeValidator(SettlementInstruction4 obj) throws Exception {
+			checkSettlementInstruction4(obj);
+		}
+	};
 
 	/**
 	 * If InstructingReimbursementAgentAcount is present, then
 	 * InstructingReimbursementAgent must be present.
 	 */
 	public static void checkSettlementInstruction3(SettlementInstruction3 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If InstructingReimbursementAgentAccount is present, then
+	 * InstructingReimbursementAgent must be present.
+	 */
+	public static void checkSettlementInstruction4(SettlementInstruction4 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

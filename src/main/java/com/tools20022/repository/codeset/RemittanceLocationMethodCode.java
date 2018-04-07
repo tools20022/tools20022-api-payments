@@ -176,7 +176,7 @@ public class RemittanceLocationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Remittance advice  information needs to be sent to a Uniform Resource Identifier (URI). URI  is a compact string of characters that uniquely identify an abstract or physical resource.  URI's are the super-set of identifiers, such as URLs, email addresses, ftp sites, etc, and as such, provide the syntax for all of the identification schemes."
+	 * "Remittance advice information needs to be sent to a Uniform Resource Identifier (URI). URI is a compact string of characters that uniquely identify an abstract or physical resource. URI's are the super-set of identifiers, such as URLs, email addresses, ftp sites, etc, and as such, provide the syntax for all of the identification schemes."
 	 * </li>
 	 * </ul>
 	 */
@@ -184,7 +184,7 @@ public class RemittanceLocationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UniformResourceIdentifier";
-			definition = "Remittance advice  information needs to be sent to a Uniform Resource Identifier (URI). URI  is a compact string of characters that uniquely identify an abstract or physical resource.  URI's are the super-set of identifiers, such as URLs, email addresses, ftp sites, etc, and as such, provide the syntax for all of the identification schemes.";
+			definition = "Remittance advice information needs to be sent to a Uniform Resource Identifier (URI). URI is a compact string of characters that uniquely identify an abstract or physical resource. URI's are the super-set of identifiers, such as URLs, email addresses, ftp sites, etc, and as such, provide the syntax for all of the identification schemes.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RemittanceLocationMethodCode.mmObject();
 			codeName = "URID";
 		}
@@ -208,14 +208,14 @@ public class RemittanceLocationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Remittance advice  information must be sent through e-mail."</li>
+	 * "Remittance advice information must be sent through e-mail."</li>
 	 * </ul>
 	 */
 	public static final RemittanceLocationMethodCode EMail = new RemittanceLocationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EMail";
-			definition = "Remittance advice  information must be sent through e-mail.";
+			definition = "Remittance advice information must be sent through e-mail.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RemittanceLocationMethodCode.mmObject();
 			codeName = "EMAL";
 		}
@@ -271,7 +271,7 @@ public class RemittanceLocationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Remittance advice  information must be sent through by phone as a short message service (SMS)."
+	 * "Remittance advice information must be sent through by phone as a short message service (SMS)."
 	 * </li>
 	 * </ul>
 	 */
@@ -279,7 +279,7 @@ public class RemittanceLocationMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SMS";
-			definition = "Remittance advice  information must be sent through by phone as a short message service (SMS).";
+			definition = "Remittance advice information must be sent through by phone as a short message service (SMS).";
 			owner_lazy = () -> com.tools20022.repository.codeset.RemittanceLocationMethodCode.mmObject();
 			codeName = "SMSM";
 		}

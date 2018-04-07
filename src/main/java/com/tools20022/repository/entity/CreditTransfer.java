@@ -19,10 +19,10 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.CashStandingOrder;
 import com.tools20022.repository.entity.IndividualPayment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -66,30 +66,43 @@ import java.util.Optional;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmUnderlyingCustomerCreditTransfer
- * CreditTransferTransaction23.mmUnderlyingCustomerCreditTransfer}</li>
- * <li>
  * {@linkplain com.tools20022.repository.msg.PaymentInstruction23#mmCreditTransferTransaction
  * PaymentInstruction23.mmCreditTransferTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.PaymentInstruction22#mmCreditTransferTransactionInformation
  * PaymentInstruction22.mmCreditTransferTransactionInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PaymentInstruction24#mmCreditTransferTransactionInformation
+ * PaymentInstruction24.mmCreditTransferTransactionInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.BalanceTransfer1#mmBalanceTransferMethod
+ * BalanceTransfer1.mmBalanceTransferMethod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PaymentTransaction87#mmReturnChain
+ * PaymentTransaction87.mmReturnChain}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31#mmUnderlyingCustomerCreditTransfer
+ * CreditTransferTransaction31.mmUnderlyingCustomerCreditTransfer}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction23
- * CreditTransferTransaction23}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction25
- * CreditTransferTransaction25}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction24
- * CreditTransferTransaction24}</li>
  * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction26
  * CreditTransferTransaction26}</li>
  * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction22
  * CreditTransferTransaction22}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction27
+ * CreditTransferTransaction27}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction31
+ * CreditTransferTransaction31}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionParties5
+ * TransactionParties5}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction32
+ * CreditTransferTransaction32}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CreditTransferTransaction30
+ * CreditTransferTransaction30}</li>
  * </ul>
  * </li>
  * <li>
@@ -141,7 +154,7 @@ public class CreditTransfer extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStandingOrder = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CreditTransfer, YesNoIndicator> mmStandingOrder = new MMBusinessAttribute<CreditTransfer, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
@@ -153,12 +166,14 @@ public class CreditTransfer extends IndividualPayment {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CreditTransfer.class.getMethod("getStandingOrder", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(CreditTransfer obj) {
+			return obj.getStandingOrder();
+		}
+
+		@Override
+		public void setValue(CreditTransfer obj, YesNoIndicator value) {
+			obj.setStandingOrder(value);
 		}
 	};
 	protected CashStandingOrder relatedStandingOrder;
@@ -195,7 +210,7 @@ public class CreditTransfer extends IndividualPayment {
 	 * definition} = "Standing order which creates the credit transfers."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedStandingOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CreditTransfer, Optional<CashStandingOrder>> mmRelatedStandingOrder = new MMBusinessAssociationEnd<CreditTransfer, Optional<CashStandingOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
@@ -204,9 +219,19 @@ public class CreditTransfer extends IndividualPayment {
 			definition = "Standing order which creates the credit transfers.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmCreditTransfer;
+			opposite_lazy = () -> CashStandingOrder.mmCreditTransfer;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
+			type_lazy = () -> CashStandingOrder.mmObject();
+		}
+
+		@Override
+		public Optional<CashStandingOrder> getValue(CreditTransfer obj) {
+			return obj.getRelatedStandingOrder();
+		}
+
+		@Override
+		public void setValue(CreditTransfer obj, Optional<CashStandingOrder> value) {
+			obj.setRelatedStandingOrder(value.orElse(null));
 		}
 	};
 
@@ -217,12 +242,13 @@ public class CreditTransfer extends IndividualPayment {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditTransfer";
 				definition = "Payment made by transferring an amount of money from a debtor to a creditor. The payment flows through one or more financial institutions or systems.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashStandingOrder.mmCreditTransfer);
-				derivationElement_lazy = () -> Arrays.asList(CreditTransferTransaction23.mmUnderlyingCustomerCreditTransfer, PaymentInstruction23.mmCreditTransferTransaction, PaymentInstruction22.mmCreditTransferTransactionInformation);
+				associationDomain_lazy = () -> Arrays.asList(CashStandingOrder.mmCreditTransfer);
+				derivationElement_lazy = () -> Arrays.asList(PaymentInstruction23.mmCreditTransferTransaction, PaymentInstruction22.mmCreditTransferTransactionInformation, PaymentInstruction24.mmCreditTransferTransactionInformation,
+						BalanceTransfer1.mmBalanceTransferMethod, PaymentTransaction87.mmReturnChain, CreditTransferTransaction31.mmUnderlyingCustomerCreditTransfer);
 				superType_lazy = () -> IndividualPayment.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CreditTransfer.mmStandingOrder, com.tools20022.repository.entity.CreditTransfer.mmRelatedStandingOrder);
-				derivationComponent_lazy = () -> Arrays.asList(CreditTransferTransaction23.mmObject(), CreditTransferTransaction25.mmObject(), CreditTransferTransaction24.mmObject(), CreditTransferTransaction26.mmObject(),
-						CreditTransferTransaction22.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(CreditTransferTransaction26.mmObject(), CreditTransferTransaction22.mmObject(), CreditTransferTransaction27.mmObject(), CreditTransferTransaction31.mmObject(),
+						TransactionParties5.mmObject(), CreditTransferTransaction32.mmObject(), CreditTransferTransaction30.mmObject());
 			}
 
 			@Override
@@ -246,7 +272,7 @@ public class CreditTransfer extends IndividualPayment {
 		return relatedStandingOrder == null ? Optional.empty() : Optional.of(relatedStandingOrder);
 	}
 
-	public CreditTransfer setRelatedStandingOrder(com.tools20022.repository.entity.CashStandingOrder relatedStandingOrder) {
+	public CreditTransfer setRelatedStandingOrder(CashStandingOrder relatedStandingOrder) {
 		this.relatedStandingOrder = relatedStandingOrder;
 		return this;
 	}

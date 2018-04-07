@@ -108,7 +108,7 @@ public class TaxExemptionReasonFormatChoice {
 	 * definition} = "Free text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnstructured = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxExemptionReasonFormatChoice, Max140Text> mmUnstructured = new MMMessageAttribute<TaxExemptionReasonFormatChoice, Max140Text>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmExemptionReason;
 			componentContext_lazy = () -> com.tools20022.repository.choice.TaxExemptionReasonFormatChoice.mmObject();
@@ -120,6 +120,16 @@ public class TaxExemptionReasonFormatChoice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Max140Text getValue(TaxExemptionReasonFormatChoice obj) {
+			return obj.getUnstructured();
+		}
+
+		@Override
+		public void setValue(TaxExemptionReasonFormatChoice obj, Max140Text value) {
+			obj.setUnstructured(value);
 		}
 	};
 	@XmlElement(name = "Strd", required = true)
@@ -157,7 +167,7 @@ public class TaxExemptionReasonFormatChoice {
 	 * definition} = "Structured format."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStructured = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxExemptionReasonFormatChoice, TaxExemptReason1Code> mmStructured = new MMMessageAttribute<TaxExemptionReasonFormatChoice, TaxExemptReason1Code>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmExemptionReason;
 			componentContext_lazy = () -> com.tools20022.repository.choice.TaxExemptionReasonFormatChoice.mmObject();
@@ -169,6 +179,16 @@ public class TaxExemptionReasonFormatChoice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> TaxExemptReason1Code.mmObject();
+		}
+
+		@Override
+		public TaxExemptReason1Code getValue(TaxExemptionReasonFormatChoice obj) {
+			return obj.getStructured();
+		}
+
+		@Override
+		public void setValue(TaxExemptionReasonFormatChoice obj, TaxExemptReason1Code value) {
+			obj.setStructured(value);
 		}
 	};
 

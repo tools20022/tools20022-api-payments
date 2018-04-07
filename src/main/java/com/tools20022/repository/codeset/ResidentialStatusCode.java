@@ -47,6 +47,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * ResidentialStatusCode.NonResident}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
+ * =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.codeset.ResidentialStatus1Code
+ * ResidentialStatus1Code}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -175,6 +182,7 @@ public class ResidentialStatusCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResidentialStatusCode";
 				definition = "Specifies the residential status of an individual.";
+				derivation_lazy = () -> Arrays.asList(ResidentialStatus1Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ResidentialStatusCode.Resident, com.tools20022.repository.codeset.ResidentialStatusCode.PermanentResident,
 						com.tools20022.repository.codeset.ResidentialStatusCode.NonResident);
 			}

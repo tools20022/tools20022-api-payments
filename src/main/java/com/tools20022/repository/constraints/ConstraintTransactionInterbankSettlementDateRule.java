@@ -34,8 +34,8 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV06
-	 * FinancialInstitutionCreditTransferV06}</li>
+	 * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV07
+	 * FinancialInstitutionCreditTransferV07}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/CreditTransferTransactionInformation[*]/InterbankSettlementDate&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/GroupHeader/InterbankSettlementDate&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -53,18 +53,18 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forFinancialInstitutionCreditTransferV06 = new MMConstraint() {
+	public static final MMConstraint<FinancialInstitutionCreditTransferV07> for_pacs_FinancialInstitutionCreditTransferV07 = new MMConstraint<FinancialInstitutionCreditTransferV07>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionInterbankSettlementDateRule";
 			definition = "If GroupHeader/InterbankSettlementDate is not present, then CreditTransferTransactionInformation/InterbankSettlementDate must be present.";
-			owner_lazy = () -> FinancialInstitutionCreditTransferV06.mmObject();
+			owner_lazy = () -> FinancialInstitutionCreditTransferV07.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/CreditTransferTransactionInformation[*]/InterbankSettlementDate</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/GroupHeader/InterbankSettlementDate</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFinancialInstitutionCreditTransferV06((FinancialInstitutionCreditTransferV06) obj);
+		public void executeValidator(FinancialInstitutionCreditTransferV07 obj) throws Exception {
+			check_pacs_FinancialInstitutionCreditTransferV07(obj);
 		}
 	};
 	/**
@@ -73,8 +73,8 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV06
-	 * FIToFICustomerCreditTransferV06}</li>
+	 * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV07
+	 * FIToFICustomerCreditTransferV07}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/CreditTransferTransactionInformation[*]/InterbankSettlementDate&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/GroupHeader/InterbankSettlementDate&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -92,18 +92,18 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forFIToFICustomerCreditTransferV06 = new MMConstraint() {
+	public static final MMConstraint<FIToFICustomerCreditTransferV07> for_pacs_FIToFICustomerCreditTransferV07 = new MMConstraint<FIToFICustomerCreditTransferV07>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionInterbankSettlementDateRule";
 			definition = "If GroupHeader/InterbankSettlementDate is not present, then CreditTransferTransactionInformation/InterbankSettlementDate must be present.";
-			owner_lazy = () -> FIToFICustomerCreditTransferV06.mmObject();
+			owner_lazy = () -> FIToFICustomerCreditTransferV07.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/CreditTransferTransactionInformation[*]/InterbankSettlementDate</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/GroupHeader/InterbankSettlementDate</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFIToFICustomerCreditTransferV06((FIToFICustomerCreditTransferV06) obj);
+		public void executeValidator(FIToFICustomerCreditTransferV07 obj) throws Exception {
+			check_pacs_FIToFICustomerCreditTransferV07(obj);
 		}
 	};
 	/**
@@ -112,8 +112,8 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.PaymentReturnV07
-	 * PaymentReturnV07}</li>
+	 * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentReversalV08
+	 * FIToFIPaymentReversalV08}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/TransactionInformation[*]/InterbankSettlementDate&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/GroupHeader/InterbankSettlementDate&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -131,57 +131,18 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentReturnV07 = new MMConstraint() {
+	public static final MMConstraint<FIToFIPaymentReversalV08> for_pacs_FIToFIPaymentReversalV08 = new MMConstraint<FIToFIPaymentReversalV08>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionInterbankSettlementDateRule";
 			definition = "If GroupHeader/InterbankSettlementDate is not present, then TransactionInformation/InterbankSettlementDate must be present.";
-			owner_lazy = () -> PaymentReturnV07.mmObject();
+			owner_lazy = () -> FIToFIPaymentReversalV08.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/TransactionInformation[*]/InterbankSettlementDate</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/GroupHeader/InterbankSettlementDate</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentReturnV07((PaymentReturnV07) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentReversalV07
-	 * FIToFIPaymentReversalV07}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
-	 * expression} =
-	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/TransactionInformation[*]/InterbankSettlementDate&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/GroupHeader/InterbankSettlementDate&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
-	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "TransactionInterbankSettlementDateRule"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "If GroupHeader/InterbankSettlementDate is not present, then TransactionInformation/InterbankSettlementDate must be present."
-	 * </li>
-	 * </ul>
-	 */
-	public static final MMConstraint forFIToFIPaymentReversalV07 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "TransactionInterbankSettlementDateRule";
-			definition = "If GroupHeader/InterbankSettlementDate is not present, then TransactionInformation/InterbankSettlementDate must be present.";
-			owner_lazy = () -> FIToFIPaymentReversalV07.mmObject();
-			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/TransactionInformation[*]/InterbankSettlementDate</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/GroupHeader/InterbankSettlementDate</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFIToFIPaymentReversalV07((FIToFIPaymentReversalV07) obj);
+		public void executeValidator(FIToFIPaymentReversalV08 obj) throws Exception {
+			check_pacs_FIToFIPaymentReversalV08(obj);
 		}
 	};
 	/**
@@ -209,7 +170,7 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forFIToFICustomerDirectDebitV07 = new MMConstraint() {
+	public static final MMConstraint<FIToFICustomerDirectDebitV07> for_pacs_FIToFICustomerDirectDebitV07 = new MMConstraint<FIToFICustomerDirectDebitV07>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionInterbankSettlementDateRule";
@@ -219,8 +180,47 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkFIToFICustomerDirectDebitV07((FIToFICustomerDirectDebitV07) obj);
+		public void executeValidator(FIToFICustomerDirectDebitV07 obj) throws Exception {
+			check_pacs_FIToFICustomerDirectDebitV07(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.area.pacs.PaymentReturnV08
+	 * PaymentReturnV08}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/TransactionInformation[*]/InterbankSettlementDate&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/GroupHeader/InterbankSettlementDate&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "TransactionInterbankSettlementDateRule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If GroupHeader/InterbankSettlementDate is not present, then TransactionInformation/InterbankSettlementDate must be present."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<PaymentReturnV08> for_pacs_PaymentReturnV08 = new MMConstraint<PaymentReturnV08>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "TransactionInterbankSettlementDateRule";
+			definition = "If GroupHeader/InterbankSettlementDate is not present, then TransactionInformation/InterbankSettlementDate must be present.";
+			owner_lazy = () -> PaymentReturnV08.mmObject();
+			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/TransactionInformation[*]/InterbankSettlementDate</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/GroupHeader/InterbankSettlementDate</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
+		}
+
+		@Override
+		public void executeValidator(PaymentReturnV08 obj) throws Exception {
+			check_pacs_PaymentReturnV08(obj);
 		}
 	};
 
@@ -229,7 +229,7 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * CreditTransferTransactionInformation/InterbankSettlementDate must be
 	 * present.
 	 */
-	public static void checkFinancialInstitutionCreditTransferV06(FinancialInstitutionCreditTransferV06 obj) throws Exception {
+	public static void check_pacs_FinancialInstitutionCreditTransferV07(FinancialInstitutionCreditTransferV07 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
@@ -238,7 +238,7 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * CreditTransferTransactionInformation/InterbankSettlementDate must be
 	 * present.
 	 */
-	public static void checkFIToFICustomerCreditTransferV06(FIToFICustomerCreditTransferV06 obj) throws Exception {
+	public static void check_pacs_FIToFICustomerCreditTransferV07(FIToFICustomerCreditTransferV07 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
@@ -246,15 +246,7 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * If GroupHeader/InterbankSettlementDate is not present, then
 	 * TransactionInformation/InterbankSettlementDate must be present.
 	 */
-	public static void checkPaymentReturnV07(PaymentReturnV07 obj) throws Exception {
-		throw new NotImplementedConstraintException();
-	}
-
-	/**
-	 * If GroupHeader/InterbankSettlementDate is not present, then
-	 * TransactionInformation/InterbankSettlementDate must be present.
-	 */
-	public static void checkFIToFIPaymentReversalV07(FIToFIPaymentReversalV07 obj) throws Exception {
+	public static void check_pacs_FIToFIPaymentReversalV08(FIToFIPaymentReversalV08 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
@@ -263,7 +255,15 @@ public class ConstraintTransactionInterbankSettlementDateRule {
 	 * DirectDebitTransactionInformation/InterbankSettlementDate must be
 	 * present.
 	 */
-	public static void checkFIToFICustomerDirectDebitV07(FIToFICustomerDirectDebitV07 obj) throws Exception {
+	public static void check_pacs_FIToFICustomerDirectDebitV07(FIToFICustomerDirectDebitV07 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If GroupHeader/InterbankSettlementDate is not present, then
+	 * TransactionInformation/InterbankSettlementDate must be present.
+	 */
+	public static void check_pacs_PaymentReturnV08(PaymentReturnV08 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

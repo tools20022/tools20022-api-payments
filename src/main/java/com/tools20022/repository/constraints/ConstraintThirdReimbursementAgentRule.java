@@ -53,7 +53,7 @@ public class ConstraintThirdReimbursementAgentRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forSettlementInstruction4 = new MMConstraint() {
+	public static final MMConstraint<SettlementInstruction4> forSettlementInstruction4 = new MMConstraint<SettlementInstruction4>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ThirdReimbursementAgentRule";
@@ -63,8 +63,8 @@ public class ConstraintThirdReimbursementAgentRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkSettlementInstruction4((SettlementInstruction4) obj);
+		public void executeValidator(SettlementInstruction4 obj) throws Exception {
+			checkSettlementInstruction4(obj);
 		}
 	};
 

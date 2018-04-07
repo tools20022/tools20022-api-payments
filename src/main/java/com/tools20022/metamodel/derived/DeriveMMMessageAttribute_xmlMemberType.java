@@ -27,13 +27,13 @@ import com.tools20022.metamodel.MMMessageAttribute;
  * 
  * @see MMMessageAttribute#checkMessageAttributeHasExactlyOneType
  */
-public class DeriveMMMessageAttribute_xmlMemberType implements Function<MMMessageAttribute, MMLogicalType> {
+public class DeriveMMMessageAttribute_xmlMemberType implements Function<MMMessageAttribute<?,?>, MMLogicalType> {
 
 	/**
 	 * Direct reference to the type of a MessageElement or MessageBuildingBlock
 	 */
 	@Override
-	public MMLogicalType apply(MMMessageAttribute mmBean) {
+	public MMLogicalType apply(MMMessageAttribute<?,?> mmBean) {
 		if (mmBean.getSimpleType().isPresent())
 			return mmBean.getSimpleType().get();
 		else if (mmBean.getComplexType().isPresent())

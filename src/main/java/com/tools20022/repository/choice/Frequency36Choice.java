@@ -103,7 +103,7 @@ public class Frequency36Choice {
 	 * "Specifies a frequency in terms of a specified period type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Frequency36Choice, Frequency6Code> mmType = new MMMessageAttribute<Frequency36Choice, Frequency6Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.Frequency36Choice.mmObject();
 			isDerived = false;
@@ -114,6 +114,16 @@ public class Frequency36Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Frequency6Code.mmObject();
+		}
+
+		@Override
+		public Frequency6Code getValue(Frequency36Choice obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Frequency36Choice obj, Frequency6Code value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "Prd", required = true)
@@ -148,7 +158,7 @@ public class Frequency36Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPeriod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Frequency36Choice, FrequencyPeriod1> mmPeriod = new MMMessageAttribute<Frequency36Choice, FrequencyPeriod1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.Frequency36Choice.mmObject();
 			isDerived = false;
@@ -159,6 +169,16 @@ public class Frequency36Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> FrequencyPeriod1.mmObject();
+		}
+
+		@Override
+		public FrequencyPeriod1 getValue(Frequency36Choice obj) {
+			return obj.getPeriod();
+		}
+
+		@Override
+		public void setValue(Frequency36Choice obj, FrequencyPeriod1 value) {
+			obj.setPeriod(value);
 		}
 	};
 	@XmlElement(name = "PtInTm", required = true)
@@ -191,7 +211,7 @@ public class Frequency36Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPointInTime = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Frequency36Choice, FrequencyAndMoment1> mmPointInTime = new MMMessageAssociationEnd<Frequency36Choice, FrequencyAndMoment1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.Frequency36Choice.mmObject();
 			isDerived = false;
@@ -203,6 +223,16 @@ public class Frequency36Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> FrequencyAndMoment1.mmObject();
+		}
+
+		@Override
+		public FrequencyAndMoment1 getValue(Frequency36Choice obj) {
+			return obj.getPointInTime();
+		}
+
+		@Override
+		public void setValue(Frequency36Choice obj, FrequencyAndMoment1 value) {
+			obj.setPointInTime(value);
 		}
 	};
 

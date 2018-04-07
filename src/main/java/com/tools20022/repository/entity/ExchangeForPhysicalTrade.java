@@ -21,8 +21,8 @@ import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.SecuritiesOrder;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -119,7 +119,7 @@ public class ExchangeForPhysicalTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOutsideIndex = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ExchangeForPhysicalTrade, PercentageRate> mmOutsideIndex = new MMBusinessAttribute<ExchangeForPhysicalTrade, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
@@ -132,12 +132,14 @@ public class ExchangeForPhysicalTrade {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ExchangeForPhysicalTrade.class.getMethod("getOutsideIndex", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(ExchangeForPhysicalTrade obj) {
+			return obj.getOutsideIndex();
+		}
+
+		@Override
+		public void setValue(ExchangeForPhysicalTrade obj, PercentageRate value) {
+			obj.setOutsideIndex(value);
 		}
 	};
 	protected CurrencyAndAmount fairValue;
@@ -172,7 +174,7 @@ public class ExchangeForPhysicalTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFairValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ExchangeForPhysicalTrade, CurrencyAndAmount> mmFairValue = new MMBusinessAttribute<ExchangeForPhysicalTrade, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
@@ -185,12 +187,14 @@ public class ExchangeForPhysicalTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ExchangeForPhysicalTrade.class.getMethod("getFairValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(ExchangeForPhysicalTrade obj) {
+			return obj.getFairValue();
+		}
+
+		@Override
+		public void setValue(ExchangeForPhysicalTrade obj, CurrencyAndAmount value) {
+			obj.setFairValue(value);
 		}
 	};
 	protected CurrencyAndAmount valueForFutures;
@@ -225,7 +229,7 @@ public class ExchangeForPhysicalTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValueForFutures = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ExchangeForPhysicalTrade, CurrencyAndAmount> mmValueForFutures = new MMBusinessAttribute<ExchangeForPhysicalTrade, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
@@ -238,12 +242,14 @@ public class ExchangeForPhysicalTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ExchangeForPhysicalTrade.class.getMethod("getValueForFutures", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(ExchangeForPhysicalTrade obj) {
+			return obj.getValueForFutures();
+		}
+
+		@Override
+		public void setValue(ExchangeForPhysicalTrade obj, CurrencyAndAmount value) {
+			obj.setValueForFutures(value);
 		}
 	};
 	protected CurrencyAndAmount outMainCountryIndex;
@@ -278,7 +284,7 @@ public class ExchangeForPhysicalTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOutMainCountryIndex = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ExchangeForPhysicalTrade, CurrencyAndAmount> mmOutMainCountryIndex = new MMBusinessAttribute<ExchangeForPhysicalTrade, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
@@ -291,12 +297,14 @@ public class ExchangeForPhysicalTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ExchangeForPhysicalTrade.class.getMethod("getOutMainCountryIndex", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(ExchangeForPhysicalTrade obj) {
+			return obj.getOutMainCountryIndex();
+		}
+
+		@Override
+		public void setValue(ExchangeForPhysicalTrade obj, CurrencyAndAmount value) {
+			obj.setOutMainCountryIndex(value);
 		}
 	};
 	protected SecuritiesOrder securitiesOrder;
@@ -335,7 +343,7 @@ public class ExchangeForPhysicalTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ExchangeForPhysicalTrade, SecuritiesOrder> mmSecuritiesOrder = new MMBusinessAssociationEnd<ExchangeForPhysicalTrade, SecuritiesOrder>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmObject();
@@ -344,9 +352,19 @@ public class ExchangeForPhysicalTrade {
 			definition = "Order for which parameters for exchange for physical trading are specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmExchangeForPhysicalTrade;
+			opposite_lazy = () -> SecuritiesOrder.mmExchangeForPhysicalTrade;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public SecuritiesOrder getValue(ExchangeForPhysicalTrade obj) {
+			return obj.getSecuritiesOrder();
+		}
+
+		@Override
+		public void setValue(ExchangeForPhysicalTrade obj, SecuritiesOrder value) {
+			obj.setSecuritiesOrder(value);
 		}
 	};
 
@@ -357,7 +375,7 @@ public class ExchangeForPhysicalTrade {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExchangeForPhysicalTrade";
 				definition = "Technique whereby a position in the underlying is traded for a futures position in the physical commodity markets.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrder.mmExchangeForPhysicalTrade);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesOrder.mmExchangeForPhysicalTrade);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmOutsideIndex, com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmFairValue,
 						com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmValueForFutures, com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmOutMainCountryIndex,
 						com.tools20022.repository.entity.ExchangeForPhysicalTrade.mmSecuritiesOrder);
@@ -411,7 +429,7 @@ public class ExchangeForPhysicalTrade {
 		return securitiesOrder;
 	}
 
-	public ExchangeForPhysicalTrade setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
+	public ExchangeForPhysicalTrade setSecuritiesOrder(SecuritiesOrder securitiesOrder) {
 		this.securitiesOrder = Objects.requireNonNull(securitiesOrder);
 		return this;
 	}

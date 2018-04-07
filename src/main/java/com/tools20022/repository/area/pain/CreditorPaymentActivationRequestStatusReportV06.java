@@ -26,7 +26,6 @@ import com.tools20022.repository.msg.GroupHeader46;
 import com.tools20022.repository.msg.OriginalGroupInformation28;
 import com.tools20022.repository.msg.OriginalPaymentInstruction24;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -77,25 +76,25 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus1Rule#forCreditorPaymentActivationRequestStatusReportV06
+ * {@linkplain com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus1Rule#for_pain_CreditorPaymentActivationRequestStatusReportV06
  * ConstraintGroupAndTransactionStatus1Rule.
- * forCreditorPaymentActivationRequestStatusReportV06}</li>
+ * for_pain_CreditorPaymentActivationRequestStatusReportV06}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus2Rule#forCreditorPaymentActivationRequestStatusReportV06
+ * {@linkplain com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus2Rule#for_pain_CreditorPaymentActivationRequestStatusReportV06
  * ConstraintGroupAndTransactionStatus2Rule.
- * forCreditorPaymentActivationRequestStatusReportV06}</li>
+ * for_pain_CreditorPaymentActivationRequestStatusReportV06}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus3Rule#forCreditorPaymentActivationRequestStatusReportV06
+ * {@linkplain com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus3Rule#for_pain_CreditorPaymentActivationRequestStatusReportV06
  * ConstraintGroupAndTransactionStatus3Rule.
- * forCreditorPaymentActivationRequestStatusReportV06}</li>
+ * for_pain_CreditorPaymentActivationRequestStatusReportV06}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus4Rule#forCreditorPaymentActivationRequestStatusReportV06
+ * {@linkplain com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus4Rule#for_pain_CreditorPaymentActivationRequestStatusReportV06
  * ConstraintGroupAndTransactionStatus4Rule.
- * forCreditorPaymentActivationRequestStatusReportV06}</li>
+ * for_pain_CreditorPaymentActivationRequestStatusReportV06}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forCreditorPaymentActivationRequestStatusReportV06
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#for_pain_CreditorPaymentActivationRequestStatusReportV06
  * ConstraintSupplementaryDataRule.
- * forCreditorPaymentActivationRequestStatusReportV06}</li>
+ * for_pain_CreditorPaymentActivationRequestStatusReportV06}</li>
  * </ul>
  * </li>
  * <li>
@@ -141,7 +140,7 @@ public class CreditorPaymentActivationRequestStatusReportV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CreditorPaymentActivationRequestStatusReportV06, GroupHeader46> mmGroupHeader = new MMMessageBuildingBlock<CreditorPaymentActivationRequestStatusReportV06, GroupHeader46>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -152,12 +151,14 @@ public class CreditorPaymentActivationRequestStatusReportV06 {
 			complexType_lazy = () -> GroupHeader46.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CreditorPaymentActivationRequestStatusReportV06.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader46 getValue(CreditorPaymentActivationRequestStatusReportV06 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(CreditorPaymentActivationRequestStatusReportV06 obj, GroupHeader46 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "OrgnlGrpInfAndSts", required = true)
@@ -187,7 +188,7 @@ public class CreditorPaymentActivationRequestStatusReportV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOriginalGroupInformationAndStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CreditorPaymentActivationRequestStatusReportV06, OriginalGroupInformation28> mmOriginalGroupInformationAndStatus = new MMMessageBuildingBlock<CreditorPaymentActivationRequestStatusReportV06, OriginalGroupInformation28>() {
 		{
 			xmlTag = "OrgnlGrpInfAndSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -198,12 +199,14 @@ public class CreditorPaymentActivationRequestStatusReportV06 {
 			complexType_lazy = () -> OriginalGroupInformation28.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CreditorPaymentActivationRequestStatusReportV06.class.getMethod("getOriginalGroupInformationAndStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OriginalGroupInformation28 getValue(CreditorPaymentActivationRequestStatusReportV06 obj) {
+			return obj.getOriginalGroupInformationAndStatus();
+		}
+
+		@Override
+		public void setValue(CreditorPaymentActivationRequestStatusReportV06 obj, OriginalGroupInformation28 value) {
+			obj.setOriginalGroupInformationAndStatus(value);
 		}
 	};
 	@XmlElement(name = "OrgnlPmtInfAndSts")
@@ -233,7 +236,7 @@ public class CreditorPaymentActivationRequestStatusReportV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOriginalPaymentInformationAndStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CreditorPaymentActivationRequestStatusReportV06, List<OriginalPaymentInstruction24>> mmOriginalPaymentInformationAndStatus = new MMMessageBuildingBlock<CreditorPaymentActivationRequestStatusReportV06, List<OriginalPaymentInstruction24>>() {
 		{
 			xmlTag = "OrgnlPmtInfAndSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -243,12 +246,14 @@ public class CreditorPaymentActivationRequestStatusReportV06 {
 			complexType_lazy = () -> OriginalPaymentInstruction24.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CreditorPaymentActivationRequestStatusReportV06.class.getMethod("getOriginalPaymentInformationAndStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<OriginalPaymentInstruction24> getValue(CreditorPaymentActivationRequestStatusReportV06 obj) {
+			return obj.getOriginalPaymentInformationAndStatus();
+		}
+
+		@Override
+		public void setValue(CreditorPaymentActivationRequestStatusReportV06 obj, List<OriginalPaymentInstruction24> value) {
+			obj.setOriginalPaymentInformationAndStatus(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -278,7 +283,7 @@ public class CreditorPaymentActivationRequestStatusReportV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CreditorPaymentActivationRequestStatusReportV06, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CreditorPaymentActivationRequestStatusReportV06, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -288,23 +293,25 @@ public class CreditorPaymentActivationRequestStatusReportV06 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CreditorPaymentActivationRequestStatusReportV06.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CreditorPaymentActivationRequestStatusReportV06 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CreditorPaymentActivationRequestStatusReportV06 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus1Rule.forCreditorPaymentActivationRequestStatusReportV06,
-						com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus2Rule.forCreditorPaymentActivationRequestStatusReportV06,
-						com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus3Rule.forCreditorPaymentActivationRequestStatusReportV06,
-						com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus4Rule.forCreditorPaymentActivationRequestStatusReportV06,
-						com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forCreditorPaymentActivationRequestStatusReportV06);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus1Rule.for_pain_CreditorPaymentActivationRequestStatusReportV06,
+						com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus2Rule.for_pain_CreditorPaymentActivationRequestStatusReportV06,
+						com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus3Rule.for_pain_CreditorPaymentActivationRequestStatusReportV06,
+						com.tools20022.repository.constraints.ConstraintGroupAndTransactionStatus4Rule.for_pain_CreditorPaymentActivationRequestStatusReportV06,
+						com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.for_pain_CreditorPaymentActivationRequestStatusReportV06);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditorPaymentActivationRequestStatusReportV06";
 				definition = "The CreditorPaymentActivationRequestStatusReport message is sent by a party to the next party in the creditor payment activation request chain. It is used to inform the latter about the positive or negative status of a creditor payment activation request (either single or file).";

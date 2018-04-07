@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SystemPartyRole;
+import com.tools20022.repository.entity.TerminalManagementSystem;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -116,7 +117,7 @@ public class TerminalManagerRole extends SystemPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTerminalManagementSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TerminalManagerRole, List<TerminalManagementSystem>> mmTerminalManagementSystem = new MMBusinessAssociationEnd<TerminalManagerRole, List<TerminalManagementSystem>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagerRole.mmObject();
@@ -127,6 +128,16 @@ public class TerminalManagerRole extends SystemPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmTerminalManagerRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
+		}
+
+		@Override
+		public List<TerminalManagementSystem> getValue(TerminalManagerRole obj) {
+			return obj.getTerminalManagementSystem();
+		}
+
+		@Override
+		public void setValue(TerminalManagerRole obj, List<TerminalManagementSystem> value) {
+			obj.setTerminalManagementSystem(value);
 		}
 	};
 

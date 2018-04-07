@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.datatype.Percentage;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ExchangeRate1;
+import com.tools20022.repository.msg.TradeParty2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -121,7 +123,7 @@ public class SyndicatedLoan1 {
 	 * definition} = "Party which obtains the loan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBorrower = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SyndicatedLoan1, TradeParty2> mmBorrower = new MMMessageAssociationEnd<SyndicatedLoan1, TradeParty2>() {
 		{
 			businessComponentTrace_lazy = () -> Borrower.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
@@ -133,7 +135,17 @@ public class SyndicatedLoan1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TradeParty2.mmObject();
+			type_lazy = () -> TradeParty2.mmObject();
+		}
+
+		@Override
+		public TradeParty2 getValue(SyndicatedLoan1 obj) {
+			return obj.getBorrower();
+		}
+
+		@Override
+		public void setValue(SyndicatedLoan1 obj, TradeParty2 value) {
+			obj.setBorrower(value);
 		}
 	};
 	@XmlElement(name = "Lndr")
@@ -170,7 +182,7 @@ public class SyndicatedLoan1 {
 	 * "Party which provides an amount of money available to others to borrow."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLender = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SyndicatedLoan1, Optional<TradeParty2>> mmLender = new MMMessageAttribute<SyndicatedLoan1, Optional<TradeParty2>>() {
 		{
 			businessComponentTrace_lazy = () -> Lender.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
@@ -181,7 +193,17 @@ public class SyndicatedLoan1 {
 			definition = "Party which provides an amount of money available to others to borrow.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.TradeParty2.mmObject();
+			complexType_lazy = () -> TradeParty2.mmObject();
+		}
+
+		@Override
+		public Optional<TradeParty2> getValue(SyndicatedLoan1 obj) {
+			return obj.getLender();
+		}
+
+		@Override
+		public void setValue(SyndicatedLoan1 obj, Optional<TradeParty2> value) {
+			obj.setLender(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt")
@@ -219,7 +241,7 @@ public class SyndicatedLoan1 {
 	 * definition} = "Amount of the part in the syndicated loan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SyndicatedLoan1, Optional<ActiveCurrencyAndAmount>> mmAmount = new MMMessageAttribute<SyndicatedLoan1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Loan.mmPrincipalAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
@@ -231,6 +253,16 @@ public class SyndicatedLoan1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SyndicatedLoan1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(SyndicatedLoan1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Shr")
@@ -267,7 +299,7 @@ public class SyndicatedLoan1 {
 	 * definition} = "Share of the part in the syndicated loan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmShare = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SyndicatedLoan1, Optional<Percentage>> mmShare = new MMMessageAttribute<SyndicatedLoan1, Optional<Percentage>>() {
 		{
 			businessElementTrace_lazy = () -> Allocation.mmAllocatedQuantity;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
@@ -279,6 +311,16 @@ public class SyndicatedLoan1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Percentage.mmObject();
+		}
+
+		@Override
+		public Optional<Percentage> getValue(SyndicatedLoan1 obj) {
+			return obj.getShare();
+		}
+
+		@Override
+		public void setValue(SyndicatedLoan1 obj, Optional<Percentage> value) {
+			obj.setShare(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "XchgRateInf")
@@ -315,7 +357,7 @@ public class SyndicatedLoan1 {
 	 * "Provides details on the currency exchange rate and contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmExchangeRateInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SyndicatedLoan1, Optional<ExchangeRate1>> mmExchangeRateInformation = new MMMessageAssociationEnd<SyndicatedLoan1, Optional<ExchangeRate1>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmExchangeRateInformation;
 			componentContext_lazy = () -> com.tools20022.repository.msg.SyndicatedLoan1.mmObject();
@@ -327,7 +369,17 @@ public class SyndicatedLoan1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ExchangeRate1.mmObject();
+			type_lazy = () -> ExchangeRate1.mmObject();
+		}
+
+		@Override
+		public Optional<ExchangeRate1> getValue(SyndicatedLoan1 obj) {
+			return obj.getExchangeRateInformation();
+		}
+
+		@Override
+		public void setValue(SyndicatedLoan1 obj, Optional<ExchangeRate1> value) {
+			obj.setExchangeRateInformation(value.orElse(null));
 		}
 	};
 
@@ -351,7 +403,7 @@ public class SyndicatedLoan1 {
 		return borrower;
 	}
 
-	public SyndicatedLoan1 setBorrower(com.tools20022.repository.msg.TradeParty2 borrower) {
+	public SyndicatedLoan1 setBorrower(TradeParty2 borrower) {
 		this.borrower = Objects.requireNonNull(borrower);
 		return this;
 	}
@@ -360,7 +412,7 @@ public class SyndicatedLoan1 {
 		return lender == null ? Optional.empty() : Optional.of(lender);
 	}
 
-	public SyndicatedLoan1 setLender(com.tools20022.repository.msg.TradeParty2 lender) {
+	public SyndicatedLoan1 setLender(TradeParty2 lender) {
 		this.lender = lender;
 		return this;
 	}
@@ -387,7 +439,7 @@ public class SyndicatedLoan1 {
 		return exchangeRateInformation == null ? Optional.empty() : Optional.of(exchangeRateInformation);
 	}
 
-	public SyndicatedLoan1 setExchangeRateInformation(com.tools20022.repository.msg.ExchangeRate1 exchangeRateInformation) {
+	public SyndicatedLoan1 setExchangeRateInformation(ExchangeRate1 exchangeRateInformation) {
 		this.exchangeRateInformation = exchangeRateInformation;
 		return this;
 	}

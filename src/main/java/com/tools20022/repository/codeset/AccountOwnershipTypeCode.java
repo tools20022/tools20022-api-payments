@@ -206,7 +206,7 @@ public class AccountOwnershipTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Minor's account, registered in the minor's name. Since the minor cannot legally own property,  the custodian of the account maintains control of the account."
+	 * "Minor's account, registered in the minor's name. Since the minor cannot legally own property, the custodian of the account maintains control of the account."
 	 * </li>
 	 * </ul>
 	 */
@@ -214,7 +214,7 @@ public class AccountOwnershipTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CustodialAccount";
-			definition = "Minor's account, registered in the minor's name. Since the minor cannot legally own property,  the custodian of the account maintains control of the account.";
+			definition = "Minor's account, registered in the minor's name. Since the minor cannot legally own property, the custodian of the account maintains control of the account.";
 			owner_lazy = () -> com.tools20022.repository.codeset.AccountOwnershipTypeCode.mmObject();
 			codeName = "CUST";
 		}
@@ -650,7 +650,7 @@ public class AccountOwnershipTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Account owner is an unincorporated partnership or is of sole proprietorship. "
+	 * "Account owner is an unincorporated partnership or is of sole proprietorship."
 	 * </li>
 	 * </ul>
 	 */
@@ -658,7 +658,7 @@ public class AccountOwnershipTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unincorporated";
-			definition = "Account owner is an unincorporated partnership or is of sole proprietorship. ";
+			definition = "Account owner is an unincorporated partnership or is of sole proprietorship.";
 			owner_lazy = () -> com.tools20022.repository.codeset.AccountOwnershipTypeCode.mmObject();
 			codeName = "UNCO";
 		}

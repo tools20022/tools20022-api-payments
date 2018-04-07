@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.PaymentStatus;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyIdentification43;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -86,6 +87,8 @@ import javax.xml.bind.annotation.XmlType;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.ValidationStatusReason1
  * ValidationStatusReason1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.StatusReasonInformation11
+ * StatusReasonInformation11}</li>
  * </ul>
  * </li>
  * </ul>
@@ -132,11 +135,14 @@ public class StatusReasonInformation9 {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#mmOriginator
 	 * ValidationStatusReason1.mmOriginator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation11#mmOriginator
+	 * StatusReasonInformation11.mmOriginator}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginator = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StatusReasonInformation9, Optional<PartyIdentification43>> mmOriginator = new MMMessageAssociationEnd<StatusReasonInformation9, Optional<PartyIdentification43>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StatusReasonInformation9.mmObject();
@@ -145,11 +151,21 @@ public class StatusReasonInformation9 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Originator";
 			definition = "Party that issues the status.";
-			nextVersions_lazy = () -> Arrays.asList(ValidationStatusReason1.mmOriginator);
+			nextVersions_lazy = () -> Arrays.asList(ValidationStatusReason1.mmOriginator, StatusReasonInformation11.mmOriginator);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
+			type_lazy = () -> PartyIdentification43.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification43> getValue(StatusReasonInformation9 obj) {
+			return obj.getOriginator();
+		}
+
+		@Override
+		public void setValue(StatusReasonInformation9 obj, Optional<PartyIdentification43> value) {
+			obj.setOriginator(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rsn")
@@ -189,11 +205,14 @@ public class StatusReasonInformation9 {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#mmReason
 	 * ValidationStatusReason1.mmReason}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation11#mmReason
+	 * StatusReasonInformation11.mmReason}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StatusReasonInformation9, Optional<StatusReason6Choice>> mmReason = new MMMessageAssociationEnd<StatusReasonInformation9, Optional<StatusReason6Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StatusReasonInformation9.mmObject();
@@ -202,11 +221,21 @@ public class StatusReasonInformation9 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reason";
 			definition = "Specifies the reason for the status report.";
-			nextVersions_lazy = () -> Arrays.asList(ValidationStatusReason1.mmReason);
+			nextVersions_lazy = () -> Arrays.asList(ValidationStatusReason1.mmReason, StatusReasonInformation11.mmReason);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> StatusReason6Choice.mmObject();
+		}
+
+		@Override
+		public Optional<StatusReason6Choice> getValue(StatusReasonInformation9 obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(StatusReasonInformation9 obj, Optional<StatusReason6Choice> value) {
+			obj.setReason(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -249,11 +278,14 @@ public class StatusReasonInformation9 {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#mmAdditionalInformation
 	 * ValidationStatusReason1.mmAdditionalInformation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation11#mmAdditionalInformation
+	 * StatusReasonInformation11.mmAdditionalInformation}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatusReasonInformation9, List<Max105Text>> mmAdditionalInformation = new MMMessageAttribute<StatusReasonInformation9, List<Max105Text>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDescription;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StatusReasonInformation9.mmObject();
@@ -262,9 +294,19 @@ public class StatusReasonInformation9 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Further details on the status reason.\n\nUsage: Additional information can be used for several purposes such as the reporting of repaired information.";
-			nextVersions_lazy = () -> Arrays.asList(ValidationStatusReason1.mmAdditionalInformation);
+			nextVersions_lazy = () -> Arrays.asList(ValidationStatusReason1.mmAdditionalInformation, StatusReasonInformation11.mmAdditionalInformation);
 			minOccurs = 0;
 			simpleType_lazy = () -> Max105Text.mmObject();
+		}
+
+		@Override
+		public List<Max105Text> getValue(StatusReasonInformation9 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(StatusReasonInformation9 obj, List<Max105Text> value) {
+			obj.setAdditionalInformation(value);
 		}
 	};
 
@@ -279,7 +321,7 @@ public class StatusReasonInformation9 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatusReasonInformation9";
 				definition = "Set of elements used to provide information on the status reason of the transaction.";
-				nextVersions_lazy = () -> Arrays.asList(ValidationStatusReason1.mmObject());
+				nextVersions_lazy = () -> Arrays.asList(ValidationStatusReason1.mmObject(), StatusReasonInformation11.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
@@ -289,7 +331,7 @@ public class StatusReasonInformation9 {
 		return originator == null ? Optional.empty() : Optional.of(originator);
 	}
 
-	public StatusReasonInformation9 setOriginator(com.tools20022.repository.msg.PartyIdentification43 originator) {
+	public StatusReasonInformation9 setOriginator(PartyIdentification43 originator) {
 		this.originator = originator;
 		return this;
 	}

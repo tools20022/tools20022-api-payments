@@ -27,6 +27,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DocumentIdentification28;
+import com.tools20022.repository.msg.ValidationStatusReason1;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -110,21 +112,31 @@ public class CurrencyControlRecordStatus1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Unique and unambiguous identification of each entry/record within the package of transactions. "
+	 * "Unique and unambiguous identification of each entry/record within the package of transactions."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRecordIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlRecordStatus1, Max35Text> mmRecordIdentification = new MMMessageAttribute<CurrencyControlRecordStatus1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlRecordStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "RcrdId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RecordIdentification";
-			definition = "Unique and unambiguous identification of each entry/record within the package of transactions. ";
+			definition = "Unique and unambiguous identification of each entry/record within the package of transactions.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(CurrencyControlRecordStatus1 obj) {
+			return obj.getRecordIdentification();
+		}
+
+		@Override
+		public void setValue(CurrencyControlRecordStatus1 obj, Max35Text value) {
+			obj.setRecordIdentification(value);
 		}
 	};
 	@XmlElement(name = "Sts", required = true)
@@ -162,7 +174,7 @@ public class CurrencyControlRecordStatus1 {
 	 * definition} = "Defines the status of the reported record."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlRecordStatus1, StatisticalReportingStatus1Code> mmStatus = new MMMessageAttribute<CurrencyControlRecordStatus1, StatisticalReportingStatus1Code>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDescription;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlRecordStatus1.mmObject();
@@ -175,9 +187,19 @@ public class CurrencyControlRecordStatus1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> StatisticalReportingStatus1Code.mmObject();
 		}
+
+		@Override
+		public StatisticalReportingStatus1Code getValue(CurrencyControlRecordStatus1 obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(CurrencyControlRecordStatus1 obj, StatisticalReportingStatus1Code value) {
+			obj.setStatus(value);
+		}
 	};
 	@XmlElement(name = "StsRsn")
-	protected List<com.tools20022.repository.msg.ValidationStatusReason1> statusReason;
+	protected List<ValidationStatusReason1> statusReason;
 	/**
 	 * 
 	 <p>
@@ -210,7 +232,7 @@ public class CurrencyControlRecordStatus1 {
 	 * definition} = "Provides detailed information on the status reason."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmStatusReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlRecordStatus1, List<ValidationStatusReason1>> mmStatusReason = new MMMessageAssociationEnd<CurrencyControlRecordStatus1, List<ValidationStatusReason1>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlRecordStatus1.mmObject();
@@ -221,7 +243,17 @@ public class CurrencyControlRecordStatus1 {
 			definition = "Provides detailed information on the status reason.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ValidationStatusReason1.mmObject();
+			type_lazy = () -> ValidationStatusReason1.mmObject();
+		}
+
+		@Override
+		public List<ValidationStatusReason1> getValue(CurrencyControlRecordStatus1 obj) {
+			return obj.getStatusReason();
+		}
+
+		@Override
+		public void setValue(CurrencyControlRecordStatus1 obj, List<ValidationStatusReason1> value) {
+			obj.setStatusReason(value);
 		}
 	};
 	@XmlElement(name = "StsDtTm")
@@ -258,7 +290,7 @@ public class CurrencyControlRecordStatus1 {
 	 * definition} = "Provides the date and time when the status was issued."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatusDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyControlRecordStatus1, Optional<ISODateTime>> mmStatusDateTime = new MMMessageAttribute<CurrencyControlRecordStatus1, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDateTime;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlRecordStatus1.mmObject();
@@ -270,6 +302,16 @@ public class CurrencyControlRecordStatus1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public Optional<ISODateTime> getValue(CurrencyControlRecordStatus1 obj) {
+			return obj.getStatusDateTime();
+		}
+
+		@Override
+		public void setValue(CurrencyControlRecordStatus1 obj, Optional<ISODateTime> value) {
+			obj.setStatusDateTime(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "DocId")
@@ -306,7 +348,7 @@ public class CurrencyControlRecordStatus1 {
 	 * definition} = "Unique and unambiguous identification of the document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDocumentIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyControlRecordStatus1, Optional<DocumentIdentification28>> mmDocumentIdentification = new MMMessageAssociationEnd<CurrencyControlRecordStatus1, Optional<DocumentIdentification28>>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyControlRecordStatus1.mmObject();
@@ -318,7 +360,17 @@ public class CurrencyControlRecordStatus1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DocumentIdentification28.mmObject();
+			type_lazy = () -> DocumentIdentification28.mmObject();
+		}
+
+		@Override
+		public Optional<DocumentIdentification28> getValue(CurrencyControlRecordStatus1 obj) {
+			return obj.getDocumentIdentification();
+		}
+
+		@Override
+		public void setValue(CurrencyControlRecordStatus1 obj, Optional<DocumentIdentification28> value) {
+			obj.setDocumentIdentification(value.orElse(null));
 		}
 	};
 
@@ -360,7 +412,7 @@ public class CurrencyControlRecordStatus1 {
 		return statusReason == null ? statusReason = new ArrayList<>() : statusReason;
 	}
 
-	public CurrencyControlRecordStatus1 setStatusReason(List<com.tools20022.repository.msg.ValidationStatusReason1> statusReason) {
+	public CurrencyControlRecordStatus1 setStatusReason(List<ValidationStatusReason1> statusReason) {
 		this.statusReason = Objects.requireNonNull(statusReason);
 		return this;
 	}
@@ -378,7 +430,7 @@ public class CurrencyControlRecordStatus1 {
 		return documentIdentification == null ? Optional.empty() : Optional.of(documentIdentification);
 	}
 
-	public CurrencyControlRecordStatus1 setDocumentIdentification(com.tools20022.repository.msg.DocumentIdentification28 documentIdentification) {
+	public CurrencyControlRecordStatus1 setDocumentIdentification(DocumentIdentification28 documentIdentification) {
 		this.documentIdentification = documentIdentification;
 		return this;
 	}

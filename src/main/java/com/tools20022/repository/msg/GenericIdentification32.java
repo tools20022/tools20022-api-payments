@@ -115,7 +115,7 @@ public class GenericIdentification32 {
 	 * definition} = "Identification of the entity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification32, Max35Text> mmIdentification = new MMMessageAttribute<GenericIdentification32, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification32.mmObject();
@@ -127,6 +127,16 @@ public class GenericIdentification32 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(GenericIdentification32 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(GenericIdentification32 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "Tp")
@@ -164,7 +174,7 @@ public class GenericIdentification32 {
 	 * definition} = "Type of identified entity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification32, Optional<PartyType3Code>> mmType = new MMMessageAttribute<GenericIdentification32, Optional<PartyType3Code>>() {
 		{
 			businessComponentTrace_lazy = () -> GenericIdentification.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification32.mmObject();
@@ -176,6 +186,16 @@ public class GenericIdentification32 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> PartyType3Code.mmObject();
+		}
+
+		@Override
+		public Optional<PartyType3Code> getValue(GenericIdentification32 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(GenericIdentification32 obj, Optional<PartyType3Code> value) {
+			obj.setType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Issr")
@@ -211,11 +231,11 @@ public class GenericIdentification32 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Entity assigning the identification  (for example merchant, acceptor, acquirer, or tax authority)."
+	 * "Entity assigning the identification (for example merchant, acceptor, acquirer, or tax authority)."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification32, Optional<PartyType4Code>> mmIssuer = new MMMessageAttribute<GenericIdentification32, Optional<PartyType4Code>>() {
 		{
 			businessComponentTrace_lazy = () -> IdentificationIssuerRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification32.mmObject();
@@ -223,10 +243,20 @@ public class GenericIdentification32 {
 			xmlTag = "Issr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuer";
-			definition = "Entity assigning the identification  (for example merchant, acceptor, acquirer, or tax authority).";
+			definition = "Entity assigning the identification (for example merchant, acceptor, acquirer, or tax authority).";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> PartyType4Code.mmObject();
+		}
+
+		@Override
+		public Optional<PartyType4Code> getValue(GenericIdentification32 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(GenericIdentification32 obj, Optional<PartyType4Code> value) {
+			obj.setIssuer(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ShrtNm")
@@ -263,7 +293,7 @@ public class GenericIdentification32 {
 	 * definition} = "Name of the entity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmShortName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification32, Optional<Max35Text>> mmShortName = new MMMessageAttribute<GenericIdentification32, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationName.mmShortName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification32.mmObject();
@@ -275,6 +305,16 @@ public class GenericIdentification32 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(GenericIdentification32 obj) {
+			return obj.getShortName();
+		}
+
+		@Override
+		public void setValue(GenericIdentification32 obj, Optional<Max35Text> value) {
+			obj.setShortName(value.orElse(null));
 		}
 	};
 

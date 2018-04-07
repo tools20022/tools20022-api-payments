@@ -53,7 +53,7 @@ public class ConstraintInterbankSettlementDateRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCreditTransferTransaction9 = new MMConstraint() {
+	public static final MMConstraint<CreditTransferTransaction9> forCreditTransferTransaction9 = new MMConstraint<CreditTransferTransaction9>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InterbankSettlementDateRule";
@@ -63,8 +63,8 @@ public class ConstraintInterbankSettlementDateRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction9((CreditTransferTransaction9) obj);
+		public void executeValidator(CreditTransferTransaction9 obj) throws Exception {
+			checkCreditTransferTransaction9(obj);
 		}
 	};
 

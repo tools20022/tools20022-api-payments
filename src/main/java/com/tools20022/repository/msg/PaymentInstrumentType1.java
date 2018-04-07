@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.Max500Text;
 import com.tools20022.repository.datatype.Min8Max28NumericText;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AuthorityRequestType1;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -106,7 +107,7 @@ public class PaymentInstrumentType1 {
 	 * definition} = "Provides the card number."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCardNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentInstrumentType1, Min8Max28NumericText> mmCardNumber = new MMMessageAttribute<PaymentInstrumentType1, Min8Max28NumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentInstrumentType1.mmObject();
 			isDerived = false;
@@ -118,9 +119,19 @@ public class PaymentInstrumentType1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Min8Max28NumericText.mmObject();
 		}
+
+		@Override
+		public Min8Max28NumericText getValue(PaymentInstrumentType1 obj) {
+			return obj.getCardNumber();
+		}
+
+		@Override
+		public void setValue(PaymentInstrumentType1 obj, Min8Max28NumericText value) {
+			obj.setCardNumber(value);
+		}
 	};
 	@XmlElement(name = "AuthrtyReqTp", required = true)
-	protected List<com.tools20022.repository.msg.AuthorityRequestType1> authorityRequestType;
+	protected List<AuthorityRequestType1> authorityRequestType;
 	/**
 	 * 
 	 <p>
@@ -149,7 +160,7 @@ public class PaymentInstrumentType1 {
 	 * definition} = "Identifies the authority request type as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAuthorityRequestType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentInstrumentType1, List<AuthorityRequestType1>> mmAuthorityRequestType = new MMMessageAttribute<PaymentInstrumentType1, List<AuthorityRequestType1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentInstrumentType1.mmObject();
 			isDerived = false;
@@ -158,7 +169,17 @@ public class PaymentInstrumentType1 {
 			name = "AuthorityRequestType";
 			definition = "Identifies the authority request type as a code.";
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.AuthorityRequestType1.mmObject();
+			complexType_lazy = () -> AuthorityRequestType1.mmObject();
+		}
+
+		@Override
+		public List<AuthorityRequestType1> getValue(PaymentInstrumentType1 obj) {
+			return obj.getAuthorityRequestType();
+		}
+
+		@Override
+		public void setValue(PaymentInstrumentType1 obj, List<AuthorityRequestType1> value) {
+			obj.setAuthorityRequestType(value);
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -192,7 +213,7 @@ public class PaymentInstrumentType1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentInstrumentType1, Optional<Max500Text>> mmAdditionalInformation = new MMMessageAttribute<PaymentInstrumentType1, Optional<Max500Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentInstrumentType1.mmObject();
 			isDerived = false;
@@ -203,6 +224,16 @@ public class PaymentInstrumentType1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max500Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max500Text> getValue(PaymentInstrumentType1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(PaymentInstrumentType1 obj, Optional<Max500Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 
@@ -234,7 +265,7 @@ public class PaymentInstrumentType1 {
 		return authorityRequestType == null ? authorityRequestType = new ArrayList<>() : authorityRequestType;
 	}
 
-	public PaymentInstrumentType1 setAuthorityRequestType(List<com.tools20022.repository.msg.AuthorityRequestType1> authorityRequestType) {
+	public PaymentInstrumentType1 setAuthorityRequestType(List<AuthorityRequestType1> authorityRequestType) {
 		this.authorityRequestType = Objects.requireNonNull(authorityRequestType);
 		return this;
 	}

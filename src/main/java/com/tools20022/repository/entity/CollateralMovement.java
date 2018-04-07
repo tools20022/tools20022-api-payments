@@ -19,8 +19,8 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -137,7 +137,7 @@ public class CollateralMovement {
 	 * "Collateral proposal for which collateral movements are detailed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCollateralProposal = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralMovement, CollateralProposal> mmRelatedCollateralProposal = new MMBusinessAssociationEnd<CollateralMovement, CollateralProposal>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
@@ -146,9 +146,19 @@ public class CollateralMovement {
 			definition = "Collateral proposal for which collateral movements are detailed.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralProposal.mmProposedCollateralMovement;
+			opposite_lazy = () -> CollateralProposal.mmProposedCollateralMovement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralProposal.mmObject();
+			type_lazy = () -> CollateralProposal.mmObject();
+		}
+
+		@Override
+		public CollateralProposal getValue(CollateralMovement obj) {
+			return obj.getRelatedCollateralProposal();
+		}
+
+		@Override
+		public void setValue(CollateralMovement obj, CollateralProposal value) {
+			obj.setRelatedCollateralProposal(value);
 		}
 	};
 	protected CurrencyAndAmount variationMargin;
@@ -180,7 +190,7 @@ public class CollateralMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVariationMargin = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralMovement, CurrencyAndAmount> mmVariationMargin = new MMBusinessAttribute<CollateralMovement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
@@ -192,12 +202,14 @@ public class CollateralMovement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralMovement.class.getMethod("getVariationMargin", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CollateralMovement obj) {
+			return obj.getVariationMargin();
+		}
+
+		@Override
+		public void setValue(CollateralMovement obj, CurrencyAndAmount value) {
+			obj.setVariationMargin(value);
 		}
 	};
 	protected CurrencyAndAmount segregatedIndependentAmount;
@@ -229,7 +241,7 @@ public class CollateralMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSegregatedIndependentAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralMovement, CurrencyAndAmount> mmSegregatedIndependentAmount = new MMBusinessAttribute<CollateralMovement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
@@ -241,15 +253,17 @@ public class CollateralMovement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralMovement.class.getMethod("getSegregatedIndependentAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CollateralMovement obj) {
+			return obj.getSegregatedIndependentAmount();
+		}
+
+		@Override
+		public void setValue(CollateralMovement obj, CurrencyAndAmount value) {
+			obj.setSegregatedIndependentAmount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.MarginCall> marginCall;
+	protected List<MarginCall> marginCall;
 	/**
 	 * 
 	 <p>
@@ -283,7 +297,7 @@ public class CollateralMovement {
 	 * definition} = "Magin call which needs to be executed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMarginCall = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralMovement, List<MarginCall>> mmMarginCall = new MMBusinessAssociationEnd<CollateralMovement, List<MarginCall>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
@@ -291,12 +305,22 @@ public class CollateralMovement {
 			name = "MarginCall";
 			definition = "Magin call which needs to be executed.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.mmCollateralMovement;
+			opposite_lazy = () -> MarginCall.mmCollateralMovement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
+			type_lazy = () -> MarginCall.mmObject();
+		}
+
+		@Override
+		public List<MarginCall> getValue(CollateralMovement obj) {
+			return obj.getMarginCall();
+		}
+
+		@Override
+		public void setValue(CollateralMovement obj, List<MarginCall> value) {
+			obj.setMarginCall(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesCollateralMovement;
+	protected List<SecuritiesDeliveryObligation> securitiesCollateralMovement;
 	/**
 	 * 
 	 <p>
@@ -331,7 +355,7 @@ public class CollateralMovement {
 	 * definition} = "Movement of assets in relation with collateral updates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesCollateralMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralMovement, List<SecuritiesDeliveryObligation>> mmSecuritiesCollateralMovement = new MMBusinessAssociationEnd<CollateralMovement, List<SecuritiesDeliveryObligation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
@@ -339,12 +363,22 @@ public class CollateralMovement {
 			name = "SecuritiesCollateralMovement";
 			definition = "Movement of assets in relation with collateral updates.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmRelatedCollateralMovement;
+			opposite_lazy = () -> SecuritiesDeliveryObligation.mmRelatedCollateralMovement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
+			type_lazy = () -> SecuritiesDeliveryObligation.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesDeliveryObligation> getValue(CollateralMovement obj) {
+			return obj.getSecuritiesCollateralMovement();
+		}
+
+		@Override
+		public void setValue(CollateralMovement obj, List<SecuritiesDeliveryObligation> value) {
+			obj.setSecuritiesCollateralMovement(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.PaymentObligation> cashCollateralMovement;
+	protected List<PaymentObligation> cashCollateralMovement;
 	/**
 	 * 
 	 <p>
@@ -378,7 +412,7 @@ public class CollateralMovement {
 	 * definition} = "Movement of assets in relation with collateral updates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashCollateralMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralMovement, List<PaymentObligation>> mmCashCollateralMovement = new MMBusinessAssociationEnd<CollateralMovement, List<PaymentObligation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
@@ -386,9 +420,19 @@ public class CollateralMovement {
 			name = "CashCollateralMovement";
 			definition = "Movement of assets in relation with collateral updates.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmRelatedCollateralMovement;
+			opposite_lazy = () -> PaymentObligation.mmRelatedCollateralMovement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
+			type_lazy = () -> PaymentObligation.mmObject();
+		}
+
+		@Override
+		public List<PaymentObligation> getValue(CollateralMovement obj) {
+			return obj.getCashCollateralMovement();
+		}
+
+		@Override
+		public void setValue(CollateralMovement obj, List<PaymentObligation> value) {
+			obj.setCashCollateralMovement(value);
 		}
 	};
 	protected FinancialTransaction financialTransaction;
@@ -428,7 +472,7 @@ public class CollateralMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFinancialTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralMovement, FinancialTransaction> mmFinancialTransaction = new MMBusinessAssociationEnd<CollateralMovement, FinancialTransaction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
@@ -437,9 +481,19 @@ public class CollateralMovement {
 			definition = "Financial transaction to which the collateral management is associated.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmCollateralMovement;
+			opposite_lazy = () -> FinancialTransaction.mmCollateralMovement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
+			type_lazy = () -> FinancialTransaction.mmObject();
+		}
+
+		@Override
+		public FinancialTransaction getValue(CollateralMovement obj) {
+			return obj.getFinancialTransaction();
+		}
+
+		@Override
+		public void setValue(CollateralMovement obj, FinancialTransaction value) {
+			obj.setFinancialTransaction(value);
 		}
 	};
 
@@ -450,9 +504,8 @@ public class CollateralMovement {
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "CollateralMovement";
 				definition = "Provides the agreed amount and the collateral movement direction.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligation.mmRelatedCollateralMovement, com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmRelatedCollateralMovement,
-						com.tools20022.repository.entity.MarginCall.mmCollateralMovement, com.tools20022.repository.entity.CollateralProposal.mmProposedCollateralMovement,
-						com.tools20022.repository.entity.FinancialTransaction.mmCollateralMovement);
+				associationDomain_lazy = () -> Arrays.asList(PaymentObligation.mmRelatedCollateralMovement, SecuritiesDeliveryObligation.mmRelatedCollateralMovement, MarginCall.mmCollateralMovement,
+						CollateralProposal.mmProposedCollateralMovement, FinancialTransaction.mmCollateralMovement);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralMovement.mmRelatedCollateralProposal, com.tools20022.repository.entity.CollateralMovement.mmVariationMargin,
 						com.tools20022.repository.entity.CollateralMovement.mmSegregatedIndependentAmount, com.tools20022.repository.entity.CollateralMovement.mmMarginCall,
 						com.tools20022.repository.entity.CollateralMovement.mmSecuritiesCollateralMovement, com.tools20022.repository.entity.CollateralMovement.mmCashCollateralMovement,
@@ -471,7 +524,7 @@ public class CollateralMovement {
 		return relatedCollateralProposal;
 	}
 
-	public CollateralMovement setRelatedCollateralProposal(com.tools20022.repository.entity.CollateralProposal relatedCollateralProposal) {
+	public CollateralMovement setRelatedCollateralProposal(CollateralProposal relatedCollateralProposal) {
 		this.relatedCollateralProposal = Objects.requireNonNull(relatedCollateralProposal);
 		return this;
 	}
@@ -498,7 +551,7 @@ public class CollateralMovement {
 		return marginCall == null ? marginCall = new ArrayList<>() : marginCall;
 	}
 
-	public CollateralMovement setMarginCall(List<com.tools20022.repository.entity.MarginCall> marginCall) {
+	public CollateralMovement setMarginCall(List<MarginCall> marginCall) {
 		this.marginCall = Objects.requireNonNull(marginCall);
 		return this;
 	}
@@ -507,7 +560,7 @@ public class CollateralMovement {
 		return securitiesCollateralMovement == null ? securitiesCollateralMovement = new ArrayList<>() : securitiesCollateralMovement;
 	}
 
-	public CollateralMovement setSecuritiesCollateralMovement(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesCollateralMovement) {
+	public CollateralMovement setSecuritiesCollateralMovement(List<SecuritiesDeliveryObligation> securitiesCollateralMovement) {
 		this.securitiesCollateralMovement = Objects.requireNonNull(securitiesCollateralMovement);
 		return this;
 	}
@@ -516,7 +569,7 @@ public class CollateralMovement {
 		return cashCollateralMovement == null ? cashCollateralMovement = new ArrayList<>() : cashCollateralMovement;
 	}
 
-	public CollateralMovement setCashCollateralMovement(List<com.tools20022.repository.entity.PaymentObligation> cashCollateralMovement) {
+	public CollateralMovement setCashCollateralMovement(List<PaymentObligation> cashCollateralMovement) {
 		this.cashCollateralMovement = Objects.requireNonNull(cashCollateralMovement);
 		return this;
 	}
@@ -525,7 +578,7 @@ public class CollateralMovement {
 		return financialTransaction;
 	}
 
-	public CollateralMovement setFinancialTransaction(com.tools20022.repository.entity.FinancialTransaction financialTransaction) {
+	public CollateralMovement setFinancialTransaction(FinancialTransaction financialTransaction) {
 		this.financialTransaction = Objects.requireNonNull(financialTransaction);
 		return this;
 	}

@@ -27,6 +27,7 @@ import com.tools20022.repository.datatype.Max20Text;
 import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.entity.Price;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection34;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -112,7 +113,7 @@ public class BillingPrice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingPrice1, Optional<ActiveOrHistoricCurrencyCode>> mmCurrency = new MMMessageAttribute<BillingPrice1, Optional<ActiveOrHistoricCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> Price.mmCurrency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingPrice1.mmObject();
@@ -124,6 +125,16 @@ public class BillingPrice1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
+		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyCode> getValue(BillingPrice1 obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(BillingPrice1 obj, Optional<ActiveOrHistoricCurrencyCode> value) {
+			obj.setCurrency(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "UnitPric")
@@ -159,7 +170,7 @@ public class BillingPrice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUnitPrice = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingPrice1, Optional<AmountAndDirection34>> mmUnitPrice = new MMMessageAssociationEnd<BillingPrice1, Optional<AmountAndDirection34>>() {
 		{
 			businessComponentTrace_lazy = () -> Price.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingPrice1.mmObject();
@@ -171,7 +182,17 @@ public class BillingPrice1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingPrice1 obj) {
+			return obj.getUnitPrice();
+		}
+
+		@Override
+		public void setValue(BillingPrice1 obj, Optional<AmountAndDirection34> value) {
+			obj.setUnitPrice(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Mtd")
@@ -210,7 +231,7 @@ public class BillingPrice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingPrice1, Optional<BillingChargeMethod1Code>> mmMethod = new MMMessageAttribute<BillingPrice1, Optional<BillingChargeMethod1Code>>() {
 		{
 			businessElementTrace_lazy = () -> CashAccountService.mmBillingChargeMethod;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingPrice1.mmObject();
@@ -222,6 +243,16 @@ public class BillingPrice1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> BillingChargeMethod1Code.mmObject();
+		}
+
+		@Override
+		public Optional<BillingChargeMethod1Code> getValue(BillingPrice1 obj) {
+			return obj.getMethod();
+		}
+
+		@Override
+		public void setValue(BillingPrice1 obj, Optional<BillingChargeMethod1Code> value) {
+			obj.setMethod(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rule")
@@ -254,7 +285,7 @@ public class BillingPrice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRule = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingPrice1, Optional<Max20Text>> mmRule = new MMMessageAttribute<BillingPrice1, Optional<Max20Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingPrice1.mmObject();
 			isDerived = false;
@@ -265,6 +296,16 @@ public class BillingPrice1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max20Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max20Text> getValue(BillingPrice1 obj) {
+			return obj.getRule();
+		}
+
+		@Override
+		public void setValue(BillingPrice1 obj, Optional<Max20Text> value) {
+			obj.setRule(value.orElse(null));
 		}
 	};
 
@@ -296,7 +337,7 @@ public class BillingPrice1 {
 		return unitPrice == null ? Optional.empty() : Optional.of(unitPrice);
 	}
 
-	public BillingPrice1 setUnitPrice(com.tools20022.repository.msg.AmountAndDirection34 unitPrice) {
+	public BillingPrice1 setUnitPrice(AmountAndDirection34 unitPrice) {
 		this.unitPrice = unitPrice;
 		return this;
 	}

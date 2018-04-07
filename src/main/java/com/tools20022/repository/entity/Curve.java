@@ -23,8 +23,8 @@ import com.tools20022.repository.choice.BenchmarkCurveName4Choice;
 import com.tools20022.repository.codeset.BenchmarkCurveNameCode;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.Max256Text;
+import com.tools20022.repository.entity.Spread;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -105,7 +105,7 @@ public class Curve {
 	 * definition} = "Identifies the currency used for the benchmark curve."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Curve, CurrencyCode> mmCurrency = new MMBusinessAttribute<Curve, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
@@ -118,12 +118,14 @@ public class Curve {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Curve.class.getMethod("getCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(Curve obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(Curve obj, CurrencyCode value) {
+			obj.setCurrency(value);
 		}
 	};
 	protected BenchmarkCurveNameCode name;
@@ -166,7 +168,7 @@ public class Curve {
 	 * definition} = "Identifies the name of the benchmark curve."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Curve, BenchmarkCurveNameCode> mmName = new MMBusinessAttribute<Curve, BenchmarkCurveNameCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BenchmarkCurveName4Choice.mmIndex, BenchmarkCurveName4Choice.mmName);
 			isDerived = false;
@@ -180,12 +182,14 @@ public class Curve {
 			simpleType_lazy = () -> BenchmarkCurveNameCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Curve.class.getMethod("getName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BenchmarkCurveNameCode getValue(Curve obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(Curve obj, BenchmarkCurveNameCode value) {
+			obj.setName(value);
 		}
 	};
 	protected Max256Text point;
@@ -218,7 +222,7 @@ public class Curve {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPoint = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Curve, Max256Text> mmPoint = new MMBusinessAttribute<Curve, Max256Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
@@ -231,12 +235,14 @@ public class Curve {
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Curve.class.getMethod("getPoint", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max256Text getValue(Curve obj) {
+			return obj.getPoint();
+		}
+
+		@Override
+		public void setValue(Curve obj, Max256Text value) {
+			obj.setPoint(value);
 		}
 	};
 	protected Spread spread;
@@ -271,7 +277,7 @@ public class Curve {
 	 * definition} = "Spread for which a benchmark curve is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSpread = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Curve, Optional<Spread>> mmSpread = new MMBusinessAssociationEnd<Curve, Optional<Spread>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
@@ -280,9 +286,19 @@ public class Curve {
 			definition = "Spread for which a benchmark curve is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Spread.mmBenchmarkCurve;
+			opposite_lazy = () -> Spread.mmBenchmarkCurve;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
+			type_lazy = () -> Spread.mmObject();
+		}
+
+		@Override
+		public Optional<Spread> getValue(Curve obj) {
+			return obj.getSpread();
+		}
+
+		@Override
+		public void setValue(Curve obj, Optional<Spread> value) {
+			obj.setSpread(value.orElse(null));
 		}
 	};
 
@@ -293,7 +309,7 @@ public class Curve {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Curve";
 				definition = "Describes a benchmark curve.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Spread.mmBenchmarkCurve);
+				associationDomain_lazy = () -> Arrays.asList(Spread.mmBenchmarkCurve);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Curve.mmCurrency, com.tools20022.repository.entity.Curve.mmName, com.tools20022.repository.entity.Curve.mmPoint,
 						com.tools20022.repository.entity.Curve.mmSpread);
 			}
@@ -337,7 +353,7 @@ public class Curve {
 		return spread == null ? Optional.empty() : Optional.of(spread);
 	}
 
-	public Curve setSpread(com.tools20022.repository.entity.Spread spread) {
+	public Curve setSpread(Spread spread) {
 		this.spread = spread;
 		return this;
 	}

@@ -25,8 +25,10 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Liquidity;
+import com.tools20022.repository.entity.SecuritiesOrder;
+import com.tools20022.repository.entity.TradingSession;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -150,7 +152,7 @@ public class ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmListIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ListTrading, Max35Text> mmListIdentification = new MMBusinessAttribute<ListTrading, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -162,15 +164,17 @@ public class ListTrading {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ListTrading.class.getMethod("getListIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ListTrading obj) {
+			return obj.getListIdentification();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, Max35Text value) {
+			obj.setListIdentification(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesOrder> securitiesListOrder;
+	protected List<SecuritiesOrder> securitiesListOrder;
 	/**
 	 * 
 	 <p>
@@ -205,7 +209,7 @@ public class ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesListOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ListTrading, List<SecuritiesOrder>> mmSecuritiesListOrder = new MMBusinessAssociationEnd<ListTrading, List<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -213,9 +217,19 @@ public class ListTrading {
 			name = "SecuritiesListOrder";
 			definition = "Order list containing the details of the individual orders within the program.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmListTrading;
+			opposite_lazy = () -> SecuritiesOrder.mmListTrading;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesOrder> getValue(ListTrading obj) {
+			return obj.getSecuritiesListOrder();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, List<SecuritiesOrder> value) {
+			obj.setSecuritiesListOrder(value);
 		}
 	};
 	protected TradingSession listTradingSession;
@@ -252,7 +266,7 @@ public class ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmListTradingSession = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ListTrading, TradingSession> mmListTradingSession = new MMBusinessAssociationEnd<ListTrading, TradingSession>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -261,9 +275,19 @@ public class ListTrading {
 			definition = "Details of a specific trading session for a list trading.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingSession.mmListTrading;
+			opposite_lazy = () -> TradingSession.mmListTrading;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
+			type_lazy = () -> TradingSession.mmObject();
+		}
+
+		@Override
+		public TradingSession getValue(ListTrading obj) {
+			return obj.getListTradingSession();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, TradingSession value) {
+			obj.setListTradingSession(value);
 		}
 	};
 	protected Max140Text listName;
@@ -294,7 +318,7 @@ public class ListTrading {
 	 * definition} = "Provides the name of the order list."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmListName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ListTrading, Max140Text> mmListName = new MMBusinessAttribute<ListTrading, Max140Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -307,12 +331,14 @@ public class ListTrading {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ListTrading.class.getMethod("getListName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max140Text getValue(ListTrading obj) {
+			return obj.getListName();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, Max140Text value) {
+			obj.setListName(value);
 		}
 	};
 	protected BasisPriceTypeCode basisPriceType;
@@ -345,7 +371,7 @@ public class ListTrading {
 	 * "Represents the basis price type in a bid order (list trading)."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBasisPriceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ListTrading, BasisPriceTypeCode> mmBasisPriceType = new MMBusinessAttribute<ListTrading, BasisPriceTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -358,12 +384,14 @@ public class ListTrading {
 			simpleType_lazy = () -> BasisPriceTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ListTrading.class.getMethod("getBasisPriceType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BasisPriceTypeCode getValue(ListTrading obj) {
+			return obj.getBasisPriceType();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, BasisPriceTypeCode value) {
+			obj.setBasisPriceType(value);
 		}
 	};
 	protected ISODateTime strikeTime;
@@ -396,7 +424,7 @@ public class ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStrikeTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ListTrading, ISODateTime> mmStrikeTime = new MMBusinessAttribute<ListTrading, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -409,12 +437,14 @@ public class ListTrading {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ListTrading.class.getMethod("getStrikeTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(ListTrading obj) {
+			return obj.getStrikeTime();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, ISODateTime value) {
+			obj.setStrikeTime(value);
 		}
 	};
 	protected YesNoIndicator grossAmountIndicator;
@@ -448,7 +478,7 @@ public class ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGrossAmountIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ListTrading, YesNoIndicator> mmGrossAmountIndicator = new MMBusinessAttribute<ListTrading, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -461,12 +491,14 @@ public class ListTrading {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ListTrading.class.getMethod("getGrossAmountIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(ListTrading obj) {
+			return obj.getGrossAmountIndicator();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, YesNoIndicator value) {
+			obj.setGrossAmountIndicator(value);
 		}
 	};
 	protected Max35Text sellSideIdentification;
@@ -496,7 +528,7 @@ public class ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSellSideIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ListTrading, Max35Text> mmSellSideIdentification = new MMBusinessAttribute<ListTrading, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -508,12 +540,14 @@ public class ListTrading {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ListTrading.class.getMethod("getSellSideIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ListTrading obj) {
+			return obj.getSellSideIdentification();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, Max35Text value) {
+			obj.setSellSideIdentification(value);
 		}
 	};
 	protected Max35Text buySideIdentification;
@@ -543,7 +577,7 @@ public class ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBuySideIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ListTrading, Max35Text> mmBuySideIdentification = new MMBusinessAttribute<ListTrading, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -555,15 +589,17 @@ public class ListTrading {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ListTrading.class.getMethod("getBuySideIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ListTrading obj) {
+			return obj.getBuySideIdentification();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, Max35Text value) {
+			obj.setBuySideIdentification(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Liquidity> liquidity;
+	protected List<Liquidity> liquidity;
 	/**
 	 * 
 	 <p>
@@ -596,7 +632,7 @@ public class ListTrading {
 	 * definition} = "Information on the liquidity of a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLiquidity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ListTrading, List<Liquidity>> mmLiquidity = new MMBusinessAssociationEnd<ListTrading, List<Liquidity>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -604,9 +640,19 @@ public class ListTrading {
 			name = "Liquidity";
 			definition = "Information on the liquidity of a financial instrument.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Liquidity.mmListTrading;
+			opposite_lazy = () -> Liquidity.mmListTrading;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
+			type_lazy = () -> Liquidity.mmObject();
+		}
+
+		@Override
+		public List<Liquidity> getValue(ListTrading obj) {
+			return obj.getLiquidity();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, List<Liquidity> value) {
+			obj.setLiquidity(value);
 		}
 	};
 	protected BidTypeCode bidType;
@@ -634,7 +680,7 @@ public class ListTrading {
 	 * definition} = "Indicates the type of bid for a list order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBidType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ListTrading, BidTypeCode> mmBidType = new MMBusinessAttribute<ListTrading, BidTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
@@ -646,12 +692,14 @@ public class ListTrading {
 			simpleType_lazy = () -> BidTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ListTrading.class.getMethod("getBidType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BidTypeCode getValue(ListTrading obj) {
+			return obj.getBidType();
+		}
+
+		@Override
+		public void setValue(ListTrading obj, BidTypeCode value) {
+			obj.setBidType(value);
 		}
 	};
 
@@ -662,8 +710,7 @@ public class ListTrading {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ListTrading";
 				definition = "Provides the details for negotiating and trading a large number of securities contained in or comprising a portfolio. One example is index arbitrage, which consists in the purchase or sale of a basket of stocks in conjunction with the sale or purchase of a derivative product (for example index futures) to profit from price differences between the basket and the derivative product. Other examples include liquidation of EFP (Exchange for Physical) stock positions, portfolio realignment and portfolio liquidation.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrder.mmListTrading, com.tools20022.repository.entity.TradingSession.mmListTrading,
-						com.tools20022.repository.entity.Liquidity.mmListTrading);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesOrder.mmListTrading, TradingSession.mmListTrading, Liquidity.mmListTrading);
 				subType_lazy = () -> Arrays.asList(DisclosedListTrading.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ListTrading.mmListIdentification, com.tools20022.repository.entity.ListTrading.mmSecuritiesListOrder,
 						com.tools20022.repository.entity.ListTrading.mmListTradingSession, com.tools20022.repository.entity.ListTrading.mmListName, com.tools20022.repository.entity.ListTrading.mmBasisPriceType,
@@ -692,7 +739,7 @@ public class ListTrading {
 		return securitiesListOrder == null ? securitiesListOrder = new ArrayList<>() : securitiesListOrder;
 	}
 
-	public ListTrading setSecuritiesListOrder(List<com.tools20022.repository.entity.SecuritiesOrder> securitiesListOrder) {
+	public ListTrading setSecuritiesListOrder(List<SecuritiesOrder> securitiesListOrder) {
 		this.securitiesListOrder = Objects.requireNonNull(securitiesListOrder);
 		return this;
 	}
@@ -701,7 +748,7 @@ public class ListTrading {
 		return listTradingSession;
 	}
 
-	public ListTrading setListTradingSession(com.tools20022.repository.entity.TradingSession listTradingSession) {
+	public ListTrading setListTradingSession(TradingSession listTradingSession) {
 		this.listTradingSession = Objects.requireNonNull(listTradingSession);
 		return this;
 	}
@@ -764,7 +811,7 @@ public class ListTrading {
 		return liquidity == null ? liquidity = new ArrayList<>() : liquidity;
 	}
 
-	public ListTrading setLiquidity(List<com.tools20022.repository.entity.Liquidity> liquidity) {
+	public ListTrading setLiquidity(List<Liquidity> liquidity) {
 		this.liquidity = Objects.requireNonNull(liquidity);
 		return this;
 	}

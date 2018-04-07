@@ -19,8 +19,8 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.*;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -153,7 +153,7 @@ public class TaxVoucher {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedTaxationRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, PercentageRate> mmRequestedTaxationRate = new MMBusinessAttribute<TaxVoucher, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -165,12 +165,14 @@ public class TaxVoucher {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getRequestedTaxationRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(TaxVoucher obj) {
+			return obj.getRequestedTaxationRate();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, PercentageRate value) {
+			obj.setRequestedTaxationRate(value);
 		}
 	};
 	protected PercentageRate creditRate;
@@ -199,7 +201,7 @@ public class TaxVoucher {
 	 * definition} = "Applicable tax rate on the tax credit amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreditRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, PercentageRate> mmCreditRate = new MMBusinessAttribute<TaxVoucher, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -211,15 +213,17 @@ public class TaxVoucher {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getCreditRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(TaxVoucher obj) {
+			return obj.getCreditRate();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, PercentageRate value) {
+			obj.setCreditRate(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesTax> relatedSecurityTax;
+	protected List<SecuritiesTax> relatedSecurityTax;
 	/**
 	 * 
 	 <p>
@@ -254,7 +258,7 @@ public class TaxVoucher {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecurityTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TaxVoucher, List<SecuritiesTax>> mmRelatedSecurityTax = new MMBusinessAssociationEnd<TaxVoucher, List<SecuritiesTax>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -262,9 +266,19 @@ public class TaxVoucher {
 			name = "RelatedSecurityTax";
 			definition = "Specifies tax elements on the security which is involved in the corporate event.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmTaxVoucher;
+			opposite_lazy = () -> SecuritiesTax.mmTaxVoucher;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
+			type_lazy = () -> SecuritiesTax.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesTax> getValue(TaxVoucher obj) {
+			return obj.getRelatedSecurityTax();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, List<SecuritiesTax> value) {
+			obj.setRelatedSecurityTax(value);
 		}
 	};
 	protected CurrencyAndAmount sundryOrOtherAmount;
@@ -294,7 +308,7 @@ public class TaxVoucher {
 	 * "Amount of money related to taxable income that cannot be categorised."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSundryOrOtherAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, CurrencyAndAmount> mmSundryOrOtherAmount = new MMBusinessAttribute<TaxVoucher, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -306,12 +320,14 @@ public class TaxVoucher {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getSundryOrOtherAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(TaxVoucher obj) {
+			return obj.getSundryOrOtherAmount();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, CurrencyAndAmount value) {
+			obj.setSundryOrOtherAmount(value);
 		}
 	};
 	protected CurrencyAndAmount creditAmount;
@@ -341,7 +357,7 @@ public class TaxVoucher {
 	 * "Amount of money per equity allocated as the result of a tax credit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreditAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, CurrencyAndAmount> mmCreditAmount = new MMBusinessAttribute<TaxVoucher, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -353,12 +369,14 @@ public class TaxVoucher {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getCreditAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(TaxVoucher obj) {
+			return obj.getCreditAmount();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, CurrencyAndAmount value) {
+			obj.setCreditAmount(value);
 		}
 	};
 	protected CurrencyAndAmount cashAmountBroughtForward;
@@ -388,7 +406,7 @@ public class TaxVoucher {
 	 * "Cash amount retained from previous dividend or interest payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCashAmountBroughtForward = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, CurrencyAndAmount> mmCashAmountBroughtForward = new MMBusinessAttribute<TaxVoucher, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -400,12 +418,14 @@ public class TaxVoucher {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getCashAmountBroughtForward", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(TaxVoucher obj) {
+			return obj.getCashAmountBroughtForward();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, CurrencyAndAmount value) {
+			obj.setCashAmountBroughtForward(value);
 		}
 	};
 	protected CurrencyAndAmount cashAmountCarriedForward;
@@ -435,7 +455,7 @@ public class TaxVoucher {
 	 * "Cash amount carried forward to next dividend or interest payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCashAmountCarriedForward = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, CurrencyAndAmount> mmCashAmountCarriedForward = new MMBusinessAttribute<TaxVoucher, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -447,12 +467,14 @@ public class TaxVoucher {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getCashAmountCarriedForward", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(TaxVoucher obj) {
+			return obj.getCashAmountCarriedForward();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, CurrencyAndAmount value) {
+			obj.setCashAmountCarriedForward(value);
 		}
 	};
 	protected CurrencyAndAmount notionalTaxAmount;
@@ -483,7 +505,7 @@ public class TaxVoucher {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNotionalTaxAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, CurrencyAndAmount> mmNotionalTaxAmount = new MMBusinessAttribute<TaxVoucher, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -495,12 +517,14 @@ public class TaxVoucher {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getNotionalTaxAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(TaxVoucher obj) {
+			return obj.getNotionalTaxAmount();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, CurrencyAndAmount value) {
+			obj.setNotionalTaxAmount(value);
 		}
 	};
 	protected CorporateActionDistribution distribution;
@@ -539,7 +563,7 @@ public class TaxVoucher {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TaxVoucher, Optional<CorporateActionDistribution>> mmDistribution = new MMBusinessAssociationEnd<TaxVoucher, Optional<CorporateActionDistribution>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -548,9 +572,19 @@ public class TaxVoucher {
 			definition = "Corporate action distribution process for which tax voucher information is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmTaxVoucher;
+			opposite_lazy = () -> CorporateActionDistribution.mmTaxVoucher;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
+			type_lazy = () -> CorporateActionDistribution.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionDistribution> getValue(TaxVoucher obj) {
+			return obj.getDistribution();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, Optional<CorporateActionDistribution> value) {
+			obj.setDistribution(value.orElse(null));
 		}
 	};
 	protected Max35Text identification;
@@ -579,7 +613,7 @@ public class TaxVoucher {
 	 * "Unique and unambiguous identification for the tax voucher."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, Max35Text> mmIdentification = new MMBusinessAttribute<TaxVoucher, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -591,12 +625,14 @@ public class TaxVoucher {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(TaxVoucher obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected ISODate bargainDate;
@@ -624,7 +660,7 @@ public class TaxVoucher {
 	 * definition} = "Date on which DRIP purchase completed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBargainDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, ISODate> mmBargainDate = new MMBusinessAttribute<TaxVoucher, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -636,12 +672,14 @@ public class TaxVoucher {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getBargainDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(TaxVoucher obj) {
+			return obj.getBargainDate();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, ISODate value) {
+			obj.setBargainDate(value);
 		}
 	};
 	protected ISODate bargainSettlementDate;
@@ -669,7 +707,7 @@ public class TaxVoucher {
 	 * definition} = "Settlement date of the DRIP purchase transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBargainSettlementDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, ISODate> mmBargainSettlementDate = new MMBusinessAttribute<TaxVoucher, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -681,12 +719,14 @@ public class TaxVoucher {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getBargainSettlementDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(TaxVoucher obj) {
+			return obj.getBargainSettlementDate();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, ISODate value) {
+			obj.setBargainSettlementDate(value);
 		}
 	};
 	protected BaseOneRate taxVoucherRate;
@@ -714,7 +754,7 @@ public class TaxVoucher {
 	 * definition} = "Distribution rate per share."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTaxVoucherRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, BaseOneRate> mmTaxVoucherRate = new MMBusinessAttribute<TaxVoucher, BaseOneRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -726,12 +766,14 @@ public class TaxVoucher {
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getTaxVoucherRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BaseOneRate getValue(TaxVoucher obj) {
+			return obj.getTaxVoucherRate();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, BaseOneRate value) {
+			obj.setTaxVoucherRate(value);
 		}
 	};
 	protected SecuritiesQuantity recordDateHolding;
@@ -767,7 +809,7 @@ public class TaxVoucher {
 	 * definition} = "Securities holding on record date."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRecordDateHolding = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TaxVoucher, SecuritiesQuantity> mmRecordDateHolding = new MMBusinessAssociationEnd<TaxVoucher, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -776,9 +818,19 @@ public class TaxVoucher {
 			definition = "Securities holding on record date.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmTaxVoucher;
+			opposite_lazy = () -> SecuritiesQuantity.mmTaxVoucher;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(TaxVoucher obj) {
+			return obj.getRecordDateHolding();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, SecuritiesQuantity value) {
+			obj.setRecordDateHolding(value);
 		}
 	};
 	protected SecuritiesPricing scripDividendReinvestmentPricePerShare;
@@ -814,7 +866,7 @@ public class TaxVoucher {
 	 * definition} = "Cost per share of new shares allotted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmScripDividendReinvestmentPricePerShare = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TaxVoucher, SecuritiesPricing> mmScripDividendReinvestmentPricePerShare = new MMBusinessAssociationEnd<TaxVoucher, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -823,9 +875,19 @@ public class TaxVoucher {
 			definition = "Cost per share of new shares allotted.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmTaxVoucher;
+			opposite_lazy = () -> SecuritiesPricing.mmTaxVoucher;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(TaxVoucher obj) {
+			return obj.getScripDividendReinvestmentPricePerShare();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, SecuritiesPricing value) {
+			obj.setScripDividendReinvestmentPricePerShare(value);
 		}
 	};
 	protected ActiveCurrencyAndAmount allotedSharesCost;
@@ -854,7 +916,7 @@ public class TaxVoucher {
 	 * definition} = "Total cash amount required to purchase shares allotted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAllotedSharesCost = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TaxVoucher, ActiveCurrencyAndAmount> mmAllotedSharesCost = new MMBusinessAttribute<TaxVoucher, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -866,15 +928,17 @@ public class TaxVoucher {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TaxVoucher.class.getMethod("getAllotedSharesCost", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(TaxVoucher obj) {
+			return obj.getAllotedSharesCost();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, ActiveCurrencyAndAmount value) {
+			obj.setAllotedSharesCost(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ForeignExchangeTrade> foreignExchangeTransaction;
+	protected List<ForeignExchangeTrade> foreignExchangeTransaction;
 	/**
 	 * 
 	 <p>
@@ -909,7 +973,7 @@ public class TaxVoucher {
 	 * "Provides information about the foreign exchange transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmForeignExchangeTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TaxVoucher, List<ForeignExchangeTrade>> mmForeignExchangeTransaction = new MMBusinessAssociationEnd<TaxVoucher, List<ForeignExchangeTrade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
@@ -917,9 +981,19 @@ public class TaxVoucher {
 			name = "ForeignExchangeTransaction";
 			definition = "Provides information about the foreign exchange transaction.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmCurrencyExchangeForTaxVoucher;
+			opposite_lazy = () -> ForeignExchangeTrade.mmCurrencyExchangeForTaxVoucher;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
+			type_lazy = () -> ForeignExchangeTrade.mmObject();
+		}
+
+		@Override
+		public List<ForeignExchangeTrade> getValue(TaxVoucher obj) {
+			return obj.getForeignExchangeTransaction();
+		}
+
+		@Override
+		public void setValue(TaxVoucher obj, List<ForeignExchangeTrade> value) {
+			obj.setForeignExchangeTransaction(value);
 		}
 	};
 
@@ -930,9 +1004,8 @@ public class TaxVoucher {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxVoucher";
 				definition = "Statement showing the amount or value of a distribution and either the tax credit to which the recipient is entitled in respect of that distribution; or the amount of tax deducted from the distribution.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmTaxVoucher, com.tools20022.repository.entity.SecuritiesTax.mmTaxVoucher,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmTaxVoucher, com.tools20022.repository.entity.ForeignExchangeTrade.mmCurrencyExchangeForTaxVoucher,
-						com.tools20022.repository.entity.CorporateActionDistribution.mmTaxVoucher);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmTaxVoucher, SecuritiesTax.mmTaxVoucher, SecuritiesQuantity.mmTaxVoucher, ForeignExchangeTrade.mmCurrencyExchangeForTaxVoucher,
+						CorporateActionDistribution.mmTaxVoucher);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TaxVoucher.mmRequestedTaxationRate, com.tools20022.repository.entity.TaxVoucher.mmCreditRate,
 						com.tools20022.repository.entity.TaxVoucher.mmRelatedSecurityTax, com.tools20022.repository.entity.TaxVoucher.mmSundryOrOtherAmount, com.tools20022.repository.entity.TaxVoucher.mmCreditAmount,
 						com.tools20022.repository.entity.TaxVoucher.mmCashAmountBroughtForward, com.tools20022.repository.entity.TaxVoucher.mmCashAmountCarriedForward, com.tools20022.repository.entity.TaxVoucher.mmNotionalTaxAmount,
@@ -972,7 +1045,7 @@ public class TaxVoucher {
 		return relatedSecurityTax == null ? relatedSecurityTax = new ArrayList<>() : relatedSecurityTax;
 	}
 
-	public TaxVoucher setRelatedSecurityTax(List<com.tools20022.repository.entity.SecuritiesTax> relatedSecurityTax) {
+	public TaxVoucher setRelatedSecurityTax(List<SecuritiesTax> relatedSecurityTax) {
 		this.relatedSecurityTax = Objects.requireNonNull(relatedSecurityTax);
 		return this;
 	}
@@ -1026,7 +1099,7 @@ public class TaxVoucher {
 		return distribution == null ? Optional.empty() : Optional.of(distribution);
 	}
 
-	public TaxVoucher setDistribution(com.tools20022.repository.entity.CorporateActionDistribution distribution) {
+	public TaxVoucher setDistribution(CorporateActionDistribution distribution) {
 		this.distribution = distribution;
 		return this;
 	}
@@ -1071,7 +1144,7 @@ public class TaxVoucher {
 		return recordDateHolding;
 	}
 
-	public TaxVoucher setRecordDateHolding(com.tools20022.repository.entity.SecuritiesQuantity recordDateHolding) {
+	public TaxVoucher setRecordDateHolding(SecuritiesQuantity recordDateHolding) {
 		this.recordDateHolding = Objects.requireNonNull(recordDateHolding);
 		return this;
 	}
@@ -1080,7 +1153,7 @@ public class TaxVoucher {
 		return scripDividendReinvestmentPricePerShare;
 	}
 
-	public TaxVoucher setScripDividendReinvestmentPricePerShare(com.tools20022.repository.entity.SecuritiesPricing scripDividendReinvestmentPricePerShare) {
+	public TaxVoucher setScripDividendReinvestmentPricePerShare(SecuritiesPricing scripDividendReinvestmentPricePerShare) {
 		this.scripDividendReinvestmentPricePerShare = Objects.requireNonNull(scripDividendReinvestmentPricePerShare);
 		return this;
 	}
@@ -1098,7 +1171,7 @@ public class TaxVoucher {
 		return foreignExchangeTransaction == null ? foreignExchangeTransaction = new ArrayList<>() : foreignExchangeTransaction;
 	}
 
-	public TaxVoucher setForeignExchangeTransaction(List<com.tools20022.repository.entity.ForeignExchangeTrade> foreignExchangeTransaction) {
+	public TaxVoucher setForeignExchangeTransaction(List<ForeignExchangeTrade> foreignExchangeTransaction) {
 		this.foreignExchangeTransaction = Objects.requireNonNull(foreignExchangeTransaction);
 		return this;
 	}

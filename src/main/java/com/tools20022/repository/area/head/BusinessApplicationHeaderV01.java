@@ -31,7 +31,6 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.msg.BusinessApplicationHeader1;
 import com.tools20022.repository.other.SignatureEnvelope;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -124,8 +123,8 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintRelatedPresentWhenCopyDupl#forBusinessApplicationHeaderV01
- * ConstraintRelatedPresentWhenCopyDupl.forBusinessApplicationHeaderV01}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintRelatedPresentWhenCopyDupl#for_head_BusinessApplicationHeaderV01
+ * ConstraintRelatedPresentWhenCopyDupl.for_head_BusinessApplicationHeaderV01}</li>
  * </ul>
  * </li>
  * <li>
@@ -173,7 +172,7 @@ public class BusinessApplicationHeaderV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCharacterSet = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<UnicodeChartsCode>> mmCharacterSet = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<UnicodeChartsCode>>() {
 		{
 			xmlTag = "CharSet";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -184,12 +183,14 @@ public class BusinessApplicationHeaderV01 {
 			simpleType_lazy = () -> UnicodeChartsCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getCharacterSet", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<UnicodeChartsCode> getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getCharacterSet();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Optional<UnicodeChartsCode> value) {
+			obj.setCharacterSet(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Fr", required = true)
@@ -218,7 +219,7 @@ public class BusinessApplicationHeaderV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFrom = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Party9Choice> mmFrom = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Party9Choice>() {
 		{
 			xmlTag = "Fr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -229,12 +230,14 @@ public class BusinessApplicationHeaderV01 {
 			complexType_lazy = () -> Party9Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getFrom", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Party9Choice getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getFrom();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Party9Choice value) {
+			obj.setFrom(value);
 		}
 	};
 	@XmlElement(name = "To", required = true)
@@ -263,7 +266,7 @@ public class BusinessApplicationHeaderV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTo = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Party9Choice> mmTo = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Party9Choice>() {
 		{
 			xmlTag = "To";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -274,12 +277,14 @@ public class BusinessApplicationHeaderV01 {
 			complexType_lazy = () -> Party9Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getTo", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Party9Choice getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getTo();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Party9Choice value) {
+			obj.setTo(value);
 		}
 	};
 	@XmlElement(name = "BizMsgIdr", required = true)
@@ -308,7 +313,7 @@ public class BusinessApplicationHeaderV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmBusinessMessageIdentifier = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Max35Text> mmBusinessMessageIdentifier = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Max35Text>() {
 		{
 			xmlTag = "BizMsgIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -319,12 +324,14 @@ public class BusinessApplicationHeaderV01 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getBusinessMessageIdentifier", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getBusinessMessageIdentifier();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Max35Text value) {
+			obj.setBusinessMessageIdentifier(value);
 		}
 	};
 	@XmlElement(name = "MsgDefIdr", required = true)
@@ -349,27 +356,29 @@ public class BusinessApplicationHeaderV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Contains the MessageIdentifier that defines the BusinessMessage.\r\nIt must contain a MessageIdentifier published on the ISO 20022 website.\r\n\r\nexample\tcamt.001.001.03"
+	 * "Contains the MessageIdentifier that defines the BusinessMessage.\r\nIt must contain a MessageIdentifier published on the ISO 20022 website.\r\n\r\nexample\tcamt.001.001.03."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageDefinitionIdentifier = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Max35Text> mmMessageDefinitionIdentifier = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Max35Text>() {
 		{
 			xmlTag = "MsgDefIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageDefinitionIdentifier";
-			definition = "Contains the MessageIdentifier that defines the BusinessMessage.\r\nIt must contain a MessageIdentifier published on the ISO 20022 website.\r\n\r\nexample\tcamt.001.001.03";
+			definition = "Contains the MessageIdentifier that defines the BusinessMessage.\r\nIt must contain a MessageIdentifier published on the ISO 20022 website.\r\n\r\nexample\tcamt.001.001.03.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getMessageDefinitionIdentifier", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getMessageDefinitionIdentifier();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Max35Text value) {
+			obj.setMessageDefinitionIdentifier(value);
 		}
 	};
 	@XmlElement(name = "BizSvc")
@@ -394,27 +403,29 @@ public class BusinessApplicationHeaderV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies the business service agreed between the two MessagingEndpoints under which rules this Business Message is exchanged.\r\n To be used when there is a choice of processing services or processing service levels.\r\nExample: E&amp;I"
+	 * "Specifies the business service agreed between the two MessagingEndpoints under which rules this Business Message is exchanged.\r\n To be used when there is a choice of processing services or processing service levels.\r\nExample: E&amp;I."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmBusinessService = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<Max35Text>> mmBusinessService = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<Max35Text>>() {
 		{
 			xmlTag = "BizSvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BusinessService";
-			definition = "Specifies the business service agreed between the two MessagingEndpoints under which rules this Business Message is exchanged.\r\n To be used when there is a choice of processing services or processing service levels.\r\nExample: E&I";
+			definition = "Specifies the business service agreed between the two MessagingEndpoints under which rules this Business Message is exchanged.\r\n To be used when there is a choice of processing services or processing service levels.\r\nExample: E&I.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getBusinessService", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Max35Text> getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getBusinessService();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Optional<Max35Text> value) {
+			obj.setBusinessService(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CreDt", required = true)
@@ -440,27 +451,29 @@ public class BusinessApplicationHeaderV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Date and time when this Business Message (header) was created.\r\nNote    Times must be normalized, using the \"Z\" annotation."
+	 * "Date and time when this Business Message (header) was created.\r\nNote Times must be normalized, using the \"Z\" annotation."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCreationDate = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, ISONormalisedDateTime> mmCreationDate = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, ISONormalisedDateTime>() {
 		{
 			xmlTag = "CreDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreationDate";
-			definition = "Date and time when this Business Message (header) was created.\r\nNote    Times must be normalized, using the \"Z\" annotation.";
+			definition = "Date and time when this Business Message (header) was created.\r\nNote Times must be normalized, using the \"Z\" annotation.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISONormalisedDateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getCreationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISONormalisedDateTime getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getCreationDate();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, ISONormalisedDateTime value) {
+			obj.setCreationDate(value);
 		}
 	};
 	@XmlElement(name = "CpyDplct")
@@ -490,7 +503,7 @@ public class BusinessApplicationHeaderV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCopyDuplicate = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<CopyDuplicate1Code>> mmCopyDuplicate = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<CopyDuplicate1Code>>() {
 		{
 			xmlTag = "CpyDplct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -501,12 +514,14 @@ public class BusinessApplicationHeaderV01 {
 			simpleType_lazy = () -> CopyDuplicate1Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getCopyDuplicate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<CopyDuplicate1Code> getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getCopyDuplicate();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Optional<CopyDuplicate1Code> value) {
+			obj.setCopyDuplicate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PssblDplct")
@@ -532,27 +547,29 @@ public class BusinessApplicationHeaderV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Flag indicating if the Business Message exchanged between the MessagingEndpoints is possibly a duplicate. \r\nIf the receiving MessagingEndpoint  did not receive the original, then this Business Message should be processed as if it were the original. \r\n\r\nIf the receiving MessagingEndpoint did receive the original, then it should perform necessary actions to avoid processing this Business Message again.\r\n\r\nThis will guarantee business idempotent behaviour.\r\n\r\nNOTE: this is named \"PossResend\" in FIX - this is an application level resend not a network level retransmission"
+	 * "Flag indicating if the Business Message exchanged between the MessagingEndpoints is possibly a duplicate. \r\nIf the receiving MessagingEndpoint did not receive the original, then this Business Message should be processed as if it were the original. \r\n\r\nIf the receiving MessagingEndpoint did receive the original, then it should perform necessary actions to avoid processing this Business Message again.\r\n\r\nThis will guarantee business idempotent behaviour.\r\n\r\nNOTE: this is named \"PossResend\" in FIX - this is an application level resend not a network level retransmission."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPossibleDuplicate = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<YesNoIndicator>> mmPossibleDuplicate = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<YesNoIndicator>>() {
 		{
 			xmlTag = "PssblDplct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PossibleDuplicate";
-			definition = "Flag indicating if the Business Message exchanged between the MessagingEndpoints is possibly a duplicate. \r\nIf the receiving MessagingEndpoint  did not receive the original, then this Business Message should be processed as if it were the original. \r\n\r\nIf the receiving MessagingEndpoint did receive the original, then it should perform necessary actions to avoid processing this Business Message again.\r\n\r\nThis will guarantee business idempotent behaviour.\r\n\r\nNOTE: this is named \"PossResend\" in FIX - this is an application level resend not a network level retransmission";
+			definition = "Flag indicating if the Business Message exchanged between the MessagingEndpoints is possibly a duplicate. \r\nIf the receiving MessagingEndpoint did not receive the original, then this Business Message should be processed as if it were the original. \r\n\r\nIf the receiving MessagingEndpoint did receive the original, then it should perform necessary actions to avoid processing this Business Message again.\r\n\r\nThis will guarantee business idempotent behaviour.\r\n\r\nNOTE: this is named \"PossResend\" in FIX - this is an application level resend not a network level retransmission.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getPossibleDuplicate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<YesNoIndicator> getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getPossibleDuplicate();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Optional<YesNoIndicator> value) {
+			obj.setPossibleDuplicate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Prty")
@@ -582,7 +599,7 @@ public class BusinessApplicationHeaderV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPriority = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<BusinessMessagePriorityCode>> mmPriority = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<BusinessMessagePriorityCode>>() {
 		{
 			xmlTag = "Prty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -593,12 +610,14 @@ public class BusinessApplicationHeaderV01 {
 			simpleType_lazy = () -> BusinessMessagePriorityCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getPriority", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<BusinessMessagePriorityCode> getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getPriority();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Optional<BusinessMessagePriorityCode> value) {
+			obj.setPriority(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Sgntr")
@@ -628,7 +647,7 @@ public class BusinessApplicationHeaderV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSignature = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<SignatureEnvelope>> mmSignature = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<SignatureEnvelope>>() {
 		{
 			xmlTag = "Sgntr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -639,12 +658,14 @@ public class BusinessApplicationHeaderV01 {
 			complexType_lazy = () -> SignatureEnvelope.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getSignature", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<SignatureEnvelope> getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getSignature();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Optional<SignatureEnvelope> value) {
+			obj.setSignature(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rltd")
@@ -670,34 +691,36 @@ public class BusinessApplicationHeaderV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies the Business Application Header of the Business Message to which this Business Message relates.\r\nCan be used when replying to a query;  can also be used when canceling or amending."
+	 * "Specifies the Business Application Header of the Business Message to which this Business Message relates.\r\nCan be used when replying to a query; can also be used when canceling or amending."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRelated = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<BusinessApplicationHeader1>> mmRelated = new MMMessageBuildingBlock<BusinessApplicationHeaderV01, Optional<BusinessApplicationHeader1>>() {
 		{
 			xmlTag = "Rltd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Related";
-			definition = "Specifies the Business Application Header of the Business Message to which this Business Message relates.\r\nCan be used when replying to a query;  can also be used when canceling or amending.";
+			definition = "Specifies the Business Application Header of the Business Message to which this Business Message relates.\r\nCan be used when replying to a query; can also be used when canceling or amending.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> BusinessApplicationHeader1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BusinessApplicationHeaderV01.class.getMethod("getRelated", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<BusinessApplicationHeader1> getValue(BusinessApplicationHeaderV01 obj) {
+			return obj.getRelated();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeaderV01 obj, Optional<BusinessApplicationHeader1> value) {
+			obj.setRelated(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintRelatedPresentWhenCopyDupl.forBusinessApplicationHeaderV01);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintRelatedPresentWhenCopyDupl.for_head_BusinessApplicationHeaderV01);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BusinessApplicationHeaderV01";
 				definition = "The Business Layer deals with Business Messages. The behaviour of the Business Messages is fully described by the Business Transaction and the structure of the Business Messages is fully described by the Message Definitions and related Message Rules, Rules and Market Practices. All of which are registered in the ISO 20022 Repository.\r\nA single new Business Message (with its accompagnying business application header) is created - by the sending MessagingEndpoint - for each business event; that is each interaction in a Business Transaction. A Business Message adheres to the following principles:\r\n\" A Business Message (and its business application header) must not contain information about the Message Transport System or the mechanics or mechanism of message sending, transportation, or receipt. \r\n\" A Business Message must be comprehensible outside of the context of the Transport Message. That is the Business Message must not require knowledge of the Transport Message to be understood.\r\n\" A Business Message may contain headers, footers, and envelopes that are meaningful for the business. When present, they are treated as any other message content, which means that they are considered part of the Message Definition of the Business Message and as such will be part of the ISO 20022 Repository.\r\n\" A Business Message refers to Business Actors by their Name. Each instance of a Business Actor has one Name. The Business Actor must not be referred to in the Transport Layer.\r\nSpecific usage of this BusinessMessageHeader may be defined by the relevant SEG.";

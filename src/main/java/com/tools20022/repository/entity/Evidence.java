@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -106,7 +107,7 @@ public class Evidence {
 	 * definition} = "Document which is used as a proof of evidence."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedDocument = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Evidence, Document> mmRelatedDocument = new MMBusinessAssociationEnd<Evidence, Document>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Evidence.mmObject();
@@ -115,9 +116,19 @@ public class Evidence {
 			definition = "Document which is used as a proof of evidence.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmEvidence;
+			opposite_lazy = () -> Document.mmEvidence;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
+			type_lazy = () -> Document.mmObject();
+		}
+
+		@Override
+		public Document getValue(Evidence obj) {
+			return obj.getRelatedDocument();
+		}
+
+		@Override
+		public void setValue(Evidence obj, Document value) {
+			obj.setRelatedDocument(value);
 		}
 	};
 
@@ -128,7 +139,7 @@ public class Evidence {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Evidence";
 				definition = "Element such as signature that can be used to prove a fact.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Document.mmEvidence);
+				associationDomain_lazy = () -> Arrays.asList(Document.mmEvidence);
 				subType_lazy = () -> Arrays.asList(Signature.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Evidence.mmRelatedDocument);
 			}
@@ -145,7 +156,7 @@ public class Evidence {
 		return relatedDocument;
 	}
 
-	public Evidence setRelatedDocument(com.tools20022.repository.entity.Document relatedDocument) {
+	public Evidence setRelatedDocument(Document relatedDocument) {
 		this.relatedDocument = Objects.requireNonNull(relatedDocument);
 		return this;
 	}

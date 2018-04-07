@@ -20,7 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.pacs.PaymentReturnV07;
+import com.tools20022.repository.area.pacs.PaymentReturnV08;
 
 /**
  * If GroupHeader/GroupReturn is false, then at least one occurrence of
@@ -34,8 +34,8 @@ public class ConstraintGroupReturnAndTransactionInformationPresentRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.area.pacs.PaymentReturnV07
-	 * PaymentReturnV07}</li>
+	 * {@linkplain com.tools20022.repository.area.pacs.PaymentReturnV08
+	 * PaymentReturnV08}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/TransactionInformation[1]&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/GroupHeader/GroupReturn&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"EqualToValue\"&gt;&lt;leftOperand&gt;/GroupHeader/GroupReturn&lt;/leftOperand&gt;&lt;rightOperand&gt;false&lt;/rightOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -53,18 +53,18 @@ public class ConstraintGroupReturnAndTransactionInformationPresentRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentReturnV07 = new MMConstraint() {
+	public static final MMConstraint<PaymentReturnV08> for_pacs_PaymentReturnV08 = new MMConstraint<PaymentReturnV08>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GroupReturnAndTransactionInformationPresentRule";
 			definition = "If GroupHeader/GroupReturn is false, then at least one occurrence of TransactionInformation must be present.";
-			owner_lazy = () -> PaymentReturnV07.mmObject();
+			owner_lazy = () -> PaymentReturnV08.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/TransactionInformation[1]</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/GroupHeader/GroupReturn</leftOperand></BooleanRule><BooleanRule xsi:type=\"EqualToValue\"><leftOperand>/GroupHeader/GroupReturn</leftOperand><rightOperand>false</rightOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentReturnV07((PaymentReturnV07) obj);
+		public void executeValidator(PaymentReturnV08 obj) throws Exception {
+			check_pacs_PaymentReturnV08(obj);
 		}
 	};
 
@@ -72,7 +72,7 @@ public class ConstraintGroupReturnAndTransactionInformationPresentRule {
 	 * If GroupHeader/GroupReturn is false, then at least one occurrence of
 	 * TransactionInformation must be present.
 	 */
-	public static void checkPaymentReturnV07(PaymentReturnV07 obj) throws Exception {
+	public static void check_pacs_PaymentReturnV08(PaymentReturnV08 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

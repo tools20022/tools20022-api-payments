@@ -22,9 +22,9 @@ import com.tools20022.repository.choice.UnderlyingContract1Choice;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.Debt;
+import com.tools20022.repository.entity.PaymentTerms;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -148,7 +148,7 @@ public class Loan extends Debt {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPrincipalAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Loan, CurrencyAndAmount> mmPrincipalAmount = new MMBusinessAttribute<Loan, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmLoanPrincipalAmount, RegisteredContract5.mmLoanPrincipalAmount, SyndicatedLoan1.mmAmount, LoanContract1.mmAmount);
 			isDerived = false;
@@ -161,12 +161,14 @@ public class Loan extends Debt {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Loan.class.getMethod("getPrincipalAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Loan obj) {
+			return obj.getPrincipalAmount();
+		}
+
+		@Override
+		public void setValue(Loan obj, CurrencyAndAmount value) {
+			obj.setPrincipalAmount(value);
 		}
 	};
 	protected PaymentTerms interestPaymentsSchedule;
@@ -211,7 +213,7 @@ public class Loan extends Debt {
 	 * "Schedule for the payment of the interests due on the loan."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterestPaymentsSchedule = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Loan, PaymentTerms> mmInterestPaymentsSchedule = new MMBusinessAssociationEnd<Loan, PaymentTerms>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LoanContract1.mmInterestSchedule);
 			isDerived = false;
@@ -221,9 +223,19 @@ public class Loan extends Debt {
 			definition = "Schedule for the payment of the interests due on the loan.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmRelatedLoan;
+			opposite_lazy = () -> PaymentTerms.mmRelatedLoan;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
+			type_lazy = () -> PaymentTerms.mmObject();
+		}
+
+		@Override
+		public PaymentTerms getValue(Loan obj) {
+			return obj.getInterestPaymentsSchedule();
+		}
+
+		@Override
+		public void setValue(Loan obj, PaymentTerms value) {
+			obj.setInterestPaymentsSchedule(value);
 		}
 	};
 	protected YesNoIndicator intraCompanyLoanIndicator;
@@ -266,7 +278,7 @@ public class Loan extends Debt {
 	 * definition} = "Loan is an intra-company loan."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIntraCompanyLoanIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Loan, YesNoIndicator> mmIntraCompanyLoanIndicator = new MMBusinessAttribute<Loan, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmInterCompanyLoan, RegisteredContract5.mmInterCompanyLoan, LoanContract1.mmIntraCompanyLoan);
 			isDerived = false;
@@ -279,12 +291,14 @@ public class Loan extends Debt {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Loan.class.getMethod("getIntraCompanyLoanIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Loan obj) {
+			return obj.getIntraCompanyLoanIndicator();
+		}
+
+		@Override
+		public void setValue(Loan obj, YesNoIndicator value) {
+			obj.setIntraCompanyLoanIndicator(value);
 		}
 	};
 
@@ -295,7 +309,7 @@ public class Loan extends Debt {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Loan";
 				definition = "Act of provding an amount of money, a property or other material goods to a another party in exchange for future repayment of the principal amount along with interest or other finance charges.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentTerms.mmRelatedLoan);
+				associationDomain_lazy = () -> Arrays.asList(PaymentTerms.mmRelatedLoan);
 				derivationElement_lazy = () -> Arrays.asList(UnderlyingContract1Choice.mmLoan, LoanContract1.mmSyndicatedLoan);
 				superType_lazy = () -> Debt.mmObject();
 				element_lazy = () -> Arrays
@@ -324,7 +338,7 @@ public class Loan extends Debt {
 		return interestPaymentsSchedule;
 	}
 
-	public Loan setInterestPaymentsSchedule(com.tools20022.repository.entity.PaymentTerms interestPaymentsSchedule) {
+	public Loan setInterestPaymentsSchedule(PaymentTerms interestPaymentsSchedule) {
 		this.interestPaymentsSchedule = Objects.requireNonNull(interestPaymentsSchedule);
 		return this;
 	}

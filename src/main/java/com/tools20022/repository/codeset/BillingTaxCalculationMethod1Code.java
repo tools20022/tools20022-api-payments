@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
- * Defines the tax calculation method
+ * Defines the tax calculation method.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -77,7 +77,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "BillingTaxCalculationMethod1Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Defines the tax calculation method"</li>
+ * definition} = "Defines the tax calculation method."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -240,7 +240,7 @@ public class BillingTaxCalculationMethod1Code extends MMCode {
 				example = Arrays.asList("NTAX");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingTaxCalculationMethod1Code";
-				definition = "Defines the tax calculation method";
+				definition = "Defines the tax calculation method.";
 				trace_lazy = () -> BillingTaxCalculationMethodCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BillingTaxCalculationMethod1Code.NoTaxes, com.tools20022.repository.codeset.BillingTaxCalculationMethod1Code.MethodA,
 						com.tools20022.repository.codeset.BillingTaxCalculationMethod1Code.MethodB, com.tools20022.repository.codeset.BillingTaxCalculationMethod1Code.MethodC,

@@ -23,10 +23,11 @@ import com.tools20022.repository.choice.MandateReason1Choice;
 import com.tools20022.repository.choice.MandateSuspensionReason1Choice;
 import com.tools20022.repository.choice.ReversalReason4Choice;
 import com.tools20022.repository.codeset.*;
+import com.tools20022.repository.entity.Payment;
+import com.tools20022.repository.entity.PaymentInvestigationCase;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -123,8 +124,6 @@ import java.util.Optional;
  * MandateReason1Choice}</li>
  * <li>{@linkplain com.tools20022.repository.msg.PaymentCancellationReason1
  * PaymentCancellationReason1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentCancellationReason3
- * PaymentCancellationReason3}</li>
  * <li>{@linkplain com.tools20022.repository.choice.CancellationReason33Choice
  * CancellationReason33Choice}</li>
  * <li>
@@ -132,6 +131,10 @@ import java.util.Optional;
  * MandateSuspensionReason1Choice}</li>
  * <li>{@linkplain com.tools20022.repository.msg.MandateSuspensionReason1
  * MandateSuspensionReason1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentCancellationReason4
+ * PaymentCancellationReason4}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.StatusReasonInformation11
+ * StatusReasonInformation11}</li>
  * </ul>
  * </li>
  * <li>
@@ -167,20 +170,20 @@ public class PaymentStatus extends Status {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader7#mmGroupStatus
-	 * OriginalGroupHeader7.mmGroupStatus}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction23#mmPaymentInformationStatus
-	 * OriginalPaymentInstruction23.mmPaymentInformationStatus}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction24#mmPaymentInformationStatus
 	 * OriginalPaymentInstruction24.mmPaymentInformationStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OriginalGroupInformation28#mmGroupStatus
 	 * OriginalGroupInformation28.mmGroupStatus}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction22#mmPaymentInformationCancellationStatus
-	 * OriginalPaymentInstruction22.mmPaymentInformationCancellationStatus}</li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction26#mmPaymentInformationCancellationStatus
+	 * OriginalPaymentInstruction26.mmPaymentInformationCancellationStatus}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalPaymentInstruction27#mmPaymentInformationStatus
+	 * OriginalPaymentInstruction27.mmPaymentInformationStatus}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader13#mmGroupStatus
+	 * OriginalGroupHeader13.mmGroupStatus}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -199,10 +202,10 @@ public class PaymentStatus extends Status {
 	 * definition} = "Specifies the status of the payment execution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, PaymentStatusCode> mmStatus = new MMBusinessAttribute<PaymentStatus, PaymentStatusCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(OriginalGroupHeader7.mmGroupStatus, OriginalPaymentInstruction23.mmPaymentInformationStatus, OriginalPaymentInstruction24.mmPaymentInformationStatus,
-					OriginalGroupInformation28.mmGroupStatus, OriginalPaymentInstruction22.mmPaymentInformationCancellationStatus);
+			derivation_lazy = () -> Arrays.asList(OriginalPaymentInstruction24.mmPaymentInformationStatus, OriginalGroupInformation28.mmGroupStatus, OriginalPaymentInstruction26.mmPaymentInformationCancellationStatus,
+					OriginalPaymentInstruction27.mmPaymentInformationStatus, OriginalGroupHeader13.mmGroupStatus);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -213,12 +216,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> PaymentStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PaymentStatusCode getValue(PaymentStatus obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, PaymentStatusCode value) {
+			obj.setStatus(value);
 		}
 	};
 	protected Payment payment;
@@ -254,7 +259,7 @@ public class PaymentStatus extends Status {
 	 * definition} = "Payment for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentStatus, Optional<Payment>> mmPayment = new MMBusinessAssociationEnd<PaymentStatus, Optional<Payment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
@@ -267,8 +272,18 @@ public class PaymentStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Payment.mmObject();
 		}
+
+		@Override
+		public Optional<Payment> getValue(PaymentStatus obj) {
+			return obj.getPayment();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, Optional<Payment> value) {
+			obj.setPayment(value.orElse(null));
+		}
 	};
-	protected UnmatchedStatusReasonCode unmatchedStatusReason;
+	protected TransferUnmatchedReasonCode unmatchedStatusReason;
 	/**
 	 * 
 	 <p>
@@ -277,8 +292,8 @@ public class PaymentStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.codeset.UnmatchedStatusReasonCode
-	 * UnmatchedStatusReasonCode}</li>
+	 * {@linkplain com.tools20022.repository.codeset.TransferUnmatchedReasonCode
+	 * TransferUnmatchedReasonCode}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -295,7 +310,7 @@ public class PaymentStatus extends Status {
 	 * definition} = "Reason the transaction/instruction is unmatched."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUnmatchedStatusReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, TransferUnmatchedReasonCode> mmUnmatchedStatusReason = new MMBusinessAttribute<PaymentStatus, TransferUnmatchedReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
@@ -304,15 +319,17 @@ public class PaymentStatus extends Status {
 			definition = "Reason the transaction/instruction is unmatched.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> UnmatchedStatusReasonCode.mmObject();
+			simpleType_lazy = () -> TransferUnmatchedReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getUnmatchedStatusReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TransferUnmatchedReasonCode getValue(PaymentStatus obj) {
+			return obj.getUnmatchedStatusReason();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, TransferUnmatchedReasonCode value) {
+			obj.setUnmatchedStatusReason(value);
 		}
 	};
 	protected SuspendedStatusReasonCode suspendedStatusReason;
@@ -342,7 +359,7 @@ public class PaymentStatus extends Status {
 	 * definition} = "Reason the transaction/instruction is suspended."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSuspendedStatusReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, SuspendedStatusReasonCode> mmSuspendedStatusReason = new MMBusinessAttribute<PaymentStatus, SuspendedStatusReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
@@ -354,12 +371,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> SuspendedStatusReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getSuspendedStatusReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SuspendedStatusReasonCode getValue(PaymentStatus obj) {
+			return obj.getSuspendedStatusReason();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, SuspendedStatusReasonCode value) {
+			obj.setSuspendedStatusReason(value);
 		}
 	};
 	protected PendingSettlementStatusReasonCode pendingSettlement;
@@ -391,7 +410,7 @@ public class PaymentStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPendingSettlement = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, PendingSettlementStatusReasonCode> mmPendingSettlement = new MMBusinessAttribute<PaymentStatus, PendingSettlementStatusReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
@@ -403,12 +422,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> PendingSettlementStatusReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getPendingSettlement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PendingSettlementStatusReasonCode getValue(PaymentStatus obj) {
+			return obj.getPendingSettlement();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, PendingSettlementStatusReasonCode value) {
+			obj.setPendingSettlement(value);
 		}
 	};
 	protected PaymentInstructionStatusCode instructionStatus;
@@ -438,7 +459,7 @@ public class PaymentStatus extends Status {
 	 * definition} = "Specifies the state of a payment instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInstructionStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, PaymentInstructionStatusCode> mmInstructionStatus = new MMBusinessAttribute<PaymentStatus, PaymentInstructionStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
@@ -450,12 +471,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> PaymentInstructionStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getInstructionStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PaymentInstructionStatusCode getValue(PaymentStatus obj) {
+			return obj.getInstructionStatus();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, PaymentInstructionStatusCode value) {
+			obj.setInstructionStatus(value);
 		}
 	};
 	protected TransactionReasonCode transactionRejectionReason;
@@ -497,7 +520,7 @@ public class PaymentStatus extends Status {
 	 * "Specifies the reason to reject, return or reverse the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransactionRejectionReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, TransactionReasonCode> mmTransactionRejectionReason = new MMBusinessAttribute<PaymentStatus, TransactionReasonCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ReversalReason4Choice.mmCode, ReversalReason4Choice.mmProprietary);
 			isDerived = false;
@@ -510,12 +533,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> TransactionReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getTransactionRejectionReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TransactionReasonCode getValue(PaymentStatus obj) {
+			return obj.getTransactionRejectionReason();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, TransactionReasonCode value) {
+			obj.setTransactionRejectionReason(value);
 		}
 	};
 	protected PaymentInvestigationCase relatedInvestigationCase;
@@ -554,7 +579,7 @@ public class PaymentStatus extends Status {
 	 * "Specifies an investigation case in relation with the payment status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInvestigationCase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentStatus, Optional<PaymentInvestigationCase>> mmRelatedInvestigationCase = new MMBusinessAssociationEnd<PaymentStatus, Optional<PaymentInvestigationCase>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
@@ -563,9 +588,19 @@ public class PaymentStatus extends Status {
 			definition = "Specifies an investigation case in relation with the payment status.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmPaymentStatus;
+			opposite_lazy = () -> PaymentInvestigationCase.mmPaymentStatus;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCase.mmObject();
+			type_lazy = () -> PaymentInvestigationCase.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentInvestigationCase> getValue(PaymentStatus obj) {
+			return obj.getRelatedInvestigationCase();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, Optional<PaymentInvestigationCase> value) {
+			obj.setRelatedInvestigationCase(value.orElse(null));
 		}
 	};
 	protected NotificationToReceiveStatusCode notificationStatus;
@@ -608,7 +643,7 @@ public class PaymentStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNotificationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, NotificationToReceiveStatusCode> mmNotificationStatus = new MMBusinessAttribute<PaymentStatus, NotificationToReceiveStatusCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(OriginalNotification9.mmNotificationStatus, OriginalItemAndStatus5.mmItemStatus);
 			isDerived = false;
@@ -621,12 +656,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> NotificationToReceiveStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getNotificationStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public NotificationToReceiveStatusCode getValue(PaymentStatus obj) {
+			return obj.getNotificationStatus();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, NotificationToReceiveStatusCode value) {
+			obj.setNotificationStatus(value);
 		}
 	};
 	protected TransactionStatusCode transactionStatus;
@@ -657,7 +694,7 @@ public class PaymentStatus extends Status {
 	 * "Specifies the processing status of an investment fund transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransactionStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, TransactionStatusCode> mmTransactionStatus = new MMBusinessAttribute<PaymentStatus, TransactionStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
@@ -669,12 +706,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> TransactionStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getTransactionStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TransactionStatusCode getValue(PaymentStatus obj) {
+			return obj.getTransactionStatus();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, TransactionStatusCode value) {
+			obj.setTransactionStatus(value);
 		}
 	};
 	protected CashPaymentStatusCode cashPaymentStatus;
@@ -705,7 +744,7 @@ public class PaymentStatus extends Status {
 	 * "Specifies a generic status of a payment at a specified time."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCashPaymentStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, CashPaymentStatusCode> mmCashPaymentStatus = new MMBusinessAttribute<PaymentStatus, CashPaymentStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
@@ -717,12 +756,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> CashPaymentStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getCashPaymentStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CashPaymentStatusCode getValue(PaymentStatus obj) {
+			return obj.getCashPaymentStatus();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, CashPaymentStatusCode value) {
+			obj.setCashPaymentStatus(value);
 		}
 	};
 	protected ExternalStatusReason1Code unsuccessfulStatusReason;
@@ -754,7 +795,7 @@ public class PaymentStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUnsuccessfulStatusReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, ExternalStatusReason1Code> mmUnsuccessfulStatusReason = new MMBusinessAttribute<PaymentStatus, ExternalStatusReason1Code>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
@@ -766,12 +807,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> ExternalStatusReason1Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getUnsuccessfulStatusReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExternalStatusReason1Code getValue(PaymentStatus obj) {
+			return obj.getUnsuccessfulStatusReason();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, ExternalStatusReason1Code value) {
+			obj.setUnsuccessfulStatusReason(value);
 		}
 	};
 	protected CancellationReasonCode cancellationReason;
@@ -789,9 +832,6 @@ public class PaymentStatus extends Status {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentCancellationReason3#mmReason
-	 * PaymentCancellationReason3.mmReason}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.DebitAuthorisation2#mmCancellationReason
 	 * DebitAuthorisation2.mmCancellationReason}</li>
 	 * <li>
@@ -801,14 +841,17 @@ public class PaymentStatus extends Status {
 	 * {@linkplain com.tools20022.repository.choice.CancellationReason33Choice#mmProprietary
 	 * CancellationReason33Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction74#mmCancellationReasonInformation
-	 * PaymentTransaction74.mmCancellationReasonInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction89#mmCancellationReasonInformation
+	 * PaymentTransaction89.mmCancellationReasonInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader6#mmCancellationReasonInformation
-	 * OriginalGroupHeader6.mmCancellationReasonInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction95#mmCancellationReasonInformation
+	 * PaymentTransaction95.mmCancellationReasonInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction75#mmCancellationReasonInformation
-	 * PaymentTransaction75.mmCancellationReasonInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentCancellationReason4#mmReason
+	 * PaymentCancellationReason4.mmReason}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader10#mmCancellationReasonInformation
+	 * OriginalGroupHeader10.mmCancellationReasonInformation}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -827,10 +870,10 @@ public class PaymentStatus extends Status {
 	 * definition} = "Reason for the cancellation of the payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancellationReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, CancellationReasonCode> mmCancellationReason = new MMBusinessAttribute<PaymentStatus, CancellationReasonCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PaymentCancellationReason3.mmReason, DebitAuthorisation2.mmCancellationReason, CancellationReason33Choice.mmCode, CancellationReason33Choice.mmProprietary,
-					PaymentTransaction74.mmCancellationReasonInformation, OriginalGroupHeader6.mmCancellationReasonInformation, PaymentTransaction75.mmCancellationReasonInformation);
+			derivation_lazy = () -> Arrays.asList(DebitAuthorisation2.mmCancellationReason, CancellationReason33Choice.mmCode, CancellationReason33Choice.mmProprietary, PaymentTransaction89.mmCancellationReasonInformation,
+					PaymentTransaction95.mmCancellationReasonInformation, PaymentCancellationReason4.mmReason, OriginalGroupHeader10.mmCancellationReasonInformation);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -841,12 +884,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> CancellationReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getCancellationReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CancellationReasonCode getValue(PaymentStatus obj) {
+			return obj.getCancellationReason();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, CancellationReasonCode value) {
+			obj.setCancellationReason(value);
 		}
 	};
 	protected MandateReasonCode mandateRejectionReason;
@@ -897,7 +942,7 @@ public class PaymentStatus extends Status {
 	 * "Reason for requesting the cancellation or the amendment of a mandate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMandateRejectionReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, MandateReasonCode> mmMandateRejectionReason = new MMBusinessAttribute<PaymentStatus, MandateReasonCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MandateReason1Choice.mmCode, MandateReason1Choice.mmProprietary, PaymentCancellationReason1.mmReason, MandateSuspensionReason1Choice.mmCode, MandateSuspensionReason1Choice.mmProprietary);
 			isDerived = false;
@@ -910,12 +955,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> MandateReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getMandateRejectionReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MandateReasonCode getValue(PaymentStatus obj) {
+			return obj.getMandateRejectionReason();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, MandateReasonCode value) {
+			obj.setMandateRejectionReason(value);
 		}
 	};
 	protected PendingFailingSettlementCode pendingFailingSettlement;
@@ -947,7 +994,7 @@ public class PaymentStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPendingFailingSettlement = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentStatus, PendingFailingSettlementCode> mmPendingFailingSettlement = new MMBusinessAttribute<PaymentStatus, PendingFailingSettlementCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentStatus.mmObject();
@@ -959,12 +1006,14 @@ public class PaymentStatus extends Status {
 			simpleType_lazy = () -> PendingFailingSettlementCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentStatus.class.getMethod("getPendingFailingSettlement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PendingFailingSettlementCode getValue(PaymentStatus obj) {
+			return obj.getPendingFailingSettlement();
+		}
+
+		@Override
+		public void setValue(PaymentStatus obj, PendingFailingSettlementCode value) {
+			obj.setPendingFailingSettlement(value);
 		}
 	};
 
@@ -975,7 +1024,7 @@ public class PaymentStatus extends Status {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentStatus";
 				definition = "Specifies the status of a payment at a specified time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Payment.mmPaymentStatus, com.tools20022.repository.entity.PaymentInvestigationCase.mmPaymentStatus);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Payment.mmPaymentStatus, PaymentInvestigationCase.mmPaymentStatus);
 				derivationElement_lazy = () -> Arrays.asList(CurrencyControlGroupStatus1.mmStatusReason);
 				superType_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentStatus.mmStatus, com.tools20022.repository.entity.PaymentStatus.mmPayment, com.tools20022.repository.entity.PaymentStatus.mmUnmatchedStatusReason,
@@ -985,7 +1034,7 @@ public class PaymentStatus extends Status {
 						com.tools20022.repository.entity.PaymentStatus.mmUnsuccessfulStatusReason, com.tools20022.repository.entity.PaymentStatus.mmCancellationReason,
 						com.tools20022.repository.entity.PaymentStatus.mmMandateRejectionReason, com.tools20022.repository.entity.PaymentStatus.mmPendingFailingSettlement);
 				derivationComponent_lazy = () -> Arrays.asList(ReversalReason4Choice.mmObject(), StatusReasonInformation9.mmObject(), MandateReason1Choice.mmObject(), PaymentCancellationReason1.mmObject(),
-						PaymentCancellationReason3.mmObject(), CancellationReason33Choice.mmObject(), MandateSuspensionReason1Choice.mmObject(), MandateSuspensionReason1.mmObject());
+						CancellationReason33Choice.mmObject(), MandateSuspensionReason1Choice.mmObject(), MandateSuspensionReason1.mmObject(), PaymentCancellationReason4.mmObject(), StatusReasonInformation11.mmObject());
 			}
 
 			@Override
@@ -1014,11 +1063,11 @@ public class PaymentStatus extends Status {
 		return this;
 	}
 
-	public UnmatchedStatusReasonCode getUnmatchedStatusReason() {
+	public TransferUnmatchedReasonCode getUnmatchedStatusReason() {
 		return unmatchedStatusReason;
 	}
 
-	public PaymentStatus setUnmatchedStatusReason(UnmatchedStatusReasonCode unmatchedStatusReason) {
+	public PaymentStatus setUnmatchedStatusReason(TransferUnmatchedReasonCode unmatchedStatusReason) {
 		this.unmatchedStatusReason = Objects.requireNonNull(unmatchedStatusReason);
 		return this;
 	}
@@ -1063,7 +1112,7 @@ public class PaymentStatus extends Status {
 		return relatedInvestigationCase == null ? Optional.empty() : Optional.of(relatedInvestigationCase);
 	}
 
-	public PaymentStatus setRelatedInvestigationCase(com.tools20022.repository.entity.PaymentInvestigationCase relatedInvestigationCase) {
+	public PaymentStatus setRelatedInvestigationCase(PaymentInvestigationCase relatedInvestigationCase) {
 		this.relatedInvestigationCase = relatedInvestigationCase;
 		return this;
 	}

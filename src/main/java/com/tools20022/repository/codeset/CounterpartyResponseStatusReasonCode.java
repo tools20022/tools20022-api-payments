@@ -93,7 +93,7 @@ public class CounterpartyResponseStatusReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies  that the response is related to an allegement from the counterparty."
+	 * "Specifies that the response is related to an allegement from the counterparty."
 	 * </li>
 	 * </ul>
 	 */
@@ -101,7 +101,7 @@ public class CounterpartyResponseStatusReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterpartyTransaction";
-			definition = "Specifies  that the response is related to an allegement from the counterparty.";
+			definition = "Specifies that the response is related to an allegement from the counterparty.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode.mmObject();
 			codeName = "CPTR";
 		}
@@ -126,7 +126,7 @@ public class CounterpartyResponseStatusReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies  that the response is related to the cancellation request of the counterparty."
+	 * "Specifies that the response is related to the cancellation request of the counterparty."
 	 * </li>
 	 * </ul>
 	 */
@@ -134,7 +134,7 @@ public class CounterpartyResponseStatusReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterpartyCancellation";
-			definition = "Specifies  that the response is related to the cancellation request of the counterparty.";
+			definition = "Specifies that the response is related to the cancellation request of the counterparty.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode.mmObject();
 			codeName = "CPCX";
 		}
@@ -159,7 +159,7 @@ public class CounterpartyResponseStatusReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies  that the response is related to the modification request of the counterparty."
+	 * "Specifies that the response is related to the modification request of the counterparty."
 	 * </li>
 	 * </ul>
 	 */
@@ -167,7 +167,7 @@ public class CounterpartyResponseStatusReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterpartyModification";
-			definition = "Specifies  that the response is related to the modification request of the counterparty.";
+			definition = "Specifies that the response is related to the modification request of the counterparty.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CounterpartyResponseStatusReasonCode.mmObject();
 			codeName = "CPMD";
 		}

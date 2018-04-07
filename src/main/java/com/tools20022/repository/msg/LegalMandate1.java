@@ -107,7 +107,7 @@ public class LegalMandate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmParagraph = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LegalMandate1, Max35Text> mmParagraph = new MMMessageAttribute<LegalMandate1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.LegalMandate1.mmObject();
 			isDerived = false;
@@ -118,6 +118,16 @@ public class LegalMandate1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(LegalMandate1 obj) {
+			return obj.getParagraph();
+		}
+
+		@Override
+		public void setValue(LegalMandate1 obj, Max35Text value) {
+			obj.setParagraph(value);
 		}
 	};
 	@XmlElement(name = "Dsclmr")
@@ -150,7 +160,7 @@ public class LegalMandate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDisclaimer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LegalMandate1, Optional<Max350Text>> mmDisclaimer = new MMMessageAttribute<LegalMandate1, Optional<Max350Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.LegalMandate1.mmObject();
 			isDerived = false;
@@ -161,6 +171,16 @@ public class LegalMandate1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max350Text> getValue(LegalMandate1 obj) {
+			return obj.getDisclaimer();
+		}
+
+		@Override
+		public void setValue(LegalMandate1 obj, Optional<Max350Text> value) {
+			obj.setDisclaimer(value.orElse(null));
 		}
 	};
 

@@ -21,6 +21,8 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CashAccount;
+import com.tools20022.repository.entity.CashSettlement;
 import com.tools20022.repository.entity.SettlementPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.SettlementInstruction3;
@@ -152,7 +154,7 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashSettlementInstructionPartyRole, List<CashAccount>> mmCashAccount = new MMBusinessAssociationEnd<CashSettlementInstructionPartyRole, List<CashAccount>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementInstruction4.mmInstructingReimbursementAgentAccount, SettlementInstruction4.mmInstructedReimbursementAgentAccount, SettlementInstruction4.mmThirdReimbursementAgentAccount,
 					SettlementInstruction3.mmInstructingReimbursementAgentAccount, SettlementInstruction3.mmInstructedReimbursementAgentAccount);
@@ -166,8 +168,18 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 		}
+
+		@Override
+		public List<CashAccount> getValue(CashSettlementInstructionPartyRole obj) {
+			return obj.getCashAccount();
+		}
+
+		@Override
+		public void setValue(CashSettlementInstructionPartyRole obj, List<CashAccount> value) {
+			obj.setCashAccount(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.CashSettlement> settlementInstruction;
+	protected List<CashSettlement> settlementInstruction;
 	/**
 	 * 
 	 <p>
@@ -202,7 +214,7 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 	 * "Identifies the settlement instruction in which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlementInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashSettlementInstructionPartyRole, List<CashSettlement>> mmSettlementInstruction = new MMBusinessAssociationEnd<CashSettlementInstructionPartyRole, List<CashSettlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmObject();
@@ -210,9 +222,19 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 			name = "SettlementInstruction";
 			definition = "Identifies the settlement instruction in which a party plays a role.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmPartyRole;
+			opposite_lazy = () -> CashSettlement.mmPartyRole;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
+			type_lazy = () -> CashSettlement.mmObject();
+		}
+
+		@Override
+		public List<CashSettlement> getValue(CashSettlementInstructionPartyRole obj) {
+			return obj.getSettlementInstruction();
+		}
+
+		@Override
+		public void setValue(CashSettlementInstructionPartyRole obj, List<CashSettlement> value) {
+			obj.setSettlementInstruction(value);
 		}
 	};
 
@@ -223,7 +245,7 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashSettlementInstructionPartyRole";
 				definition = "Role played by a party in cash settlement.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmCashSettlementPartyRole, com.tools20022.repository.entity.CashSettlement.mmPartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmCashSettlementPartyRole, CashSettlement.mmPartyRole);
 				subType_lazy = () -> Arrays.asList(SettlementInstructionSystemRole.mmObject(), InstructedReimbursementAgent.mmObject());
 				superType_lazy = () -> SettlementPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmCashAccount, com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmSettlementInstruction);
@@ -250,7 +272,7 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 		return settlementInstruction == null ? settlementInstruction = new ArrayList<>() : settlementInstruction;
 	}
 
-	public CashSettlementInstructionPartyRole setSettlementInstruction(List<com.tools20022.repository.entity.CashSettlement> settlementInstruction) {
+	public CashSettlementInstructionPartyRole setSettlementInstruction(List<CashSettlement> settlementInstruction) {
 		this.settlementInstruction = Objects.requireNonNull(settlementInstruction);
 		return this;
 	}

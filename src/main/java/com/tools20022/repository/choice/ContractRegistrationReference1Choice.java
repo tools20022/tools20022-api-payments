@@ -114,7 +114,7 @@ public class ContractRegistrationReference1Choice {
 	 * "Unique and unambiguous identification of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegisteredContractIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContractRegistrationReference1Choice, Max35Text> mmRegisteredContractIdentification = new MMMessageAttribute<ContractRegistrationReference1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ContractRegistrationReference1Choice.mmObject();
@@ -127,6 +127,16 @@ public class ContractRegistrationReference1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ContractRegistrationReference1Choice obj) {
+			return obj.getRegisteredContractIdentification();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationReference1Choice obj, Max35Text value) {
+			obj.setRegisteredContractIdentification(value);
 		}
 	};
 	@XmlElement(name = "Ctrct", required = true)
@@ -163,7 +173,7 @@ public class ContractRegistrationReference1Choice {
 	 * definition} = "Identification of the contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContract = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ContractRegistrationReference1Choice, DocumentIdentification28> mmContract = new MMMessageAssociationEnd<ContractRegistrationReference1Choice, DocumentIdentification28>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ContractRegistrationReference1Choice.mmObject();
@@ -176,6 +186,16 @@ public class ContractRegistrationReference1Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> DocumentIdentification28.mmObject();
+		}
+
+		@Override
+		public DocumentIdentification28 getValue(ContractRegistrationReference1Choice obj) {
+			return obj.getContract();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationReference1Choice obj, DocumentIdentification28 value) {
+			obj.setContract(value);
 		}
 	};
 

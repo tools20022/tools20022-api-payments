@@ -99,7 +99,7 @@ public class MandateSetupReason1Choice {
 	 * "Reason for the return, as published in an external reason code list."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateSetupReason1Choice, ExternalMandateSetupReason1Code> mmCode = new MMMessageAttribute<MandateSetupReason1Choice, ExternalMandateSetupReason1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.MandateSetupReason1Choice.mmObject();
 			isDerived = false;
@@ -110,6 +110,16 @@ public class MandateSetupReason1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalMandateSetupReason1Code.mmObject();
+		}
+
+		@Override
+		public ExternalMandateSetupReason1Code getValue(MandateSetupReason1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(MandateSetupReason1Choice obj, ExternalMandateSetupReason1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -141,7 +151,7 @@ public class MandateSetupReason1Choice {
 	 * definition} = "Reason for the return, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateSetupReason1Choice, Max70Text> mmProprietary = new MMMessageAttribute<MandateSetupReason1Choice, Max70Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.MandateSetupReason1Choice.mmObject();
 			isDerived = false;
@@ -152,6 +162,16 @@ public class MandateSetupReason1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public Max70Text getValue(MandateSetupReason1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(MandateSetupReason1Choice obj, Max70Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

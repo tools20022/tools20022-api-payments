@@ -20,7 +20,7 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV01;
+import com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV02;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max15NumericText;
@@ -72,8 +72,8 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV01#mmOriginalGroupInformation
- * FIToFIPaymentStatusRequestV01.mmOriginalGroupInformation}</li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV02#mmOriginalGroupInformation
+ * FIToFIPaymentStatusRequestV02.mmOriginalGroupInformation}</li>
  * </ul>
  * </li>
  * <li>
@@ -134,7 +134,7 @@ public class OriginalGroupInformation27 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalGroupInformation27, Max35Text> mmOriginalMessageIdentification = new MMMessageAttribute<OriginalGroupInformation27, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentIdentification.mmExecutionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalGroupInformation27.mmObject();
@@ -146,6 +146,16 @@ public class OriginalGroupInformation27 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(OriginalGroupInformation27 obj) {
+			return obj.getOriginalMessageIdentification();
+		}
+
+		@Override
+		public void setValue(OriginalGroupInformation27 obj, Max35Text value) {
+			obj.setOriginalMessageIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgnlMsgNmId", required = true)
@@ -179,7 +189,7 @@ public class OriginalGroupInformation27 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalMessageNameIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalGroupInformation27, Max35Text> mmOriginalMessageNameIdentification = new MMMessageAttribute<OriginalGroupInformation27, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalGroupInformation27.mmObject();
 			isDerived = false;
@@ -190,6 +200,16 @@ public class OriginalGroupInformation27 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(OriginalGroupInformation27 obj) {
+			return obj.getOriginalMessageNameIdentification();
+		}
+
+		@Override
+		public void setValue(OriginalGroupInformation27 obj, Max35Text value) {
+			obj.setOriginalMessageNameIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgnlCreDtTm")
@@ -226,7 +246,7 @@ public class OriginalGroupInformation27 {
 	 * definition} = "Date and time at which the original message was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalGroupInformation27, Optional<ISODateTime>> mmOriginalCreationDateTime = new MMMessageAttribute<OriginalGroupInformation27, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentExecution.mmCreationDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalGroupInformation27.mmObject();
@@ -238,6 +258,16 @@ public class OriginalGroupInformation27 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public Optional<ISODateTime> getValue(OriginalGroupInformation27 obj) {
+			return obj.getOriginalCreationDateTime();
+		}
+
+		@Override
+		public void setValue(OriginalGroupInformation27 obj, Optional<ISODateTime> value) {
+			obj.setOriginalCreationDateTime(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlNbOfTxs")
@@ -271,7 +301,7 @@ public class OriginalGroupInformation27 {
 	 * "Number of individual transactions contained in the original message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalNumberOfTransactions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalGroupInformation27, Optional<Max15NumericText>> mmOriginalNumberOfTransactions = new MMMessageAttribute<OriginalGroupInformation27, Optional<Max15NumericText>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalGroupInformation27.mmObject();
 			isDerived = false;
@@ -282,6 +312,16 @@ public class OriginalGroupInformation27 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Max15NumericText> getValue(OriginalGroupInformation27 obj) {
+			return obj.getOriginalNumberOfTransactions();
+		}
+
+		@Override
+		public void setValue(OriginalGroupInformation27 obj, Optional<Max15NumericText> value) {
+			obj.setOriginalNumberOfTransactions(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlCtrlSum")
@@ -316,7 +356,7 @@ public class OriginalGroupInformation27 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalControlSum = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalGroupInformation27, Optional<DecimalNumber>> mmOriginalControlSum = new MMMessageAttribute<OriginalGroupInformation27, Optional<DecimalNumber>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalGroupInformation27.mmObject();
 			isDerived = false;
@@ -328,6 +368,16 @@ public class OriginalGroupInformation27 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(OriginalGroupInformation27 obj) {
+			return obj.getOriginalControlSum();
+		}
+
+		@Override
+		public void setValue(OriginalGroupInformation27 obj, Optional<DecimalNumber> value) {
+			obj.setOriginalControlSum(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
@@ -336,7 +386,7 @@ public class OriginalGroupInformation27 {
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OriginalGroupInformation27.mmOriginalMessageIdentification,
 						com.tools20022.repository.msg.OriginalGroupInformation27.mmOriginalMessageNameIdentification, com.tools20022.repository.msg.OriginalGroupInformation27.mmOriginalCreationDateTime,
 						com.tools20022.repository.msg.OriginalGroupInformation27.mmOriginalNumberOfTransactions, com.tools20022.repository.msg.OriginalGroupInformation27.mmOriginalControlSum);
-				messageBuildingBlock_lazy = () -> Arrays.asList(FIToFIPaymentStatusRequestV01.mmOriginalGroupInformation);
+				messageBuildingBlock_lazy = () -> Arrays.asList(FIToFIPaymentStatusRequestV02.mmOriginalGroupInformation);
 				trace_lazy = () -> Payment.mmObject();
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;

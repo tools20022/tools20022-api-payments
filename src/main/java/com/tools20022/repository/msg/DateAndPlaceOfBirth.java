@@ -27,8 +27,11 @@ import com.tools20022.repository.entity.Country;
 import com.tools20022.repository.entity.Person;
 import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.GeneratedRepository;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Date;
+import java.util.function.Supplier;
 import java.util.Objects;
 import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -68,12 +71,20 @@ import javax.xml.bind.annotation.XmlType;
  * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
- * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRemovalDate
+ * removalDate} = September 9, 2018</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "DateAndPlaceOfBirth"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Date and place of birth of a person."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth1
+ * DateAndPlaceOfBirth1}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -113,9 +124,17 @@ public class DateAndPlaceOfBirth {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Date on which a person is born."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth1#mmBirthDate
+	 * DateAndPlaceOfBirth1.mmBirthDate}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBirthDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DateAndPlaceOfBirth, ISODate> mmBirthDate = new MMMessageAttribute<DateAndPlaceOfBirth, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Person.mmBirthDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DateAndPlaceOfBirth.mmObject();
@@ -124,9 +143,20 @@ public class DateAndPlaceOfBirth {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BirthDate";
 			definition = "Date on which a person is born.";
+			nextVersions_lazy = () -> Arrays.asList(DateAndPlaceOfBirth1.mmBirthDate);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(DateAndPlaceOfBirth obj) {
+			return obj.getBirthDate();
+		}
+
+		@Override
+		public void setValue(DateAndPlaceOfBirth obj, ISODate value) {
+			obj.setBirthDate(value);
 		}
 	};
 	@XmlElement(name = "PrvcOfBirth")
@@ -161,9 +191,17 @@ public class DateAndPlaceOfBirth {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Province where a person was born."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth1#mmProvinceOfBirth
+	 * DateAndPlaceOfBirth1.mmProvinceOfBirth}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProvinceOfBirth = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DateAndPlaceOfBirth, Optional<Max35Text>> mmProvinceOfBirth = new MMMessageAttribute<DateAndPlaceOfBirth, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PostalAddress.mmProvince;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DateAndPlaceOfBirth.mmObject();
@@ -172,9 +210,20 @@ public class DateAndPlaceOfBirth {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProvinceOfBirth";
 			definition = "Province where a person was born.";
+			nextVersions_lazy = () -> Arrays.asList(DateAndPlaceOfBirth1.mmProvinceOfBirth);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(DateAndPlaceOfBirth obj) {
+			return obj.getProvinceOfBirth();
+		}
+
+		@Override
+		public void setValue(DateAndPlaceOfBirth obj, Optional<Max35Text> value) {
+			obj.setProvinceOfBirth(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CityOfBirth", required = true)
@@ -209,9 +258,17 @@ public class DateAndPlaceOfBirth {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "City where a person was born."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth1#mmCityOfBirth
+	 * DateAndPlaceOfBirth1.mmCityOfBirth}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCityOfBirth = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DateAndPlaceOfBirth, Max35Text> mmCityOfBirth = new MMMessageAttribute<DateAndPlaceOfBirth, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PostalAddress.mmTownName;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DateAndPlaceOfBirth.mmObject();
@@ -220,9 +277,20 @@ public class DateAndPlaceOfBirth {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CityOfBirth";
 			definition = "City where a person was born.";
+			nextVersions_lazy = () -> Arrays.asList(DateAndPlaceOfBirth1.mmCityOfBirth);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(DateAndPlaceOfBirth obj) {
+			return obj.getCityOfBirth();
+		}
+
+		@Override
+		public void setValue(DateAndPlaceOfBirth obj, Max35Text value) {
+			obj.setCityOfBirth(value);
 		}
 	};
 	@XmlElement(name = "CtryOfBirth", required = true)
@@ -257,9 +325,17 @@ public class DateAndPlaceOfBirth {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Country where a person was born."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth1#mmCountryOfBirth
+	 * DateAndPlaceOfBirth1.mmCountryOfBirth}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountryOfBirth = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DateAndPlaceOfBirth, CountryCode> mmCountryOfBirth = new MMMessageAttribute<DateAndPlaceOfBirth, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DateAndPlaceOfBirth.mmObject();
@@ -268,9 +344,20 @@ public class DateAndPlaceOfBirth {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CountryOfBirth";
 			definition = "Country where a person was born.";
+			nextVersions_lazy = () -> Arrays.asList(DateAndPlaceOfBirth1.mmCountryOfBirth);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
+		}
+
+		@Override
+		public CountryCode getValue(DateAndPlaceOfBirth obj) {
+			return obj.getCountryOfBirth();
+		}
+
+		@Override
+		public void setValue(DateAndPlaceOfBirth obj, CountryCode value) {
+			obj.setCountryOfBirth(value);
 		}
 	};
 
@@ -281,9 +368,17 @@ public class DateAndPlaceOfBirth {
 						com.tools20022.repository.msg.DateAndPlaceOfBirth.mmCityOfBirth, com.tools20022.repository.msg.DateAndPlaceOfBirth.mmCountryOfBirth);
 				trace_lazy = () -> Person.mmObject();
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
-				registrationStatus = MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.OBSOLETE;
+				removalDate = ((Supplier<Date>) (() -> {
+					try {
+						return DateFormat.getDateInstance(java.text.DateFormat.LONG).parse("September 9, 2018");
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+				})).get();
 				name = "DateAndPlaceOfBirth";
 				definition = "Date and place of birth of a person.";
+				nextVersions_lazy = () -> Arrays.asList(DateAndPlaceOfBirth1.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

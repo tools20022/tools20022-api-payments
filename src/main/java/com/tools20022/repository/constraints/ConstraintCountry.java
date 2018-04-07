@@ -48,7 +48,7 @@ public class ConstraintCountry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCountryCode = new MMConstraint() {
+	public static final MMConstraint<CountryCode> forCountryCode = new MMConstraint<CountryCode>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Country";
@@ -57,8 +57,8 @@ public class ConstraintCountry {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCountryCode((CountryCode) obj);
+		public void executeValidator(CountryCode obj) throws Exception {
+			checkCountryCode(obj);
 		}
 	};
 

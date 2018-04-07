@@ -23,6 +23,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.InvestigatedParties1Choice;
 import com.tools20022.repository.datatype.Max500Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AuthorityRequestType1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -105,7 +106,7 @@ public class AuthorityInvestigation2 {
 	 * definition} = "Identifies the type requested information as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AuthorityInvestigation2, AuthorityRequestType1> mmType = new MMMessageAttribute<AuthorityInvestigation2, AuthorityRequestType1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorityInvestigation2.mmObject();
 			isDerived = false;
@@ -115,7 +116,17 @@ public class AuthorityInvestigation2 {
 			definition = "Identifies the type requested information as a code.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.AuthorityRequestType1.mmObject();
+			complexType_lazy = () -> AuthorityRequestType1.mmObject();
+		}
+
+		@Override
+		public AuthorityRequestType1 getValue(AuthorityInvestigation2 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(AuthorityInvestigation2 obj, AuthorityRequestType1 value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "InvstgtdRoles", required = true)
@@ -149,7 +160,7 @@ public class AuthorityInvestigation2 {
 	 * "Identifies the roles the customer plays in the requested information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInvestigatedRoles = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AuthorityInvestigation2, InvestigatedParties1Choice> mmInvestigatedRoles = new MMMessageAttribute<AuthorityInvestigation2, InvestigatedParties1Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorityInvestigation2.mmObject();
 			isDerived = false;
@@ -160,6 +171,16 @@ public class AuthorityInvestigation2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> InvestigatedParties1Choice.mmObject();
+		}
+
+		@Override
+		public InvestigatedParties1Choice getValue(AuthorityInvestigation2 obj) {
+			return obj.getInvestigatedRoles();
+		}
+
+		@Override
+		public void setValue(AuthorityInvestigation2 obj, InvestigatedParties1Choice value) {
+			obj.setInvestigatedRoles(value);
 		}
 	};
 	@XmlElement(name = "AddtlInvstgtdPties")
@@ -192,7 +213,7 @@ public class AuthorityInvestigation2 {
 	 * definition} = "Specifies the additional investigated parties."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInvestigatedParties = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AuthorityInvestigation2, Optional<InvestigatedParties1Choice>> mmAdditionalInvestigatedParties = new MMMessageAttribute<AuthorityInvestigation2, Optional<InvestigatedParties1Choice>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorityInvestigation2.mmObject();
 			isDerived = false;
@@ -203,6 +224,16 @@ public class AuthorityInvestigation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> InvestigatedParties1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<InvestigatedParties1Choice> getValue(AuthorityInvestigation2 obj) {
+			return obj.getAdditionalInvestigatedParties();
+		}
+
+		@Override
+		public void setValue(AuthorityInvestigation2 obj, Optional<InvestigatedParties1Choice> value) {
+			obj.setAdditionalInvestigatedParties(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -236,7 +267,7 @@ public class AuthorityInvestigation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AuthorityInvestigation2, Optional<Max500Text>> mmAdditionalInformation = new MMMessageAttribute<AuthorityInvestigation2, Optional<Max500Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorityInvestigation2.mmObject();
 			isDerived = false;
@@ -247,6 +278,16 @@ public class AuthorityInvestigation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max500Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max500Text> getValue(AuthorityInvestigation2 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(AuthorityInvestigation2 obj, Optional<Max500Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 
@@ -268,7 +309,7 @@ public class AuthorityInvestigation2 {
 		return type;
 	}
 
-	public AuthorityInvestigation2 setType(com.tools20022.repository.msg.AuthorityRequestType1 type) {
+	public AuthorityInvestigation2 setType(AuthorityRequestType1 type) {
 		this.type = Objects.requireNonNull(type);
 		return this;
 	}

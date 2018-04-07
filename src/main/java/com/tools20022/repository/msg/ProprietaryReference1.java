@@ -95,7 +95,7 @@ public class ProprietaryReference1 {
 	 * definition} = "Identifies the type of reference reported."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProprietaryReference1, Max35Text> mmType = new MMMessageAttribute<ProprietaryReference1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryReference1.mmObject();
 			isDerived = false;
@@ -106,6 +106,16 @@ public class ProprietaryReference1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ProprietaryReference1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ProprietaryReference1 obj, Max35Text value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "Ref", required = true)
@@ -139,7 +149,7 @@ public class ProprietaryReference1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProprietaryReference1, Max35Text> mmReference = new MMMessageAttribute<ProprietaryReference1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryReference1.mmObject();
 			isDerived = false;
@@ -150,6 +160,16 @@ public class ProprietaryReference1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ProprietaryReference1 obj) {
+			return obj.getReference();
+		}
+
+		@Override
+		public void setValue(ProprietaryReference1 obj, Max35Text value) {
+			obj.setReference(value);
 		}
 	};
 

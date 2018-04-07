@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.ElectronicAddress;
 import com.tools20022.repository.entity.PaymentObligation;
 import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.NameAndAddress10;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -114,9 +115,14 @@ public class RemittanceLocationDetails1 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Method used to deliver the remittance advice information."
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.RemittanceLocation2#mmRemittanceLocationMethod
+	 * RemittanceLocation2.mmRemittanceLocationMethod}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RemittanceLocationDetails1, RemittanceLocationMethod2Code> mmMethod = new MMMessageAttribute<RemittanceLocationDetails1, RemittanceLocationMethod2Code>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmRemittanceDeliveryMethod;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceLocationDetails1.mmObject();
@@ -125,9 +131,20 @@ public class RemittanceLocationDetails1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Method";
 			definition = "Method used to deliver the remittance advice information.";
+			previousVersion_lazy = () -> RemittanceLocation2.mmRemittanceLocationMethod;
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> RemittanceLocationMethod2Code.mmObject();
+		}
+
+		@Override
+		public RemittanceLocationMethod2Code getValue(RemittanceLocationDetails1 obj) {
+			return obj.getMethod();
+		}
+
+		@Override
+		public void setValue(RemittanceLocationDetails1 obj, RemittanceLocationMethod2Code value) {
+			obj.setMethod(value);
 		}
 	};
 	@XmlElement(name = "ElctrncAdr")
@@ -164,9 +181,14 @@ public class RemittanceLocationDetails1 {
 	 * definition} =
 	 * "Electronic address to which an agent is to send the remittance information."
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.RemittanceLocation2#mmRemittanceLocationElectronicAddress
+	 * RemittanceLocation2.mmRemittanceLocationElectronicAddress}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmElectronicAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RemittanceLocationDetails1, Optional<Max2048Text>> mmElectronicAddress = new MMMessageAttribute<RemittanceLocationDetails1, Optional<Max2048Text>>() {
 		{
 			businessComponentTrace_lazy = () -> ElectronicAddress.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceLocationDetails1.mmObject();
@@ -175,9 +197,20 @@ public class RemittanceLocationDetails1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ElectronicAddress";
 			definition = "Electronic address to which an agent is to send the remittance information.";
+			previousVersion_lazy = () -> RemittanceLocation2.mmRemittanceLocationElectronicAddress;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max2048Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max2048Text> getValue(RemittanceLocationDetails1 obj) {
+			return obj.getElectronicAddress();
+		}
+
+		@Override
+		public void setValue(RemittanceLocationDetails1 obj, Optional<Max2048Text> value) {
+			obj.setElectronicAddress(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PstlAdr")
@@ -213,9 +246,14 @@ public class RemittanceLocationDetails1 {
 	 * definition} =
 	 * "Postal address to which an agent is to send the remittance information."
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.RemittanceLocation2#mmRemittanceLocationPostalAddress
+	 * RemittanceLocation2.mmRemittanceLocationPostalAddress}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPostalAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RemittanceLocationDetails1, Optional<NameAndAddress10>> mmPostalAddress = new MMMessageAssociationEnd<RemittanceLocationDetails1, Optional<NameAndAddress10>>() {
 		{
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.RemittanceLocationDetails1.mmObject();
@@ -224,10 +262,21 @@ public class RemittanceLocationDetails1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PostalAddress";
 			definition = "Postal address to which an agent is to send the remittance information.";
+			previousVersion_lazy = () -> RemittanceLocation2.mmRemittanceLocationPostalAddress;
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NameAndAddress10.mmObject();
+			type_lazy = () -> NameAndAddress10.mmObject();
+		}
+
+		@Override
+		public Optional<NameAndAddress10> getValue(RemittanceLocationDetails1 obj) {
+			return obj.getPostalAddress();
+		}
+
+		@Override
+		public void setValue(RemittanceLocationDetails1 obj, Optional<NameAndAddress10> value) {
+			obj.setPostalAddress(value.orElse(null));
 		}
 	};
 
@@ -268,7 +317,7 @@ public class RemittanceLocationDetails1 {
 		return postalAddress == null ? Optional.empty() : Optional.of(postalAddress);
 	}
 
-	public RemittanceLocationDetails1 setPostalAddress(com.tools20022.repository.msg.NameAndAddress10 postalAddress) {
+	public RemittanceLocationDetails1 setPostalAddress(NameAndAddress10 postalAddress) {
 		this.postalAddress = postalAddress;
 		return this;
 	}

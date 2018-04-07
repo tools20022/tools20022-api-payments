@@ -21,8 +21,9 @@ import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.RatingValueIdentifier;
+import com.tools20022.repository.entity.Scheme;
+import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -110,7 +111,7 @@ public class Rating {
 	 * definition} = "Security for which a rating is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Rating, Optional<Security>> mmSecurity = new MMBusinessAssociationEnd<Rating, Optional<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
@@ -119,9 +120,19 @@ public class Rating {
 			definition = "Security for which a rating is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmRating;
+			opposite_lazy = () -> Security.mmRating;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Optional<Security> getValue(Rating obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(Rating obj, Optional<Security> value) {
+			obj.setSecurity(value.orElse(null));
 		}
 	};
 	protected Scheme ratingScheme;
@@ -156,7 +167,7 @@ public class Rating {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRatingScheme = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Rating, Scheme> mmRatingScheme = new MMBusinessAssociationEnd<Rating, Scheme>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
@@ -165,9 +176,19 @@ public class Rating {
 			definition = "Information regarding the entity that assigns the rating.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Scheme.mmRating;
+			opposite_lazy = () -> Scheme.mmRating;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
+			type_lazy = () -> Scheme.mmObject();
+		}
+
+		@Override
+		public Scheme getValue(Rating obj) {
+			return obj.getRatingScheme();
+		}
+
+		@Override
+		public void setValue(Rating obj, Scheme value) {
+			obj.setRatingScheme(value);
 		}
 	};
 	protected ISODateTime valueDate;
@@ -195,7 +216,7 @@ public class Rating {
 	 * definition} = "Date/time as from which the rating is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Rating, ISODateTime> mmValueDate = new MMBusinessAttribute<Rating, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
@@ -207,12 +228,14 @@ public class Rating {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Rating.class.getMethod("getValueDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Rating obj) {
+			return obj.getValueDate();
+		}
+
+		@Override
+		public void setValue(Rating obj, ISODateTime value) {
+			obj.setValueDate(value);
 		}
 	};
 	protected RatingValueIdentifier value;
@@ -246,7 +269,7 @@ public class Rating {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Rating, RatingValueIdentifier> mmValue = new MMBusinessAttribute<Rating, RatingValueIdentifier>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
@@ -259,12 +282,14 @@ public class Rating {
 			simpleType_lazy = () -> RatingValueIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Rating.class.getMethod("getValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RatingValueIdentifier getValue(Rating obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(Rating obj, RatingValueIdentifier value) {
+			obj.setValue(value);
 		}
 	};
 
@@ -275,7 +300,7 @@ public class Rating {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Rating";
 				definition = "Assessment of securities credit and investment risk.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmRating, com.tools20022.repository.entity.Scheme.mmRating);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmRating, Scheme.mmRating);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Rating.mmSecurity, com.tools20022.repository.entity.Rating.mmRatingScheme, com.tools20022.repository.entity.Rating.mmValueDate,
 						com.tools20022.repository.entity.Rating.mmValue);
 			}
@@ -292,7 +317,7 @@ public class Rating {
 		return security == null ? Optional.empty() : Optional.of(security);
 	}
 
-	public Rating setSecurity(com.tools20022.repository.entity.Security security) {
+	public Rating setSecurity(Security security) {
 		this.security = security;
 		return this;
 	}
@@ -301,7 +326,7 @@ public class Rating {
 		return ratingScheme;
 	}
 
-	public Rating setRatingScheme(com.tools20022.repository.entity.Scheme ratingScheme) {
+	public Rating setRatingScheme(Scheme ratingScheme) {
 		this.ratingScheme = Objects.requireNonNull(ratingScheme);
 		return this;
 	}

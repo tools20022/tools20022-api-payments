@@ -21,9 +21,9 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.RegistrationProcessingStatusCode;
 import com.tools20022.repository.codeset.SecuritiesPaymentStatusCode;
 import com.tools20022.repository.codeset.SecurityStatusCode;
+import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -108,7 +108,7 @@ public class SecuritiesStatus extends Status {
 	 * definition} = "Status of payment of a security at a particular time."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPaymentStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesStatus, SecuritiesPaymentStatusCode> mmPaymentStatus = new MMBusinessAttribute<SecuritiesStatus, SecuritiesPaymentStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.mmObject();
@@ -120,12 +120,14 @@ public class SecuritiesStatus extends Status {
 			simpleType_lazy = () -> SecuritiesPaymentStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesStatus.class.getMethod("getPaymentStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesPaymentStatusCode getValue(SecuritiesStatus obj) {
+			return obj.getPaymentStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesStatus obj, SecuritiesPaymentStatusCode value) {
+			obj.setPaymentStatus(value);
 		}
 	};
 	protected SecurityStatusCode status;
@@ -156,7 +158,7 @@ public class SecuritiesStatus extends Status {
 	 * "Specifies the status of the security within its lifecycle."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesStatus, SecurityStatusCode> mmStatus = new MMBusinessAttribute<SecuritiesStatus, SecurityStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.mmObject();
@@ -168,12 +170,14 @@ public class SecuritiesStatus extends Status {
 			simpleType_lazy = () -> SecurityStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesStatus.class.getMethod("getStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecurityStatusCode getValue(SecuritiesStatus obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesStatus obj, SecurityStatusCode value) {
+			obj.setStatus(value);
 		}
 	};
 	protected RegistrationProcessingStatusCode registrationStatus;
@@ -204,7 +208,7 @@ public class SecuritiesStatus extends Status {
 	 * "Specifies the status of the registration of the securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRegistrationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesStatus, RegistrationProcessingStatusCode> mmRegistrationStatus = new MMBusinessAttribute<SecuritiesStatus, RegistrationProcessingStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.mmObject();
@@ -216,12 +220,14 @@ public class SecuritiesStatus extends Status {
 			simpleType_lazy = () -> RegistrationProcessingStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesStatus.class.getMethod("getRegistrationStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RegistrationProcessingStatusCode getValue(SecuritiesStatus obj) {
+			return obj.getRegistrationStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesStatus obj, RegistrationProcessingStatusCode value) {
+			obj.setRegistrationStatus(value);
 		}
 	};
 	protected Security security;
@@ -257,7 +263,7 @@ public class SecuritiesStatus extends Status {
 	 * definition} = "Security for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesStatus, Optional<Security>> mmSecurity = new MMBusinessAssociationEnd<SecuritiesStatus, Optional<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.mmObject();
@@ -269,6 +275,16 @@ public class SecuritiesStatus extends Status {
 			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmSecurityStatus;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+		}
+
+		@Override
+		public Optional<Security> getValue(SecuritiesStatus obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(SecuritiesStatus obj, Optional<Security> value) {
+			obj.setSecurity(value.orElse(null));
 		}
 	};
 

@@ -50,7 +50,7 @@ public class ConstraintBICNonFI {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forBICNonFIIdentifier = new MMConstraint() {
+	public static final MMConstraint<BICNonFIIdentifier> forBICNonFIIdentifier = new MMConstraint<BICNonFIIdentifier>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BICNonFI";
@@ -59,8 +59,8 @@ public class ConstraintBICNonFI {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkBICNonFIIdentifier((BICNonFIIdentifier) obj);
+		public void executeValidator(BICNonFIIdentifier obj) throws Exception {
+			checkBICNonFIIdentifier(obj);
 		}
 	};
 

@@ -21,8 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.EventFrequencyCode;
 import com.tools20022.repository.codeset.ValuationTimingCode;
 import com.tools20022.repository.datatype.*;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -183,7 +183,7 @@ public class NetAssetValueCalculation {
 	 * definition} = "Frequency of the valuation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValuationFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, EventFrequencyCode> mmValuationFrequency = new MMBusinessAttribute<NetAssetValueCalculation, EventFrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -195,12 +195,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> EventFrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getValuationFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public EventFrequencyCode getValue(NetAssetValueCalculation obj) {
+			return obj.getValuationFrequency();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, EventFrequencyCode value) {
+			obj.setValuationFrequency(value);
 		}
 	};
 	protected ISODateTime valuationDateTime;
@@ -231,7 +233,7 @@ public class NetAssetValueCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValuationDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, ISODateTime> mmValuationDateTime = new MMBusinessAttribute<NetAssetValueCalculation, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -243,12 +245,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getValuationDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(NetAssetValueCalculation obj) {
+			return obj.getValuationDateTime();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, ISODateTime value) {
+			obj.setValuationDateTime(value);
 		}
 	};
 	protected CurrencyAndAmount netAssetValue;
@@ -280,7 +284,7 @@ public class NetAssetValueCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNetAssetValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, CurrencyAndAmount> mmNetAssetValue = new MMBusinessAttribute<NetAssetValueCalculation, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -292,12 +296,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getNetAssetValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(NetAssetValueCalculation obj) {
+			return obj.getNetAssetValue();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, CurrencyAndAmount value) {
+			obj.setNetAssetValue(value);
 		}
 	};
 	protected InvestmentFundClass relatedFund;
@@ -335,7 +341,7 @@ public class NetAssetValueCalculation {
 	 * "Specifies the fund for which the NAV is calculated (per fund unit)."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedFund = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<NetAssetValueCalculation, InvestmentFundClass> mmRelatedFund = new MMBusinessAssociationEnd<NetAssetValueCalculation, InvestmentFundClass>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -344,9 +350,19 @@ public class NetAssetValueCalculation {
 			definition = "Specifies the fund for which the NAV is calculated (per fund unit).";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmNetAssetValueCalculation;
+			opposite_lazy = () -> InvestmentFundClass.mmNetAssetValueCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
+			type_lazy = () -> InvestmentFundClass.mmObject();
+		}
+
+		@Override
+		public InvestmentFundClass getValue(NetAssetValueCalculation obj) {
+			return obj.getRelatedFund();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, InvestmentFundClass value) {
+			obj.setRelatedFund(value);
 		}
 	};
 	protected ValuationTimingCode valuationType;
@@ -378,7 +394,7 @@ public class NetAssetValueCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValuationType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, ValuationTimingCode> mmValuationType = new MMBusinessAttribute<NetAssetValueCalculation, ValuationTimingCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -390,12 +406,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> ValuationTimingCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getValuationType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ValuationTimingCode getValue(NetAssetValueCalculation obj) {
+			return obj.getValuationType();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, ValuationTimingCode value) {
+			obj.setValuationType(value);
 		}
 	};
 	protected YesNoIndicator suspendedIndicator;
@@ -427,7 +445,7 @@ public class NetAssetValueCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSuspendedIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, YesNoIndicator> mmSuspendedIndicator = new MMBusinessAttribute<NetAssetValueCalculation, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -439,12 +457,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getSuspendedIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(NetAssetValueCalculation obj) {
+			return obj.getSuspendedIndicator();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, YesNoIndicator value) {
+			obj.setSuspendedIndicator(value);
 		}
 	};
 	protected YesNoIndicator forExecutionIndicator;
@@ -476,7 +496,7 @@ public class NetAssetValueCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmForExecutionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, YesNoIndicator> mmForExecutionIndicator = new MMBusinessAttribute<NetAssetValueCalculation, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -488,12 +508,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getForExecutionIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(NetAssetValueCalculation obj) {
+			return obj.getForExecutionIndicator();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, YesNoIndicator value) {
+			obj.setForExecutionIndicator(value);
 		}
 	};
 	protected Tax taxLiability;
@@ -529,7 +551,7 @@ public class NetAssetValueCalculation {
 	 * definition} = "Information related to taxes that are due."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTaxLiability = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<NetAssetValueCalculation, Tax> mmTaxLiability = new MMBusinessAssociationEnd<NetAssetValueCalculation, Tax>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -538,9 +560,19 @@ public class NetAssetValueCalculation {
 			definition = "Information related to taxes that are due.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmTaxLiabilityValueCalculation;
+			opposite_lazy = () -> Tax.mmTaxLiabilityValueCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
+			type_lazy = () -> Tax.mmObject();
+		}
+
+		@Override
+		public Tax getValue(NetAssetValueCalculation obj) {
+			return obj.getTaxLiability();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, Tax value) {
+			obj.setTaxLiability(value);
 		}
 	};
 	protected Tax taxRefund;
@@ -576,7 +608,7 @@ public class NetAssetValueCalculation {
 	 * definition} = "Information related to taxes that are paid back."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTaxRefund = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<NetAssetValueCalculation, Tax> mmTaxRefund = new MMBusinessAssociationEnd<NetAssetValueCalculation, Tax>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -585,9 +617,19 @@ public class NetAssetValueCalculation {
 			definition = "Information related to taxes that are paid back.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmTaxRefundValueCalculation;
+			opposite_lazy = () -> Tax.mmTaxRefundValueCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
+			type_lazy = () -> Tax.mmObject();
+		}
+
+		@Override
+		public Tax getValue(NetAssetValueCalculation obj) {
+			return obj.getTaxRefund();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, Tax value) {
+			obj.setTaxRefund(value);
 		}
 	};
 	protected YesNoIndicator officialValuationIndicator;
@@ -618,7 +660,7 @@ public class NetAssetValueCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOfficialValuationIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, YesNoIndicator> mmOfficialValuationIndicator = new MMBusinessAttribute<NetAssetValueCalculation, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -630,12 +672,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getOfficialValuationIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(NetAssetValueCalculation obj) {
+			return obj.getOfficialValuationIndicator();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, YesNoIndicator value) {
+			obj.setOfficialValuationIndicator(value);
 		}
 	};
 	protected YesNoIndicator estimatedPriceIndicator;
@@ -665,7 +709,7 @@ public class NetAssetValueCalculation {
 	 * definition} = "Indicates whether the price is an estimated price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEstimatedPriceIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, YesNoIndicator> mmEstimatedPriceIndicator = new MMBusinessAttribute<NetAssetValueCalculation, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -677,15 +721,17 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getEstimatedPriceIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(NetAssetValueCalculation obj) {
+			return obj.getEstimatedPriceIndicator();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, YesNoIndicator value) {
+			obj.setEstimatedPriceIndicator(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ValuationStatistics> valuationStatistics;
+	protected List<ValuationStatistics> valuationStatistics;
 	/**
 	 * 
 	 <p>
@@ -721,7 +767,7 @@ public class NetAssetValueCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmValuationStatistics = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<NetAssetValueCalculation, List<ValuationStatistics>> mmValuationStatistics = new MMBusinessAssociationEnd<NetAssetValueCalculation, List<ValuationStatistics>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -729,9 +775,19 @@ public class NetAssetValueCalculation {
 			name = "ValuationStatistics";
 			definition = "Information related to the price variations of an investment fund class.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmNetAssetValueCalculation;
+			opposite_lazy = () -> ValuationStatistics.mmNetAssetValueCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
+			type_lazy = () -> ValuationStatistics.mmObject();
+		}
+
+		@Override
+		public List<ValuationStatistics> getValue(NetAssetValueCalculation obj) {
+			return obj.getValuationStatistics();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, List<ValuationStatistics> value) {
+			obj.setValuationStatistics(value);
 		}
 	};
 	protected PerformanceFactors investmentFundPerformanceFactors;
@@ -769,7 +825,7 @@ public class NetAssetValueCalculation {
 	 * "Factors that give indications about the performance of a fund."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFundPerformanceFactors = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<NetAssetValueCalculation, Optional<PerformanceFactors>> mmInvestmentFundPerformanceFactors = new MMBusinessAssociationEnd<NetAssetValueCalculation, Optional<PerformanceFactors>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -778,9 +834,19 @@ public class NetAssetValueCalculation {
 			definition = "Factors that give indications about the performance of a fund.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmNetAssetValueCalculation;
+			opposite_lazy = () -> PerformanceFactors.mmNetAssetValueCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
+			type_lazy = () -> PerformanceFactors.mmObject();
+		}
+
+		@Override
+		public Optional<PerformanceFactors> getValue(NetAssetValueCalculation obj) {
+			return obj.getInvestmentFundPerformanceFactors();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, Optional<PerformanceFactors> value) {
+			obj.setInvestmentFundPerformanceFactors(value.orElse(null));
 		}
 	};
 	protected SecuritiesPricing price;
@@ -817,7 +883,7 @@ public class NetAssetValueCalculation {
 	 * definition} = "Price derived from the net asset value."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<NetAssetValueCalculation, SecuritiesPricing> mmPrice = new MMBusinessAssociationEnd<NetAssetValueCalculation, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -826,12 +892,22 @@ public class NetAssetValueCalculation {
 			definition = "Price derived from the net asset value.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmNetAssetValueCalculation;
+			opposite_lazy = () -> SecuritiesPricing.mmNetAssetValueCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(NetAssetValueCalculation obj) {
+			return obj.getPrice();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, SecuritiesPricing value) {
+			obj.setPrice(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity;
+	protected List<SecuritiesQuantity> securitiesQuantity;
 	/**
 	 * 
 	 <p>
@@ -865,7 +941,7 @@ public class NetAssetValueCalculation {
 	 * definition} = "Quantity on which the NAV is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<NetAssetValueCalculation, List<SecuritiesQuantity>> mmSecuritiesQuantity = new MMBusinessAssociationEnd<NetAssetValueCalculation, List<SecuritiesQuantity>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -873,12 +949,22 @@ public class NetAssetValueCalculation {
 			name = "SecuritiesQuantity";
 			definition = "Quantity on which the NAV is calculated.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmNetAssetValueCalculation;
+			opposite_lazy = () -> SecuritiesQuantity.mmNetAssetValueCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesQuantity> getValue(NetAssetValueCalculation obj) {
+			return obj.getSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, List<SecuritiesQuantity> value) {
+			obj.setSecuritiesQuantity(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Interest> interest;
+	protected List<Interest> interest;
 	/**
 	 * 
 	 <p>
@@ -913,7 +999,7 @@ public class NetAssetValueCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<NetAssetValueCalculation, List<Interest>> mmInterest = new MMBusinessAssociationEnd<NetAssetValueCalculation, List<Interest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -921,9 +1007,19 @@ public class NetAssetValueCalculation {
 			name = "Interest";
 			definition = "Interest that has accumulated between the most recent payment of interest and the sale of the financial instrument.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmRelatedNetAssetValueCalculation;
+			opposite_lazy = () -> Interest.mmRelatedNetAssetValueCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
+			type_lazy = () -> Interest.mmObject();
+		}
+
+		@Override
+		public List<Interest> getValue(NetAssetValueCalculation obj) {
+			return obj.getInterest();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, List<Interest> value) {
+			obj.setInterest(value);
 		}
 	};
 	protected FundsCashFlow fundsCashFlow;
@@ -961,7 +1057,7 @@ public class NetAssetValueCalculation {
 	 * "Net cash flow for a valuation date, which is incorporated in the NAV."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFundsCashFlow = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<NetAssetValueCalculation, Optional<FundsCashFlow>> mmFundsCashFlow = new MMBusinessAssociationEnd<NetAssetValueCalculation, Optional<FundsCashFlow>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -970,9 +1066,19 @@ public class NetAssetValueCalculation {
 			definition = "Net cash flow for a valuation date, which is incorporated in the NAV.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmNetAssetValueCalculation;
+			opposite_lazy = () -> FundsCashFlow.mmNetAssetValueCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
+			type_lazy = () -> FundsCashFlow.mmObject();
+		}
+
+		@Override
+		public Optional<FundsCashFlow> getValue(NetAssetValueCalculation obj) {
+			return obj.getFundsCashFlow();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, Optional<FundsCashFlow> value) {
+			obj.setFundsCashFlow(value.orElse(null));
 		}
 	};
 	protected Max35Text declarationChannel;
@@ -1002,7 +1108,7 @@ public class NetAssetValueCalculation {
 	 * "Means of the net asset value publication, for example, a newspaper."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDeclarationChannel = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, Max35Text> mmDeclarationChannel = new MMBusinessAttribute<NetAssetValueCalculation, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -1014,12 +1120,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getDeclarationChannel", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(NetAssetValueCalculation obj) {
+			return obj.getDeclarationChannel();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, Max35Text value) {
+			obj.setDeclarationChannel(value);
 		}
 	};
 	protected ISODateTime declarationDate;
@@ -1048,7 +1156,7 @@ public class NetAssetValueCalculation {
 	 * definition} = "Date/time of the net asset value publication."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDeclarationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, ISODateTime> mmDeclarationDate = new MMBusinessAttribute<NetAssetValueCalculation, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -1060,12 +1168,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getDeclarationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(NetAssetValueCalculation obj) {
+			return obj.getDeclarationDate();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, ISODateTime value) {
+			obj.setDeclarationDate(value);
 		}
 	};
 	protected ISODate firstValuationDate;
@@ -1095,7 +1205,7 @@ public class NetAssetValueCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFirstValuationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, ISODate> mmFirstValuationDate = new MMBusinessAttribute<NetAssetValueCalculation, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -1107,12 +1217,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getFirstValuationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(NetAssetValueCalculation obj) {
+			return obj.getFirstValuationDate();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, ISODate value) {
+			obj.setFirstValuationDate(value);
 		}
 	};
 	protected YesNoIndicator historicPricingIndicator;
@@ -1142,7 +1254,7 @@ public class NetAssetValueCalculation {
 	 * definition} = "Indicates whether the price is historic or forward."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHistoricPricingIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<NetAssetValueCalculation, YesNoIndicator> mmHistoricPricingIndicator = new MMBusinessAttribute<NetAssetValueCalculation, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
@@ -1154,12 +1266,14 @@ public class NetAssetValueCalculation {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetAssetValueCalculation.class.getMethod("getHistoricPricingIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(NetAssetValueCalculation obj) {
+			return obj.getHistoricPricingIndicator();
+		}
+
+		@Override
+		public void setValue(NetAssetValueCalculation obj, YesNoIndicator value) {
+			obj.setHistoricPricingIndicator(value);
 		}
 	};
 
@@ -1170,10 +1284,9 @@ public class NetAssetValueCalculation {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetAssetValueCalculation";
 				definition = "Calculation of the net asset value for an investment fund/fund class.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundClass.mmNetAssetValueCalculation, com.tools20022.repository.entity.SecuritiesPricing.mmNetAssetValueCalculation,
-						com.tools20022.repository.entity.Tax.mmTaxLiabilityValueCalculation, com.tools20022.repository.entity.Tax.mmTaxRefundValueCalculation, com.tools20022.repository.entity.SecuritiesQuantity.mmNetAssetValueCalculation,
-						com.tools20022.repository.entity.ValuationStatistics.mmNetAssetValueCalculation, com.tools20022.repository.entity.PerformanceFactors.mmNetAssetValueCalculation,
-						com.tools20022.repository.entity.Interest.mmRelatedNetAssetValueCalculation, com.tools20022.repository.entity.FundsCashFlow.mmNetAssetValueCalculation);
+				associationDomain_lazy = () -> Arrays.asList(InvestmentFundClass.mmNetAssetValueCalculation, SecuritiesPricing.mmNetAssetValueCalculation, Tax.mmTaxLiabilityValueCalculation, Tax.mmTaxRefundValueCalculation,
+						SecuritiesQuantity.mmNetAssetValueCalculation, ValuationStatistics.mmNetAssetValueCalculation, PerformanceFactors.mmNetAssetValueCalculation, Interest.mmRelatedNetAssetValueCalculation,
+						FundsCashFlow.mmNetAssetValueCalculation);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.NetAssetValueCalculation.mmValuationFrequency, com.tools20022.repository.entity.NetAssetValueCalculation.mmValuationDateTime,
 						com.tools20022.repository.entity.NetAssetValueCalculation.mmNetAssetValue, com.tools20022.repository.entity.NetAssetValueCalculation.mmRelatedFund,
 						com.tools20022.repository.entity.NetAssetValueCalculation.mmValuationType, com.tools20022.repository.entity.NetAssetValueCalculation.mmSuspendedIndicator,
@@ -1226,7 +1339,7 @@ public class NetAssetValueCalculation {
 		return relatedFund;
 	}
 
-	public NetAssetValueCalculation setRelatedFund(com.tools20022.repository.entity.InvestmentFundClass relatedFund) {
+	public NetAssetValueCalculation setRelatedFund(InvestmentFundClass relatedFund) {
 		this.relatedFund = Objects.requireNonNull(relatedFund);
 		return this;
 	}
@@ -1262,7 +1375,7 @@ public class NetAssetValueCalculation {
 		return taxLiability;
 	}
 
-	public NetAssetValueCalculation setTaxLiability(com.tools20022.repository.entity.Tax taxLiability) {
+	public NetAssetValueCalculation setTaxLiability(Tax taxLiability) {
 		this.taxLiability = Objects.requireNonNull(taxLiability);
 		return this;
 	}
@@ -1271,7 +1384,7 @@ public class NetAssetValueCalculation {
 		return taxRefund;
 	}
 
-	public NetAssetValueCalculation setTaxRefund(com.tools20022.repository.entity.Tax taxRefund) {
+	public NetAssetValueCalculation setTaxRefund(Tax taxRefund) {
 		this.taxRefund = Objects.requireNonNull(taxRefund);
 		return this;
 	}
@@ -1298,7 +1411,7 @@ public class NetAssetValueCalculation {
 		return valuationStatistics == null ? valuationStatistics = new ArrayList<>() : valuationStatistics;
 	}
 
-	public NetAssetValueCalculation setValuationStatistics(List<com.tools20022.repository.entity.ValuationStatistics> valuationStatistics) {
+	public NetAssetValueCalculation setValuationStatistics(List<ValuationStatistics> valuationStatistics) {
 		this.valuationStatistics = Objects.requireNonNull(valuationStatistics);
 		return this;
 	}
@@ -1307,7 +1420,7 @@ public class NetAssetValueCalculation {
 		return investmentFundPerformanceFactors == null ? Optional.empty() : Optional.of(investmentFundPerformanceFactors);
 	}
 
-	public NetAssetValueCalculation setInvestmentFundPerformanceFactors(com.tools20022.repository.entity.PerformanceFactors investmentFundPerformanceFactors) {
+	public NetAssetValueCalculation setInvestmentFundPerformanceFactors(PerformanceFactors investmentFundPerformanceFactors) {
 		this.investmentFundPerformanceFactors = investmentFundPerformanceFactors;
 		return this;
 	}
@@ -1316,7 +1429,7 @@ public class NetAssetValueCalculation {
 		return price;
 	}
 
-	public NetAssetValueCalculation setPrice(com.tools20022.repository.entity.SecuritiesPricing price) {
+	public NetAssetValueCalculation setPrice(SecuritiesPricing price) {
 		this.price = Objects.requireNonNull(price);
 		return this;
 	}
@@ -1325,7 +1438,7 @@ public class NetAssetValueCalculation {
 		return securitiesQuantity == null ? securitiesQuantity = new ArrayList<>() : securitiesQuantity;
 	}
 
-	public NetAssetValueCalculation setSecuritiesQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity) {
+	public NetAssetValueCalculation setSecuritiesQuantity(List<SecuritiesQuantity> securitiesQuantity) {
 		this.securitiesQuantity = Objects.requireNonNull(securitiesQuantity);
 		return this;
 	}
@@ -1334,7 +1447,7 @@ public class NetAssetValueCalculation {
 		return interest == null ? interest = new ArrayList<>() : interest;
 	}
 
-	public NetAssetValueCalculation setInterest(List<com.tools20022.repository.entity.Interest> interest) {
+	public NetAssetValueCalculation setInterest(List<Interest> interest) {
 		this.interest = Objects.requireNonNull(interest);
 		return this;
 	}
@@ -1343,7 +1456,7 @@ public class NetAssetValueCalculation {
 		return fundsCashFlow == null ? Optional.empty() : Optional.of(fundsCashFlow);
 	}
 
-	public NetAssetValueCalculation setFundsCashFlow(com.tools20022.repository.entity.FundsCashFlow fundsCashFlow) {
+	public NetAssetValueCalculation setFundsCashFlow(FundsCashFlow fundsCashFlow) {
 		this.fundsCashFlow = fundsCashFlow;
 		return this;
 	}

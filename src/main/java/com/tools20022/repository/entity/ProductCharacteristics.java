@@ -20,8 +20,8 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ProductCharacteristicsCode;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.Product;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -111,7 +111,7 @@ public class ProductCharacteristics {
 	 * "Specifies the product for which characteristics are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ProductCharacteristics, Optional<Product>> mmProduct = new MMBusinessAssociationEnd<ProductCharacteristics, Optional<Product>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
@@ -120,9 +120,19 @@ public class ProductCharacteristics {
 			definition = "Specifies the product for which characteristics are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmCharacteristics;
+			opposite_lazy = () -> Product.mmCharacteristics;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
+			type_lazy = () -> Product.mmObject();
+		}
+
+		@Override
+		public Optional<Product> getValue(ProductCharacteristics obj) {
+			return obj.getProduct();
+		}
+
+		@Override
+		public void setValue(ProductCharacteristics obj, Optional<Product> value) {
+			obj.setProduct(value.orElse(null));
 		}
 	};
 	protected Max35Text characteristics;
@@ -151,7 +161,7 @@ public class ProductCharacteristics {
 	 * definition} = "Specifies the characteristic of a product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCharacteristics = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ProductCharacteristics, Max35Text> mmCharacteristics = new MMBusinessAttribute<ProductCharacteristics, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
@@ -163,12 +173,14 @@ public class ProductCharacteristics {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ProductCharacteristics.class.getMethod("getCharacteristics", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ProductCharacteristics obj) {
+			return obj.getCharacteristics();
+		}
+
+		@Override
+		public void setValue(ProductCharacteristics obj, Max35Text value) {
+			obj.setCharacteristics(value);
 		}
 	};
 	protected ProductCharacteristicsCode type;
@@ -199,7 +211,7 @@ public class ProductCharacteristics {
 	 * "Specifies the type of product characteristic by means of a code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ProductCharacteristics, ProductCharacteristicsCode> mmType = new MMBusinessAttribute<ProductCharacteristics, ProductCharacteristicsCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
@@ -211,12 +223,14 @@ public class ProductCharacteristics {
 			simpleType_lazy = () -> ProductCharacteristicsCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ProductCharacteristics.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ProductCharacteristicsCode getValue(ProductCharacteristics obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ProductCharacteristics obj, ProductCharacteristicsCode value) {
+			obj.setType(value);
 		}
 	};
 
@@ -227,7 +241,7 @@ public class ProductCharacteristics {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductCharacteristics";
 				definition = "Identifies the characteristic of a product.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Product.mmCharacteristics);
+				associationDomain_lazy = () -> Arrays.asList(Product.mmCharacteristics);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProductCharacteristics.mmProduct, com.tools20022.repository.entity.ProductCharacteristics.mmCharacteristics,
 						com.tools20022.repository.entity.ProductCharacteristics.mmType);
 			}
@@ -244,7 +258,7 @@ public class ProductCharacteristics {
 		return product == null ? Optional.empty() : Optional.of(product);
 	}
 
-	public ProductCharacteristics setProduct(com.tools20022.repository.entity.Product product) {
+	public ProductCharacteristics setProduct(Product product) {
 		this.product = product;
 		return this;
 	}

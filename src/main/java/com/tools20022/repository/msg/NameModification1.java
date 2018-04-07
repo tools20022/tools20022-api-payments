@@ -98,7 +98,7 @@ public class NameModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NameModification1, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<NameModification1, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.NameModification1.mmObject();
 			isDerived = false;
@@ -109,6 +109,16 @@ public class NameModification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(NameModification1 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(NameModification1 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Nm", required = true)
@@ -140,7 +150,7 @@ public class NameModification1 {
 	 * definition} = "Name of the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NameModification1, Max70Text> mmName = new MMMessageAttribute<NameModification1, Max70Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.NameModification1.mmObject();
 			isDerived = false;
@@ -151,6 +161,16 @@ public class NameModification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
+		}
+
+		@Override
+		public Max70Text getValue(NameModification1 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(NameModification1 obj, Max70Text value) {
+			obj.setName(value);
 		}
 	};
 

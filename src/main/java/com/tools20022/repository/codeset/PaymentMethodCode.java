@@ -86,7 +86,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "PaymentMethodCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specifies the transfer method that will be used  to transfer the cash."</li>
+ * "Specifies the transfer method that will be used to transfer the cash."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -177,7 +177,7 @@ public class PaymentMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Collection of an amount of money from the debtor's bank account by the creditor.  The amount of money and dates of collections may vary."
+	 * "Collection of an amount of money from the debtor's bank account by the creditor. The amount of money and dates of collections may vary."
 	 * </li>
 	 * </ul>
 	 */
@@ -185,7 +185,7 @@ public class PaymentMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DirectDebit";
-			definition = "Collection of an amount of money from the debtor's bank account by the creditor.  The amount of money and dates of collections may vary.";
+			definition = "Collection of an amount of money from the debtor's bank account by the creditor. The amount of money and dates of collections may vary.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PaymentMethodCode.mmObject();
 			codeName = "DD";
 		}
@@ -295,7 +295,7 @@ public class PaymentMethodCode extends MMCode {
 				example = Arrays.asList("CHK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentMethodCode";
-				definition = "Specifies the transfer method that will be used  to transfer the cash.";
+				definition = "Specifies the transfer method that will be used to transfer the cash.";
 				derivation_lazy = () -> Arrays.asList(PaymentMethod3Code.mmObject(), PaymentMethod2Code.mmObject(), PaymentMethod4Code.mmObject(), PaymentMethod7Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentMethodCode.Cheque, com.tools20022.repository.codeset.PaymentMethodCode.CreditTransfer,
 						com.tools20022.repository.codeset.PaymentMethodCode.DirectDebit, com.tools20022.repository.codeset.PaymentMethodCode.TransferAdvice, com.tools20022.repository.codeset.PaymentMethodCode.Direct,

@@ -111,7 +111,7 @@ public class TaxParty3 {
 	 * definition} = "Number assigned by a tax authority to an entity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxParty3, Optional<Max35Text>> mmTaxIdentification = new MMMessageAttribute<TaxParty3, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmTaxIdentificationNumber;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty3.mmObject();
@@ -123,6 +123,16 @@ public class TaxParty3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxParty3 obj) {
+			return obj.getTaxIdentification();
+		}
+
+		@Override
+		public void setValue(TaxParty3 obj, Optional<Max35Text> value) {
+			obj.setTaxIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TaxTp")
@@ -157,7 +167,7 @@ public class TaxParty3 {
 	 * definition} = "Type of tax payer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxParty3, Optional<Max35Text>> mmTaxType = new MMMessageAttribute<TaxParty3, Optional<Max35Text>>() {
 		{
 			businessComponentTrace_lazy = () -> TaxPayer.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty3.mmObject();
@@ -169,6 +179,16 @@ public class TaxParty3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxParty3 obj) {
+			return obj.getTaxType();
+		}
+
+		@Override
+		public void setValue(TaxParty3 obj, Optional<Max35Text> value) {
+			obj.setTaxType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "RegnId")
@@ -206,7 +226,7 @@ public class TaxParty3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegistrationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxParty3, Optional<Max35Text>> mmRegistrationIdentification = new MMMessageAttribute<TaxParty3, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmTaxIdentificationNumber;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty3.mmObject();
@@ -218,6 +238,16 @@ public class TaxParty3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(TaxParty3 obj) {
+			return obj.getRegistrationIdentification();
+		}
+
+		@Override
+		public void setValue(TaxParty3 obj, Optional<Max35Text> value) {
+			obj.setRegistrationIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "TaxXmptnRsn")
@@ -253,7 +283,7 @@ public class TaxParty3 {
 	 * definition} = "Specification of the tax exemption reason."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxExemptionReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxParty3, List<TaxExemptionReasonFormatChoice>> mmTaxExemptionReason = new MMMessageAttribute<TaxParty3, List<TaxExemptionReasonFormatChoice>>() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxParty3.mmObject();
@@ -264,6 +294,16 @@ public class TaxParty3 {
 			definition = "Specification of the tax exemption reason.";
 			minOccurs = 0;
 			complexType_lazy = () -> TaxExemptionReasonFormatChoice.mmObject();
+		}
+
+		@Override
+		public List<TaxExemptionReasonFormatChoice> getValue(TaxParty3 obj) {
+			return obj.getTaxExemptionReason();
+		}
+
+		@Override
+		public void setValue(TaxParty3 obj, List<TaxExemptionReasonFormatChoice> value) {
+			obj.setTaxExemptionReason(value);
 		}
 	};
 

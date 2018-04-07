@@ -25,7 +25,6 @@ import com.tools20022.repository.area.PaymentsInitiationLatestVersion;
 import com.tools20022.repository.msg.GroupHeader47;
 import com.tools20022.repository.msg.MandateAcceptance5;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -84,8 +83,8 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forMandateAcceptanceReportV05
- * ConstraintSupplementaryDataRule.forMandateAcceptanceReportV05}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#for_pain_MandateAcceptanceReportV05
+ * ConstraintSupplementaryDataRule.for_pain_MandateAcceptanceReportV05}</li>
  * </ul>
  * </li>
  * <li>
@@ -131,7 +130,7 @@ public class MandateAcceptanceReportV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateAcceptanceReportV05, GroupHeader47> mmGroupHeader = new MMMessageBuildingBlock<MandateAcceptanceReportV05, GroupHeader47>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -142,12 +141,14 @@ public class MandateAcceptanceReportV05 {
 			complexType_lazy = () -> GroupHeader47.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateAcceptanceReportV05.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader47 getValue(MandateAcceptanceReportV05 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(MandateAcceptanceReportV05 obj, GroupHeader47 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "UndrlygAccptncDtls", required = true)
@@ -177,7 +178,7 @@ public class MandateAcceptanceReportV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmUnderlyingAcceptanceDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateAcceptanceReportV05, List<MandateAcceptance5>> mmUnderlyingAcceptanceDetails = new MMMessageBuildingBlock<MandateAcceptanceReportV05, List<MandateAcceptance5>>() {
 		{
 			xmlTag = "UndrlygAccptncDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -187,12 +188,14 @@ public class MandateAcceptanceReportV05 {
 			complexType_lazy = () -> MandateAcceptance5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateAcceptanceReportV05.class.getMethod("getUnderlyingAcceptanceDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<MandateAcceptance5> getValue(MandateAcceptanceReportV05 obj) {
+			return obj.getUnderlyingAcceptanceDetails();
+		}
+
+		@Override
+		public void setValue(MandateAcceptanceReportV05 obj, List<MandateAcceptance5> value) {
+			obj.setUnderlyingAcceptanceDetails(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -222,7 +225,7 @@ public class MandateAcceptanceReportV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateAcceptanceReportV05, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MandateAcceptanceReportV05, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -232,19 +235,21 @@ public class MandateAcceptanceReportV05 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateAcceptanceReportV05.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MandateAcceptanceReportV05 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MandateAcceptanceReportV05 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forMandateAcceptanceReportV05);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.for_pain_MandateAcceptanceReportV05);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateAcceptanceReportV05";
 				definition = "Scope\r\nThe MandateAcceptanceReport message is sent from the agent of the receiver (debtor or creditor) of the MandateRequest message (initiation, amendment or cancellation) to the agent of the initiator of the MandateRequest message (debtor or creditor).\r\nA MandateAcceptanceReport message is used to confirm the acceptance or rejection of a MandateRequest message. Where acceptance is part of the full process flow, a MandateRequest message only becomes valid after a confirmation of acceptance is received through a MandateAcceptanceReport message from the agent of the receiver.\r\nUsage\r\nThe MandateAcceptanceReport message can contain one or more confirmation(s) of acceptance or rejection of a specific Mandate Request.\r\nThe messages can be exchanged between debtor agent and creditor agent and between debtor agent and debtor and creditor agent and creditor.\r\nThe MandateAcceptanceReport message can be used in domestic and cross-border scenarios.";

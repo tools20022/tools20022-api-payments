@@ -21,6 +21,7 @@ import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.msg.PaymentInstruction22;
+import com.tools20022.repository.msg.PaymentInstruction24;
 
 /**
  * If UltimateDebtor is present, then
@@ -57,7 +58,7 @@ public class ConstraintUltimateDebtorRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction22 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction22> forPaymentInstruction22 = new MMConstraint<PaymentInstruction22>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtorRule";
@@ -67,8 +68,47 @@ public class ConstraintUltimateDebtorRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction22((PaymentInstruction22) obj);
+		public void executeValidator(PaymentInstruction22 obj) throws Exception {
+			checkPaymentInstruction22(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24
+	 * PaymentInstruction24}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
+	 * expression} =
+	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;SimpleRule xsi:type=\"SimpleRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;OR&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/UltimateDebtor&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"Absence\"&gt;&lt;leftOperand&gt;/CreditTransferTransactionInformation[*]/UltimateDebtor&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;/SimpleRule&gt;&lt;/RuleDefinition&gt;\n"
+	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "UltimateDebtorRule"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If UltimateDebtor is present, then CreditTransferTransactionInformation/UltimateDebtor is not allowed.\nIf CreditTransferTransactionInformation/UltimateDebtor is present, then UltimateDebtor is not allowed.\nCreditTransferTransactionInformation/UltimateDebtor and UltimateDebtor may both be absent."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<PaymentInstruction24> forPaymentInstruction24 = new MMConstraint<PaymentInstruction24>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "UltimateDebtorRule";
+			definition = "If UltimateDebtor is present, then CreditTransferTransactionInformation/UltimateDebtor is not allowed.\nIf CreditTransferTransactionInformation/UltimateDebtor is present, then UltimateDebtor is not allowed.\nCreditTransferTransactionInformation/UltimateDebtor and UltimateDebtor may both be absent.";
+			owner_lazy = () -> PaymentInstruction24.mmObject();
+			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><SimpleRule xsi:type=\"SimpleRule\"><mustBe><connector>OR</connector><BooleanRule xsi:type=\"Absence\"><leftOperand>/UltimateDebtor</leftOperand></BooleanRule><BooleanRule xsi:type=\"Absence\"><leftOperand>/CreditTransferTransactionInformation[*]/UltimateDebtor</leftOperand></BooleanRule></mustBe></SimpleRule></RuleDefinition>\n";
+		}
+
+		@Override
+		public void executeValidator(PaymentInstruction24 obj) throws Exception {
+			checkPaymentInstruction24(obj);
 		}
 	};
 
@@ -81,6 +121,18 @@ public class ConstraintUltimateDebtorRule {
 	 * may both be absent.
 	 */
 	public static void checkPaymentInstruction22(PaymentInstruction22 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If UltimateDebtor is present, then
+	 * CreditTransferTransactionInformation/UltimateDebtor is not allowed. If
+	 * CreditTransferTransactionInformation/UltimateDebtor is present, then
+	 * UltimateDebtor is not allowed.
+	 * CreditTransferTransactionInformation/UltimateDebtor and UltimateDebtor
+	 * may both be absent.
+	 */
+	public static void checkPaymentInstruction24(PaymentInstruction24 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

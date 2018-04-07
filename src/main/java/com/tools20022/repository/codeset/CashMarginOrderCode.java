@@ -133,7 +133,7 @@ public class CashMarginOrderCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "The principal order, if  executed, will generate a margin account opening or margin call because the principal does not have the cash in case of a purchase or the securities in case of a sale."
+	 * "The principal order, if executed, will generate a margin account opening or margin call because the principal does not have the cash in case of a purchase or the securities in case of a sale."
 	 * </li>
 	 * </ul>
 	 */
@@ -141,7 +141,7 @@ public class CashMarginOrderCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginOpen";
-			definition = "The principal order, if  executed, will generate a margin account opening or margin call because the principal does not have the cash in case of a purchase or the securities in case of a sale.";
+			definition = "The principal order, if executed, will generate a margin account opening or margin call because the principal does not have the cash in case of a purchase or the securities in case of a sale.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CashMarginOrderCode.mmObject();
 			codeName = "MRGO";
 		}

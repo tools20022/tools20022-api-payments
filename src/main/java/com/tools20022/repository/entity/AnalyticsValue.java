@@ -21,8 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.AnalyticsCalculation;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -105,7 +105,7 @@ public class AnalyticsValue {
 	 * definition} = "Analytics expressed as a currency and value."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AnalyticsValue, CurrencyAndAmount> mmAmount = new MMBusinessAttribute<AnalyticsValue, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
@@ -117,12 +117,14 @@ public class AnalyticsValue {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AnalyticsValue.class.getMethod("getAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AnalyticsValue obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(AnalyticsValue obj, CurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	protected PercentageRate rate;
@@ -152,7 +154,7 @@ public class AnalyticsValue {
 	 * definition} = "Analytics expressed as a rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AnalyticsValue, PercentageRate> mmRate = new MMBusinessAttribute<AnalyticsValue, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
@@ -164,12 +166,14 @@ public class AnalyticsValue {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AnalyticsValue.class.getMethod("getRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(AnalyticsValue obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(AnalyticsValue obj, PercentageRate value) {
+			obj.setRate(value);
 		}
 	};
 	protected Number numberOfYears;
@@ -198,7 +202,7 @@ public class AnalyticsValue {
 	 * definition} = "Analytics expressed as a number of years."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumberOfYears = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AnalyticsValue, Number> mmNumberOfYears = new MMBusinessAttribute<AnalyticsValue, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
@@ -210,12 +214,14 @@ public class AnalyticsValue {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AnalyticsValue.class.getMethod("getNumberOfYears", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(AnalyticsValue obj) {
+			return obj.getNumberOfYears();
+		}
+
+		@Override
+		public void setValue(AnalyticsValue obj, Number value) {
+			obj.setNumberOfYears(value);
 		}
 	};
 	protected AnalyticsCalculation analyticsCalculation;
@@ -254,7 +260,7 @@ public class AnalyticsValue {
 	 * "Analytics calculation for which an analytics value is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAnalyticsCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AnalyticsValue, AnalyticsCalculation> mmAnalyticsCalculation = new MMBusinessAssociationEnd<AnalyticsValue, AnalyticsCalculation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AnalyticsValue.mmObject();
@@ -263,9 +269,19 @@ public class AnalyticsValue {
 			definition = "Analytics calculation for which an analytics value is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmValue;
+			opposite_lazy = () -> AnalyticsCalculation.mmValue;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AnalyticsCalculation.mmObject();
+			type_lazy = () -> AnalyticsCalculation.mmObject();
+		}
+
+		@Override
+		public AnalyticsCalculation getValue(AnalyticsValue obj) {
+			return obj.getAnalyticsCalculation();
+		}
+
+		@Override
+		public void setValue(AnalyticsValue obj, AnalyticsCalculation value) {
+			obj.setAnalyticsCalculation(value);
 		}
 	};
 
@@ -276,7 +292,7 @@ public class AnalyticsValue {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AnalyticsValue";
 				definition = "Value given to a price analytic.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AnalyticsCalculation.mmValue);
+				associationDomain_lazy = () -> Arrays.asList(AnalyticsCalculation.mmValue);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AnalyticsValue.mmAmount, com.tools20022.repository.entity.AnalyticsValue.mmRate, com.tools20022.repository.entity.AnalyticsValue.mmNumberOfYears,
 						com.tools20022.repository.entity.AnalyticsValue.mmAnalyticsCalculation);
 			}
@@ -320,7 +336,7 @@ public class AnalyticsValue {
 		return analyticsCalculation;
 	}
 
-	public AnalyticsValue setAnalyticsCalculation(com.tools20022.repository.entity.AnalyticsCalculation analyticsCalculation) {
+	public AnalyticsValue setAnalyticsCalculation(AnalyticsCalculation analyticsCalculation) {
 		this.analyticsCalculation = Objects.requireNonNull(analyticsCalculation);
 		return this;
 	}

@@ -26,6 +26,8 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
+import com.tools20022.repository.msg.DocumentIdentification28;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -118,7 +120,7 @@ public class RegisteredContractJournal1 {
 	 * definition} = "Agent which registers the currency control contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRegistrationAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RegisteredContractJournal1, BranchAndFinancialInstitutionIdentification5> mmRegistrationAgent = new MMMessageAssociationEnd<RegisteredContractJournal1, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmRegistrationAgent;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractJournal1.mmObject();
@@ -130,7 +132,17 @@ public class RegisteredContractJournal1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(RegisteredContractJournal1 obj) {
+			return obj.getRegistrationAgent();
+		}
+
+		@Override
+		public void setValue(RegisteredContractJournal1 obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setRegistrationAgent(value);
 		}
 	};
 	@XmlElement(name = "UnqId")
@@ -167,7 +179,7 @@ public class RegisteredContractJournal1 {
 	 * definition} = "Unique registered contract identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUniqueIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RegisteredContractJournal1, Optional<DocumentIdentification28>> mmUniqueIdentification = new MMMessageAssociationEnd<RegisteredContractJournal1, Optional<DocumentIdentification28>>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractJournal1.mmObject();
@@ -179,7 +191,17 @@ public class RegisteredContractJournal1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DocumentIdentification28.mmObject();
+			type_lazy = () -> DocumentIdentification28.mmObject();
+		}
+
+		@Override
+		public Optional<DocumentIdentification28> getValue(RegisteredContractJournal1 obj) {
+			return obj.getUniqueIdentification();
+		}
+
+		@Override
+		public void setValue(RegisteredContractJournal1 obj, Optional<DocumentIdentification28> value) {
+			obj.setUniqueIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ClsrDt", required = true)
@@ -216,7 +238,7 @@ public class RegisteredContractJournal1 {
 	 * definition} = "Date of closure of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClosureDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContractJournal1, ISODate> mmClosureDate = new MMMessageAttribute<RegisteredContractJournal1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDateTime;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractJournal1.mmObject();
@@ -228,6 +250,16 @@ public class RegisteredContractJournal1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(RegisteredContractJournal1 obj) {
+			return obj.getClosureDate();
+		}
+
+		@Override
+		public void setValue(RegisteredContractJournal1 obj, ISODate value) {
+			obj.setClosureDate(value);
 		}
 	};
 	@XmlElement(name = "ClsrRsn", required = true)
@@ -264,7 +296,7 @@ public class RegisteredContractJournal1 {
 	 * definition} = "Reason of closure \r\n\r\nTBD - codes to be defined."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmClosureReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RegisteredContractJournal1, ContractClosureReason1Choice> mmClosureReason = new MMMessageAssociationEnd<RegisteredContractJournal1, ContractClosureReason1Choice>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmClosureReason;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractJournal1.mmObject();
@@ -277,6 +309,16 @@ public class RegisteredContractJournal1 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> ContractClosureReason1Choice.mmObject();
+		}
+
+		@Override
+		public ContractClosureReason1Choice getValue(RegisteredContractJournal1 obj) {
+			return obj.getClosureReason();
+		}
+
+		@Override
+		public void setValue(RegisteredContractJournal1 obj, ContractClosureReason1Choice value) {
+			obj.setClosureReason(value);
 		}
 	};
 
@@ -299,7 +341,7 @@ public class RegisteredContractJournal1 {
 		return registrationAgent;
 	}
 
-	public RegisteredContractJournal1 setRegistrationAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 registrationAgent) {
+	public RegisteredContractJournal1 setRegistrationAgent(BranchAndFinancialInstitutionIdentification5 registrationAgent) {
 		this.registrationAgent = Objects.requireNonNull(registrationAgent);
 		return this;
 	}
@@ -308,7 +350,7 @@ public class RegisteredContractJournal1 {
 		return uniqueIdentification == null ? Optional.empty() : Optional.of(uniqueIdentification);
 	}
 
-	public RegisteredContractJournal1 setUniqueIdentification(com.tools20022.repository.msg.DocumentIdentification28 uniqueIdentification) {
+	public RegisteredContractJournal1 setUniqueIdentification(DocumentIdentification28 uniqueIdentification) {
 		this.uniqueIdentification = uniqueIdentification;
 		return this;
 	}

@@ -108,7 +108,7 @@ public class NumberOfTransactionsPerStatus5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDetailedNumberOfTransactions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberOfTransactionsPerStatus5, Max15NumericText> mmDetailedNumberOfTransactions = new MMMessageAttribute<NumberOfTransactionsPerStatus5, Max15NumericText>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.NumberOfTransactionsPerStatus5.mmObject();
 			isDerived = false;
@@ -119,6 +119,16 @@ public class NumberOfTransactionsPerStatus5 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
+		}
+
+		@Override
+		public Max15NumericText getValue(NumberOfTransactionsPerStatus5 obj) {
+			return obj.getDetailedNumberOfTransactions();
+		}
+
+		@Override
+		public void setValue(NumberOfTransactionsPerStatus5 obj, Max15NumericText value) {
+			obj.setDetailedNumberOfTransactions(value);
 		}
 	};
 	@XmlElement(name = "DtldSts", required = true)
@@ -152,7 +162,7 @@ public class NumberOfTransactionsPerStatus5 {
 	 * "Common transaction status for all individual transactions reported."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDetailedStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberOfTransactionsPerStatus5, ExternalPaymentTransactionStatus1Code> mmDetailedStatus = new MMMessageAttribute<NumberOfTransactionsPerStatus5, ExternalPaymentTransactionStatus1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.NumberOfTransactionsPerStatus5.mmObject();
 			isDerived = false;
@@ -163,6 +173,16 @@ public class NumberOfTransactionsPerStatus5 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalPaymentTransactionStatus1Code.mmObject();
+		}
+
+		@Override
+		public ExternalPaymentTransactionStatus1Code getValue(NumberOfTransactionsPerStatus5 obj) {
+			return obj.getDetailedStatus();
+		}
+
+		@Override
+		public void setValue(NumberOfTransactionsPerStatus5 obj, ExternalPaymentTransactionStatus1Code value) {
+			obj.setDetailedStatus(value);
 		}
 	};
 	@XmlElement(name = "DtldCtrlSum")
@@ -197,7 +217,7 @@ public class NumberOfTransactionsPerStatus5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDetailedControlSum = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberOfTransactionsPerStatus5, Optional<DecimalNumber>> mmDetailedControlSum = new MMMessageAttribute<NumberOfTransactionsPerStatus5, Optional<DecimalNumber>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.NumberOfTransactionsPerStatus5.mmObject();
 			isDerived = false;
@@ -208,6 +228,16 @@ public class NumberOfTransactionsPerStatus5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(NumberOfTransactionsPerStatus5 obj) {
+			return obj.getDetailedControlSum();
+		}
+
+		@Override
+		public void setValue(NumberOfTransactionsPerStatus5 obj, Optional<DecimalNumber> value) {
+			obj.setDetailedControlSum(value.orElse(null));
 		}
 	};
 

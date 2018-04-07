@@ -21,7 +21,9 @@ import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.camt.*;
+import com.tools20022.repository.area.camt.CancelCaseAssignmentV03;
+import com.tools20022.repository.area.camt.CaseStatusReportV04;
+import com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04;
 import com.tools20022.repository.choice.Party12Choice;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
@@ -68,50 +70,11 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04#mmAssignment
  * NotificationOfCaseAssignmentV04.mmAssignment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.RejectInvestigationV04#mmAssignment
- * RejectInvestigationV04.mmAssignment}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.camt.CancelCaseAssignmentV03#mmAssignment
  * CancelCaseAssignmentV03.mmAssignment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.RequestForDuplicateV04#mmAssignment
- * RequestForDuplicateV04.mmAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.DuplicateV04#mmAssignment
- * DuplicateV04.mmAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.ProprietaryFormatInvestigationV03#mmAssignment
- * ProprietaryFormatInvestigationV03.mmAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationResponseV03#mmAssignment
- * DebitAuthorisationResponseV03.mmAssignment}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.camt.CaseStatusReportV04#mmNewAssignment
  * CaseStatusReportV04.mmNewAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.UnableToApplyV05#mmAssignment
- * UnableToApplyV05.mmAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06#mmAssignment
- * CustomerPaymentCancellationRequestV06.mmAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.AdditionalPaymentInformationV07#mmAssignment
- * AdditionalPaymentInformationV07.mmAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.ResolutionOfInvestigationV07#mmAssignment
- * ResolutionOfInvestigationV07.mmAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06#mmAssignment
- * FIToFIPaymentCancellationRequestV06.mmAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationRequestV05#mmAssignment
- * DebitAuthorisationRequestV05.mmAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.ClaimNonReceiptV05#mmAssignment
- * ClaimNonReceiptV05.mmAssignment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.camt.RequestToModifyPaymentV04#mmAssignment
- * RequestToModifyPaymentV04.mmAssignment}</li>
  * </ul>
  * </li>
  * <li>
@@ -127,6 +90,13 @@ import javax.xml.bind.annotation.XmlType;
  * "CaseAssignment3"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Represents the assignment of a case to a party."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.CaseAssignment4
+ * CaseAssignment4}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -166,9 +136,17 @@ public class CaseAssignment3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Uniquely identifies the case assignment."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CaseAssignment4#mmIdentification
+	 * CaseAssignment4.mmIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CaseAssignment3, Max35Text> mmIdentification = new MMMessageAttribute<CaseAssignment3, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> InvestigationCase.mmAssignmentIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CaseAssignment3.mmObject();
@@ -177,9 +155,20 @@ public class CaseAssignment3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Uniquely identifies the case assignment.";
+			nextVersions_lazy = () -> Arrays.asList(CaseAssignment4.mmIdentification);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(CaseAssignment3 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(CaseAssignment3 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "Assgnr", required = true)
@@ -215,9 +204,16 @@ public class CaseAssignment3 {
 	 * definition} =
 	 * "Party who assigns the case. \nUsage: This is also the sender of the message."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.CaseAssignment4#mmAssigner
+	 * CaseAssignment4.mmAssigner}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAssigner = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CaseAssignment3, Party12Choice> mmAssigner = new MMMessageAssociationEnd<CaseAssignment3, Party12Choice>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CaseAssignment3.mmObject();
@@ -226,10 +222,21 @@ public class CaseAssignment3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Assigner";
 			definition = "Party who assigns the case. \nUsage: This is also the sender of the message.";
+			nextVersions_lazy = () -> Arrays.asList(CaseAssignment4.mmAssigner);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Party12Choice.mmObject();
+		}
+
+		@Override
+		public Party12Choice getValue(CaseAssignment3 obj) {
+			return obj.getAssigner();
+		}
+
+		@Override
+		public void setValue(CaseAssignment3 obj, Party12Choice value) {
+			obj.setAssigner(value);
 		}
 	};
 	@XmlElement(name = "Assgne", required = true)
@@ -265,9 +272,16 @@ public class CaseAssignment3 {
 	 * definition} =
 	 * "Party to which the case is assigned.\nUsage: This is also the receiver of the message."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.CaseAssignment4#mmAssignee
+	 * CaseAssignment4.mmAssignee}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAssignee = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CaseAssignment3, Party12Choice> mmAssignee = new MMMessageAssociationEnd<CaseAssignment3, Party12Choice>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CaseAssignment3.mmObject();
@@ -276,10 +290,21 @@ public class CaseAssignment3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Assignee";
 			definition = "Party to which the case is assigned.\nUsage: This is also the receiver of the message.";
+			nextVersions_lazy = () -> Arrays.asList(CaseAssignment4.mmAssignee);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Party12Choice.mmObject();
+		}
+
+		@Override
+		public Party12Choice getValue(CaseAssignment3 obj) {
+			return obj.getAssignee();
+		}
+
+		@Override
+		public void setValue(CaseAssignment3 obj, Party12Choice value) {
+			obj.setAssignee(value);
 		}
 	};
 	@XmlElement(name = "CreDtTm", required = true)
@@ -314,9 +339,17 @@ public class CaseAssignment3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Date and time at which the assignment was created."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CaseAssignment4#mmCreationDateTime
+	 * CaseAssignment4.mmCreationDateTime}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CaseAssignment3, ISODateTime> mmCreationDateTime = new MMMessageAttribute<CaseAssignment3, ISODateTime>() {
 		{
 			businessElementTrace_lazy = () -> InvestigationCase.mmCreationDateTime;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CaseAssignment3.mmObject();
@@ -325,9 +358,20 @@ public class CaseAssignment3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreationDateTime";
 			definition = "Date and time at which the assignment was created.";
+			nextVersions_lazy = () -> Arrays.asList(CaseAssignment4.mmCreationDateTime);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public ISODateTime getValue(CaseAssignment3 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(CaseAssignment3 obj, ISODateTime value) {
+			obj.setCreationDateTime(value);
 		}
 	};
 
@@ -336,15 +380,13 @@ public class CaseAssignment3 {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CaseAssignment3.mmIdentification, com.tools20022.repository.msg.CaseAssignment3.mmAssigner, com.tools20022.repository.msg.CaseAssignment3.mmAssignee,
 						com.tools20022.repository.msg.CaseAssignment3.mmCreationDateTime);
-				messageBuildingBlock_lazy = () -> Arrays.asList(NotificationOfCaseAssignmentV04.mmAssignment, RejectInvestigationV04.mmAssignment, CancelCaseAssignmentV03.mmAssignment, RequestForDuplicateV04.mmAssignment,
-						DuplicateV04.mmAssignment, ProprietaryFormatInvestigationV03.mmAssignment, DebitAuthorisationResponseV03.mmAssignment, CaseStatusReportV04.mmNewAssignment, UnableToApplyV05.mmAssignment,
-						CustomerPaymentCancellationRequestV06.mmAssignment, AdditionalPaymentInformationV07.mmAssignment, ResolutionOfInvestigationV07.mmAssignment, FIToFIPaymentCancellationRequestV06.mmAssignment,
-						DebitAuthorisationRequestV05.mmAssignment, ClaimNonReceiptV05.mmAssignment, RequestToModifyPaymentV04.mmAssignment);
+				messageBuildingBlock_lazy = () -> Arrays.asList(NotificationOfCaseAssignmentV04.mmAssignment, CancelCaseAssignmentV03.mmAssignment, CaseStatusReportV04.mmNewAssignment);
 				trace_lazy = () -> InvestigationCase.mmObject();
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CaseAssignment3";
 				definition = "Represents the assignment of a case to a party.";
+				nextVersions_lazy = () -> Arrays.asList(CaseAssignment4.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

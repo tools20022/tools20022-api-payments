@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.entity.TaxRecord;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.TaxReason1;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -111,7 +112,7 @@ public class ServiceTaxDesignation1 {
 	 * definition} = "Identifies the taxable status of the service."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ServiceTaxDesignation1, ServiceTaxDesignation1Code> mmCode = new MMMessageAttribute<ServiceTaxDesignation1, ServiceTaxDesignation1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ServiceTaxDesignation1.mmObject();
 			isDerived = false;
@@ -122,6 +123,16 @@ public class ServiceTaxDesignation1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ServiceTaxDesignation1Code.mmObject();
+		}
+
+		@Override
+		public ServiceTaxDesignation1Code getValue(ServiceTaxDesignation1 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ServiceTaxDesignation1 obj, ServiceTaxDesignation1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Rgn")
@@ -160,7 +171,7 @@ public class ServiceTaxDesignation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ServiceTaxDesignation1, Optional<Max35Text>> mmRegion = new MMMessageAttribute<ServiceTaxDesignation1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAdministrationZone;
 			componentContext_lazy = () -> com.tools20022.repository.msg.ServiceTaxDesignation1.mmObject();
@@ -173,9 +184,19 @@ public class ServiceTaxDesignation1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ServiceTaxDesignation1 obj) {
+			return obj.getRegion();
+		}
+
+		@Override
+		public void setValue(ServiceTaxDesignation1 obj, Optional<Max35Text> value) {
+			obj.setRegion(value.orElse(null));
+		}
 	};
 	@XmlElement(name = "TaxRsn")
-	protected List<com.tools20022.repository.msg.TaxReason1> taxReason;
+	protected List<TaxReason1> taxReason;
 	/**
 	 * 
 	 <p>
@@ -205,7 +226,7 @@ public class ServiceTaxDesignation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ServiceTaxDesignation1, List<TaxReason1>> mmTaxReason = new MMMessageAttribute<ServiceTaxDesignation1, List<TaxReason1>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ServiceTaxDesignation1.mmObject();
 			isDerived = false;
@@ -214,7 +235,17 @@ public class ServiceTaxDesignation1 {
 			name = "TaxReason";
 			definition = "Provides free form explanations of the various tax codes used within the statement.";
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.TaxReason1.mmObject();
+			complexType_lazy = () -> TaxReason1.mmObject();
+		}
+
+		@Override
+		public List<TaxReason1> getValue(ServiceTaxDesignation1 obj) {
+			return obj.getTaxReason();
+		}
+
+		@Override
+		public void setValue(ServiceTaxDesignation1 obj, List<TaxReason1> value) {
+			obj.setTaxReason(value);
 		}
 	};
 
@@ -256,7 +287,7 @@ public class ServiceTaxDesignation1 {
 		return taxReason == null ? taxReason = new ArrayList<>() : taxReason;
 	}
 
-	public ServiceTaxDesignation1 setTaxReason(List<com.tools20022.repository.msg.TaxReason1> taxReason) {
+	public ServiceTaxDesignation1 setTaxReason(List<TaxReason1> taxReason) {
 		this.taxReason = Objects.requireNonNull(taxReason);
 		return this;
 	}

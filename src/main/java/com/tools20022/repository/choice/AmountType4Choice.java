@@ -122,7 +122,7 @@ public class AmountType4Choice {
 	 * AmountType3Choice.mmInstructedAmount}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructedAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountType4Choice, ActiveOrHistoricCurrencyAndAmount> mmInstructedAmount = new MMMessageAttribute<AmountType4Choice, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
 			componentContext_lazy = () -> com.tools20022.repository.choice.AmountType4Choice.mmObject();
@@ -135,6 +135,16 @@ public class AmountType4Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(AmountType4Choice obj) {
+			return obj.getInstructedAmount();
+		}
+
+		@Override
+		public void setValue(AmountType4Choice obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setInstructedAmount(value);
 		}
 	};
 	@XmlElement(name = "EqvtAmt", required = true)
@@ -177,7 +187,7 @@ public class AmountType4Choice {
 	 * AmountType3Choice.mmEquivalentAmount}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEquivalentAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmountType4Choice, EquivalentAmount2> mmEquivalentAmount = new MMMessageAssociationEnd<AmountType4Choice, EquivalentAmount2>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmEquivalentAmount;
 			componentContext_lazy = () -> com.tools20022.repository.choice.AmountType4Choice.mmObject();
@@ -191,6 +201,16 @@ public class AmountType4Choice {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> EquivalentAmount2.mmObject();
+		}
+
+		@Override
+		public EquivalentAmount2 getValue(AmountType4Choice obj) {
+			return obj.getEquivalentAmount();
+		}
+
+		@Override
+		public void setValue(AmountType4Choice obj, EquivalentAmount2 value) {
+			obj.setEquivalentAmount(value);
 		}
 	};
 

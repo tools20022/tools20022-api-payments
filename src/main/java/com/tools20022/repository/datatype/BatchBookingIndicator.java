@@ -21,6 +21,10 @@ import com.tools20022.metamodel.MMIndicator;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * Identifies whether the sending party requests a single debit or credit entry
@@ -54,9 +58,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class BatchBookingIndicator {
 
 	final static private AtomicReference<MMIndicator> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
+	protected Boolean value;
 
 	final static public MMIndicator mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIndicator() {
@@ -70,5 +78,25 @@ public class BatchBookingIndicator {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public BatchBookingIndicator() {
+	}
+
+	public BatchBookingIndicator(Boolean value) {
+		this.value = value;
+	}
+
+	public Boolean getValue() {
+		return value;
+	}
+
+	public void setValue(Boolean value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value == null ? null : value.toString();
 	}
 }

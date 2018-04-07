@@ -20,7 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.msg.PaymentTransaction76;
+import com.tools20022.repository.msg.PaymentTransaction87;
 
 /**
  * If ChargesInformation is present, then ReturnedInstructedAmount must be
@@ -34,8 +34,8 @@ public class ConstraintChargesInformationAndReturnedInstructedAmountRule {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction76
-	 * PaymentTransaction76}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentTransaction87
+	 * PaymentTransaction87}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getExpression
 	 * expression} =
 	 * "&lt;RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;&lt;ComplexRule xsi:type=\"ComplexRule\"&gt;&lt;mustBe&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/ReturnedInstructedAmount&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/mustBe&gt;&lt;onCondition&gt;&lt;connector&gt;AND&lt;/connector&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/ChargesInformation[1]&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;BooleanRule xsi:type=\"Presence\"&gt;&lt;leftOperand&gt;/ChargesInformation[1]/Amount&lt;/leftOperand&gt;&lt;/BooleanRule&gt;&lt;/onCondition&gt;&lt;/ComplexRule&gt;&lt;/RuleDefinition&gt;\n"
@@ -53,18 +53,18 @@ public class ConstraintChargesInformationAndReturnedInstructedAmountRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentTransaction76 = new MMConstraint() {
+	public static final MMConstraint<PaymentTransaction87> forPaymentTransaction87 = new MMConstraint<PaymentTransaction87>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChargesInformationAndReturnedInstructedAmountRule";
 			definition = "If ChargesInformation is present, then ReturnedInstructedAmount must be present.";
-			owner_lazy = () -> PaymentTransaction76.mmObject();
+			owner_lazy = () -> PaymentTransaction87.mmObject();
 			expression = "<RuleDefinition xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ComplexRule xsi:type=\"ComplexRule\"><mustBe><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/ReturnedInstructedAmount</leftOperand></BooleanRule></mustBe><onCondition><connector>AND</connector><BooleanRule xsi:type=\"Presence\"><leftOperand>/ChargesInformation[1]</leftOperand></BooleanRule><BooleanRule xsi:type=\"Presence\"><leftOperand>/ChargesInformation[1]/Amount</leftOperand></BooleanRule></onCondition></ComplexRule></RuleDefinition>\n";
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentTransaction76((PaymentTransaction76) obj);
+		public void executeValidator(PaymentTransaction87 obj) throws Exception {
+			checkPaymentTransaction87(obj);
 		}
 	};
 
@@ -72,7 +72,7 @@ public class ConstraintChargesInformationAndReturnedInstructedAmountRule {
 	 * If ChargesInformation is present, then ReturnedInstructedAmount must be
 	 * present.
 	 */
-	public static void checkPaymentTransaction76(PaymentTransaction76 obj) throws Exception {
+	public static void checkPaymentTransaction87(PaymentTransaction87 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

@@ -25,7 +25,6 @@ import com.tools20022.repository.area.PaymentsInitiationLatestVersion;
 import com.tools20022.repository.msg.GroupHeader47;
 import com.tools20022.repository.msg.MandateSuspension1;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -80,8 +79,8 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forMandateSuspensionRequestV01
- * ConstraintSupplementaryDataRule.forMandateSuspensionRequestV01}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#for_pain_MandateSuspensionRequestV01
+ * ConstraintSupplementaryDataRule.for_pain_MandateSuspensionRequestV01}</li>
  * </ul>
  * </li>
  * <li>
@@ -127,7 +126,7 @@ public class MandateSuspensionRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateSuspensionRequestV01, GroupHeader47> mmGroupHeader = new MMMessageBuildingBlock<MandateSuspensionRequestV01, GroupHeader47>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,12 +137,14 @@ public class MandateSuspensionRequestV01 {
 			complexType_lazy = () -> GroupHeader47.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateSuspensionRequestV01.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader47 getValue(MandateSuspensionRequestV01 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(MandateSuspensionRequestV01 obj, GroupHeader47 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "UndrlygSspnsnDtls", required = true)
@@ -173,7 +174,7 @@ public class MandateSuspensionRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmUnderlyingSuspensionDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateSuspensionRequestV01, List<MandateSuspension1>> mmUnderlyingSuspensionDetails = new MMMessageBuildingBlock<MandateSuspensionRequestV01, List<MandateSuspension1>>() {
 		{
 			xmlTag = "UndrlygSspnsnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,12 +184,14 @@ public class MandateSuspensionRequestV01 {
 			complexType_lazy = () -> MandateSuspension1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateSuspensionRequestV01.class.getMethod("getUnderlyingSuspensionDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<MandateSuspension1> getValue(MandateSuspensionRequestV01 obj) {
+			return obj.getUnderlyingSuspensionDetails();
+		}
+
+		@Override
+		public void setValue(MandateSuspensionRequestV01 obj, List<MandateSuspension1> value) {
+			obj.setUnderlyingSuspensionDetails(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -218,7 +221,7 @@ public class MandateSuspensionRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MandateSuspensionRequestV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MandateSuspensionRequestV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -228,19 +231,21 @@ public class MandateSuspensionRequestV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateSuspensionRequestV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MandateSuspensionRequestV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MandateSuspensionRequestV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forMandateSuspensionRequestV01);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.for_pain_MandateSuspensionRequestV01);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateSuspensionRequestV01";
 				definition = "Scope\r\nThe MandateSuspensionRequest message is sent by the initiator of the request to its agent. The initiator can either be the debtor, debtor agent, creditor or creditor agent.\r\nA MandateSuspensionRequest message is used to request the suspension of an existing mandate until the suspension is lifted. \r\nUsage\r\nThe MandateSuspensionRequest message can contain one or more suspension requests.\r\nThe messages can be exchanged between creditor and creditor agent or debtor and debtor agent and between creditor agent and debtor agent.\r\nThe MandateSuspensionRequest message can be used in domestic and cross-border scenarios.\r\n";

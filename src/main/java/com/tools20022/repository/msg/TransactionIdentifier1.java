@@ -108,7 +108,7 @@ public class TransactionIdentifier1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionIdentifier1, ISODateTime> mmTransactionDateTime = new MMMessageAttribute<TransactionIdentifier1, ISODateTime>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmTransactionDateTime;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionIdentifier1.mmObject();
@@ -120,6 +120,16 @@ public class TransactionIdentifier1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public ISODateTime getValue(TransactionIdentifier1 obj) {
+			return obj.getTransactionDateTime();
+		}
+
+		@Override
+		public void setValue(TransactionIdentifier1 obj, ISODateTime value) {
+			obj.setTransactionDateTime(value);
 		}
 	};
 	@XmlElement(name = "TxRef", required = true)
@@ -158,7 +168,7 @@ public class TransactionIdentifier1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionIdentifier1, Max35Text> mmTransactionReference = new MMMessageAttribute<TransactionIdentifier1, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmTransactionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionIdentifier1.mmObject();
@@ -170,6 +180,16 @@ public class TransactionIdentifier1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(TransactionIdentifier1 obj) {
+			return obj.getTransactionReference();
+		}
+
+		@Override
+		public void setValue(TransactionIdentifier1 obj, Max35Text value) {
+			obj.setTransactionReference(value);
 		}
 	};
 

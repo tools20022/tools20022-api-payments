@@ -106,7 +106,7 @@ public class TimePeriodDetails1 {
 	 * definition} = "Time at which the time span starts."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFromTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TimePeriodDetails1, ISOTime> mmFromTime = new MMMessageAttribute<TimePeriodDetails1, ISOTime>() {
 		{
 			businessElementTrace_lazy = () -> TimePeriod.mmFromTime;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TimePeriodDetails1.mmObject();
@@ -118,6 +118,16 @@ public class TimePeriodDetails1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISOTime.mmObject();
+		}
+
+		@Override
+		public ISOTime getValue(TimePeriodDetails1 obj) {
+			return obj.getFromTime();
+		}
+
+		@Override
+		public void setValue(TimePeriodDetails1 obj, ISOTime value) {
+			obj.setFromTime(value);
 		}
 	};
 	@XmlElement(name = "ToTm")
@@ -154,7 +164,7 @@ public class TimePeriodDetails1 {
 	 * definition} = "Time at which the time span ends."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmToTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TimePeriodDetails1, Optional<ISOTime>> mmToTime = new MMMessageAttribute<TimePeriodDetails1, Optional<ISOTime>>() {
 		{
 			businessElementTrace_lazy = () -> TimePeriod.mmToTime;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TimePeriodDetails1.mmObject();
@@ -166,6 +176,16 @@ public class TimePeriodDetails1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISOTime.mmObject();
+		}
+
+		@Override
+		public Optional<ISOTime> getValue(TimePeriodDetails1 obj) {
+			return obj.getToTime();
+		}
+
+		@Override
+		public void setValue(TimePeriodDetails1 obj, Optional<ISOTime> value) {
+			obj.setToTime(value.orElse(null));
 		}
 	};
 

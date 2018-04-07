@@ -155,7 +155,7 @@ public class TransferReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * Transfer is the result of a demrger or division.
+	 * Transfer is the result of a demerger or division.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -172,14 +172,14 @@ public class TransferReasonCode extends MMCode {
 	 * name} = "Demerger"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Transfer is the result of a demrger or division."</li>
+	 * definition} = "Transfer is the result of a demerger or division."</li>
 	 * </ul>
 	 */
 	public static final TransferReasonCode Demerger = new TransferReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Demerger";
-			definition = "Transfer is the result of a demrger or division.";
+			definition = "Transfer is the result of a demerger or division.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TransferReasonCode.mmObject();
 			codeName = "TRAF";
 		}

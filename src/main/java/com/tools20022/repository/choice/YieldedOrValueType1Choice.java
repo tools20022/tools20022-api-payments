@@ -107,7 +107,7 @@ public class YieldedOrValueType1Choice {
 	 * definition} = "Indicates whether the price is expressed as a yield."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmYielded = new MMMessageAttribute() {
+	public static final MMMessageAttribute<YieldedOrValueType1Choice, YesNoIndicator> mmYielded = new MMMessageAttribute<YieldedOrValueType1Choice, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmYielded;
 			componentContext_lazy = () -> com.tools20022.repository.choice.YieldedOrValueType1Choice.mmObject();
@@ -119,6 +119,16 @@ public class YieldedOrValueType1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		@Override
+		public YesNoIndicator getValue(YieldedOrValueType1Choice obj) {
+			return obj.getYielded();
+		}
+
+		@Override
+		public void setValue(YieldedOrValueType1Choice obj, YesNoIndicator value) {
+			obj.setYielded(value);
 		}
 	};
 	@XmlElement(name = "ValTp", required = true)
@@ -156,7 +166,7 @@ public class YieldedOrValueType1Choice {
 	 * definition} = "Type of value in which the price is expressed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValueType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<YieldedOrValueType1Choice, PriceValueType1Code> mmValueType = new MMMessageAttribute<YieldedOrValueType1Choice, PriceValueType1Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmTypeOfRate;
 			componentContext_lazy = () -> com.tools20022.repository.choice.YieldedOrValueType1Choice.mmObject();
@@ -168,6 +178,16 @@ public class YieldedOrValueType1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> PriceValueType1Code.mmObject();
+		}
+
+		@Override
+		public PriceValueType1Code getValue(YieldedOrValueType1Choice obj) {
+			return obj.getValueType();
+		}
+
+		@Override
+		public void setValue(YieldedOrValueType1Choice obj, PriceValueType1Code value) {
+			obj.setValueType(value);
 		}
 	};
 

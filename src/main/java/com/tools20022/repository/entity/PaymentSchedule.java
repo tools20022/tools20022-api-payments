@@ -26,7 +26,6 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.PaymentDateRange1;
 import com.tools20022.repository.msg.PaymentDateRange2;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -122,7 +121,7 @@ public class PaymentSchedule {
 	 * definition} = "Date/time at which the partial payment is to be done."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentSchedule, ISODateTime> mmDate = new MMBusinessAttribute<PaymentSchedule, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentDateRange2.mmExpectedDate, PaymentDateRange2.mmDueDate, PaymentDateRange1.mmExpectedDate, PaymentDateRange1.mmDueDate);
 			isDerived = false;
@@ -135,12 +134,14 @@ public class PaymentSchedule {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentSchedule.class.getMethod("getDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(PaymentSchedule obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(PaymentSchedule obj, ISODateTime value) {
+			obj.setDate(value);
 		}
 	};
 	protected CurrencyAndAmount amount;
@@ -177,7 +178,7 @@ public class PaymentSchedule {
 	 * definition} = "Amount of the partial payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentSchedule, CurrencyAndAmount> mmAmount = new MMBusinessAttribute<PaymentSchedule, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PaymentDateRange2.mmAmount);
 			isDerived = false;
@@ -190,12 +191,14 @@ public class PaymentSchedule {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentSchedule.class.getMethod("getAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PaymentSchedule obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(PaymentSchedule obj, CurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	protected PercentageRate rate;
@@ -225,7 +228,7 @@ public class PaymentSchedule {
 	 * definition} = "Partial payment expressed as a rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentSchedule, PercentageRate> mmRate = new MMBusinessAttribute<PaymentSchedule, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.mmObject();
@@ -237,12 +240,14 @@ public class PaymentSchedule {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentSchedule.class.getMethod("getRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(PaymentSchedule obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(PaymentSchedule obj, PercentageRate value) {
+			obj.setRate(value);
 		}
 	};
 

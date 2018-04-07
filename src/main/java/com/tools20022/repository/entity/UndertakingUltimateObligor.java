@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CashAccount;
 import com.tools20022.repository.entity.UndertakingPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
@@ -112,7 +113,7 @@ public class UndertakingUltimateObligor extends UndertakingPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<UndertakingUltimateObligor, Optional<CashAccount>> mmCashAccount = new MMBusinessAssociationEnd<UndertakingUltimateObligor, Optional<CashAccount>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingUltimateObligor.mmObject();
@@ -124,6 +125,16 @@ public class UndertakingUltimateObligor extends UndertakingPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmUltimateObligor;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
+		}
+
+		@Override
+		public Optional<CashAccount> getValue(UndertakingUltimateObligor obj) {
+			return obj.getCashAccount();
+		}
+
+		@Override
+		public void setValue(UndertakingUltimateObligor obj, Optional<CashAccount> value) {
+			obj.setCashAccount(value.orElse(null));
 		}
 	};
 

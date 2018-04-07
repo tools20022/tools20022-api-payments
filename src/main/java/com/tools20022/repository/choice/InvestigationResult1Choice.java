@@ -98,7 +98,7 @@ public class InvestigationResult1Choice {
 	 * definition} = "Provides the result."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResult = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestigationResult1Choice, SupplementaryDataEnvelope1> mmResult = new MMMessageAttribute<InvestigationResult1Choice, SupplementaryDataEnvelope1>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.InvestigationResult1Choice.mmObject();
 			isDerived = false;
@@ -109,6 +109,16 @@ public class InvestigationResult1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> SupplementaryDataEnvelope1.mmObject();
+		}
+
+		@Override
+		public SupplementaryDataEnvelope1 getValue(InvestigationResult1Choice obj) {
+			return obj.getResult();
+		}
+
+		@Override
+		public void setValue(InvestigationResult1Choice obj, SupplementaryDataEnvelope1 value) {
+			obj.setResult(value);
 		}
 	};
 	@XmlElement(name = "InvstgtnSts", required = true)
@@ -141,7 +151,7 @@ public class InvestigationResult1Choice {
 	 * definition} = "Provides the investigation status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInvestigationStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestigationResult1Choice, InvestigationStatus1Code> mmInvestigationStatus = new MMMessageAttribute<InvestigationResult1Choice, InvestigationStatus1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.InvestigationResult1Choice.mmObject();
 			isDerived = false;
@@ -152,6 +162,16 @@ public class InvestigationResult1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> InvestigationStatus1Code.mmObject();
+		}
+
+		@Override
+		public InvestigationStatus1Code getValue(InvestigationResult1Choice obj) {
+			return obj.getInvestigationStatus();
+		}
+
+		@Override
+		public void setValue(InvestigationResult1Choice obj, InvestigationStatus1Code value) {
+			obj.setInvestigationStatus(value);
 		}
 	};
 

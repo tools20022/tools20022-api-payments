@@ -98,7 +98,7 @@ public class FixedAmountOrUnlimited1Choice {
 	 * definition} = "Fixed amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FixedAmountOrUnlimited1Choice, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<FixedAmountOrUnlimited1Choice, ActiveCurrencyAndAmount>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.FixedAmountOrUnlimited1Choice.mmObject();
 			isDerived = false;
@@ -109,6 +109,16 @@ public class FixedAmountOrUnlimited1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(FixedAmountOrUnlimited1Choice obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(FixedAmountOrUnlimited1Choice obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "NotLtd", required = true)
@@ -141,7 +151,7 @@ public class FixedAmountOrUnlimited1Choice {
 	 * definition} = "Unlimited amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNotLimited = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FixedAmountOrUnlimited1Choice, Unlimited9Text> mmNotLimited = new MMMessageAttribute<FixedAmountOrUnlimited1Choice, Unlimited9Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.FixedAmountOrUnlimited1Choice.mmObject();
 			isDerived = false;
@@ -152,6 +162,16 @@ public class FixedAmountOrUnlimited1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Unlimited9Text.mmObject();
+		}
+
+		@Override
+		public Unlimited9Text getValue(FixedAmountOrUnlimited1Choice obj) {
+			return obj.getNotLimited();
+		}
+
+		@Override
+		public void setValue(FixedAmountOrUnlimited1Choice obj, Unlimited9Text value) {
+			obj.setNotLimited(value);
 		}
 	};
 

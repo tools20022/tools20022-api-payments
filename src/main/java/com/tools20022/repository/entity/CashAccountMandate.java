@@ -21,6 +21,8 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CashAccountContract;
+import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.OperationMandate2;
@@ -96,7 +98,7 @@ import java.util.Objects;
 public class CashAccountMandate extends Mandate {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.CashAccountService> services;
+	protected List<CashAccountService> services;
 	/**
 	 * 
 	 <p>
@@ -131,7 +133,7 @@ public class CashAccountMandate extends Mandate {
 	 * "Services that the holder of an account mandate can exercise."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashAccountMandate, List<CashAccountService>> mmServices = new MMBusinessAssociationEnd<CashAccountMandate, List<CashAccountService>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmObject();
@@ -139,9 +141,19 @@ public class CashAccountMandate extends Mandate {
 			name = "Services";
 			definition = "Services that the holder of an account mandate can exercise.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmCashAccountMandate;
+			opposite_lazy = () -> CashAccountService.mmCashAccountMandate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmObject();
+			type_lazy = () -> CashAccountService.mmObject();
+		}
+
+		@Override
+		public List<CashAccountService> getValue(CashAccountMandate obj) {
+			return obj.getServices();
+		}
+
+		@Override
+		public void setValue(CashAccountMandate obj, List<CashAccountService> value) {
+			obj.setServices(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.CashAccountContract> cashAccountContract;
@@ -178,7 +190,7 @@ public class CashAccountMandate extends Mandate {
 	 * definition} = "Contract to which a mandate applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccountContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashAccountMandate, List<CashAccountContract>> mmCashAccountContract = new MMBusinessAssociationEnd<CashAccountMandate, List<CashAccountContract>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmObject();
@@ -190,6 +202,16 @@ public class CashAccountMandate extends Mandate {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 		}
+
+		@Override
+		public List<CashAccountContract> getValue(CashAccountMandate obj) {
+			return obj.getCashAccountContract();
+		}
+
+		@Override
+		public void setValue(CashAccountMandate obj, List<CashAccountContract> value) {
+			obj.setCashAccountContract(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -199,7 +221,7 @@ public class CashAccountMandate extends Mandate {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccountMandate";
 				definition = "Authorisation given to a mandate holder to perform some operation on an account.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccountContract.mmCashAccountMandate, com.tools20022.repository.entity.CashAccountService.mmCashAccountMandate);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccountContract.mmCashAccountMandate, CashAccountService.mmCashAccountMandate);
 				superType_lazy = () -> Mandate.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccountMandate.mmServices, com.tools20022.repository.entity.CashAccountMandate.mmCashAccountContract);
 				derivationComponent_lazy = () -> Arrays.asList(OperationMandate2.mmObject(), OperationMandate3.mmObject());
@@ -217,7 +239,7 @@ public class CashAccountMandate extends Mandate {
 		return services == null ? services = new ArrayList<>() : services;
 	}
 
-	public CashAccountMandate setServices(List<com.tools20022.repository.entity.CashAccountService> services) {
+	public CashAccountMandate setServices(List<CashAccountService> services) {
 		this.services = Objects.requireNonNull(services);
 		return this;
 	}

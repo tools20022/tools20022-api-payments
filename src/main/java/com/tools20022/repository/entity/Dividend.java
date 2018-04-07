@@ -23,8 +23,8 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -106,6 +106,13 @@ import java.util.Objects;
  * Dividend.mmReinvestmentDate}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Dividend#mmValue
  * Dividend.mmValue}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Dividend#mmDeemedAmount
+ * Dividend.mmDeemedAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Dividend#mmDeemedRate
+ * Dividend.mmDeemedRate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Dividend#mmConduitForeignIncomeAmount
+ * Dividend.mmConduitForeignIncomeAmount}</li>
  * </ul>
  * </li>
  * <li>
@@ -134,6 +141,12 @@ import java.util.Objects;
  * <li>
  * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmProvisionalDividendParameters
  * RateAndAmount.mmProvisionalDividendParameters}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmConduitForeignIncomeAmountDividendParameters
+ * RateAndAmount.mmConduitForeignIncomeAmountDividendParameters}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmDeemedAmountDividendParameters
+ * RateAndAmount.mmDeemedAmountDividendParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmDividend
  * CashProceedsDefinition.mmDividend}</li>
@@ -188,7 +201,7 @@ public class Dividend {
 	 * "Frequency with which the income is allocated to investors."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDividendFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, EventFrequencyCode> mmDividendFrequency = new MMBusinessAttribute<Dividend, EventFrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -200,12 +213,14 @@ public class Dividend {
 			simpleType_lazy = () -> EventFrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getDividendFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public EventFrequencyCode getValue(Dividend obj) {
+			return obj.getDividendFrequency();
+		}
+
+		@Override
+		public void setValue(Dividend obj, EventFrequencyCode value) {
+			obj.setDividendFrequency(value);
 		}
 	};
 	protected PercentageRate annualTotalDividendRate;
@@ -234,7 +249,7 @@ public class Dividend {
 	 * definition} = "Provides the annual total dividend rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAnnualTotalDividendRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, PercentageRate> mmAnnualTotalDividendRate = new MMBusinessAttribute<Dividend, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -246,12 +261,14 @@ public class Dividend {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getAnnualTotalDividendRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Dividend obj) {
+			return obj.getAnnualTotalDividendRate();
+		}
+
+		@Override
+		public void setValue(Dividend obj, PercentageRate value) {
+			obj.setAnnualTotalDividendRate(value);
 		}
 	};
 	protected RateAndAmount finalDividend;
@@ -287,7 +304,7 @@ public class Dividend {
 	 * definition} = "Dividend is final."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFinalDividend = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Dividend, RateAndAmount> mmFinalDividend = new MMBusinessAssociationEnd<Dividend, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -296,9 +313,19 @@ public class Dividend {
 			definition = "Dividend is final.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmFinalDividendParameters;
+			opposite_lazy = () -> RateAndAmount.mmFinalDividendParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(Dividend obj) {
+			return obj.getFinalDividend();
+		}
+
+		@Override
+		public void setValue(Dividend obj, RateAndAmount value) {
+			obj.setFinalDividend(value);
 		}
 	};
 	protected RateAndAmount fullyFrankedRateAndAmount;
@@ -336,7 +363,7 @@ public class Dividend {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFullyFrankedRateAndAmount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Dividend, RateAndAmount> mmFullyFrankedRateAndAmount = new MMBusinessAssociationEnd<Dividend, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -345,9 +372,19 @@ public class Dividend {
 			definition = "Rate of a fully franked dividend paid by a company, or amount resulting from a fully franked dividend paid by a company; amount includes tax credit for companies that have made sufficient tax payments during the fiscal period.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmFullyFrankedRateAndAmountDividendParameters;
+			opposite_lazy = () -> RateAndAmount.mmFullyFrankedRateAndAmountDividendParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(Dividend obj) {
+			return obj.getFullyFrankedRateAndAmount();
+		}
+
+		@Override
+		public void setValue(Dividend obj, RateAndAmount value) {
+			obj.setFullyFrankedRateAndAmount(value);
 		}
 	};
 	protected RateAndAmount grossDividend;
@@ -385,7 +422,7 @@ public class Dividend {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGrossDividend = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Dividend, RateAndAmount> mmGrossDividend = new MMBusinessAssociationEnd<Dividend, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -394,9 +431,19 @@ public class Dividend {
 			definition = "Cash dividend amount per equity before deductions or allowances have been made.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmGrossDividendParameters;
+			opposite_lazy = () -> RateAndAmount.mmGrossDividendParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(Dividend obj) {
+			return obj.getGrossDividend();
+		}
+
+		@Override
+		public void setValue(Dividend obj, RateAndAmount value) {
+			obj.setGrossDividend(value);
 		}
 	};
 	protected DividendRateTypeCode rateType;
@@ -425,7 +472,7 @@ public class Dividend {
 	 * definition} = "Specifies the type of dividend rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRateType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, DividendRateTypeCode> mmRateType = new MMBusinessAttribute<Dividend, DividendRateTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -437,12 +484,14 @@ public class Dividend {
 			simpleType_lazy = () -> DividendRateTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getRateType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DividendRateTypeCode getValue(Dividend obj) {
+			return obj.getRateType();
+		}
+
+		@Override
+		public void setValue(Dividend obj, DividendRateTypeCode value) {
+			obj.setRateType(value);
 		}
 	};
 	protected RateAndAmount netDividend;
@@ -480,7 +529,7 @@ public class Dividend {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNetDividend = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Dividend, RateAndAmount> mmNetDividend = new MMBusinessAssociationEnd<Dividend, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -489,9 +538,19 @@ public class Dividend {
 			definition = "Cash dividend amount per equity after deductions or allowances have been made.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmNetDividendParameters;
+			opposite_lazy = () -> RateAndAmount.mmNetDividendParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(Dividend obj) {
+			return obj.getNetDividend();
+		}
+
+		@Override
+		public void setValue(Dividend obj, RateAndAmount value) {
+			obj.setNetDividend(value);
 		}
 	};
 	protected RateAndAmount provisionalDividend;
@@ -527,7 +586,7 @@ public class Dividend {
 	 * definition} = "Dividend is provisional."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProvisionalDividend = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Dividend, RateAndAmount> mmProvisionalDividend = new MMBusinessAssociationEnd<Dividend, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -536,9 +595,19 @@ public class Dividend {
 			definition = "Dividend is provisional.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmProvisionalDividendParameters;
+			opposite_lazy = () -> RateAndAmount.mmProvisionalDividendParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(Dividend obj) {
+			return obj.getProvisionalDividend();
+		}
+
+		@Override
+		public void setValue(Dividend obj, RateAndAmount value) {
+			obj.setProvisionalDividend(value);
 		}
 	};
 	protected ISODateTime dividendRankingDate;
@@ -566,7 +635,7 @@ public class Dividend {
 	 * definition} = "Date on which a security will be entitled to a dividend."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDividendRankingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, ISODateTime> mmDividendRankingDate = new MMBusinessAttribute<Dividend, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -578,12 +647,14 @@ public class Dividend {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getDividendRankingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Dividend obj) {
+			return obj.getDividendRankingDate();
+		}
+
+		@Override
+		public void setValue(Dividend obj, ISODateTime value) {
+			obj.setDividendRankingDate(value);
 		}
 	};
 	protected CurrencyAndAmount manufacturedDividendAmount;
@@ -614,7 +685,7 @@ public class Dividend {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmManufacturedDividendAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, CurrencyAndAmount> mmManufacturedDividendAmount = new MMBusinessAttribute<Dividend, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -626,12 +697,14 @@ public class Dividend {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getManufacturedDividendAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Dividend obj) {
+			return obj.getManufacturedDividendAmount();
+		}
+
+		@Override
+		public void setValue(Dividend obj, CurrencyAndAmount value) {
+			obj.setManufacturedDividendAmount(value);
 		}
 	};
 	protected CurrencyAndAmount unfrankedAmount;
@@ -662,7 +735,7 @@ public class Dividend {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUnfrankedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, CurrencyAndAmount> mmUnfrankedAmount = new MMBusinessAttribute<Dividend, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -674,12 +747,14 @@ public class Dividend {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getUnfrankedAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Dividend obj) {
+			return obj.getUnfrankedAmount();
+		}
+
+		@Override
+		public void setValue(Dividend obj, CurrencyAndAmount value) {
+			obj.setUnfrankedAmount(value);
 		}
 	};
 	protected CurrencyAndAmount notionalDividendPayableAmount;
@@ -710,7 +785,7 @@ public class Dividend {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNotionalDividendPayableAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, CurrencyAndAmount> mmNotionalDividendPayableAmount = new MMBusinessAttribute<Dividend, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -722,12 +797,14 @@ public class Dividend {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getNotionalDividendPayableAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Dividend obj) {
+			return obj.getNotionalDividendPayableAmount();
+		}
+
+		@Override
+		public void setValue(Dividend obj, CurrencyAndAmount value) {
+			obj.setNotionalDividendPayableAmount(value);
 		}
 	};
 	protected PercentageRate rate;
@@ -757,7 +834,7 @@ public class Dividend {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, PercentageRate> mmRate = new MMBusinessAttribute<Dividend, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -769,12 +846,14 @@ public class Dividend {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Dividend obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(Dividend obj, PercentageRate value) {
+			obj.setRate(value);
 		}
 	};
 	protected ISODateTime exDividendDate;
@@ -804,7 +883,7 @@ public class Dividend {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExDividendDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, ISODateTime> mmExDividendDate = new MMBusinessAttribute<Dividend, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -816,15 +895,17 @@ public class Dividend {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getExDividendDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Dividend obj) {
+			return obj.getExDividendDate();
+		}
+
+		@Override
+		public void setValue(Dividend obj, ISODateTime value) {
+			obj.setExDividendDate(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Security> security;
+	protected List<Security> security;
 	/**
 	 * 
 	 <p>
@@ -856,7 +937,7 @@ public class Dividend {
 	 * definition} = "Security for which a dividend is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Dividend, List<Security>> mmSecurity = new MMBusinessAssociationEnd<Dividend, List<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -864,9 +945,19 @@ public class Dividend {
 			name = "Security";
 			definition = "Security for which a dividend is specified.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmDividend;
+			opposite_lazy = () -> Security.mmDividend;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public List<Security> getValue(Dividend obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(Dividend obj, List<Security> value) {
+			obj.setSecurity(value);
 		}
 	};
 	protected DividendTypeCode type;
@@ -895,7 +986,7 @@ public class Dividend {
 	 * definition} = "Nature of the dividend."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, DividendTypeCode> mmType = new MMBusinessAttribute<Dividend, DividendTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -907,15 +998,17 @@ public class Dividend {
 			simpleType_lazy = () -> DividendTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DividendTypeCode getValue(Dividend obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Dividend obj, DividendTypeCode value) {
+			obj.setType(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CashProceedsDefinition> cashProceeds;
+	protected List<CashProceedsDefinition> cashProceeds;
 	/**
 	 * 
 	 <p>
@@ -949,7 +1042,7 @@ public class Dividend {
 	 * definition} = "Defines the proceeds which resulted in dividends."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashProceeds = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Dividend, List<CashProceedsDefinition>> mmCashProceeds = new MMBusinessAssociationEnd<Dividend, List<CashProceedsDefinition>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -957,12 +1050,22 @@ public class Dividend {
 			name = "CashProceeds";
 			definition = "Defines the proceeds which resulted in dividends.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmDividend;
+			opposite_lazy = () -> CashProceedsDefinition.mmDividend;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
+			type_lazy = () -> CashProceedsDefinition.mmObject();
+		}
+
+		@Override
+		public List<CashProceedsDefinition> getValue(Dividend obj) {
+			return obj.getCashProceeds();
+		}
+
+		@Override
+		public void setValue(Dividend obj, List<CashProceedsDefinition> value) {
+			obj.setCashProceeds(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.PaymentObligation> obligation;
+	protected List<PaymentObligation> obligation;
 	/**
 	 * 
 	 <p>
@@ -995,7 +1098,7 @@ public class Dividend {
 	 * definition} = "Specifies the  payment terms of the dividend."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Dividend, List<PaymentObligation>> mmObligation = new MMBusinessAssociationEnd<Dividend, List<PaymentObligation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -1003,9 +1106,19 @@ public class Dividend {
 			name = "Obligation";
 			definition = "Specifies the  payment terms of the dividend.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmDividend;
+			opposite_lazy = () -> PaymentObligation.mmDividend;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
+			type_lazy = () -> PaymentObligation.mmObject();
+		}
+
+		@Override
+		public List<PaymentObligation> getValue(Dividend obj) {
+			return obj.getObligation();
+		}
+
+		@Override
+		public void setValue(Dividend obj, List<PaymentObligation> value) {
+			obj.setObligation(value);
 		}
 	};
 	protected Tax tax;
@@ -1039,7 +1152,7 @@ public class Dividend {
 	 * definition} = "Tax on dividend."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Dividend, Tax> mmTax = new MMBusinessAssociationEnd<Dividend, Tax>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -1048,9 +1161,19 @@ public class Dividend {
 			definition = "Tax on dividend.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmDividend;
+			opposite_lazy = () -> Tax.mmDividend;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
+			type_lazy = () -> Tax.mmObject();
+		}
+
+		@Override
+		public Tax getValue(Dividend obj) {
+			return obj.getTax();
+		}
+
+		@Override
+		public void setValue(Dividend obj, Tax value) {
+			obj.setTax(value);
 		}
 	};
 	protected Distribution relatedDistribution;
@@ -1086,7 +1209,7 @@ public class Dividend {
 	 * definition} = "Distribution for which a dividend is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Dividend, Distribution> mmRelatedDistribution = new MMBusinessAssociationEnd<Dividend, Distribution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -1095,9 +1218,19 @@ public class Dividend {
 			definition = "Distribution for which a dividend is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmDividend;
+			opposite_lazy = () -> Distribution.mmDividend;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
+			type_lazy = () -> Distribution.mmObject();
+		}
+
+		@Override
+		public Distribution getValue(Dividend obj) {
+			return obj.getRelatedDistribution();
+		}
+
+		@Override
+		public void setValue(Dividend obj, Distribution value) {
+			obj.setRelatedDistribution(value);
 		}
 	};
 	protected CorporateActionFrequencyTypeCode dividendFrequenceType;
@@ -1126,7 +1259,7 @@ public class Dividend {
 	 * definition} = "Specifies the cycle of dividends."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDividendFrequenceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, CorporateActionFrequencyTypeCode> mmDividendFrequenceType = new MMBusinessAttribute<Dividend, CorporateActionFrequencyTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -1138,12 +1271,14 @@ public class Dividend {
 			simpleType_lazy = () -> CorporateActionFrequencyTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getDividendFrequenceType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CorporateActionFrequencyTypeCode getValue(Dividend obj) {
+			return obj.getDividendFrequenceType();
+		}
+
+		@Override
+		public void setValue(Dividend obj, CorporateActionFrequencyTypeCode value) {
+			obj.setDividendFrequenceType(value);
 		}
 	};
 	protected PercentageRate dividendRatio;
@@ -1173,7 +1308,7 @@ public class Dividend {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDividendRatio = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, PercentageRate> mmDividendRatio = new MMBusinessAttribute<Dividend, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -1185,12 +1320,14 @@ public class Dividend {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getDividendRatio", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Dividend obj) {
+			return obj.getDividendRatio();
+		}
+
+		@Override
+		public void setValue(Dividend obj, PercentageRate value) {
+			obj.setDividendRatio(value);
 		}
 	};
 	protected ISODate paymentDate;
@@ -1218,7 +1355,7 @@ public class Dividend {
 	 * definition} = "Date upon which the dividend is paid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPaymentDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, ISODate> mmPaymentDate = new MMBusinessAttribute<Dividend, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -1230,12 +1367,14 @@ public class Dividend {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getPaymentDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(Dividend obj) {
+			return obj.getPaymentDate();
+		}
+
+		@Override
+		public void setValue(Dividend obj, ISODate value) {
+			obj.setPaymentDate(value);
 		}
 	};
 	protected FrequencyCode paymentFrequency;
@@ -1264,7 +1403,7 @@ public class Dividend {
 	 * definition} = "Specifies the cycle of dividend payments."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPaymentFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, FrequencyCode> mmPaymentFrequency = new MMBusinessAttribute<Dividend, FrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -1276,12 +1415,14 @@ public class Dividend {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getPaymentFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(Dividend obj) {
+			return obj.getPaymentFrequency();
+		}
+
+		@Override
+		public void setValue(Dividend obj, FrequencyCode value) {
+			obj.setPaymentFrequency(value);
 		}
 	};
 	protected ISODate reinvestmentDate;
@@ -1309,7 +1450,7 @@ public class Dividend {
 	 * definition} = "Date upon which the dividend is reinvested."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReinvestmentDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, ISODate> mmReinvestmentDate = new MMBusinessAttribute<Dividend, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -1321,12 +1462,14 @@ public class Dividend {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getReinvestmentDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(Dividend obj) {
+			return obj.getReinvestmentDate();
+		}
+
+		@Override
+		public void setValue(Dividend obj, ISODate value) {
+			obj.setReinvestmentDate(value);
 		}
 	};
 	protected CurrencyAndAmount value;
@@ -1355,7 +1498,7 @@ public class Dividend {
 	 * definition} = "Value of the dividend expressed as an amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Dividend, CurrencyAndAmount> mmValue = new MMBusinessAttribute<Dividend, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
@@ -1367,12 +1510,180 @@ public class Dividend {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Dividend.class.getMethod("getValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Dividend obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(Dividend obj, CurrencyAndAmount value) {
+			obj.setValue(value);
+		}
+	};
+	protected RateAndAmount deemedAmount;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmDeemedAmountDividendParameters
+	 * RateAndAmount.mmDeemedAmountDividendParameters}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
+	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getType
+	 * type} = {@linkplain com.tools20022.repository.entity.RateAndAmount
+	 * RateAndAmount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} = {@linkplain com.tools20022.repository.entity.Dividend
+	 * Dividend}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "DeemedAmount"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Amount of proceeds which is not actually paid to the security holder but on which withholding tax is applicable. "
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMBusinessAssociationEnd<Dividend, RateAndAmount> mmDeemedAmount = new MMBusinessAssociationEnd<Dividend, RateAndAmount>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "DeemedAmount";
+			definition = "Amount of proceeds which is not actually paid to the security holder but on which withholding tax is applicable. ";
+			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> RateAndAmount.mmDeemedAmountDividendParameters;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(Dividend obj) {
+			return obj.getDeemedAmount();
+		}
+
+		@Override
+		public void setValue(Dividend obj, RateAndAmount value) {
+			obj.setDeemedAmount(value);
+		}
+	};
+	protected PercentageRate deemedRate;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
+	 * simpleType} =
+	 * {@linkplain com.tools20022.repository.datatype.PercentageRate
+	 * PercentageRate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} = {@linkplain com.tools20022.repository.entity.Dividend
+	 * Dividend}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "DeemedRate"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Rate applied for the calculation of deemed proceeds which are not paid to security holders but on which withholding tax is applicable."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMBusinessAttribute<Dividend, PercentageRate> mmDeemedRate = new MMBusinessAttribute<Dividend, PercentageRate>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "DeemedRate";
+			definition = "Rate applied for the calculation of deemed proceeds which are not paid to security holders but on which withholding tax is applicable.";
+			maxOccurs = 1;
+			minOccurs = 1;
+			simpleType_lazy = () -> PercentageRate.mmObject();
+		}
+
+		@Override
+		public PercentageRate getValue(Dividend obj) {
+			return obj.getDeemedRate();
+		}
+
+		@Override
+		public void setValue(Dividend obj, PercentageRate value) {
+			obj.setDeemedRate(value);
+		}
+	};
+	protected RateAndAmount conduitForeignIncomeAmount;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmConduitForeignIncomeAmountDividendParameters
+	 * RateAndAmount.mmConduitForeignIncomeAmountDividendParameters}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
+	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getType
+	 * type} = {@linkplain com.tools20022.repository.entity.RateAndAmount
+	 * RateAndAmount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} = {@linkplain com.tools20022.repository.entity.Dividend
+	 * Dividend}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ConduitForeignIncomeAmount"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Amount relating to a conduit foreign income."</li>
+	 * </ul>
+	 */
+	public static final MMBusinessAssociationEnd<Dividend, RateAndAmount> mmConduitForeignIncomeAmount = new MMBusinessAssociationEnd<Dividend, RateAndAmount>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "ConduitForeignIncomeAmount";
+			definition = "Amount relating to a conduit foreign income.";
+			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> RateAndAmount.mmConduitForeignIncomeAmountDividendParameters;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(Dividend obj) {
+			return obj.getConduitForeignIncomeAmount();
+		}
+
+		@Override
+		public void setValue(Dividend obj, RateAndAmount value) {
+			obj.setConduitForeignIncomeAmount(value);
 		}
 	};
 
@@ -1383,10 +1694,9 @@ public class Dividend {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Dividend";
 				definition = "Distribution of earnings to shareholders, paid for in cash, stock, scrip issue or, rarely, in kind, for example, in company products or property. The dividend amount is decided by the board of directors.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmDividend, com.tools20022.repository.entity.Tax.mmDividend, com.tools20022.repository.entity.PaymentObligation.mmDividend,
-						com.tools20022.repository.entity.RateAndAmount.mmFinalDividendParameters, com.tools20022.repository.entity.RateAndAmount.mmFullyFrankedRateAndAmountDividendParameters,
-						com.tools20022.repository.entity.RateAndAmount.mmGrossDividendParameters, com.tools20022.repository.entity.RateAndAmount.mmNetDividendParameters,
-						com.tools20022.repository.entity.RateAndAmount.mmProvisionalDividendParameters, com.tools20022.repository.entity.CashProceedsDefinition.mmDividend, com.tools20022.repository.entity.Distribution.mmDividend);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmDividend, Tax.mmDividend, PaymentObligation.mmDividend, RateAndAmount.mmFinalDividendParameters, RateAndAmount.mmFullyFrankedRateAndAmountDividendParameters,
+						RateAndAmount.mmGrossDividendParameters, RateAndAmount.mmNetDividendParameters, RateAndAmount.mmProvisionalDividendParameters, RateAndAmount.mmConduitForeignIncomeAmountDividendParameters,
+						RateAndAmount.mmDeemedAmountDividendParameters, CashProceedsDefinition.mmDividend, Distribution.mmDividend);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Dividend.mmDividendFrequency, com.tools20022.repository.entity.Dividend.mmAnnualTotalDividendRate,
 						com.tools20022.repository.entity.Dividend.mmFinalDividend, com.tools20022.repository.entity.Dividend.mmFullyFrankedRateAndAmount, com.tools20022.repository.entity.Dividend.mmGrossDividend,
 						com.tools20022.repository.entity.Dividend.mmRateType, com.tools20022.repository.entity.Dividend.mmNetDividend, com.tools20022.repository.entity.Dividend.mmProvisionalDividend,
@@ -1395,7 +1705,8 @@ public class Dividend {
 						com.tools20022.repository.entity.Dividend.mmSecurity, com.tools20022.repository.entity.Dividend.mmType, com.tools20022.repository.entity.Dividend.mmCashProceeds,
 						com.tools20022.repository.entity.Dividend.mmObligation, com.tools20022.repository.entity.Dividend.mmTax, com.tools20022.repository.entity.Dividend.mmRelatedDistribution,
 						com.tools20022.repository.entity.Dividend.mmDividendFrequenceType, com.tools20022.repository.entity.Dividend.mmDividendRatio, com.tools20022.repository.entity.Dividend.mmPaymentDate,
-						com.tools20022.repository.entity.Dividend.mmPaymentFrequency, com.tools20022.repository.entity.Dividend.mmReinvestmentDate, com.tools20022.repository.entity.Dividend.mmValue);
+						com.tools20022.repository.entity.Dividend.mmPaymentFrequency, com.tools20022.repository.entity.Dividend.mmReinvestmentDate, com.tools20022.repository.entity.Dividend.mmValue,
+						com.tools20022.repository.entity.Dividend.mmDeemedAmount, com.tools20022.repository.entity.Dividend.mmDeemedRate, com.tools20022.repository.entity.Dividend.mmConduitForeignIncomeAmount);
 			}
 
 			@Override
@@ -1428,7 +1739,7 @@ public class Dividend {
 		return finalDividend;
 	}
 
-	public Dividend setFinalDividend(com.tools20022.repository.entity.RateAndAmount finalDividend) {
+	public Dividend setFinalDividend(RateAndAmount finalDividend) {
 		this.finalDividend = Objects.requireNonNull(finalDividend);
 		return this;
 	}
@@ -1437,7 +1748,7 @@ public class Dividend {
 		return fullyFrankedRateAndAmount;
 	}
 
-	public Dividend setFullyFrankedRateAndAmount(com.tools20022.repository.entity.RateAndAmount fullyFrankedRateAndAmount) {
+	public Dividend setFullyFrankedRateAndAmount(RateAndAmount fullyFrankedRateAndAmount) {
 		this.fullyFrankedRateAndAmount = Objects.requireNonNull(fullyFrankedRateAndAmount);
 		return this;
 	}
@@ -1446,7 +1757,7 @@ public class Dividend {
 		return grossDividend;
 	}
 
-	public Dividend setGrossDividend(com.tools20022.repository.entity.RateAndAmount grossDividend) {
+	public Dividend setGrossDividend(RateAndAmount grossDividend) {
 		this.grossDividend = Objects.requireNonNull(grossDividend);
 		return this;
 	}
@@ -1464,7 +1775,7 @@ public class Dividend {
 		return netDividend;
 	}
 
-	public Dividend setNetDividend(com.tools20022.repository.entity.RateAndAmount netDividend) {
+	public Dividend setNetDividend(RateAndAmount netDividend) {
 		this.netDividend = Objects.requireNonNull(netDividend);
 		return this;
 	}
@@ -1473,7 +1784,7 @@ public class Dividend {
 		return provisionalDividend;
 	}
 
-	public Dividend setProvisionalDividend(com.tools20022.repository.entity.RateAndAmount provisionalDividend) {
+	public Dividend setProvisionalDividend(RateAndAmount provisionalDividend) {
 		this.provisionalDividend = Objects.requireNonNull(provisionalDividend);
 		return this;
 	}
@@ -1536,7 +1847,7 @@ public class Dividend {
 		return security == null ? security = new ArrayList<>() : security;
 	}
 
-	public Dividend setSecurity(List<com.tools20022.repository.entity.Security> security) {
+	public Dividend setSecurity(List<Security> security) {
 		this.security = Objects.requireNonNull(security);
 		return this;
 	}
@@ -1554,7 +1865,7 @@ public class Dividend {
 		return cashProceeds == null ? cashProceeds = new ArrayList<>() : cashProceeds;
 	}
 
-	public Dividend setCashProceeds(List<com.tools20022.repository.entity.CashProceedsDefinition> cashProceeds) {
+	public Dividend setCashProceeds(List<CashProceedsDefinition> cashProceeds) {
 		this.cashProceeds = Objects.requireNonNull(cashProceeds);
 		return this;
 	}
@@ -1563,7 +1874,7 @@ public class Dividend {
 		return obligation == null ? obligation = new ArrayList<>() : obligation;
 	}
 
-	public Dividend setObligation(List<com.tools20022.repository.entity.PaymentObligation> obligation) {
+	public Dividend setObligation(List<PaymentObligation> obligation) {
 		this.obligation = Objects.requireNonNull(obligation);
 		return this;
 	}
@@ -1572,7 +1883,7 @@ public class Dividend {
 		return tax;
 	}
 
-	public Dividend setTax(com.tools20022.repository.entity.Tax tax) {
+	public Dividend setTax(Tax tax) {
 		this.tax = Objects.requireNonNull(tax);
 		return this;
 	}
@@ -1581,7 +1892,7 @@ public class Dividend {
 		return relatedDistribution;
 	}
 
-	public Dividend setRelatedDistribution(com.tools20022.repository.entity.Distribution relatedDistribution) {
+	public Dividend setRelatedDistribution(Distribution relatedDistribution) {
 		this.relatedDistribution = Objects.requireNonNull(relatedDistribution);
 		return this;
 	}
@@ -1637,6 +1948,33 @@ public class Dividend {
 
 	public Dividend setValue(CurrencyAndAmount value) {
 		this.value = Objects.requireNonNull(value);
+		return this;
+	}
+
+	public RateAndAmount getDeemedAmount() {
+		return deemedAmount;
+	}
+
+	public Dividend setDeemedAmount(RateAndAmount deemedAmount) {
+		this.deemedAmount = Objects.requireNonNull(deemedAmount);
+		return this;
+	}
+
+	public PercentageRate getDeemedRate() {
+		return deemedRate;
+	}
+
+	public Dividend setDeemedRate(PercentageRate deemedRate) {
+		this.deemedRate = Objects.requireNonNull(deemedRate);
+		return this;
+	}
+
+	public RateAndAmount getConduitForeignIncomeAmount() {
+		return conduitForeignIncomeAmount;
+	}
+
+	public Dividend setConduitForeignIncomeAmount(RateAndAmount conduitForeignIncomeAmount) {
+		this.conduitForeignIncomeAmount = Objects.requireNonNull(conduitForeignIncomeAmount);
 		return this;
 	}
 }

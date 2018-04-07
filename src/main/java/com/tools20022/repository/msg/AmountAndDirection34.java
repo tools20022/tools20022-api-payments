@@ -109,7 +109,7 @@ public class AmountAndDirection34 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountAndDirection34, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<AmountAndDirection34, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CashEntry.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
@@ -121,6 +121,16 @@ public class AmountAndDirection34 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(AmountAndDirection34 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(AmountAndDirection34 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "Sgn", required = true)
@@ -153,7 +163,7 @@ public class AmountAndDirection34 {
 	 * definition} = "Indicates that the amount value is positive or negative."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSign = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountAndDirection34, PlusOrMinusIndicator> mmSign = new MMMessageAttribute<AmountAndDirection34, PlusOrMinusIndicator>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 			isDerived = false;
@@ -164,6 +174,16 @@ public class AmountAndDirection34 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> PlusOrMinusIndicator.mmObject();
+		}
+
+		@Override
+		public PlusOrMinusIndicator getValue(AmountAndDirection34 obj) {
+			return obj.getSign();
+		}
+
+		@Override
+		public void setValue(AmountAndDirection34 obj, PlusOrMinusIndicator value) {
+			obj.setSign(value);
 		}
 	};
 

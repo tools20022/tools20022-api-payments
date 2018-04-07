@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.entity.Product;
 import com.tools20022.repository.entity.ProductQuantity;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection34;
+import com.tools20022.repository.msg.BillingServiceIdentification2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -118,7 +120,7 @@ public class BillingServiceParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBankService = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceParameters2, BillingServiceIdentification2> mmBankService = new MMMessageAttribute<BillingServiceParameters2, BillingServiceIdentification2>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceParameters2.mmObject();
@@ -129,7 +131,17 @@ public class BillingServiceParameters2 {
 			definition = "Specifies the details to fully identify the bank service.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.BillingServiceIdentification2.mmObject();
+			complexType_lazy = () -> BillingServiceIdentification2.mmObject();
+		}
+
+		@Override
+		public BillingServiceIdentification2 getValue(BillingServiceParameters2 obj) {
+			return obj.getBankService();
+		}
+
+		@Override
+		public void setValue(BillingServiceParameters2 obj, BillingServiceIdentification2 value) {
+			obj.setBankService(value);
 		}
 	};
 	@XmlElement(name = "Vol")
@@ -168,7 +180,7 @@ public class BillingServiceParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVolume = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceParameters2, Optional<DecimalNumber>> mmVolume = new MMMessageAttribute<BillingServiceParameters2, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceParameters2.mmObject();
@@ -180,6 +192,16 @@ public class BillingServiceParameters2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(BillingServiceParameters2 obj) {
+			return obj.getVolume();
+		}
+
+		@Override
+		public void setValue(BillingServiceParameters2 obj, Optional<DecimalNumber> value) {
+			obj.setVolume(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "UnitPric")
@@ -217,7 +239,7 @@ public class BillingServiceParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUnitPrice = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServiceParameters2, Optional<AmountAndDirection34>> mmUnitPrice = new MMMessageAssociationEnd<BillingServiceParameters2, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceParameters2.mmObject();
@@ -229,7 +251,17 @@ public class BillingServiceParameters2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingServiceParameters2 obj) {
+			return obj.getUnitPrice();
+		}
+
+		@Override
+		public void setValue(BillingServiceParameters2 obj, Optional<AmountAndDirection34> value) {
+			obj.setUnitPrice(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "SvcChrgAmt", required = true)
@@ -267,7 +299,7 @@ public class BillingServiceParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmServiceChargeAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServiceParameters2, AmountAndDirection34> mmServiceChargeAmount = new MMMessageAssociationEnd<BillingServiceParameters2, AmountAndDirection34>() {
 		{
 			businessElementTrace_lazy = () -> AccountService.mmAccountAdministrationCharge;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceParameters2.mmObject();
@@ -279,7 +311,17 @@ public class BillingServiceParameters2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection34 getValue(BillingServiceParameters2 obj) {
+			return obj.getServiceChargeAmount();
+		}
+
+		@Override
+		public void setValue(BillingServiceParameters2 obj, AmountAndDirection34 value) {
+			obj.setServiceChargeAmount(value);
 		}
 	};
 
@@ -302,7 +344,7 @@ public class BillingServiceParameters2 {
 		return bankService;
 	}
 
-	public BillingServiceParameters2 setBankService(com.tools20022.repository.msg.BillingServiceIdentification2 bankService) {
+	public BillingServiceParameters2 setBankService(BillingServiceIdentification2 bankService) {
 		this.bankService = Objects.requireNonNull(bankService);
 		return this;
 	}
@@ -320,7 +362,7 @@ public class BillingServiceParameters2 {
 		return unitPrice == null ? Optional.empty() : Optional.of(unitPrice);
 	}
 
-	public BillingServiceParameters2 setUnitPrice(com.tools20022.repository.msg.AmountAndDirection34 unitPrice) {
+	public BillingServiceParameters2 setUnitPrice(AmountAndDirection34 unitPrice) {
 		this.unitPrice = unitPrice;
 		return this;
 	}
@@ -329,7 +371,7 @@ public class BillingServiceParameters2 {
 		return serviceChargeAmount;
 	}
 
-	public BillingServiceParameters2 setServiceChargeAmount(com.tools20022.repository.msg.AmountAndDirection34 serviceChargeAmount) {
+	public BillingServiceParameters2 setServiceChargeAmount(AmountAndDirection34 serviceChargeAmount) {
 		this.serviceChargeAmount = Objects.requireNonNull(serviceChargeAmount);
 		return this;
 	}

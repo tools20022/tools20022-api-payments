@@ -108,7 +108,7 @@ public class MandateSuspensionReason1Choice {
 	 * definition} = "Reason, as published in an external reason code list."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateSuspensionReason1Choice, ExternalMandateSuspensionReason1Code> mmCode = new MMMessageAttribute<MandateSuspensionReason1Choice, ExternalMandateSuspensionReason1Code>() {
 		{
 			businessElementTrace_lazy = () -> PaymentStatus.mmMandateRejectionReason;
 			componentContext_lazy = () -> com.tools20022.repository.choice.MandateSuspensionReason1Choice.mmObject();
@@ -120,6 +120,16 @@ public class MandateSuspensionReason1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalMandateSuspensionReason1Code.mmObject();
+		}
+
+		@Override
+		public ExternalMandateSuspensionReason1Code getValue(MandateSuspensionReason1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(MandateSuspensionReason1Choice obj, ExternalMandateSuspensionReason1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -156,7 +166,7 @@ public class MandateSuspensionReason1Choice {
 	 * definition} = "Reason, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateSuspensionReason1Choice, Max35Text> mmProprietary = new MMMessageAttribute<MandateSuspensionReason1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentStatus.mmMandateRejectionReason;
 			componentContext_lazy = () -> com.tools20022.repository.choice.MandateSuspensionReason1Choice.mmObject();
@@ -168,6 +178,16 @@ public class MandateSuspensionReason1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(MandateSuspensionReason1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(MandateSuspensionReason1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

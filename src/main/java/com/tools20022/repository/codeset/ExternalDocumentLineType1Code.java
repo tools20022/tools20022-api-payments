@@ -35,6 +35,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ExternalDocumentLineTypeCode
+ * ExternalDocumentLineTypeCode}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -80,6 +83,7 @@ public class ExternalDocumentLineType1Code extends MMCode {
 				name = "ExternalDocumentLineType1Code";
 				definition = "Specifies the document line type as published in an external document type code list.";
 				previousVersion_lazy = () -> ExternalDocumentType1Code.mmObject();
+				trace_lazy = () -> ExternalDocumentLineTypeCode.mmObject();
 				minLength = 1;
 				maxLength = 4;
 			}

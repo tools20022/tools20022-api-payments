@@ -114,7 +114,7 @@ public class Purpose2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Purpose2Choice, ExternalPurpose1Code> mmCode = new MMMessageAttribute<Purpose2Choice, ExternalPurpose1Code>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPurpose;
 			componentContext_lazy = () -> com.tools20022.repository.choice.Purpose2Choice.mmObject();
@@ -126,6 +126,16 @@ public class Purpose2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalPurpose1Code.mmObject();
+		}
+
+		@Override
+		public ExternalPurpose1Code getValue(Purpose2Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(Purpose2Choice obj, ExternalPurpose1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -162,7 +172,7 @@ public class Purpose2Choice {
 	 * definition} = "Purpose, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Purpose2Choice, Max35Text> mmProprietary = new MMMessageAttribute<Purpose2Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPurpose;
 			componentContext_lazy = () -> com.tools20022.repository.choice.Purpose2Choice.mmObject();
@@ -174,6 +184,16 @@ public class Purpose2Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(Purpose2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(Purpose2Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

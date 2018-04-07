@@ -116,7 +116,7 @@ public class DocumentIdentification29 {
 	 * DocumentIdentification28.mmIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentIdentification29, Max35Text> mmIdentification = new MMMessageAttribute<DocumentIdentification29, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentIdentification29.mmObject();
@@ -129,6 +129,16 @@ public class DocumentIdentification29 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(DocumentIdentification29 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(DocumentIdentification29 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "DtOfIsse", required = true)
@@ -170,7 +180,7 @@ public class DocumentIdentification29 {
 	 * DocumentIdentification28.mmDateOfIssue}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDateOfIssue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentIdentification29, ISODate> mmDateOfIssue = new MMMessageAttribute<DocumentIdentification29, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmIssueDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentIdentification29.mmObject();
@@ -183,6 +193,16 @@ public class DocumentIdentification29 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(DocumentIdentification29 obj) {
+			return obj.getDateOfIssue();
+		}
+
+		@Override
+		public void setValue(DocumentIdentification29 obj, ISODate value) {
+			obj.setDateOfIssue(value);
 		}
 	};
 

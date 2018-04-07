@@ -604,7 +604,7 @@ public class InvestmentFundTransactionTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Transaction is an InSpecie
+	 * Transaction is an InSpecie.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -621,14 +621,14 @@ public class InvestmentFundTransactionTypeCode extends MMCode {
 	 * name} = "InSpecie"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Transaction is an InSpecie"</li>
+	 * definition} = "Transaction is an InSpecie."</li>
 	 * </ul>
 	 */
 	public static final InvestmentFundTransactionTypeCode InSpecie = new InvestmentFundTransactionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InSpecie";
-			definition = "Transaction is an InSpecie";
+			definition = "Transaction is an InSpecie.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InvestmentFundTransactionTypeCode.mmObject();
 			codeName = "INSP";
 		}

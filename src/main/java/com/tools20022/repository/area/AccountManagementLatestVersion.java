@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Messages that support the management of account related activities, such as
- * the opening and maintenance of an account
+ * the opening and maintenance of an account.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -85,6 +85,39 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationReportV02
  * IdentificationVerificationReportV02}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchInformationResponseV01
+ * AccountSwitchInformationResponseV01}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchBalanceTransferAcknowledgementV01
+ * AccountSwitchBalanceTransferAcknowledgementV01}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchTechnicalRejectionV01
+ * AccountSwitchTechnicalRejectionV01}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchPaymentResponseV01
+ * AccountSwitchPaymentResponseV01}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchNotifyAccountSwitchCompleteV01
+ * AccountSwitchNotifyAccountSwitchCompleteV01}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchRequestBalanceTransferV01
+ * AccountSwitchRequestBalanceTransferV01}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchInformationRequestV01
+ * AccountSwitchInformationRequestV01}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchRequestRedirectionV01
+ * AccountSwitchRequestRedirectionV01}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchTerminationSwitchV01
+ * AccountSwitchTerminationSwitchV01}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchCancelExistingPaymentV01
+ * AccountSwitchCancelExistingPaymentV01}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchRequestPaymentV01
+ * AccountSwitchRequestPaymentV01}</li>
  * </ul>
  * </li>
  * <li>
@@ -100,7 +133,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Account Management - Latest version - master"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Messages that support the management of account related activities, such as the opening and maintenance of an account"
+ * "Messages that support the management of account related activities, such as the opening and maintenance of an account."
  * </li>
  * </ul>
  */
@@ -114,13 +147,16 @@ public class AccountManagementLatestVersion {
 				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Account Management - Latest version - master";
-				definition = "Messages that support the management of account related activities, such as the opening and maintenance of an account";
+				definition = "Messages that support the management of account related activities, such as the opening and maintenance of an account.";
+				code = "acmt";
 				messageDefinition_lazy = () -> Arrays.asList(AccountAdditionalInformationRequestV02.mmObject(), AccountClosingAdditionalInformationRequestV02.mmObject(), AccountClosingAmendmentRequestV02.mmObject(),
 						AccountClosingRequestV02.mmObject(), AccountExcludedMandateMaintenanceAmendmentRequestV02.mmObject(), AccountExcludedMandateMaintenanceRequestV02.mmObject(), AccountMandateMaintenanceAmendmentRequestV02.mmObject(),
 						AccountMandateMaintenanceRequestV02.mmObject(), AccountOpeningAdditionalInformationRequestV02.mmObject(), AccountOpeningAmendmentRequestV02.mmObject(), AccountOpeningRequestV02.mmObject(),
 						AccountReportRequestV02.mmObject(), AccountReportV02.mmObject(), AccountRequestAcknowledgementV02.mmObject(), AccountRequestRejectionV02.mmObject(), IdentificationModificationAdviceV02.mmObject(),
-						IdentificationVerificationRequestV02.mmObject(), IdentificationVerificationReportV02.mmObject());
-				code = "acmt";
+						IdentificationVerificationRequestV02.mmObject(), IdentificationVerificationReportV02.mmObject(), AccountSwitchInformationResponseV01.mmObject(), AccountSwitchBalanceTransferAcknowledgementV01.mmObject(),
+						AccountSwitchTechnicalRejectionV01.mmObject(), AccountSwitchPaymentResponseV01.mmObject(), AccountSwitchNotifyAccountSwitchCompleteV01.mmObject(), AccountSwitchRequestBalanceTransferV01.mmObject(),
+						AccountSwitchInformationRequestV01.mmObject(), AccountSwitchRequestRedirectionV01.mmObject(), AccountSwitchTerminationSwitchV01.mmObject(), AccountSwitchCancelExistingPaymentV01.mmObject(),
+						AccountSwitchRequestPaymentV01.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

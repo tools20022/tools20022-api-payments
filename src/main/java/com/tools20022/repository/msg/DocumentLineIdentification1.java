@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DocumentLineType1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -108,9 +109,14 @@ public class DocumentLineIdentification1 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Specifies the type of referred document line identification."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ReferredDocumentInformation3#mmType
+	 * ReferredDocumentInformation3.mmType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DocumentLineIdentification1, Optional<DocumentLineType1>> mmType = new MMMessageAssociationEnd<DocumentLineIdentification1, Optional<DocumentLineType1>>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentLineIdentification1.mmObject();
@@ -119,10 +125,21 @@ public class DocumentLineIdentification1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of referred document line identification.";
+			previousVersion_lazy = () -> ReferredDocumentInformation3.mmType;
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DocumentLineType1.mmObject();
+			type_lazy = () -> DocumentLineType1.mmObject();
+		}
+
+		@Override
+		public Optional<DocumentLineType1> getValue(DocumentLineIdentification1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(DocumentLineIdentification1 obj, Optional<DocumentLineType1> value) {
+			obj.setType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Nb")
@@ -152,20 +169,36 @@ public class DocumentLineIdentification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Identification of the type specified for the referred document line. "</li>
+	 * "Identification of the type specified for the referred document line."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ReferredDocumentInformation3#mmNumber
+	 * ReferredDocumentInformation3.mmNumber}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentLineIdentification1, Optional<Max35Text>> mmNumber = new MMMessageAttribute<DocumentLineIdentification1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentLineIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "Nb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Number";
-			definition = "Identification of the type specified for the referred document line. ";
+			definition = "Identification of the type specified for the referred document line.";
+			previousVersion_lazy = () -> ReferredDocumentInformation3.mmNumber;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(DocumentLineIdentification1 obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(DocumentLineIdentification1 obj, Optional<Max35Text> value) {
+			obj.setNumber(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "RltdDt")
@@ -200,9 +233,14 @@ public class DocumentLineIdentification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Date associated with the referred document line."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ReferredDocumentInformation3#mmRelatedDate
+	 * ReferredDocumentInformation3.mmRelatedDate}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRelatedDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentLineIdentification1, Optional<ISODate>> mmRelatedDate = new MMMessageAttribute<DocumentLineIdentification1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmIssueDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentLineIdentification1.mmObject();
@@ -211,9 +249,20 @@ public class DocumentLineIdentification1 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedDate";
 			definition = "Date associated with the referred document line.";
+			previousVersion_lazy = () -> ReferredDocumentInformation3.mmRelatedDate;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(DocumentLineIdentification1 obj) {
+			return obj.getRelatedDate();
+		}
+
+		@Override
+		public void setValue(DocumentLineIdentification1 obj, Optional<ISODate> value) {
+			obj.setRelatedDate(value.orElse(null));
 		}
 	};
 
@@ -236,7 +285,7 @@ public class DocumentLineIdentification1 {
 		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public DocumentLineIdentification1 setType(com.tools20022.repository.msg.DocumentLineType1 type) {
+	public DocumentLineIdentification1 setType(DocumentLineType1 type) {
 		this.type = type;
 		return this;
 	}

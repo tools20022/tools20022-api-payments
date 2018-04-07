@@ -20,9 +20,9 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LimitStatusCode;
+import com.tools20022.repository.entity.Limit;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -106,7 +106,7 @@ public class LimitStatus extends Status {
 	 * definition} = "Limit for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLimit = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LimitStatus, Optional<Limit>> mmLimit = new MMBusinessAssociationEnd<LimitStatus, Optional<Limit>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LimitStatus.mmObject();
@@ -118,6 +118,16 @@ public class LimitStatus extends Status {
 			opposite_lazy = () -> com.tools20022.repository.entity.Limit.mmLimitStatus;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
+		}
+
+		@Override
+		public Optional<Limit> getValue(LimitStatus obj) {
+			return obj.getLimit();
+		}
+
+		@Override
+		public void setValue(LimitStatus obj, Optional<Limit> value) {
+			obj.setLimit(value.orElse(null));
 		}
 	};
 	protected LimitStatusCode status;
@@ -157,7 +167,7 @@ public class LimitStatus extends Status {
 	 * definition} = "Current status of the limit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LimitStatus, LimitStatusCode> mmStatus = new MMBusinessAttribute<LimitStatus, LimitStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LimitStatus.mmObject();
@@ -176,12 +186,14 @@ public class LimitStatus extends Status {
 			simpleType_lazy = () -> LimitStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LimitStatus.class.getMethod("getStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LimitStatusCode getValue(LimitStatus obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(LimitStatus obj, LimitStatusCode value) {
+			obj.setStatus(value);
 		}
 	};
 

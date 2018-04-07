@@ -81,7 +81,7 @@ public class PriorityCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Priority level is urgent (highest priority possible)
+	 * Priority level is urgent (highest priority possible).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -97,14 +97,14 @@ public class PriorityCode extends MMCode {
 	 * name} = "Urgent"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Priority level is urgent (highest priority possible)"</li>
+	 * definition} = "Priority level is urgent (highest priority possible)."</li>
 	 * </ul>
 	 */
 	public static final PriorityCode Urgent = new PriorityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Urgent";
-			definition = "Priority level is urgent (highest priority possible)";
+			definition = "Priority level is urgent (highest priority possible).";
 			owner_lazy = () -> com.tools20022.repository.codeset.PriorityCode.mmObject();
 			codeName = "URGT";
 		}

@@ -42,6 +42,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * GenderCode.Female}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
+ * =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.codeset.Gender1Code Gender1Code}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -138,6 +144,7 @@ public class GenderCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GenderCode";
 				definition = "Specifies the gender of a person.";
+				derivation_lazy = () -> Arrays.asList(Gender1Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.GenderCode.Male, com.tools20022.repository.codeset.GenderCode.Female);
 			}
 		});

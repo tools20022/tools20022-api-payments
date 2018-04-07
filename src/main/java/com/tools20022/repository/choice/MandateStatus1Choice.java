@@ -107,7 +107,7 @@ public class MandateStatus1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateStatus1Choice, ExternalMandateStatus1Code> mmCode = new MMMessageAttribute<MandateStatus1Choice, ExternalMandateStatus1Code>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmCode;
 			componentContext_lazy = () -> com.tools20022.repository.choice.MandateStatus1Choice.mmObject();
@@ -119,6 +119,16 @@ public class MandateStatus1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalMandateStatus1Code.mmObject();
+		}
+
+		@Override
+		public ExternalMandateStatus1Code getValue(MandateStatus1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(MandateStatus1Choice obj, ExternalMandateStatus1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -155,7 +165,7 @@ public class MandateStatus1Choice {
 	 * definition} = "Name of the identification scheme, in a free text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MandateStatus1Choice, Max35Text> mmProprietary = new MMMessageAttribute<MandateStatus1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmCode;
 			componentContext_lazy = () -> com.tools20022.repository.choice.MandateStatus1Choice.mmObject();
@@ -167,6 +177,16 @@ public class MandateStatus1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(MandateStatus1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(MandateStatus1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

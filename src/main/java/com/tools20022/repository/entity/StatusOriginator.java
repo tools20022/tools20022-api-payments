@@ -22,8 +22,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.InvestigationPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.MandateSuspensionReason1;
-import com.tools20022.repository.msg.PaymentReturnReason1;
-import com.tools20022.repository.msg.PaymentReturnReason2;
+import com.tools20022.repository.msg.PaymentReturnReason3;
+import com.tools20022.repository.msg.PaymentReturnReason4;
 import com.tools20022.repository.msg.ValidationStatusReason1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -46,17 +46,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PaymentReturnReason2#mmOriginator
- * PaymentReturnReason2.mmOriginator}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PaymentReturnReason1#mmOriginator
- * PaymentReturnReason1.mmOriginator}</li>
- * <li>
  * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#mmOriginator
  * ValidationStatusReason1.mmOriginator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.MandateSuspensionReason1#mmOriginator
  * MandateSuspensionReason1.mmOriginator}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PaymentReturnReason4#mmOriginator
+ * PaymentReturnReason4.mmOriginator}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PaymentReturnReason3#mmOriginator
+ * PaymentReturnReason3.mmOriginator}</li>
  * </ul>
  * </li>
  * <li>
@@ -87,7 +87,7 @@ public class StatusOriginator extends InvestigationPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatusOriginator";
 				definition = "Provides the identification of the originator issuing the transaction reason.";
-				derivationElement_lazy = () -> Arrays.asList(PaymentReturnReason2.mmOriginator, PaymentReturnReason1.mmOriginator, ValidationStatusReason1.mmOriginator, MandateSuspensionReason1.mmOriginator);
+				derivationElement_lazy = () -> Arrays.asList(ValidationStatusReason1.mmOriginator, MandateSuspensionReason1.mmOriginator, PaymentReturnReason4.mmOriginator, PaymentReturnReason3.mmOriginator);
 				superType_lazy = () -> InvestigationPartyRole.mmObject();
 			}
 

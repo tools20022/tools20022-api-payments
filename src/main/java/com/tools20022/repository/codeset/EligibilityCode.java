@@ -67,7 +67,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "EligibilityCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Identifies  the type of investor. The rules that apply to each type of client are different."
+ * "Identifies the type of investor. The rules that apply to each type of client are different."
  * </li>
  * </ul>
  */
@@ -184,7 +184,7 @@ public class EligibilityCode extends MMCode {
 				example = Arrays.asList("ELIG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EligibilityCode";
-				definition = "Identifies  the type of investor. The rules that apply to each type of client are different.";
+				definition = "Identifies the type of investor. The rules that apply to each type of client are different.";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.EligibilityCode.EligibleCounterparty, com.tools20022.repository.codeset.EligibilityCode.RetailClient,
 						com.tools20022.repository.codeset.EligibilityCode.ProfessionalClient);
 			}

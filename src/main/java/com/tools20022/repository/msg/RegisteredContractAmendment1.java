@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.Agreement;
 import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DocumentIdentification28;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -121,7 +122,7 @@ public class RegisteredContractAmendment1 {
 	 * definition} = "Date of the amendment of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmendmentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContractAmendment1, ISODate> mmAmendmentDate = new MMMessageAttribute<RegisteredContractAmendment1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmSubmissionDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractAmendment1.mmObject();
@@ -133,6 +134,16 @@ public class RegisteredContractAmendment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(RegisteredContractAmendment1 obj) {
+			return obj.getAmendmentDate();
+		}
+
+		@Override
+		public void setValue(RegisteredContractAmendment1 obj, ISODate value) {
+			obj.setAmendmentDate(value);
 		}
 	};
 	@XmlElement(name = "Doc", required = true)
@@ -169,7 +180,7 @@ public class RegisteredContractAmendment1 {
 	 * definition} = "Reference of the amendment document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDocument = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RegisteredContractAmendment1, DocumentIdentification28> mmDocument = new MMMessageAssociationEnd<RegisteredContractAmendment1, DocumentIdentification28>() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDocument;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractAmendment1.mmObject();
@@ -181,7 +192,17 @@ public class RegisteredContractAmendment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DocumentIdentification28.mmObject();
+			type_lazy = () -> DocumentIdentification28.mmObject();
+		}
+
+		@Override
+		public DocumentIdentification28 getValue(RegisteredContractAmendment1 obj) {
+			return obj.getDocument();
+		}
+
+		@Override
+		public void setValue(RegisteredContractAmendment1 obj, DocumentIdentification28 value) {
+			obj.setDocument(value);
 		}
 	};
 	@XmlElement(name = "StartDt")
@@ -218,7 +239,7 @@ public class RegisteredContractAmendment1 {
 	 * definition} = "Date from which the amendment is applicable."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStartDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContractAmendment1, Optional<ISODate>> mmStartDate = new MMMessageAttribute<RegisteredContractAmendment1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDateSigned;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractAmendment1.mmObject();
@@ -230,6 +251,16 @@ public class RegisteredContractAmendment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(RegisteredContractAmendment1 obj) {
+			return obj.getStartDate();
+		}
+
+		@Override
+		public void setValue(RegisteredContractAmendment1 obj, Optional<ISODate> value) {
+			obj.setStartDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AmdmntRsn")
@@ -266,7 +297,7 @@ public class RegisteredContractAmendment1 {
 	 * definition} = "Reason for the amendment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmendmentReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContractAmendment1, Optional<Max35Text>> mmAmendmentReason = new MMMessageAttribute<RegisteredContractAmendment1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractAmendment1.mmObject();
@@ -278,6 +309,16 @@ public class RegisteredContractAmendment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(RegisteredContractAmendment1 obj) {
+			return obj.getAmendmentReason();
+		}
+
+		@Override
+		public void setValue(RegisteredContractAmendment1 obj, Optional<Max35Text> value) {
+			obj.setAmendmentReason(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AddtlInf")
@@ -309,7 +350,7 @@ public class RegisteredContractAmendment1 {
 	 * definition} = "Further details on the amendment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegisteredContractAmendment1, Optional<Max1025Text>> mmAdditionalInformation = new MMMessageAttribute<RegisteredContractAmendment1, Optional<Max1025Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.RegisteredContractAmendment1.mmObject();
 			isDerived = false;
@@ -320,6 +361,16 @@ public class RegisteredContractAmendment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max1025Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max1025Text> getValue(RegisteredContractAmendment1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(RegisteredContractAmendment1 obj, Optional<Max1025Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 
@@ -352,7 +403,7 @@ public class RegisteredContractAmendment1 {
 		return document;
 	}
 
-	public RegisteredContractAmendment1 setDocument(com.tools20022.repository.msg.DocumentIdentification28 document) {
+	public RegisteredContractAmendment1 setDocument(DocumentIdentification28 document) {
 		this.document = Objects.requireNonNull(document);
 		return this;
 	}

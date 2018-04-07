@@ -23,9 +23,9 @@ import com.tools20022.repository.codeset.LendingTransactionMethodCode;
 import com.tools20022.repository.codeset.ReversibleCode;
 import com.tools20022.repository.codeset.SecuritiesLendingTypeCode;
 import com.tools20022.repository.datatype.*;
+import com.tools20022.repository.entity.SecuritiesDeliveryObligation;
 import com.tools20022.repository.entity.SecuritiesFinancing;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -149,7 +149,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBorrowingFee = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, CurrencyAndAmount> mmBorrowingFee = new MMBusinessAttribute<SecuritiesLending, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -161,12 +161,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getBorrowingFee", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesLending obj) {
+			return obj.getBorrowingFee();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, CurrencyAndAmount value) {
+			obj.setBorrowingFee(value);
 		}
 	};
 	protected YesNoIndicator callableTradeIndicator;
@@ -196,7 +198,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * definition} = "Indicates whether the trade is callable or not."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCallableTradeIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, YesNoIndicator> mmCallableTradeIndicator = new MMBusinessAttribute<SecuritiesLending, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -208,12 +210,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getCallableTradeIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesLending obj) {
+			return obj.getCallableTradeIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, YesNoIndicator value) {
+			obj.setCallableTradeIndicator(value);
 		}
 	};
 	protected LendingTransactionMethodCode lendingTransactionMethod;
@@ -243,7 +247,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * definition} = "Method applied to a lending transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLendingTransactionMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, LendingTransactionMethodCode> mmLendingTransactionMethod = new MMBusinessAttribute<SecuritiesLending, LendingTransactionMethodCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -255,12 +259,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> LendingTransactionMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getLendingTransactionMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LendingTransactionMethodCode getValue(SecuritiesLending obj) {
+			return obj.getLendingTransactionMethod();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, LendingTransactionMethodCode value) {
+			obj.setLendingTransactionMethod(value);
 		}
 	};
 	protected BorrowingReasonCode borrowingReason;
@@ -292,7 +298,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBorrowingReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, BorrowingReasonCode> mmBorrowingReason = new MMBusinessAttribute<SecuritiesLending, BorrowingReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -304,12 +310,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> BorrowingReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getBorrowingReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BorrowingReasonCode getValue(SecuritiesLending obj) {
+			return obj.getBorrowingReason();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, BorrowingReasonCode value) {
+			obj.setBorrowingReason(value);
 		}
 	};
 	protected ReversibleCode reversible;
@@ -341,7 +349,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReversible = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, ReversibleCode> mmReversible = new MMBusinessAttribute<SecuritiesLending, ReversibleCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -353,12 +361,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> ReversibleCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getReversible", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ReversibleCode getValue(SecuritiesLending obj) {
+			return obj.getReversible();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, ReversibleCode value) {
+			obj.setReversible(value);
 		}
 	};
 	protected SecuritiesLendingTypeCode securitiesLendingType;
@@ -388,7 +398,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * definition} = "Type of securities lending."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSecuritiesLendingType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, SecuritiesLendingTypeCode> mmSecuritiesLendingType = new MMBusinessAttribute<SecuritiesLending, SecuritiesLendingTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -400,12 +410,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> SecuritiesLendingTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getSecuritiesLendingType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesLendingTypeCode getValue(SecuritiesLending obj) {
+			return obj.getSecuritiesLendingType();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, SecuritiesLendingTypeCode value) {
+			obj.setSecuritiesLendingType(value);
 		}
 	};
 	protected YesNoIndicator lendingWithCollateral;
@@ -437,7 +449,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLendingWithCollateral = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, YesNoIndicator> mmLendingWithCollateral = new MMBusinessAttribute<SecuritiesLending, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -449,12 +461,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getLendingWithCollateral", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesLending obj) {
+			return obj.getLendingWithCollateral();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, YesNoIndicator value) {
+			obj.setLendingWithCollateral(value);
 		}
 	};
 	protected ISODate minimumDateForCallBack;
@@ -485,7 +499,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumDateForCallBack = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, ISODate> mmMinimumDateForCallBack = new MMBusinessAttribute<SecuritiesLending, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -497,12 +511,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getMinimumDateForCallBack", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(SecuritiesLending obj) {
+			return obj.getMinimumDateForCallBack();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, ISODate value) {
+			obj.setMinimumDateForCallBack(value);
 		}
 	};
 	protected Max4NumericText numberOfDaysLendingBorrowing;
@@ -534,7 +550,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumberOfDaysLendingBorrowing = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, Max4NumericText> mmNumberOfDaysLendingBorrowing = new MMBusinessAttribute<SecuritiesLending, Max4NumericText>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -546,12 +562,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> Max4NumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getNumberOfDaysLendingBorrowing", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max4NumericText getValue(SecuritiesLending obj) {
+			return obj.getNumberOfDaysLendingBorrowing();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, Max4NumericText value) {
+			obj.setNumberOfDaysLendingBorrowing(value);
 		}
 	};
 	protected YesNoIndicator periodicPayment;
@@ -583,7 +601,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPeriodicPayment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, YesNoIndicator> mmPeriodicPayment = new MMBusinessAttribute<SecuritiesLending, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -595,12 +613,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getPeriodicPayment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesLending obj) {
+			return obj.getPeriodicPayment();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, YesNoIndicator value) {
+			obj.setPeriodicPayment(value);
 		}
 	};
 	protected YesNoIndicator rollover;
@@ -630,7 +650,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * definition} = "Indicates that the contract can be rolled over."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRollover = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, YesNoIndicator> mmRollover = new MMBusinessAttribute<SecuritiesLending, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -642,12 +662,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getRollover", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesLending obj) {
+			return obj.getRollover();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, YesNoIndicator value) {
+			obj.setRollover(value);
 		}
 	};
 	protected PercentageRate borrowingRate;
@@ -678,7 +700,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * "Rate paid by the borrower to the lender for the securities borrowed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBorrowingRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesLending, PercentageRate> mmBorrowingRate = new MMBusinessAttribute<SecuritiesLending, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -690,12 +712,14 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesLending.class.getMethod("getBorrowingRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(SecuritiesLending obj) {
+			return obj.getBorrowingRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, PercentageRate value) {
+			obj.setBorrowingRate(value);
 		}
 	};
 	protected SecuritiesDeliveryObligation securitiesDeliveryObligation;
@@ -733,7 +757,7 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * definition} = "Obligation covered by the lending of securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesLending, com.tools20022.repository.entity.SecuritiesDeliveryObligation> mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd<SecuritiesLending, com.tools20022.repository.entity.SecuritiesDeliveryObligation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
@@ -745,6 +769,16 @@ public class SecuritiesLending extends SecuritiesFinancing {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmSecuritiesLending;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesDeliveryObligation getValue(SecuritiesLending obj) {
+			return obj.getSecuritiesDeliveryObligation();
+		}
+
+		@Override
+		public void setValue(SecuritiesLending obj, com.tools20022.repository.entity.SecuritiesDeliveryObligation value) {
+			obj.setSecuritiesDeliveryObligation(value);
 		}
 	};
 

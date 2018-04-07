@@ -51,7 +51,7 @@ public class ConstraintRegionPresenceRule {
 	 * "If Region is present, then Code must be equal to ZeroRate or Taxable."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forServiceTaxDesignation1 = new MMConstraint() {
+	public static final MMConstraint<ServiceTaxDesignation1> forServiceTaxDesignation1 = new MMConstraint<ServiceTaxDesignation1>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RegionPresenceRule";
@@ -61,8 +61,8 @@ public class ConstraintRegionPresenceRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkServiceTaxDesignation1((ServiceTaxDesignation1) obj);
+		public void executeValidator(ServiceTaxDesignation1 obj) throws Exception {
+			checkServiceTaxDesignation1(obj);
 		}
 	};
 

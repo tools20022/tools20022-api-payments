@@ -25,7 +25,6 @@ import com.tools20022.repository.area.CashManagementLatestVersion;
 import com.tools20022.repository.msg.GroupHeader59;
 import com.tools20022.repository.msg.OriginalNotification10;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -115,7 +114,7 @@ public class NotificationToReceiveCancellationAdviceV05 {
 	 * "Set of elements used to provide further details on the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationToReceiveCancellationAdviceV05, GroupHeader59> mmGroupHeader = new MMMessageBuildingBlock<NotificationToReceiveCancellationAdviceV05, GroupHeader59>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,12 +125,14 @@ public class NotificationToReceiveCancellationAdviceV05 {
 			complexType_lazy = () -> GroupHeader59.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationToReceiveCancellationAdviceV05.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader59 getValue(NotificationToReceiveCancellationAdviceV05 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(NotificationToReceiveCancellationAdviceV05 obj, GroupHeader59 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "OrgnlNtfctn", required = true)
@@ -161,7 +162,7 @@ public class NotificationToReceiveCancellationAdviceV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOriginalNotification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationToReceiveCancellationAdviceV05, OriginalNotification10> mmOriginalNotification = new MMMessageBuildingBlock<NotificationToReceiveCancellationAdviceV05, OriginalNotification10>() {
 		{
 			xmlTag = "OrgnlNtfctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,12 +173,14 @@ public class NotificationToReceiveCancellationAdviceV05 {
 			complexType_lazy = () -> OriginalNotification10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationToReceiveCancellationAdviceV05.class.getMethod("getOriginalNotification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OriginalNotification10 getValue(NotificationToReceiveCancellationAdviceV05 obj) {
+			return obj.getOriginalNotification();
+		}
+
+		@Override
+		public void setValue(NotificationToReceiveCancellationAdviceV05 obj, OriginalNotification10 value) {
+			obj.setOriginalNotification(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -207,7 +210,7 @@ public class NotificationToReceiveCancellationAdviceV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationToReceiveCancellationAdviceV05, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<NotificationToReceiveCancellationAdviceV05, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,12 +220,14 @@ public class NotificationToReceiveCancellationAdviceV05 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationToReceiveCancellationAdviceV05.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(NotificationToReceiveCancellationAdviceV05 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(NotificationToReceiveCancellationAdviceV05 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

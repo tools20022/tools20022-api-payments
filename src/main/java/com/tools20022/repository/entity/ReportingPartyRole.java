@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.RegulatoryReport;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
@@ -107,7 +108,7 @@ public class ReportingPartyRole extends Role {
 	 * definition} = "Report provided by the reporting party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRegulatoryReport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ReportingPartyRole, com.tools20022.repository.entity.RegulatoryReport> mmRegulatoryReport = new MMBusinessAssociationEnd<ReportingPartyRole, com.tools20022.repository.entity.RegulatoryReport>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingPartyRole.mmObject();
@@ -119,6 +120,16 @@ public class ReportingPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmReportingPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.RegulatoryReport getValue(ReportingPartyRole obj) {
+			return obj.getRegulatoryReport();
+		}
+
+		@Override
+		public void setValue(ReportingPartyRole obj, com.tools20022.repository.entity.RegulatoryReport value) {
+			obj.setRegulatoryReport(value);
 		}
 	};
 

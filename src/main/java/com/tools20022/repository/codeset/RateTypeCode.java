@@ -705,7 +705,7 @@ public class RateTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Rate relating to the underlying security which is not taxable
+	 * Rate relating to the underlying security which is not taxable.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -722,14 +722,14 @@ public class RateTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Rate relating to the underlying security which is not taxable"</li>
+	 * "Rate relating to the underlying security which is not taxable."</li>
 	 * </ul>
 	 */
 	public static final RateTypeCode TaxFeeAmount = new RateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxFeeAmount";
-			definition = "Rate relating to the underlying security which is not taxable";
+			definition = "Rate relating to the underlying security which is not taxable.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RateTypeCode.mmObject();
 			codeName = "TXFR";
 		}

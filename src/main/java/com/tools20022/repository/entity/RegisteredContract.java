@@ -23,10 +23,9 @@ import com.tools20022.repository.codeset.CommunicationMethodCode;
 import com.tools20022.repository.codeset.PriorityCode;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
-import com.tools20022.repository.entity.Contract;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -288,7 +287,7 @@ public class RegisteredContract extends Contract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegisteredContract, GenericIdentification> mmCertificate = new MMBusinessAssociationEnd<RegisteredContract, GenericIdentification>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocument1.mmCertificate, RegulatoryReportingNotification1.mmTransactionCertificate);
 			isDerived = false;
@@ -298,9 +297,19 @@ public class RegisteredContract extends Contract {
 			definition = "Certificate against which all transactions in the scope of the regulatory requirements are registered.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmRelatedCertificate;
+			opposite_lazy = () -> GenericIdentification.mmRelatedCertificate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
+			type_lazy = () -> GenericIdentification.mmObject();
+		}
+
+		@Override
+		public GenericIdentification getValue(RegisteredContract obj) {
+			return obj.getCertificate();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, GenericIdentification value) {
+			obj.setCertificate(value);
 		}
 	};
 	protected CashBalance contractBalance;
@@ -354,7 +363,7 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Contract balance on date of contract registration."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmContractBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegisteredContract, CashBalance> mmContractBalance = new MMBusinessAssociationEnd<RegisteredContract, CashBalance>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmContractBalance, ContractRegistration2.mmContractBalance, RegisteredContract5.mmContractBalance, RegisteredContract3.mmContractBalance);
 			isDerived = false;
@@ -364,9 +373,19 @@ public class RegisteredContract extends Contract {
 			definition = "Contract balance on date of contract registration.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashBalance.mmRelatedRegisteredContract;
+			opposite_lazy = () -> CashBalance.mmRelatedRegisteredContract;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashBalance.mmObject();
+			type_lazy = () -> CashBalance.mmObject();
+		}
+
+		@Override
+		public CashBalance getValue(RegisteredContract obj) {
+			return obj.getContractBalance();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, CashBalance value) {
+			obj.setContractBalance(value);
 		}
 	};
 	protected RegulatoryReportingRole reportingParty;
@@ -438,7 +457,7 @@ public class RegisteredContract extends Contract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReportingParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegisteredContract, RegulatoryReportingRole> mmReportingParty = new MMBusinessAssociationEnd<RegisteredContract, RegulatoryReportingRole>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmReportingParty, ContractRegistration1.mmReportingParty, RegisteredContract2.mmReportingParty, ContractRegistrationStatement1.mmReportingParty,
 					CurrencyControlGroupStatus1.mmReportingParty, ContractRegistrationStatementRequest1.mmReportingParty, RegisteredContract1.mmReportingParty, SupportingDocument1.mmAccountOwner,
@@ -450,9 +469,19 @@ public class RegisteredContract extends Contract {
 			definition = "Party which must register the contract for regulatory reporting reasons.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedReportingParty;
+			opposite_lazy = () -> RegulatoryReportingRole.mmRelatedReportingParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
+			type_lazy = () -> RegulatoryReportingRole.mmObject();
+		}
+
+		@Override
+		public RegulatoryReportingRole getValue(RegisteredContract obj) {
+			return obj.getReportingParty();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, RegulatoryReportingRole value) {
+			obj.setReportingParty(value);
 		}
 	};
 	protected Max35Text identification;
@@ -540,7 +569,7 @@ public class RegisteredContract extends Contract {
 	 * "Unique and unambiguous identification of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegisteredContract, Max35Text> mmIdentification = new MMBusinessAttribute<RegisteredContract, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmRegisteredContractIdentification, RegisteredContract4.mmPreviousRegisteredContractIdentification, ContractRegistration1.mmContractRegistrationIdentification,
 					RegisteredContract2.mmRegisteredContractClosureIdentification, RegisteredContract2.mmOriginalRegisteredContract, ContractRegistrationStatementRequest1.mmRegisteredContractIdentification,
@@ -558,12 +587,14 @@ public class RegisteredContract extends Contract {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegisteredContract.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(RegisteredContract obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected ISODate deliveryDate;
@@ -593,7 +624,7 @@ public class RegisteredContract extends Contract {
 	 * "Provides the date for the delivery of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDeliveryDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegisteredContract, ISODate> mmDeliveryDate = new MMBusinessAttribute<RegisteredContract, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
@@ -605,12 +636,14 @@ public class RegisteredContract extends Contract {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegisteredContract.class.getMethod("getDeliveryDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(RegisteredContract obj) {
+			return obj.getDeliveryDate();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, ISODate value) {
+			obj.setDeliveryDate(value);
 		}
 	};
 	protected RegulatoryReportingRole registrationAgent;
@@ -690,7 +723,7 @@ public class RegisteredContract extends Contract {
 	 * "Agent which is in charge of the registration of the contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRegistrationAgent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegisteredContract, RegulatoryReportingRole> mmRegistrationAgent = new MMBusinessAssociationEnd<RegisteredContract, RegulatoryReportingRole>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmRegistrationAgent, RegisteredContract4.mmIssuerFinancialInstitution, ContractRegistration1.mmRegistrationAgent, RegisteredContract2.mmRegistrationAgent,
 					ContractRegistrationStatement1.mmRegistrationAgent, CurrencyControlGroupStatus1.mmRegistrationAgent, ContractRegistrationStatementRequest1.mmRegistrationAgent, RegisteredContract1.mmRegistrationAgent,
@@ -702,9 +735,19 @@ public class RegisteredContract extends Contract {
 			definition = "Agent which is in charge of the registration of the contract.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedRegistrationAgent;
+			opposite_lazy = () -> RegulatoryReportingRole.mmRelatedRegistrationAgent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
+			type_lazy = () -> RegulatoryReportingRole.mmObject();
+		}
+
+		@Override
+		public RegulatoryReportingRole getValue(RegisteredContract obj) {
+			return obj.getRegistrationAgent();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, RegulatoryReportingRole value) {
+			obj.setRegistrationAgent(value);
 		}
 	};
 	protected RegulatoryReportingRole receivingParty;
@@ -752,7 +795,7 @@ public class RegisteredContract extends Contract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReceivingParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegisteredContract, RegulatoryReportingRole> mmReceivingParty = new MMBusinessAssociationEnd<RegisteredContract, RegulatoryReportingRole>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmReceiver);
 			isDerived = false;
@@ -762,9 +805,19 @@ public class RegisteredContract extends Contract {
 			definition = "Party which receives support information about the registered contract.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedReceivingParty;
+			opposite_lazy = () -> RegulatoryReportingRole.mmRelatedReceivingParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
+			type_lazy = () -> RegulatoryReportingRole.mmObject();
+		}
+
+		@Override
+		public RegulatoryReportingRole getValue(RegisteredContract obj) {
+			return obj.getReceivingParty();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, RegulatoryReportingRole value) {
+			obj.setReceivingParty(value);
 		}
 	};
 	protected PriorityCode priority;
@@ -807,7 +860,7 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Priority requested for the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPriority = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegisteredContract, PriorityCode> mmPriority = new MMBusinessAttribute<RegisteredContract, PriorityCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract2.mmPriority, ContractRegistration2.mmPriority, RegisteredContract3.mmPriority);
 			isDerived = false;
@@ -820,12 +873,14 @@ public class RegisteredContract extends Contract {
 			simpleType_lazy = () -> PriorityCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegisteredContract.class.getMethod("getPriority", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PriorityCode getValue(RegisteredContract obj) {
+			return obj.getPriority();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, PriorityCode value) {
+			obj.setPriority(value);
 		}
 	};
 	protected ISODate registrationDate;
@@ -855,7 +910,7 @@ public class RegisteredContract extends Contract {
 	 * "Provides the date for the registration of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRegistrationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegisteredContract, ISODate> mmRegistrationDate = new MMBusinessAttribute<RegisteredContract, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
@@ -867,12 +922,14 @@ public class RegisteredContract extends Contract {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegisteredContract.class.getMethod("getRegistrationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(RegisteredContract obj) {
+			return obj.getRegistrationDate();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, ISODate value) {
+			obj.setRegistrationDate(value);
 		}
 	};
 	protected StatusReason closureReason;
@@ -920,7 +977,7 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Reason of closure of the contract. "</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmClosureReason = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegisteredContract, StatusReason> mmClosureReason = new MMBusinessAssociationEnd<RegisteredContract, StatusReason>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract2.mmClosureReason, RegisteredContractJournal1.mmClosureReason);
 			isDerived = false;
@@ -930,9 +987,19 @@ public class RegisteredContract extends Contract {
 			definition = "Reason of closure of the contract. ";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.StatusReason.mmRelatedClosureReason;
+			opposite_lazy = () -> StatusReason.mmRelatedClosureReason;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
+			type_lazy = () -> StatusReason.mmObject();
+		}
+
+		@Override
+		public StatusReason getValue(RegisteredContract obj) {
+			return obj.getClosureReason();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, StatusReason value) {
+			obj.setClosureReason(value);
 		}
 	};
 	protected ISODate closureDate;
@@ -961,7 +1028,7 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Date of closure of the contract. "</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClosureDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegisteredContract, ISODate> mmClosureDate = new MMBusinessAttribute<RegisteredContract, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
@@ -973,12 +1040,14 @@ public class RegisteredContract extends Contract {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegisteredContract.class.getMethod("getClosureDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(RegisteredContract obj) {
+			return obj.getClosureDate();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, ISODate value) {
+			obj.setClosureDate(value);
 		}
 	};
 	protected PaymentTerms paymentScheduleType;
@@ -1032,7 +1101,7 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Type of the payment schedule provided in the contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPaymentScheduleType = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegisteredContract, PaymentTerms> mmPaymentScheduleType = new MMBusinessAssociationEnd<RegisteredContract, PaymentTerms>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmPaymentScheduleType, ContractRegistration2.mmPaymentScheduleType, RegisteredContract5.mmPaymentScheduleType, RegisteredContract3.mmPaymentScheduleType);
 			isDerived = false;
@@ -1042,9 +1111,19 @@ public class RegisteredContract extends Contract {
 			definition = "Type of the payment schedule provided in the contract.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmRelatedPaymentScheduleType;
+			opposite_lazy = () -> PaymentTerms.mmRelatedPaymentScheduleType;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
+			type_lazy = () -> PaymentTerms.mmObject();
+		}
+
+		@Override
+		public PaymentTerms getValue(RegisteredContract obj) {
+			return obj.getPaymentScheduleType();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, PaymentTerms value) {
+			obj.setPaymentScheduleType(value);
 		}
 	};
 	protected ISODate submissionDate;
@@ -1082,7 +1161,7 @@ public class RegisteredContract extends Contract {
 	 * "Provides the date for the submission of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSubmissionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegisteredContract, ISODate> mmSubmissionDate = new MMBusinessAttribute<RegisteredContract, ISODate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContractAmendment1.mmAmendmentDate);
 			isDerived = false;
@@ -1095,12 +1174,14 @@ public class RegisteredContract extends Contract {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegisteredContract.class.getMethod("getSubmissionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(RegisteredContract obj) {
+			return obj.getSubmissionDate();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, ISODate value) {
+			obj.setSubmissionDate(value);
 		}
 	};
 	protected RegulatoryReportingRole sendingParty;
@@ -1147,7 +1228,7 @@ public class RegisteredContract extends Contract {
 	 * "Party which sends support information about the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSendingParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegisteredContract, RegulatoryReportingRole> mmSendingParty = new MMBusinessAssociationEnd<RegisteredContract, RegulatoryReportingRole>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmSender);
 			isDerived = false;
@@ -1157,9 +1238,19 @@ public class RegisteredContract extends Contract {
 			definition = "Party which sends support information about the registered contract.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedSendingParty;
+			opposite_lazy = () -> RegulatoryReportingRole.mmRelatedSendingParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
+			type_lazy = () -> RegulatoryReportingRole.mmObject();
+		}
+
+		@Override
+		public RegulatoryReportingRole getValue(RegisteredContract obj) {
+			return obj.getSendingParty();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, RegulatoryReportingRole value) {
+			obj.setSendingParty(value);
 		}
 	};
 	protected CommunicationMethodCode deliveryMethod;
@@ -1202,7 +1293,7 @@ public class RegisteredContract extends Contract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDeliveryMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegisteredContract, CommunicationMethodCode> mmDeliveryMethod = new MMBusinessAttribute<RegisteredContract, CommunicationMethodCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmDelivery, RegisteredContract5.mmDelivery);
 			isDerived = false;
@@ -1215,12 +1306,14 @@ public class RegisteredContract extends Contract {
 			simpleType_lazy = () -> CommunicationMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegisteredContract.class.getMethod("getDeliveryMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CommunicationMethodCode getValue(RegisteredContract obj) {
+			return obj.getDeliveryMethod();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, CommunicationMethodCode value) {
+			obj.setDeliveryMethod(value);
 		}
 	};
 	protected CommunicationMethodCode submissionMethod;
@@ -1263,7 +1356,7 @@ public class RegisteredContract extends Contract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSubmissionMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegisteredContract, CommunicationMethodCode> mmSubmissionMethod = new MMBusinessAttribute<RegisteredContract, CommunicationMethodCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmSubmission, RegisteredContract5.mmSubmission);
 			isDerived = false;
@@ -1276,12 +1369,14 @@ public class RegisteredContract extends Contract {
 			simpleType_lazy = () -> CommunicationMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegisteredContract.class.getMethod("getSubmissionMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CommunicationMethodCode getValue(RegisteredContract obj) {
+			return obj.getSubmissionMethod();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, CommunicationMethodCode value) {
+			obj.setSubmissionMethod(value);
 		}
 	};
 	protected Payment relatedPayment;
@@ -1317,7 +1412,7 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Provides the payment related of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegisteredContract, Payment> mmRelatedPayment = new MMBusinessAssociationEnd<RegisteredContract, Payment>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
@@ -1326,9 +1421,19 @@ public class RegisteredContract extends Contract {
 			definition = "Provides the payment related of the registered contract.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Payment.mmContractRegistration;
+			opposite_lazy = () -> Payment.mmContractRegistration;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Payment.mmObject();
+			type_lazy = () -> Payment.mmObject();
+		}
+
+		@Override
+		public Payment getValue(RegisteredContract obj) {
+			return obj.getRelatedPayment();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, Payment value) {
+			obj.setRelatedPayment(value);
 		}
 	};
 	protected Document attachment;
@@ -1390,7 +1495,7 @@ public class RegisteredContract extends Contract {
 	 * "Documents provided as attachments to the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAttachment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegisteredContract, com.tools20022.repository.entity.Document> mmAttachment = new MMBusinessAssociationEnd<RegisteredContract, com.tools20022.repository.entity.Document>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmAttachment, SupportingDocumentEntry1.mmAttachment, ContractRegistration2.mmAttachment, TradeContract1.mmAttachment,
 					TransactionCertificateRecord1.mmAttachment, RegisteredContract3.mmAttachment, LoanContract1.mmAttachment);
@@ -1405,6 +1510,16 @@ public class RegisteredContract extends Contract {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Document getValue(RegisteredContract obj) {
+			return obj.getAttachment();
+		}
+
+		@Override
+		public void setValue(RegisteredContract obj, com.tools20022.repository.entity.Document value) {
+			obj.setAttachment(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -1414,11 +1529,9 @@ public class RegisteredContract extends Contract {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegisteredContract";
 				definition = "Contract registered for regulatory purpose by a registration agent for the journaling of payments made against the contract.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmRelatedCertificate, com.tools20022.repository.entity.Document.mmRelatedContract,
-						com.tools20022.repository.entity.Payment.mmContractRegistration, com.tools20022.repository.entity.StatusReason.mmRelatedClosureReason, com.tools20022.repository.entity.CashBalance.mmRelatedRegisteredContract,
-						com.tools20022.repository.entity.PaymentTerms.mmRelatedPaymentScheduleType, com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedReportingParty,
-						com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedRegistrationAgent, com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedReceivingParty,
-						com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedSendingParty);
+				associationDomain_lazy = () -> Arrays.asList(GenericIdentification.mmRelatedCertificate, com.tools20022.repository.entity.Document.mmRelatedContract, Payment.mmContractRegistration, StatusReason.mmRelatedClosureReason,
+						CashBalance.mmRelatedRegisteredContract, PaymentTerms.mmRelatedPaymentScheduleType, RegulatoryReportingRole.mmRelatedReportingParty, RegulatoryReportingRole.mmRelatedRegistrationAgent,
+						RegulatoryReportingRole.mmRelatedReceivingParty, RegulatoryReportingRole.mmRelatedSendingParty);
 				derivationElement_lazy = () -> Arrays.asList(RegisteredContract4.mmRegisteredContractJournal, RegisteredContract4.mmAmendment, ContractRegistration1.mmContractRegistrationOpening,
 						ContractRegistrationStatement1.mmRegisteredContract, ContractRegistrationStatement1.mmSupportingDocumentJournal, ContractRegistrationStatement1.mmAdditionalSupportingDocumentJournal,
 						RegisteredContract1.mmRegisteredContractAmendment, TransactionCertificate1.mmAmendment, TransactionCertificate1.mmCertificateRecord, SupportingDocument1.mmAmendment, RegisteredContract5.mmRegisteredContractJournal,
@@ -1449,7 +1562,7 @@ public class RegisteredContract extends Contract {
 		return certificate;
 	}
 
-	public RegisteredContract setCertificate(com.tools20022.repository.entity.GenericIdentification certificate) {
+	public RegisteredContract setCertificate(GenericIdentification certificate) {
 		this.certificate = Objects.requireNonNull(certificate);
 		return this;
 	}
@@ -1458,7 +1571,7 @@ public class RegisteredContract extends Contract {
 		return contractBalance;
 	}
 
-	public RegisteredContract setContractBalance(com.tools20022.repository.entity.CashBalance contractBalance) {
+	public RegisteredContract setContractBalance(CashBalance contractBalance) {
 		this.contractBalance = Objects.requireNonNull(contractBalance);
 		return this;
 	}
@@ -1467,7 +1580,7 @@ public class RegisteredContract extends Contract {
 		return reportingParty;
 	}
 
-	public RegisteredContract setReportingParty(com.tools20022.repository.entity.RegulatoryReportingRole reportingParty) {
+	public RegisteredContract setReportingParty(RegulatoryReportingRole reportingParty) {
 		this.reportingParty = Objects.requireNonNull(reportingParty);
 		return this;
 	}
@@ -1494,7 +1607,7 @@ public class RegisteredContract extends Contract {
 		return registrationAgent;
 	}
 
-	public RegisteredContract setRegistrationAgent(com.tools20022.repository.entity.RegulatoryReportingRole registrationAgent) {
+	public RegisteredContract setRegistrationAgent(RegulatoryReportingRole registrationAgent) {
 		this.registrationAgent = Objects.requireNonNull(registrationAgent);
 		return this;
 	}
@@ -1503,7 +1616,7 @@ public class RegisteredContract extends Contract {
 		return receivingParty;
 	}
 
-	public RegisteredContract setReceivingParty(com.tools20022.repository.entity.RegulatoryReportingRole receivingParty) {
+	public RegisteredContract setReceivingParty(RegulatoryReportingRole receivingParty) {
 		this.receivingParty = Objects.requireNonNull(receivingParty);
 		return this;
 	}
@@ -1530,7 +1643,7 @@ public class RegisteredContract extends Contract {
 		return closureReason;
 	}
 
-	public RegisteredContract setClosureReason(com.tools20022.repository.entity.StatusReason closureReason) {
+	public RegisteredContract setClosureReason(StatusReason closureReason) {
 		this.closureReason = Objects.requireNonNull(closureReason);
 		return this;
 	}
@@ -1548,7 +1661,7 @@ public class RegisteredContract extends Contract {
 		return paymentScheduleType;
 	}
 
-	public RegisteredContract setPaymentScheduleType(com.tools20022.repository.entity.PaymentTerms paymentScheduleType) {
+	public RegisteredContract setPaymentScheduleType(PaymentTerms paymentScheduleType) {
 		this.paymentScheduleType = Objects.requireNonNull(paymentScheduleType);
 		return this;
 	}
@@ -1566,7 +1679,7 @@ public class RegisteredContract extends Contract {
 		return sendingParty;
 	}
 
-	public RegisteredContract setSendingParty(com.tools20022.repository.entity.RegulatoryReportingRole sendingParty) {
+	public RegisteredContract setSendingParty(RegulatoryReportingRole sendingParty) {
 		this.sendingParty = Objects.requireNonNull(sendingParty);
 		return this;
 	}
@@ -1593,7 +1706,7 @@ public class RegisteredContract extends Contract {
 		return relatedPayment;
 	}
 
-	public RegisteredContract setRelatedPayment(com.tools20022.repository.entity.Payment relatedPayment) {
+	public RegisteredContract setRelatedPayment(Payment relatedPayment) {
 		this.relatedPayment = Objects.requireNonNull(relatedPayment);
 		return this;
 	}

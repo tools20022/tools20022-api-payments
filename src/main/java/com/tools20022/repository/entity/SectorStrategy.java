@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.PortfolioStrategy;
+import com.tools20022.repository.entity.Sector;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -108,7 +109,7 @@ public class SectorStrategy extends PortfolioStrategy {
 	 * "Sector of business of the organisation, for example, pharmaceutical."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSector = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SectorStrategy, List<Sector>> mmSector = new MMBusinessAssociationEnd<SectorStrategy, List<Sector>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SectorStrategy.mmObject();
@@ -119,6 +120,16 @@ public class SectorStrategy extends PortfolioStrategy {
 			opposite_lazy = () -> com.tools20022.repository.entity.Sector.mmStrategy;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Sector.mmObject();
+		}
+
+		@Override
+		public List<Sector> getValue(SectorStrategy obj) {
+			return obj.getSector();
+		}
+
+		@Override
+		public void setValue(SectorStrategy obj, List<Sector> value) {
+			obj.setSector(value);
 		}
 	};
 

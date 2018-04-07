@@ -213,7 +213,7 @@ public class FinancialCenterCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Code for Brussels
+	 * Code for Brussels.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -230,20 +230,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Brussels"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Brussels"</li>
+	 * definition} = "Code for Brussels."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Brussels = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Brussels";
-			definition = "Code for Brussels";
+			definition = "Code for Brussels.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "BEBR";
 		}
 	};
 	/**
-	 * Code for Buenos Aires
+	 * Code for Buenos Aires.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -260,20 +260,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "BuenosAires"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Buenos Aires"</li>
+	 * definition} = "Code for Buenos Aires."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode BuenosAires = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuenosAires";
-			definition = "Code for Buenos Aires";
+			definition = "Code for Buenos Aires.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "ARBA";
 		}
 	};
 	/**
-	 * Code for Vienna
+	 * Code for Vienna.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -290,20 +290,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Vienna"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Vienna"</li>
+	 * definition} = "Code for Vienna."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Vienna = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Vienna";
-			definition = "Code for Vienna";
+			definition = "Code for Vienna.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "ATVI";
 		}
 	};
 	/**
-	 * Code for Melbourne
+	 * Code for Melbourne.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -320,20 +320,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Melbourne"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Melbourne"</li>
+	 * definition} = "Code for Melbourne."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Melbourne = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Melbourne";
-			definition = "Code for Melbourne";
+			definition = "Code for Melbourne.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "AUME";
 		}
 	};
 	/**
-	 * Code for Sydney
+	 * Code for Sydney.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -350,20 +350,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Sydney"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Sydney"</li>
+	 * definition} = "Code for Sydney."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Sydney = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sydney";
-			definition = "Code for Sydney";
+			definition = "Code for Sydney.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "AUSY";
 		}
 	};
 	/**
-	 * Code for Sao Paulo
+	 * Code for Sao Paulo.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -380,20 +380,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "SaoPaulo"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Sao Paulo"</li>
+	 * definition} = "Code for Sao Paulo."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode SaoPaulo = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SaoPaulo";
-			definition = "Code for Sao Paulo";
+			definition = "Code for Sao Paulo.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "BRSP";
 		}
 	};
 	/**
-	 * Code for Montreal
+	 * Code for Montreal.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -410,20 +410,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Montreal"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Montreal"</li>
+	 * definition} = "Code for Montreal."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Montreal = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Montreal";
-			definition = "Code for Montreal";
+			definition = "Code for Montreal.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "CAMO";
 		}
 	};
 	/**
-	 * Code for Toronto
+	 * Code for Toronto.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -440,20 +440,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Toronto"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Toronto"</li>
+	 * definition} = "Code for Toronto."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Toronto = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Toronto";
-			definition = "Code for Toronto";
+			definition = "Code for Toronto.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "CATO";
 		}
 	};
 	/**
-	 * Code for Geneva
+	 * Code for Geneva.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -470,20 +470,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Geneva"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Geneva"</li>
+	 * definition} = "Code for Geneva."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Geneva = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Geneva";
-			definition = "Code for Geneva";
+			definition = "Code for Geneva.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "CHGE";
 		}
 	};
 	/**
-	 * Code for Bratislava
+	 * Code for Bratislava.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -500,20 +500,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Bratislava"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Bratislava"</li>
+	 * definition} = "Code for Bratislava."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Bratislava = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bratislava";
-			definition = "Code for Bratislava";
+			definition = "Code for Bratislava.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "SKBR";
 		}
 	};
 	/**
-	 * Code for Santiago
+	 * Code for Santiago.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -530,20 +530,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Santiago"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Santiago"</li>
+	 * definition} = "Code for Santiago."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Santiago = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Santiago";
-			definition = "Code for Santiago";
+			definition = "Code for Santiago.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "CLSA";
 		}
 	};
 	/**
-	 * Code for Beijing
+	 * Code for Beijing.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -560,20 +560,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Beijing"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Beijing"</li>
+	 * definition} = "Code for Beijing."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Beijing = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Beijing";
-			definition = "Code for Beijing";
+			definition = "Code for Beijing.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "CNBE";
 		}
 	};
 	/**
-	 * Code for Prague
+	 * Code for Prague.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -590,20 +590,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Prague"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Prague"</li>
+	 * definition} = "Code for Prague."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Prague = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Prague";
-			definition = "Code for Prague";
+			definition = "Code for Prague.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "CZPR";
 		}
 	};
 	/**
-	 * Code for Frankfurt
+	 * Code for Frankfurt.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -620,20 +620,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Frankfurt"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Frankfurt"</li>
+	 * definition} = "Code for Frankfurt."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Frankfurt = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Frankfurt";
-			definition = "Code for Frankfurt";
+			definition = "Code for Frankfurt.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "DEFR";
 		}
 	};
 	/**
-	 * Code for Copenhagen
+	 * Code for Copenhagen.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -650,20 +650,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Copenhagen"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Copenhagen"</li>
+	 * definition} = "Code for Copenhagen."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Copenhagen = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Copenhagen";
-			definition = "Code for Copenhagen";
+			definition = "Code for Copenhagen.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "DKCO";
 		}
 	};
 	/**
-	 * Code for Tallinn
+	 * Code for Tallinn.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -680,20 +680,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Tallinn"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Tallinn"</li>
+	 * definition} = "Code for Tallinn."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Tallinn = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tallinn";
-			definition = "Code for Tallinn";
+			definition = "Code for Tallinn.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "EETA";
 		}
 	};
 	/**
-	 * Code for Madrid
+	 * Code for Madrid.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -710,20 +710,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Madrid"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Madrid"</li>
+	 * definition} = "Code for Madrid."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Madrid = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Madrid";
-			definition = "Code for Madrid";
+			definition = "Code for Madrid.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "ESMA";
 		}
 	};
 	/**
-	 * Code for Helsinki
+	 * Code for Helsinki.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -740,20 +740,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Helsinki"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Helsinki"</li>
+	 * definition} = "Code for Helsinki."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Helsinki = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Helsinki";
-			definition = "Code for Helsinki";
+			definition = "Code for Helsinki.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "FIHE";
 		}
 	};
 	/**
-	 * Code for Paris
+	 * Code for Paris.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -770,20 +770,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Paris"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Paris"</li>
+	 * definition} = "Code for Paris."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Paris = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Paris";
-			definition = "Code for Paris";
+			definition = "Code for Paris.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "FRPA";
 		}
 	};
 	/**
-	 * Code for London
+	 * Code for London.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -800,20 +800,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "London"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for London"</li>
+	 * definition} = "Code for London."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode London = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "London";
-			definition = "Code for London";
+			definition = "Code for London.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "GBLO";
 		}
 	};
 	/**
-	 * Code for Athens
+	 * Code for Athens.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -830,20 +830,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Athens"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Athens"</li>
+	 * definition} = "Code for Athens."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Athens = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Athens";
-			definition = "Code for Athens";
+			definition = "Code for Athens.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "GRAT";
 		}
 	};
 	/**
-	 * Code for Hong Kong
+	 * Code for Hong Kong.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -860,20 +860,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "HongKong"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Hong Kong"</li>
+	 * definition} = "Code for Hong Kong."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode HongKong = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HongKong";
-			definition = "Code for Hong Kong";
+			definition = "Code for Hong Kong.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "HKHK";
 		}
 	};
 	/**
-	 * Code for Budapest
+	 * Code for Budapest.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -890,20 +890,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Budapest"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Budapest"</li>
+	 * definition} = "Code for Budapest."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Budapest = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Budapest";
-			definition = "Code for Budapest";
+			definition = "Code for Budapest.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "HUBU";
 		}
 	};
 	/**
-	 * Code for Jakarta
+	 * Code for Jakarta.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -920,20 +920,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Jakarta"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Jakarta"</li>
+	 * definition} = "Code for Jakarta."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Jakarta = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Jakarta";
-			definition = "Code for Jakarta";
+			definition = "Code for Jakarta.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "IDJA";
 		}
 	};
 	/**
-	 * Code for Dublin
+	 * Code for Dublin.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -950,20 +950,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Dublin"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Dublin"</li>
+	 * definition} = "Code for Dublin."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Dublin = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dublin";
-			definition = "Code for Dublin";
+			definition = "Code for Dublin.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "IEDU";
 		}
 	};
 	/**
-	 * Code for Tel Aviv
+	 * Code for Tel Aviv.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -980,20 +980,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "TelAviv"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Tel Aviv"</li>
+	 * definition} = "Code for Tel Aviv."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode TelAviv = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TelAviv";
-			definition = "Code for Tel Aviv";
+			definition = "Code for Tel Aviv.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "ILTA";
 		}
 	};
 	/**
-	 * Code for Milan
+	 * Code for Milan.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1010,20 +1010,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Milan"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Milan"</li>
+	 * definition} = "Code for Milan."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Milan = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Milan";
-			definition = "Code for Milan";
+			definition = "Code for Milan.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "ITMI";
 		}
 	};
 	/**
-	 * Code for Rome
+	 * Code for Rome.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1040,20 +1040,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Rome"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Rome"</li>
+	 * definition} = "Code for Rome."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Rome = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rome";
-			definition = "Code for Rome";
+			definition = "Code for Rome.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "ITRO";
 		}
 	};
 	/**
-	 * Code for Tokyo
+	 * Code for Tokyo.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1070,20 +1070,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Tokyo"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Tokyo"</li>
+	 * definition} = "Code for Tokyo."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Tokyo = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tokyo";
-			definition = "Code for Tokyo";
+			definition = "Code for Tokyo.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "JPTO";
 		}
 	};
 	/**
-	 * Code for Seoul
+	 * Code for Seoul.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1100,20 +1100,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Seoul"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Seoul"</li>
+	 * definition} = "Code for Seoul."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Seoul = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Seoul";
-			definition = "Code for Seoul";
+			definition = "Code for Seoul.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "KRSE";
 		}
 	};
 	/**
-	 * Code for Beirut
+	 * Code for Beirut.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1130,20 +1130,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Beirut"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Beirut"</li>
+	 * definition} = "Code for Beirut."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Beirut = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Beirut";
-			definition = "Code for Beirut";
+			definition = "Code for Beirut.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "LBBE";
 		}
 	};
 	/**
-	 * Code for Luxembourg
+	 * Code for Luxembourg.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1160,20 +1160,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Luxembourg"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Luxembourg"</li>
+	 * definition} = "Code for Luxembourg."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Luxembourg = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Luxembourg";
-			definition = "Code for Luxembourg";
+			definition = "Code for Luxembourg.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "LULU";
 		}
 	};
 	/**
-	 * Code for Kuala Lumpur
+	 * Code for Kuala Lumpur.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1190,20 +1190,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "KualaLumpur"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Kuala Lumpur"</li>
+	 * definition} = "Code for Kuala Lumpur."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode KualaLumpur = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "KualaLumpur";
-			definition = "Code for Kuala Lumpur";
+			definition = "Code for Kuala Lumpur.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "MYKL";
 		}
 	};
 	/**
-	 * Code for Mexico City
+	 * Code for Mexico City.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1220,20 +1220,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "MexicoCity"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Mexico City"</li>
+	 * definition} = "Code for Mexico City."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode MexicoCity = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MexicoCity";
-			definition = "Code for Mexico City";
+			definition = "Code for Mexico City.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "MXMC";
 		}
 	};
 	/**
-	 * Code for Amsterdam
+	 * Code for Amsterdam.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1250,20 +1250,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Amsterdam"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Amsterdam"</li>
+	 * definition} = "Code for Amsterdam."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Amsterdam = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amsterdam";
-			definition = "Code for Amsterdam";
+			definition = "Code for Amsterdam.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "NLAM";
 		}
 	};
 	/**
-	 * Code for Oslo
+	 * Code for Oslo.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1280,20 +1280,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Oslo"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Oslo"</li>
+	 * definition} = "Code for Oslo."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Oslo = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Oslo";
-			definition = "Code for Oslo";
+			definition = "Code for Oslo.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "NOOS";
 		}
 	};
 	/**
-	 * Code for New York Fed
+	 * Code for New York Fed.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1310,20 +1310,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "NewYorkFed"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for New York Fed"</li>
+	 * definition} = "Code for New York Fed."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode NewYorkFed = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewYorkFed";
-			definition = "Code for New York Fed";
+			definition = "Code for New York Fed.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "NYFD";
 		}
 	};
 	/**
-	 * Code for New York Stock Exchange
+	 * Code for New York Stock Exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1340,20 +1340,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "NewYorkStockExchange"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for New York Stock Exchange"</li>
+	 * definition} = "Code for New York Stock Exchange."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode NewYorkStockExchange = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewYorkStockExchange";
-			definition = "Code for New York Stock Exchange";
+			definition = "Code for New York Stock Exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "NYSE";
 		}
 	};
 	/**
-	 * Code for Auckland
+	 * Code for Auckland.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1370,20 +1370,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Auckland"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Auckland"</li>
+	 * definition} = "Code for Auckland."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Auckland = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Auckland";
-			definition = "Code for Auckland";
+			definition = "Code for Auckland.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "NZAU";
 		}
 	};
 	/**
-	 * Code for Wellington
+	 * Code for Wellington.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1400,20 +1400,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Wellington"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Wellington"</li>
+	 * definition} = "Code for Wellington."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Wellington = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Wellington";
-			definition = "Code for Wellington";
+			definition = "Code for Wellington.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "NZWE";
 		}
 	};
 	/**
-	 * Code for Panama City
+	 * Code for Panama City.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1430,20 +1430,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "PanamaCity"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Panama City"</li>
+	 * definition} = "Code for Panama City."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode PanamaCity = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PanamaCity";
-			definition = "Code for Panama City";
+			definition = "Code for Panama City.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "PAPC";
 		}
 	};
 	/**
-	 * Code for Manila
+	 * Code for Manila.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1460,20 +1460,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Manila"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Manila"</li>
+	 * definition} = "Code for Manila."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Manila = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Manila";
-			definition = "Code for Manila";
+			definition = "Code for Manila.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "PHMA";
 		}
 	};
 	/**
-	 * Code for Warsaw
+	 * Code for Warsaw.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1490,20 +1490,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Warsaw"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Warsaw"</li>
+	 * definition} = "Code for Warsaw."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Warsaw = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Warsaw";
-			definition = "Code for Warsaw";
+			definition = "Code for Warsaw.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "PLWA";
 		}
 	};
 	/**
-	 * Code for Lisbon
+	 * Code for Lisbon.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1520,20 +1520,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Lisbon"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Lisbon"</li>
+	 * definition} = "Code for Lisbon."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Lisbon = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Lisbon";
-			definition = "Code for Lisbon";
+			definition = "Code for Lisbon.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "PTLI";
 		}
 	};
 	/**
-	 * Code for Moscow
+	 * Code for Moscow.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1550,20 +1550,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Moscow"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Moscow"</li>
+	 * definition} = "Code for Moscow."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Moscow = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Moscow";
-			definition = "Code for Moscow";
+			definition = "Code for Moscow.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "RUMO";
 		}
 	};
 	/**
-	 * Code for Riyadh
+	 * Code for Riyadh.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1580,20 +1580,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Riyadh"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Riyadh"</li>
+	 * definition} = "Code for Riyadh."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Riyadh = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Riyadh";
-			definition = "Code for Riyadh";
+			definition = "Code for Riyadh.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "SARI";
 		}
 	};
 	/**
-	 * Code for Stockholm
+	 * Code for Stockholm.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1610,20 +1610,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Stockholm"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Stockholm"</li>
+	 * definition} = "Code for Stockholm."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Stockholm = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Stockholm";
-			definition = "Code for Stockholm";
+			definition = "Code for Stockholm.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "SEST";
 		}
 	};
 	/**
-	 * Code for Singapore
+	 * Code for Singapore.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1640,20 +1640,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Singapore"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Singapore"</li>
+	 * definition} = "Code for Singapore."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Singapore = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Singapore";
-			definition = "Code for Singapore";
+			definition = "Code for Singapore.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "SGSI";
 		}
 	};
 	/**
-	 * Code for Bangkok
+	 * Code for Bangkok.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1670,20 +1670,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Bangkok"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Bangkok"</li>
+	 * definition} = "Code for Bangkok."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Bangkok = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bangkok";
-			definition = "Code for Bangkok";
+			definition = "Code for Bangkok.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "THBA";
 		}
 	};
 	/**
-	 * Code for Taipei
+	 * Code for Taipei.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1700,20 +1700,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Taipei"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Taipei"</li>
+	 * definition} = "Code for Taipei."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Taipei = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Taipei";
-			definition = "Code for Taipei";
+			definition = "Code for Taipei.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "TWTA";
 		}
 	};
 	/**
-	 * Code for Ankara
+	 * Code for Ankara.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1730,20 +1730,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Ankara"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Ankara"</li>
+	 * definition} = "Code for Ankara."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Ankara = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Ankara";
-			definition = "Code for Ankara";
+			definition = "Code for Ankara.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "TRAN";
 		}
 	};
 	/**
-	 * Code for Chicago
+	 * Code for Chicago.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1760,20 +1760,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Chicago"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Chicago"</li>
+	 * definition} = "Code for Chicago."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Chicago = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Chicago";
-			definition = "Code for Chicago";
+			definition = "Code for Chicago.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "USCH";
 		}
 	};
 	/**
-	 * Code for Los Angeles
+	 * Code for Los Angeles.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1790,20 +1790,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "LosAngeles"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Los Angeles"</li>
+	 * definition} = "Code for Los Angeles."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode LosAngeles = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LosAngeles";
-			definition = "Code for Los Angeles";
+			definition = "Code for Los Angeles.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "USLA";
 		}
 	};
 	/**
-	 * Code for U.S. Government Securities
+	 * Code for U.S. Government Securities.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1820,20 +1820,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "U.S.GovernmentSecurities"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for U.S. Government Securities"</li>
+	 * definition} = "Code for U.S. Government Securities."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode USGovernmentSecurities = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "U.S.GovernmentSecurities";
-			definition = "Code for U.S. Government Securities";
+			definition = "Code for U.S. Government Securities.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "USGS";
 		}
 	};
 	/**
-	 * Code for New York
+	 * Code for New York.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1850,20 +1850,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "NewYork"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for New York"</li>
+	 * definition} = "Code for New York."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode NewYork = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewYork";
-			definition = "Code for New York";
+			definition = "Code for New York.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "USNY";
 		}
 	};
 	/**
-	 * Code for Johannesburg
+	 * Code for Johannesburg.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1880,20 +1880,20 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Johannesburg"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Johannesburg"</li>
+	 * definition} = "Code for Johannesburg."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Johannesburg = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Johannesburg";
-			definition = "Code for Johannesburg";
+			definition = "Code for Johannesburg.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "ZAJO";
 		}
 	};
 	/**
-	 * Code for Zurich
+	 * Code for Zurich.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1910,14 +1910,14 @@ public class FinancialCenterCode extends MMCode {
 	 * name} = "Zurich"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Code for Zurich"</li>
+	 * definition} = "Code for Zurich."</li>
 	 * </ul>
 	 */
 	public static final FinancialCenterCode Zurich = new FinancialCenterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Zurich";
-			definition = "Code for Zurich";
+			definition = "Code for Zurich.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialCenterCode.mmObject();
 			codeName = "CHZU";
 		}

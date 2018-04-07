@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.entity.Invoice;
 import com.tools20022.repository.entity.Service;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection34;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -111,7 +112,7 @@ public class BillingCompensation1 {
 	 * definition} = "Defines the type of billing compensation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingCompensation1, BillingCompensationType1Choice> mmType = new MMMessageAssociationEnd<BillingCompensation1, BillingCompensationType1Choice>() {
 		{
 			businessElementTrace_lazy = () -> Invoice.mmBillingCompensationType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingCompensation1.mmObject();
@@ -124,6 +125,16 @@ public class BillingCompensation1 {
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> BillingCompensationType1Choice.mmObject();
+		}
+
+		@Override
+		public BillingCompensationType1Choice getValue(BillingCompensation1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(BillingCompensation1 obj, BillingCompensationType1Choice value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "Val", required = true)
@@ -159,7 +170,7 @@ public class BillingCompensation1 {
 	 * definition} = "Defines the value of compensation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmValue = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingCompensation1, AmountAndDirection34> mmValue = new MMMessageAssociationEnd<BillingCompensation1, AmountAndDirection34>() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingCompensation1.mmObject();
@@ -171,7 +182,17 @@ public class BillingCompensation1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection34 getValue(BillingCompensation1 obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(BillingCompensation1 obj, AmountAndDirection34 value) {
+			obj.setValue(value);
 		}
 	};
 	@XmlElement(name = "CcyTp")
@@ -211,7 +232,7 @@ public class BillingCompensation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrencyType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingCompensation1, Optional<BillingCurrencyType2Code>> mmCurrencyType = new MMMessageAttribute<BillingCompensation1, Optional<BillingCurrencyType2Code>>() {
 		{
 			businessElementTrace_lazy = () -> CashAccountService.mmBillingCurrency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingCompensation1.mmObject();
@@ -223,6 +244,16 @@ public class BillingCompensation1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> BillingCurrencyType2Code.mmObject();
+		}
+
+		@Override
+		public Optional<BillingCurrencyType2Code> getValue(BillingCompensation1 obj) {
+			return obj.getCurrencyType();
+		}
+
+		@Override
+		public void setValue(BillingCompensation1 obj, Optional<BillingCurrencyType2Code> value) {
+			obj.setCurrencyType(value.orElse(null));
 		}
 	};
 
@@ -254,7 +285,7 @@ public class BillingCompensation1 {
 		return value;
 	}
 
-	public BillingCompensation1 setValue(com.tools20022.repository.msg.AmountAndDirection34 value) {
+	public BillingCompensation1 setValue(AmountAndDirection34 value) {
 		this.value = Objects.requireNonNull(value);
 		return this;
 	}

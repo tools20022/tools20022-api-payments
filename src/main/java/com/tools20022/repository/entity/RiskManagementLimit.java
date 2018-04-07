@@ -21,7 +21,9 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CashManagementService;
 import com.tools20022.repository.entity.Limit;
+import com.tools20022.repository.entity.SystemMemberRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -122,7 +124,7 @@ public class RiskManagementLimit extends Limit {
 	 * "Cash management service which offers limit management services."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashManagementService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RiskManagementLimit, Optional<CashManagementService>> mmCashManagementService = new MMBusinessAssociationEnd<RiskManagementLimit, Optional<CashManagementService>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RiskManagementLimit.mmObject();
@@ -135,8 +137,18 @@ public class RiskManagementLimit extends Limit {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 		}
+
+		@Override
+		public Optional<CashManagementService> getValue(RiskManagementLimit obj) {
+			return obj.getCashManagementService();
+		}
+
+		@Override
+		public void setValue(RiskManagementLimit obj, Optional<CashManagementService> value) {
+			obj.setCashManagementService(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.entity.SystemMemberRole> counterparty;
+	protected List<SystemMemberRole> counterparty;
 	/**
 	 * 
 	 <p>
@@ -172,7 +184,7 @@ public class RiskManagementLimit extends Limit {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCounterparty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RiskManagementLimit, List<SystemMemberRole>> mmCounterparty = new MMBusinessAssociationEnd<RiskManagementLimit, List<SystemMemberRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RiskManagementLimit.mmObject();
@@ -180,9 +192,19 @@ public class RiskManagementLimit extends Limit {
 			name = "Counterparty";
 			definition = "Identification of the system member for which the limit is established.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmLimit;
+			opposite_lazy = () -> SystemMemberRole.mmLimit;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmObject();
+			type_lazy = () -> SystemMemberRole.mmObject();
+		}
+
+		@Override
+		public List<SystemMemberRole> getValue(RiskManagementLimit obj) {
+			return obj.getCounterparty();
+		}
+
+		@Override
+		public void setValue(RiskManagementLimit obj, List<SystemMemberRole> value) {
+			obj.setCounterparty(value);
 		}
 	};
 
@@ -193,7 +215,7 @@ public class RiskManagementLimit extends Limit {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RiskManagementLimit";
 				definition = "Cash management feature limiting the maximum risk that a party accepts to take with respect to a counterparty or a set of counterparties. A risk management limit is either bilateral, for a counterparty, or multilateral, for a set of counterparties or all other members in a system.The limit may also apply to sponsored or indirect members. In principle, a risk management limit is calculated on the net position between two members and is expressed as a credit or debit limit, from the point of view of the party setting the limit.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemMemberRole.mmLimit, com.tools20022.repository.entity.CashManagementService.mmRiskManagementLimit);
+				associationDomain_lazy = () -> Arrays.asList(SystemMemberRole.mmLimit, com.tools20022.repository.entity.CashManagementService.mmRiskManagementLimit);
 				superType_lazy = () -> Limit.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RiskManagementLimit.mmCashManagementService, com.tools20022.repository.entity.RiskManagementLimit.mmCounterparty);
 			}
@@ -219,7 +241,7 @@ public class RiskManagementLimit extends Limit {
 		return counterparty == null ? counterparty = new ArrayList<>() : counterparty;
 	}
 
-	public RiskManagementLimit setCounterparty(List<com.tools20022.repository.entity.SystemMemberRole> counterparty) {
+	public RiskManagementLimit setCounterparty(List<SystemMemberRole> counterparty) {
 		this.counterparty = Objects.requireNonNull(counterparty);
 		return this;
 	}

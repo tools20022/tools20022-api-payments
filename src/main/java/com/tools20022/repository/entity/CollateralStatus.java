@@ -19,9 +19,9 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
+import com.tools20022.repository.entity.Collateral;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -124,7 +124,7 @@ public class CollateralStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmResponseStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralStatus, ResponseStatusCode> mmResponseStatus = new MMBusinessAttribute<CollateralStatus, ResponseStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
@@ -136,12 +136,14 @@ public class CollateralStatus extends Status {
 			simpleType_lazy = () -> ResponseStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralStatus.class.getMethod("getResponseStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ResponseStatusCode getValue(CollateralStatus obj) {
+			return obj.getResponseStatus();
+		}
+
+		@Override
+		public void setValue(CollateralStatus obj, ResponseStatusCode value) {
+			obj.setResponseStatus(value);
 		}
 	};
 	protected CollateralManagementCancellationReasonCode collateralManagementCancellationReason;
@@ -171,7 +173,7 @@ public class CollateralStatus extends Status {
 	 * definition} = "Specifies the reason for the cancellation of a message."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCollateralManagementCancellationReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralStatus, CollateralManagementCancellationReasonCode> mmCollateralManagementCancellationReason = new MMBusinessAttribute<CollateralStatus, CollateralManagementCancellationReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
@@ -183,12 +185,14 @@ public class CollateralStatus extends Status {
 			simpleType_lazy = () -> CollateralManagementCancellationReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralStatus.class.getMethod("getCollateralManagementCancellationReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CollateralManagementCancellationReasonCode getValue(CollateralStatus obj) {
+			return obj.getCollateralManagementCancellationReason();
+		}
+
+		@Override
+		public void setValue(CollateralStatus obj, CollateralManagementCancellationReasonCode value) {
+			obj.setCollateralManagementCancellationReason(value);
 		}
 	};
 	protected CollateralSubstitutionConfirmationCode substitutionStatus;
@@ -220,7 +224,7 @@ public class CollateralStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSubstitutionStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralStatus, CollateralSubstitutionConfirmationCode> mmSubstitutionStatus = new MMBusinessAttribute<CollateralStatus, CollateralSubstitutionConfirmationCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
@@ -232,12 +236,14 @@ public class CollateralStatus extends Status {
 			simpleType_lazy = () -> CollateralSubstitutionConfirmationCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralStatus.class.getMethod("getSubstitutionStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CollateralSubstitutionConfirmationCode getValue(CollateralStatus obj) {
+			return obj.getSubstitutionStatus();
+		}
+
+		@Override
+		public void setValue(CollateralStatus obj, CollateralSubstitutionConfirmationCode value) {
+			obj.setSubstitutionStatus(value);
 		}
 	};
 	protected InterestRejectionReasonCode interestRejectionReason;
@@ -268,7 +274,7 @@ public class CollateralStatus extends Status {
 	 * "Provides the interest rejection reason using an ISO 20022 code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInterestRejectionReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralStatus, InterestRejectionReasonCode> mmInterestRejectionReason = new MMBusinessAttribute<CollateralStatus, InterestRejectionReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
@@ -280,12 +286,14 @@ public class CollateralStatus extends Status {
 			simpleType_lazy = () -> InterestRejectionReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralStatus.class.getMethod("getInterestRejectionReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InterestRejectionReasonCode getValue(CollateralStatus obj) {
+			return obj.getInterestRejectionReason();
+		}
+
+		@Override
+		public void setValue(CollateralStatus obj, InterestRejectionReasonCode value) {
+			obj.setInterestRejectionReason(value);
 		}
 	};
 	protected MarginCallResponseCode marginCallResponse;
@@ -317,7 +325,7 @@ public class CollateralStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMarginCallResponse = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralStatus, MarginCallResponseCode> mmMarginCallResponse = new MMBusinessAttribute<CollateralStatus, MarginCallResponseCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
@@ -329,12 +337,14 @@ public class CollateralStatus extends Status {
 			simpleType_lazy = () -> MarginCallResponseCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralStatus.class.getMethod("getMarginCallResponse", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MarginCallResponseCode getValue(CollateralStatus obj) {
+			return obj.getMarginCallResponse();
+		}
+
+		@Override
+		public void setValue(CollateralStatus obj, MarginCallResponseCode value) {
+			obj.setMarginCallResponse(value);
 		}
 	};
 	protected SettlementStatusCode settlement;
@@ -364,7 +374,7 @@ public class CollateralStatus extends Status {
 	 * definition} = "Provides the settlement status of the collateral."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSettlement = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralStatus, SettlementStatusCode> mmSettlement = new MMBusinessAttribute<CollateralStatus, SettlementStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
@@ -376,12 +386,14 @@ public class CollateralStatus extends Status {
 			simpleType_lazy = () -> SettlementStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralStatus.class.getMethod("getSettlement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SettlementStatusCode getValue(CollateralStatus obj) {
+			return obj.getSettlement();
+		}
+
+		@Override
+		public void setValue(CollateralStatus obj, SettlementStatusCode value) {
+			obj.setSettlement(value);
 		}
 	};
 	protected CancellationReasonCode cancellationReason;
@@ -412,7 +424,7 @@ public class CollateralStatus extends Status {
 	 * "Provides details about the status of the collateral cancellation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancellationReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralStatus, CancellationReasonCode> mmCancellationReason = new MMBusinessAttribute<CollateralStatus, CancellationReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
@@ -424,12 +436,14 @@ public class CollateralStatus extends Status {
 			simpleType_lazy = () -> CancellationReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralStatus.class.getMethod("getCancellationReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CancellationReasonCode getValue(CollateralStatus obj) {
+			return obj.getCancellationReason();
+		}
+
+		@Override
+		public void setValue(CollateralStatus obj, CancellationReasonCode value) {
+			obj.setCancellationReason(value);
 		}
 	};
 	protected Collateral collateral;
@@ -466,7 +480,7 @@ public class CollateralStatus extends Status {
 	 * definition} = "Collateral for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCollateral = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralStatus, Optional<Collateral>> mmCollateral = new MMBusinessAssociationEnd<CollateralStatus, Optional<Collateral>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
@@ -478,6 +492,16 @@ public class CollateralStatus extends Status {
 			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmStatus;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
+		}
+
+		@Override
+		public Optional<Collateral> getValue(CollateralStatus obj) {
+			return obj.getCollateral();
+		}
+
+		@Override
+		public void setValue(CollateralStatus obj, Optional<Collateral> value) {
+			obj.setCollateral(value.orElse(null));
 		}
 	};
 

@@ -45,7 +45,7 @@ public class ConstraintNumberRule {
 	 * definition} = "If Number is negative, then Sign must be present."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forMax3Number = new MMConstraint() {
+	public static final MMConstraint<Max3Number> forMax3Number = new MMConstraint<Max3Number>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumberRule";
@@ -54,8 +54,8 @@ public class ConstraintNumberRule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkMax3Number((Max3Number) obj);
+		public void executeValidator(Max3Number obj) throws Exception {
+			checkMax3Number(obj);
 		}
 	};
 

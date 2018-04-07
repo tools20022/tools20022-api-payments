@@ -21,9 +21,8 @@ import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
-import com.tools20022.repository.entity.Tax;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -165,7 +164,7 @@ public class SecuritiesTax extends Tax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTaxableIncomePerShare = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, ActiveCurrencyAndAmount> mmTaxableIncomePerShare = new MMBusinessAttribute<SecuritiesTax, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -177,12 +176,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getTaxableIncomePerShare", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(SecuritiesTax obj) {
+			return obj.getTaxableIncomePerShare();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, ActiveCurrencyAndAmount value) {
+			obj.setTaxableIncomePerShare(value);
 		}
 	};
 	protected TaxableIncomePerShareCalculatedCode taxableIncomePerShareCalculated;
@@ -214,7 +215,7 @@ public class SecuritiesTax extends Tax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTaxableIncomePerShareCalculated = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, TaxableIncomePerShareCalculatedCode> mmTaxableIncomePerShareCalculated = new MMBusinessAttribute<SecuritiesTax, TaxableIncomePerShareCalculatedCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -226,12 +227,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> TaxableIncomePerShareCalculatedCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getTaxableIncomePerShareCalculated", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TaxableIncomePerShareCalculatedCode getValue(SecuritiesTax obj) {
+			return obj.getTaxableIncomePerShareCalculated();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, TaxableIncomePerShareCalculatedCode value) {
+			obj.setTaxableIncomePerShareCalculated(value);
 		}
 	};
 	protected EUCapitalGainCode eUCapitalGain;
@@ -263,7 +266,7 @@ public class SecuritiesTax extends Tax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEUCapitalGain = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, EUCapitalGainCode> mmEUCapitalGain = new MMBusinessAttribute<SecuritiesTax, EUCapitalGainCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -275,12 +278,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> EUCapitalGainCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getEUCapitalGain", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public EUCapitalGainCode getValue(SecuritiesTax obj) {
+			return obj.getEUCapitalGain();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, EUCapitalGainCode value) {
+			obj.setEUCapitalGain(value);
 		}
 	};
 	protected EUDividendStatusCode eUDividendStatus;
@@ -312,7 +317,7 @@ public class SecuritiesTax extends Tax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEUDividendStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, EUDividendStatusCode> mmEUDividendStatus = new MMBusinessAttribute<SecuritiesTax, EUDividendStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -324,12 +329,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> EUDividendStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getEUDividendStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public EUDividendStatusCode getValue(SecuritiesTax obj) {
+			return obj.getEUDividendStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, EUDividendStatusCode value) {
+			obj.setEUDividendStatus(value);
 		}
 	};
 	protected CurrencyAndAmount taxableIncomePerDividend;
@@ -361,7 +368,7 @@ public class SecuritiesTax extends Tax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTaxableIncomePerDividend = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, CurrencyAndAmount> mmTaxableIncomePerDividend = new MMBusinessAttribute<SecuritiesTax, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -373,12 +380,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getTaxableIncomePerDividend", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesTax obj) {
+			return obj.getTaxableIncomePerDividend();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, CurrencyAndAmount value) {
+			obj.setTaxableIncomePerDividend(value);
 		}
 	};
 	protected StampDutyTypeCode stampDutyType;
@@ -408,7 +417,7 @@ public class SecuritiesTax extends Tax {
 	 * definition} = "Indicates how the stamp duty should be applied."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStampDutyType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, StampDutyTypeCode> mmStampDutyType = new MMBusinessAttribute<SecuritiesTax, StampDutyTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -420,12 +429,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> StampDutyTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getStampDutyType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public StampDutyTypeCode getValue(SecuritiesTax obj) {
+			return obj.getStampDutyType();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, StampDutyTypeCode value) {
+			obj.setStampDutyType(value);
 		}
 	};
 	protected Max4AlphaNumericText stampDutyTaxBasis;
@@ -460,7 +471,7 @@ public class SecuritiesTax extends Tax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStampDutyTaxBasis = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, Max4AlphaNumericText> mmStampDutyTaxBasis = new MMBusinessAttribute<SecuritiesTax, Max4AlphaNumericText>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -473,12 +484,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> Max4AlphaNumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getStampDutyTaxBasis", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max4AlphaNumericText getValue(SecuritiesTax obj) {
+			return obj.getStampDutyTaxBasis();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, Max4AlphaNumericText value) {
+			obj.setStampDutyTaxBasis(value);
 		}
 	};
 	protected TaxVoucher taxVoucher;
@@ -515,7 +528,7 @@ public class SecuritiesTax extends Tax {
 	 * definition} = "Tax voucher which is related to a securities tax."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTaxVoucher = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTax, Optional<TaxVoucher>> mmTaxVoucher = new MMBusinessAssociationEnd<SecuritiesTax, Optional<TaxVoucher>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -527,6 +540,16 @@ public class SecuritiesTax extends Tax {
 			opposite_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmRelatedSecurityTax;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
+		}
+
+		@Override
+		public Optional<TaxVoucher> getValue(SecuritiesTax obj) {
+			return obj.getTaxVoucher();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, Optional<TaxVoucher> value) {
+			obj.setTaxVoucher(value.orElse(null));
 		}
 	};
 	protected ActiveCurrencyAndAmount taxableIncomePerDividendShare;
@@ -558,7 +581,7 @@ public class SecuritiesTax extends Tax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTaxableIncomePerDividendShare = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, ActiveCurrencyAndAmount> mmTaxableIncomePerDividendShare = new MMBusinessAttribute<SecuritiesTax, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -570,12 +593,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getTaxableIncomePerDividendShare", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(SecuritiesTax obj) {
+			return obj.getTaxableIncomePerDividendShare();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, ActiveCurrencyAndAmount value) {
+			obj.setTaxableIncomePerDividendShare(value);
 		}
 	};
 	protected RateAndAmount relatedTax;
@@ -613,7 +638,7 @@ public class SecuritiesTax extends Tax {
 	 * "Percentage of the gross dividend rate on which tax must be paid ."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTax, RateAndAmount> mmRelatedTax = new MMBusinessAssociationEnd<SecuritiesTax, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -622,9 +647,19 @@ public class SecuritiesTax extends Tax {
 			definition = "Percentage of the gross dividend rate on which tax must be paid .";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmSecuritiesTax;
+			opposite_lazy = () -> RateAndAmount.mmSecuritiesTax;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(SecuritiesTax obj) {
+			return obj.getRelatedTax();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, RateAndAmount value) {
+			obj.setRelatedTax(value);
 		}
 	};
 	protected Max15NumericText taxLotNumber;
@@ -656,7 +691,7 @@ public class SecuritiesTax extends Tax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTaxLotNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, Max15NumericText> mmTaxLotNumber = new MMBusinessAttribute<SecuritiesTax, Max15NumericText>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -668,12 +703,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getTaxLotNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max15NumericText getValue(SecuritiesTax obj) {
+			return obj.getTaxLotNumber();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, Max15NumericText value) {
+			obj.setTaxLotNumber(value);
 		}
 	};
 	protected Security security;
@@ -709,7 +746,7 @@ public class SecuritiesTax extends Tax {
 	 * definition} = "Security on which the tax applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTax, Optional<Security>> mmSecurity = new MMBusinessAssociationEnd<SecuritiesTax, Optional<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -721,6 +758,16 @@ public class SecuritiesTax extends Tax {
 			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmTaxDetails;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+		}
+
+		@Override
+		public Optional<Security> getValue(SecuritiesTax obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, Optional<Security> value) {
+			obj.setSecurity(value.orElse(null));
 		}
 	};
 	protected YesNoIndicator taxRuleExemptIndicator;
@@ -752,7 +799,7 @@ public class SecuritiesTax extends Tax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTaxRuleExemptIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, YesNoIndicator> mmTaxRuleExemptIndicator = new MMBusinessAttribute<SecuritiesTax, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -764,12 +811,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getTaxRuleExemptIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesTax obj) {
+			return obj.getTaxRuleExemptIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, YesNoIndicator value) {
+			obj.setTaxRuleExemptIndicator(value);
 		}
 	};
 	protected DateTimePeriod effectivePeriod;
@@ -800,7 +849,7 @@ public class SecuritiesTax extends Tax {
 	 * "Period during which the tax rule applies within the jurisdiction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEffectivePeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, DateTimePeriod> mmEffectivePeriod = new MMBusinessAttribute<SecuritiesTax, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -809,15 +858,17 @@ public class SecuritiesTax extends Tax {
 			definition = "Period during which the tax rule applies within the jurisdiction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			complexType_lazy = () -> DateTimePeriod.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getEffectivePeriod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DateTimePeriod getValue(SecuritiesTax obj) {
+			return obj.getEffectivePeriod();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, DateTimePeriod value) {
+			obj.setEffectivePeriod(value);
 		}
 	};
 	protected PercentageRate frankedRate;
@@ -847,7 +898,7 @@ public class SecuritiesTax extends Tax {
 	 * definition} = "Percentage of dividend for which tax is already paid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFrankedRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, PercentageRate> mmFrankedRate = new MMBusinessAttribute<SecuritiesTax, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -859,12 +910,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getFrankedRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(SecuritiesTax obj) {
+			return obj.getFrankedRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, PercentageRate value) {
+			obj.setFrankedRate(value);
 		}
 	};
 	protected TEFRARulesCode tEFRARule;
@@ -895,7 +948,7 @@ public class SecuritiesTax extends Tax {
 	 * "Indicates the TEFRA rule under which the security is issued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTEFRARule = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTax, TEFRARulesCode> mmTEFRARule = new MMBusinessAttribute<SecuritiesTax, TEFRARulesCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -907,12 +960,14 @@ public class SecuritiesTax extends Tax {
 			simpleType_lazy = () -> TEFRARulesCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTax.class.getMethod("getTEFRARule", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TEFRARulesCode getValue(SecuritiesTax obj) {
+			return obj.getTEFRARule();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, TEFRARulesCode value) {
+			obj.setTEFRARule(value);
 		}
 	};
 	protected Jurisdiction jurisdiction;
@@ -949,7 +1004,7 @@ public class SecuritiesTax extends Tax {
 	 * definition} = "Jurisdiction in which the tax rule applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmJurisdiction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTax, com.tools20022.repository.entity.Jurisdiction> mmJurisdiction = new MMBusinessAssociationEnd<SecuritiesTax, com.tools20022.repository.entity.Jurisdiction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
@@ -962,6 +1017,16 @@ public class SecuritiesTax extends Tax {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Jurisdiction getValue(SecuritiesTax obj) {
+			return obj.getJurisdiction();
+		}
+
+		@Override
+		public void setValue(SecuritiesTax obj, com.tools20022.repository.entity.Jurisdiction value) {
+			obj.setJurisdiction(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -971,8 +1036,8 @@ public class SecuritiesTax extends Tax {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTax";
 				definition = "Amount of money due to the government or tax authority, according to various pre-defined parameters such as thresholds or income.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmTaxDetails, com.tools20022.repository.entity.TaxVoucher.mmRelatedSecurityTax,
-						com.tools20022.repository.entity.RateAndAmount.mmSecuritiesTax, com.tools20022.repository.entity.Jurisdiction.mmRelatedSecuritiesTax);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmTaxDetails, com.tools20022.repository.entity.TaxVoucher.mmRelatedSecurityTax, RateAndAmount.mmSecuritiesTax,
+						com.tools20022.repository.entity.Jurisdiction.mmRelatedSecuritiesTax);
 				subType_lazy = () -> Arrays.asList(InvestmentFundTax.mmObject());
 				superType_lazy = () -> Tax.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTax.mmTaxableIncomePerShare, com.tools20022.repository.entity.SecuritiesTax.mmTaxableIncomePerShareCalculated,
@@ -1076,7 +1141,7 @@ public class SecuritiesTax extends Tax {
 		return relatedTax;
 	}
 
-	public SecuritiesTax setRelatedTax(com.tools20022.repository.entity.RateAndAmount relatedTax) {
+	public SecuritiesTax setRelatedTax(RateAndAmount relatedTax) {
 		this.relatedTax = Objects.requireNonNull(relatedTax);
 		return this;
 	}
@@ -1112,7 +1177,7 @@ public class SecuritiesTax extends Tax {
 		return effectivePeriod;
 	}
 
-	public SecuritiesTax setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
+	public SecuritiesTax setEffectivePeriod(DateTimePeriod effectivePeriod) {
 		this.effectivePeriod = Objects.requireNonNull(effectivePeriod);
 		return this;
 	}

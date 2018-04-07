@@ -20,8 +20,10 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.SecuritiesPricing;
+import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -144,7 +146,7 @@ public class RedemptionSchedule {
 	 * "Convention used for adjusting a date when it is not a business day."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBusinessDayConvention = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RedemptionSchedule, BusinessDayConventionCode> mmBusinessDayConvention = new MMBusinessAttribute<RedemptionSchedule, BusinessDayConventionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -156,15 +158,17 @@ public class RedemptionSchedule {
 			simpleType_lazy = () -> BusinessDayConventionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RedemptionSchedule.class.getMethod("getBusinessDayConvention", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BusinessDayConventionCode getValue(RedemptionSchedule obj) {
+			return obj.getBusinessDayConvention();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, BusinessDayConventionCode value) {
+			obj.setBusinessDayConvention(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.DateTimePeriod> effectivePeriod;
+	protected List<DateTimePeriod> effectivePeriod;
 	/**
 	 * 
 	 <p>
@@ -199,7 +203,7 @@ public class RedemptionSchedule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEffectivePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RedemptionSchedule, List<DateTimePeriod>> mmEffectivePeriod = new MMBusinessAssociationEnd<RedemptionSchedule, List<DateTimePeriod>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -207,12 +211,22 @@ public class RedemptionSchedule {
 			name = "EffectivePeriod";
 			definition = "Period during which the issuer or holder may give notice.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRedemptionSchedule;
+			opposite_lazy = () -> DateTimePeriod.mmRedemptionSchedule;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public List<DateTimePeriod> getValue(RedemptionSchedule obj) {
+			return obj.getEffectivePeriod();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, List<DateTimePeriod> value) {
+			obj.setEffectivePeriod(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesPricing> priceChange;
+	protected List<SecuritiesPricing> priceChange;
 	/**
 	 * 
 	 <p>
@@ -246,7 +260,7 @@ public class RedemptionSchedule {
 	 * definition} = "Redemption or amortisation price change."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPriceChange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RedemptionSchedule, List<SecuritiesPricing>> mmPriceChange = new MMBusinessAssociationEnd<RedemptionSchedule, List<SecuritiesPricing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -254,12 +268,22 @@ public class RedemptionSchedule {
 			name = "PriceChange";
 			definition = "Redemption or amortisation price change.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmPriceChangeRedemptionSchedule;
+			opposite_lazy = () -> SecuritiesPricing.mmPriceChangeRedemptionSchedule;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesPricing> getValue(RedemptionSchedule obj) {
+			return obj.getPriceChange();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, List<SecuritiesPricing> value) {
+			obj.setPriceChange(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesPricing> price;
+	protected List<SecuritiesPricing> price;
 	/**
 	 * 
 	 <p>
@@ -293,7 +317,7 @@ public class RedemptionSchedule {
 	 * definition} = "Redemption or amortisation price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RedemptionSchedule, List<SecuritiesPricing>> mmPrice = new MMBusinessAssociationEnd<RedemptionSchedule, List<SecuritiesPricing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -301,9 +325,19 @@ public class RedemptionSchedule {
 			name = "Price";
 			definition = "Redemption or amortisation price.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmRelatedRedemptionSchedule;
+			opposite_lazy = () -> SecuritiesPricing.mmRelatedRedemptionSchedule;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesPricing> getValue(RedemptionSchedule obj) {
+			return obj.getPrice();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, List<SecuritiesPricing> value) {
+			obj.setPrice(value);
 		}
 	};
 	protected PartyTypeCode partyType;
@@ -333,7 +367,7 @@ public class RedemptionSchedule {
 	 * definition} = "Party type entitled to ask for the redemption."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPartyType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RedemptionSchedule, PartyTypeCode> mmPartyType = new MMBusinessAttribute<RedemptionSchedule, PartyTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -345,12 +379,14 @@ public class RedemptionSchedule {
 			simpleType_lazy = () -> PartyTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RedemptionSchedule.class.getMethod("getPartyType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PartyTypeCode getValue(RedemptionSchedule obj) {
+			return obj.getPartyType();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, PartyTypeCode value) {
+			obj.setPartyType(value);
 		}
 	};
 	protected AmountFullfilTypeCode amountFulfilType;
@@ -381,7 +417,7 @@ public class RedemptionSchedule {
 	 * "Specifies if the full amount or only part of it is redeemed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmountFulfilType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RedemptionSchedule, AmountFullfilTypeCode> mmAmountFulfilType = new MMBusinessAttribute<RedemptionSchedule, AmountFullfilTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -393,12 +429,14 @@ public class RedemptionSchedule {
 			simpleType_lazy = () -> AmountFullfilTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RedemptionSchedule.class.getMethod("getAmountFulfilType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AmountFullfilTypeCode getValue(RedemptionSchedule obj) {
+			return obj.getAmountFulfilType();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, AmountFullfilTypeCode value) {
+			obj.setAmountFulfilType(value);
 		}
 	};
 	protected Number minimumNoticeDays;
@@ -429,7 +467,7 @@ public class RedemptionSchedule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumNoticeDays = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RedemptionSchedule, Number> mmMinimumNoticeDays = new MMBusinessAttribute<RedemptionSchedule, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -441,12 +479,14 @@ public class RedemptionSchedule {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RedemptionSchedule.class.getMethod("getMinimumNoticeDays", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(RedemptionSchedule obj) {
+			return obj.getMinimumNoticeDays();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, Number value) {
+			obj.setMinimumNoticeDays(value);
 		}
 	};
 	protected Number maximumNoticeDays;
@@ -477,7 +517,7 @@ public class RedemptionSchedule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumNoticeDays = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RedemptionSchedule, Number> mmMaximumNoticeDays = new MMBusinessAttribute<RedemptionSchedule, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -489,12 +529,14 @@ public class RedemptionSchedule {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RedemptionSchedule.class.getMethod("getMaximumNoticeDays", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(RedemptionSchedule obj) {
+			return obj.getMaximumNoticeDays();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, Number value) {
+			obj.setMaximumNoticeDays(value);
 		}
 	};
 	protected FinancialCenterCode financialCenter;
@@ -526,7 +568,7 @@ public class RedemptionSchedule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancialCenter = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RedemptionSchedule, FinancialCenterCode> mmFinancialCenter = new MMBusinessAttribute<RedemptionSchedule, FinancialCenterCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -538,12 +580,14 @@ public class RedemptionSchedule {
 			simpleType_lazy = () -> FinancialCenterCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RedemptionSchedule.class.getMethod("getFinancialCenter", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FinancialCenterCode getValue(RedemptionSchedule obj) {
+			return obj.getFinancialCenter();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, FinancialCenterCode value) {
+			obj.setFinancialCenter(value);
 		}
 	};
 	protected NoticePeriodTypeCode noticePeriodType;
@@ -573,7 +617,7 @@ public class RedemptionSchedule {
 	 * definition} = "Specifies the type of notice period."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNoticePeriodType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RedemptionSchedule, NoticePeriodTypeCode> mmNoticePeriodType = new MMBusinessAttribute<RedemptionSchedule, NoticePeriodTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -585,12 +629,14 @@ public class RedemptionSchedule {
 			simpleType_lazy = () -> NoticePeriodTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RedemptionSchedule.class.getMethod("getNoticePeriodType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public NoticePeriodTypeCode getValue(RedemptionSchedule obj) {
+			return obj.getNoticePeriodType();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, NoticePeriodTypeCode value) {
+			obj.setNoticePeriodType(value);
 		}
 	};
 	protected FrequencyCode priceChangeFrequency;
@@ -620,7 +666,7 @@ public class RedemptionSchedule {
 	 * definition} = "Redemption or amortisation price change frequency."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPriceChangeFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RedemptionSchedule, FrequencyCode> mmPriceChangeFrequency = new MMBusinessAttribute<RedemptionSchedule, FrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -632,12 +678,14 @@ public class RedemptionSchedule {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RedemptionSchedule.class.getMethod("getPriceChangeFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(RedemptionSchedule obj) {
+			return obj.getPriceChangeFrequency();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, FrequencyCode value) {
+			obj.setPriceChangeFrequency(value);
 		}
 	};
 	protected FrequencyCode priceFrequency;
@@ -667,7 +715,7 @@ public class RedemptionSchedule {
 	 * definition} = "Specifies the frequency of the redemption."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPriceFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RedemptionSchedule, FrequencyCode> mmPriceFrequency = new MMBusinessAttribute<RedemptionSchedule, FrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -679,12 +727,14 @@ public class RedemptionSchedule {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RedemptionSchedule.class.getMethod("getPriceFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(RedemptionSchedule obj) {
+			return obj.getPriceFrequency();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, FrequencyCode value) {
+			obj.setPriceFrequency(value);
 		}
 	};
 	protected Security security;
@@ -720,7 +770,7 @@ public class RedemptionSchedule {
 	 * definition} = "Security for which a redemption schedule is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RedemptionSchedule, Optional<Security>> mmSecurity = new MMBusinessAssociationEnd<RedemptionSchedule, Optional<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
@@ -729,9 +779,19 @@ public class RedemptionSchedule {
 			definition = "Security for which a redemption schedule is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmRedemptionSchedule;
+			opposite_lazy = () -> Security.mmRedemptionSchedule;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Optional<Security> getValue(RedemptionSchedule obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(RedemptionSchedule obj, Optional<Security> value) {
+			obj.setSecurity(value.orElse(null));
 		}
 	};
 
@@ -742,8 +802,7 @@ public class RedemptionSchedule {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RedemptionSchedule";
 				definition = "Describes the reason and terms for early partial or total redemption, amortisation or extension of an issue.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmRedemptionSchedule, com.tools20022.repository.entity.SecuritiesPricing.mmPriceChangeRedemptionSchedule,
-						com.tools20022.repository.entity.SecuritiesPricing.mmRelatedRedemptionSchedule, com.tools20022.repository.entity.DateTimePeriod.mmRedemptionSchedule);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmRedemptionSchedule, SecuritiesPricing.mmPriceChangeRedemptionSchedule, SecuritiesPricing.mmRelatedRedemptionSchedule, DateTimePeriod.mmRedemptionSchedule);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RedemptionSchedule.mmBusinessDayConvention, com.tools20022.repository.entity.RedemptionSchedule.mmEffectivePeriod,
 						com.tools20022.repository.entity.RedemptionSchedule.mmPriceChange, com.tools20022.repository.entity.RedemptionSchedule.mmPrice, com.tools20022.repository.entity.RedemptionSchedule.mmPartyType,
 						com.tools20022.repository.entity.RedemptionSchedule.mmAmountFulfilType, com.tools20022.repository.entity.RedemptionSchedule.mmMinimumNoticeDays,
@@ -772,7 +831,7 @@ public class RedemptionSchedule {
 		return effectivePeriod == null ? effectivePeriod = new ArrayList<>() : effectivePeriod;
 	}
 
-	public RedemptionSchedule setEffectivePeriod(List<com.tools20022.repository.entity.DateTimePeriod> effectivePeriod) {
+	public RedemptionSchedule setEffectivePeriod(List<DateTimePeriod> effectivePeriod) {
 		this.effectivePeriod = Objects.requireNonNull(effectivePeriod);
 		return this;
 	}
@@ -781,7 +840,7 @@ public class RedemptionSchedule {
 		return priceChange == null ? priceChange = new ArrayList<>() : priceChange;
 	}
 
-	public RedemptionSchedule setPriceChange(List<com.tools20022.repository.entity.SecuritiesPricing> priceChange) {
+	public RedemptionSchedule setPriceChange(List<SecuritiesPricing> priceChange) {
 		this.priceChange = Objects.requireNonNull(priceChange);
 		return this;
 	}
@@ -790,7 +849,7 @@ public class RedemptionSchedule {
 		return price == null ? price = new ArrayList<>() : price;
 	}
 
-	public RedemptionSchedule setPrice(List<com.tools20022.repository.entity.SecuritiesPricing> price) {
+	public RedemptionSchedule setPrice(List<SecuritiesPricing> price) {
 		this.price = Objects.requireNonNull(price);
 		return this;
 	}
@@ -871,7 +930,7 @@ public class RedemptionSchedule {
 		return security == null ? Optional.empty() : Optional.of(security);
 	}
 
-	public RedemptionSchedule setSecurity(com.tools20022.repository.entity.Security security) {
+	public RedemptionSchedule setSecurity(Security security) {
 		this.security = security;
 		return this;
 	}

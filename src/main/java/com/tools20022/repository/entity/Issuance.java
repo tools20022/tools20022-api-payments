@@ -24,9 +24,9 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max256Text;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.LoanContract1;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -166,7 +166,7 @@ public class Issuance {
 	 * definition} = "Date/time at which the security was made available."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIssueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Issuance, ISODateTime> mmIssueDate = new MMBusinessAttribute<Issuance, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LoanContract1.mmStartDate);
 			isDerived = false;
@@ -179,12 +179,14 @@ public class Issuance {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Issuance.class.getMethod("getIssueDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Issuance obj) {
+			return obj.getIssueDate();
+		}
+
+		@Override
+		public void setValue(Issuance obj, ISODateTime value) {
+			obj.setIssueDate(value);
 		}
 	};
 	protected CurrencyAndAmount issueDiscountAllowance;
@@ -216,7 +218,7 @@ public class Issuance {
 	 * definition} = "Discount on a new issue or tranche of an existing issue."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIssueDiscountAllowance = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Issuance, CurrencyAndAmount> mmIssueDiscountAllowance = new MMBusinessAttribute<Issuance, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -229,12 +231,14 @@ public class Issuance {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Issuance.class.getMethod("getIssueDiscountAllowance", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Issuance obj) {
+			return obj.getIssueDiscountAllowance();
+		}
+
+		@Override
+		public void setValue(Issuance obj, CurrencyAndAmount value) {
+			obj.setIssueDiscountAllowance(value);
 		}
 	};
 	protected RateAndAmount interestShortfall;
@@ -272,7 +276,7 @@ public class Issuance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterestShortfall = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Issuance, RateAndAmount> mmInterestShortfall = new MMBusinessAssociationEnd<Issuance, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -281,9 +285,19 @@ public class Issuance {
 			definition = "For structured security issues where there is a set schedule of principal and interest payments for the life of the issue, this is the difference between the actual rate of the interest payment and the expected or scheduled rate of the interest payment .";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmInterestRelatedIssuance;
+			opposite_lazy = () -> RateAndAmount.mmInterestRelatedIssuance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(Issuance obj) {
+			return obj.getInterestShortfall();
+		}
+
+		@Override
+		public void setValue(Issuance obj, RateAndAmount value) {
+			obj.setInterestShortfall(value);
 		}
 	};
 	protected RateAndAmount realisedLoss;
@@ -321,7 +335,7 @@ public class Issuance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRealisedLoss = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Issuance, RateAndAmount> mmRealisedLoss = new MMBusinessAssociationEnd<Issuance, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -330,9 +344,19 @@ public class Issuance {
 			definition = "For structured security issues where there is a set schedule of principal and interest payments for the life of the issue, this is the difference between the actual rate of the capital or principal repayment and the scheduled capital repayment.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmLossRelatedIssuance;
+			opposite_lazy = () -> RateAndAmount.mmLossRelatedIssuance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(Issuance obj) {
+			return obj.getRealisedLoss();
+		}
+
+		@Override
+		public void setValue(Issuance obj, RateAndAmount value) {
+			obj.setRealisedLoss(value);
 		}
 	};
 	protected Max256Text purpose;
@@ -361,7 +385,7 @@ public class Issuance {
 	 * "Reason for which money is raised through the issuance of a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Issuance, Max256Text> mmPurpose = new MMBusinessAttribute<Issuance, Max256Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -373,12 +397,14 @@ public class Issuance {
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Issuance.class.getMethod("getPurpose", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max256Text getValue(Issuance obj) {
+			return obj.getPurpose();
+		}
+
+		@Override
+		public void setValue(Issuance obj, Max256Text value) {
+			obj.setPurpose(value);
 		}
 	};
 	protected Number issueSize;
@@ -406,7 +432,7 @@ public class Issuance {
 	 * definition} = "Identifies the issue size range."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIssueSize = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Issuance, Number> mmIssueSize = new MMBusinessAttribute<Issuance, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -418,12 +444,14 @@ public class Issuance {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Issuance.class.getMethod("getIssueSize", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Issuance obj) {
+			return obj.getIssueSize();
+		}
+
+		@Override
+		public void setValue(Issuance obj, Number value) {
+			obj.setIssueSize(value);
 		}
 	};
 	protected SecuritiesQuantity issueNominalAmount;
@@ -459,7 +487,7 @@ public class Issuance {
 	 * definition} = "Total original amount or quantity published."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIssueNominalAmount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Issuance, SecuritiesQuantity> mmIssueNominalAmount = new MMBusinessAssociationEnd<Issuance, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -468,9 +496,19 @@ public class Issuance {
 			definition = "Total original amount or quantity published.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmIssuance;
+			opposite_lazy = () -> SecuritiesQuantity.mmIssuance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(Issuance obj) {
+			return obj.getIssueNominalAmount();
+		}
+
+		@Override
+		public void setValue(Issuance obj, SecuritiesQuantity value) {
+			obj.setIssueNominalAmount(value);
 		}
 	};
 	protected CorporateActionEvent eventInformation;
@@ -507,7 +545,7 @@ public class Issuance {
 	 * definition} = "Parameters of the event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEventInformation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Issuance, CorporateActionEvent> mmEventInformation = new MMBusinessAssociationEnd<Issuance, CorporateActionEvent>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -516,9 +554,19 @@ public class Issuance {
 			definition = "Parameters of the event.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmIssuance;
+			opposite_lazy = () -> CorporateActionEvent.mmIssuance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
+			type_lazy = () -> CorporateActionEvent.mmObject();
+		}
+
+		@Override
+		public CorporateActionEvent getValue(Issuance obj) {
+			return obj.getEventInformation();
+		}
+
+		@Override
+		public void setValue(Issuance obj, CorporateActionEvent value) {
+			obj.setEventInformation(value);
 		}
 	};
 	protected Asset issuedAsset;
@@ -553,7 +601,7 @@ public class Issuance {
 	 * definition} = "Asset which is issued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIssuedAsset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Issuance, Optional<Asset>> mmIssuedAsset = new MMBusinessAssociationEnd<Issuance, Optional<Asset>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -562,9 +610,19 @@ public class Issuance {
 			definition = "Asset which is issued.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Asset.mmIssuance;
+			opposite_lazy = () -> Asset.mmIssuance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
+			type_lazy = () -> Asset.mmObject();
+		}
+
+		@Override
+		public Optional<Asset> getValue(Issuance obj) {
+			return obj.getIssuedAsset();
+		}
+
+		@Override
+		public void setValue(Issuance obj, Optional<Asset> value) {
+			obj.setIssuedAsset(value.orElse(null));
 		}
 	};
 	protected SecuritiesPricing originalIssueDiscount;
@@ -601,7 +659,7 @@ public class Issuance {
 	 * "Discount from par value at the time the security is issued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOriginalIssueDiscount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Issuance, SecuritiesPricing> mmOriginalIssueDiscount = new MMBusinessAssociationEnd<Issuance, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -610,9 +668,19 @@ public class Issuance {
 			definition = "Discount from par value at the time the security is issued.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmIssuance;
+			opposite_lazy = () -> SecuritiesPricing.mmIssuance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(Issuance obj) {
+			return obj.getOriginalIssueDiscount();
+		}
+
+		@Override
+		public void setValue(Issuance obj, SecuritiesPricing value) {
+			obj.setOriginalIssueDiscount(value);
 		}
 	};
 	protected TradingMarket issuePlace;
@@ -650,7 +718,7 @@ public class Issuance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIssuePlace = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Issuance, TradingMarket> mmIssuePlace = new MMBusinessAssociationEnd<Issuance, TradingMarket>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -659,9 +727,19 @@ public class Issuance {
 			definition = "Primary market or country where an asset is issued by the issuer or its agent.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmIssuance;
+			opposite_lazy = () -> TradingMarket.mmIssuance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
+			type_lazy = () -> TradingMarket.mmObject();
+		}
+
+		@Override
+		public TradingMarket getValue(Issuance obj) {
+			return obj.getIssuePlace();
+		}
+
+		@Override
+		public void setValue(Issuance obj, TradingMarket value) {
+			obj.setIssuePlace(value);
 		}
 	};
 	protected GlobalNoteCode globalNoteType;
@@ -692,7 +770,7 @@ public class Issuance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGlobalNoteType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Issuance, GlobalNoteCode> mmGlobalNoteType = new MMBusinessAttribute<Issuance, GlobalNoteCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -704,15 +782,17 @@ public class Issuance {
 			simpleType_lazy = () -> GlobalNoteCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Issuance.class.getMethod("getGlobalNoteType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GlobalNoteCode getValue(Issuance obj) {
+			return obj.getGlobalNoteType();
+		}
+
+		@Override
+		public void setValue(Issuance obj, GlobalNoteCode value) {
+			obj.setGlobalNoteType(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Capital> capitalRaised;
+	protected List<Capital> capitalRaised;
 	/**
 	 * 
 	 <p>
@@ -744,7 +824,7 @@ public class Issuance {
 	 * definition} = "Capital raised through the issuance of an asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCapitalRaised = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Issuance, List<Capital>> mmCapitalRaised = new MMBusinessAssociationEnd<Issuance, List<Capital>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -752,9 +832,19 @@ public class Issuance {
 			name = "CapitalRaised";
 			definition = "Capital raised through the issuance of an asset.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Capital.mmAssetIssuance;
+			opposite_lazy = () -> Capital.mmAssetIssuance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
+			type_lazy = () -> Capital.mmObject();
+		}
+
+		@Override
+		public List<Capital> getValue(Issuance obj) {
+			return obj.getCapitalRaised();
+		}
+
+		@Override
+		public void setValue(Issuance obj, List<Capital> value) {
+			obj.setCapitalRaised(value);
 		}
 	};
 	protected DateTimePeriod subscriptionPeriod;
@@ -790,7 +880,7 @@ public class Issuance {
 	 * definition} = "Period during which the security can be subscribed to."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSubscriptionPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Issuance, DateTimePeriod> mmSubscriptionPeriod = new MMBusinessAssociationEnd<Issuance, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -799,9 +889,19 @@ public class Issuance {
 			definition = "Period during which the security can be subscribed to.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmIssuance;
+			opposite_lazy = () -> DateTimePeriod.mmIssuance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(Issuance obj) {
+			return obj.getSubscriptionPeriod();
+		}
+
+		@Override
+		public void setValue(Issuance obj, DateTimePeriod value) {
+			obj.setSubscriptionPeriod(value);
 		}
 	};
 	protected SecuritiesQuantity minimum;
@@ -839,7 +939,7 @@ public class Issuance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMinimum = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Issuance, SecuritiesQuantity> mmMinimum = new MMBusinessAssociationEnd<Issuance, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -848,9 +948,19 @@ public class Issuance {
 			definition = "Minimum or incremental denomination required for the transfer or change of ownership of a security.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedIssuance;
+			opposite_lazy = () -> SecuritiesQuantity.mmRelatedIssuance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(Issuance obj) {
+			return obj.getMinimum();
+		}
+
+		@Override
+		public void setValue(Issuance obj, SecuritiesQuantity value) {
+			obj.setMinimum(value);
 		}
 	};
 	protected CurrencyAndAmount issuePrice;
@@ -879,7 +989,7 @@ public class Issuance {
 	 * definition} = "Initial issue price of a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIssuePrice = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Issuance, CurrencyAndAmount> mmIssuePrice = new MMBusinessAttribute<Issuance, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
@@ -891,12 +1001,14 @@ public class Issuance {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Issuance.class.getMethod("getIssuePrice", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Issuance obj) {
+			return obj.getIssuePrice();
+		}
+
+		@Override
+		public void setValue(Issuance obj, CurrencyAndAmount value) {
+			obj.setIssuePrice(value);
 		}
 	};
 
@@ -907,10 +1019,8 @@ public class Issuance {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Issuance";
 				definition = "Preparation/bringing to market of a security (also known as primary market or Initial Public Offering (IPO) issuance).";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.mmIssuance, com.tools20022.repository.entity.SecuritiesPricing.mmIssuance, com.tools20022.repository.entity.TradingMarket.mmIssuance,
-						com.tools20022.repository.entity.DateTimePeriod.mmIssuance, com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedIssuance, com.tools20022.repository.entity.SecuritiesQuantity.mmIssuance,
-						com.tools20022.repository.entity.CorporateActionEvent.mmIssuance, com.tools20022.repository.entity.RateAndAmount.mmInterestRelatedIssuance, com.tools20022.repository.entity.RateAndAmount.mmLossRelatedIssuance,
-						com.tools20022.repository.entity.Capital.mmAssetIssuance);
+				associationDomain_lazy = () -> Arrays.asList(Asset.mmIssuance, SecuritiesPricing.mmIssuance, TradingMarket.mmIssuance, DateTimePeriod.mmIssuance, SecuritiesQuantity.mmRelatedIssuance, SecuritiesQuantity.mmIssuance,
+						CorporateActionEvent.mmIssuance, RateAndAmount.mmInterestRelatedIssuance, RateAndAmount.mmLossRelatedIssuance, Capital.mmAssetIssuance);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Issuance.mmIssueDate, com.tools20022.repository.entity.Issuance.mmIssueDiscountAllowance, com.tools20022.repository.entity.Issuance.mmInterestShortfall,
 						com.tools20022.repository.entity.Issuance.mmRealisedLoss, com.tools20022.repository.entity.Issuance.mmPurpose, com.tools20022.repository.entity.Issuance.mmIssueSize,
 						com.tools20022.repository.entity.Issuance.mmIssueNominalAmount, com.tools20022.repository.entity.Issuance.mmEventInformation, com.tools20022.repository.entity.Issuance.mmIssuedAsset,
@@ -949,7 +1059,7 @@ public class Issuance {
 		return interestShortfall;
 	}
 
-	public Issuance setInterestShortfall(com.tools20022.repository.entity.RateAndAmount interestShortfall) {
+	public Issuance setInterestShortfall(RateAndAmount interestShortfall) {
 		this.interestShortfall = Objects.requireNonNull(interestShortfall);
 		return this;
 	}
@@ -958,7 +1068,7 @@ public class Issuance {
 		return realisedLoss;
 	}
 
-	public Issuance setRealisedLoss(com.tools20022.repository.entity.RateAndAmount realisedLoss) {
+	public Issuance setRealisedLoss(RateAndAmount realisedLoss) {
 		this.realisedLoss = Objects.requireNonNull(realisedLoss);
 		return this;
 	}
@@ -985,7 +1095,7 @@ public class Issuance {
 		return issueNominalAmount;
 	}
 
-	public Issuance setIssueNominalAmount(com.tools20022.repository.entity.SecuritiesQuantity issueNominalAmount) {
+	public Issuance setIssueNominalAmount(SecuritiesQuantity issueNominalAmount) {
 		this.issueNominalAmount = Objects.requireNonNull(issueNominalAmount);
 		return this;
 	}
@@ -994,7 +1104,7 @@ public class Issuance {
 		return eventInformation;
 	}
 
-	public Issuance setEventInformation(com.tools20022.repository.entity.CorporateActionEvent eventInformation) {
+	public Issuance setEventInformation(CorporateActionEvent eventInformation) {
 		this.eventInformation = Objects.requireNonNull(eventInformation);
 		return this;
 	}
@@ -1003,7 +1113,7 @@ public class Issuance {
 		return issuedAsset == null ? Optional.empty() : Optional.of(issuedAsset);
 	}
 
-	public Issuance setIssuedAsset(com.tools20022.repository.entity.Asset issuedAsset) {
+	public Issuance setIssuedAsset(Asset issuedAsset) {
 		this.issuedAsset = issuedAsset;
 		return this;
 	}
@@ -1012,7 +1122,7 @@ public class Issuance {
 		return originalIssueDiscount;
 	}
 
-	public Issuance setOriginalIssueDiscount(com.tools20022.repository.entity.SecuritiesPricing originalIssueDiscount) {
+	public Issuance setOriginalIssueDiscount(SecuritiesPricing originalIssueDiscount) {
 		this.originalIssueDiscount = Objects.requireNonNull(originalIssueDiscount);
 		return this;
 	}
@@ -1021,7 +1131,7 @@ public class Issuance {
 		return issuePlace;
 	}
 
-	public Issuance setIssuePlace(com.tools20022.repository.entity.TradingMarket issuePlace) {
+	public Issuance setIssuePlace(TradingMarket issuePlace) {
 		this.issuePlace = Objects.requireNonNull(issuePlace);
 		return this;
 	}
@@ -1039,7 +1149,7 @@ public class Issuance {
 		return capitalRaised == null ? capitalRaised = new ArrayList<>() : capitalRaised;
 	}
 
-	public Issuance setCapitalRaised(List<com.tools20022.repository.entity.Capital> capitalRaised) {
+	public Issuance setCapitalRaised(List<Capital> capitalRaised) {
 		this.capitalRaised = Objects.requireNonNull(capitalRaised);
 		return this;
 	}
@@ -1048,7 +1158,7 @@ public class Issuance {
 		return subscriptionPeriod;
 	}
 
-	public Issuance setSubscriptionPeriod(com.tools20022.repository.entity.DateTimePeriod subscriptionPeriod) {
+	public Issuance setSubscriptionPeriod(DateTimePeriod subscriptionPeriod) {
 		this.subscriptionPeriod = Objects.requireNonNull(subscriptionPeriod);
 		return this;
 	}
@@ -1057,7 +1167,7 @@ public class Issuance {
 		return minimum;
 	}
 
-	public Issuance setMinimum(com.tools20022.repository.entity.SecuritiesQuantity minimum) {
+	public Issuance setMinimum(SecuritiesQuantity minimum) {
 		this.minimum = Objects.requireNonNull(minimum);
 		return this;
 	}

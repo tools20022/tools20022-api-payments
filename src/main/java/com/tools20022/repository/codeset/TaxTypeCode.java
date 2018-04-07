@@ -1020,7 +1020,7 @@ public class TaxTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Share-related profit. This is a tax specific to the German market . The
+	 * Share-related profit. This is a tax specific to the German market. The
 	 * share-related-profit gives the fund the opportunity to pass on to the
 	 * institutional investor redeeming fund units certain tax-free income from
 	 * equity. The calculation method is based on the new Investment Tax Act
@@ -1041,7 +1041,7 @@ public class TaxTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Share-related profit. This is a tax specific to the German market . The share-related-profit gives the fund the opportunity to pass on to the institutional investor redeeming fund units certain tax-free income from equity. The calculation method is based on the new Investment Tax Act (Investmentsteuergesetz)."
+	 * "Share-related profit. This is a tax specific to the German market. The share-related-profit gives the fund the opportunity to pass on to the institutional investor redeeming fund units certain tax-free income from equity. The calculation method is based on the new Investment Tax Act (Investmentsteuergesetz)."
 	 * </li>
 	 * </ul>
 	 */
@@ -1049,7 +1049,7 @@ public class TaxTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Aktiengewinn2";
-			definition = "Share-related profit. This is a tax specific to the German market . The share-related-profit gives the fund the opportunity to pass on to the institutional investor redeeming fund units certain tax-free income from equity. The calculation method is based on the new Investment Tax Act (Investmentsteuergesetz).";
+			definition = "Share-related profit. This is a tax specific to the German market. The share-related-profit gives the fund the opportunity to pass on to the institutional investor redeeming fund units certain tax-free income from equity. The calculation method is based on the new Investment Tax Act (Investmentsteuergesetz).";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxTypeCode.mmObject();
 			codeName = "AKT2";
 		}

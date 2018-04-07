@@ -20,10 +20,10 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.DirectDebitMandate;
 import com.tools20022.repository.entity.IndividualPayment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -150,7 +150,7 @@ public class DirectDebit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRegistrationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebit, Max35Text> mmRegistrationIdentification = new MMBusinessAttribute<DirectDebit, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebit.mmObject();
@@ -162,12 +162,14 @@ public class DirectDebit extends IndividualPayment {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebit.class.getMethod("getRegistrationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(DirectDebit obj) {
+			return obj.getRegistrationIdentification();
+		}
+
+		@Override
+		public void setValue(DirectDebit obj, Max35Text value) {
+			obj.setRegistrationIdentification(value);
 		}
 	};
 	protected DirectDebitMandate directDebitMandate;
@@ -213,7 +215,7 @@ public class DirectDebit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDirectDebitMandate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DirectDebit, com.tools20022.repository.entity.DirectDebitMandate> mmDirectDebitMandate = new MMBusinessAssociationEnd<DirectDebit, com.tools20022.repository.entity.DirectDebitMandate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DirectDebitTransaction9.mmMandateRelatedInformation);
 			isDerived = false;
@@ -226,6 +228,16 @@ public class DirectDebit extends IndividualPayment {
 			opposite_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmRelatedDirectDebit;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.DirectDebitMandate getValue(DirectDebit obj) {
+			return obj.getDirectDebitMandate();
+		}
+
+		@Override
+		public void setValue(DirectDebit obj, com.tools20022.repository.entity.DirectDebitMandate value) {
+			obj.setDirectDebitMandate(value);
 		}
 	};
 	protected Max35Text preNotificationIdentification;
@@ -263,7 +275,7 @@ public class DirectDebit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPreNotificationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebit, Max35Text> mmPreNotificationIdentification = new MMBusinessAttribute<DirectDebit, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DirectDebitTransaction9.mmPreNotificationIdentification);
 			isDerived = false;
@@ -276,12 +288,14 @@ public class DirectDebit extends IndividualPayment {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebit.class.getMethod("getPreNotificationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(DirectDebit obj) {
+			return obj.getPreNotificationIdentification();
+		}
+
+		@Override
+		public void setValue(DirectDebit obj, Max35Text value) {
+			obj.setPreNotificationIdentification(value);
 		}
 	};
 	protected ISODate preNotificationDate;
@@ -319,7 +333,7 @@ public class DirectDebit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPreNotificationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebit, ISODate> mmPreNotificationDate = new MMBusinessAttribute<DirectDebit, ISODate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DirectDebitTransaction9.mmPreNotificationDate);
 			isDerived = false;
@@ -332,12 +346,14 @@ public class DirectDebit extends IndividualPayment {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebit.class.getMethod("getPreNotificationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(DirectDebit obj) {
+			return obj.getPreNotificationDate();
+		}
+
+		@Override
+		public void setValue(DirectDebit obj, ISODate value) {
+			obj.setPreNotificationDate(value);
 		}
 	};
 

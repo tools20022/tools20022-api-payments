@@ -21,10 +21,13 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ChequeTypeCode;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.CashAccount;
+import com.tools20022.repository.entity.ChequeIssue;
+import com.tools20022.repository.entity.ChequePartyRole;
+import com.tools20022.repository.entity.ChequePayment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Cheque7;
 import com.tools20022.repository.msg.TransactionReferences3;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -136,7 +139,7 @@ public class Cheque {
 	 * "Specifies the parameters related to the delivery of the cheque."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmChequeDelivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Cheque, ChequeIssue> mmChequeDelivery = new MMBusinessAssociationEnd<Cheque, ChequeIssue>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
@@ -145,9 +148,19 @@ public class Cheque {
 			definition = "Specifies the parameters related to the delivery of the cheque.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmCheque;
+			opposite_lazy = () -> ChequeIssue.mmCheque;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ChequeIssue.mmObject();
+			type_lazy = () -> ChequeIssue.mmObject();
+		}
+
+		@Override
+		public ChequeIssue getValue(Cheque obj) {
+			return obj.getChequeDelivery();
+		}
+
+		@Override
+		public void setValue(Cheque obj, ChequeIssue value) {
+			obj.setChequeDelivery(value);
 		}
 	};
 	protected Max35Text number;
@@ -185,7 +198,7 @@ public class Cheque {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Cheque, Max35Text> mmNumber = new MMBusinessAttribute<Cheque, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransactionReferences3.mmChequeNumber);
 			isDerived = false;
@@ -198,12 +211,14 @@ public class Cheque {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Cheque.class.getMethod("getNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Cheque obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(Cheque obj, Max35Text value) {
+			obj.setNumber(value);
 		}
 	};
 	protected ChequeTypeCode chequeType;
@@ -239,7 +254,7 @@ public class Cheque {
 	 * definition} = "Specifies the type of cheque."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmChequeType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Cheque, ChequeTypeCode> mmChequeType = new MMBusinessAttribute<Cheque, ChequeTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmChequeType);
 			isDerived = false;
@@ -252,12 +267,14 @@ public class Cheque {
 			simpleType_lazy = () -> ChequeTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Cheque.class.getMethod("getChequeType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ChequeTypeCode getValue(Cheque obj) {
+			return obj.getChequeType();
+		}
+
+		@Override
+		public void setValue(Cheque obj, ChequeTypeCode value) {
+			obj.setChequeType(value);
 		}
 	};
 	protected ISODate maturityDate;
@@ -295,7 +312,7 @@ public class Cheque {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaturityDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Cheque, ISODate> mmMaturityDate = new MMBusinessAttribute<Cheque, ISODate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmChequeMaturityDate);
 			isDerived = false;
@@ -308,12 +325,14 @@ public class Cheque {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Cheque.class.getMethod("getMaturityDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(Cheque obj) {
+			return obj.getMaturityDate();
+		}
+
+		@Override
+		public void setValue(Cheque obj, ISODate value) {
+			obj.setMaturityDate(value);
 		}
 	};
 	protected Max35Text formsCode;
@@ -350,7 +369,7 @@ public class Cheque {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFormsCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Cheque, Max35Text> mmFormsCode = new MMBusinessAttribute<Cheque, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmFormsCode);
 			isDerived = false;
@@ -363,12 +382,14 @@ public class Cheque {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Cheque.class.getMethod("getFormsCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Cheque obj) {
+			return obj.getFormsCode();
+		}
+
+		@Override
+		public void setValue(Cheque obj, Max35Text value) {
+			obj.setFormsCode(value);
 		}
 	};
 	protected Max35Text memoField;
@@ -405,7 +426,7 @@ public class Cheque {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMemoField = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Cheque, Max35Text> mmMemoField = new MMBusinessAttribute<Cheque, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmMemoField);
 			isDerived = false;
@@ -418,12 +439,14 @@ public class Cheque {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Cheque.class.getMethod("getMemoField", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Cheque obj) {
+			return obj.getMemoField();
+		}
+
+		@Override
+		public void setValue(Cheque obj, Max35Text value) {
+			obj.setMemoField(value);
 		}
 	};
 	protected Max35Text regionalClearingZone;
@@ -461,7 +484,7 @@ public class Cheque {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRegionalClearingZone = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Cheque, Max35Text> mmRegionalClearingZone = new MMBusinessAttribute<Cheque, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cheque7.mmRegionalClearingZone);
 			isDerived = false;
@@ -474,15 +497,17 @@ public class Cheque {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Cheque.class.getMethod("getRegionalClearingZone", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Cheque obj) {
+			return obj.getRegionalClearingZone();
+		}
+
+		@Override
+		public void setValue(Cheque obj, Max35Text value) {
+			obj.setRegionalClearingZone(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ChequePayment> relatedPayment;
+	protected List<ChequePayment> relatedPayment;
 	/**
 	 * 
 	 <p>
@@ -515,7 +540,7 @@ public class Cheque {
 	 * definition} = "Payment which uses a cheque."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Cheque, List<ChequePayment>> mmRelatedPayment = new MMBusinessAssociationEnd<Cheque, List<ChequePayment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
@@ -523,12 +548,22 @@ public class Cheque {
 			name = "RelatedPayment";
 			definition = "Payment which uses a cheque.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ChequePayment.mmCheque;
+			opposite_lazy = () -> ChequePayment.mmCheque;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ChequePayment.mmObject();
+			type_lazy = () -> ChequePayment.mmObject();
+		}
+
+		@Override
+		public List<ChequePayment> getValue(Cheque obj) {
+			return obj.getRelatedPayment();
+		}
+
+		@Override
+		public void setValue(Cheque obj, List<ChequePayment> value) {
+			obj.setRelatedPayment(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ChequePartyRole> chequePartyRole;
+	protected List<ChequePartyRole> chequePartyRole;
 	/**
 	 * 
 	 <p>
@@ -563,7 +598,7 @@ public class Cheque {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmChequePartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Cheque, List<ChequePartyRole>> mmChequePartyRole = new MMBusinessAssociationEnd<Cheque, List<ChequePartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
@@ -571,9 +606,19 @@ public class Cheque {
 			name = "ChequePartyRole";
 			definition = "Specifies each role played by a party in the process of paying by cheque.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ChequePartyRole.mmCheque;
+			opposite_lazy = () -> ChequePartyRole.mmCheque;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ChequePartyRole.mmObject();
+			type_lazy = () -> ChequePartyRole.mmObject();
+		}
+
+		@Override
+		public List<ChequePartyRole> getValue(Cheque obj) {
+			return obj.getChequePartyRole();
+		}
+
+		@Override
+		public void setValue(Cheque obj, List<ChequePartyRole> value) {
+			obj.setChequePartyRole(value);
 		}
 	};
 	protected CashAccount cashAccount;
@@ -609,7 +654,7 @@ public class Cheque {
 	 * definition} = "Cash account on which a cheque is drawn."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Cheque, CashAccount> mmCashAccount = new MMBusinessAssociationEnd<Cheque, CashAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
@@ -618,9 +663,19 @@ public class Cheque {
 			definition = "Cash account on which a cheque is drawn.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmCheque;
+			opposite_lazy = () -> CashAccount.mmCheque;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
+			type_lazy = () -> CashAccount.mmObject();
+		}
+
+		@Override
+		public CashAccount getValue(Cheque obj) {
+			return obj.getCashAccount();
+		}
+
+		@Override
+		public void setValue(Cheque obj, CashAccount value) {
+			obj.setCashAccount(value);
 		}
 	};
 
@@ -631,8 +686,7 @@ public class Cheque {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Cheque";
 				definition = "Negotiable instrument instructing a financial institution to pay a specific amount of a specific currency from the account of the drawer with that institution.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmCheque, com.tools20022.repository.entity.ChequePayment.mmCheque, com.tools20022.repository.entity.ChequeIssue.mmCheque,
-						com.tools20022.repository.entity.ChequePartyRole.mmCheque);
+				associationDomain_lazy = () -> Arrays.asList(CashAccount.mmCheque, ChequePayment.mmCheque, ChequeIssue.mmCheque, ChequePartyRole.mmCheque);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Cheque.mmChequeDelivery, com.tools20022.repository.entity.Cheque.mmNumber, com.tools20022.repository.entity.Cheque.mmChequeType,
 						com.tools20022.repository.entity.Cheque.mmMaturityDate, com.tools20022.repository.entity.Cheque.mmFormsCode, com.tools20022.repository.entity.Cheque.mmMemoField,
 						com.tools20022.repository.entity.Cheque.mmRegionalClearingZone, com.tools20022.repository.entity.Cheque.mmRelatedPayment, com.tools20022.repository.entity.Cheque.mmChequePartyRole,
@@ -651,7 +705,7 @@ public class Cheque {
 		return chequeDelivery;
 	}
 
-	public Cheque setChequeDelivery(com.tools20022.repository.entity.ChequeIssue chequeDelivery) {
+	public Cheque setChequeDelivery(ChequeIssue chequeDelivery) {
 		this.chequeDelivery = Objects.requireNonNull(chequeDelivery);
 		return this;
 	}
@@ -714,7 +768,7 @@ public class Cheque {
 		return relatedPayment == null ? relatedPayment = new ArrayList<>() : relatedPayment;
 	}
 
-	public Cheque setRelatedPayment(List<com.tools20022.repository.entity.ChequePayment> relatedPayment) {
+	public Cheque setRelatedPayment(List<ChequePayment> relatedPayment) {
 		this.relatedPayment = Objects.requireNonNull(relatedPayment);
 		return this;
 	}
@@ -723,7 +777,7 @@ public class Cheque {
 		return chequePartyRole == null ? chequePartyRole = new ArrayList<>() : chequePartyRole;
 	}
 
-	public Cheque setChequePartyRole(List<com.tools20022.repository.entity.ChequePartyRole> chequePartyRole) {
+	public Cheque setChequePartyRole(List<ChequePartyRole> chequePartyRole) {
 		this.chequePartyRole = Objects.requireNonNull(chequePartyRole);
 		return this;
 	}
@@ -732,7 +786,7 @@ public class Cheque {
 		return cashAccount;
 	}
 
-	public Cheque setCashAccount(com.tools20022.repository.entity.CashAccount cashAccount) {
+	public Cheque setCashAccount(CashAccount cashAccount) {
 		this.cashAccount = Objects.requireNonNull(cashAccount);
 		return this;
 	}

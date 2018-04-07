@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.msg.PaymentInstruction22;
 import com.tools20022.repository.msg.PaymentInstruction23;
+import com.tools20022.repository.msg.PaymentInstruction24;
 
 /**
  * If CreditTransferTransaction/ChequeInstruction/DeliveryMethod is present and
@@ -54,7 +55,7 @@ public class ConstraintChequeInstructionDeliverToDebtorGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction23 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction23> forPaymentInstruction23 = new MMConstraint<PaymentInstruction23>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChequeInstructionDeliverToDebtorGuideline";
@@ -63,8 +64,8 @@ public class ConstraintChequeInstructionDeliverToDebtorGuideline {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction23((PaymentInstruction23) obj);
+		public void executeValidator(PaymentInstruction23 obj) throws Exception {
+			checkPaymentInstruction23(obj);
 		}
 	};
 	/**
@@ -88,7 +89,7 @@ public class ConstraintChequeInstructionDeliverToDebtorGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction22 = new MMConstraint() {
+	public static final MMConstraint<PaymentInstruction22> forPaymentInstruction22 = new MMConstraint<PaymentInstruction22>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChequeInstructionDeliverToDebtorGuideline";
@@ -97,8 +98,42 @@ public class ConstraintChequeInstructionDeliverToDebtorGuideline {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction22((PaymentInstruction22) obj);
+		public void executeValidator(PaymentInstruction22 obj) throws Exception {
+			checkPaymentInstruction22(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24
+	 * PaymentInstruction24}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ChequeInstructionDeliverToDebtorGuideline"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "If CreditTransferTransactionInformation/ChequeInstruction/DeliveryMethod is present and if CreditTransferTransactionInformation/ChequeInstruction/DeliveryMethod/Code is CRDB (CourierToDebtor), MLDB (MailToDebtor), PUDB (PickUpByDebtor) or RGDB (RegisteredMailToDebtor), then CreditTransferTransactionInformation/ChequeInstruction/DeliverTo may only be present if different from Debtor."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<PaymentInstruction24> forPaymentInstruction24 = new MMConstraint<PaymentInstruction24>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ChequeInstructionDeliverToDebtorGuideline";
+			definition = "If CreditTransferTransactionInformation/ChequeInstruction/DeliveryMethod is present and if CreditTransferTransactionInformation/ChequeInstruction/DeliveryMethod/Code is CRDB (CourierToDebtor), MLDB (MailToDebtor), PUDB (PickUpByDebtor) or RGDB (RegisteredMailToDebtor), then CreditTransferTransactionInformation/ChequeInstruction/DeliverTo may only be present if different from Debtor.";
+			owner_lazy = () -> PaymentInstruction24.mmObject();
+		}
+
+		@Override
+		public void executeValidator(PaymentInstruction24 obj) throws Exception {
+			checkPaymentInstruction24(obj);
 		}
 	};
 
@@ -124,6 +159,19 @@ public class ConstraintChequeInstructionDeliverToDebtorGuideline {
 	 * be present if different from Debtor.
 	 */
 	public static void checkPaymentInstruction22(PaymentInstruction22 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * If CreditTransferTransactionInformation/ChequeInstruction/DeliveryMethod
+	 * is present and if
+	 * CreditTransferTransactionInformation/ChequeInstruction/DeliveryMethod
+	 * /Code is CRDB (CourierToDebtor), MLDB (MailToDebtor), PUDB
+	 * (PickUpByDebtor) or RGDB (RegisteredMailToDebtor), then
+	 * CreditTransferTransactionInformation/ChequeInstruction/DeliverTo may only
+	 * be present if different from Debtor.
+	 */
+	public static void checkPaymentInstruction24(PaymentInstruction24 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

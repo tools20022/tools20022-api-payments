@@ -23,8 +23,8 @@ import com.tools20022.repository.codeset.ExchangePolicyCode;
 import com.tools20022.repository.codeset.FinancialCaptureCode;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.entity.TerminalManagementSystem;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -138,7 +138,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Identification of the payment application."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmApplicationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, Max35Text> mmApplicationIdentification = new MMBusinessAttribute<AcceptorConfiguration, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -150,12 +150,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getApplicationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(AcceptorConfiguration obj) {
+			return obj.getApplicationIdentification();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Max35Text value) {
+			obj.setApplicationIdentification(value);
 		}
 	};
 	protected FinancialCaptureCode financialCapture;
@@ -186,7 +188,7 @@ public class AcceptorConfiguration {
 	 * "Mode for the financial capture of the transaction by the acquirer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancialCapture = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, FinancialCaptureCode> mmFinancialCapture = new MMBusinessAttribute<AcceptorConfiguration, FinancialCaptureCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -198,12 +200,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> FinancialCaptureCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getFinancialCapture", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FinancialCaptureCode getValue(AcceptorConfiguration obj) {
+			return obj.getFinancialCapture();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, FinancialCaptureCode value) {
+			obj.setFinancialCapture(value);
 		}
 	};
 	protected BatchTransactionTypeCode batchTransferContent;
@@ -233,7 +237,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Types of transaction to include in the batch."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBatchTransferContent = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, BatchTransactionTypeCode> mmBatchTransferContent = new MMBusinessAttribute<AcceptorConfiguration, BatchTransactionTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -245,12 +249,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> BatchTransactionTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getBatchTransferContent", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BatchTransactionTypeCode getValue(AcceptorConfiguration obj) {
+			return obj.getBatchTransferContent();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, BatchTransactionTypeCode value) {
+			obj.setBatchTransferContent(value);
 		}
 	};
 	protected ExchangePolicyCode exchangePolicy;
@@ -280,7 +286,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Exchange policy between parties."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExchangePolicy = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, ExchangePolicyCode> mmExchangePolicy = new MMBusinessAttribute<AcceptorConfiguration, ExchangePolicyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -292,12 +298,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> ExchangePolicyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getExchangePolicy", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExchangePolicyCode getValue(AcceptorConfiguration obj) {
+			return obj.getExchangePolicy();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, ExchangePolicyCode value) {
+			obj.setExchangePolicy(value);
 		}
 	};
 	protected Number maximumNumber;
@@ -326,7 +334,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Maximum number of transactions without exchange."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, Number> mmMaximumNumber = new MMBusinessAttribute<AcceptorConfiguration, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -338,12 +346,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getMaximumNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(AcceptorConfiguration obj) {
+			return obj.getMaximumNumber();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Number value) {
+			obj.setMaximumNumber(value);
 		}
 	};
 	protected ImpliedCurrencyAndAmount maximumAmount;
@@ -374,7 +384,7 @@ public class AcceptorConfiguration {
 	 * "Maximum cumulative amount of the transactions without exchange."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, ImpliedCurrencyAndAmount> mmMaximumAmount = new MMBusinessAttribute<AcceptorConfiguration, ImpliedCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -386,12 +396,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getMaximumAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ImpliedCurrencyAndAmount getValue(AcceptorConfiguration obj) {
+			return obj.getMaximumAmount();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, ImpliedCurrencyAndAmount value) {
+			obj.setMaximumAmount(value);
 		}
 	};
 	protected TrueFalseIndicator reconciliationByAcquirer;
@@ -423,7 +435,7 @@ public class AcceptorConfiguration {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReconciliationByAcquirer = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator> mmReconciliationByAcquirer = new MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -435,12 +447,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getReconciliationByAcquirer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TrueFalseIndicator getValue(AcceptorConfiguration obj) {
+			return obj.getReconciliationByAcquirer();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, TrueFalseIndicator value) {
+			obj.setReconciliationByAcquirer(value);
 		}
 	};
 	protected TrueFalseIndicator totalsPerCurrency;
@@ -471,7 +485,7 @@ public class AcceptorConfiguration {
 	 * "Indicates the reconciliation total amounts are computed per currency."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalsPerCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator> mmTotalsPerCurrency = new MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -483,12 +497,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getTotalsPerCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TrueFalseIndicator getValue(AcceptorConfiguration obj) {
+			return obj.getTotalsPerCurrency();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, TrueFalseIndicator value) {
+			obj.setTotalsPerCurrency(value);
 		}
 	};
 	protected TrueFalseIndicator protectCardData;
@@ -519,7 +535,7 @@ public class AcceptorConfiguration {
 	 * "Indicator to require protection of sensitive card data in messages."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProtectCardData = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator> mmProtectCardData = new MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -531,12 +547,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getProtectCardData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TrueFalseIndicator getValue(AcceptorConfiguration obj) {
+			return obj.getProtectCardData();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, TrueFalseIndicator value) {
+			obj.setProtectCardData(value);
 		}
 	};
 	protected Max10000Binary retailerParameters;
@@ -566,7 +584,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Acceptor parameters dedicated to the retailer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRetailerParameters = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, Max10000Binary> mmRetailerParameters = new MMBusinessAttribute<AcceptorConfiguration, Max10000Binary>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -578,12 +596,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> Max10000Binary.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getRetailerParameters", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max10000Binary getValue(AcceptorConfiguration obj) {
+			return obj.getRetailerParameters();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Max10000Binary value) {
+			obj.setRetailerParameters(value);
 		}
 	};
 	protected Max10000Binary applicationParameters;
@@ -614,7 +634,7 @@ public class AcceptorConfiguration {
 	 * "Configuration parameters attached to the payment application."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmApplicationParameters = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, Max10000Binary> mmApplicationParameters = new MMBusinessAttribute<AcceptorConfiguration, Max10000Binary>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -626,12 +646,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> Max10000Binary.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getApplicationParameters", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max10000Binary getValue(AcceptorConfiguration obj) {
+			return obj.getApplicationParameters();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Max10000Binary value) {
+			obj.setApplicationParameters(value);
 		}
 	};
 	protected TerminalManagementSystem terminalManagementSystem;
@@ -671,7 +693,7 @@ public class AcceptorConfiguration {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTerminalManagementSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AcceptorConfiguration, Optional<TerminalManagementSystem>> mmTerminalManagementSystem = new MMBusinessAssociationEnd<AcceptorConfiguration, Optional<TerminalManagementSystem>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -680,9 +702,19 @@ public class AcceptorConfiguration {
 			definition = "Terminal management system for which an acceptor configuration is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmAcceptorConfiguration;
+			opposite_lazy = () -> TerminalManagementSystem.mmAcceptorConfiguration;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
+			type_lazy = () -> TerminalManagementSystem.mmObject();
+		}
+
+		@Override
+		public Optional<TerminalManagementSystem> getValue(AcceptorConfiguration obj) {
+			return obj.getTerminalManagementSystem();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Optional<TerminalManagementSystem> value) {
+			obj.setTerminalManagementSystem(value.orElse(null));
 		}
 	};
 	protected Max35Text applicationVersion;
@@ -711,7 +743,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Version of the application."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmApplicationVersion = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, Max35Text> mmApplicationVersion = new MMBusinessAttribute<AcceptorConfiguration, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -723,12 +755,14 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getApplicationVersion", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(AcceptorConfiguration obj) {
+			return obj.getApplicationVersion();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Max35Text value) {
+			obj.setApplicationVersion(value);
 		}
 	};
 
@@ -739,7 +773,7 @@ public class AcceptorConfiguration {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcceptorConfiguration";
 				definition = "Acceptor parameters to be downloaded from the terminal management system.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TerminalManagementSystem.mmAcceptorConfiguration);
+				associationDomain_lazy = () -> Arrays.asList(TerminalManagementSystem.mmAcceptorConfiguration);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AcceptorConfiguration.mmApplicationIdentification, com.tools20022.repository.entity.AcceptorConfiguration.mmFinancialCapture,
 						com.tools20022.repository.entity.AcceptorConfiguration.mmBatchTransferContent, com.tools20022.repository.entity.AcceptorConfiguration.mmExchangePolicy,
 						com.tools20022.repository.entity.AcceptorConfiguration.mmMaximumNumber, com.tools20022.repository.entity.AcceptorConfiguration.mmMaximumAmount,
@@ -860,7 +894,7 @@ public class AcceptorConfiguration {
 		return terminalManagementSystem == null ? Optional.empty() : Optional.of(terminalManagementSystem);
 	}
 
-	public AcceptorConfiguration setTerminalManagementSystem(com.tools20022.repository.entity.TerminalManagementSystem terminalManagementSystem) {
+	public AcceptorConfiguration setTerminalManagementSystem(TerminalManagementSystem terminalManagementSystem) {
 		this.terminalManagementSystem = terminalManagementSystem;
 		return this;
 	}

@@ -21,6 +21,8 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Account;
+import com.tools20022.repository.entity.InvestmentFund;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -126,7 +128,7 @@ public class InvestmentFundPartyRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundPartyRole, List<Account>> mmAccount = new MMBusinessAssociationEnd<InvestmentFundPartyRole, List<Account>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundPartyRole.mmObject();
@@ -137,6 +139,16 @@ public class InvestmentFundPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmInvestmentFundPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
+		}
+
+		@Override
+		public List<Account> getValue(InvestmentFundPartyRole obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundPartyRole obj, List<Account> value) {
+			obj.setAccount(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFund> investmentFund;
@@ -173,7 +185,7 @@ public class InvestmentFundPartyRole extends Role {
 	 * definition} = "Specifies the fund for which the party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFund = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentFundPartyRole, List<InvestmentFund>> mmInvestmentFund = new MMBusinessAssociationEnd<InvestmentFundPartyRole, List<InvestmentFund>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundPartyRole.mmObject();
@@ -184,6 +196,16 @@ public class InvestmentFundPartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
+		}
+
+		@Override
+		public List<InvestmentFund> getValue(InvestmentFundPartyRole obj) {
+			return obj.getInvestmentFund();
+		}
+
+		@Override
+		public void setValue(InvestmentFundPartyRole obj, List<InvestmentFund> value) {
+			obj.setInvestmentFund(value);
 		}
 	};
 

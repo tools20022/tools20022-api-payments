@@ -178,7 +178,7 @@ public class BaselineStatusCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "State of the baseline when an initial and at least one twin baselines have been  submitted but it has not yet been agreed by all parties."
+	 * "State of the baseline when an initial and at least one twin baselines have been submitted but it has not yet been agreed by all parties."
 	 * </li>
 	 * </ul>
 	 */
@@ -186,7 +186,7 @@ public class BaselineStatusCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartiallyMatched";
-			definition = "State of the baseline when an initial and at least one twin baselines have been  submitted but it has not yet been agreed by all parties.";
+			definition = "State of the baseline when an initial and at least one twin baselines have been submitted but it has not yet been agreed by all parties.";
 			owner_lazy = () -> com.tools20022.repository.codeset.BaselineStatusCode.mmObject();
 			codeName = "PMTC";
 		}

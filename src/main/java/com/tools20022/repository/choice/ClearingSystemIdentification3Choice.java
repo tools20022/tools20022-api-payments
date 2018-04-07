@@ -109,7 +109,7 @@ public class ClearingSystemIdentification3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ClearingSystemIdentification3Choice, ExternalCashClearingSystem1Code> mmCode = new MMMessageAttribute<ClearingSystemIdentification3Choice, ExternalCashClearingSystem1Code>() {
 		{
 			businessElementTrace_lazy = () -> CashClearingSystem.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ClearingSystemIdentification3Choice.mmObject();
@@ -121,6 +121,16 @@ public class ClearingSystemIdentification3Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalCashClearingSystem1Code.mmObject();
+		}
+
+		@Override
+		public ExternalCashClearingSystem1Code getValue(ClearingSystemIdentification3Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ClearingSystemIdentification3Choice obj, ExternalCashClearingSystem1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -157,7 +167,7 @@ public class ClearingSystemIdentification3Choice {
 	 * definition} = "Clearing system identification in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ClearingSystemIdentification3Choice, Max35Text> mmProprietary = new MMMessageAttribute<ClearingSystemIdentification3Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> CashClearingSystem.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ClearingSystemIdentification3Choice.mmObject();
@@ -169,6 +179,16 @@ public class ClearingSystemIdentification3Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ClearingSystemIdentification3Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ClearingSystemIdentification3Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

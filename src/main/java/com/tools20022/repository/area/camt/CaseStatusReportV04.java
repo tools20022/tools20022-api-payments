@@ -23,7 +23,6 @@ import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.CashManagementLatestVersion;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.*;
@@ -48,7 +47,7 @@ import javax.xml.bind.annotation.*;
  * - may be skipped and replaced by a Resolution Of Investigation message when
  * the request for a investigation status is received at the time the assigner
  * has resolved the case. (In this case a Resolution Of Investigation message
- * can be sent instead of a Case Status Report and the case may be closed.)
+ * can be sent instead of a Case Status Report and the case may be closed.).
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -92,7 +91,7 @@ import javax.xml.bind.annotation.*;
  * "CaseStatusReportV04"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Scope\r\nThe Case Status Report message is sent by a case assignee to a case creator or case assigner.\r\nThis message is used to report on the status of a case.\r\nUsage\r\nA Case Status Report message is sent in reply to a Case Status Report Request message. This message\r\n- covers one and only one case at a time. (If a case assignee needs to report on several cases, then multiple Case Status Report messages must be sent.)\r\n- may be forwarded to subsequent case assigner(s) until it reaches the end point\r\n- is able to indicate the fact that a case has been assigned to a party downstream in the payment processing chain\r\n- may not be used in place of a Resolution Of Investigation (except for the condition given in the next bullet point) or Notification Of Case Assignment message\r\n- may be skipped and replaced by a Resolution Of Investigation message when the request for a investigation status is received at the time the assigner has resolved the case. (In this case a Resolution Of Investigation message can be sent instead of a Case Status Report and the case may be closed.)"
+ * "Scope\r\nThe Case Status Report message is sent by a case assignee to a case creator or case assigner.\r\nThis message is used to report on the status of a case.\r\nUsage\r\nA Case Status Report message is sent in reply to a Case Status Report Request message. This message\r\n- covers one and only one case at a time. (If a case assignee needs to report on several cases, then multiple Case Status Report messages must be sent.)\r\n- may be forwarded to subsequent case assigner(s) until it reaches the end point\r\n- is able to indicate the fact that a case has been assigned to a party downstream in the payment processing chain\r\n- may not be used in place of a Resolution Of Investigation (except for the condition given in the next bullet point) or Notification Of Case Assignment message\r\n- may be skipped and replaced by a Resolution Of Investigation message when the request for a investigation status is received at the time the assigner has resolved the case. (In this case a Resolution Of Investigation message can be sent instead of a Case Status Report and the case may be closed.)."
  * </li>
  * </ul>
  */
@@ -126,7 +125,7 @@ public class CaseStatusReportV04 {
 	 * "Specifies generic information about an investigation report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CaseStatusReportV04, ReportHeader4> mmHeader = new MMMessageBuildingBlock<CaseStatusReportV04, ReportHeader4>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -137,12 +136,14 @@ public class CaseStatusReportV04 {
 			complexType_lazy = () -> ReportHeader4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CaseStatusReportV04.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ReportHeader4 getValue(CaseStatusReportV04 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(CaseStatusReportV04 obj, ReportHeader4 value) {
+			obj.setHeader(value);
 		}
 	};
 	@XmlElement(name = "Case", required = true)
@@ -168,7 +169,7 @@ public class CaseStatusReportV04 {
 	 * definition} = "Identifies the investigation case."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCase = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CaseStatusReportV04, Case3> mmCase = new MMMessageBuildingBlock<CaseStatusReportV04, Case3>() {
 		{
 			xmlTag = "Case";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,12 +180,14 @@ public class CaseStatusReportV04 {
 			complexType_lazy = () -> Case3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CaseStatusReportV04.class.getMethod("getCase", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Case3 getValue(CaseStatusReportV04 obj) {
+			return obj.getCase();
+		}
+
+		@Override
+		public void setValue(CaseStatusReportV04 obj, Case3 value) {
+			obj.setCase(value);
 		}
 	};
 	@XmlElement(name = "Sts", required = true)
@@ -211,7 +214,7 @@ public class CaseStatusReportV04 {
 	 * definition} = "Defines the status of the case."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CaseStatusReportV04, CaseStatus2> mmStatus = new MMMessageBuildingBlock<CaseStatusReportV04, CaseStatus2>() {
 		{
 			xmlTag = "Sts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,12 +225,14 @@ public class CaseStatusReportV04 {
 			complexType_lazy = () -> CaseStatus2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CaseStatusReportV04.class.getMethod("getStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CaseStatus2 getValue(CaseStatusReportV04 obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(CaseStatusReportV04 obj, CaseStatus2 value) {
+			obj.setStatus(value);
 		}
 	};
 	@XmlElement(name = "NewAssgnmt")
@@ -256,7 +261,7 @@ public class CaseStatusReportV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmNewAssignment = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CaseStatusReportV04, Optional<CaseAssignment3>> mmNewAssignment = new MMMessageBuildingBlock<CaseStatusReportV04, Optional<CaseAssignment3>>() {
 		{
 			xmlTag = "NewAssgnmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -267,12 +272,14 @@ public class CaseStatusReportV04 {
 			complexType_lazy = () -> CaseAssignment3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CaseStatusReportV04.class.getMethod("getNewAssignment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<CaseAssignment3> getValue(CaseStatusReportV04 obj) {
+			return obj.getNewAssignment();
+		}
+
+		@Override
+		public void setValue(CaseStatusReportV04 obj, Optional<CaseAssignment3> value) {
+			obj.setNewAssignment(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -302,7 +309,7 @@ public class CaseStatusReportV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CaseStatusReportV04, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CaseStatusReportV04, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -312,12 +319,14 @@ public class CaseStatusReportV04 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CaseStatusReportV04.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CaseStatusReportV04 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CaseStatusReportV04 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -326,7 +335,7 @@ public class CaseStatusReportV04 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CaseStatusReportV04";
-				definition = "Scope\r\nThe Case Status Report message is sent by a case assignee to a case creator or case assigner.\r\nThis message is used to report on the status of a case.\r\nUsage\r\nA Case Status Report message is sent in reply to a Case Status Report Request message. This message\r\n- covers one and only one case at a time. (If a case assignee needs to report on several cases, then multiple Case Status Report messages must be sent.)\r\n- may be forwarded to subsequent case assigner(s) until it reaches the end point\r\n- is able to indicate the fact that a case has been assigned to a party downstream in the payment processing chain\r\n- may not be used in place of a Resolution Of Investigation (except for the condition given in the next bullet point) or Notification Of Case Assignment message\r\n- may be skipped and replaced by a Resolution Of Investigation message when the request for a investigation status is received at the time the assigner has resolved the case. (In this case a Resolution Of Investigation message can be sent instead of a Case Status Report and the case may be closed.)";
+				definition = "Scope\r\nThe Case Status Report message is sent by a case assignee to a case creator or case assigner.\r\nThis message is used to report on the status of a case.\r\nUsage\r\nA Case Status Report message is sent in reply to a Case Status Report Request message. This message\r\n- covers one and only one case at a time. (If a case assignee needs to report on several cases, then multiple Case Status Report messages must be sent.)\r\n- may be forwarded to subsequent case assigner(s) until it reaches the end point\r\n- is able to indicate the fact that a case has been assigned to a party downstream in the payment processing chain\r\n- may not be used in place of a Resolution Of Investigation (except for the condition given in the next bullet point) or Notification Of Case Assignment message\r\n- may be skipped and replaced by a Resolution Of Investigation message when the request for a investigation status is received at the time the assigner has resolved the case. (In this case a Resolution Of Investigation message can be sent instead of a Case Status Report and the case may be closed.).";
 				rootElement = "Document";
 				xmlTag = "CaseStsRpt";
 				businessArea_lazy = () -> CashManagementLatestVersion.mmObject();

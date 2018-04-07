@@ -22,8 +22,8 @@ import com.tools20022.repository.choice.ServiceLevel8Choice;
 import com.tools20022.repository.codeset.ServiceLevelCode;
 import com.tools20022.repository.codeset.SWIFTServiceLevelCode;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.PaymentProcessing;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -132,7 +132,7 @@ public class ServiceLevel {
 	 * definition} = "Payment process for which a service level is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPaymentProcessing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ServiceLevel, Optional<PaymentProcessing>> mmPaymentProcessing = new MMBusinessAssociationEnd<ServiceLevel, Optional<PaymentProcessing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
@@ -141,9 +141,19 @@ public class ServiceLevel {
 			definition = "Payment process for which a service level is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.mmServiceLevel;
+			opposite_lazy = () -> PaymentProcessing.mmServiceLevel;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.mmObject();
+			type_lazy = () -> PaymentProcessing.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentProcessing> getValue(ServiceLevel obj) {
+			return obj.getPaymentProcessing();
+		}
+
+		@Override
+		public void setValue(ServiceLevel obj, Optional<PaymentProcessing> value) {
+			obj.setPaymentProcessing(value.orElse(null));
 		}
 	};
 	protected ServiceLevelCode code;
@@ -182,7 +192,7 @@ public class ServiceLevel {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ServiceLevel, ServiceLevelCode> mmCode = new MMBusinessAttribute<ServiceLevel, ServiceLevelCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ServiceLevel8Choice.mmCode);
 			isDerived = false;
@@ -195,12 +205,14 @@ public class ServiceLevel {
 			simpleType_lazy = () -> ServiceLevelCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ServiceLevel.class.getMethod("getCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ServiceLevelCode getValue(ServiceLevel obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ServiceLevel obj, ServiceLevelCode value) {
+			obj.setCode(value);
 		}
 	};
 	protected SWIFTServiceLevelCode other;
@@ -230,7 +242,7 @@ public class ServiceLevel {
 	 * "SWIFT defined service level applies to the payment instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOther = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ServiceLevel, SWIFTServiceLevelCode> mmOther = new MMBusinessAttribute<ServiceLevel, SWIFTServiceLevelCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
@@ -242,12 +254,14 @@ public class ServiceLevel {
 			simpleType_lazy = () -> SWIFTServiceLevelCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ServiceLevel.class.getMethod("getOther", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SWIFTServiceLevelCode getValue(ServiceLevel obj) {
+			return obj.getOther();
+		}
+
+		@Override
+		public void setValue(ServiceLevel obj, SWIFTServiceLevelCode value) {
+			obj.setOther(value);
 		}
 	};
 	protected Max35Text bilateral;
@@ -277,7 +291,7 @@ public class ServiceLevel {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBilateral = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ServiceLevel, Max35Text> mmBilateral = new MMBusinessAttribute<ServiceLevel, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
@@ -289,12 +303,14 @@ public class ServiceLevel {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ServiceLevel.class.getMethod("getBilateral", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ServiceLevel obj) {
+			return obj.getBilateral();
+		}
+
+		@Override
+		public void setValue(ServiceLevel obj, Max35Text value) {
+			obj.setBilateral(value);
 		}
 	};
 
@@ -305,7 +321,7 @@ public class ServiceLevel {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServiceLevel";
 				definition = "Agreement under which or rules under which the transaction should be processed.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentProcessing.mmServiceLevel);
+				associationDomain_lazy = () -> Arrays.asList(PaymentProcessing.mmServiceLevel);
 				derivationElement_lazy = () -> Arrays.asList(ServiceLevel8Choice.mmProprietary);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ServiceLevel.mmPaymentProcessing, com.tools20022.repository.entity.ServiceLevel.mmCode, com.tools20022.repository.entity.ServiceLevel.mmOther,
 						com.tools20022.repository.entity.ServiceLevel.mmBilateral);
@@ -324,7 +340,7 @@ public class ServiceLevel {
 		return paymentProcessing == null ? Optional.empty() : Optional.of(paymentProcessing);
 	}
 
-	public ServiceLevel setPaymentProcessing(com.tools20022.repository.entity.PaymentProcessing paymentProcessing) {
+	public ServiceLevel setPaymentProcessing(PaymentProcessing paymentProcessing) {
 		this.paymentProcessing = paymentProcessing;
 		return this;
 	}

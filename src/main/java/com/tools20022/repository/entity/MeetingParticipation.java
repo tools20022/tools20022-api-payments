@@ -21,8 +21,8 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.entity.Meeting;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -113,7 +113,7 @@ public class MeetingParticipation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalNumberOfSecuritiesOutstanding = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MeetingParticipation, CurrencyAndAmount> mmTotalNumberOfSecuritiesOutstanding = new MMBusinessAttribute<MeetingParticipation, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
@@ -125,12 +125,14 @@ public class MeetingParticipation {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingParticipation.class.getMethod("getTotalNumberOfSecuritiesOutstanding", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MeetingParticipation obj) {
+			return obj.getTotalNumberOfSecuritiesOutstanding();
+		}
+
+		@Override
+		public void setValue(MeetingParticipation obj, CurrencyAndAmount value) {
+			obj.setTotalNumberOfSecuritiesOutstanding(value);
 		}
 	};
 	protected Number totalNumberOfVotingRights;
@@ -159,7 +161,7 @@ public class MeetingParticipation {
 	 * definition} = "Number of rights admitted to the vote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalNumberOfVotingRights = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MeetingParticipation, Number> mmTotalNumberOfVotingRights = new MMBusinessAttribute<MeetingParticipation, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
@@ -171,12 +173,14 @@ public class MeetingParticipation {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingParticipation.class.getMethod("getTotalNumberOfVotingRights", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(MeetingParticipation obj) {
+			return obj.getTotalNumberOfVotingRights();
+		}
+
+		@Override
+		public void setValue(MeetingParticipation obj, Number value) {
+			obj.setTotalNumberOfVotingRights(value);
 		}
 	};
 	protected ISODate calculationDate;
@@ -206,7 +210,7 @@ public class MeetingParticipation {
 	 * "Date of calculation of the total number of oustanding securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCalculationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MeetingParticipation, ISODate> mmCalculationDate = new MMBusinessAttribute<MeetingParticipation, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
@@ -218,12 +222,14 @@ public class MeetingParticipation {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingParticipation.class.getMethod("getCalculationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(MeetingParticipation obj) {
+			return obj.getCalculationDate();
+		}
+
+		@Override
+		public void setValue(MeetingParticipation obj, ISODate value) {
+			obj.setCalculationDate(value);
 		}
 	};
 	protected Number totalNumberOfSecurities;
@@ -254,7 +260,7 @@ public class MeetingParticipation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalNumberOfSecurities = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MeetingParticipation, Number> mmTotalNumberOfSecurities = new MMBusinessAttribute<MeetingParticipation, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
@@ -266,12 +272,14 @@ public class MeetingParticipation {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingParticipation.class.getMethod("getTotalNumberOfSecurities", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(MeetingParticipation obj) {
+			return obj.getTotalNumberOfSecurities();
+		}
+
+		@Override
+		public void setValue(MeetingParticipation obj, Number value) {
+			obj.setTotalNumberOfSecurities(value);
 		}
 	};
 	protected Meeting meeting;
@@ -308,7 +316,7 @@ public class MeetingParticipation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingParticipation, Optional<Meeting>> mmMeeting = new MMBusinessAssociationEnd<MeetingParticipation, Optional<Meeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingParticipation.mmObject();
@@ -317,9 +325,19 @@ public class MeetingParticipation {
 			definition = "Meeting for which participation conditions are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmParticipation;
+			opposite_lazy = () -> Meeting.mmParticipation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
+			type_lazy = () -> Meeting.mmObject();
+		}
+
+		@Override
+		public Optional<Meeting> getValue(MeetingParticipation obj) {
+			return obj.getMeeting();
+		}
+
+		@Override
+		public void setValue(MeetingParticipation obj, Optional<Meeting> value) {
+			obj.setMeeting(value.orElse(null));
 		}
 	};
 
@@ -330,7 +348,7 @@ public class MeetingParticipation {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingParticipation";
 				definition = "Specifies the number of voting rights and of outstanding securities.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.mmParticipation);
+				associationDomain_lazy = () -> Arrays.asList(Meeting.mmParticipation);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingParticipation.mmTotalNumberOfSecuritiesOutstanding, com.tools20022.repository.entity.MeetingParticipation.mmTotalNumberOfVotingRights,
 						com.tools20022.repository.entity.MeetingParticipation.mmCalculationDate, com.tools20022.repository.entity.MeetingParticipation.mmTotalNumberOfSecurities,
 						com.tools20022.repository.entity.MeetingParticipation.mmMeeting);
@@ -384,7 +402,7 @@ public class MeetingParticipation {
 		return meeting == null ? Optional.empty() : Optional.of(meeting);
 	}
 
-	public MeetingParticipation setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+	public MeetingParticipation setMeeting(Meeting meeting) {
 		this.meeting = meeting;
 		return this;
 	}

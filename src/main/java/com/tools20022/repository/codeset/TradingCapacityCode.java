@@ -196,7 +196,7 @@ public class TradingCapacityCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Trading as a riskless principal, ie, the  order to buy(sell) has been simultaneously offset by an order to sell (buy) with another party."
+	 * "Trading as a riskless principal, ie, the order to buy(sell) has been simultaneously offset by an order to sell (buy) with another party."
 	 * </li>
 	 * </ul>
 	 */
@@ -204,7 +204,7 @@ public class TradingCapacityCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RisklessPrincipal";
-			definition = "Trading as a riskless principal, ie, the  order to buy(sell) has been simultaneously offset by an order to sell (buy) with another party.";
+			definition = "Trading as a riskless principal, ie, the order to buy(sell) has been simultaneously offset by an order to sell (buy) with another party.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TradingCapacityCode.mmObject();
 			codeName = "RISP";
 		}

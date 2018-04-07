@@ -25,7 +25,6 @@ import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.msg.CurrencyControlHeader3;
 import com.tools20022.repository.msg.SupplementaryData1;
 import com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -111,7 +110,7 @@ public class CurrencyControlRequestOrLetterV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CurrencyControlRequestOrLetterV01, CurrencyControlHeader3> mmGroupHeader = new MMMessageBuildingBlock<CurrencyControlRequestOrLetterV01, CurrencyControlHeader3>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,12 +121,14 @@ public class CurrencyControlRequestOrLetterV01 {
 			complexType_lazy = () -> CurrencyControlHeader3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CurrencyControlRequestOrLetterV01.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyControlHeader3 getValue(CurrencyControlRequestOrLetterV01 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(CurrencyControlRequestOrLetterV01 obj, CurrencyControlHeader3 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "ReqOrLttr", required = true)
@@ -155,7 +156,7 @@ public class CurrencyControlRequestOrLetterV01 {
 	 * definition} = "Supporting document request or letter details."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRequestOrLetter = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CurrencyControlRequestOrLetterV01, List<SupportingDocumentRequestOrLetter1>> mmRequestOrLetter = new MMMessageBuildingBlock<CurrencyControlRequestOrLetterV01, List<SupportingDocumentRequestOrLetter1>>() {
 		{
 			xmlTag = "ReqOrLttr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,12 +166,14 @@ public class CurrencyControlRequestOrLetterV01 {
 			complexType_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CurrencyControlRequestOrLetterV01.class.getMethod("getRequestOrLetter", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupportingDocumentRequestOrLetter1> getValue(CurrencyControlRequestOrLetterV01 obj) {
+			return obj.getRequestOrLetter();
+		}
+
+		@Override
+		public void setValue(CurrencyControlRequestOrLetterV01 obj, List<SupportingDocumentRequestOrLetter1> value) {
+			obj.setRequestOrLetter(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -200,7 +203,7 @@ public class CurrencyControlRequestOrLetterV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CurrencyControlRequestOrLetterV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CurrencyControlRequestOrLetterV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -210,12 +213,14 @@ public class CurrencyControlRequestOrLetterV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CurrencyControlRequestOrLetterV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CurrencyControlRequestOrLetterV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CurrencyControlRequestOrLetterV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

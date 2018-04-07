@@ -21,7 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.entity.Clearing;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -128,7 +128,7 @@ public class SecuritiesClearing extends Clearing {
 	 * "Settlement process performed as part of the securities clearing."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesClearing, List<SecuritiesSettlement>> mmSecuritiesSettlement = new MMBusinessAssociationEnd<SecuritiesClearing, List<SecuritiesSettlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
@@ -139,6 +139,16 @@ public class SecuritiesClearing extends Clearing {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmSecuritiesClearing;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesSettlement> getValue(SecuritiesClearing obj) {
+			return obj.getSecuritiesSettlement();
+		}
+
+		@Override
+		public void setValue(SecuritiesClearing obj, List<SecuritiesSettlement> value) {
+			obj.setSecuritiesSettlement(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.BuyIn> buyIn;
@@ -175,7 +185,7 @@ public class SecuritiesClearing extends Clearing {
 	 * "Buy-in process performed as part of the securities clearing."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBuyIn = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesClearing, List<BuyIn>> mmBuyIn = new MMBusinessAssociationEnd<SecuritiesClearing, List<BuyIn>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
@@ -186,6 +196,16 @@ public class SecuritiesClearing extends Clearing {
 			opposite_lazy = () -> com.tools20022.repository.entity.BuyIn.mmRelatedSecuritiesClearingProcess;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.BuyIn.mmObject();
+		}
+
+		@Override
+		public List<BuyIn> getValue(SecuritiesClearing obj) {
+			return obj.getBuyIn();
+		}
+
+		@Override
+		public void setValue(SecuritiesClearing obj, List<BuyIn> value) {
+			obj.setBuyIn(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Novation> novation;
@@ -222,7 +242,7 @@ public class SecuritiesClearing extends Clearing {
 	 * "Novation process performed as part of the securities clearing."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNovation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesClearing, List<Novation>> mmNovation = new MMBusinessAssociationEnd<SecuritiesClearing, List<Novation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
@@ -233,6 +253,16 @@ public class SecuritiesClearing extends Clearing {
 			opposite_lazy = () -> com.tools20022.repository.entity.Novation.mmSecuritiesClearing;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Novation.mmObject();
+		}
+
+		@Override
+		public List<Novation> getValue(SecuritiesClearing obj) {
+			return obj.getNovation();
+		}
+
+		@Override
+		public void setValue(SecuritiesClearing obj, List<Novation> value) {
+			obj.setNovation(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.Netting> netting;
@@ -269,7 +299,7 @@ public class SecuritiesClearing extends Clearing {
 	 * "Netting process performed as part of the securities clearing."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNetting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesClearing, List<Netting>> mmNetting = new MMBusinessAssociationEnd<SecuritiesClearing, List<Netting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesClearing.mmObject();
@@ -280,6 +310,16 @@ public class SecuritiesClearing extends Clearing {
 			opposite_lazy = () -> com.tools20022.repository.entity.Netting.mmRelatedSecuritiesClearingProcess;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
+		}
+
+		@Override
+		public List<Netting> getValue(SecuritiesClearing obj) {
+			return obj.getNetting();
+		}
+
+		@Override
+		public void setValue(SecuritiesClearing obj, List<Netting> value) {
+			obj.setNetting(value);
 		}
 	};
 

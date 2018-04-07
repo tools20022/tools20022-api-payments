@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.InsuranceCertificate;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -111,7 +112,7 @@ public class InsurancePartyRole extends Role {
 	 * "Identifies the certificate for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInsuranceCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InsurancePartyRole, List<InsuranceCertificate>> mmInsuranceCertificate = new MMBusinessAssociationEnd<InsurancePartyRole, List<InsuranceCertificate>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsurancePartyRole.mmObject();
@@ -122,6 +123,16 @@ public class InsurancePartyRole extends Role {
 			opposite_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmInsurancePartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
+		}
+
+		@Override
+		public List<InsuranceCertificate> getValue(InsurancePartyRole obj) {
+			return obj.getInsuranceCertificate();
+		}
+
+		@Override
+		public void setValue(InsurancePartyRole obj, List<InsuranceCertificate> value) {
+			obj.setInsuranceCertificate(value);
 		}
 	};
 

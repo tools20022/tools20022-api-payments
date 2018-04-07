@@ -628,7 +628,7 @@ public class EventFrequencyCode extends MMCode {
 		}
 	};
 	/**
-	 * Event does not take place
+	 * Event does not take place.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -645,14 +645,14 @@ public class EventFrequencyCode extends MMCode {
 	 * name} = "None"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Event does not take place"</li>
+	 * definition} = "Event does not take place."</li>
 	 * </ul>
 	 */
 	public static final EventFrequencyCode None = new EventFrequencyCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "None";
-			definition = "Event does not take place";
+			definition = "Event does not take place.";
 			owner_lazy = () -> com.tools20022.repository.codeset.EventFrequencyCode.mmObject();
 			codeName = "NONE";
 		}

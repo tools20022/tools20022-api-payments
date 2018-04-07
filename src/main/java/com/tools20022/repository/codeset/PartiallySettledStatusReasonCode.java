@@ -79,7 +79,7 @@ public class PartiallySettledStatusReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Units are partially settled
+	 * Units are partially settled.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -96,14 +96,14 @@ public class PartiallySettledStatusReasonCode extends MMCode {
 	 * name} = "UnitsPartiallySettled"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Units are partially settled"</li>
+	 * definition} = "Units are partially settled."</li>
 	 * </ul>
 	 */
 	public static final PartiallySettledStatusReasonCode UnitsPartiallySettled = new PartiallySettledStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnitsPartiallySettled";
-			definition = "Units are partially settled";
+			definition = "Units are partially settled.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PartiallySettledStatusReasonCode.mmObject();
 			codeName = "UPST";
 		}

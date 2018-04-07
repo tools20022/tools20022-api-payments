@@ -39,7 +39,7 @@ import java.util.Optional;
  * A BusinessElement, typed by a BusinessComponent or a DataType (contrary to a
  * BusinessAssociationEnd, which is always typed by another BusinessComponent)
  */
-public class MMBusinessAttribute implements RuntimePropertyAware, MMBusinessElement {
+public class MMBusinessAttribute<T, V> implements RuntimePropertyAware<T, V>, MMBusinessElement {
 
 	/**
 	 * Expresses that the content model of a BusinessAttribute may be specified

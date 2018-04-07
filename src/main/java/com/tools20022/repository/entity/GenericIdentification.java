@@ -19,11 +19,12 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.ContractClosureReason1Choice;
+import com.tools20022.repository.choice.OtherIdentification1Choice;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -183,6 +184,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.OtherIdentification1Choice#mmProprietary
+ * OtherIdentification1Choice.mmProprietary}</li>
  * <li>{@linkplain com.tools20022.repository.msg.GenericIdentification32#mmType
  * GenericIdentification32.mmType}</li>
  * </ul>
@@ -195,6 +199,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * GenericIdentification1}</li>
  * <li>{@linkplain com.tools20022.repository.msg.GenericIdentification13
  * GenericIdentification13}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.GenericIdentification47
+ * GenericIdentification47}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.OtherIdentification1Choice
+ * OtherIdentification1Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.GenericIdentification44
+ * GenericIdentification44}</li>
  * <li>{@linkplain com.tools20022.repository.msg.GenericIdentification3
  * GenericIdentification3}</li>
  * <li>
@@ -252,6 +262,12 @@ public class GenericIdentification {
 	 * {@linkplain com.tools20022.repository.msg.GenericIdentification13#mmIdentification
 	 * GenericIdentification13.mmIdentification}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GenericIdentification47#mmIdentification
+	 * GenericIdentification47.mmIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GenericIdentification44#mmIdentification
+	 * GenericIdentification44.mmIdentification}</li>
+	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.ClearingSystemMemberIdentification2#mmMemberIdentification
 	 * ClearingSystemMemberIdentification2.mmMemberIdentification}</li>
 	 * <li>
@@ -278,6 +294,9 @@ public class GenericIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1#mmCode
 	 * ProprietaryBankTransactionCodeStructure1.mmCode}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReferredDocumentInformation3#mmNumber
+	 * ReferredDocumentInformation3.mmNumber}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.GenericIdentification32#mmIdentification
 	 * GenericIdentification32.mmIdentification}</li>
@@ -384,18 +403,18 @@ public class GenericIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<GenericIdentification, Max35Text> mmIdentification = new MMBusinessAttribute<GenericIdentification, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(GenericIdentification1.mmIdentification, GenericIdentification13.mmIdentification, ClearingSystemMemberIdentification2.mmMemberIdentification, GenericIdentification3.mmIdentification,
-					GenericFinancialIdentification1.mmIdentification, BranchData2.mmIdentification, GenericAccountIdentification1.mmIdentification, GenericOrganisationIdentification1.mmIdentification,
-					GenericPersonIdentification1.mmIdentification, OtherIdentification1.mmIdentification, ProprietaryBankTransactionCodeStructure1.mmCode, GenericIdentification32.mmIdentification,
-					PointOfInteractionComponent1.mmManufacturerIdentification, IdentificationModification2.mmIdentification, DocumentIdentification22.mmIdentification, GenericIdentification30.mmIdentification,
-					BillingSubServiceIdentification1.mmIssuer, BillingSubServiceIdentification1.mmIdentification, BillingServiceCommonIdentification1.mmIdentification, BillingTaxRegion1.mmInvoiceNumber, DocumentLineType1.mmIssuer,
-					DocumentLineInformation1.mmIdentification, DocumentIdentification29.mmIdentification, SupportingDocumentEntry1.mmEntryIdentification, DocumentGeneralInformation3.mmDocumentNumber,
-					TradeContract1.mmContractDocumentIdentification, InterestPaymentDateRange1.mmInterestScheduleIdentification, LegalOrganisation2.mmIdentification, DocumentIdentification28.mmIdentification,
-					TransactionCertificateRecord1.mmCertificateRecordIdentification, ContractClosureReason1Choice.mmCode, ContractClosureReason1Choice.mmProprietary, ReferredDocumentInformation7.mmNumber,
-					BillingStatement2.mmStatementIdentification, Mandate10.mmMandateIdentification, RemittanceInformation13.mmRemittanceIdentification, Mandate9.mmMandateIdentification, Mandate11.mmMandateIdentification,
-					ReferredMandateDocument1.mmNumber, Mandate8.mmMandateIdentification);
+			derivation_lazy = () -> Arrays.asList(GenericIdentification1.mmIdentification, GenericIdentification13.mmIdentification, GenericIdentification47.mmIdentification, GenericIdentification44.mmIdentification,
+					ClearingSystemMemberIdentification2.mmMemberIdentification, GenericIdentification3.mmIdentification, GenericFinancialIdentification1.mmIdentification, BranchData2.mmIdentification,
+					GenericAccountIdentification1.mmIdentification, GenericOrganisationIdentification1.mmIdentification, GenericPersonIdentification1.mmIdentification, OtherIdentification1.mmIdentification,
+					ProprietaryBankTransactionCodeStructure1.mmCode, ReferredDocumentInformation3.mmNumber, GenericIdentification32.mmIdentification, PointOfInteractionComponent1.mmManufacturerIdentification,
+					IdentificationModification2.mmIdentification, DocumentIdentification22.mmIdentification, GenericIdentification30.mmIdentification, BillingSubServiceIdentification1.mmIssuer,
+					BillingSubServiceIdentification1.mmIdentification, BillingServiceCommonIdentification1.mmIdentification, BillingTaxRegion1.mmInvoiceNumber, DocumentLineType1.mmIssuer, DocumentLineInformation1.mmIdentification,
+					DocumentIdentification29.mmIdentification, SupportingDocumentEntry1.mmEntryIdentification, DocumentGeneralInformation3.mmDocumentNumber, TradeContract1.mmContractDocumentIdentification,
+					InterestPaymentDateRange1.mmInterestScheduleIdentification, LegalOrganisation2.mmIdentification, DocumentIdentification28.mmIdentification, TransactionCertificateRecord1.mmCertificateRecordIdentification,
+					ContractClosureReason1Choice.mmCode, ContractClosureReason1Choice.mmProprietary, ReferredDocumentInformation7.mmNumber, BillingStatement2.mmStatementIdentification, Mandate10.mmMandateIdentification,
+					RemittanceInformation13.mmRemittanceIdentification, Mandate9.mmMandateIdentification, Mandate11.mmMandateIdentification, ReferredMandateDocument1.mmNumber, Mandate8.mmMandateIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -406,15 +425,17 @@ public class GenericIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return GenericIdentification.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(GenericIdentification obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ContactPoint> identificationForContactPoint;
+	protected List<ContactPoint> identificationForContactPoint;
 	/**
 	 * 
 	 <p>
@@ -449,7 +470,7 @@ public class GenericIdentification {
 	 * "Contact point which uses a generic identification as identification."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentificationForContactPoint = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, List<ContactPoint>> mmIdentificationForContactPoint = new MMBusinessAssociationEnd<GenericIdentification, List<ContactPoint>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -457,9 +478,19 @@ public class GenericIdentification {
 			name = "IdentificationForContactPoint";
 			definition = "Contact point which uses a generic identification as identification.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmIdentification;
+			opposite_lazy = () -> ContactPoint.mmIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			type_lazy = () -> ContactPoint.mmObject();
+		}
+
+		@Override
+		public List<ContactPoint> getValue(GenericIdentification obj) {
+			return obj.getIdentificationForContactPoint();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, List<ContactPoint> value) {
+			obj.setIdentificationForContactPoint(value);
 		}
 	};
 	protected AccountIdentification identificationForAccount;
@@ -499,7 +530,7 @@ public class GenericIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentificationForAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, AccountIdentification> mmIdentificationForAccount = new MMBusinessAssociationEnd<GenericIdentification, AccountIdentification>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -508,9 +539,19 @@ public class GenericIdentification {
 			definition = "Account Identification which uses a generic identification as proprietary identification.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmProprietaryIdentification;
+			opposite_lazy = () -> AccountIdentification.mmProprietaryIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
+			type_lazy = () -> AccountIdentification.mmObject();
+		}
+
+		@Override
+		public AccountIdentification getValue(GenericIdentification obj) {
+			return obj.getIdentificationForAccount();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, AccountIdentification value) {
+			obj.setIdentificationForAccount(value);
 		}
 	};
 	protected PartyIdentificationInformation relatedPartyIdentification;
@@ -548,7 +589,7 @@ public class GenericIdentification {
 	 * definition} = "Party identified with a scheme."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPartyIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, Optional<PartyIdentificationInformation>> mmRelatedPartyIdentification = new MMBusinessAssociationEnd<GenericIdentification, Optional<PartyIdentificationInformation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -557,9 +598,19 @@ public class GenericIdentification {
 			definition = "Party identified with a scheme.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmOtherIdentification;
+			opposite_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
+			type_lazy = () -> PartyIdentificationInformation.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentificationInformation> getValue(GenericIdentification obj) {
+			return obj.getRelatedPartyIdentification();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, Optional<PartyIdentificationInformation> value) {
+			obj.setRelatedPartyIdentification(value.orElse(null));
 		}
 	};
 	protected ISODate issueDate;
@@ -572,6 +623,14 @@ public class GenericIdentification {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} = {@linkplain com.tools20022.repository.datatype.ISODate
 	 * ISODate}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
+	 * derivation} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GenericIdentification44#mmIssueDate
+	 * GenericIdentification44.mmIssueDate}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -588,8 +647,9 @@ public class GenericIdentification {
 	 * definition} = "Date at which the identification was issued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIssueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<GenericIdentification, ISODate> mmIssueDate = new MMBusinessAttribute<GenericIdentification, ISODate>() {
 		{
+			derivation_lazy = () -> Arrays.asList(GenericIdentification44.mmIssueDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -600,12 +660,14 @@ public class GenericIdentification {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return GenericIdentification.class.getMethod("getIssueDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(GenericIdentification obj) {
+			return obj.getIssueDate();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, ISODate value) {
+			obj.setIssueDate(value);
 		}
 	};
 	protected ISODate expiryDate;
@@ -618,6 +680,14 @@ public class GenericIdentification {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} = {@linkplain com.tools20022.repository.datatype.ISODate
 	 * ISODate}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
+	 * derivation} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GenericIdentification44#mmExpiryDate
+	 * GenericIdentification44.mmExpiryDate}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -634,8 +704,9 @@ public class GenericIdentification {
 	 * definition} = "Date at which the identification expires."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExpiryDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<GenericIdentification, ISODate> mmExpiryDate = new MMBusinessAttribute<GenericIdentification, ISODate>() {
 		{
+			derivation_lazy = () -> Arrays.asList(GenericIdentification44.mmExpiryDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -646,12 +717,14 @@ public class GenericIdentification {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return GenericIdentification.class.getMethod("getExpiryDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(GenericIdentification obj) {
+			return obj.getExpiryDate();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, ISODate value) {
+			obj.setExpiryDate(value);
 		}
 	};
 	protected Scheme scheme;
@@ -705,7 +778,7 @@ public class GenericIdentification {
 	 * "Information regarding an enumerated code list and its owner."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmScheme = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, Scheme> mmScheme = new MMBusinessAssociationEnd<GenericIdentification, Scheme>() {
 		{
 			derivation_lazy = () -> Arrays.asList(GenericFinancialIdentification1.mmSchemeName, GenericAccountIdentification1.mmSchemeName, GenericOrganisationIdentification1.mmSchemeName, GenericPersonIdentification1.mmSchemeName);
 			isDerived = false;
@@ -715,9 +788,19 @@ public class GenericIdentification {
 			definition = "Information regarding an enumerated code list and its owner.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Scheme.mmIdentification;
+			opposite_lazy = () -> Scheme.mmIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
+			type_lazy = () -> Scheme.mmObject();
+		}
+
+		@Override
+		public Scheme getValue(GenericIdentification obj) {
+			return obj.getScheme();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, Scheme value) {
+			obj.setScheme(value);
 		}
 	};
 	protected SecuritiesCertificate identificationForSecuritiesCertificate;
@@ -757,7 +840,7 @@ public class GenericIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentificationForSecuritiesCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, SecuritiesCertificate> mmIdentificationForSecuritiesCertificate = new MMBusinessAssociationEnd<GenericIdentification, SecuritiesCertificate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -766,9 +849,19 @@ public class GenericIdentification {
 			definition = "Securities certificate which uses a generic identification as certificate number.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmNumber;
+			opposite_lazy = () -> SecuritiesCertificate.mmNumber;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
+			type_lazy = () -> SecuritiesCertificate.mmObject();
+		}
+
+		@Override
+		public SecuritiesCertificate getValue(GenericIdentification obj) {
+			return obj.getIdentificationForSecuritiesCertificate();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, SecuritiesCertificate value) {
+			obj.setIdentificationForSecuritiesCertificate(value);
 		}
 	};
 	protected LotBreakdown identificationForLot;
@@ -806,7 +899,7 @@ public class GenericIdentification {
 	 * "Lot breakdown which uses a generic identification as lot number."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentificationForLot = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, Optional<LotBreakdown>> mmIdentificationForLot = new MMBusinessAssociationEnd<GenericIdentification, Optional<LotBreakdown>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -815,12 +908,22 @@ public class GenericIdentification {
 			definition = "Lot breakdown which uses a generic identification as lot number.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmLotNumber;
+			opposite_lazy = () -> LotBreakdown.mmLotNumber;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
+			type_lazy = () -> LotBreakdown.mmObject();
+		}
+
+		@Override
+		public Optional<LotBreakdown> getValue(GenericIdentification obj) {
+			return obj.getIdentificationForLot();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, Optional<LotBreakdown> value) {
+			obj.setIdentificationForLot(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.InformationPartyRole> partyRole;
+	protected List<InformationPartyRole> partyRole;
 	/**
 	 * 
 	 <p>
@@ -855,7 +958,7 @@ public class GenericIdentification {
 	 * definition} = "Entity that assigns the identification."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, List<InformationPartyRole>> mmPartyRole = new MMBusinessAssociationEnd<GenericIdentification, List<InformationPartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -863,9 +966,19 @@ public class GenericIdentification {
 			name = "PartyRole";
 			definition = "Entity that assigns the identification.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InformationPartyRole.mmGenericIdentification;
+			opposite_lazy = () -> InformationPartyRole.mmGenericIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InformationPartyRole.mmObject();
+			type_lazy = () -> InformationPartyRole.mmObject();
+		}
+
+		@Override
+		public List<InformationPartyRole> getValue(GenericIdentification obj) {
+			return obj.getPartyRole();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, List<InformationPartyRole> value) {
+			obj.setPartyRole(value);
 		}
 	};
 	protected CashProceedsDefinition identificationForCashProceedsIncome;
@@ -905,7 +1018,7 @@ public class GenericIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentificationForCashProceedsIncome = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, Optional<CashProceedsDefinition>> mmIdentificationForCashProceedsIncome = new MMBusinessAssociationEnd<GenericIdentification, Optional<CashProceedsDefinition>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -914,9 +1027,19 @@ public class GenericIdentification {
 			definition = "Cash proceeds definition which uses a generic identification as type of income.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmIncomeType;
+			opposite_lazy = () -> CashProceedsDefinition.mmIncomeType;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
+			type_lazy = () -> CashProceedsDefinition.mmObject();
+		}
+
+		@Override
+		public Optional<CashProceedsDefinition> getValue(GenericIdentification obj) {
+			return obj.getIdentificationForCashProceedsIncome();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, Optional<CashProceedsDefinition> value) {
+			obj.setIdentificationForCashProceedsIncome(value.orElse(null));
 		}
 	};
 	protected StatusReason relatedStatusReason;
@@ -955,7 +1078,7 @@ public class GenericIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedStatusReason = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, StatusReason> mmRelatedStatusReason = new MMBusinessAssociationEnd<GenericIdentification, StatusReason>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -964,12 +1087,22 @@ public class GenericIdentification {
 			definition = "Specifies the status reason for which a data source scheme is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.StatusReason.mmDataSourceScheme;
+			opposite_lazy = () -> StatusReason.mmDataSourceScheme;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
+			type_lazy = () -> StatusReason.mmObject();
+		}
+
+		@Override
+		public StatusReason getValue(GenericIdentification obj) {
+			return obj.getRelatedStatusReason();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, StatusReason value) {
+			obj.setRelatedStatusReason(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.BankTransaction> identificationForBankTransaction;
+	protected List<BankTransaction> identificationForBankTransaction;
 	/**
 	 * 
 	 <p>
@@ -1005,7 +1138,7 @@ public class GenericIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentificationForBankTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, List<BankTransaction>> mmIdentificationForBankTransaction = new MMBusinessAssociationEnd<GenericIdentification, List<BankTransaction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1013,9 +1146,19 @@ public class GenericIdentification {
 			name = "IdentificationForBankTransaction";
 			definition = "Bank transaction which uses a generic identification as proprietary identification.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmProprietaryIdentification;
+			opposite_lazy = () -> BankTransaction.mmProprietaryIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
+			type_lazy = () -> BankTransaction.mmObject();
+		}
+
+		@Override
+		public List<BankTransaction> getValue(GenericIdentification obj) {
+			return obj.getIdentificationForBankTransaction();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, List<BankTransaction> value) {
+			obj.setIdentificationForBankTransaction(value);
 		}
 	};
 	protected AccountIdentification identificationForAccountCostReferencePattern;
@@ -1054,7 +1197,7 @@ public class GenericIdentification {
 	 * "Account identification for which a cost reference pattern is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentificationForAccountCostReferencePattern = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, Optional<AccountIdentification>> mmIdentificationForAccountCostReferencePattern = new MMBusinessAssociationEnd<GenericIdentification, Optional<AccountIdentification>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1063,9 +1206,19 @@ public class GenericIdentification {
 			definition = "Account identification for which a cost reference pattern is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmCostReferencePattern;
+			opposite_lazy = () -> AccountIdentification.mmCostReferencePattern;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
+			type_lazy = () -> AccountIdentification.mmObject();
+		}
+
+		@Override
+		public Optional<AccountIdentification> getValue(GenericIdentification obj) {
+			return obj.getIdentificationForAccountCostReferencePattern();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, Optional<AccountIdentification> value) {
+			obj.setIdentificationForAccountCostReferencePattern(value.orElse(null));
 		}
 	};
 	protected Account account;
@@ -1100,7 +1253,7 @@ public class GenericIdentification {
 	 * definition} = "Account for which a type is specified"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, Account> mmAccount = new MMBusinessAssociationEnd<GenericIdentification, Account>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1109,9 +1262,19 @@ public class GenericIdentification {
 			definition = "Account for which a type is specified";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmType;
+			opposite_lazy = () -> Account.mmType;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
+			type_lazy = () -> Account.mmObject();
+		}
+
+		@Override
+		public Account getValue(GenericIdentification obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, Account value) {
+			obj.setAccount(value);
 		}
 	};
 	protected SystemIdentification relatedSystemIdentification;
@@ -1150,7 +1313,7 @@ public class GenericIdentification {
 	 * "System identification which uses a generic identification."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSystemIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, SystemIdentification> mmRelatedSystemIdentification = new MMBusinessAssociationEnd<GenericIdentification, SystemIdentification>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1159,9 +1322,19 @@ public class GenericIdentification {
 			definition = "System identification which uses a generic identification.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmIdentification;
+			opposite_lazy = () -> SystemIdentification.mmIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
+			type_lazy = () -> SystemIdentification.mmObject();
+		}
+
+		@Override
+		public SystemIdentification getValue(GenericIdentification obj) {
+			return obj.getRelatedSystemIdentification();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, SystemIdentification value) {
+			obj.setRelatedSystemIdentification(value);
 		}
 	};
 	protected Interest identificationForInterestName;
@@ -1197,7 +1370,7 @@ public class GenericIdentification {
 	 * definition} = "Interest which uses a generic identification as name."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentificationForInterestName = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, Optional<Interest>> mmIdentificationForInterestName = new MMBusinessAssociationEnd<GenericIdentification, Optional<Interest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1206,9 +1379,19 @@ public class GenericIdentification {
 			definition = "Interest which uses a generic identification as name.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmInterestName;
+			opposite_lazy = () -> Interest.mmInterestName;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
+			type_lazy = () -> Interest.mmObject();
+		}
+
+		@Override
+		public Optional<Interest> getValue(GenericIdentification obj) {
+			return obj.getIdentificationForInterestName();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, Optional<Interest> value) {
+			obj.setIdentificationForInterestName(value.orElse(null));
 		}
 	};
 	protected CashAccountService relatedCashAccountService;
@@ -1245,7 +1428,7 @@ public class GenericIdentification {
 	 * definition} = "Cash account service identified in a generic way."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCashAccountService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, CashAccountService> mmRelatedCashAccountService = new MMBusinessAssociationEnd<GenericIdentification, CashAccountService>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1254,9 +1437,19 @@ public class GenericIdentification {
 			definition = "Cash account service identified in a generic way.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmIdentification;
+			opposite_lazy = () -> CashAccountService.mmIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmObject();
+			type_lazy = () -> CashAccountService.mmObject();
+		}
+
+		@Override
+		public CashAccountService getValue(GenericIdentification obj) {
+			return obj.getRelatedCashAccountService();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, CashAccountService value) {
+			obj.setRelatedCashAccountService(value);
 		}
 	};
 	protected InvestmentFundClass identificationForInvestmentFundClass;
@@ -1295,7 +1488,7 @@ public class GenericIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentificationForInvestmentFundClass = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, InvestmentFundClass> mmIdentificationForInvestmentFundClass = new MMBusinessAssociationEnd<GenericIdentification, InvestmentFundClass>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1304,9 +1497,19 @@ public class GenericIdentification {
 			definition = "Investment fund class which uses a generic identification as fund classification.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmFundClassification;
+			opposite_lazy = () -> InvestmentFundClass.mmFundClassification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
+			type_lazy = () -> InvestmentFundClass.mmObject();
+		}
+
+		@Override
+		public InvestmentFundClass getValue(GenericIdentification obj) {
+			return obj.getIdentificationForInvestmentFundClass();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, InvestmentFundClass value) {
+			obj.setIdentificationForInvestmentFundClass(value);
 		}
 	};
 	protected Location identifiedLocation;
@@ -1342,7 +1545,7 @@ public class GenericIdentification {
 	 * definition} = "Location for which an identification is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentifiedLocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, Location> mmIdentifiedLocation = new MMBusinessAssociationEnd<GenericIdentification, Location>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1351,9 +1554,19 @@ public class GenericIdentification {
 			definition = "Location for which an identification is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmIdentification;
+			opposite_lazy = () -> Location.mmIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+			type_lazy = () -> Location.mmObject();
+		}
+
+		@Override
+		public Location getValue(GenericIdentification obj) {
+			return obj.getIdentifiedLocation();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, Location value) {
+			obj.setIdentifiedLocation(value);
 		}
 	};
 	protected SecuritiesIdentification relatedSecuritiesIdentification;
@@ -1393,7 +1606,7 @@ public class GenericIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecuritiesIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, SecuritiesIdentification> mmRelatedSecuritiesIdentification = new MMBusinessAssociationEnd<GenericIdentification, SecuritiesIdentification>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1402,9 +1615,19 @@ public class GenericIdentification {
 			definition = "Securities identification for which generic identification elements and scheme are provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmGenericIdentification;
+			opposite_lazy = () -> SecuritiesIdentification.mmGenericIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			type_lazy = () -> SecuritiesIdentification.mmObject();
+		}
+
+		@Override
+		public SecuritiesIdentification getValue(GenericIdentification obj) {
+			return obj.getRelatedSecuritiesIdentification();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, SecuritiesIdentification value) {
+			obj.setRelatedSecuritiesIdentification(value);
 		}
 	};
 	protected Document identifiedDocument;
@@ -1440,7 +1663,7 @@ public class GenericIdentification {
 	 * definition} = "Document for which an identification is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentifiedDocument = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, Document> mmIdentifiedDocument = new MMBusinessAssociationEnd<GenericIdentification, Document>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1449,9 +1672,19 @@ public class GenericIdentification {
 			definition = "Document for which an identification is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmDocumentIdentification;
+			opposite_lazy = () -> Document.mmDocumentIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
+			type_lazy = () -> Document.mmObject();
+		}
+
+		@Override
+		public Document getValue(GenericIdentification obj) {
+			return obj.getIdentifiedDocument();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, Document value) {
+			obj.setIdentifiedDocument(value);
 		}
 	};
 	protected PurchaseOrder relatedPurchaseOrder;
@@ -1488,7 +1721,7 @@ public class GenericIdentification {
 	 * definition} = "Purchase order for which an identification is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPurchaseOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, PurchaseOrder> mmRelatedPurchaseOrder = new MMBusinessAssociationEnd<GenericIdentification, PurchaseOrder>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1497,9 +1730,19 @@ public class GenericIdentification {
 			definition = "Purchase order for which an identification is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PurchaseOrder.mmIdentification;
+			opposite_lazy = () -> PurchaseOrder.mmIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PurchaseOrder.mmObject();
+			type_lazy = () -> PurchaseOrder.mmObject();
+		}
+
+		@Override
+		public PurchaseOrder getValue(GenericIdentification obj) {
+			return obj.getRelatedPurchaseOrder();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, PurchaseOrder value) {
+			obj.setRelatedPurchaseOrder(value);
 		}
 	};
 	protected RegisteredContract relatedCertificate;
@@ -1538,7 +1781,7 @@ public class GenericIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GenericIdentification, RegisteredContract> mmRelatedCertificate = new MMBusinessAssociationEnd<GenericIdentification, RegisteredContract>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
@@ -1547,9 +1790,19 @@ public class GenericIdentification {
 			definition = "Related certificate against which all transactions in the scope of the regulatory requirements are registered.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmCertificate;
+			opposite_lazy = () -> RegisteredContract.mmCertificate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
+			type_lazy = () -> RegisteredContract.mmObject();
+		}
+
+		@Override
+		public RegisteredContract getValue(GenericIdentification obj) {
+			return obj.getRelatedCertificate();
+		}
+
+		@Override
+		public void setValue(GenericIdentification obj, RegisteredContract value) {
+			obj.setRelatedCertificate(value);
 		}
 	};
 
@@ -1560,16 +1813,11 @@ public class GenericIdentification {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GenericIdentification";
 				definition = "Information related to a non-standardised identification, such as a proprietary party identification or account identification.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundClass.mmFundClassification, com.tools20022.repository.entity.SecuritiesIdentification.mmGenericIdentification,
-						com.tools20022.repository.entity.InformationPartyRole.mmGenericIdentification, com.tools20022.repository.entity.ContactPoint.mmIdentification,
-						com.tools20022.repository.entity.PartyIdentificationInformation.mmOtherIdentification, com.tools20022.repository.entity.Account.mmType,
-						com.tools20022.repository.entity.AccountIdentification.mmProprietaryIdentification, com.tools20022.repository.entity.AccountIdentification.mmCostReferencePattern,
-						com.tools20022.repository.entity.Location.mmIdentification, com.tools20022.repository.entity.Scheme.mmIdentification, com.tools20022.repository.entity.Document.mmDocumentIdentification,
-						com.tools20022.repository.entity.StatusReason.mmDataSourceScheme, com.tools20022.repository.entity.SystemIdentification.mmIdentification, com.tools20022.repository.entity.LotBreakdown.mmLotNumber,
-						com.tools20022.repository.entity.CashAccountService.mmIdentification, com.tools20022.repository.entity.SecuritiesCertificate.mmNumber, com.tools20022.repository.entity.Interest.mmInterestName,
-						com.tools20022.repository.entity.CashProceedsDefinition.mmIncomeType, com.tools20022.repository.entity.BankTransaction.mmProprietaryIdentification, com.tools20022.repository.entity.PurchaseOrder.mmIdentification,
-						com.tools20022.repository.entity.RegisteredContract.mmCertificate);
-				derivationElement_lazy = () -> Arrays.asList(GenericIdentification32.mmType);
+				associationDomain_lazy = () -> Arrays.asList(InvestmentFundClass.mmFundClassification, SecuritiesIdentification.mmGenericIdentification, InformationPartyRole.mmGenericIdentification, ContactPoint.mmIdentification,
+						PartyIdentificationInformation.mmOtherIdentification, Account.mmType, AccountIdentification.mmProprietaryIdentification, AccountIdentification.mmCostReferencePattern, Location.mmIdentification,
+						Scheme.mmIdentification, Document.mmDocumentIdentification, StatusReason.mmDataSourceScheme, SystemIdentification.mmIdentification, LotBreakdown.mmLotNumber, CashAccountService.mmIdentification,
+						SecuritiesCertificate.mmNumber, Interest.mmInterestName, CashProceedsDefinition.mmIncomeType, BankTransaction.mmProprietaryIdentification, PurchaseOrder.mmIdentification, RegisteredContract.mmCertificate);
+				derivationElement_lazy = () -> Arrays.asList(OtherIdentification1Choice.mmProprietary, GenericIdentification32.mmType);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentification, com.tools20022.repository.entity.GenericIdentification.mmIdentificationForContactPoint,
 						com.tools20022.repository.entity.GenericIdentification.mmIdentificationForAccount, com.tools20022.repository.entity.GenericIdentification.mmRelatedPartyIdentification,
 						com.tools20022.repository.entity.GenericIdentification.mmIssueDate, com.tools20022.repository.entity.GenericIdentification.mmExpiryDate, com.tools20022.repository.entity.GenericIdentification.mmScheme,
@@ -1582,8 +1830,9 @@ public class GenericIdentification {
 						com.tools20022.repository.entity.GenericIdentification.mmIdentifiedLocation, com.tools20022.repository.entity.GenericIdentification.mmRelatedSecuritiesIdentification,
 						com.tools20022.repository.entity.GenericIdentification.mmIdentifiedDocument, com.tools20022.repository.entity.GenericIdentification.mmRelatedPurchaseOrder,
 						com.tools20022.repository.entity.GenericIdentification.mmRelatedCertificate);
-				derivationComponent_lazy = () -> Arrays.asList(GenericIdentification1.mmObject(), GenericIdentification13.mmObject(), GenericIdentification3.mmObject(), ProprietaryBankTransactionCodeStructure1.mmObject(),
-						GenericIdentification32.mmObject(), GenericIdentification30.mmObject(), BillingSubServiceIdentification1.mmObject(), BillingServiceCommonIdentification1.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(GenericIdentification1.mmObject(), GenericIdentification13.mmObject(), GenericIdentification47.mmObject(), OtherIdentification1Choice.mmObject(),
+						GenericIdentification44.mmObject(), GenericIdentification3.mmObject(), ProprietaryBankTransactionCodeStructure1.mmObject(), GenericIdentification32.mmObject(), GenericIdentification30.mmObject(),
+						BillingSubServiceIdentification1.mmObject(), BillingServiceCommonIdentification1.mmObject());
 			}
 
 			@Override
@@ -1607,7 +1856,7 @@ public class GenericIdentification {
 		return identificationForContactPoint == null ? identificationForContactPoint = new ArrayList<>() : identificationForContactPoint;
 	}
 
-	public GenericIdentification setIdentificationForContactPoint(List<com.tools20022.repository.entity.ContactPoint> identificationForContactPoint) {
+	public GenericIdentification setIdentificationForContactPoint(List<ContactPoint> identificationForContactPoint) {
 		this.identificationForContactPoint = Objects.requireNonNull(identificationForContactPoint);
 		return this;
 	}
@@ -1616,7 +1865,7 @@ public class GenericIdentification {
 		return identificationForAccount;
 	}
 
-	public GenericIdentification setIdentificationForAccount(com.tools20022.repository.entity.AccountIdentification identificationForAccount) {
+	public GenericIdentification setIdentificationForAccount(AccountIdentification identificationForAccount) {
 		this.identificationForAccount = Objects.requireNonNull(identificationForAccount);
 		return this;
 	}
@@ -1625,7 +1874,7 @@ public class GenericIdentification {
 		return relatedPartyIdentification == null ? Optional.empty() : Optional.of(relatedPartyIdentification);
 	}
 
-	public GenericIdentification setRelatedPartyIdentification(com.tools20022.repository.entity.PartyIdentificationInformation relatedPartyIdentification) {
+	public GenericIdentification setRelatedPartyIdentification(PartyIdentificationInformation relatedPartyIdentification) {
 		this.relatedPartyIdentification = relatedPartyIdentification;
 		return this;
 	}
@@ -1652,7 +1901,7 @@ public class GenericIdentification {
 		return scheme;
 	}
 
-	public GenericIdentification setScheme(com.tools20022.repository.entity.Scheme scheme) {
+	public GenericIdentification setScheme(Scheme scheme) {
 		this.scheme = Objects.requireNonNull(scheme);
 		return this;
 	}
@@ -1661,7 +1910,7 @@ public class GenericIdentification {
 		return identificationForSecuritiesCertificate;
 	}
 
-	public GenericIdentification setIdentificationForSecuritiesCertificate(com.tools20022.repository.entity.SecuritiesCertificate identificationForSecuritiesCertificate) {
+	public GenericIdentification setIdentificationForSecuritiesCertificate(SecuritiesCertificate identificationForSecuritiesCertificate) {
 		this.identificationForSecuritiesCertificate = Objects.requireNonNull(identificationForSecuritiesCertificate);
 		return this;
 	}
@@ -1670,7 +1919,7 @@ public class GenericIdentification {
 		return identificationForLot == null ? Optional.empty() : Optional.of(identificationForLot);
 	}
 
-	public GenericIdentification setIdentificationForLot(com.tools20022.repository.entity.LotBreakdown identificationForLot) {
+	public GenericIdentification setIdentificationForLot(LotBreakdown identificationForLot) {
 		this.identificationForLot = identificationForLot;
 		return this;
 	}
@@ -1679,7 +1928,7 @@ public class GenericIdentification {
 		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public GenericIdentification setPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> partyRole) {
+	public GenericIdentification setPartyRole(List<InformationPartyRole> partyRole) {
 		this.partyRole = Objects.requireNonNull(partyRole);
 		return this;
 	}
@@ -1688,7 +1937,7 @@ public class GenericIdentification {
 		return identificationForCashProceedsIncome == null ? Optional.empty() : Optional.of(identificationForCashProceedsIncome);
 	}
 
-	public GenericIdentification setIdentificationForCashProceedsIncome(com.tools20022.repository.entity.CashProceedsDefinition identificationForCashProceedsIncome) {
+	public GenericIdentification setIdentificationForCashProceedsIncome(CashProceedsDefinition identificationForCashProceedsIncome) {
 		this.identificationForCashProceedsIncome = identificationForCashProceedsIncome;
 		return this;
 	}
@@ -1697,7 +1946,7 @@ public class GenericIdentification {
 		return relatedStatusReason;
 	}
 
-	public GenericIdentification setRelatedStatusReason(com.tools20022.repository.entity.StatusReason relatedStatusReason) {
+	public GenericIdentification setRelatedStatusReason(StatusReason relatedStatusReason) {
 		this.relatedStatusReason = Objects.requireNonNull(relatedStatusReason);
 		return this;
 	}
@@ -1706,7 +1955,7 @@ public class GenericIdentification {
 		return identificationForBankTransaction == null ? identificationForBankTransaction = new ArrayList<>() : identificationForBankTransaction;
 	}
 
-	public GenericIdentification setIdentificationForBankTransaction(List<com.tools20022.repository.entity.BankTransaction> identificationForBankTransaction) {
+	public GenericIdentification setIdentificationForBankTransaction(List<BankTransaction> identificationForBankTransaction) {
 		this.identificationForBankTransaction = Objects.requireNonNull(identificationForBankTransaction);
 		return this;
 	}
@@ -1715,7 +1964,7 @@ public class GenericIdentification {
 		return identificationForAccountCostReferencePattern == null ? Optional.empty() : Optional.of(identificationForAccountCostReferencePattern);
 	}
 
-	public GenericIdentification setIdentificationForAccountCostReferencePattern(com.tools20022.repository.entity.AccountIdentification identificationForAccountCostReferencePattern) {
+	public GenericIdentification setIdentificationForAccountCostReferencePattern(AccountIdentification identificationForAccountCostReferencePattern) {
 		this.identificationForAccountCostReferencePattern = identificationForAccountCostReferencePattern;
 		return this;
 	}
@@ -1724,7 +1973,7 @@ public class GenericIdentification {
 		return account;
 	}
 
-	public GenericIdentification setAccount(com.tools20022.repository.entity.Account account) {
+	public GenericIdentification setAccount(Account account) {
 		this.account = Objects.requireNonNull(account);
 		return this;
 	}
@@ -1733,7 +1982,7 @@ public class GenericIdentification {
 		return relatedSystemIdentification;
 	}
 
-	public GenericIdentification setRelatedSystemIdentification(com.tools20022.repository.entity.SystemIdentification relatedSystemIdentification) {
+	public GenericIdentification setRelatedSystemIdentification(SystemIdentification relatedSystemIdentification) {
 		this.relatedSystemIdentification = Objects.requireNonNull(relatedSystemIdentification);
 		return this;
 	}
@@ -1742,7 +1991,7 @@ public class GenericIdentification {
 		return identificationForInterestName == null ? Optional.empty() : Optional.of(identificationForInterestName);
 	}
 
-	public GenericIdentification setIdentificationForInterestName(com.tools20022.repository.entity.Interest identificationForInterestName) {
+	public GenericIdentification setIdentificationForInterestName(Interest identificationForInterestName) {
 		this.identificationForInterestName = identificationForInterestName;
 		return this;
 	}
@@ -1751,7 +2000,7 @@ public class GenericIdentification {
 		return relatedCashAccountService;
 	}
 
-	public GenericIdentification setRelatedCashAccountService(com.tools20022.repository.entity.CashAccountService relatedCashAccountService) {
+	public GenericIdentification setRelatedCashAccountService(CashAccountService relatedCashAccountService) {
 		this.relatedCashAccountService = Objects.requireNonNull(relatedCashAccountService);
 		return this;
 	}
@@ -1760,7 +2009,7 @@ public class GenericIdentification {
 		return identificationForInvestmentFundClass;
 	}
 
-	public GenericIdentification setIdentificationForInvestmentFundClass(com.tools20022.repository.entity.InvestmentFundClass identificationForInvestmentFundClass) {
+	public GenericIdentification setIdentificationForInvestmentFundClass(InvestmentFundClass identificationForInvestmentFundClass) {
 		this.identificationForInvestmentFundClass = Objects.requireNonNull(identificationForInvestmentFundClass);
 		return this;
 	}
@@ -1769,7 +2018,7 @@ public class GenericIdentification {
 		return identifiedLocation;
 	}
 
-	public GenericIdentification setIdentifiedLocation(com.tools20022.repository.entity.Location identifiedLocation) {
+	public GenericIdentification setIdentifiedLocation(Location identifiedLocation) {
 		this.identifiedLocation = Objects.requireNonNull(identifiedLocation);
 		return this;
 	}
@@ -1778,7 +2027,7 @@ public class GenericIdentification {
 		return relatedSecuritiesIdentification;
 	}
 
-	public GenericIdentification setRelatedSecuritiesIdentification(com.tools20022.repository.entity.SecuritiesIdentification relatedSecuritiesIdentification) {
+	public GenericIdentification setRelatedSecuritiesIdentification(SecuritiesIdentification relatedSecuritiesIdentification) {
 		this.relatedSecuritiesIdentification = Objects.requireNonNull(relatedSecuritiesIdentification);
 		return this;
 	}
@@ -1787,7 +2036,7 @@ public class GenericIdentification {
 		return identifiedDocument;
 	}
 
-	public GenericIdentification setIdentifiedDocument(com.tools20022.repository.entity.Document identifiedDocument) {
+	public GenericIdentification setIdentifiedDocument(Document identifiedDocument) {
 		this.identifiedDocument = Objects.requireNonNull(identifiedDocument);
 		return this;
 	}
@@ -1796,7 +2045,7 @@ public class GenericIdentification {
 		return relatedPurchaseOrder;
 	}
 
-	public GenericIdentification setRelatedPurchaseOrder(com.tools20022.repository.entity.PurchaseOrder relatedPurchaseOrder) {
+	public GenericIdentification setRelatedPurchaseOrder(PurchaseOrder relatedPurchaseOrder) {
 		this.relatedPurchaseOrder = Objects.requireNonNull(relatedPurchaseOrder);
 		return this;
 	}
@@ -1805,7 +2054,7 @@ public class GenericIdentification {
 		return relatedCertificate;
 	}
 
-	public GenericIdentification setRelatedCertificate(com.tools20022.repository.entity.RegisteredContract relatedCertificate) {
+	public GenericIdentification setRelatedCertificate(RegisteredContract relatedCertificate) {
 		this.relatedCertificate = Objects.requireNonNull(relatedCertificate);
 		return this;
 	}

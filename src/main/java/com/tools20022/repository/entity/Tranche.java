@@ -19,8 +19,8 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.BaseOneRate;
+import com.tools20022.repository.entity.Asset;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -106,7 +106,7 @@ public class Tranche {
 	 * "Specifies the asset for which tranche information is reported."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Tranche, Asset> mmAsset = new MMBusinessAssociationEnd<Tranche, Asset>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Tranche.mmObject();
@@ -115,9 +115,19 @@ public class Tranche {
 			definition = "Specifies the asset for which tranche information is reported.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Asset.mmTranche;
+			opposite_lazy = () -> Asset.mmTranche;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
+			type_lazy = () -> Asset.mmObject();
+		}
+
+		@Override
+		public Asset getValue(Tranche obj) {
+			return obj.getAsset();
+		}
+
+		@Override
+		public void setValue(Tranche obj, Asset value) {
+			obj.setAsset(value);
 		}
 	};
 	protected BaseOneRate detachmentPoint;
@@ -145,7 +155,7 @@ public class Tranche {
 	 * definition} = "Point beyond which losses do not affect the tranche."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDetachmentPoint = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Tranche, BaseOneRate> mmDetachmentPoint = new MMBusinessAttribute<Tranche, BaseOneRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Tranche.mmObject();
@@ -157,12 +167,14 @@ public class Tranche {
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Tranche.class.getMethod("getDetachmentPoint", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BaseOneRate getValue(Tranche obj) {
+			return obj.getDetachmentPoint();
+		}
+
+		@Override
+		public void setValue(Tranche obj, BaseOneRate value) {
+			obj.setDetachmentPoint(value);
 		}
 	};
 	protected BaseOneRate attachmentPoint;
@@ -192,7 +204,7 @@ public class Tranche {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAttachmentPoint = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Tranche, BaseOneRate> mmAttachmentPoint = new MMBusinessAttribute<Tranche, BaseOneRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Tranche.mmObject();
@@ -204,12 +216,14 @@ public class Tranche {
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Tranche.class.getMethod("getAttachmentPoint", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BaseOneRate getValue(Tranche obj) {
+			return obj.getAttachmentPoint();
+		}
+
+		@Override
+		public void setValue(Tranche obj, BaseOneRate value) {
+			obj.setAttachmentPoint(value);
 		}
 	};
 
@@ -220,7 +234,7 @@ public class Tranche {
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "Tranche";
 				definition = "One of a number of related assets offered as part of the same transaction. The detachment point less the attachment  point represents the maximum loss.\r\n";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.mmTranche);
+				associationDomain_lazy = () -> Arrays.asList(Asset.mmTranche);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Tranche.mmAsset, com.tools20022.repository.entity.Tranche.mmDetachmentPoint, com.tools20022.repository.entity.Tranche.mmAttachmentPoint);
 			}
 
@@ -236,7 +250,7 @@ public class Tranche {
 		return asset;
 	}
 
-	public Tranche setAsset(com.tools20022.repository.entity.Asset asset) {
+	public Tranche setAsset(Asset asset) {
 		this.asset = Objects.requireNonNull(asset);
 		return this;
 	}

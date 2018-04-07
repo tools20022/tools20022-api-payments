@@ -25,7 +25,6 @@ import com.tools20022.repository.area.PaymentsInitiationLatestVersion;
 import com.tools20022.repository.msg.GroupHeader55;
 import com.tools20022.repository.msg.PaymentInstruction21;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -94,8 +93,8 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forCustomerDirectDebitInitiationV07
- * ConstraintSupplementaryDataRule.forCustomerDirectDebitInitiationV07}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#for_pain_CustomerDirectDebitInitiationV07
+ * ConstraintSupplementaryDataRule.for_pain_CustomerDirectDebitInitiationV07}</li>
  * </ul>
  * </li>
  * <li>
@@ -141,7 +140,7 @@ public class CustomerDirectDebitInitiationV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CustomerDirectDebitInitiationV07, GroupHeader55> mmGroupHeader = new MMMessageBuildingBlock<CustomerDirectDebitInitiationV07, GroupHeader55>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -152,12 +151,14 @@ public class CustomerDirectDebitInitiationV07 {
 			complexType_lazy = () -> GroupHeader55.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CustomerDirectDebitInitiationV07.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader55 getValue(CustomerDirectDebitInitiationV07 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(CustomerDirectDebitInitiationV07 obj, GroupHeader55 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "PmtInf", required = true)
@@ -187,7 +188,7 @@ public class CustomerDirectDebitInitiationV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPaymentInformation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CustomerDirectDebitInitiationV07, List<PaymentInstruction21>> mmPaymentInformation = new MMMessageBuildingBlock<CustomerDirectDebitInitiationV07, List<PaymentInstruction21>>() {
 		{
 			xmlTag = "PmtInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -197,12 +198,14 @@ public class CustomerDirectDebitInitiationV07 {
 			complexType_lazy = () -> PaymentInstruction21.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CustomerDirectDebitInitiationV07.class.getMethod("getPaymentInformation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<PaymentInstruction21> getValue(CustomerDirectDebitInitiationV07 obj) {
+			return obj.getPaymentInformation();
+		}
+
+		@Override
+		public void setValue(CustomerDirectDebitInitiationV07 obj, List<PaymentInstruction21> value) {
+			obj.setPaymentInformation(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -232,7 +235,7 @@ public class CustomerDirectDebitInitiationV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CustomerDirectDebitInitiationV07, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CustomerDirectDebitInitiationV07, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -242,19 +245,21 @@ public class CustomerDirectDebitInitiationV07 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CustomerDirectDebitInitiationV07.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CustomerDirectDebitInitiationV07 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CustomerDirectDebitInitiationV07 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forCustomerDirectDebitInitiationV07);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.for_pain_CustomerDirectDebitInitiationV07);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CustomerDirectDebitInitiationV07";
 				definition = "Scope\r\nThe CustomerDirectDebitInitiation message is sent by the initiating party to the forwarding agent or creditor agent. It is used to request single or bulk collection(s) of funds from one or various debtor's account(s) for a creditor.\r\nUsage\r\nThe CustomerDirectDebitInitiation message can contain one or more direct debit instructions.\r\nThe message can be used in a direct or a relay scenario:\r\n- In a direct scenario, the message is sent directly to the creditor agent. The creditor agent is the account servicer of the creditor.\r\n- In a relay scenario, the message is sent to a forwarding agent. The forwarding agent acts as a concentrating financial institution. It will forward the CustomerDirectDebitInitiation message to the creditor agent.\r\nThe message can also be used by an initiating party that has authority to send the message on behalf of the creditor. This caters for example for the scenario of a payments factory initiating all payments on behalf of a large corporate.\r\nThe CustomerDirectDebitInitiation message can be used in domestic and cross-border scenarios.\r\nThe CustomerDirectDebitInitiation may or may not contain mandate related information, i.e. extracts from a mandate, such as MandateIdentification or DateOfSignature. The CustomerDirectDebitInitiation message must not be considered as a mandate.\r\nThe CustomerDirectDebitInitiation message must not be used by the creditor agent to execute the direct debit instruction(s). The FIToFICustomerDirectDebit message must be used instead.";

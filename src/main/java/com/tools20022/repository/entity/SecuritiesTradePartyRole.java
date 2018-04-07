@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.SecuritiesTrade;
 import com.tools20022.repository.entity.TradePartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -110,7 +111,7 @@ public class SecuritiesTradePartyRole extends TradePartyRole {
 	 * definition} = "Specifies the trade in which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesTradePartyRole, List<SecuritiesTrade>> mmSecuritiesTrade = new MMBusinessAssociationEnd<SecuritiesTradePartyRole, List<SecuritiesTrade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradePartyRole.mmObject();
@@ -121,6 +122,16 @@ public class SecuritiesTradePartyRole extends TradePartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesTrade> getValue(SecuritiesTradePartyRole obj) {
+			return obj.getSecuritiesTrade();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradePartyRole obj, List<SecuritiesTrade> value) {
+			obj.setSecuritiesTrade(value);
 		}
 	};
 

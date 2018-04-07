@@ -36,6 +36,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ActiveCurrencyCode_BusinessCode
+ * ActiveCurrencyCode_BusinessCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMString#getPattern pattern} =
  * "[A-Z]{3,3}"</li>
  * <li>
@@ -87,6 +90,7 @@ public class ActiveCurrencyCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActiveCurrencyCode";
 				definition = "A code allocated to a currency by a Maintenance Agency under an international identification scheme as described in the latest edition of the international standard ISO 4217 \"Codes for the representation of currencies and funds\".";
+				trace_lazy = () -> ActiveCurrencyCode_BusinessCode.mmObject();
 				pattern = "[A-Z]{3,3}";
 			}
 		});

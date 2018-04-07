@@ -74,7 +74,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "PartyType4Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Entity assigning an identification  (for example merchant, acceptor, acquirer, tax authority, etc.)."
+ * "Entity assigning an identification (for example merchant, acceptor, acquirer, tax authority, etc.)."
  * </li>
  * </ul>
  */
@@ -238,7 +238,7 @@ public class PartyType4Code extends MMCode {
 				example = Arrays.asList("MERC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyType4Code";
-				definition = "Entity assigning an identification  (for example merchant, acceptor, acquirer, tax authority, etc.).";
+				definition = "Entity assigning an identification (for example merchant, acceptor, acquirer, tax authority, etc.).";
 				trace_lazy = () -> PartyTypeCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PartyType4Code.Merchant, com.tools20022.repository.codeset.PartyType4Code.Acceptor, com.tools20022.repository.codeset.PartyType4Code.IntermediaryAgent,
 						com.tools20022.repository.codeset.PartyType4Code.Acquirer, com.tools20022.repository.codeset.PartyType4Code.CardIssuer, com.tools20022.repository.codeset.PartyType4Code.TaxAuthority);

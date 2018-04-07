@@ -26,9 +26,9 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.SyndicatedLoan1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -152,7 +152,7 @@ public class Allocation {
 	 * "Percent of the securities quantity that this allocation represents."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPercentage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Allocation, PercentageRate> mmPercentage = new MMBusinessAttribute<Allocation, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -164,12 +164,14 @@ public class Allocation {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Allocation.class.getMethod("getPercentage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Allocation obj) {
+			return obj.getPercentage();
+		}
+
+		@Override
+		public void setValue(Allocation obj, PercentageRate value) {
+			obj.setPercentage(value);
 		}
 	};
 	protected SecuritiesQuantity allocatedQuantity;
@@ -217,7 +219,7 @@ public class Allocation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAllocatedQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Allocation, SecuritiesQuantity> mmAllocatedQuantity = new MMBusinessAssociationEnd<Allocation, SecuritiesQuantity>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SyndicatedLoan1.mmShare);
 			isDerived = false;
@@ -228,9 +230,19 @@ public class Allocation {
 			definition = "Quantity of a specific security allocated from a block trade, based upon the distribution of the trade to different accounts.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmAllocation;
+			opposite_lazy = () -> SecuritiesQuantity.mmAllocation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(Allocation obj) {
+			return obj.getAllocatedQuantity();
+		}
+
+		@Override
+		public void setValue(Allocation obj, SecuritiesQuantity value) {
+			obj.setAllocatedQuantity(value);
 		}
 	};
 	protected CurrencyCode settlementCurrency;
@@ -261,7 +273,7 @@ public class Allocation {
 	 * definition} = "Currency to be used for settlement of the allocation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSettlementCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Allocation, CurrencyCode> mmSettlementCurrency = new MMBusinessAttribute<Allocation, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -274,12 +286,14 @@ public class Allocation {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Allocation.class.getMethod("getSettlementCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(Allocation obj) {
+			return obj.getSettlementCurrency();
+		}
+
+		@Override
+		public void setValue(Allocation obj, CurrencyCode value) {
+			obj.setSettlementCurrency(value);
 		}
 	};
 	protected SecuritiesAccount allocationAccount;
@@ -315,7 +329,7 @@ public class Allocation {
 	 * definition} = "Account to or from which an allocation must be made."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAllocationAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Allocation, SecuritiesAccount> mmAllocationAccount = new MMBusinessAssociationEnd<Allocation, SecuritiesAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -324,9 +338,19 @@ public class Allocation {
 			definition = "Account to or from which an allocation must be made.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmRelatedAllocation;
+			opposite_lazy = () -> SecuritiesAccount.mmRelatedAllocation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
+			type_lazy = () -> SecuritiesAccount.mmObject();
+		}
+
+		@Override
+		public SecuritiesAccount getValue(Allocation obj) {
+			return obj.getAllocationAccount();
+		}
+
+		@Override
+		public void setValue(Allocation obj, SecuritiesAccount value) {
+			obj.setAllocationAccount(value);
 		}
 	};
 	protected SecuritiesPricing allocatedPrice;
@@ -365,7 +389,7 @@ public class Allocation {
 	 * definition} = "Executed price used in an allocation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAllocatedPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Allocation, SecuritiesPricing> mmAllocatedPrice = new MMBusinessAssociationEnd<Allocation, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -375,9 +399,19 @@ public class Allocation {
 			definition = "Executed price used in an allocation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmAllocation;
+			opposite_lazy = () -> SecuritiesPricing.mmAllocation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(Allocation obj) {
+			return obj.getAllocatedPrice();
+		}
+
+		@Override
+		public void setValue(Allocation obj, SecuritiesPricing value) {
+			obj.setAllocatedPrice(value);
 		}
 	};
 	protected CurrencyAndAmount allocationAmount;
@@ -410,7 +444,7 @@ public class Allocation {
 	 * "Allocated quantity of security multiplied by the allocated price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAllocationAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Allocation, CurrencyAndAmount> mmAllocationAmount = new MMBusinessAttribute<Allocation, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -423,12 +457,14 @@ public class Allocation {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Allocation.class.getMethod("getAllocationAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Allocation obj) {
+			return obj.getAllocationAmount();
+		}
+
+		@Override
+		public void setValue(Allocation obj, CurrencyAndAmount value) {
+			obj.setAllocationAmount(value);
 		}
 	};
 	protected RoundingDirectionCode method;
@@ -462,7 +498,7 @@ public class Allocation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Allocation, RoundingDirectionCode> mmMethod = new MMBusinessAttribute<Allocation, RoundingDirectionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -475,12 +511,14 @@ public class Allocation {
 			simpleType_lazy = () -> RoundingDirectionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Allocation.class.getMethod("getMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RoundingDirectionCode getValue(Allocation obj) {
+			return obj.getMethod();
+		}
+
+		@Override
+		public void setValue(Allocation obj, RoundingDirectionCode value) {
+			obj.setMethod(value);
 		}
 	};
 	protected DecimalNumber averagePricePrecision;
@@ -512,7 +550,7 @@ public class Allocation {
 	 * definition} = "Number of decimal places used for average pricing."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAveragePricePrecision = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Allocation, DecimalNumber> mmAveragePricePrecision = new MMBusinessAttribute<Allocation, DecimalNumber>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -525,12 +563,14 @@ public class Allocation {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Allocation.class.getMethod("getAveragePricePrecision", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(Allocation obj) {
+			return obj.getAveragePricePrecision();
+		}
+
+		@Override
+		public void setValue(Allocation obj, DecimalNumber value) {
+			obj.setAveragePricePrecision(value);
 		}
 	};
 	protected SecuritiesSettlement settlementExecutionParameters;
@@ -568,7 +608,7 @@ public class Allocation {
 	 * "Parameters used to execute the settlement of a securities allocation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlementExecutionParameters = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Allocation, Optional<SecuritiesSettlement>> mmSettlementExecutionParameters = new MMBusinessAssociationEnd<Allocation, Optional<SecuritiesSettlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -577,9 +617,19 @@ public class Allocation {
 			definition = "Parameters used to execute the settlement of a securities allocation.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmSettledAllocation;
+			opposite_lazy = () -> SecuritiesSettlement.mmSettledAllocation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
+			type_lazy = () -> SecuritiesSettlement.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesSettlement> getValue(Allocation obj) {
+			return obj.getSettlementExecutionParameters();
+		}
+
+		@Override
+		public void setValue(Allocation obj, Optional<SecuritiesSettlement> value) {
+			obj.setSettlementExecutionParameters(value.orElse(null));
 		}
 	};
 	protected SecuritiesOrder securitiesOrder;
@@ -615,7 +665,7 @@ public class Allocation {
 	 * definition} = "Securites order which is allocated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Allocation, Optional<SecuritiesOrder>> mmSecuritiesOrder = new MMBusinessAssociationEnd<Allocation, Optional<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -624,9 +674,19 @@ public class Allocation {
 			definition = "Securites order which is allocated.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmSecuritiesOrderAllocation;
+			opposite_lazy = () -> SecuritiesOrder.mmSecuritiesOrderAllocation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesOrder> getValue(Allocation obj) {
+			return obj.getSecuritiesOrder();
+		}
+
+		@Override
+		public void setValue(Allocation obj, Optional<SecuritiesOrder> value) {
+			obj.setSecuritiesOrder(value.orElse(null));
 		}
 	};
 	protected SecuritiesTrade securitiesTrade;
@@ -662,7 +722,7 @@ public class Allocation {
 	 * definition} = "Trade which is allocated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Allocation, Optional<SecuritiesTrade>> mmSecuritiesTrade = new MMBusinessAssociationEnd<Allocation, Optional<SecuritiesTrade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -671,9 +731,19 @@ public class Allocation {
 			definition = "Trade which is allocated.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmTradeAllocation;
+			opposite_lazy = () -> SecuritiesTrade.mmTradeAllocation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
+			type_lazy = () -> SecuritiesTrade.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesTrade> getValue(Allocation obj) {
+			return obj.getSecuritiesTrade();
+		}
+
+		@Override
+		public void setValue(Allocation obj, Optional<SecuritiesTrade> value) {
+			obj.setSecuritiesTrade(value.orElse(null));
 		}
 	};
 	protected Max35Text identification;
@@ -701,7 +771,7 @@ public class Allocation {
 	 * definition} = "Identifies the allocation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Allocation, Max35Text> mmIdentification = new MMBusinessAttribute<Allocation, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
@@ -713,12 +783,14 @@ public class Allocation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Allocation.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Allocation obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Allocation obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 
@@ -729,9 +801,8 @@ public class Allocation {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Allocation";
 				definition = "Distribution of the (block) trade (transactions) by the investor or investment manager to different underlying clients, ie, investment funds.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmAllocation, com.tools20022.repository.entity.SecuritiesAccount.mmRelatedAllocation,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmAllocation, com.tools20022.repository.entity.SecuritiesTrade.mmTradeAllocation, com.tools20022.repository.entity.SecuritiesSettlement.mmSettledAllocation,
-						com.tools20022.repository.entity.SecuritiesOrder.mmSecuritiesOrderAllocation);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmAllocation, SecuritiesAccount.mmRelatedAllocation, SecuritiesQuantity.mmAllocation, SecuritiesTrade.mmTradeAllocation,
+						SecuritiesSettlement.mmSettledAllocation, SecuritiesOrder.mmSecuritiesOrderAllocation);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Allocation.mmPercentage, com.tools20022.repository.entity.Allocation.mmAllocatedQuantity, com.tools20022.repository.entity.Allocation.mmSettlementCurrency,
 						com.tools20022.repository.entity.Allocation.mmAllocationAccount, com.tools20022.repository.entity.Allocation.mmAllocatedPrice, com.tools20022.repository.entity.Allocation.mmAllocationAmount,
 						com.tools20022.repository.entity.Allocation.mmMethod, com.tools20022.repository.entity.Allocation.mmAveragePricePrecision, com.tools20022.repository.entity.Allocation.mmSettlementExecutionParameters,
@@ -759,7 +830,7 @@ public class Allocation {
 		return allocatedQuantity;
 	}
 
-	public Allocation setAllocatedQuantity(com.tools20022.repository.entity.SecuritiesQuantity allocatedQuantity) {
+	public Allocation setAllocatedQuantity(SecuritiesQuantity allocatedQuantity) {
 		this.allocatedQuantity = Objects.requireNonNull(allocatedQuantity);
 		return this;
 	}
@@ -777,7 +848,7 @@ public class Allocation {
 		return allocationAccount;
 	}
 
-	public Allocation setAllocationAccount(com.tools20022.repository.entity.SecuritiesAccount allocationAccount) {
+	public Allocation setAllocationAccount(SecuritiesAccount allocationAccount) {
 		this.allocationAccount = Objects.requireNonNull(allocationAccount);
 		return this;
 	}
@@ -786,7 +857,7 @@ public class Allocation {
 		return allocatedPrice;
 	}
 
-	public Allocation setAllocatedPrice(com.tools20022.repository.entity.SecuritiesPricing allocatedPrice) {
+	public Allocation setAllocatedPrice(SecuritiesPricing allocatedPrice) {
 		this.allocatedPrice = Objects.requireNonNull(allocatedPrice);
 		return this;
 	}
@@ -822,7 +893,7 @@ public class Allocation {
 		return settlementExecutionParameters == null ? Optional.empty() : Optional.of(settlementExecutionParameters);
 	}
 
-	public Allocation setSettlementExecutionParameters(com.tools20022.repository.entity.SecuritiesSettlement settlementExecutionParameters) {
+	public Allocation setSettlementExecutionParameters(SecuritiesSettlement settlementExecutionParameters) {
 		this.settlementExecutionParameters = settlementExecutionParameters;
 		return this;
 	}
@@ -831,7 +902,7 @@ public class Allocation {
 		return securitiesOrder == null ? Optional.empty() : Optional.of(securitiesOrder);
 	}
 
-	public Allocation setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
+	public Allocation setSecuritiesOrder(SecuritiesOrder securitiesOrder) {
 		this.securitiesOrder = securitiesOrder;
 		return this;
 	}
@@ -840,7 +911,7 @@ public class Allocation {
 		return securitiesTrade == null ? Optional.empty() : Optional.of(securitiesTrade);
 	}
 
-	public Allocation setSecuritiesTrade(com.tools20022.repository.entity.SecuritiesTrade securitiesTrade) {
+	public Allocation setSecuritiesTrade(SecuritiesTrade securitiesTrade) {
 		this.securitiesTrade = securitiesTrade;
 		return this;
 	}

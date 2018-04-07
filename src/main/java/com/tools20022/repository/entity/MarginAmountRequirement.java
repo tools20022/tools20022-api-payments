@@ -18,9 +18,9 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
-import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.ExposureCalculation;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -52,6 +52,18 @@ import java.util.Optional;
  * <li>
  * {@linkplain com.tools20022.repository.entity.MarginAmountRequirement#mmSegregatedAmountRequirementCalculation
  * MarginAmountRequirement.mmSegregatedAmountRequirementCalculation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.MarginAmountRequirement#mmIntraDayMarginCall
+ * MarginAmountRequirement.mmIntraDayMarginCall}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.MarginAmountRequirement#mmPeakInitialMarginLiability
+ * MarginAmountRequirement.mmPeakInitialMarginLiability}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.MarginAmountRequirement#mmAggregatePeakLiability
+ * MarginAmountRequirement.mmAggregatePeakLiability}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.MarginAmountRequirement#mmPeakVariationMarginLiability
+ * MarginAmountRequirement.mmPeakVariationMarginLiability}</li>
  * </ul>
  * </li>
  * <li>
@@ -74,7 +86,7 @@ import java.util.Optional;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+ * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "MarginAmountRequirement"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
@@ -121,7 +133,7 @@ public class MarginAmountRequirement {
 	 * "Exposure valuation which takes into account amount requirements."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVariationMarginAmountRequirementCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MarginAmountRequirement, Optional<ExposureCalculation>> mmVariationMarginAmountRequirementCalculation = new MMBusinessAssociationEnd<MarginAmountRequirement, Optional<ExposureCalculation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
@@ -130,12 +142,22 @@ public class MarginAmountRequirement {
 			definition = "Exposure valuation which takes into account amount requirements.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmVariationMarginAmountRequirement;
+			opposite_lazy = () -> ExposureCalculation.mmVariationMarginAmountRequirement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
+			type_lazy = () -> ExposureCalculation.mmObject();
+		}
+
+		@Override
+		public Optional<ExposureCalculation> getValue(MarginAmountRequirement obj) {
+			return obj.getVariationMarginAmountRequirementCalculation();
+		}
+
+		@Override
+		public void setValue(MarginAmountRequirement obj, Optional<ExposureCalculation> value) {
+			obj.setVariationMarginAmountRequirementCalculation(value.orElse(null));
 		}
 	};
-	protected ActiveCurrencyAndAmount deliverMarginAmount;
+	protected CurrencyAndAmount deliverMarginAmount;
 	/**
 	 * 
 	 <p>
@@ -144,8 +166,8 @@ public class MarginAmountRequirement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -154,7 +176,7 @@ public class MarginAmountRequirement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "DeliverMarginAmount"</li>
 	 * <li>
@@ -164,27 +186,29 @@ public class MarginAmountRequirement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDeliverMarginAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount> mmDeliverMarginAmount = new MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliverMarginAmount";
 			definition = "Amount of new Variation Margin that will be delivered to one party by the other party after rounding, threshold and minimum transfer amount are taken into account.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginAmountRequirement.class.getMethod("getDeliverMarginAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginAmountRequirement obj) {
+			return obj.getDeliverMarginAmount();
+		}
+
+		@Override
+		public void setValue(MarginAmountRequirement obj, CurrencyAndAmount value) {
+			obj.setDeliverMarginAmount(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount returnMarginAmount;
+	protected CurrencyAndAmount returnMarginAmount;
 	/**
 	 * 
 	 <p>
@@ -193,8 +217,8 @@ public class MarginAmountRequirement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -203,7 +227,7 @@ public class MarginAmountRequirement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "ReturnMarginAmount"</li>
 	 * <li>
@@ -213,24 +237,26 @@ public class MarginAmountRequirement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReturnMarginAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount> mmReturnMarginAmount = new MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReturnMarginAmount";
 			definition = "Amount of new Variation Margin that will be recalled to one party from the other party after rounding, threshold and minimum transfer amount are taken into account.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginAmountRequirement.class.getMethod("getReturnMarginAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginAmountRequirement obj) {
+			return obj.getReturnMarginAmount();
+		}
+
+		@Override
+		public void setValue(MarginAmountRequirement obj, CurrencyAndAmount value) {
+			obj.setReturnMarginAmount(value);
 		}
 	};
 	protected ExposureCalculation segregatedAmountRequirementCalculation;
@@ -268,7 +294,7 @@ public class MarginAmountRequirement {
 	 * "Exposure valuation which takes into account amount requirements."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSegregatedAmountRequirementCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MarginAmountRequirement, Optional<ExposureCalculation>> mmSegregatedAmountRequirementCalculation = new MMBusinessAssociationEnd<MarginAmountRequirement, Optional<ExposureCalculation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
@@ -277,9 +303,223 @@ public class MarginAmountRequirement {
 			definition = "Exposure valuation which takes into account amount requirements.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmSegregatedAmountRequirement;
+			opposite_lazy = () -> ExposureCalculation.mmSegregatedAmountRequirement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
+			type_lazy = () -> ExposureCalculation.mmObject();
+		}
+
+		@Override
+		public Optional<ExposureCalculation> getValue(MarginAmountRequirement obj) {
+			return obj.getSegregatedAmountRequirementCalculation();
+		}
+
+		@Override
+		public void setValue(MarginAmountRequirement obj, Optional<ExposureCalculation> value) {
+			obj.setSegregatedAmountRequirementCalculation(value.orElse(null));
+		}
+	};
+	protected CurrencyAndAmount intraDayMarginCall;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
+	 * simpleType} =
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} =
+	 * {@linkplain com.tools20022.repository.entity.MarginAmountRequirement
+	 * MarginAmountRequirement}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "IntraDayMarginCall"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Total aggregate value of collateral called intraday, excluding repayments.\r\n"
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount> mmIntraDayMarginCall = new MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "IntraDayMarginCall";
+			definition = "Total aggregate value of collateral called intraday, excluding repayments.\r\n";
+			maxOccurs = 1;
+			minOccurs = 1;
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public CurrencyAndAmount getValue(MarginAmountRequirement obj) {
+			return obj.getIntraDayMarginCall();
+		}
+
+		@Override
+		public void setValue(MarginAmountRequirement obj, CurrencyAndAmount value) {
+			obj.setIntraDayMarginCall(value);
+		}
+	};
+	protected CurrencyAndAmount peakInitialMarginLiability;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
+	 * simpleType} =
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} =
+	 * {@linkplain com.tools20022.repository.entity.MarginAmountRequirement
+	 * MarginAmountRequirement}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "PeakInitialMarginLiability"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Peak increase in initial margin liability for the account during the day."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount> mmPeakInitialMarginLiability = new MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "PeakInitialMarginLiability";
+			definition = "Peak increase in initial margin liability for the account during the day.";
+			maxOccurs = 1;
+			minOccurs = 1;
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public CurrencyAndAmount getValue(MarginAmountRequirement obj) {
+			return obj.getPeakInitialMarginLiability();
+		}
+
+		@Override
+		public void setValue(MarginAmountRequirement obj, CurrencyAndAmount value) {
+			obj.setPeakInitialMarginLiability(value);
+		}
+	};
+	protected CurrencyAndAmount aggregatePeakLiability;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
+	 * simpleType} =
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} =
+	 * {@linkplain com.tools20022.repository.entity.MarginAmountRequirement
+	 * MarginAmountRequirement}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "AggregatePeakLiability"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Peak intraday liability (sum of increase in initial margin relative to end of day plus sum of decrease in variation margin relative to end of day) for a margin account during the day. Liabilities are shown as positive integers."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount> mmAggregatePeakLiability = new MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "AggregatePeakLiability";
+			definition = "Peak intraday liability (sum of increase in initial margin relative to end of day plus sum of decrease in variation margin relative to end of day) for a margin account during the day. Liabilities are shown as positive integers.";
+			maxOccurs = 1;
+			minOccurs = 1;
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public CurrencyAndAmount getValue(MarginAmountRequirement obj) {
+			return obj.getAggregatePeakLiability();
+		}
+
+		@Override
+		public void setValue(MarginAmountRequirement obj, CurrencyAndAmount value) {
+			obj.setAggregatePeakLiability(value);
+		}
+	};
+	protected CurrencyAndAmount peakVariationMarginLiability;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
+	 * simpleType} =
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} =
+	 * {@linkplain com.tools20022.repository.entity.MarginAmountRequirement
+	 * MarginAmountRequirement}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "PeakVariationMarginLiability"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Peak loss uncollateralised variation margin liability on the margin account during the day."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount> mmPeakVariationMarginLiability = new MMBusinessAttribute<MarginAmountRequirement, CurrencyAndAmount>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.MarginAmountRequirement.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "PeakVariationMarginLiability";
+			definition = "Peak loss uncollateralised variation margin liability on the margin account during the day.";
+			maxOccurs = 1;
+			minOccurs = 1;
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public CurrencyAndAmount getValue(MarginAmountRequirement obj) {
+			return obj.getPeakVariationMarginLiability();
+		}
+
+		@Override
+		public void setValue(MarginAmountRequirement obj, CurrencyAndAmount value) {
+			obj.setPeakVariationMarginLiability(value);
 		}
 	};
 
@@ -287,12 +527,14 @@ public class MarginAmountRequirement {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
-				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginAmountRequirement";
 				definition = "Amount of expected margin required by any of the parties of the margin calculation.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ExposureCalculation.mmVariationMarginAmountRequirement, com.tools20022.repository.entity.ExposureCalculation.mmSegregatedAmountRequirement);
+				associationDomain_lazy = () -> Arrays.asList(ExposureCalculation.mmVariationMarginAmountRequirement, ExposureCalculation.mmSegregatedAmountRequirement);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MarginAmountRequirement.mmVariationMarginAmountRequirementCalculation, com.tools20022.repository.entity.MarginAmountRequirement.mmDeliverMarginAmount,
-						com.tools20022.repository.entity.MarginAmountRequirement.mmReturnMarginAmount, com.tools20022.repository.entity.MarginAmountRequirement.mmSegregatedAmountRequirementCalculation);
+						com.tools20022.repository.entity.MarginAmountRequirement.mmReturnMarginAmount, com.tools20022.repository.entity.MarginAmountRequirement.mmSegregatedAmountRequirementCalculation,
+						com.tools20022.repository.entity.MarginAmountRequirement.mmIntraDayMarginCall, com.tools20022.repository.entity.MarginAmountRequirement.mmPeakInitialMarginLiability,
+						com.tools20022.repository.entity.MarginAmountRequirement.mmAggregatePeakLiability, com.tools20022.repository.entity.MarginAmountRequirement.mmPeakVariationMarginLiability);
 			}
 
 			@Override
@@ -307,25 +549,25 @@ public class MarginAmountRequirement {
 		return variationMarginAmountRequirementCalculation == null ? Optional.empty() : Optional.of(variationMarginAmountRequirementCalculation);
 	}
 
-	public MarginAmountRequirement setVariationMarginAmountRequirementCalculation(com.tools20022.repository.entity.ExposureCalculation variationMarginAmountRequirementCalculation) {
+	public MarginAmountRequirement setVariationMarginAmountRequirementCalculation(ExposureCalculation variationMarginAmountRequirementCalculation) {
 		this.variationMarginAmountRequirementCalculation = variationMarginAmountRequirementCalculation;
 		return this;
 	}
 
-	public ActiveCurrencyAndAmount getDeliverMarginAmount() {
+	public CurrencyAndAmount getDeliverMarginAmount() {
 		return deliverMarginAmount;
 	}
 
-	public MarginAmountRequirement setDeliverMarginAmount(ActiveCurrencyAndAmount deliverMarginAmount) {
+	public MarginAmountRequirement setDeliverMarginAmount(CurrencyAndAmount deliverMarginAmount) {
 		this.deliverMarginAmount = Objects.requireNonNull(deliverMarginAmount);
 		return this;
 	}
 
-	public ActiveCurrencyAndAmount getReturnMarginAmount() {
+	public CurrencyAndAmount getReturnMarginAmount() {
 		return returnMarginAmount;
 	}
 
-	public MarginAmountRequirement setReturnMarginAmount(ActiveCurrencyAndAmount returnMarginAmount) {
+	public MarginAmountRequirement setReturnMarginAmount(CurrencyAndAmount returnMarginAmount) {
 		this.returnMarginAmount = Objects.requireNonNull(returnMarginAmount);
 		return this;
 	}
@@ -334,8 +576,44 @@ public class MarginAmountRequirement {
 		return segregatedAmountRequirementCalculation == null ? Optional.empty() : Optional.of(segregatedAmountRequirementCalculation);
 	}
 
-	public MarginAmountRequirement setSegregatedAmountRequirementCalculation(com.tools20022.repository.entity.ExposureCalculation segregatedAmountRequirementCalculation) {
+	public MarginAmountRequirement setSegregatedAmountRequirementCalculation(ExposureCalculation segregatedAmountRequirementCalculation) {
 		this.segregatedAmountRequirementCalculation = segregatedAmountRequirementCalculation;
+		return this;
+	}
+
+	public CurrencyAndAmount getIntraDayMarginCall() {
+		return intraDayMarginCall;
+	}
+
+	public MarginAmountRequirement setIntraDayMarginCall(CurrencyAndAmount intraDayMarginCall) {
+		this.intraDayMarginCall = Objects.requireNonNull(intraDayMarginCall);
+		return this;
+	}
+
+	public CurrencyAndAmount getPeakInitialMarginLiability() {
+		return peakInitialMarginLiability;
+	}
+
+	public MarginAmountRequirement setPeakInitialMarginLiability(CurrencyAndAmount peakInitialMarginLiability) {
+		this.peakInitialMarginLiability = Objects.requireNonNull(peakInitialMarginLiability);
+		return this;
+	}
+
+	public CurrencyAndAmount getAggregatePeakLiability() {
+		return aggregatePeakLiability;
+	}
+
+	public MarginAmountRequirement setAggregatePeakLiability(CurrencyAndAmount aggregatePeakLiability) {
+		this.aggregatePeakLiability = Objects.requireNonNull(aggregatePeakLiability);
+		return this;
+	}
+
+	public CurrencyAndAmount getPeakVariationMarginLiability() {
+		return peakVariationMarginLiability;
+	}
+
+	public MarginAmountRequirement setPeakVariationMarginLiability(CurrencyAndAmount peakVariationMarginLiability) {
+		this.peakVariationMarginLiability = Objects.requireNonNull(peakVariationMarginLiability);
 		return this;
 	}
 }

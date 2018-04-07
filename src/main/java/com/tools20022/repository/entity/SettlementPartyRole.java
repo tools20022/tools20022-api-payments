@@ -21,7 +21,9 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.entity.Settlement;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -130,7 +132,7 @@ public class SettlementPartyRole extends Role {
 	 * definition} = "Account which is used for settlement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlementAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SettlementPartyRole, Account> mmSettlementAccount = new MMBusinessAssociationEnd<SettlementPartyRole, Account>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementPartyRole.mmObject();
@@ -139,9 +141,19 @@ public class SettlementPartyRole extends Role {
 			definition = "Account which is used for settlement.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmSettlementPartyRole;
+			opposite_lazy = () -> Account.mmSettlementPartyRole;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
+			type_lazy = () -> Account.mmObject();
+		}
+
+		@Override
+		public Account getValue(SettlementPartyRole obj) {
+			return obj.getSettlementAccount();
+		}
+
+		@Override
+		public void setValue(SettlementPartyRole obj, Account value) {
+			obj.setSettlementAccount(value);
 		}
 	};
 	protected Settlement settlement;
@@ -179,7 +191,7 @@ public class SettlementPartyRole extends Role {
 	 * "Specifies the settlement process for which the party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SettlementPartyRole, com.tools20022.repository.entity.Settlement> mmSettlement = new MMBusinessAssociationEnd<SettlementPartyRole, com.tools20022.repository.entity.Settlement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementPartyRole.mmObject();
@@ -192,6 +204,16 @@ public class SettlementPartyRole extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Settlement.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Settlement getValue(SettlementPartyRole obj) {
+			return obj.getSettlement();
+		}
+
+		@Override
+		public void setValue(SettlementPartyRole obj, com.tools20022.repository.entity.Settlement value) {
+			obj.setSettlement(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -201,7 +223,7 @@ public class SettlementPartyRole extends Role {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementPartyRole";
 				definition = "Role played by a party in a settlement process.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmSettlementPartyRole, com.tools20022.repository.entity.Settlement.mmSettlementPartyRole);
+				associationDomain_lazy = () -> Arrays.asList(Account.mmSettlementPartyRole, com.tools20022.repository.entity.Settlement.mmSettlementPartyRole);
 				subType_lazy = () -> Arrays.asList(SecuritiesSettlementPartyRole.mmObject(), CashSettlementInstructionPartyRole.mmObject(), TreasurySettlementPartyRole.mmObject(), SSIDatabaseProvider.mmObject(),
 						CentralClearingCounterpartyRole.mmObject());
 				superType_lazy = () -> Role.mmObject();
@@ -220,7 +242,7 @@ public class SettlementPartyRole extends Role {
 		return settlementAccount;
 	}
 
-	public SettlementPartyRole setSettlementAccount(com.tools20022.repository.entity.Account settlementAccount) {
+	public SettlementPartyRole setSettlementAccount(Account settlementAccount) {
 		this.settlementAccount = Objects.requireNonNull(settlementAccount);
 		return this;
 	}

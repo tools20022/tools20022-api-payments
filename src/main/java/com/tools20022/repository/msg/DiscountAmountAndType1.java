@@ -106,7 +106,7 @@ public class DiscountAmountAndType1 {
 	 * definition} = "Specifies the type of the amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DiscountAmountAndType1, Optional<DiscountAmountType1Choice>> mmType = new MMMessageAttribute<DiscountAmountAndType1, Optional<DiscountAmountType1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> Discount.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.DiscountAmountAndType1.mmObject();
@@ -118,6 +118,16 @@ public class DiscountAmountAndType1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> DiscountAmountType1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<DiscountAmountType1Choice> getValue(DiscountAmountAndType1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(DiscountAmountAndType1 obj, Optional<DiscountAmountType1Choice> value) {
+			obj.setType(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -155,7 +165,7 @@ public class DiscountAmountAndType1 {
 	 * definition} = "Amount of money, which has been typed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DiscountAmountAndType1, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<DiscountAmountAndType1, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.DiscountAmountAndType1.mmObject();
@@ -167,6 +177,16 @@ public class DiscountAmountAndType1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(DiscountAmountAndType1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(DiscountAmountAndType1 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 

@@ -50,6 +50,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * BusinessDayConventionCode.Nearest}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
+ * =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.codeset.BusinessDayConvention1Code
+ * BusinessDayConvention1Code}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
@@ -220,6 +227,7 @@ public class BusinessDayConventionCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BusinessDayConventionCode";
 				definition = "Indicates how a date is adjusted when it falls on a non-business day.";
+				derivation_lazy = () -> Arrays.asList(BusinessDayConvention1Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BusinessDayConventionCode.Following, com.tools20022.repository.codeset.BusinessDayConventionCode.ModifiedFollowing,
 						com.tools20022.repository.codeset.BusinessDayConventionCode.Preceding, com.tools20022.repository.codeset.BusinessDayConventionCode.Nearest);
 			}

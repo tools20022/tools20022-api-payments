@@ -20,7 +20,7 @@ package com.tools20022.repository.constraints;
 import com.tools20022.core.repo.NotImplementedConstraintException;
 import com.tools20022.metamodel.MMConstraint;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.msg.OriginalGroupHeader7;
+import com.tools20022.repository.msg.OriginalGroupHeader13;
 import com.tools20022.repository.msg.OriginalGroupInformation28;
 
 /**
@@ -35,8 +35,8 @@ public class ConstraintNumberOfTransactionPerStatusGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader7
-	 * OriginalGroupHeader7}</li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalGroupHeader13
+	 * OriginalGroupHeader13}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -50,17 +50,17 @@ public class ConstraintNumberOfTransactionPerStatusGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOriginalGroupHeader7 = new MMConstraint() {
+	public static final MMConstraint<OriginalGroupHeader13> forOriginalGroupHeader13 = new MMConstraint<OriginalGroupHeader13>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumberOfTransactionPerStatusGuideline";
 			definition = "OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should only be present if GroupStatus equals 'PART'.";
-			owner_lazy = () -> OriginalGroupHeader7.mmObject();
+			owner_lazy = () -> OriginalGroupHeader13.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalGroupHeader7((OriginalGroupHeader7) obj);
+		public void executeValidator(OriginalGroupHeader13 obj) throws Exception {
+			checkOriginalGroupHeader13(obj);
 		}
 	};
 	/**
@@ -84,7 +84,7 @@ public class ConstraintNumberOfTransactionPerStatusGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forOriginalGroupInformation28 = new MMConstraint() {
+	public static final MMConstraint<OriginalGroupInformation28> forOriginalGroupInformation28 = new MMConstraint<OriginalGroupInformation28>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumberOfTransactionPerStatusGuideline";
@@ -93,8 +93,8 @@ public class ConstraintNumberOfTransactionPerStatusGuideline {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkOriginalGroupInformation28((OriginalGroupInformation28) obj);
+		public void executeValidator(OriginalGroupInformation28 obj) throws Exception {
+			checkOriginalGroupInformation28(obj);
 		}
 	};
 
@@ -102,7 +102,7 @@ public class ConstraintNumberOfTransactionPerStatusGuideline {
 	 * OriginalGroupInformationAndStatus/NumberOfTransactionsPerStatus should
 	 * only be present if GroupStatus equals 'PART'.
 	 */
-	public static void checkOriginalGroupHeader7(OriginalGroupHeader7 obj) throws Exception {
+	public static void checkOriginalGroupHeader13(OriginalGroupHeader13 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 

@@ -22,6 +22,7 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SettlementPartyRole;
+import com.tools20022.repository.entity.TreasuryTrade;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -114,7 +115,7 @@ public class TreasurySettlementPartyRole extends SettlementPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTreasuryTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TreasurySettlementPartyRole, com.tools20022.repository.entity.TreasuryTrade> mmTreasuryTrade = new MMBusinessAssociationEnd<TreasurySettlementPartyRole, com.tools20022.repository.entity.TreasuryTrade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TreasurySettlementPartyRole.mmObject();
@@ -126,6 +127,16 @@ public class TreasurySettlementPartyRole extends SettlementPartyRole {
 			opposite_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmTreasurySettlementPartyRole;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
+		}
+
+		@Override
+		public com.tools20022.repository.entity.TreasuryTrade getValue(TreasurySettlementPartyRole obj) {
+			return obj.getTreasuryTrade();
+		}
+
+		@Override
+		public void setValue(TreasurySettlementPartyRole obj, com.tools20022.repository.entity.TreasuryTrade value) {
+			obj.setTreasuryTrade(value);
 		}
 	};
 

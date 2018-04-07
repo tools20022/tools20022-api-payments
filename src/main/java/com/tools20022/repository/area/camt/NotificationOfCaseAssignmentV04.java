@@ -23,7 +23,6 @@ import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.CashManagementLatestVersion;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -140,7 +139,7 @@ public class NotificationOfCaseAssignmentV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationOfCaseAssignmentV04, ReportHeader4> mmHeader = new MMMessageBuildingBlock<NotificationOfCaseAssignmentV04, ReportHeader4>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -151,12 +150,14 @@ public class NotificationOfCaseAssignmentV04 {
 			complexType_lazy = () -> ReportHeader4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationOfCaseAssignmentV04.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ReportHeader4 getValue(NotificationOfCaseAssignmentV04 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(NotificationOfCaseAssignmentV04 obj, ReportHeader4 value) {
+			obj.setHeader(value);
 		}
 	};
 	@XmlElement(name = "Case", required = true)
@@ -182,7 +183,7 @@ public class NotificationOfCaseAssignmentV04 {
 	 * definition} = "Identifies the investigation case."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCase = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationOfCaseAssignmentV04, Case3> mmCase = new MMMessageBuildingBlock<NotificationOfCaseAssignmentV04, Case3>() {
 		{
 			xmlTag = "Case";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -193,12 +194,14 @@ public class NotificationOfCaseAssignmentV04 {
 			complexType_lazy = () -> Case3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationOfCaseAssignmentV04.class.getMethod("getCase", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Case3 getValue(NotificationOfCaseAssignmentV04 obj) {
+			return obj.getCase();
+		}
+
+		@Override
+		public void setValue(NotificationOfCaseAssignmentV04 obj, Case3 value) {
+			obj.setCase(value);
 		}
 	};
 	@XmlElement(name = "Assgnmt", required = true)
@@ -227,7 +230,7 @@ public class NotificationOfCaseAssignmentV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAssignment = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationOfCaseAssignmentV04, CaseAssignment3> mmAssignment = new MMMessageBuildingBlock<NotificationOfCaseAssignmentV04, CaseAssignment3>() {
 		{
 			xmlTag = "Assgnmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -238,12 +241,14 @@ public class NotificationOfCaseAssignmentV04 {
 			complexType_lazy = () -> CaseAssignment3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationOfCaseAssignmentV04.class.getMethod("getAssignment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CaseAssignment3 getValue(NotificationOfCaseAssignmentV04 obj) {
+			return obj.getAssignment();
+		}
+
+		@Override
+		public void setValue(NotificationOfCaseAssignmentV04 obj, CaseAssignment3 value) {
+			obj.setAssignment(value);
 		}
 	};
 	@XmlElement(name = "Ntfctn", required = true)
@@ -271,7 +276,7 @@ public class NotificationOfCaseAssignmentV04 {
 	 * definition} = "Information about the type of action taken."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmNotification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationOfCaseAssignmentV04, CaseForwardingNotification3> mmNotification = new MMMessageBuildingBlock<NotificationOfCaseAssignmentV04, CaseForwardingNotification3>() {
 		{
 			xmlTag = "Ntfctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -282,12 +287,14 @@ public class NotificationOfCaseAssignmentV04 {
 			complexType_lazy = () -> CaseForwardingNotification3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationOfCaseAssignmentV04.class.getMethod("getNotification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CaseForwardingNotification3 getValue(NotificationOfCaseAssignmentV04 obj) {
+			return obj.getNotification();
+		}
+
+		@Override
+		public void setValue(NotificationOfCaseAssignmentV04 obj, CaseForwardingNotification3 value) {
+			obj.setNotification(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -317,7 +324,7 @@ public class NotificationOfCaseAssignmentV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NotificationOfCaseAssignmentV04, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<NotificationOfCaseAssignmentV04, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -327,12 +334,14 @@ public class NotificationOfCaseAssignmentV04 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NotificationOfCaseAssignmentV04.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(NotificationOfCaseAssignmentV04 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(NotificationOfCaseAssignmentV04 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

@@ -25,7 +25,6 @@ import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.msg.ContractRegistrationStatementRequest1;
 import com.tools20022.repository.msg.CurrencyControlHeader1;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -110,7 +109,7 @@ public class ContractRegistrationStatementRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ContractRegistrationStatementRequestV01, CurrencyControlHeader1> mmGroupHeader = new MMMessageBuildingBlock<ContractRegistrationStatementRequestV01, CurrencyControlHeader1>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,12 +120,14 @@ public class ContractRegistrationStatementRequestV01 {
 			complexType_lazy = () -> CurrencyControlHeader1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ContractRegistrationStatementRequestV01.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyControlHeader1 getValue(ContractRegistrationStatementRequestV01 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationStatementRequestV01 obj, CurrencyControlHeader1 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "StmtReq", required = true)
@@ -156,7 +157,7 @@ public class ContractRegistrationStatementRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStatementRequest = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ContractRegistrationStatementRequestV01, List<ContractRegistrationStatementRequest1>> mmStatementRequest = new MMMessageBuildingBlock<ContractRegistrationStatementRequestV01, List<ContractRegistrationStatementRequest1>>() {
 		{
 			xmlTag = "StmtReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,12 +167,14 @@ public class ContractRegistrationStatementRequestV01 {
 			complexType_lazy = () -> ContractRegistrationStatementRequest1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ContractRegistrationStatementRequestV01.class.getMethod("getStatementRequest", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<ContractRegistrationStatementRequest1> getValue(ContractRegistrationStatementRequestV01 obj) {
+			return obj.getStatementRequest();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationStatementRequestV01 obj, List<ContractRegistrationStatementRequest1> value) {
+			obj.setStatementRequest(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -201,7 +204,7 @@ public class ContractRegistrationStatementRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ContractRegistrationStatementRequestV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<ContractRegistrationStatementRequestV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -211,12 +214,14 @@ public class ContractRegistrationStatementRequestV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ContractRegistrationStatementRequestV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(ContractRegistrationStatementRequestV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(ContractRegistrationStatementRequestV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

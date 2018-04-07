@@ -108,7 +108,7 @@ public class ResidenceLocation1Choice {
 	 * definition} = "Specifies the account owner's resident country."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ResidenceLocation1Choice, CountryCode> mmCountry = new MMMessageAttribute<ResidenceLocation1Choice, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ResidenceLocation1Choice.mmObject();
@@ -120,6 +120,16 @@ public class ResidenceLocation1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
+		}
+
+		@Override
+		public CountryCode getValue(ResidenceLocation1Choice obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(ResidenceLocation1Choice obj, CountryCode value) {
+			obj.setCountry(value);
 		}
 	};
 	@XmlElement(name = "Area", required = true)
@@ -157,7 +167,7 @@ public class ResidenceLocation1Choice {
 	 * "Specifies the account owner's resident geographical region or area."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmArea = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ResidenceLocation1Choice, Max35Text> mmArea = new MMMessageAttribute<ResidenceLocation1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PostalAddress.mmRegionIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.choice.ResidenceLocation1Choice.mmObject();
@@ -169,6 +179,16 @@ public class ResidenceLocation1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ResidenceLocation1Choice obj) {
+			return obj.getArea();
+		}
+
+		@Override
+		public void setValue(ResidenceLocation1Choice obj, Max35Text value) {
+			obj.setArea(value);
 		}
 	};
 

@@ -110,7 +110,7 @@ public class OriginalMessageInformation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalMessageInformation1, Max35Text> mmMessageIdentification = new MMMessageAttribute<OriginalMessageInformation1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessageInformation1.mmObject();
 			isDerived = false;
@@ -121,6 +121,16 @@ public class OriginalMessageInformation1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(OriginalMessageInformation1 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(OriginalMessageInformation1 obj, Max35Text value) {
+			obj.setMessageIdentification(value);
 		}
 	};
 	@XmlElement(name = "MsgNmId", required = true)
@@ -153,7 +163,7 @@ public class OriginalMessageInformation1 {
 	 * "Specifies the message name identifier to which the message refers."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageNameIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalMessageInformation1, Max35Text> mmMessageNameIdentification = new MMMessageAttribute<OriginalMessageInformation1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessageInformation1.mmObject();
 			isDerived = false;
@@ -164,6 +174,16 @@ public class OriginalMessageInformation1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(OriginalMessageInformation1 obj) {
+			return obj.getMessageNameIdentification();
+		}
+
+		@Override
+		public void setValue(OriginalMessageInformation1 obj, Max35Text value) {
+			obj.setMessageNameIdentification(value);
 		}
 	};
 	@XmlElement(name = "CreDtTm")
@@ -195,7 +215,7 @@ public class OriginalMessageInformation1 {
 	 * definition} = "Date and time at which the message was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OriginalMessageInformation1, Optional<ISODateTime>> mmCreationDateTime = new MMMessageAttribute<OriginalMessageInformation1, Optional<ISODateTime>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.OriginalMessageInformation1.mmObject();
 			isDerived = false;
@@ -206,6 +226,16 @@ public class OriginalMessageInformation1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public Optional<ISODateTime> getValue(OriginalMessageInformation1 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(OriginalMessageInformation1 obj, Optional<ISODateTime> value) {
+			obj.setCreationDateTime(value.orElse(null));
 		}
 	};
 

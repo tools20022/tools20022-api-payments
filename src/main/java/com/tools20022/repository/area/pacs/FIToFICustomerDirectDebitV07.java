@@ -25,7 +25,6 @@ import com.tools20022.repository.area.PaymentsClearingandSettlementLatestVersion
 import com.tools20022.repository.msg.DirectDebitTransactionInformation21;
 import com.tools20022.repository.msg.GroupHeader50;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -82,33 +81,33 @@ import javax.xml.bind.annotation.*;
  * constraint} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintInstructedAgentRule#forFIToFICustomerDirectDebitV07
- * ConstraintInstructedAgentRule.forFIToFICustomerDirectDebitV07}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintInstructedAgentRule#for_pacs_FIToFICustomerDirectDebitV07
+ * ConstraintInstructedAgentRule.for_pacs_FIToFICustomerDirectDebitV07}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintInstructingAgentRule#forFIToFICustomerDirectDebitV07
- * ConstraintInstructingAgentRule.forFIToFICustomerDirectDebitV07}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintInstructingAgentRule#for_pacs_FIToFICustomerDirectDebitV07
+ * ConstraintInstructingAgentRule.for_pacs_FIToFICustomerDirectDebitV07}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintTotalInterbankSettlementAmountRule#forFIToFICustomerDirectDebitV07
- * ConstraintTotalInterbankSettlementAmountRule.forFIToFICustomerDirectDebitV07}
- * </li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintTotalInterbankSettlementAmountRule#for_pacs_FIToFICustomerDirectDebitV07
+ * ConstraintTotalInterbankSettlementAmountRule.
+ * for_pacs_FIToFICustomerDirectDebitV07}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintTotalInterbankSettlementAmountAndSumRule#forFIToFICustomerDirectDebitV07
+ * {@linkplain com.tools20022.repository.constraints.ConstraintTotalInterbankSettlementAmountAndSumRule#for_pacs_FIToFICustomerDirectDebitV07
  * ConstraintTotalInterbankSettlementAmountAndSumRule.
- * forFIToFICustomerDirectDebitV07}</li>
+ * for_pacs_FIToFICustomerDirectDebitV07}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintGroupHeaderInterbankSettlementDateRule#forFIToFICustomerDirectDebitV07
+ * {@linkplain com.tools20022.repository.constraints.ConstraintGroupHeaderInterbankSettlementDateRule#for_pacs_FIToFICustomerDirectDebitV07
  * ConstraintGroupHeaderInterbankSettlementDateRule.
- * forFIToFICustomerDirectDebitV07}</li>
+ * for_pacs_FIToFICustomerDirectDebitV07}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintTransactionInterbankSettlementDateRule#forFIToFICustomerDirectDebitV07
+ * {@linkplain com.tools20022.repository.constraints.ConstraintTransactionInterbankSettlementDateRule#for_pacs_FIToFICustomerDirectDebitV07
  * ConstraintTransactionInterbankSettlementDateRule.
- * forFIToFICustomerDirectDebitV07}</li>
+ * for_pacs_FIToFICustomerDirectDebitV07}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintPaymentTypeInformationRule#forFIToFICustomerDirectDebitV07
- * ConstraintPaymentTypeInformationRule.forFIToFICustomerDirectDebitV07}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPaymentTypeInformationRule#for_pacs_FIToFICustomerDirectDebitV07
+ * ConstraintPaymentTypeInformationRule.for_pacs_FIToFICustomerDirectDebitV07}</li>
  * <li>
- * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forFIToFICustomerDirectDebitV07
- * ConstraintSupplementaryDataRule.forFIToFICustomerDirectDebitV07}</li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#for_pacs_FIToFICustomerDirectDebitV07
+ * ConstraintSupplementaryDataRule.for_pacs_FIToFICustomerDirectDebitV07}</li>
  * </ul>
  * </li>
  * <li>
@@ -154,7 +153,7 @@ public class FIToFICustomerDirectDebitV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FIToFICustomerDirectDebitV07, GroupHeader50> mmGroupHeader = new MMMessageBuildingBlock<FIToFICustomerDirectDebitV07, GroupHeader50>() {
 		{
 			xmlTag = "GrpHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,12 +164,14 @@ public class FIToFICustomerDirectDebitV07 {
 			complexType_lazy = () -> GroupHeader50.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FIToFICustomerDirectDebitV07.class.getMethod("getGroupHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GroupHeader50 getValue(FIToFICustomerDirectDebitV07 obj) {
+			return obj.getGroupHeader();
+		}
+
+		@Override
+		public void setValue(FIToFICustomerDirectDebitV07 obj, GroupHeader50 value) {
+			obj.setGroupHeader(value);
 		}
 	};
 	@XmlElement(name = "DrctDbtTxInf", required = true)
@@ -200,7 +201,7 @@ public class FIToFICustomerDirectDebitV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmDirectDebitTransactionInformation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FIToFICustomerDirectDebitV07, List<DirectDebitTransactionInformation21>> mmDirectDebitTransactionInformation = new MMMessageBuildingBlock<FIToFICustomerDirectDebitV07, List<DirectDebitTransactionInformation21>>() {
 		{
 			xmlTag = "DrctDbtTxInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -210,12 +211,14 @@ public class FIToFICustomerDirectDebitV07 {
 			complexType_lazy = () -> DirectDebitTransactionInformation21.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FIToFICustomerDirectDebitV07.class.getMethod("getDirectDebitTransactionInformation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<DirectDebitTransactionInformation21> getValue(FIToFICustomerDirectDebitV07 obj) {
+			return obj.getDirectDebitTransactionInformation();
+		}
+
+		@Override
+		public void setValue(FIToFICustomerDirectDebitV07 obj, List<DirectDebitTransactionInformation21> value) {
+			obj.setDirectDebitTransactionInformation(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -245,7 +248,7 @@ public class FIToFICustomerDirectDebitV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FIToFICustomerDirectDebitV07, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<FIToFICustomerDirectDebitV07, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -255,25 +258,28 @@ public class FIToFICustomerDirectDebitV07 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FIToFICustomerDirectDebitV07.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(FIToFICustomerDirectDebitV07 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(FIToFICustomerDirectDebitV07 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintInstructedAgentRule.forFIToFICustomerDirectDebitV07,
-						com.tools20022.repository.constraints.ConstraintInstructingAgentRule.forFIToFICustomerDirectDebitV07,
-						com.tools20022.repository.constraints.ConstraintTotalInterbankSettlementAmountRule.forFIToFICustomerDirectDebitV07,
-						com.tools20022.repository.constraints.ConstraintTotalInterbankSettlementAmountAndSumRule.forFIToFICustomerDirectDebitV07,
-						com.tools20022.repository.constraints.ConstraintGroupHeaderInterbankSettlementDateRule.forFIToFICustomerDirectDebitV07,
-						com.tools20022.repository.constraints.ConstraintTransactionInterbankSettlementDateRule.forFIToFICustomerDirectDebitV07,
-						com.tools20022.repository.constraints.ConstraintPaymentTypeInformationRule.forFIToFICustomerDirectDebitV07, com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forFIToFICustomerDirectDebitV07);
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintInstructedAgentRule.for_pacs_FIToFICustomerDirectDebitV07,
+						com.tools20022.repository.constraints.ConstraintInstructingAgentRule.for_pacs_FIToFICustomerDirectDebitV07,
+						com.tools20022.repository.constraints.ConstraintTotalInterbankSettlementAmountRule.for_pacs_FIToFICustomerDirectDebitV07,
+						com.tools20022.repository.constraints.ConstraintTotalInterbankSettlementAmountAndSumRule.for_pacs_FIToFICustomerDirectDebitV07,
+						com.tools20022.repository.constraints.ConstraintGroupHeaderInterbankSettlementDateRule.for_pacs_FIToFICustomerDirectDebitV07,
+						com.tools20022.repository.constraints.ConstraintTransactionInterbankSettlementDateRule.for_pacs_FIToFICustomerDirectDebitV07,
+						com.tools20022.repository.constraints.ConstraintPaymentTypeInformationRule.for_pacs_FIToFICustomerDirectDebitV07,
+						com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.for_pacs_FIToFICustomerDirectDebitV07);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FIToFICustomerDirectDebitV07";
 				definition = "Scope\r\nThe FinancialInstitutionToFinancialInstitutionCustomerDirectDebit message is sent by the creditor agent to the debtor agent, directly or through other agents and/or a payment clearing and settlement system.\r\nIt is used to collect funds from a debtor account for a creditor.\r\nUsage\r\nThe FItoFICustomerDirectDebit message can contain one or more customer direct debit instructions.\r\nThe FIToFICustomerDirectDebit message does not allow for grouping.\r\nThe FItoFICustomerDirectDebit message may or may not contain mandate related information, i.e. extracts from a mandate, such as the MandateIdentification or DateOfSignature. The FIToFICustomerDirectDebit message must not be considered as a mandate.\r\nThe FItoFICustomerDirectDebit message can be used in domestic and cross-border scenarios.";

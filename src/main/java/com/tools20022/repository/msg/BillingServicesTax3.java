@@ -27,6 +27,7 @@ import com.tools20022.repository.datatype.Max40Text;
 import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.entity.TaxRecord;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection34;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -110,7 +111,7 @@ public class BillingServicesTax3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServicesTax3, Max35Text> mmNumber = new MMMessageAttribute<BillingServicesTax3, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesTax3.mmObject();
 			isDerived = false;
@@ -121,6 +122,16 @@ public class BillingServicesTax3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(BillingServicesTax3 obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(BillingServicesTax3 obj, Max35Text value) {
+			obj.setNumber(value);
 		}
 	};
 	@XmlElement(name = "Desc")
@@ -153,7 +164,7 @@ public class BillingServicesTax3 {
 	 * "Name used to describe the tax (such as the national value added tax)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServicesTax3, Optional<Max40Text>> mmDescription = new MMMessageAttribute<BillingServicesTax3, Optional<Max40Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesTax3.mmObject();
 			isDerived = false;
@@ -164,6 +175,16 @@ public class BillingServicesTax3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max40Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max40Text> getValue(BillingServicesTax3 obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(BillingServicesTax3 obj, Optional<Max40Text> value) {
+			obj.setDescription(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Rate", required = true)
@@ -200,7 +221,7 @@ public class BillingServicesTax3 {
 	 * definition} = "Rate used to calculate the tax."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServicesTax3, DecimalNumber> mmRate = new MMMessageAttribute<BillingServicesTax3, DecimalNumber>() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesTax3.mmObject();
@@ -212,6 +233,16 @@ public class BillingServicesTax3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public DecimalNumber getValue(BillingServicesTax3 obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(BillingServicesTax3 obj, DecimalNumber value) {
+			obj.setRate(value);
 		}
 	};
 	@XmlElement(name = "TtlTaxAmt", required = true)
@@ -248,7 +279,7 @@ public class BillingServicesTax3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTotalTaxAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServicesTax3, AmountAndDirection34> mmTotalTaxAmount = new MMMessageAssociationEnd<BillingServicesTax3, AmountAndDirection34>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServicesTax3.mmObject();
@@ -260,7 +291,17 @@ public class BillingServicesTax3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection34 getValue(BillingServicesTax3 obj) {
+			return obj.getTotalTaxAmount();
+		}
+
+		@Override
+		public void setValue(BillingServicesTax3 obj, AmountAndDirection34 value) {
+			obj.setTotalTaxAmount(value);
 		}
 	};
 
@@ -310,7 +351,7 @@ public class BillingServicesTax3 {
 		return totalTaxAmount;
 	}
 
-	public BillingServicesTax3 setTotalTaxAmount(com.tools20022.repository.msg.AmountAndDirection34 totalTaxAmount) {
+	public BillingServicesTax3 setTotalTaxAmount(AmountAndDirection34 totalTaxAmount) {
 		this.totalTaxAmount = Objects.requireNonNull(totalTaxAmount);
 		return this;
 	}

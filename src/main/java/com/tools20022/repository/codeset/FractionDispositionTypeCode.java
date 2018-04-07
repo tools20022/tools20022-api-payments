@@ -571,7 +571,7 @@ public class FractionDispositionTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Characteristics of the disposition of fractions are unknown
+	 * Characteristics of the disposition of fractions are unknown.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -589,14 +589,14 @@ public class FractionDispositionTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Characteristics of the disposition of fractions are unknown"</li>
+	 * "Characteristics of the disposition of fractions are unknown."</li>
 	 * </ul>
 	 */
 	public static final FractionDispositionTypeCode Unknown = new FractionDispositionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unknown";
-			definition = "Characteristics of the disposition of fractions are unknown";
+			definition = "Characteristics of the disposition of fractions are unknown.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FractionDispositionTypeCode.mmObject();
 			codeName = "UKWN";
 		}

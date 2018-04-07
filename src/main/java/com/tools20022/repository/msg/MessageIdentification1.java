@@ -20,6 +20,7 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.acmt.*;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
@@ -47,6 +48,45 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.msg.MessageIdentification1#mmCreationDateTime
  * MessageIdentification1.mmCreationDateTime}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMMessageComponentType#getMessageBuildingBlock
+ * messageBuildingBlock} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchInformationResponseV01#mmMessageIdentification
+ * AccountSwitchInformationResponseV01.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchBalanceTransferAcknowledgementV01#mmMessageIdentification
+ * AccountSwitchBalanceTransferAcknowledgementV01.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchTechnicalRejectionV01#mmMessageIdentification
+ * AccountSwitchTechnicalRejectionV01.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchPaymentResponseV01#mmMessageIdentification
+ * AccountSwitchPaymentResponseV01.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchNotifyAccountSwitchCompleteV01#mmMessageIdentification
+ * AccountSwitchNotifyAccountSwitchCompleteV01.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchRequestBalanceTransferV01#mmMessageIdentification
+ * AccountSwitchRequestBalanceTransferV01.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchInformationRequestV01#mmMessageIdentification
+ * AccountSwitchInformationRequestV01.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchRequestRedirectionV01#mmMessageIdentification
+ * AccountSwitchRequestRedirectionV01.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchTerminationSwitchV01#mmMessageIdentification
+ * AccountSwitchTerminationSwitchV01.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchCancelExistingPaymentV01#mmMessageIdentification
+ * AccountSwitchCancelExistingPaymentV01.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountSwitchRequestPaymentV01#mmMessageIdentification
+ * AccountSwitchRequestPaymentV01.mmMessageIdentification}</li>
  * </ul>
  * </li>
  * <li>
@@ -100,7 +140,7 @@ public class MessageIdentification1 {
 	 * definition} = "Identification of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MessageIdentification1, Max35Text> mmIdentification = new MMMessageAttribute<MessageIdentification1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
 			isDerived = false;
@@ -111,6 +151,16 @@ public class MessageIdentification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(MessageIdentification1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(MessageIdentification1 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "CreDtTm", required = true)
@@ -142,7 +192,7 @@ public class MessageIdentification1 {
 	 * definition} = "Date of creation of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MessageIdentification1, ISODateTime> mmCreationDateTime = new MMMessageAttribute<MessageIdentification1, ISODateTime>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
 			isDerived = false;
@@ -154,12 +204,26 @@ public class MessageIdentification1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(MessageIdentification1 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(MessageIdentification1 obj, ISODateTime value) {
+			obj.setCreationDateTime(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MessageIdentification1.mmIdentification, com.tools20022.repository.msg.MessageIdentification1.mmCreationDateTime);
+				messageBuildingBlock_lazy = () -> Arrays.asList(AccountSwitchInformationResponseV01.mmMessageIdentification, AccountSwitchBalanceTransferAcknowledgementV01.mmMessageIdentification,
+						AccountSwitchTechnicalRejectionV01.mmMessageIdentification, AccountSwitchPaymentResponseV01.mmMessageIdentification, AccountSwitchNotifyAccountSwitchCompleteV01.mmMessageIdentification,
+						AccountSwitchRequestBalanceTransferV01.mmMessageIdentification, AccountSwitchInformationRequestV01.mmMessageIdentification, AccountSwitchRequestRedirectionV01.mmMessageIdentification,
+						AccountSwitchTerminationSwitchV01.mmMessageIdentification, AccountSwitchCancelExistingPaymentV01.mmMessageIdentification, AccountSwitchRequestPaymentV01.mmMessageIdentification);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageIdentification1";

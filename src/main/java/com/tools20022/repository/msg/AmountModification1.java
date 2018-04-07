@@ -98,7 +98,7 @@ public class AmountModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountModification1, Optional<Modification1Code>> mmModificationCode = new MMMessageAttribute<AmountModification1, Optional<Modification1Code>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountModification1.mmObject();
 			isDerived = false;
@@ -109,6 +109,16 @@ public class AmountModification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
+		}
+
+		@Override
+		public Optional<Modification1Code> getValue(AmountModification1 obj) {
+			return obj.getModificationCode();
+		}
+
+		@Override
+		public void setValue(AmountModification1 obj, Optional<Modification1Code> value) {
+			obj.setModificationCode(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -141,7 +151,7 @@ public class AmountModification1 {
 	 * definition} = "Amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountModification1, ImpliedCurrencyAndAmount> mmAmount = new MMMessageAttribute<AmountModification1, ImpliedCurrencyAndAmount>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountModification1.mmObject();
 			isDerived = false;
@@ -152,6 +162,16 @@ public class AmountModification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ImpliedCurrencyAndAmount getValue(AmountModification1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(AmountModification1 obj, ImpliedCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 

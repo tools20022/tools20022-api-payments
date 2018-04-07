@@ -23,7 +23,6 @@ import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AccountManagementLatestVersion;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.*;
@@ -133,7 +132,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReferences = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, References4> mmReferences = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, References4>() {
 		{
 			xmlTag = "Refs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -144,12 +143,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> References4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getReferences", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public References4 getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getReferences();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, References4 value) {
+			obj.setReferences(value);
 		}
 	};
 	@XmlElement(name = "Fr")
@@ -179,7 +180,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFrom = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, Optional<OrganisationIdentification8>> mmFrom = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, Optional<OrganisationIdentification8>>() {
 		{
 			xmlTag = "Fr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -190,12 +191,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> OrganisationIdentification8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getFrom", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<OrganisationIdentification8> getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getFrom();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, Optional<OrganisationIdentification8> value) {
+			obj.setFrom(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "CtrctDts")
@@ -223,7 +226,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * definition} = "Specifies target dates."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmContractDates = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, Optional<AccountContract2>> mmContractDates = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, Optional<AccountContract2>>() {
 		{
 			xmlTag = "CtrctDts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -234,12 +237,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> AccountContract2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getContractDates", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AccountContract2> getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getContractDates();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, Optional<AccountContract2> value) {
+			obj.setContractDates(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "UndrlygMstrAgrmt")
@@ -269,7 +274,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmUnderlyingMasterAgreement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, Optional<ContractDocument1>> mmUnderlyingMasterAgreement = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, Optional<ContractDocument1>>() {
 		{
 			xmlTag = "UndrlygMstrAgrmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -280,12 +285,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> ContractDocument1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getUnderlyingMasterAgreement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContractDocument1> getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getUnderlyingMasterAgreement();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, Optional<ContractDocument1> value) {
+			obj.setUnderlyingMasterAgreement(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Acct", required = true)
@@ -315,7 +322,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAccount = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, CustomerAccount4> mmAccount = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, CustomerAccount4>() {
 		{
 			xmlTag = "Acct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -326,12 +333,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> CustomerAccount4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getAccount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CustomerAccount4 getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, CustomerAccount4 value) {
+			obj.setAccount(value);
 		}
 	};
 	@XmlElement(name = "AcctSvcrId", required = true)
@@ -357,27 +366,29 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Unique and unambiguous identifier of a financial institution, as assigned under an internationally recognised or proprietary identification scheme. \n"
+	 * "Unique and unambiguous identifier of a financial institution, as assigned under an internationally recognised or proprietary identification scheme. \n."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAccountServicerIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, BranchAndFinancialInstitutionIdentification5> mmAccountServicerIdentification = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			xmlTag = "AcctSvcrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountServicerIdentification";
-			definition = "Unique and unambiguous identifier of a financial institution, as assigned under an internationally recognised or proprietary identification scheme. \n";
+			definition = "Unique and unambiguous identifier of a financial institution, as assigned under an internationally recognised or proprietary identification scheme. \n.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getAccountServicerIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getAccountServicerIdentification();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setAccountServicerIdentification(value);
 		}
 	};
 	@XmlElement(name = "Org", required = true)
@@ -406,7 +417,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOrganisation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, Organisation12> mmOrganisation = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, Organisation12>() {
 		{
 			xmlTag = "Org";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -417,12 +428,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> Organisation12.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getOrganisation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Organisation12 getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getOrganisation();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, Organisation12 value) {
+			obj.setOrganisation(value);
 		}
 	};
 	@XmlElement(name = "Mndt")
@@ -450,7 +463,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * definition} = "Information specifying the account mandate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMandate = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, List<OperationMandate2>> mmMandate = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, List<OperationMandate2>>() {
 		{
 			xmlTag = "Mndt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -460,12 +473,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> OperationMandate2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getMandate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<OperationMandate2> getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getMandate();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, List<OperationMandate2> value) {
+			obj.setMandate(value);
 		}
 	};
 	@XmlElement(name = "Grp")
@@ -491,7 +506,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * definition} = "Definition of a group of parties."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGroup = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, List<Group1>> mmGroup = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, List<Group1>>() {
 		{
 			xmlTag = "Grp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -501,12 +516,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> Group1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getGroup", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Group1> getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getGroup();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, List<Group1> value) {
+			obj.setGroup(value);
 		}
 	};
 	@XmlElement(name = "RefAcct")
@@ -535,7 +552,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReferenceAccount = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, Optional<CashAccount24>> mmReferenceAccount = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, Optional<CashAccount24>>() {
 		{
 			xmlTag = "RefAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -546,12 +563,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> CashAccount24.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getReferenceAccount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<CashAccount24> getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getReferenceAccount();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, Optional<CashAccount24> value) {
+			obj.setReferenceAccount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "DgtlSgntr")
@@ -581,7 +600,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmDigitalSignature = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, List<PartyAndSignature2>> mmDigitalSignature = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, List<PartyAndSignature2>>() {
 		{
 			xmlTag = "DgtlSgntr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -591,12 +610,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> PartyAndSignature2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getDigitalSignature", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<PartyAndSignature2> getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getDigitalSignature();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, List<PartyAndSignature2> value) {
+			obj.setDigitalSignature(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -626,7 +647,7 @@ public class AccountOpeningAmendmentRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<AccountOpeningAmendmentRequestV02, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -636,12 +657,14 @@ public class AccountOpeningAmendmentRequestV02 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountOpeningAmendmentRequestV02.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(AccountOpeningAmendmentRequestV02 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(AccountOpeningAmendmentRequestV02 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 

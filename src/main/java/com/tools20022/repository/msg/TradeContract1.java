@@ -28,6 +28,7 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -136,7 +137,7 @@ public class TradeContract1 {
 	 * definition} = "Contract document referenced from this trade agreement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmContractDocumentIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeContract1, Optional<DocumentIdentification22>> mmContractDocumentIdentification = new MMMessageAttribute<TradeContract1, Optional<DocumentIdentification22>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -147,7 +148,17 @@ public class TradeContract1 {
 			definition = "Contract document referenced from this trade agreement.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.DocumentIdentification22.mmObject();
+			complexType_lazy = () -> DocumentIdentification22.mmObject();
+		}
+
+		@Override
+		public Optional<DocumentIdentification22> getValue(TradeContract1 obj) {
+			return obj.getContractDocumentIdentification();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, Optional<DocumentIdentification22> value) {
+			obj.setContractDocumentIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -184,7 +195,7 @@ public class TradeContract1 {
 	 * definition} = "Amount of the trade contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeContract1, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<TradeContract1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -197,9 +208,19 @@ public class TradeContract1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(TradeContract1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
+		}
 	};
 	@XmlElement(name = "Buyr", required = true)
-	protected List<com.tools20022.repository.msg.TradeParty2> buyer;
+	protected List<TradeParty2> buyer;
 	/**
 	 * 
 	 <p>
@@ -230,7 +251,7 @@ public class TradeContract1 {
 	 * "Party that is specified as the buyer for this trade agreement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBuyer = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TradeContract1, List<TradeParty2>> mmBuyer = new MMMessageAssociationEnd<TradeContract1, List<TradeParty2>>() {
 		{
 			businessComponentTrace_lazy = () -> BuyerRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -241,11 +262,21 @@ public class TradeContract1 {
 			definition = "Party that is specified as the buyer for this trade agreement.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TradeParty2.mmObject();
+			type_lazy = () -> TradeParty2.mmObject();
+		}
+
+		@Override
+		public List<TradeParty2> getValue(TradeContract1 obj) {
+			return obj.getBuyer();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, List<TradeParty2> value) {
+			obj.setBuyer(value);
 		}
 	};
 	@XmlElement(name = "Sellr", required = true)
-	protected List<com.tools20022.repository.msg.TradeParty2> seller;
+	protected List<TradeParty2> seller;
 	/**
 	 * 
 	 <p>
@@ -276,7 +307,7 @@ public class TradeContract1 {
 	 * "Party that is specified as the seller for this trade agreement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSeller = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TradeContract1, List<TradeParty2>> mmSeller = new MMMessageAssociationEnd<TradeContract1, List<TradeParty2>>() {
 		{
 			businessComponentTrace_lazy = () -> SellerRole.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -287,7 +318,17 @@ public class TradeContract1 {
 			definition = "Party that is specified as the seller for this trade agreement.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TradeParty2.mmObject();
+			type_lazy = () -> TradeParty2.mmObject();
+		}
+
+		@Override
+		public List<TradeParty2> getValue(TradeContract1 obj) {
+			return obj.getSeller();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, List<TradeParty2> value) {
+			obj.setSeller(value);
 		}
 	};
 	@XmlElement(name = "MtrtyDt", required = true)
@@ -323,7 +364,7 @@ public class TradeContract1 {
 	 * definition} = "Planned final payment date at the time of issuance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaturityDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeContract1, ISODate> mmMaturityDate = new MMMessageAttribute<TradeContract1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmEndDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -335,6 +376,16 @@ public class TradeContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(TradeContract1 obj) {
+			return obj.getMaturityDate();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, ISODate value) {
+			obj.setMaturityDate(value);
 		}
 	};
 	@XmlElement(name = "PrlngtnFlg", required = true)
@@ -367,7 +418,7 @@ public class TradeContract1 {
 	 * "Indicates whether the contract duration is extended or not."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProlongationFlag = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeContract1, TrueFalseIndicator> mmProlongationFlag = new MMMessageAttribute<TradeContract1, TrueFalseIndicator>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
 			isDerived = false;
@@ -378,6 +429,16 @@ public class TradeContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
+		}
+
+		@Override
+		public TrueFalseIndicator getValue(TradeContract1 obj) {
+			return obj.getProlongationFlag();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, TrueFalseIndicator value) {
+			obj.setProlongationFlag(value);
 		}
 	};
 	@XmlElement(name = "StartDt", required = true)
@@ -413,7 +474,7 @@ public class TradeContract1 {
 	 * definition} = "Start date of the trade contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStartDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeContract1, ISODate> mmStartDate = new MMMessageAttribute<TradeContract1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmStartDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -425,6 +486,16 @@ public class TradeContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(TradeContract1 obj) {
+			return obj.getStartDate();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, ISODate value) {
+			obj.setStartDate(value);
 		}
 	};
 	@XmlElement(name = "SttlmCcy", required = true)
@@ -461,7 +532,7 @@ public class TradeContract1 {
 	 * definition} = "Currency in which the trade is being settled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeContract1, ActiveCurrencyCode> mmSettlementCurrency = new MMMessageAttribute<TradeContract1, ActiveCurrencyCode>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmBaseCurrency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -473,6 +544,16 @@ public class TradeContract1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyCode getValue(TradeContract1 obj) {
+			return obj.getSettlementCurrency();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, ActiveCurrencyCode value) {
+			obj.setSettlementCurrency(value);
 		}
 	};
 	@XmlElement(name = "XchgRateInf")
@@ -508,7 +589,7 @@ public class TradeContract1 {
 	 * "Provides details on the currency exchange rate and contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmExchangeRateInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TradeContract1, Optional<ExchangeRate1>> mmExchangeRateInformation = new MMMessageAssociationEnd<TradeContract1, Optional<ExchangeRate1>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmExchangeRateInformation;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -520,7 +601,17 @@ public class TradeContract1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ExchangeRate1.mmObject();
+			type_lazy = () -> ExchangeRate1.mmObject();
+		}
+
+		@Override
+		public Optional<ExchangeRate1> getValue(TradeContract1 obj) {
+			return obj.getExchangeRateInformation();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, Optional<ExchangeRate1> value) {
+			obj.setExchangeRateInformation(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PmtSchdl")
@@ -556,7 +647,7 @@ public class TradeContract1 {
 	 * definition} = "Schedule of the payments defined for the trade contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPaymentSchedule = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TradeContract1, Optional<InterestPaymentDateRange1>> mmPaymentSchedule = new MMMessageAssociationEnd<TradeContract1, Optional<InterestPaymentDateRange1>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPaymentTerms;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -568,7 +659,17 @@ public class TradeContract1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InterestPaymentDateRange1.mmObject();
+			type_lazy = () -> InterestPaymentDateRange1.mmObject();
+		}
+
+		@Override
+		public Optional<InterestPaymentDateRange1> getValue(TradeContract1 obj) {
+			return obj.getPaymentSchedule();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, Optional<InterestPaymentDateRange1> value) {
+			obj.setPaymentSchedule(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ShipmntSchdl")
@@ -604,7 +705,7 @@ public class TradeContract1 {
 	 * definition} = "Schedule of the shipment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmShipmentSchedule = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TradeContract1, Optional<ShipmentSchedule2Choice>> mmShipmentSchedule = new MMMessageAssociationEnd<TradeContract1, Optional<ShipmentSchedule2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Transport.mmShipmentDates;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -618,9 +719,19 @@ public class TradeContract1 {
 			isComposite = true;
 			type_lazy = () -> ShipmentSchedule2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<ShipmentSchedule2Choice> getValue(TradeContract1 obj) {
+			return obj.getShipmentSchedule();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, Optional<ShipmentSchedule2Choice> value) {
+			obj.setShipmentSchedule(value.orElse(null));
+		}
 	};
 	@XmlElement(name = "Attchmnt")
-	protected List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment;
+	protected List<DocumentGeneralInformation3> attachment;
 	/**
 	 * 
 	 <p>
@@ -652,7 +763,7 @@ public class TradeContract1 {
 	 * definition} = "Documents provided as attachments to the trade contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAttachment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TradeContract1, List<DocumentGeneralInformation3>> mmAttachment = new MMMessageAssociationEnd<TradeContract1, List<DocumentGeneralInformation3>>() {
 		{
 			businessElementTrace_lazy = () -> RegisteredContract.mmAttachment;
 			componentContext_lazy = () -> com.tools20022.repository.msg.TradeContract1.mmObject();
@@ -663,7 +774,17 @@ public class TradeContract1 {
 			definition = "Documents provided as attachments to the trade contract.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DocumentGeneralInformation3.mmObject();
+			type_lazy = () -> DocumentGeneralInformation3.mmObject();
+		}
+
+		@Override
+		public List<DocumentGeneralInformation3> getValue(TradeContract1 obj) {
+			return obj.getAttachment();
+		}
+
+		@Override
+		public void setValue(TradeContract1 obj, List<DocumentGeneralInformation3> value) {
+			obj.setAttachment(value);
 		}
 	};
 
@@ -689,7 +810,7 @@ public class TradeContract1 {
 		return contractDocumentIdentification == null ? Optional.empty() : Optional.of(contractDocumentIdentification);
 	}
 
-	public TradeContract1 setContractDocumentIdentification(com.tools20022.repository.msg.DocumentIdentification22 contractDocumentIdentification) {
+	public TradeContract1 setContractDocumentIdentification(DocumentIdentification22 contractDocumentIdentification) {
 		this.contractDocumentIdentification = contractDocumentIdentification;
 		return this;
 	}
@@ -707,7 +828,7 @@ public class TradeContract1 {
 		return buyer == null ? buyer = new ArrayList<>() : buyer;
 	}
 
-	public TradeContract1 setBuyer(List<com.tools20022.repository.msg.TradeParty2> buyer) {
+	public TradeContract1 setBuyer(List<TradeParty2> buyer) {
 		this.buyer = Objects.requireNonNull(buyer);
 		return this;
 	}
@@ -716,7 +837,7 @@ public class TradeContract1 {
 		return seller == null ? seller = new ArrayList<>() : seller;
 	}
 
-	public TradeContract1 setSeller(List<com.tools20022.repository.msg.TradeParty2> seller) {
+	public TradeContract1 setSeller(List<TradeParty2> seller) {
 		this.seller = Objects.requireNonNull(seller);
 		return this;
 	}
@@ -761,7 +882,7 @@ public class TradeContract1 {
 		return exchangeRateInformation == null ? Optional.empty() : Optional.of(exchangeRateInformation);
 	}
 
-	public TradeContract1 setExchangeRateInformation(com.tools20022.repository.msg.ExchangeRate1 exchangeRateInformation) {
+	public TradeContract1 setExchangeRateInformation(ExchangeRate1 exchangeRateInformation) {
 		this.exchangeRateInformation = exchangeRateInformation;
 		return this;
 	}
@@ -770,7 +891,7 @@ public class TradeContract1 {
 		return paymentSchedule == null ? Optional.empty() : Optional.of(paymentSchedule);
 	}
 
-	public TradeContract1 setPaymentSchedule(com.tools20022.repository.msg.InterestPaymentDateRange1 paymentSchedule) {
+	public TradeContract1 setPaymentSchedule(InterestPaymentDateRange1 paymentSchedule) {
 		this.paymentSchedule = paymentSchedule;
 		return this;
 	}
@@ -788,7 +909,7 @@ public class TradeContract1 {
 		return attachment == null ? attachment = new ArrayList<>() : attachment;
 	}
 
-	public TradeContract1 setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
+	public TradeContract1 setAttachment(List<DocumentGeneralInformation3> attachment) {
 		this.attachment = Objects.requireNonNull(attachment);
 		return this;
 	}

@@ -97,7 +97,7 @@ public class TaxReason1 {
 	 * definition} = "Reason why the service is taxed, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxReason1, Max10Text> mmCode = new MMMessageAttribute<TaxReason1, Max10Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxReason1.mmObject();
 			isDerived = false;
@@ -108,6 +108,16 @@ public class TaxReason1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max10Text.mmObject();
+		}
+
+		@Override
+		public Max10Text getValue(TaxReason1 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(TaxReason1 obj, Max10Text value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Expltn", required = true)
@@ -138,7 +148,7 @@ public class TaxReason1 {
 	 * definition} = "Reason why the service is taxed, in a free-text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExplanation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxReason1, Max105Text> mmExplanation = new MMMessageAttribute<TaxReason1, Max105Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.TaxReason1.mmObject();
 			isDerived = false;
@@ -149,6 +159,16 @@ public class TaxReason1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max105Text.mmObject();
+		}
+
+		@Override
+		public Max105Text getValue(TaxReason1 obj) {
+			return obj.getExplanation();
+		}
+
+		@Override
+		public void setValue(TaxReason1 obj, Max105Text value) {
+			obj.setExplanation(value);
 		}
 	};
 

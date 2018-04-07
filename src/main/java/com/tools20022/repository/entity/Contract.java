@@ -24,6 +24,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.ContractClosureReason1Choice;
 import com.tools20022.repository.choice.UnderlyingContract1Choice;
 import com.tools20022.repository.entity.Agreement;
+import com.tools20022.repository.entity.MasterAgreement;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
 import java.util.ArrayList;
@@ -155,7 +156,7 @@ public class Contract extends Agreement {
 	 * "Agreement that governs a contract agreed between  parties."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMasterAgreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Contract, List<MasterAgreement>> mmMasterAgreement = new MMBusinessAssociationEnd<Contract, List<MasterAgreement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Contract.mmObject();
@@ -166,6 +167,16 @@ public class Contract extends Agreement {
 			opposite_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmGovernedContract;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
+		}
+
+		@Override
+		public List<MasterAgreement> getValue(Contract obj) {
+			return obj.getMasterAgreement();
+		}
+
+		@Override
+		public void setValue(Contract obj, List<MasterAgreement> value) {
+			obj.setMasterAgreement(value);
 		}
 	};
 

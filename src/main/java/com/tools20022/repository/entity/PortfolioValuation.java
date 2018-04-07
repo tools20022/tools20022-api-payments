@@ -19,8 +19,9 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.Portfolio;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -123,7 +124,7 @@ public class PortfolioValuation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalPortfolioValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount> mmTotalPortfolioValue = new MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
@@ -135,12 +136,14 @@ public class PortfolioValuation {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioValuation.class.getMethod("getTotalPortfolioValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PortfolioValuation obj) {
+			return obj.getTotalPortfolioValue();
+		}
+
+		@Override
+		public void setValue(PortfolioValuation obj, CurrencyAndAmount value) {
+			obj.setTotalPortfolioValue(value);
 		}
 	};
 	protected CurrencyAndAmount totalBookValue;
@@ -172,7 +175,7 @@ public class PortfolioValuation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalBookValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount> mmTotalBookValue = new MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
@@ -184,12 +187,14 @@ public class PortfolioValuation {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioValuation.class.getMethod("getTotalBookValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PortfolioValuation obj) {
+			return obj.getTotalBookValue();
+		}
+
+		@Override
+		public void setValue(PortfolioValuation obj, CurrencyAndAmount value) {
+			obj.setTotalBookValue(value);
 		}
 	};
 	protected CurrencyAndAmount totalReceipts;
@@ -219,7 +224,7 @@ public class PortfolioValuation {
 	 * definition} = "Total receipts attributable to the portfolio."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalReceipts = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount> mmTotalReceipts = new MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
@@ -231,12 +236,14 @@ public class PortfolioValuation {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioValuation.class.getMethod("getTotalReceipts", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PortfolioValuation obj) {
+			return obj.getTotalReceipts();
+		}
+
+		@Override
+		public void setValue(PortfolioValuation obj, CurrencyAndAmount value) {
+			obj.setTotalReceipts(value);
 		}
 	};
 	protected CurrencyAndAmount totalDisbursements;
@@ -266,7 +273,7 @@ public class PortfolioValuation {
 	 * definition} = "Total disbursements attributable to the portfolio."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalDisbursements = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount> mmTotalDisbursements = new MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
@@ -278,12 +285,14 @@ public class PortfolioValuation {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioValuation.class.getMethod("getTotalDisbursements", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PortfolioValuation obj) {
+			return obj.getTotalDisbursements();
+		}
+
+		@Override
+		public void setValue(PortfolioValuation obj, CurrencyAndAmount value) {
+			obj.setTotalDisbursements(value);
 		}
 	};
 	protected CurrencyAndAmount incomeReceived;
@@ -313,7 +322,7 @@ public class PortfolioValuation {
 	 * definition} = "Income attributable to the portfolio."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIncomeReceived = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount> mmIncomeReceived = new MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
@@ -325,12 +334,14 @@ public class PortfolioValuation {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioValuation.class.getMethod("getIncomeReceived", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PortfolioValuation obj) {
+			return obj.getIncomeReceived();
+		}
+
+		@Override
+		public void setValue(PortfolioValuation obj, CurrencyAndAmount value) {
+			obj.setIncomeReceived(value);
 		}
 	};
 	protected CurrencyAndAmount expensesPaid;
@@ -360,7 +371,7 @@ public class PortfolioValuation {
 	 * definition} = "Expenses attributable to the portfolio"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExpensesPaid = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount> mmExpensesPaid = new MMBusinessAttribute<PortfolioValuation, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
@@ -372,12 +383,14 @@ public class PortfolioValuation {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioValuation.class.getMethod("getExpensesPaid", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PortfolioValuation obj) {
+			return obj.getExpensesPaid();
+		}
+
+		@Override
+		public void setValue(PortfolioValuation obj, CurrencyAndAmount value) {
+			obj.setExpensesPaid(value);
 		}
 	};
 	protected Portfolio portfolio;
@@ -415,7 +428,7 @@ public class PortfolioValuation {
 	 * "Specifies the portfolio for which a valuation is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPortfolio = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PortfolioValuation, Portfolio> mmPortfolio = new MMBusinessAssociationEnd<PortfolioValuation, Portfolio>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
@@ -424,12 +437,22 @@ public class PortfolioValuation {
 			definition = "Specifies the portfolio for which a valuation is calculated.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Portfolio.mmValuation;
+			opposite_lazy = () -> Portfolio.mmValuation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
+			type_lazy = () -> Portfolio.mmObject();
+		}
+
+		@Override
+		public Portfolio getValue(PortfolioValuation obj) {
+			return obj.getPortfolio();
+		}
+
+		@Override
+		public void setValue(PortfolioValuation obj, Portfolio value) {
+			obj.setPortfolio(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.DateTimePeriod> valuationPeriod;
+	protected List<DateTimePeriod> valuationPeriod;
 	/**
 	 * 
 	 <p>
@@ -463,7 +486,7 @@ public class PortfolioValuation {
 	 * definition} = "Period for which the valuation is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmValuationPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PortfolioValuation, List<DateTimePeriod>> mmValuationPeriod = new MMBusinessAssociationEnd<PortfolioValuation, List<DateTimePeriod>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
@@ -471,9 +494,19 @@ public class PortfolioValuation {
 			name = "ValuationPeriod";
 			definition = "Period for which the valuation is calculated.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedPortfolioValuation;
+			opposite_lazy = () -> DateTimePeriod.mmRelatedPortfolioValuation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public List<DateTimePeriod> getValue(PortfolioValuation obj) {
+			return obj.getValuationPeriod();
+		}
+
+		@Override
+		public void setValue(PortfolioValuation obj, List<DateTimePeriod> value) {
+			obj.setValuationPeriod(value);
 		}
 	};
 
@@ -484,7 +517,7 @@ public class PortfolioValuation {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PortfolioValuation";
 				definition = "Valuation information of the portfolio.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmRelatedPortfolioValuation, com.tools20022.repository.entity.Portfolio.mmValuation);
+				associationDomain_lazy = () -> Arrays.asList(DateTimePeriod.mmRelatedPortfolioValuation, Portfolio.mmValuation);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PortfolioValuation.mmTotalPortfolioValue, com.tools20022.repository.entity.PortfolioValuation.mmTotalBookValue,
 						com.tools20022.repository.entity.PortfolioValuation.mmTotalReceipts, com.tools20022.repository.entity.PortfolioValuation.mmTotalDisbursements, com.tools20022.repository.entity.PortfolioValuation.mmIncomeReceived,
 						com.tools20022.repository.entity.PortfolioValuation.mmExpensesPaid, com.tools20022.repository.entity.PortfolioValuation.mmPortfolio, com.tools20022.repository.entity.PortfolioValuation.mmValuationPeriod);
@@ -556,7 +589,7 @@ public class PortfolioValuation {
 		return portfolio;
 	}
 
-	public PortfolioValuation setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
+	public PortfolioValuation setPortfolio(Portfolio portfolio) {
 		this.portfolio = Objects.requireNonNull(portfolio);
 		return this;
 	}
@@ -565,7 +598,7 @@ public class PortfolioValuation {
 		return valuationPeriod == null ? valuationPeriod = new ArrayList<>() : valuationPeriod;
 	}
 
-	public PortfolioValuation setValuationPeriod(List<com.tools20022.repository.entity.DateTimePeriod> valuationPeriod) {
+	public PortfolioValuation setValuationPeriod(List<DateTimePeriod> valuationPeriod) {
 		this.valuationPeriod = Objects.requireNonNull(valuationPeriod);
 		return this;
 	}

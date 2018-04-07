@@ -25,6 +25,7 @@ import com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.IdentificationInformation2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -115,7 +116,7 @@ public class IdentificationVerification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationVerification2, Max35Text> mmIdentification = new MMMessageAttribute<IdentificationVerification2, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationVerification2.mmObject();
 			isDerived = false;
@@ -126,6 +127,16 @@ public class IdentificationVerification2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(IdentificationVerification2 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(IdentificationVerification2 obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	@XmlElement(name = "PtyAndAcctId", required = true)
@@ -163,7 +174,7 @@ public class IdentificationVerification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPartyAndAccountIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IdentificationVerification2, IdentificationInformation2> mmPartyAndAccountIdentification = new MMMessageAssociationEnd<IdentificationVerification2, IdentificationInformation2>() {
 		{
 			businessComponentTrace_lazy = () -> Account.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.IdentificationVerification2.mmObject();
@@ -175,7 +186,17 @@ public class IdentificationVerification2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.IdentificationInformation2.mmObject();
+			type_lazy = () -> IdentificationInformation2.mmObject();
+		}
+
+		@Override
+		public IdentificationInformation2 getValue(IdentificationVerification2 obj) {
+			return obj.getPartyAndAccountIdentification();
+		}
+
+		@Override
+		public void setValue(IdentificationVerification2 obj, IdentificationInformation2 value) {
+			obj.setPartyAndAccountIdentification(value);
 		}
 	};
 
@@ -207,7 +228,7 @@ public class IdentificationVerification2 {
 		return partyAndAccountIdentification;
 	}
 
-	public IdentificationVerification2 setPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 partyAndAccountIdentification) {
+	public IdentificationVerification2 setPartyAndAccountIdentification(IdentificationInformation2 partyAndAccountIdentification) {
 		this.partyAndAccountIdentification = Objects.requireNonNull(partyAndAccountIdentification);
 		return this;
 	}

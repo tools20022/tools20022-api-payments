@@ -99,7 +99,7 @@ public class BillingSubServiceQualifier1Choice {
 	 * "Specifies the contents of the sub service qualifier, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingSubServiceQualifier1Choice, BillingSubServiceQualifier1Code> mmCode = new MMMessageAttribute<BillingSubServiceQualifier1Choice, BillingSubServiceQualifier1Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.BillingSubServiceQualifier1Choice.mmObject();
 			isDerived = false;
@@ -110,6 +110,16 @@ public class BillingSubServiceQualifier1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> BillingSubServiceQualifier1Code.mmObject();
+		}
+
+		@Override
+		public BillingSubServiceQualifier1Code getValue(BillingSubServiceQualifier1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(BillingSubServiceQualifier1Choice obj, BillingSubServiceQualifier1Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -143,7 +153,7 @@ public class BillingSubServiceQualifier1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingSubServiceQualifier1Choice, Max35Text> mmProprietary = new MMMessageAttribute<BillingSubServiceQualifier1Choice, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.BillingSubServiceQualifier1Choice.mmObject();
 			isDerived = false;
@@ -154,6 +164,16 @@ public class BillingSubServiceQualifier1Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(BillingSubServiceQualifier1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(BillingSubServiceQualifier1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

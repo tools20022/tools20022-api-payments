@@ -24,6 +24,7 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.entity.CashEntry;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CurrencyExchange5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -112,7 +113,7 @@ public class AmountAndCurrencyExchangeDetails3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountAndCurrencyExchangeDetails3, ActiveOrHistoricCurrencyAndAmount> mmAmount = new MMMessageAttribute<AmountAndCurrencyExchangeDetails3, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CashEntry.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3.mmObject();
@@ -124,6 +125,16 @@ public class AmountAndCurrencyExchangeDetails3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(AmountAndCurrencyExchangeDetails3 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(AmountAndCurrencyExchangeDetails3 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "CcyXchg")
@@ -160,7 +171,7 @@ public class AmountAndCurrencyExchangeDetails3 {
 	 * "Set of elements used to provide details on the currency exchange."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCurrencyExchange = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmountAndCurrencyExchangeDetails3, Optional<CurrencyExchange5>> mmCurrencyExchange = new MMMessageAssociationEnd<AmountAndCurrencyExchangeDetails3, Optional<CurrencyExchange5>>() {
 		{
 			businessElementTrace_lazy = () -> CashEntry.mmCurrencyExchange;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmountAndCurrencyExchangeDetails3.mmObject();
@@ -172,7 +183,17 @@ public class AmountAndCurrencyExchangeDetails3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CurrencyExchange5.mmObject();
+			type_lazy = () -> CurrencyExchange5.mmObject();
+		}
+
+		@Override
+		public Optional<CurrencyExchange5> getValue(AmountAndCurrencyExchangeDetails3 obj) {
+			return obj.getCurrencyExchange();
+		}
+
+		@Override
+		public void setValue(AmountAndCurrencyExchangeDetails3 obj, Optional<CurrencyExchange5> value) {
+			obj.setCurrencyExchange(value.orElse(null));
 		}
 	};
 
@@ -203,7 +224,7 @@ public class AmountAndCurrencyExchangeDetails3 {
 		return currencyExchange == null ? Optional.empty() : Optional.of(currencyExchange);
 	}
 
-	public AmountAndCurrencyExchangeDetails3 setCurrencyExchange(com.tools20022.repository.msg.CurrencyExchange5 currencyExchange) {
+	public AmountAndCurrencyExchangeDetails3 setCurrencyExchange(CurrencyExchange5 currencyExchange) {
 		this.currencyExchange = currencyExchange;
 		return this;
 	}

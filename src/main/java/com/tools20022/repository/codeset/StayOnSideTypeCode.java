@@ -121,14 +121,14 @@ public class StayOnSideTypeCode extends MMCode {
 	 * name} = "Bid"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "An order pegged against  the bid price."</li>
+	 * definition} = "An order pegged against the bid price."</li>
 	 * </ul>
 	 */
 	public static final StayOnSideTypeCode Bid = new StayOnSideTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Bid";
-			definition = "An order pegged against  the bid price.";
+			definition = "An order pegged against the bid price.";
 			owner_lazy = () -> com.tools20022.repository.codeset.StayOnSideTypeCode.mmObject();
 			codeName = "BIDE";
 		}

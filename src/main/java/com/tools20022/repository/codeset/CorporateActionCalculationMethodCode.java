@@ -184,15 +184,14 @@ public class CorporateActionCalculationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Without  reduction of nominal (via pool factor) for partial redemption."
-	 * </li>
+	 * "Without reduction of nominal (via pool factor) for partial redemption."</li>
 	 * </ul>
 	 */
 	public static final CorporateActionCalculationMethodCode NoNominalReduction = new CorporateActionCalculationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoNominalReduction";
-			definition = "Without  reduction of nominal (via pool factor) for partial redemption.";
+			definition = "Without reduction of nominal (via pool factor) for partial redemption.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionCalculationMethodCode.mmObject();
 			codeName = "NNOM";
 		}

@@ -109,7 +109,7 @@ public class UnderlyingGroupInformation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnderlyingGroupInformation1, Max35Text> mmOriginalMessageIdentification = new MMMessageAttribute<UnderlyingGroupInformation1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
@@ -120,6 +120,16 @@ public class UnderlyingGroupInformation1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(UnderlyingGroupInformation1 obj) {
+			return obj.getOriginalMessageIdentification();
+		}
+
+		@Override
+		public void setValue(UnderlyingGroupInformation1 obj, Max35Text value) {
+			obj.setOriginalMessageIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgnlMsgNmId", required = true)
@@ -153,7 +163,7 @@ public class UnderlyingGroupInformation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalMessageNameIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnderlyingGroupInformation1, Max35Text> mmOriginalMessageNameIdentification = new MMMessageAttribute<UnderlyingGroupInformation1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
@@ -164,6 +174,16 @@ public class UnderlyingGroupInformation1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(UnderlyingGroupInformation1 obj) {
+			return obj.getOriginalMessageNameIdentification();
+		}
+
+		@Override
+		public void setValue(UnderlyingGroupInformation1 obj, Max35Text value) {
+			obj.setOriginalMessageNameIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgnlCreDtTm")
@@ -195,7 +215,7 @@ public class UnderlyingGroupInformation1 {
 	 * definition} = "Date and time at which the original message was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnderlyingGroupInformation1, Optional<ISODateTime>> mmOriginalCreationDateTime = new MMMessageAttribute<UnderlyingGroupInformation1, Optional<ISODateTime>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
@@ -206,6 +226,16 @@ public class UnderlyingGroupInformation1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		@Override
+		public Optional<ISODateTime> getValue(UnderlyingGroupInformation1 obj) {
+			return obj.getOriginalCreationDateTime();
+		}
+
+		@Override
+		public void setValue(UnderlyingGroupInformation1 obj, Optional<ISODateTime> value) {
+			obj.setOriginalCreationDateTime(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlMsgDlvryChanl")
@@ -239,7 +269,7 @@ public class UnderlyingGroupInformation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalMessageDeliveryChannel = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnderlyingGroupInformation1, Optional<Max35Text>> mmOriginalMessageDeliveryChannel = new MMMessageAttribute<UnderlyingGroupInformation1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
@@ -250,6 +280,16 @@ public class UnderlyingGroupInformation1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(UnderlyingGroupInformation1 obj) {
+			return obj.getOriginalMessageDeliveryChannel();
+		}
+
+		@Override
+		public void setValue(UnderlyingGroupInformation1 obj, Optional<Max35Text> value) {
+			obj.setOriginalMessageDeliveryChannel(value.orElse(null));
 		}
 	};
 

@@ -50,7 +50,7 @@ public class ConstraintBICFI {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forBICFIIdentifier = new MMConstraint() {
+	public static final MMConstraint<BICFIIdentifier> forBICFIIdentifier = new MMConstraint<BICFIIdentifier>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BICFI";
@@ -59,8 +59,8 @@ public class ConstraintBICFI {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkBICFIIdentifier((BICFIIdentifier) obj);
+		public void executeValidator(BICFIIdentifier obj) throws Exception {
+			checkBICFIIdentifier(obj);
 		}
 	};
 

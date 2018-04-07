@@ -113,7 +113,7 @@ public class CaseForwardingNotification3 {
 	 * definition} = "Justification for the forward action."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmJustification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CaseForwardingNotification3, CaseForwardingNotification3Code> mmJustification = new MMMessageAttribute<CaseForwardingNotification3, CaseForwardingNotification3Code>() {
 		{
 			businessElementTrace_lazy = () -> Reassignment.mmJustification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.CaseForwardingNotification3.mmObject();
@@ -125,6 +125,16 @@ public class CaseForwardingNotification3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CaseForwardingNotification3Code.mmObject();
+		}
+
+		@Override
+		public CaseForwardingNotification3Code getValue(CaseForwardingNotification3 obj) {
+			return obj.getJustification();
+		}
+
+		@Override
+		public void setValue(CaseForwardingNotification3 obj, CaseForwardingNotification3Code value) {
+			obj.setJustification(value);
 		}
 	};
 

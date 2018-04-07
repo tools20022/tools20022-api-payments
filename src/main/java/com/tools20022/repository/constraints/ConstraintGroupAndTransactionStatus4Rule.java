@@ -49,7 +49,7 @@ public class ConstraintGroupAndTransactionStatus4Rule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCreditorPaymentActivationRequestStatusReportV06 = new MMConstraint() {
+	public static final MMConstraint<CreditorPaymentActivationRequestStatusReportV06> for_pain_CreditorPaymentActivationRequestStatusReportV06 = new MMConstraint<CreditorPaymentActivationRequestStatusReportV06>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GroupAndTransactionStatus4Rule";
@@ -58,8 +58,8 @@ public class ConstraintGroupAndTransactionStatus4Rule {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditorPaymentActivationRequestStatusReportV06((CreditorPaymentActivationRequestStatusReportV06) obj);
+		public void executeValidator(CreditorPaymentActivationRequestStatusReportV06 obj) throws Exception {
+			check_pain_CreditorPaymentActivationRequestStatusReportV06(obj);
 		}
 	};
 
@@ -68,7 +68,7 @@ public class ConstraintGroupAndTransactionStatus4Rule {
 	 * to RCVD, then TransactionInformationAndStatus/TransactionStatus is not
 	 * allowed.
 	 */
-	public static void checkCreditorPaymentActivationRequestStatusReportV06(CreditorPaymentActivationRequestStatusReportV06 obj) throws Exception {
+	public static void check_pain_CreditorPaymentActivationRequestStatusReportV06(CreditorPaymentActivationRequestStatusReportV06 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

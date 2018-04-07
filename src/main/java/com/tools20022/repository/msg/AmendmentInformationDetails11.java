@@ -28,6 +28,9 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
+import com.tools20022.repository.msg.CashAccount24;
+import com.tools20022.repository.msg.PartyIdentification43;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Optional;
@@ -102,6 +105,13 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Provides further details on the list of direct debit mandate elements that have been modified when the amendment indicator has been set."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12
+ * AmendmentInformationDetails12}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -144,9 +154,17 @@ public class AmendmentInformationDetails11 {
 	 * definition} =
 	 * "Unique identification, as assigned by the creditor, to unambiguously identify the original mandate."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalMandateIdentification
+	 * AmendmentInformationDetails12.mmOriginalMandateIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalMandateIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmendmentInformationDetails11, Optional<Max35Text>> mmOriginalMandateIdentification = new MMMessageAttribute<AmendmentInformationDetails11, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Mandate.mmMandateIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -155,9 +173,20 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalMandateIdentification";
 			definition = "Unique identification, as assigned by the creditor, to unambiguously identify the original mandate.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalMandateIdentification);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalMandateIdentification();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<Max35Text> value) {
+			obj.setOriginalMandateIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlCdtrSchmeId")
@@ -192,9 +221,17 @@ public class AmendmentInformationDetails11 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Original creditor scheme identification that has been modified."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalCreditorSchemeIdentification
+	 * AmendmentInformationDetails12.mmOriginalCreditorSchemeIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalCreditorSchemeIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<PartyIdentification43>> mmOriginalCreditorSchemeIdentification = new MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<PartyIdentification43>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -203,10 +240,21 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalCreditorSchemeIdentification";
 			definition = "Original creditor scheme identification that has been modified.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalCreditorSchemeIdentification);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
+			type_lazy = () -> PartyIdentification43.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification43> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalCreditorSchemeIdentification();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<PartyIdentification43> value) {
+			obj.setOriginalCreditorSchemeIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlCdtrAgt")
@@ -241,9 +289,17 @@ public class AmendmentInformationDetails11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original creditor agent that has been modified."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalCreditorAgent
+	 * AmendmentInformationDetails12.mmOriginalCreditorAgent}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalCreditorAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<BranchAndFinancialInstitutionIdentification5>> mmOriginalCreditorAgent = new MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<BranchAndFinancialInstitutionIdentification5>>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -252,10 +308,21 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalCreditorAgent";
 			definition = "Original creditor agent that has been modified.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalCreditorAgent);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public Optional<BranchAndFinancialInstitutionIdentification5> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalCreditorAgent();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<BranchAndFinancialInstitutionIdentification5> value) {
+			obj.setOriginalCreditorAgent(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlCdtrAgtAcct")
@@ -289,9 +356,17 @@ public class AmendmentInformationDetails11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original creditor agent account that has been modified."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalCreditorAgentAccount
+	 * AmendmentInformationDetails12.mmOriginalCreditorAgentAccount}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalCreditorAgentAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<CashAccount24>> mmOriginalCreditorAgentAccount = new MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<CashAccount24>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentPartyRole.mmCashAccount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -300,10 +375,21 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalCreditorAgentAccount";
 			definition = "Original creditor agent account that has been modified.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalCreditorAgentAccount);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
+			type_lazy = () -> CashAccount24.mmObject();
+		}
+
+		@Override
+		public Optional<CashAccount24> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalCreditorAgentAccount();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<CashAccount24> value) {
+			obj.setOriginalCreditorAgentAccount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlDbtr")
@@ -337,9 +423,17 @@ public class AmendmentInformationDetails11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original debtor that has been modified."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalDebtor
+	 * AmendmentInformationDetails12.mmOriginalDebtor}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalDebtor = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<PartyIdentification43>> mmOriginalDebtor = new MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<PartyIdentification43>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -348,10 +442,21 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalDebtor";
 			definition = "Original debtor that has been modified.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalDebtor);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
+			type_lazy = () -> PartyIdentification43.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification43> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalDebtor();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<PartyIdentification43> value) {
+			obj.setOriginalDebtor(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlDbtrAcct")
@@ -385,9 +490,17 @@ public class AmendmentInformationDetails11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original debtor account that has been modified."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalDebtorAccount
+	 * AmendmentInformationDetails12.mmOriginalDebtorAccount}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalDebtorAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<CashAccount24>> mmOriginalDebtorAccount = new MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<CashAccount24>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentPartyRole.mmCashAccount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -396,10 +509,21 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalDebtorAccount";
 			definition = "Original debtor account that has been modified.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalDebtorAccount);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
+			type_lazy = () -> CashAccount24.mmObject();
+		}
+
+		@Override
+		public Optional<CashAccount24> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalDebtorAccount();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<CashAccount24> value) {
+			obj.setOriginalDebtorAccount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlDbtrAgt")
@@ -434,9 +558,17 @@ public class AmendmentInformationDetails11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original debtor agent that has been modified."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalDebtorAgent
+	 * AmendmentInformationDetails12.mmOriginalDebtorAgent}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalDebtorAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<BranchAndFinancialInstitutionIdentification5>> mmOriginalDebtorAgent = new MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<BranchAndFinancialInstitutionIdentification5>>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -445,10 +577,21 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalDebtorAgent";
 			definition = "Original debtor agent that has been modified.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalDebtorAgent);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+		}
+
+		@Override
+		public Optional<BranchAndFinancialInstitutionIdentification5> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalDebtorAgent();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<BranchAndFinancialInstitutionIdentification5> value) {
+			obj.setOriginalDebtorAgent(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlDbtrAgtAcct")
@@ -482,9 +625,17 @@ public class AmendmentInformationDetails11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original debtor agent account that has been modified."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalDebtorAgentAccount
+	 * AmendmentInformationDetails12.mmOriginalDebtorAgentAccount}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalDebtorAgentAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<CashAccount24>> mmOriginalDebtorAgentAccount = new MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<CashAccount24>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentPartyRole.mmCashAccount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -493,10 +644,21 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalDebtorAgentAccount";
 			definition = "Original debtor agent account that has been modified.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalDebtorAgentAccount);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
+			type_lazy = () -> CashAccount24.mmObject();
+		}
+
+		@Override
+		public Optional<CashAccount24> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalDebtorAgentAccount();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<CashAccount24> value) {
+			obj.setOriginalDebtorAgentAccount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlFnlColltnDt")
@@ -531,9 +693,17 @@ public class AmendmentInformationDetails11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original final collection date that has been modified."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalFinalCollectionDate
+	 * AmendmentInformationDetails12.mmOriginalFinalCollectionDate}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalFinalCollectionDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmendmentInformationDetails11, Optional<ISODate>> mmOriginalFinalCollectionDate = new MMMessageAttribute<AmendmentInformationDetails11, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmFinalCollectionDate;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -542,9 +712,20 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalFinalCollectionDate";
 			definition = "Original final collection date that has been modified.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalFinalCollectionDate);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalFinalCollectionDate();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<ISODate> value) {
+			obj.setOriginalFinalCollectionDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlFrqcy")
@@ -580,9 +761,17 @@ public class AmendmentInformationDetails11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original frequency that has been modified."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalFrequency
+	 * AmendmentInformationDetails12.mmOriginalFrequency}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalFrequency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmendmentInformationDetails11, Optional<Frequency36Choice>> mmOriginalFrequency = new MMMessageAttribute<AmendmentInformationDetails11, Optional<Frequency36Choice>>() {
 		{
 			businessElementTrace_lazy = () -> DirectDebitMandate.mmFrequency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -591,9 +780,20 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalFrequency";
 			definition = "Original frequency that has been modified.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalFrequency);
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> Frequency36Choice.mmObject();
+		}
+
+		@Override
+		public Optional<Frequency36Choice> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalFrequency();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<Frequency36Choice> value) {
+			obj.setOriginalFrequency(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlRsn")
@@ -630,9 +830,17 @@ public class AmendmentInformationDetails11 {
 	 * definition} =
 	 * "Original reason for the mandate to allow the user to distinguish between different mandates for the same creditor."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalReason
+	 * AmendmentInformationDetails12.mmOriginalReason}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<MandateSetupReason1Choice>> mmOriginalReason = new MMMessageAssociationEnd<AmendmentInformationDetails11, Optional<MandateSetupReason1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDescription;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -641,10 +849,21 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalReason";
 			definition = "Original reason for the mandate to allow the user to distinguish between different mandates for the same creditor.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalReason);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> MandateSetupReason1Choice.mmObject();
+		}
+
+		@Override
+		public Optional<MandateSetupReason1Choice> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalReason();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<MandateSetupReason1Choice> value) {
+			obj.setOriginalReason(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlTrckgDays")
@@ -680,9 +899,17 @@ public class AmendmentInformationDetails11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Original number of tracking days that has been modified."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails12#mmOriginalTrackingDays
+	 * AmendmentInformationDetails12.mmOriginalTrackingDays}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalTrackingDays = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmendmentInformationDetails11, Optional<Exact2NumericText>> mmOriginalTrackingDays = new MMMessageAttribute<AmendmentInformationDetails11, Optional<Exact2NumericText>>() {
 		{
 			businessElementTrace_lazy = () -> Mandate.mmTrackingDays;
 			componentContext_lazy = () -> com.tools20022.repository.msg.AmendmentInformationDetails11.mmObject();
@@ -691,9 +918,20 @@ public class AmendmentInformationDetails11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalTrackingDays";
 			definition = "Original number of tracking days that has been modified.";
+			nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmOriginalTrackingDays);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact2NumericText.mmObject();
+		}
+
+		@Override
+		public Optional<Exact2NumericText> getValue(AmendmentInformationDetails11 obj) {
+			return obj.getOriginalTrackingDays();
+		}
+
+		@Override
+		public void setValue(AmendmentInformationDetails11 obj, Optional<Exact2NumericText> value) {
+			obj.setOriginalTrackingDays(value.orElse(null));
 		}
 	};
 
@@ -712,6 +950,7 @@ public class AmendmentInformationDetails11 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmendmentInformationDetails11";
 				definition = "Provides further details on the list of direct debit mandate elements that have been modified when the amendment indicator has been set.";
+				nextVersions_lazy = () -> Arrays.asList(AmendmentInformationDetails12.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
@@ -730,7 +969,7 @@ public class AmendmentInformationDetails11 {
 		return originalCreditorSchemeIdentification == null ? Optional.empty() : Optional.of(originalCreditorSchemeIdentification);
 	}
 
-	public AmendmentInformationDetails11 setOriginalCreditorSchemeIdentification(com.tools20022.repository.msg.PartyIdentification43 originalCreditorSchemeIdentification) {
+	public AmendmentInformationDetails11 setOriginalCreditorSchemeIdentification(PartyIdentification43 originalCreditorSchemeIdentification) {
 		this.originalCreditorSchemeIdentification = originalCreditorSchemeIdentification;
 		return this;
 	}
@@ -739,7 +978,7 @@ public class AmendmentInformationDetails11 {
 		return originalCreditorAgent == null ? Optional.empty() : Optional.of(originalCreditorAgent);
 	}
 
-	public AmendmentInformationDetails11 setOriginalCreditorAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 originalCreditorAgent) {
+	public AmendmentInformationDetails11 setOriginalCreditorAgent(BranchAndFinancialInstitutionIdentification5 originalCreditorAgent) {
 		this.originalCreditorAgent = originalCreditorAgent;
 		return this;
 	}
@@ -748,7 +987,7 @@ public class AmendmentInformationDetails11 {
 		return originalCreditorAgentAccount == null ? Optional.empty() : Optional.of(originalCreditorAgentAccount);
 	}
 
-	public AmendmentInformationDetails11 setOriginalCreditorAgentAccount(com.tools20022.repository.msg.CashAccount24 originalCreditorAgentAccount) {
+	public AmendmentInformationDetails11 setOriginalCreditorAgentAccount(CashAccount24 originalCreditorAgentAccount) {
 		this.originalCreditorAgentAccount = originalCreditorAgentAccount;
 		return this;
 	}
@@ -757,7 +996,7 @@ public class AmendmentInformationDetails11 {
 		return originalDebtor == null ? Optional.empty() : Optional.of(originalDebtor);
 	}
 
-	public AmendmentInformationDetails11 setOriginalDebtor(com.tools20022.repository.msg.PartyIdentification43 originalDebtor) {
+	public AmendmentInformationDetails11 setOriginalDebtor(PartyIdentification43 originalDebtor) {
 		this.originalDebtor = originalDebtor;
 		return this;
 	}
@@ -766,7 +1005,7 @@ public class AmendmentInformationDetails11 {
 		return originalDebtorAccount == null ? Optional.empty() : Optional.of(originalDebtorAccount);
 	}
 
-	public AmendmentInformationDetails11 setOriginalDebtorAccount(com.tools20022.repository.msg.CashAccount24 originalDebtorAccount) {
+	public AmendmentInformationDetails11 setOriginalDebtorAccount(CashAccount24 originalDebtorAccount) {
 		this.originalDebtorAccount = originalDebtorAccount;
 		return this;
 	}
@@ -775,7 +1014,7 @@ public class AmendmentInformationDetails11 {
 		return originalDebtorAgent == null ? Optional.empty() : Optional.of(originalDebtorAgent);
 	}
 
-	public AmendmentInformationDetails11 setOriginalDebtorAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 originalDebtorAgent) {
+	public AmendmentInformationDetails11 setOriginalDebtorAgent(BranchAndFinancialInstitutionIdentification5 originalDebtorAgent) {
 		this.originalDebtorAgent = originalDebtorAgent;
 		return this;
 	}
@@ -784,7 +1023,7 @@ public class AmendmentInformationDetails11 {
 		return originalDebtorAgentAccount == null ? Optional.empty() : Optional.of(originalDebtorAgentAccount);
 	}
 
-	public AmendmentInformationDetails11 setOriginalDebtorAgentAccount(com.tools20022.repository.msg.CashAccount24 originalDebtorAgentAccount) {
+	public AmendmentInformationDetails11 setOriginalDebtorAgentAccount(CashAccount24 originalDebtorAgentAccount) {
 		this.originalDebtorAgentAccount = originalDebtorAgentAccount;
 		return this;
 	}

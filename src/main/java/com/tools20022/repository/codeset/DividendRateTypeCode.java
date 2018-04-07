@@ -78,6 +78,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#RealEstatePropertyIncomePortion
  * DividendRateTypeCode.RealEstatePropertyIncomePortion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode#ConduitForeignIncome
+ * DividendRateTypeCode.ConduitForeignIncome}</li>
  * </ul>
  * </li>
  * <li>
@@ -139,9 +142,9 @@ public class DividendRateTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Rate resulting from a fully franked dividend paid by a company; rate
+	 * Rate resulting from a fully franked dividend paid by a company; the rate
 	 * includes tax credit for companies that have made sufficient tax payments
-	 * during fiscal period.
+	 * during the fiscal period.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -159,7 +162,7 @@ public class DividendRateTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Rate resulting from a fully franked dividend paid by a company; rate includes tax credit for companies that have made sufficient tax payments during fiscal period."
+	 * "Rate resulting from a fully franked dividend paid by a company; the rate includes tax credit for companies that have made sufficient tax payments during the fiscal period."
 	 * </li>
 	 * </ul>
 	 */
@@ -167,7 +170,7 @@ public class DividendRateTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FullyFranked";
-			definition = "Rate resulting from a fully franked dividend paid by a company; rate includes tax credit for companies that have made sufficient tax payments during fiscal period.";
+			definition = "Rate resulting from a fully franked dividend paid by a company; the rate includes tax credit for companies that have made sufficient tax payments during the fiscal period.";
 			owner_lazy = () -> com.tools20022.repository.codeset.DividendRateTypeCode.mmObject();
 			codeName = "FLFR";
 		}
@@ -330,7 +333,7 @@ public class DividendRateTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Rate relating to the underlying security which is not taxable
+	 * Rate relating to the underlying security which is not taxable.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -348,21 +351,21 @@ public class DividendRateTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Rate relating to the underlying security which is not taxable"</li>
+	 * "Rate relating to the underlying security which is not taxable."</li>
 	 * </ul>
 	 */
 	public static final DividendRateTypeCode TaxFree = new DividendRateTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxFree";
-			definition = "Rate relating to the underlying security which is not taxable";
+			definition = "Rate relating to the underlying security which is not taxable.";
 			owner_lazy = () -> com.tools20022.repository.codeset.DividendRateTypeCode.mmObject();
 			codeName = "TXFR";
 		}
 	};
 	/**
 	 * Rate resulting from an unfranked dividend paid by a company; the rate
-	 * doesnt include tax credit and is subject to withholding tax.
+	 * does not include tax credit and is subject to withholding tax.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -380,7 +383,7 @@ public class DividendRateTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Rate resulting from an unfranked dividend paid by a company; the rate\ndoesnt include tax credit and is subject to withholding tax."
+	 * "Rate resulting from an unfranked dividend paid by a company; the rate does not include tax credit and is subject to withholding tax."
 	 * </li>
 	 * </ul>
 	 */
@@ -388,7 +391,7 @@ public class DividendRateTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unfranked";
-			definition = "Rate resulting from an unfranked dividend paid by a company; the rate\ndoesnt include tax credit and is subject to withholding tax.";
+			definition = "Rate resulting from an unfranked dividend paid by a company; the rate does not include tax credit and is subject to withholding tax.";
 			owner_lazy = () -> com.tools20022.repository.codeset.DividendRateTypeCode.mmObject();
 			codeName = "UNFR";
 		}
@@ -473,7 +476,7 @@ public class DividendRateTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Distribution rate relating to the full period units, for example Group I units in UK. "
+	 * "Distribution rate relating to the full period units, for example Group I units in UK."
 	 * </li>
 	 * </ul>
 	 */
@@ -481,7 +484,7 @@ public class DividendRateTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FullPeriodUnitsIncomePortion";
-			definition = "Distribution rate relating to the full period units, for example Group I units in UK. ";
+			definition = "Distribution rate relating to the full period units, for example Group I units in UK.";
 			owner_lazy = () -> com.tools20022.repository.codeset.DividendRateTypeCode.mmObject();
 			codeName = "FUPU";
 		}
@@ -506,7 +509,7 @@ public class DividendRateTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Distribution rate relating to the part way period units, for example Group II units in UK. "
+	 * "Distribution rate relating to the part way period units, for example Group II units in UK."
 	 * </li>
 	 * </ul>
 	 */
@@ -514,7 +517,7 @@ public class DividendRateTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartWayPeriodUnitsIncomePortion";
-			definition = "Distribution rate relating to the part way period units, for example Group II units in UK. ";
+			definition = "Distribution rate relating to the part way period units, for example Group II units in UK.";
 			owner_lazy = () -> com.tools20022.repository.codeset.DividendRateTypeCode.mmObject();
 			codeName = "PAPU";
 		}
@@ -550,6 +553,36 @@ public class DividendRateTypeCode extends MMCode {
 			codeName = "REES";
 		}
 	};
+	/**
+	 * Rate relating to a conduit foreign income type.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.DividendRateTypeCode
+	 * DividendRateTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "CDFI"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ConduitForeignIncome"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Rate relating to a conduit foreign income type."</li>
+	 * </ul>
+	 */
+	public static final DividendRateTypeCode ConduitForeignIncome = new DividendRateTypeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ConduitForeignIncome";
+			definition = "Rate relating to a conduit foreign income type.";
+			owner_lazy = () -> com.tools20022.repository.codeset.DividendRateTypeCode.mmObject();
+			codeName = "CDFI";
+		}
+	};
 	final static private LinkedHashMap<String, DividendRateTypeCode> codesByName = new LinkedHashMap<>();
 
 	protected DividendRateTypeCode() {
@@ -568,7 +601,8 @@ public class DividendRateTypeCode extends MMCode {
 						com.tools20022.repository.codeset.DividendRateTypeCode.TaxablePortion, com.tools20022.repository.codeset.DividendRateTypeCode.TaxDeferred, com.tools20022.repository.codeset.DividendRateTypeCode.TaxFree,
 						com.tools20022.repository.codeset.DividendRateTypeCode.Unfranked, com.tools20022.repository.codeset.DividendRateTypeCode.LongTermCapitalGain,
 						com.tools20022.repository.codeset.DividendRateTypeCode.ShortTermCapitalGain, com.tools20022.repository.codeset.DividendRateTypeCode.FullPeriodUnitsIncomePortion,
-						com.tools20022.repository.codeset.DividendRateTypeCode.PartWayPeriodUnitsIncomePortion, com.tools20022.repository.codeset.DividendRateTypeCode.RealEstatePropertyIncomePortion);
+						com.tools20022.repository.codeset.DividendRateTypeCode.PartWayPeriodUnitsIncomePortion, com.tools20022.repository.codeset.DividendRateTypeCode.RealEstatePropertyIncomePortion,
+						com.tools20022.repository.codeset.DividendRateTypeCode.ConduitForeignIncome);
 			}
 		});
 		return mmObject_lazy.get();
@@ -589,6 +623,7 @@ public class DividendRateTypeCode extends MMCode {
 		codesByName.put(FullPeriodUnitsIncomePortion.getCodeName().get(), FullPeriodUnitsIncomePortion);
 		codesByName.put(PartWayPeriodUnitsIncomePortion.getCodeName().get(), PartWayPeriodUnitsIncomePortion);
 		codesByName.put(RealEstatePropertyIncomePortion.getCodeName().get(), RealEstatePropertyIncomePortion);
+		codesByName.put(ConduitForeignIncome.getCodeName().get(), ConduitForeignIncome);
 	}
 
 	public static DividendRateTypeCode valueOf(String codeName) {

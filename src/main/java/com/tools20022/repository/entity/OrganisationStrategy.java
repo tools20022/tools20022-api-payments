@@ -21,6 +21,7 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Organisation;
 import com.tools20022.repository.entity.PortfolioStrategy;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.ArrayList;
@@ -109,7 +110,7 @@ public class OrganisationStrategy extends PortfolioStrategy {
 	 * definition} = "Strategy is organisation based."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrganisation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<OrganisationStrategy, List<Organisation>> mmOrganisation = new MMBusinessAssociationEnd<OrganisationStrategy, List<Organisation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationStrategy.mmObject();
@@ -120,6 +121,16 @@ public class OrganisationStrategy extends PortfolioStrategy {
 			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmStrategy;
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+		}
+
+		@Override
+		public List<Organisation> getValue(OrganisationStrategy obj) {
+			return obj.getOrganisation();
+		}
+
+		@Override
+		public void setValue(OrganisationStrategy obj, List<Organisation> value) {
+			obj.setOrganisation(value);
 		}
 	};
 

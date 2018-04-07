@@ -27,7 +27,6 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.Product;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -138,7 +137,7 @@ public class Service extends Product {
 	 * definition} = "Amount charged for the service."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Service, CurrencyAndAmount> mmAmount = new MMBusinessAttribute<Service, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingCompensation1.mmValue, BillingServicesAmount1.mmHostAmount, BillingServicesAmount2.mmHostAmount, BillingServicesAmount2.mmSettlementAmount, BillingServicesAmount3.mmSourceAmount,
 					BillingServicesAmount3.mmHostAmount, TaxCalculation1.mmTotalTaxableServiceChargeHostAmount, BillingServiceAdjustment1.mmAmount, BillingServiceAdjustment1.mmOriginalChargeAmount,
@@ -153,12 +152,14 @@ public class Service extends Product {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Service.class.getMethod("getAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Service obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(Service obj, CurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	protected Max35Text type;
@@ -194,7 +195,7 @@ public class Service extends Product {
 	 * definition} = "Type used to classify and organise different services."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Service, Max35Text> mmType = new MMBusinessAttribute<Service, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BillingServiceAdjustment1.mmType);
 			isDerived = false;
@@ -207,12 +208,14 @@ public class Service extends Product {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Service.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Service obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Service obj, Max35Text value) {
+			obj.setType(value);
 		}
 	};
 	protected ServiceTaxDesignationCode taxDesignation;
@@ -241,7 +244,7 @@ public class Service extends Product {
 	 * definition} = "Identifies the taxable status of the service."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTaxDesignation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Service, ServiceTaxDesignationCode> mmTaxDesignation = new MMBusinessAttribute<Service, ServiceTaxDesignationCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Service.mmObject();
@@ -253,12 +256,14 @@ public class Service extends Product {
 			simpleType_lazy = () -> ServiceTaxDesignationCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Service.class.getMethod("getTaxDesignation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ServiceTaxDesignationCode getValue(Service obj) {
+			return obj.getTaxDesignation();
+		}
+
+		@Override
+		public void setValue(Service obj, ServiceTaxDesignationCode value) {
+			obj.setTaxDesignation(value);
 		}
 	};
 	protected PercentageRate rate;
@@ -288,7 +293,7 @@ public class Service extends Product {
 	 * "Rate applied on a basis amount to calculate the service charge."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Service, PercentageRate> mmRate = new MMBusinessAttribute<Service, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Service.mmObject();
@@ -300,12 +305,14 @@ public class Service extends Product {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Service.class.getMethod("getRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Service obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(Service obj, PercentageRate value) {
+			obj.setRate(value);
 		}
 	};
 

@@ -22,6 +22,9 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Charges;
+import com.tools20022.repository.entity.Commission;
+import com.tools20022.repository.entity.CorporateActionEvent;
+import com.tools20022.repository.entity.RateAndAmount;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -130,7 +133,7 @@ public class CorporateActionFeesAndCharges extends Charges {
 	 * "Corporate action for which fees and charges are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionFeesAndCharges, Optional<CorporateActionEvent>> mmCorporateAction = new MMBusinessAssociationEnd<CorporateActionFeesAndCharges, Optional<CorporateActionEvent>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
@@ -139,9 +142,19 @@ public class CorporateActionFeesAndCharges extends Charges {
 			definition = "Corporate action for which fees and charges are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionCharge;
+			opposite_lazy = () -> CorporateActionEvent.mmCorporateActionCharge;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
+			type_lazy = () -> CorporateActionEvent.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionEvent> getValue(CorporateActionFeesAndCharges obj) {
+			return obj.getCorporateAction();
+		}
+
+		@Override
+		public void setValue(CorporateActionFeesAndCharges obj, Optional<CorporateActionEvent> value) {
+			obj.setCorporateAction(value.orElse(null));
 		}
 	};
 	protected RateAndAmount solicitationFee;
@@ -180,7 +193,7 @@ public class CorporateActionFeesAndCharges extends Charges {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSolicitationFee = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionFeesAndCharges, RateAndAmount> mmSolicitationFee = new MMBusinessAssociationEnd<CorporateActionFeesAndCharges, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
@@ -189,9 +202,19 @@ public class CorporateActionFeesAndCharges extends Charges {
 			definition = "Cash amount made available in a corporate event in order to encourage participation in the event or to vote with management's position. Payment is made to a third party who has solicited an entity to take part in the offer.\r\nAlso called consent fee.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmSolicitationFeeCorporateActionParameters;
+			opposite_lazy = () -> RateAndAmount.mmSolicitationFeeCorporateActionParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(CorporateActionFeesAndCharges obj) {
+			return obj.getSolicitationFee();
+		}
+
+		@Override
+		public void setValue(CorporateActionFeesAndCharges obj, RateAndAmount value) {
+			obj.setSolicitationFee(value);
 		}
 	};
 	protected RateAndAmount earlySolicitationFeeRate;
@@ -230,7 +253,7 @@ public class CorporateActionFeesAndCharges extends Charges {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEarlySolicitationFeeRate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionFeesAndCharges, RateAndAmount> mmEarlySolicitationFeeRate = new MMBusinessAssociationEnd<CorporateActionFeesAndCharges, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
@@ -239,9 +262,19 @@ public class CorporateActionFeesAndCharges extends Charges {
 			definition = "Cash rate made available, as an incentive, in addition to the solicitation fee, in order to encourage early participation in an offer.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmEarlySolicitationFeeCorporateActionParameters;
+			opposite_lazy = () -> RateAndAmount.mmEarlySolicitationFeeCorporateActionParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(CorporateActionFeesAndCharges obj) {
+			return obj.getEarlySolicitationFeeRate();
+		}
+
+		@Override
+		public void setValue(CorporateActionFeesAndCharges obj, RateAndAmount value) {
+			obj.setEarlySolicitationFeeRate(value);
 		}
 	};
 	protected Commission commission;
@@ -278,7 +311,7 @@ public class CorporateActionFeesAndCharges extends Charges {
 	 * definition} = "Commission associated with a corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionFeesAndCharges, com.tools20022.repository.entity.Commission> mmCommission = new MMBusinessAssociationEnd<CorporateActionFeesAndCharges, com.tools20022.repository.entity.Commission>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
@@ -291,6 +324,16 @@ public class CorporateActionFeesAndCharges extends Charges {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Commission getValue(CorporateActionFeesAndCharges obj) {
+			return obj.getCommission();
+		}
+
+		@Override
+		public void setValue(CorporateActionFeesAndCharges obj, com.tools20022.repository.entity.Commission value) {
+			obj.setCommission(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
@@ -300,8 +343,8 @@ public class CorporateActionFeesAndCharges extends Charges {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionFeesAndCharges";
 				definition = "The definition of all the charges related to a corporate action event.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Commission.mmCorporateActionFeesAndCharges, com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionCharge,
-						com.tools20022.repository.entity.RateAndAmount.mmSolicitationFeeCorporateActionParameters, com.tools20022.repository.entity.RateAndAmount.mmEarlySolicitationFeeCorporateActionParameters);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Commission.mmCorporateActionFeesAndCharges, CorporateActionEvent.mmCorporateActionCharge,
+						RateAndAmount.mmSolicitationFeeCorporateActionParameters, RateAndAmount.mmEarlySolicitationFeeCorporateActionParameters);
 				superType_lazy = () -> Charges.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmCorporateAction, com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmSolicitationFee,
 						com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmEarlySolicitationFeeRate, com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmCommission);
@@ -319,7 +362,7 @@ public class CorporateActionFeesAndCharges extends Charges {
 		return corporateAction == null ? Optional.empty() : Optional.of(corporateAction);
 	}
 
-	public CorporateActionFeesAndCharges setCorporateAction(com.tools20022.repository.entity.CorporateActionEvent corporateAction) {
+	public CorporateActionFeesAndCharges setCorporateAction(CorporateActionEvent corporateAction) {
 		this.corporateAction = corporateAction;
 		return this;
 	}
@@ -328,7 +371,7 @@ public class CorporateActionFeesAndCharges extends Charges {
 		return solicitationFee;
 	}
 
-	public CorporateActionFeesAndCharges setSolicitationFee(com.tools20022.repository.entity.RateAndAmount solicitationFee) {
+	public CorporateActionFeesAndCharges setSolicitationFee(RateAndAmount solicitationFee) {
 		this.solicitationFee = Objects.requireNonNull(solicitationFee);
 		return this;
 	}
@@ -337,7 +380,7 @@ public class CorporateActionFeesAndCharges extends Charges {
 		return earlySolicitationFeeRate;
 	}
 
-	public CorporateActionFeesAndCharges setEarlySolicitationFeeRate(com.tools20022.repository.entity.RateAndAmount earlySolicitationFeeRate) {
+	public CorporateActionFeesAndCharges setEarlySolicitationFeeRate(RateAndAmount earlySolicitationFeeRate) {
 		this.earlySolicitationFeeRate = Objects.requireNonNull(earlySolicitationFeeRate);
 		return this;
 	}

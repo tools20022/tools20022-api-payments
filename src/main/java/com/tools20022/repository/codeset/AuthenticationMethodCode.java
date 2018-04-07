@@ -224,14 +224,14 @@ public class AuthenticationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "On-line PIN  authentication (Personal Identification Number)."</li>
+	 * "On-line PIN authentication (Personal Identification Number)."</li>
 	 * </ul>
 	 */
 	public static final AuthenticationMethodCode OnLinePIN = new AuthenticationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OnLinePIN";
-			definition = "On-line PIN  authentication (Personal Identification Number).";
+			definition = "On-line PIN authentication (Personal Identification Number).";
 			owner_lazy = () -> com.tools20022.repository.codeset.AuthenticationMethodCode.mmObject();
 			codeName = "NPIN";
 		}

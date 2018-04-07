@@ -23,7 +23,6 @@ import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AccountManagementLatestVersion;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.xml.bind.annotation.*;
@@ -81,7 +80,7 @@ import javax.xml.bind.annotation.*;
  * "AccountRequestRejectionV02"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "The AccountRequestRejection message is sent from a financial institution to an organisation. This message is sent in response to a request message from the organisation, if the business content is not valid. "
+ * "The AccountRequestRejection message is sent from a financial institution to an organisation. This message is sent in response to a request message from the organisation, if the business content is not valid."
  * </li>
  * </ul>
  */
@@ -116,7 +115,7 @@ public class AccountRequestRejectionV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReferences = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountRequestRejectionV02, References6> mmReferences = new MMMessageBuildingBlock<AccountRequestRejectionV02, References6>() {
 		{
 			xmlTag = "Refs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,12 +126,14 @@ public class AccountRequestRejectionV02 {
 			complexType_lazy = () -> References6.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountRequestRejectionV02.class.getMethod("getReferences", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public References6 getValue(AccountRequestRejectionV02 obj) {
+			return obj.getReferences();
+		}
+
+		@Override
+		public void setValue(AccountRequestRejectionV02 obj, References6 value) {
+			obj.setReferences(value);
 		}
 	};
 	@XmlElement(name = "Fr")
@@ -162,7 +163,7 @@ public class AccountRequestRejectionV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFrom = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountRequestRejectionV02, Optional<OrganisationIdentification8>> mmFrom = new MMMessageBuildingBlock<AccountRequestRejectionV02, Optional<OrganisationIdentification8>>() {
 		{
 			xmlTag = "Fr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,12 +174,14 @@ public class AccountRequestRejectionV02 {
 			complexType_lazy = () -> OrganisationIdentification8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountRequestRejectionV02.class.getMethod("getFrom", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<OrganisationIdentification8> getValue(AccountRequestRejectionV02 obj) {
+			return obj.getFrom();
+		}
+
+		@Override
+		public void setValue(AccountRequestRejectionV02 obj, Optional<OrganisationIdentification8> value) {
+			obj.setFrom(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AcctSvcrId", required = true)
@@ -208,7 +211,7 @@ public class AccountRequestRejectionV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAccountServicerIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountRequestRejectionV02, BranchAndFinancialInstitutionIdentification5> mmAccountServicerIdentification = new MMMessageBuildingBlock<AccountRequestRejectionV02, BranchAndFinancialInstitutionIdentification5>() {
 		{
 			xmlTag = "AcctSvcrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,12 +222,14 @@ public class AccountRequestRejectionV02 {
 			complexType_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountRequestRejectionV02.class.getMethod("getAccountServicerIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BranchAndFinancialInstitutionIdentification5 getValue(AccountRequestRejectionV02 obj) {
+			return obj.getAccountServicerIdentification();
+		}
+
+		@Override
+		public void setValue(AccountRequestRejectionV02 obj, BranchAndFinancialInstitutionIdentification5 value) {
+			obj.setAccountServicerIdentification(value);
 		}
 	};
 	@XmlElement(name = "AcctId")
@@ -254,7 +259,7 @@ public class AccountRequestRejectionV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAccountIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountRequestRejectionV02, List<AccountForAction1>> mmAccountIdentification = new MMMessageBuildingBlock<AccountRequestRejectionV02, List<AccountForAction1>>() {
 		{
 			xmlTag = "AcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -264,12 +269,14 @@ public class AccountRequestRejectionV02 {
 			complexType_lazy = () -> AccountForAction1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountRequestRejectionV02.class.getMethod("getAccountIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<AccountForAction1> getValue(AccountRequestRejectionV02 obj) {
+			return obj.getAccountIdentification();
+		}
+
+		@Override
+		public void setValue(AccountRequestRejectionV02 obj, List<AccountForAction1> value) {
+			obj.setAccountIdentification(value);
 		}
 	};
 	@XmlElement(name = "OrgId", required = true)
@@ -297,7 +304,7 @@ public class AccountRequestRejectionV02 {
 	 * definition} = "Identifier for an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOrganisationIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountRequestRejectionV02, OrganisationIdentification8> mmOrganisationIdentification = new MMMessageBuildingBlock<AccountRequestRejectionV02, OrganisationIdentification8>() {
 		{
 			xmlTag = "OrgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -308,12 +315,14 @@ public class AccountRequestRejectionV02 {
 			complexType_lazy = () -> OrganisationIdentification8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountRequestRejectionV02.class.getMethod("getOrganisationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OrganisationIdentification8 getValue(AccountRequestRejectionV02 obj) {
+			return obj.getOrganisationIdentification();
+		}
+
+		@Override
+		public void setValue(AccountRequestRejectionV02 obj, OrganisationIdentification8 value) {
+			obj.setOrganisationIdentification(value);
 		}
 	};
 	@XmlElement(name = "DgtlSgntr")
@@ -343,7 +352,7 @@ public class AccountRequestRejectionV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmDigitalSignature = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountRequestRejectionV02, List<PartyAndSignature2>> mmDigitalSignature = new MMMessageBuildingBlock<AccountRequestRejectionV02, List<PartyAndSignature2>>() {
 		{
 			xmlTag = "DgtlSgntr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -353,12 +362,14 @@ public class AccountRequestRejectionV02 {
 			complexType_lazy = () -> PartyAndSignature2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountRequestRejectionV02.class.getMethod("getDigitalSignature", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<PartyAndSignature2> getValue(AccountRequestRejectionV02 obj) {
+			return obj.getDigitalSignature();
+		}
+
+		@Override
+		public void setValue(AccountRequestRejectionV02 obj, List<PartyAndSignature2> value) {
+			obj.setDigitalSignature(value);
 		}
 	};
 	@XmlElement(name = "SplmtryData")
@@ -388,7 +399,7 @@ public class AccountRequestRejectionV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountRequestRejectionV02, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<AccountRequestRejectionV02, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -398,12 +409,14 @@ public class AccountRequestRejectionV02 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountRequestRejectionV02.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(AccountRequestRejectionV02 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(AccountRequestRejectionV02 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -412,7 +425,7 @@ public class AccountRequestRejectionV02 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountRequestRejectionV02";
-				definition = "The AccountRequestRejection message is sent from a financial institution to an organisation. This message is sent in response to a request message from the organisation, if the business content is not valid. ";
+				definition = "The AccountRequestRejection message is sent from a financial institution to an organisation. This message is sent in response to a request message from the organisation, if the business content is not valid.";
 				rootElement = "Document";
 				xmlTag = "AcctReqRjctn";
 				businessArea_lazy = () -> AccountManagementLatestVersion.mmObject();

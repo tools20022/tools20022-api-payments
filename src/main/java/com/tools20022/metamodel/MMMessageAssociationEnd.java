@@ -20,6 +20,7 @@ package com.tools20022.metamodel;
 import com.tools20022.core.metamodel.Derived;
 import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import com.tools20022.core.metamodel.RuntimePropertyAware;
 import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.derived.DeriveMMMessageAssociationEnd_isTechnical;
 import com.tools20022.metamodel.derived.DeriveMMMessageAssociationEnd_memberType;
@@ -34,7 +35,7 @@ import java.util.Optional;
 /**
  * Kind of MessageElement that relates two MessageComponentTypes.
  */
-public class MMMessageAssociationEnd implements MMMessageElement {
+public class MMMessageAssociationEnd<T, V> implements RuntimePropertyAware<T, V>, MMMessageElement {
 
 	/**
 	 * Indicates if the message element is a composite.

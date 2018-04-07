@@ -99,7 +99,7 @@ public class ProprietaryQuantity1 {
 	 * definition} = "Identifies the type of proprietary quantity reported."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProprietaryQuantity1, Max35Text> mmType = new MMMessageAttribute<ProprietaryQuantity1, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryQuantity1.mmObject();
 			isDerived = false;
@@ -110,6 +110,16 @@ public class ProprietaryQuantity1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ProprietaryQuantity1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ProprietaryQuantity1 obj, Max35Text value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "Qty", required = true)
@@ -146,7 +156,7 @@ public class ProprietaryQuantity1 {
 	 * definition} = "Provides the proprietary quantity in free format."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProprietaryQuantity1, Max35Text> mmQuantity = new MMMessageAttribute<ProprietaryQuantity1, Max35Text>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryQuantity1.mmObject();
@@ -158,6 +168,16 @@ public class ProprietaryQuantity1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ProprietaryQuantity1 obj) {
+			return obj.getQuantity();
+		}
+
+		@Override
+		public void setValue(ProprietaryQuantity1 obj, Max35Text value) {
+			obj.setQuantity(value);
 		}
 	};
 

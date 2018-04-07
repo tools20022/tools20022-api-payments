@@ -20,10 +20,10 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.OrganisationIdentification;
 import com.tools20022.repository.entity.PartyName;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -133,7 +133,7 @@ public class OrganisationName extends PartyName {
 	 * definition} = "Organisation identification which contains a name."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrganisation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<OrganisationName, Optional<OrganisationIdentification>> mmOrganisation = new MMBusinessAssociationEnd<OrganisationName, Optional<OrganisationIdentification>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
@@ -142,9 +142,19 @@ public class OrganisationName extends PartyName {
 			definition = "Organisation identification which contains a name.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmOrganisationName;
+			opposite_lazy = () -> OrganisationIdentification.mmOrganisationName;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
+			type_lazy = () -> OrganisationIdentification.mmObject();
+		}
+
+		@Override
+		public Optional<OrganisationIdentification> getValue(OrganisationName obj) {
+			return obj.getOrganisation();
+		}
+
+		@Override
+		public void setValue(OrganisationName obj, Optional<OrganisationIdentification> value) {
+			obj.setOrganisation(value.orElse(null));
 		}
 	};
 	protected Max35Text legalName;
@@ -175,6 +185,9 @@ public class OrganisationName extends PartyName {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PartyIdentification58#mmLegalName
 	 * PartyIdentification58.mmLegalName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Organisation20#mmFullLegalName
+	 * Organisation20.mmFullLegalName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -193,9 +206,10 @@ public class OrganisationName extends PartyName {
 	 * definition} = "Official name under which an organisation is registered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLegalName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<OrganisationName, Max35Text> mmLegalName = new MMBusinessAttribute<OrganisationName, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(Organisation12.mmFullLegalName, Organisation14.mmFullLegalName, FullLegalNameModification1.mmFullLegalName, OrganisationModification1.mmFullLegalName, PartyIdentification58.mmLegalName);
+			derivation_lazy = () -> Arrays.asList(Organisation12.mmFullLegalName, Organisation14.mmFullLegalName, FullLegalNameModification1.mmFullLegalName, OrganisationModification1.mmFullLegalName, PartyIdentification58.mmLegalName,
+					Organisation20.mmFullLegalName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -206,12 +220,14 @@ public class OrganisationName extends PartyName {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return OrganisationName.class.getMethod("getLegalName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(OrganisationName obj) {
+			return obj.getLegalName();
+		}
+
+		@Override
+		public void setValue(OrganisationName obj, Max35Text value) {
+			obj.setLegalName(value);
 		}
 	};
 	protected Max350Text tradingName;
@@ -236,6 +252,9 @@ public class OrganisationName extends PartyName {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OrganisationModification1#mmTradingName
 	 * OrganisationModification1.mmTradingName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Organisation20#mmTradingName
+	 * Organisation20.mmTradingName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -256,9 +275,9 @@ public class OrganisationName extends PartyName {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradingName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<OrganisationName, Max350Text> mmTradingName = new MMBusinessAttribute<OrganisationName, Max350Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(Organisation12.mmTradingName, TradingNameModification1.mmTradingName, OrganisationModification1.mmTradingName);
+			derivation_lazy = () -> Arrays.asList(Organisation12.mmTradingName, TradingNameModification1.mmTradingName, OrganisationModification1.mmTradingName, Organisation20.mmTradingName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -269,12 +288,14 @@ public class OrganisationName extends PartyName {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return OrganisationName.class.getMethod("getTradingName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(OrganisationName obj) {
+			return obj.getTradingName();
+		}
+
+		@Override
+		public void setValue(OrganisationName obj, Max350Text value) {
+			obj.setTradingName(value);
 		}
 	};
 	protected Max35Text shortName;
@@ -311,7 +332,7 @@ public class OrganisationName extends PartyName {
 	 * definition} = "Specifies the short name of the organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmShortName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<OrganisationName, Max35Text> mmShortName = new MMBusinessAttribute<OrganisationName, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(GenericIdentification32.mmShortName);
 			isDerived = false;
@@ -324,12 +345,14 @@ public class OrganisationName extends PartyName {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return OrganisationName.class.getMethod("getShortName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(OrganisationName obj) {
+			return obj.getShortName();
+		}
+
+		@Override
+		public void setValue(OrganisationName obj, Max35Text value) {
+			obj.setShortName(value);
 		}
 	};
 
@@ -340,7 +363,7 @@ public class OrganisationName extends PartyName {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrganisationName";
 				definition = "Name by which an organisation is known and which is usually used to identify that organisation.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.OrganisationIdentification.mmOrganisationName);
+				associationDomain_lazy = () -> Arrays.asList(OrganisationIdentification.mmOrganisationName);
 				superType_lazy = () -> PartyName.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.OrganisationName.mmOrganisation, com.tools20022.repository.entity.OrganisationName.mmLegalName,
 						com.tools20022.repository.entity.OrganisationName.mmTradingName, com.tools20022.repository.entity.OrganisationName.mmShortName);
@@ -359,7 +382,7 @@ public class OrganisationName extends PartyName {
 		return organisation == null ? Optional.empty() : Optional.of(organisation);
 	}
 
-	public OrganisationName setOrganisation(com.tools20022.repository.entity.OrganisationIdentification organisation) {
+	public OrganisationName setOrganisation(OrganisationIdentification organisation) {
 		this.organisation = organisation;
 		return this;
 	}

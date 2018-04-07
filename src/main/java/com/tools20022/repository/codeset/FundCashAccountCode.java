@@ -435,7 +435,7 @@ public class FundCashAccountCode extends MMCode {
 		}
 	};
 	/**
-	 * Account operated by a CSD in a direct holding market context
+	 * Account operated by a CSD in a direct holding market context.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -453,14 +453,14 @@ public class FundCashAccountCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Account operated by a CSD in a direct holding market context"</li>
+	 * "Account operated by a CSD in a direct holding market context."</li>
 	 * </ul>
 	 */
 	public static final FundCashAccountCode TechnicalOffsetAccount = new FundCashAccountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TechnicalOffsetAccount";
-			definition = "Account operated by a CSD in a direct holding market context";
+			definition = "Account operated by a CSD in a direct holding market context.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FundCashAccountCode.mmObject();
 			codeName = "TOFF";
 		}

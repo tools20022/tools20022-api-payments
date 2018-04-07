@@ -98,7 +98,7 @@ public class Frequency37Choice {
 	 * definition} = "Frequency expressed as an ISO 20022 code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Frequency37Choice, Frequency10Code> mmCode = new MMMessageAttribute<Frequency37Choice, Frequency10Code>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.Frequency37Choice.mmObject();
 			isDerived = false;
@@ -109,6 +109,16 @@ public class Frequency37Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Frequency10Code.mmObject();
+		}
+
+		@Override
+		public Frequency10Code getValue(Frequency37Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(Frequency37Choice obj, Frequency10Code value) {
+			obj.setCode(value);
 		}
 	};
 	@XmlElement(name = "Prtry", required = true)
@@ -140,7 +150,7 @@ public class Frequency37Choice {
 	 * definition} = "Frequency expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Frequency37Choice, Max35Text> mmProprietary = new MMMessageAttribute<Frequency37Choice, Max35Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.choice.Frequency37Choice.mmObject();
 			isDerived = false;
@@ -151,6 +161,16 @@ public class Frequency37Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(Frequency37Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(Frequency37Choice obj, Max35Text value) {
+			obj.setProprietary(value);
 		}
 	};
 

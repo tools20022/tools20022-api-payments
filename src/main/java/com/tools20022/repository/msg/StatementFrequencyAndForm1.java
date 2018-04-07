@@ -117,7 +117,7 @@ public class StatementFrequencyAndForm1 {
 	 * definition} = "Specifies the frequency for sending statements."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFrequency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatementFrequencyAndForm1, Frequency7Code> mmFrequency = new MMMessageAttribute<StatementFrequencyAndForm1, Frequency7Code>() {
 		{
 			businessElementTrace_lazy = () -> ReportingService.mmStatementFrequency;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
@@ -129,6 +129,16 @@ public class StatementFrequencyAndForm1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Frequency7Code.mmObject();
+		}
+
+		@Override
+		public Frequency7Code getValue(StatementFrequencyAndForm1 obj) {
+			return obj.getFrequency();
+		}
+
+		@Override
+		public void setValue(StatementFrequencyAndForm1 obj, Frequency7Code value) {
+			obj.setFrequency(value);
 		}
 	};
 	@XmlElement(name = "ComMtd", required = true)
@@ -166,7 +176,7 @@ public class StatementFrequencyAndForm1 {
 	 * definition} = "Specifies the communication method for statements."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCommunicationMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatementFrequencyAndForm1, CommunicationMethod2Choice> mmCommunicationMethod = new MMMessageAttribute<StatementFrequencyAndForm1, CommunicationMethod2Choice>() {
 		{
 			businessElementTrace_lazy = () -> ReportingService.mmReportingChannel;
 			componentContext_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
@@ -178,6 +188,16 @@ public class StatementFrequencyAndForm1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> CommunicationMethod2Choice.mmObject();
+		}
+
+		@Override
+		public CommunicationMethod2Choice getValue(StatementFrequencyAndForm1 obj) {
+			return obj.getCommunicationMethod();
+		}
+
+		@Override
+		public void setValue(StatementFrequencyAndForm1 obj, CommunicationMethod2Choice value) {
+			obj.setCommunicationMethod(value);
 		}
 	};
 	@XmlElement(name = "DlvryAdr", required = true)
@@ -214,7 +234,7 @@ public class StatementFrequencyAndForm1 {
 	 * definition} = "Specifies the delivery address for statements."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDeliveryAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatementFrequencyAndForm1, Max350Text> mmDeliveryAddress = new MMMessageAttribute<StatementFrequencyAndForm1, Max350Text>() {
 		{
 			businessComponentTrace_lazy = () -> ElectronicAddress.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
@@ -226,6 +246,16 @@ public class StatementFrequencyAndForm1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
+		}
+
+		@Override
+		public Max350Text getValue(StatementFrequencyAndForm1 obj) {
+			return obj.getDeliveryAddress();
+		}
+
+		@Override
+		public void setValue(StatementFrequencyAndForm1 obj, Max350Text value) {
+			obj.setDeliveryAddress(value);
 		}
 	};
 	@XmlElement(name = "Frmt", required = true)
@@ -258,7 +288,7 @@ public class StatementFrequencyAndForm1 {
 	 * definition} = "Specifies the format for statements."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFormat = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatementFrequencyAndForm1, CommunicationFormat1Choice> mmFormat = new MMMessageAttribute<StatementFrequencyAndForm1, CommunicationFormat1Choice>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.StatementFrequencyAndForm1.mmObject();
 			isDerived = false;
@@ -269,6 +299,16 @@ public class StatementFrequencyAndForm1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> CommunicationFormat1Choice.mmObject();
+		}
+
+		@Override
+		public CommunicationFormat1Choice getValue(StatementFrequencyAndForm1 obj) {
+			return obj.getFormat();
+		}
+
+		@Override
+		public void setValue(StatementFrequencyAndForm1 obj, CommunicationFormat1Choice value) {
+			obj.setFormat(value);
 		}
 	};
 

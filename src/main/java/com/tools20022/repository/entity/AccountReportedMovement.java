@@ -20,11 +20,11 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.CashAccount;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CustomerAccount4;
 import com.tools20022.repository.msg.CustomerAccount5;
 import com.tools20022.repository.msg.CustomerAccountModification1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -133,7 +133,7 @@ public class AccountReportedMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMonthlyPaymentValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount> mmMonthlyPaymentValue = new MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmMonthlyPaymentValue, CustomerAccountModification1.mmMonthlyPaymentValue, CustomerAccount4.mmMonthlyPaymentValue);
 			isDerived = false;
@@ -146,12 +146,14 @@ public class AccountReportedMovement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountReportedMovement.class.getMethod("getMonthlyPaymentValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AccountReportedMovement obj) {
+			return obj.getMonthlyPaymentValue();
+		}
+
+		@Override
+		public void setValue(AccountReportedMovement obj, CurrencyAndAmount value) {
+			obj.setMonthlyPaymentValue(value);
 		}
 	};
 	protected CurrencyAndAmount monthlyReceivedValue;
@@ -197,7 +199,7 @@ public class AccountReportedMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMonthlyReceivedValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount> mmMonthlyReceivedValue = new MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmMonthlyReceivedValue, CustomerAccountModification1.mmMonthlyReceivedValue, CustomerAccount4.mmMonthlyReceivedValue);
 			isDerived = false;
@@ -210,12 +212,14 @@ public class AccountReportedMovement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountReportedMovement.class.getMethod("getMonthlyReceivedValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AccountReportedMovement obj) {
+			return obj.getMonthlyReceivedValue();
+		}
+
+		@Override
+		public void setValue(AccountReportedMovement obj, CurrencyAndAmount value) {
+			obj.setMonthlyReceivedValue(value);
 		}
 	};
 	protected Max35Text monthlyTransactionNumber;
@@ -260,7 +264,7 @@ public class AccountReportedMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMonthlyTransactionNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountReportedMovement, Max35Text> mmMonthlyTransactionNumber = new MMBusinessAttribute<AccountReportedMovement, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmMonthlyTransactionNumber, CustomerAccountModification1.mmMonthlyTransactionNumber, CustomerAccount4.mmMonthlyTransactionNumber);
 			isDerived = false;
@@ -273,12 +277,14 @@ public class AccountReportedMovement {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountReportedMovement.class.getMethod("getMonthlyTransactionNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(AccountReportedMovement obj) {
+			return obj.getMonthlyTransactionNumber();
+		}
+
+		@Override
+		public void setValue(AccountReportedMovement obj, Max35Text value) {
+			obj.setMonthlyTransactionNumber(value);
 		}
 	};
 	protected CurrencyAndAmount averageBalance;
@@ -324,7 +330,7 @@ public class AccountReportedMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAverageBalance = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount> mmAverageBalance = new MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmAverageBalance, CustomerAccountModification1.mmAverageBalance, CustomerAccount4.mmAverageBalance);
 			isDerived = false;
@@ -337,12 +343,14 @@ public class AccountReportedMovement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountReportedMovement.class.getMethod("getAverageBalance", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AccountReportedMovement obj) {
+			return obj.getAverageBalance();
+		}
+
+		@Override
+		public void setValue(AccountReportedMovement obj, CurrencyAndAmount value) {
+			obj.setAverageBalance(value);
 		}
 	};
 	protected CashAccount reportedCashAccount;
@@ -380,7 +388,7 @@ public class AccountReportedMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReportedCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AccountReportedMovement, Optional<CashAccount>> mmReportedCashAccount = new MMBusinessAssociationEnd<AccountReportedMovement, Optional<CashAccount>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountReportedMovement.mmObject();
@@ -389,9 +397,19 @@ public class AccountReportedMovement {
 			definition = "Cash account for which reported movements are calculated.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmReportedMovements;
+			opposite_lazy = () -> CashAccount.mmReportedMovements;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
+			type_lazy = () -> CashAccount.mmObject();
+		}
+
+		@Override
+		public Optional<CashAccount> getValue(AccountReportedMovement obj) {
+			return obj.getReportedCashAccount();
+		}
+
+		@Override
+		public void setValue(AccountReportedMovement obj, Optional<CashAccount> value) {
+			obj.setReportedCashAccount(value.orElse(null));
 		}
 	};
 
@@ -402,7 +420,7 @@ public class AccountReportedMovement {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountReportedMovement";
 				definition = "Provides statistical information on the number of movements and their value for a particular account.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmReportedMovements);
+				associationDomain_lazy = () -> Arrays.asList(CashAccount.mmReportedMovements);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountReportedMovement.mmMonthlyPaymentValue, com.tools20022.repository.entity.AccountReportedMovement.mmMonthlyReceivedValue,
 						com.tools20022.repository.entity.AccountReportedMovement.mmMonthlyTransactionNumber, com.tools20022.repository.entity.AccountReportedMovement.mmAverageBalance,
 						com.tools20022.repository.entity.AccountReportedMovement.mmReportedCashAccount);
@@ -456,7 +474,7 @@ public class AccountReportedMovement {
 		return reportedCashAccount == null ? Optional.empty() : Optional.of(reportedCashAccount);
 	}
 
-	public AccountReportedMovement setReportedCashAccount(com.tools20022.repository.entity.CashAccount reportedCashAccount) {
+	public AccountReportedMovement setReportedCashAccount(CashAccount reportedCashAccount) {
 		this.reportedCashAccount = reportedCashAccount;
 		return this;
 	}

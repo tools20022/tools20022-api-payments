@@ -28,6 +28,8 @@ import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection34;
+import com.tools20022.repository.msg.BillingSubServiceIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -152,7 +154,7 @@ public class BillingServiceAdjustment1 {
 	 * definition} = "Identifies the type of adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceAdjustment1, ServiceAdjustmentType1Code> mmType = new MMMessageAttribute<BillingServiceAdjustment1, ServiceAdjustmentType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Service.mmType;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -164,6 +166,16 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ServiceAdjustmentType1Code.mmObject();
+		}
+
+		@Override
+		public ServiceAdjustmentType1Code getValue(BillingServiceAdjustment1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, ServiceAdjustmentType1Code value) {
+			obj.setType(value);
 		}
 	};
 	@XmlElement(name = "Desc", required = true)
@@ -196,7 +208,7 @@ public class BillingServiceAdjustment1 {
 	 * "Free-form description and clarification of the adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceAdjustment1, Max140Text> mmDescription = new MMMessageAttribute<BillingServiceAdjustment1, Max140Text>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
@@ -207,6 +219,16 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Max140Text getValue(BillingServiceAdjustment1 obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Max140Text value) {
+			obj.setDescription(value);
 		}
 	};
 	@XmlElement(name = "Amt", required = true)
@@ -244,7 +266,7 @@ public class BillingServiceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServiceAdjustment1, AmountAndDirection34> mmAmount = new MMMessageAssociationEnd<BillingServiceAdjustment1, AmountAndDirection34>() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -256,7 +278,17 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection34 getValue(BillingServiceAdjustment1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, AmountAndDirection34 value) {
+			obj.setAmount(value);
 		}
 	};
 	@XmlElement(name = "BalReqrdAmt")
@@ -293,7 +325,7 @@ public class BillingServiceAdjustment1 {
 	 * "Specifies whether the balance amount requires an adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBalanceRequiredAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>> mmBalanceRequiredAmount = new MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> CashBalance.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -305,7 +337,17 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getBalanceRequiredAmount();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<AmountAndDirection34> value) {
+			obj.setBalanceRequiredAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "ErrDt")
@@ -339,7 +381,7 @@ public class BillingServiceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmErrorDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceAdjustment1, Optional<ISODate>> mmErrorDate = new MMMessageAttribute<BillingServiceAdjustment1, Optional<ISODate>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
@@ -350,6 +392,16 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getErrorDate();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<ISODate> value) {
+			obj.setErrorDate(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "AdjstmntId")
@@ -383,7 +435,7 @@ public class BillingServiceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdjustmentIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceAdjustment1, Optional<Max35Text>> mmAdjustmentIdentification = new MMMessageAttribute<BillingServiceAdjustment1, Optional<Max35Text>>() {
 		{
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
 			isDerived = false;
@@ -394,6 +446,16 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max35Text> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getAdjustmentIdentification();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<Max35Text> value) {
+			obj.setAdjustmentIdentification(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "SubSvc")
@@ -432,7 +494,7 @@ public class BillingServiceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSubService = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<BillingSubServiceIdentification1>> mmSubService = new MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<BillingSubServiceIdentification1>>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -444,7 +506,17 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.BillingSubServiceIdentification1.mmObject();
+			type_lazy = () -> BillingSubServiceIdentification1.mmObject();
+		}
+
+		@Override
+		public Optional<BillingSubServiceIdentification1> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getSubService();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<BillingSubServiceIdentification1> value) {
+			obj.setSubService(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "PricChng")
@@ -482,7 +554,7 @@ public class BillingServiceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPriceChange = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>> mmPriceChange = new MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -494,7 +566,17 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getPriceChange();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<AmountAndDirection34> value) {
+			obj.setPriceChange(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlPric")
@@ -532,7 +614,7 @@ public class BillingServiceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalPrice = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>> mmOriginalPrice = new MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -544,7 +626,17 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getOriginalPrice();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<AmountAndDirection34> value) {
+			obj.setOriginalPrice(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "NewPric")
@@ -581,7 +673,7 @@ public class BillingServiceAdjustment1 {
 	 * "New, adjusted service price, expressed in the pricing currency."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmNewPrice = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>> mmNewPrice = new MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmUnitPrice;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -593,7 +685,17 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getNewPrice();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<AmountAndDirection34> value) {
+			obj.setNewPrice(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "VolChng")
@@ -633,7 +735,7 @@ public class BillingServiceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVolumeChange = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceAdjustment1, Optional<DecimalNumber>> mmVolumeChange = new MMMessageAttribute<BillingServiceAdjustment1, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -645,6 +747,16 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getVolumeChange();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<DecimalNumber> value) {
+			obj.setVolumeChange(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlVol")
@@ -682,7 +794,7 @@ public class BillingServiceAdjustment1 {
 	 * definition} = "Original service volume."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalVolume = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceAdjustment1, Optional<DecimalNumber>> mmOriginalVolume = new MMMessageAttribute<BillingServiceAdjustment1, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -694,6 +806,16 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getOriginalVolume();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<DecimalNumber> value) {
+			obj.setOriginalVolume(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "NewVol")
@@ -731,7 +853,7 @@ public class BillingServiceAdjustment1 {
 	 * definition} = "New, adjusted service volume."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNewVolume = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BillingServiceAdjustment1, Optional<DecimalNumber>> mmNewVolume = new MMMessageAttribute<BillingServiceAdjustment1, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -743,6 +865,16 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getNewVolume();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<DecimalNumber> value) {
+			obj.setNewVolume(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "OrgnlChrgAmt")
@@ -780,7 +912,7 @@ public class BillingServiceAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalChargeAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>> mmOriginalChargeAmount = new MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -792,7 +924,17 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getOriginalChargeAmount();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<AmountAndDirection34> value) {
+			obj.setOriginalChargeAmount(value.orElse(null));
 		}
 	};
 	@XmlElement(name = "NewChrgAmt")
@@ -829,7 +971,7 @@ public class BillingServiceAdjustment1 {
 	 * "New, adjusted service charge, expressed in the pricing currency."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmNewChargeAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>> mmNewChargeAmount = new MMMessageAssociationEnd<BillingServiceAdjustment1, Optional<AmountAndDirection34>>() {
 		{
 			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> com.tools20022.repository.msg.BillingServiceAdjustment1.mmObject();
@@ -841,7 +983,17 @@ public class BillingServiceAdjustment1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
+			type_lazy = () -> AmountAndDirection34.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection34> getValue(BillingServiceAdjustment1 obj) {
+			return obj.getNewChargeAmount();
+		}
+
+		@Override
+		public void setValue(BillingServiceAdjustment1 obj, Optional<AmountAndDirection34> value) {
+			obj.setNewChargeAmount(value.orElse(null));
 		}
 	};
 
@@ -886,7 +1038,7 @@ public class BillingServiceAdjustment1 {
 		return amount;
 	}
 
-	public BillingServiceAdjustment1 setAmount(com.tools20022.repository.msg.AmountAndDirection34 amount) {
+	public BillingServiceAdjustment1 setAmount(AmountAndDirection34 amount) {
 		this.amount = Objects.requireNonNull(amount);
 		return this;
 	}
@@ -895,7 +1047,7 @@ public class BillingServiceAdjustment1 {
 		return balanceRequiredAmount == null ? Optional.empty() : Optional.of(balanceRequiredAmount);
 	}
 
-	public BillingServiceAdjustment1 setBalanceRequiredAmount(com.tools20022.repository.msg.AmountAndDirection34 balanceRequiredAmount) {
+	public BillingServiceAdjustment1 setBalanceRequiredAmount(AmountAndDirection34 balanceRequiredAmount) {
 		this.balanceRequiredAmount = balanceRequiredAmount;
 		return this;
 	}
@@ -922,7 +1074,7 @@ public class BillingServiceAdjustment1 {
 		return subService == null ? Optional.empty() : Optional.of(subService);
 	}
 
-	public BillingServiceAdjustment1 setSubService(com.tools20022.repository.msg.BillingSubServiceIdentification1 subService) {
+	public BillingServiceAdjustment1 setSubService(BillingSubServiceIdentification1 subService) {
 		this.subService = subService;
 		return this;
 	}
@@ -931,7 +1083,7 @@ public class BillingServiceAdjustment1 {
 		return priceChange == null ? Optional.empty() : Optional.of(priceChange);
 	}
 
-	public BillingServiceAdjustment1 setPriceChange(com.tools20022.repository.msg.AmountAndDirection34 priceChange) {
+	public BillingServiceAdjustment1 setPriceChange(AmountAndDirection34 priceChange) {
 		this.priceChange = priceChange;
 		return this;
 	}
@@ -940,7 +1092,7 @@ public class BillingServiceAdjustment1 {
 		return originalPrice == null ? Optional.empty() : Optional.of(originalPrice);
 	}
 
-	public BillingServiceAdjustment1 setOriginalPrice(com.tools20022.repository.msg.AmountAndDirection34 originalPrice) {
+	public BillingServiceAdjustment1 setOriginalPrice(AmountAndDirection34 originalPrice) {
 		this.originalPrice = originalPrice;
 		return this;
 	}
@@ -949,7 +1101,7 @@ public class BillingServiceAdjustment1 {
 		return newPrice == null ? Optional.empty() : Optional.of(newPrice);
 	}
 
-	public BillingServiceAdjustment1 setNewPrice(com.tools20022.repository.msg.AmountAndDirection34 newPrice) {
+	public BillingServiceAdjustment1 setNewPrice(AmountAndDirection34 newPrice) {
 		this.newPrice = newPrice;
 		return this;
 	}
@@ -985,7 +1137,7 @@ public class BillingServiceAdjustment1 {
 		return originalChargeAmount == null ? Optional.empty() : Optional.of(originalChargeAmount);
 	}
 
-	public BillingServiceAdjustment1 setOriginalChargeAmount(com.tools20022.repository.msg.AmountAndDirection34 originalChargeAmount) {
+	public BillingServiceAdjustment1 setOriginalChargeAmount(AmountAndDirection34 originalChargeAmount) {
 		this.originalChargeAmount = originalChargeAmount;
 		return this;
 	}
@@ -994,7 +1146,7 @@ public class BillingServiceAdjustment1 {
 		return newChargeAmount == null ? Optional.empty() : Optional.of(newChargeAmount);
 	}
 
-	public BillingServiceAdjustment1 setNewChargeAmount(com.tools20022.repository.msg.AmountAndDirection34 newChargeAmount) {
+	public BillingServiceAdjustment1 setNewChargeAmount(AmountAndDirection34 newChargeAmount) {
 		this.newChargeAmount = newChargeAmount;
 		return this;
 	}

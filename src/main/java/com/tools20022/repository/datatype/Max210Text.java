@@ -19,12 +19,12 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.metamodel.MMText;
-import com.tools20022.repository.datatype.Max210Text.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.String;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * Specifies a character string with a maximum length of 210 characters.
@@ -47,10 +47,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "Specifies a character string with a maximum length of 210 characters."</li>
  * </ul>
  */
-@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class Max210Text {
 
 	final static private AtomicReference<MMText> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
 	protected String value;
 
 	final static public MMText mmObject() {
@@ -67,24 +69,23 @@ public class Max210Text {
 		return mmObject_lazy.get();
 	}
 
+	public Max210Text() {
+	}
+
 	public Max210Text(String value) {
+		this.value = value;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
 		this.value = value;
 	}
 
 	@Override
 	public String toString() {
-		return value;
-	}
-
-	protected static class InternalXmlAdapter extends XmlAdapter<String, Max210Text> {
-		@Override
-		public Max210Text unmarshal(String value) {
-			return new Max210Text(value);
-		}
-
-		@Override
-		public String marshal(Max210Text typedData) {
-			return typedData.value;
-		}
+		return value == null ? null : value.toString();
 	}
 }

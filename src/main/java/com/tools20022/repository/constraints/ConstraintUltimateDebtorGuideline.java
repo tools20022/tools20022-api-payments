@@ -34,6 +34,77 @@ public class ConstraintUltimateDebtorGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction30
+	 * CreditTransferTransaction30}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "UltimateDebtorGuideline"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "UltimateDebtor may only be present if different from Debtor."</li>
+	 * </ul>
+	 */
+	public static final MMConstraint<CreditTransferTransaction30> forCreditTransferTransaction30 = new MMConstraint<CreditTransferTransaction30>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "UltimateDebtorGuideline";
+			definition = "UltimateDebtor may only be present if different from Debtor.";
+			owner_lazy = () -> CreditTransferTransaction30.mmObject();
+		}
+
+		@Override
+		public void executeValidator(CreditTransferTransaction30 obj) throws Exception {
+			checkCreditTransferTransaction30(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.Mandate11 Mandate11}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "UltimateDebtorGuideline"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "UltimateDebtor may only be present if different from Debtor."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.constraints.ConstraintUltimateDebtorGuideline#forMandate9
+	 * ConstraintUltimateDebtorGuideline.forMandate9}</li>
+	 * </ul>
+	 */
+	public static final MMConstraint<Mandate11> forMandate11 = new MMConstraint<Mandate11>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "UltimateDebtorGuideline";
+			definition = "UltimateDebtor may only be present if different from Debtor.";
+			previousVersion_lazy = () -> com.tools20022.repository.constraints.ConstraintUltimateDebtorGuideline.forMandate9;
+			owner_lazy = () -> Mandate11.mmObject();
+		}
+
+		@Override
+		public void executeValidator(Mandate11 obj) throws Exception {
+			checkMandate11(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
 	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation15
 	 * DirectDebitTransactionInformation15}</li>
 	 * <li>
@@ -48,7 +119,7 @@ public class ConstraintUltimateDebtorGuideline {
 	 * "UltimateDebtor may only be present if different from Debtor."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forDirectDebitTransactionInformation15 = new MMConstraint() {
+	public static final MMConstraint<DirectDebitTransactionInformation15> forDirectDebitTransactionInformation15 = new MMConstraint<DirectDebitTransactionInformation15>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtorGuideline";
@@ -57,8 +128,8 @@ public class ConstraintUltimateDebtorGuideline {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkDirectDebitTransactionInformation15((DirectDebitTransactionInformation15) obj);
+		public void executeValidator(DirectDebitTransactionInformation15 obj) throws Exception {
+			checkDirectDebitTransactionInformation15(obj);
 		}
 	};
 	/**
@@ -67,8 +138,8 @@ public class ConstraintUltimateDebtorGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23
-	 * CreditTransferTransaction23}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction32
+	 * CreditTransferTransaction32}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -81,17 +152,17 @@ public class ConstraintUltimateDebtorGuideline {
 	 * "UltimateDebtor may only be present if different from Debtor."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCreditTransferTransaction23 = new MMConstraint() {
+	public static final MMConstraint<CreditTransferTransaction32> forCreditTransferTransaction32 = new MMConstraint<CreditTransferTransaction32>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtorGuideline";
 			definition = "UltimateDebtor may only be present if different from Debtor.";
-			owner_lazy = () -> CreditTransferTransaction23.mmObject();
+			owner_lazy = () -> CreditTransferTransaction32.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction23((CreditTransferTransaction23) obj);
+		public void executeValidator(CreditTransferTransaction32 obj) throws Exception {
+			checkCreditTransferTransaction32(obj);
 		}
 	};
 	/**
@@ -100,8 +171,8 @@ public class ConstraintUltimateDebtorGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25
-	 * CreditTransferTransaction25}</li>
+	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation22
+	 * DirectDebitTransactionInformation22}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -114,17 +185,17 @@ public class ConstraintUltimateDebtorGuideline {
 	 * "UltimateDebtor may only be present if different from Debtor."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCreditTransferTransaction25 = new MMConstraint() {
+	public static final MMConstraint<DirectDebitTransactionInformation22> forDirectDebitTransactionInformation22 = new MMConstraint<DirectDebitTransactionInformation22>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtorGuideline";
 			definition = "UltimateDebtor may only be present if different from Debtor.";
-			owner_lazy = () -> CreditTransferTransaction25.mmObject();
+			owner_lazy = () -> DirectDebitTransactionInformation22.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction25((CreditTransferTransaction25) obj);
+		public void executeValidator(DirectDebitTransactionInformation22 obj) throws Exception {
+			checkDirectDebitTransactionInformation22(obj);
 		}
 	};
 	/**
@@ -133,8 +204,7 @@ public class ConstraintUltimateDebtorGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction24
-	 * CreditTransferTransaction24}</li>
+	 * {@linkplain com.tools20022.repository.msg.Mandate8 Mandate8}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -147,116 +217,17 @@ public class ConstraintUltimateDebtorGuideline {
 	 * "UltimateDebtor may only be present if different from Debtor."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forCreditTransferTransaction24 = new MMConstraint() {
+	public static final MMConstraint<Mandate8> forMandate8 = new MMConstraint<Mandate8>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtorGuideline";
 			definition = "UltimateDebtor may only be present if different from Debtor.";
-			owner_lazy = () -> CreditTransferTransaction24.mmObject();
+			owner_lazy = () -> Mandate8.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction24((CreditTransferTransaction24) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction26
-	 * CreditTransferTransaction26}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "UltimateDebtorGuideline"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "UltimateDebtor may only be present if different from Debtor."</li>
-	 * </ul>
-	 */
-	public static final MMConstraint forCreditTransferTransaction26 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "UltimateDebtorGuideline";
-			definition = "UltimateDebtor may only be present if different from Debtor.";
-			owner_lazy = () -> CreditTransferTransaction26.mmObject();
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction26((CreditTransferTransaction26) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction22
-	 * CreditTransferTransaction22}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "UltimateDebtorGuideline"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "UltimateDebtor may only be present if different from Debtor."</li>
-	 * </ul>
-	 */
-	public static final MMConstraint forCreditTransferTransaction22 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "UltimateDebtorGuideline";
-			definition = "UltimateDebtor may only be present if different from Debtor.";
-			owner_lazy = () -> CreditTransferTransaction22.mmObject();
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkCreditTransferTransaction22((CreditTransferTransaction22) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation21
-	 * DirectDebitTransactionInformation21}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "UltimateDebtorGuideline"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "UltimateDebtor may only be present if different from Debtor."</li>
-	 * </ul>
-	 */
-	public static final MMConstraint forDirectDebitTransactionInformation21 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "UltimateDebtorGuideline";
-			definition = "UltimateDebtor may only be present if different from Debtor.";
-			owner_lazy = () -> DirectDebitTransactionInformation21.mmObject();
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkDirectDebitTransactionInformation21((DirectDebitTransactionInformation21) obj);
+		public void executeValidator(Mandate8 obj) throws Exception {
+			checkMandate8(obj);
 		}
 	};
 	/**
@@ -278,7 +249,7 @@ public class ConstraintUltimateDebtorGuideline {
 	 * "UltimateDebtor may only be present if different from Debtor."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forMandate10 = new MMConstraint() {
+	public static final MMConstraint<Mandate10> forMandate10 = new MMConstraint<Mandate10>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtorGuideline";
@@ -287,8 +258,8 @@ public class ConstraintUltimateDebtorGuideline {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkMandate10((Mandate10) obj);
+		public void executeValidator(Mandate10 obj) throws Exception {
+			checkMandate10(obj);
 		}
 	};
 	/**
@@ -297,8 +268,8 @@ public class ConstraintUltimateDebtorGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction23
-	 * PaymentInstruction23}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction27
+	 * CreditTransferTransaction27}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -311,50 +282,17 @@ public class ConstraintUltimateDebtorGuideline {
 	 * "UltimateDebtor may only be present if different from Debtor."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forPaymentInstruction23 = new MMConstraint() {
+	public static final MMConstraint<CreditTransferTransaction27> forCreditTransferTransaction27 = new MMConstraint<CreditTransferTransaction27>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtorGuideline";
 			definition = "UltimateDebtor may only be present if different from Debtor.";
-			owner_lazy = () -> PaymentInstruction23.mmObject();
+			owner_lazy = () -> CreditTransferTransaction27.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction23((PaymentInstruction23) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction22
-	 * PaymentInstruction22}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "UltimateDebtorGuideline"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "UltimateDebtor may only be present if different from Debtor."</li>
-	 * </ul>
-	 */
-	public static final MMConstraint forPaymentInstruction22 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "UltimateDebtorGuideline";
-			definition = "UltimateDebtor may only be present if different from Debtor.";
-			owner_lazy = () -> PaymentInstruction22.mmObject();
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkPaymentInstruction22((PaymentInstruction22) obj);
+		public void executeValidator(CreditTransferTransaction27 obj) throws Exception {
+			checkCreditTransferTransaction27(obj);
 		}
 	};
 	/**
@@ -384,7 +322,7 @@ public class ConstraintUltimateDebtorGuideline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMConstraint forMandate9 = new MMConstraint() {
+	public static final MMConstraint<Mandate9> forMandate9 = new MMConstraint<Mandate9>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtorGuideline";
@@ -394,8 +332,8 @@ public class ConstraintUltimateDebtorGuideline {
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkMandate9((Mandate9) obj);
+		public void executeValidator(Mandate9 obj) throws Exception {
+			checkMandate9(obj);
 		}
 	};
 	/**
@@ -404,46 +342,8 @@ public class ConstraintUltimateDebtorGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.Mandate11 Mandate11}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "UltimateDebtorGuideline"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "UltimateDebtor may only be present if different from Debtor."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.constraints.ConstraintUltimateDebtorGuideline#forMandate9
-	 * ConstraintUltimateDebtorGuideline.forMandate9}</li>
-	 * </ul>
-	 */
-	public static final MMConstraint forMandate11 = new MMConstraint() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "UltimateDebtorGuideline";
-			definition = "UltimateDebtor may only be present if different from Debtor.";
-			previousVersion_lazy = () -> com.tools20022.repository.constraints.ConstraintUltimateDebtorGuideline.forMandate9;
-			owner_lazy = () -> Mandate11.mmObject();
-		}
-
-		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkMandate11((Mandate11) obj);
-		}
-	};
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation22
-	 * DirectDebitTransactionInformation22}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction22
+	 * CreditTransferTransaction22}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -456,17 +356,17 @@ public class ConstraintUltimateDebtorGuideline {
 	 * "UltimateDebtor may only be present if different from Debtor."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forDirectDebitTransactionInformation22 = new MMConstraint() {
+	public static final MMConstraint<CreditTransferTransaction22> forCreditTransferTransaction22 = new MMConstraint<CreditTransferTransaction22>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtorGuideline";
 			definition = "UltimateDebtor may only be present if different from Debtor.";
-			owner_lazy = () -> DirectDebitTransactionInformation22.mmObject();
+			owner_lazy = () -> CreditTransferTransaction22.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkDirectDebitTransactionInformation22((DirectDebitTransactionInformation22) obj);
+		public void executeValidator(CreditTransferTransaction22 obj) throws Exception {
+			checkCreditTransferTransaction22(obj);
 		}
 	};
 	/**
@@ -475,7 +375,8 @@ public class ConstraintUltimateDebtorGuideline {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.msg.Mandate8 Mandate8}</li>
+	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation21
+	 * DirectDebitTransactionInformation21}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -488,19 +389,198 @@ public class ConstraintUltimateDebtorGuideline {
 	 * "UltimateDebtor may only be present if different from Debtor."</li>
 	 * </ul>
 	 */
-	public static final MMConstraint forMandate8 = new MMConstraint() {
+	public static final MMConstraint<DirectDebitTransactionInformation21> forDirectDebitTransactionInformation21 = new MMConstraint<DirectDebitTransactionInformation21>() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtorGuideline";
 			definition = "UltimateDebtor may only be present if different from Debtor.";
-			owner_lazy = () -> Mandate8.mmObject();
+			owner_lazy = () -> DirectDebitTransactionInformation21.mmObject();
 		}
 
 		@Override
-		public void executeValidator(Object obj) throws Exception {
-			checkMandate8((Mandate8) obj);
+		public void executeValidator(DirectDebitTransactionInformation21 obj) throws Exception {
+			checkDirectDebitTransactionInformation21(obj);
 		}
 	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction31
+	 * CreditTransferTransaction31}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "UltimateDebtorGuideline"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "UltimateDebtor may only be present if different from Debtor."</li>
+	 * </ul>
+	 */
+	public static final MMConstraint<CreditTransferTransaction31> forCreditTransferTransaction31 = new MMConstraint<CreditTransferTransaction31>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "UltimateDebtorGuideline";
+			definition = "UltimateDebtor may only be present if different from Debtor.";
+			owner_lazy = () -> CreditTransferTransaction31.mmObject();
+		}
+
+		@Override
+		public void executeValidator(CreditTransferTransaction31 obj) throws Exception {
+			checkCreditTransferTransaction31(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction23
+	 * PaymentInstruction23}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "UltimateDebtorGuideline"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "UltimateDebtor may only be present if different from Debtor."</li>
+	 * </ul>
+	 */
+	public static final MMConstraint<PaymentInstruction23> forPaymentInstruction23 = new MMConstraint<PaymentInstruction23>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "UltimateDebtorGuideline";
+			definition = "UltimateDebtor may only be present if different from Debtor.";
+			owner_lazy = () -> PaymentInstruction23.mmObject();
+		}
+
+		@Override
+		public void executeValidator(PaymentInstruction23 obj) throws Exception {
+			checkPaymentInstruction23(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction22
+	 * PaymentInstruction22}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "UltimateDebtorGuideline"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "UltimateDebtor may only be present if different from Debtor."</li>
+	 * </ul>
+	 */
+	public static final MMConstraint<PaymentInstruction22> forPaymentInstruction22 = new MMConstraint<PaymentInstruction22>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "UltimateDebtorGuideline";
+			definition = "UltimateDebtor may only be present if different from Debtor.";
+			owner_lazy = () -> PaymentInstruction22.mmObject();
+		}
+
+		@Override
+		public void executeValidator(PaymentInstruction22 obj) throws Exception {
+			checkPaymentInstruction22(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.PaymentInstruction24
+	 * PaymentInstruction24}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "UltimateDebtorGuideline"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "UltimateDebtor may only be present if different from Debtor."</li>
+	 * </ul>
+	 */
+	public static final MMConstraint<PaymentInstruction24> forPaymentInstruction24 = new MMConstraint<PaymentInstruction24>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "UltimateDebtorGuideline";
+			definition = "UltimateDebtor may only be present if different from Debtor.";
+			owner_lazy = () -> PaymentInstruction24.mmObject();
+		}
+
+		@Override
+		public void executeValidator(PaymentInstruction24 obj) throws Exception {
+			checkPaymentInstruction24(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction26
+	 * CreditTransferTransaction26}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "UltimateDebtorGuideline"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "UltimateDebtor may only be present if different from Debtor."</li>
+	 * </ul>
+	 */
+	public static final MMConstraint<CreditTransferTransaction26> forCreditTransferTransaction26 = new MMConstraint<CreditTransferTransaction26>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "UltimateDebtorGuideline";
+			definition = "UltimateDebtor may only be present if different from Debtor.";
+			owner_lazy = () -> CreditTransferTransaction26.mmObject();
+		}
+
+		@Override
+		public void executeValidator(CreditTransferTransaction26 obj) throws Exception {
+			checkCreditTransferTransaction26(obj);
+		}
+	};
+
+	/**
+	 * UltimateDebtor may only be present if different from Debtor.
+	 */
+	public static void checkCreditTransferTransaction30(CreditTransferTransaction30 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * UltimateDebtor may only be present if different from Debtor.
+	 */
+	public static void checkMandate11(Mandate11 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
 
 	/**
 	 * UltimateDebtor may only be present if different from Debtor.
@@ -512,28 +592,42 @@ public class ConstraintUltimateDebtorGuideline {
 	/**
 	 * UltimateDebtor may only be present if different from Debtor.
 	 */
-	public static void checkCreditTransferTransaction23(CreditTransferTransaction23 obj) throws Exception {
+	public static void checkCreditTransferTransaction32(CreditTransferTransaction32 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
 	/**
 	 * UltimateDebtor may only be present if different from Debtor.
 	 */
-	public static void checkCreditTransferTransaction25(CreditTransferTransaction25 obj) throws Exception {
+	public static void checkDirectDebitTransactionInformation22(DirectDebitTransactionInformation22 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
 	/**
 	 * UltimateDebtor may only be present if different from Debtor.
 	 */
-	public static void checkCreditTransferTransaction24(CreditTransferTransaction24 obj) throws Exception {
+	public static void checkMandate8(Mandate8 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
 	/**
 	 * UltimateDebtor may only be present if different from Debtor.
 	 */
-	public static void checkCreditTransferTransaction26(CreditTransferTransaction26 obj) throws Exception {
+	public static void checkMandate10(Mandate10 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * UltimateDebtor may only be present if different from Debtor.
+	 */
+	public static void checkCreditTransferTransaction27(CreditTransferTransaction27 obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * UltimateDebtor may only be present if different from Debtor.
+	 */
+	public static void checkMandate9(Mandate9 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
@@ -554,7 +648,7 @@ public class ConstraintUltimateDebtorGuideline {
 	/**
 	 * UltimateDebtor may only be present if different from Debtor.
 	 */
-	public static void checkMandate10(Mandate10 obj) throws Exception {
+	public static void checkCreditTransferTransaction31(CreditTransferTransaction31 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
@@ -575,28 +669,14 @@ public class ConstraintUltimateDebtorGuideline {
 	/**
 	 * UltimateDebtor may only be present if different from Debtor.
 	 */
-	public static void checkMandate9(Mandate9 obj) throws Exception {
+	public static void checkPaymentInstruction24(PaymentInstruction24 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 
 	/**
 	 * UltimateDebtor may only be present if different from Debtor.
 	 */
-	public static void checkMandate11(Mandate11 obj) throws Exception {
-		throw new NotImplementedConstraintException();
-	}
-
-	/**
-	 * UltimateDebtor may only be present if different from Debtor.
-	 */
-	public static void checkDirectDebitTransactionInformation22(DirectDebitTransactionInformation22 obj) throws Exception {
-		throw new NotImplementedConstraintException();
-	}
-
-	/**
-	 * UltimateDebtor may only be present if different from Debtor.
-	 */
-	public static void checkMandate8(Mandate8 obj) throws Exception {
+	public static void checkCreditTransferTransaction26(CreditTransferTransaction26 obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 }

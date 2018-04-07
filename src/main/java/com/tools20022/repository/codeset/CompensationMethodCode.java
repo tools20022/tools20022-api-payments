@@ -132,14 +132,14 @@ public class CompensationMethodCode extends MMCode {
 	 * name} = "Debited"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Account is debited for  any charges or taxes due."</li>
+	 * definition} = "Account is debited for any charges or taxes due."</li>
 	 * </ul>
 	 */
 	public static final CompensationMethodCode Debited = new CompensationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Debited";
-			definition = "Account is debited for  any charges or taxes due.";
+			definition = "Account is debited for any charges or taxes due.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CompensationMethodCode.mmObject();
 			codeName = "DBTD";
 		}
